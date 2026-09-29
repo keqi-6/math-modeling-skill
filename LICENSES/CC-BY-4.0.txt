@@ -1,13 +1,13 @@
 # 文档与规则许可：CC BY 4.0
 
-除代码文件（`**/*.py`，见 LICENSE，MIT）与第三方材料（见 THIRD-PARTY-NOTICES.md）外，
+除代码文件（`**/*.py`，见根目录 LICENSE，MIT）与第三方材料（见 THIRD-PARTY-NOTICES.md）外，
 本仓库中的文档、规则、方法包与论文文本，包括但不限于：
 
 - `skills/rules/*.json`
 - `skills/references/**`
 - `skills/SKILL.md`
 - `versions/**`
-- `project/**` 中的 `.md`、`.tex`、`.json` 文本
+- `projects/**` 中的 `.md`、`.tex`、`.json` 文本
 
 采用 **Creative Commons Attribution 4.0 International (CC BY 4.0)** 许可。
 

@@ -74,6 +74,6 @@ V16 的兼容变更闭包与恢复合同 → V16.2 的稳定发布。每一步�
 ## 许可
 
 - 代码（`**/*.py`）与脚本化配置：**MIT**，见 [`LICENSE`](LICENSE)。
-- 文档、规则、方法包与论文文本：**CC BY 4.0**，见 [`LICENSE-DOCS`](LICENSE-DOCS)。
+- 文档、规则、方法包与论文文本：**CC BY 4.0**，见 [`LICENSES/CC-BY-4.0.txt`](LICENSES/CC-BY-4.0.txt)。
 - 题目原文、附件与评阅要点等官方材料的著作权归全国大学生数学建模竞赛组织方；引用与再分发
   边界见 [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md)。
