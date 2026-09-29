@@ -1,0 +1,46 @@
+{
+  "figure_id": "fig01_fvm_algorithm",
+  "data_driven_visual": false,
+  "width_cm": 16.8,
+  "height_cm": 10.8,
+  "sources": {
+    "A题.pdf": "052d8014bff5727c019b72e44fdffaf5c145ce04050dd938baaf3527db331736",
+    "docs/Q1/solution_brief.md": "718d495a37c93c02125c9ce343d221ba9ef370893bab97de88f3d5956d672b35",
+    "src/Q1/solve.py": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+  },
+  "generator": {
+    "path": "scripts/build_grid_algorithm_figure.py",
+    "sha256": "0fc4199fa73e38fd92bad5668e5711dd6669fff81a98886a1e058e90f39f1566"
+  },
+  "mapping": {
+    "a": "Illustrative N=6, N+1 nodal control volumes; annular area weights, no physical layers",
+    "b": "arrows show signed incoming contributions -H_left and +H_right to cell i; not actual T/C flow directions",
+    "c": "clipped endpoint cells store state; centre zero flux, surface exchange; R is fixed Q1 radius",
+    "d": "symbolic structural nonzeros of one scalar field Jacobian; dimension/value not actual",
+    "scope": "Q1 spatial FVM and Jacobian; not a Q4 moving-grid or fixed-order BDF stencil",
+    "colors": "selected cell/row orange, adjacent/boundary cells blue; no field-value encoding"
+  },
+  "outputs": {
+    "png": {
+      "path": "output/paper_figures/grid_algorithm_20260912/fig01_fvm_algorithm.png",
+      "sha256": "608895c0a592dbcd3e329759f16ee31d437e30187826fe342bd7ee7625bd7220"
+    },
+    "pdf": {
+      "path": "output/paper_figures/grid_algorithm_20260912/fig01_fvm_algorithm.pdf",
+      "sha256": "70ddc28504be02a4ef003bd6a2777c84634bcada06271c15d26e8512f34cc464"
+    },
+    "svg": {
+      "path": "output/paper_figures/grid_algorithm_20260912/fig01_fvm_algorithm.svg",
+      "sha256": "ccc3fd650a4aee47a44e72c66f46a64a47d513c4b1c3718b59efb1c3d9eb5058"
+    },
+    "no_text": {
+      "path": "output/paper_figures/grid_algorithm_20260912/fig01_fvm_algorithm_no_text.png",
+      "sha256": "6e037cd568555e0a84ec3195cf1c9a947ae93ceefde918ace36871566919fdff"
+    },
+    "gray": {
+      "path": "output/paper_figures/grid_algorithm_20260912/fig01_fvm_algorithm_gray.png",
+      "sha256": "be89011bf6a071e7986f70a551c5609af0fadeaab3bc935afb137c31d9e0920b"
+    }
+  },
+  "status": "working reading figure; no final manuscript approval claimed"
+}

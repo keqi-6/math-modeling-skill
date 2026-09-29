@@ -1,0 +1,3301 @@
+{
+  "schema_version": "10.0",
+  "domain": "governance",
+  "rules": [
+    {
+      "id": "GOV.MODE.DERIVE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-MODE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.MODE.DERIVE",
+      "strength": "MUST",
+      "semantic_key": "governance.mode.derive",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "request_received"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "select",
+        "target": "execution_mode",
+        "value": "derive_from_complete_request"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "request_hash",
+          "mode"
+        ]
+      },
+      "outcomes": {
+        "pass": "模式与原请求一致。",
+        "fail": "模式扩大或缩小了授权。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.GOV.MODE.CALLER_INPUT"
+      ],
+      "legacy_refs": [
+        "GOV-MODE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "从用户完整请求推导唯一执行模式。",
+      "failure_example": "用单个关键词或调用者声明代替授权判断。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.MODE.STABLE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-MODE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.MODE.STABLE",
+      "strength": "MUST",
+      "semantic_key": "governance.mode.stability",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "route_execution"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "mode_change",
+        "value": "material_authorization_change"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "request_hash",
+          "mode"
+        ]
+      },
+      "outcomes": {
+        "pass": "同一请求保持同一授权模式。",
+        "fail": "无新授权却发生模式跃迁。",
+        "not_applicable": "新的独立请求。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-MODE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "仅在请求或授权实质变化时重选模式。",
+      "failure_example": "在同一请求中为方便写入而切换模式。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.AUTH.WRITE_SCOPE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-AUTH-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.AUTH.WRITE_SCOPE",
+      "strength": "MUST",
+      "semantic_key": "governance.authorization.write_scope",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "skill"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_write"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "write_scope",
+        "value": "explicit_request_boundary"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "mode",
+          "write_policy"
+        ]
+      },
+      "outcomes": {
+        "pass": "每项写入均有授权依据。",
+        "fail": "存在越界写入。",
+        "not_applicable": "没有写入。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-AUTH-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把写入限制在当前请求的合理授权边界。",
+      "failure_example": "把只读请求或沉默解释为写权限。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_receipt.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.AUTH.CLAIM_SCOPE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-AUTH-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.AUTH.CLAIM_SCOPE",
+      "strength": "MUST",
+      "semantic_key": "governance.epistemic.claim_scope",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_claim"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "claim_scope",
+        "value": "verified_evidence_scope"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command",
+          "citation",
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "status",
+          "claim"
+        ]
+      },
+      "outcomes": {
+        "pass": "声称可追溯到通过证据。",
+        "fail": "声称超过证据范围。",
+        "not_applicable": "没有结果声称。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-AUTH-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把完成和正确性声称限制在实际验证范围。",
+      "failure_example": "用编译成功或退出码零替代实质证据。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.AUTH.FROZEN_CHOICE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-AUTH-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.AUTH.FROZEN_CHOICE",
+      "strength": "MUST",
+      "semantic_key": "governance.authorization.frozen_choice",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "manuscript",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_frozen_change"
+        ],
+        "predicates": [
+          {
+            "field": "frozen_decision",
+            "op": "exists",
+            "value": true
+          }
+        ]
+      },
+      "effect": {
+        "verb": "require",
+        "target": "frozen_change_authorization",
+        "value": "explicit_change_decision"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "decision_id",
+          "old",
+          "new",
+          "reason"
+        ]
+      },
+      "outcomes": {
+        "pass": "变更决定已记录。",
+        "fail": "冻结内容被静默改变。",
+        "not_applicable": "没有冻结决定。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-AUTH-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在改变冻结决定前记录显式变更决定。",
+      "failure_example": "把实现细节调整伪装成原方案延续。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.AUTH.DIMENSION_SEPARATION",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-AUTH-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.AUTH.DIMENSION_SEPARATION",
+      "strength": "MUST",
+      "semantic_key": "governance.authorization.dimension_separation",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "skill",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_load"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "decision_dimension_model",
+        "value": "authorization_epistemic_project_choice_state_and_procedure_separate"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route",
+          "state",
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "dimension",
+          "authority_source",
+          "affected_action_or_claim",
+          "conflict_disposition"
+        ]
+      },
+      "outcomes": {
+        "pass": "权限、认识真值、项目选择、状态和程序分别由各自 owner 决定。",
+        "fail": "不同维度被压入一个总优先表，导致授权、真值、选择、状态或程序相互越权。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-AUTH-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "分别判断允许做什么、可以声称什么、项目采用什么、当前能做什么以及具体如何执行；不得用单一总优先表跨维度裁决。",
+      "failure_example": "因某条程序规则优先级较高，就把它当成写权限或数学真值来源。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/ownership-contract.json",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "GOV.AUTH.WRITE_SCOPE",
+        "GOV.AUTH.CLAIM_SCOPE",
+        "GOV.AUTH.FROZEN_CHOICE"
+      ]
+    },
+    {
+      "id": "GOV.ROUTE.RAW_REQUEST",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-ROUTE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.RAW_REQUEST",
+      "strength": "MUST",
+      "semantic_key": "governance.route.raw_request",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "route_resolution"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "route_input",
+        "value": "raw_user_request"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "request_hash"
+        ]
+      },
+      "outcomes": {
+        "pass": "路由保留原请求哈希。",
+        "fail": "路由来源不可复核。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.GOV.ROUTE.CALLER_QUADRUPLE"
+      ],
+      "legacy_refs": [
+        "GOV-ROUTE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用原始用户请求作为路由分类输入。",
+      "failure_example": "仅传入预分类的 mode、object、action 或 state。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.ROUTE.STATE_BIND",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-ROUTE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.STATE_BIND",
+      "strength": "MUST",
+      "semantic_key": "governance.route.state_binding",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "route_resolution"
+        ],
+        "predicates": [
+          {
+            "field": "project_root",
+            "op": "exists",
+            "value": true
+          }
+        ]
+      },
+      "effect": {
+        "verb": "require",
+        "target": "route_state",
+        "value": "authoritative_state_lookup"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "route"
+        ],
+        "fields": [
+          "state_revision",
+          "component_state"
+        ]
+      },
+      "outcomes": {
+        "pass": "路由状态与磁盘状态一致。",
+        "fail": "路由使用伪造或陈旧状态。",
+        "not_applicable": "纯咨询没有项目根。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.GOV.ROUTE.CALLER_STATE"
+      ],
+      "legacy_refs": [
+        "GOV-ROUTE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "从项目权威状态读取路由状态。",
+      "failure_example": "接受调用者传入的状态作为事实。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.ROUTE.UNIQUE_WRITE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-ROUTE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.UNIQUE_WRITE",
+      "strength": "MUST",
+      "semantic_key": "governance.route.unique_write",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_write"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "writable_route_status",
+        "value": "resolved"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "status",
+          "route_ids",
+          "dependencies"
+        ]
+      },
+      "outcomes": {
+        "pass": "写路由链有确定顺序。",
+        "fail": "写路由仍有歧义。",
+        "not_applicable": "只读请求。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-ROUTE-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "只在可执行路由链无冲突时写入。",
+      "failure_example": "用 catchall 或最高分候选掩盖写路由歧义。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.ROUTE.DECOMPOSE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-ROUTE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.DECOMPOSE",
+      "strength": "MUST",
+      "semantic_key": "governance.route.decompose",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "route_resolution"
+        ],
+        "predicates": [
+          {
+            "field": "detected_objects",
+            "op": "in",
+            "value": "multiple"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "require",
+        "target": "route_shape",
+        "value": "dependency_ordered_chain"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "route_ids",
+          "dependencies"
+        ]
+      },
+      "outcomes": {
+        "pass": "每个子意图均有可达节点。",
+        "fail": "子意图丢失或顺序循环。",
+        "not_applicable": "单对象请求。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-ROUTE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把多对象请求解析为依赖有序的路由链。",
+      "failure_example": "把混合请求强塞进单个粗粒度路由。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.ROUTE.TUPLE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-ROUTE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.TUPLE",
+      "strength": "MUST",
+      "semantic_key": "governance.route.complete_tuple",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "route_resolution"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "route_tuple",
+        "value": "mode_object_action_state_contract_match"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route",
+          "state"
+        ],
+        "fields": [
+          "mode",
+          "object",
+          "action",
+          "state",
+          "route_id"
+        ]
+      },
+      "outcomes": {
+        "pass": "四元组的每个维度均由同一可执行路由契约支持。",
+        "fail": "任一维度缺失、未绑定或与所选路由不一致。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-ROUTE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在实质执行前逐项核验 mode、object、action、state 与同一条路由契约一致。",
+      "failure_example": "只验证对象和状态，却没有证明请求动作属于该路由的 intents。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "GOV.MODE.DERIVE",
+        "GOV.ROUTE.RAW_REQUEST",
+        "GOV.ROUTE.STATE_BIND"
+      ]
+    },
+    {
+      "id": "GOV.ROUTE.PROOF_SOURCE",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-ROUTE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.PROOF_SOURCE",
+      "strength": "MUST",
+      "semantic_key": "governance.route.proof_source",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "route_resolution"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "route_proof_source",
+        "value": [
+          "catchall_match",
+          "legacy_transitive_link"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "route_id",
+          "matched_clause",
+          "matched_pattern",
+          "contract_entry"
+        ]
+      },
+      "outcomes": {
+        "pass": "路由由当前契约中的显式请求匹配直接证明。",
+        "fail": "路由证明仅来自兜底匹配或旧版传递引用。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-ROUTE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "路由证据必须来自当前契约的显式匹配，不得以 catchall 或旧版传递链接代替。",
+      "failure_example": "因为旧版模块曾链接到某流程，就把该链接当成本次请求的可达性证明。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "GOV.ROUTE.TUPLE"
+      ]
+    },
+    {
+      "id": "GOV.OWNER.UNIQUE",
+      "revision": 3,
+      "status": "active",
+      "capability": "GOV-OWNER-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.OWNER.UNIQUE",
+      "strength": "MUST",
+      "semantic_key": "governance.owner.unique",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "skill",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_load",
+          "rule_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "semantic_owner_count",
+        "value": 1
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "owner_index",
+          "duplicate_count"
+        ]
+      },
+      "outcomes": {
+        "pass": "语义键和规则 ID 均唯一。",
+        "fail": "存在重复规范 owner。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.GENERATED.MODULE.OWNER"
+      ],
+      "legacy_refs": [
+        "GOV-OWNER-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为每个语义键保留一个规范 owner。",
+      "failure_example": "在摘要、路由或参考资料复制规范控制权。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/ownership-contract.json",
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.RECEIPT.START_MATCH",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-RECEIPT-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.RECEIPT.START_MATCH",
+      "strength": "MUST",
+      "semantic_key": "governance.receipt.start_match",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "start_receipt_validation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "start_receipt",
+        "value": "recomputed_runtime_facts"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "receipt",
+          "route",
+          "state"
+        ],
+        "fields": [
+          "request_hash",
+          "route_ids",
+          "rule_ids",
+          "recovery"
+        ]
+      },
+      "outcomes": {
+        "pass": "回执与运行事实一致。",
+        "fail": "至少一个运行字段被伪造。",
+        "not_applicable": "未使用结构化回执。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.RECEIPT.SCHEMA_ONLY"
+      ],
+      "legacy_refs": [
+        "GOV-RECEIPT-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用实际解析结果复核开始回执。",
+      "failure_example": "只按 Schema 接受自报路由或恢复等级。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/receipt.schema.json",
+          "scripts/validate_receipt.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.RECEIPT.END_MATCH",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-RECEIPT-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.RECEIPT.END_MATCH",
+      "strength": "MUST",
+      "semantic_key": "governance.receipt.end_match",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "end_receipt_validation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "end_receipt",
+        "value": "actual_state_and_artifact_facts"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "receipt",
+          "state",
+          "file",
+          "command"
+        ],
+        "fields": [
+          "after_revision",
+          "changed_artifacts",
+          "validations"
+        ]
+      },
+      "outcomes": {
+        "pass": "结束回执可从磁盘重建。",
+        "fail": "结束回执与磁盘不一致。",
+        "not_applicable": "未使用结构化回执。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.RECEIPT.END.SELF_REPORT"
+      ],
+      "legacy_refs": [
+        "GOV-RECEIPT-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用当前状态修订和工件哈希复核结束回执。",
+      "failure_example": "接受不存在的变更或伪造的验证通过。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/receipt.schema.json",
+          "scripts/validate_receipt.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "GOV.DECISION.CLASSIFY",
+      "revision": 2,
+      "status": "active",
+      "capability": "GOV-DECISION-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.DECISION.CLASSIFY",
+      "strength": "MUST",
+      "semantic_key": "governance.decision.classify",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "manuscript",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "design_decision"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "select",
+        "target": "decision_kind",
+        "value": [
+          "new_design",
+          "change_existing",
+          "not_applicable"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "decision_kind"
+        ]
+      },
+      "outcomes": {
+        "pass": "决定类型与项目事实一致。",
+        "fail": "决定类型掩盖了真实变更。",
+        "not_applicable": "纯机械操作。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "GOV-DECISION-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "按是否存在冻结方案分类当前决定。",
+      "failure_example": "把绿地设计强行归为保持现状。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "STATE.TYPE.MATCH",
+      "revision": 2,
+      "status": "active",
+      "capability": "STATE-TYPED-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#STATE.TYPE.MATCH",
+      "strength": "MUST",
+      "semantic_key": "state.component.type_match",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "state_read",
+          "state_write"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "component_state_set",
+        "value": "type_specific"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state"
+        ],
+        "fields": [
+          "component_type",
+          "state"
+        ]
+      },
+      "outcomes": {
+        "pass": "状态属于组件类型。",
+        "fail": "组件使用了错误状态空间。",
+        "not_applicable": "纯咨询或 Skill 任务。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.STATE.NARRATIVE"
+      ],
+      "legacy_refs": [
+        "STATE-TYPED-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "按组件类型使用对应状态集合。",
+      "failure_example": "用单一 current_stage 代表全部项目组件。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/state-machine.json",
+          "references/state.schema.json",
+          "scripts/state_manager.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "STATE.EVIDENCE.TYPED",
+      "revision": 2,
+      "status": "active",
+      "capability": "STATE-TYPED-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#STATE.EVIDENCE.TYPED",
+      "strength": "MUST",
+      "semantic_key": "state.evidence.typed",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "evidence_record"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "evidence_shape",
+        "value": "typed_locator_status"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state"
+        ],
+        "fields": [
+          "kind",
+          "locator",
+          "status",
+          "claim"
+        ]
+      },
+      "outcomes": {
+        "pass": "证据可独立定位。",
+        "fail": "证据不可核验或无状态。",
+        "not_applicable": "没有证据记录。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.STATE.STRING_EVIDENCE"
+      ],
+      "legacy_refs": [
+        "STATE-TYPED-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把证据记录为有类型、有定位、有状态的对象。",
+      "failure_example": "用任意字符串充当阶段通过证据。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/state-machine.json",
+          "references/state.schema.json",
+          "scripts/state_manager.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "STATE.TRANSITION.GATED",
+      "revision": 3,
+      "status": "active",
+      "capability": "STATE-TYPED-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#STATE.TRANSITION.GATED",
+      "strength": "MUST",
+      "semantic_key": "state.transition.gated",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "state_transition"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "transition_gate",
+        "value": "all_required_levels_closed_by_pass_or_policy_justified_non_trigger"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state"
+        ],
+        "fields": [
+          "from",
+          "to",
+          "required_levels"
+        ]
+      },
+      "outcomes": {
+        "pass": "迁移合法且每个必需 level 由 PASS 或状态机明示允许的结构化非触发结论闭合。",
+        "fail": "迁移越级、证据缺失、裸 N/A，或用 N/A 隐藏适用检验失败。",
+        "not_applicable": "没有状态迁移。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "state.transition.gated.exception.1",
+          "when": "state-machine.json 声明 reopen 迁移",
+          "disposition": "允许受控回退"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.STATE.S6.OFF_BY_ONE"
+      ],
+      "legacy_refs": [
+        "STATE-TYPED-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "只在目标迁移的全部 evidence level 已按状态机政策闭合时提升；不得把诚实非触发伪写成 PASS。",
+      "failure_example": "跳过中间状态、用失败证据提升，或用没有依据和主张边界的 N/A 过门。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/state-machine.json",
+          "references/state.schema.json",
+          "scripts/state_manager.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "STATE.ROUTE.RECORD",
+      "revision": 2,
+      "status": "active",
+      "capability": "STATE-TYPED-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#STATE.ROUTE.RECORD",
+      "strength": "MUST",
+      "semantic_key": "state.route.record",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "authorized_stateful_execution"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "last_route",
+        "value": "request_route_rule_component_identity"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "route"
+        ],
+        "fields": [
+          "request_hash",
+          "route_ids",
+          "rule_ids",
+          "component_ids"
+        ]
+      },
+      "outcomes": {
+        "pass": "last_route 可重算。",
+        "fail": "last_route 缺失或不一致。",
+        "not_applicable": "只读执行。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "STATE-TYPED-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "记录最后一次实际执行的请求哈希和路由身份。",
+      "failure_example": "保留与当前执行无关的陈旧 last_route。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/state-machine.json",
+          "references/state.schema.json",
+          "scripts/state_manager.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "REC.R0.CONTINUE",
+      "revision": 3,
+      "status": "active",
+      "capability": "REC-R0-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R0.CONTINUE",
+      "strength": "MUST",
+      "semantic_key": "recovery.r0.continue",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R0_CONTINUE"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "select",
+        "target": "recovery_level",
+        "value": "R0_CONTINUE"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "state"
+        ],
+        "fields": [
+          "state_valid",
+          "same_window_continuity",
+          "checkpoint_identity",
+          "recorded_change_set",
+          "invalidation_propagation_complete",
+          "unexplained_changes"
+        ]
+      },
+      "outcomes": {
+        "pass": "同一未中断窗口的 checkpoint 当前，所有相关差异均已记录且失效传播闭合，没有未解释变化。",
+        "fail": "窗口连续性、checkpoint、ChangeSet 记录、失效传播或外部变化解释至少一项不能证明。",
+        "not_applicable": "不依赖既有状态。"
+      },
+      "exceptions": [],
+      "conflicts_with": [
+        "REC.R1.TRANSITIVE",
+        "REC.R2.FULL"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R0-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "R0 只用于同窗连续、checkpoint 当前且所有差异均已记录并完成失效传播的直接继续。",
+      "failure_example": "仅因工作区有本窗口已记录的 ChangeSet 就拒绝 R0，或把未解释变化当成已记录变化。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "scripts/assess_recovery.py",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "REC.R0.READ_SCOPE",
+      "revision": 2,
+      "status": "active",
+      "capability": "REC-R0-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R0.READ_SCOPE",
+      "strength": "MUST",
+      "semantic_key": "recovery.r0.read_scope",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R0_CONTINUE"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "recovery_read_scope",
+        "value": "direct_state_and_declared_inputs"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "observation"
+        ],
+        "fields": [
+          "state_path",
+          "declared_input_ids",
+          "read_paths"
+        ]
+      },
+      "outcomes": {
+        "pass": "读取集合仅含权威状态和当前动作声明的输入。",
+        "fail": "普通继续被扩成无原因的全项目重读。",
+        "not_applicable": "恢复级别不是 R0_CONTINUE。"
+      },
+      "exceptions": [],
+      "conflicts_with": [
+        "REC.R1.READ_SCOPE"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R0-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "R0 只读取权威状态与下一动作已声明的直接输入，不启动全项目重读。",
+      "failure_example": "状态和工件一致时仍遍历全部源码、数据和稿件。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#recovery",
+          "scripts/assess_recovery.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "REC.R0.CONTINUE"
+      ]
+    },
+    {
+      "id": "REC.R0.NO_MANIFEST",
+      "revision": 2,
+      "status": "active",
+      "capability": "REC-R0-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R0.NO_MANIFEST",
+      "strength": "MUST",
+      "semantic_key": "recovery.r0.no_manifest",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R0_CONTINUE"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "recovery_manifest",
+        "value": "ordinary_consistent_continuation"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "observation"
+        ],
+        "fields": [
+          "recovery_level",
+          "created_paths"
+        ]
+      },
+      "outcomes": {
+        "pass": "普通继续没有生成恢复专用清单。",
+        "fail": "R0 执行创建了 recovery manifest 或等价冗余文件。",
+        "not_applicable": "恢复级别不是 R0_CONTINUE。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R0-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "一致状态下的普通继续不得创建 recovery manifest 或同义恢复文件。",
+      "failure_example": "仅为接续下一动作生成 recovery.md、handoff 恢复表或全量清单。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#recovery",
+          "scripts/assess_recovery.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "REC.R0.CONTINUE"
+      ]
+    },
+    {
+      "id": "REC.R1.ELIGIBILITY",
+      "revision": 1,
+      "status": "active",
+      "capability": "REC-R1-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R1.ELIGIBILITY",
+      "strength": "MUST",
+      "semantic_key": "recovery.r1.eligibility",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R1_TARGETED"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "require",
+        "target": "r1_eligibility",
+        "value": "trusted_complete_baseline_and_localizable_delta_and_provable_transitive_consumer_closure"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "state"
+        ],
+        "fields": [
+          "baseline_eligible",
+          "baseline_coverage_complete",
+          "baseline_unresolved",
+          "delta_localizable",
+          "consumer_closure_complete"
+        ]
+      },
+      "outcomes": {
+        "pass": "可信且覆盖完整的 baseline、变化归属和完整传递消费者闭包三项资格同时成立。",
+        "fail": "任一 R1 资格缺失、为 false 或为 unknown；恢复必须进入 R2_FULL。",
+        "not_applicable": "恢复级别不是 R1_TARGETED。"
+      },
+      "exceptions": [],
+      "conflicts_with": [
+        "REC.R0.CONTINUE",
+        "REC.R2.FULL"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R1-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "R1 必须先证明完整 baseline、变化可定位和传递消费者闭包完整；新窗口本身不是资格。",
+      "failure_example": "baseline 缺失时仍以新窗口最低 R1 为由开启定向恢复。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "scripts/assess_recovery.py",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "REC.R1.TRANSITIVE",
+      "revision": 3,
+      "status": "active",
+      "capability": "REC-R1-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R1.TRANSITIVE",
+      "strength": "MUST",
+      "semantic_key": "recovery.r1.transitive",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R1_TARGETED"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "require",
+        "target": "recovery_consumer_closure",
+        "value": "changed_owner_plus_all_transitive_consumers"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "state"
+        ],
+        "fields": [
+          "changed_owners",
+          "affected_components",
+          "dependency_graph_identity",
+          "dependency_edges",
+          "closure_complete"
+        ]
+      },
+      "outcomes": {
+        "pass": "变化 owner 与全部传递消费者形成可证明完整的恢复读取闭包。",
+        "fail": "至少一个变化无法定位、传递消费者漏检或依赖图身份不能证明当前；必须升级 R2，而不是由恢复动作修改组件状态。",
+        "not_applicable": "没有变化。"
+      },
+      "exceptions": [],
+      "conflicts_with": [
+        "REC.R0.CONTINUE",
+        "REC.R2.FULL"
+      ],
+      "supersedes": [
+        "V9.RECOVERY.DIRECT_ONLY"
+      ],
+      "legacy_refs": [
+        "REC-R1-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "R1 只计算并复核变化 owner 与完整传递消费者读取闭包；项目失效由独立 ChangeSet 处理。",
+      "failure_example": "恢复评估直接 invalidate 组件，或在依赖图不完整时仍把范围称为有界。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "scripts/assess_recovery.py",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "REC.R1.ELIGIBILITY"
+      ]
+    },
+    {
+      "id": "REC.R1.REVIEW_CLOSURE",
+      "revision": 3,
+      "status": "active",
+      "capability": "REC-R1-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R1.REVIEW_CLOSURE",
+      "strength": "MUST",
+      "semantic_key": "recovery.r1.review_closure",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R1_TARGETED"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "require",
+        "target": "affected_closure_review",
+        "value": "changed_owner_and_transitive_consumers"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "observation"
+        ],
+        "fields": [
+          "changed_owner",
+          "affected_components",
+          "reviewed_component_ids"
+        ]
+      },
+      "outcomes": {
+        "pass": "变化所有者及其完整受影响闭包均已复核。",
+        "fail": "变化 owner 或消费者没有逐项复核，或读取中发现闭包外相关对象；后者必须在同一 recovery id 上升级 R2。",
+        "not_applicable": "恢复级别不是 R1_TARGETED。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R1-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "R1 在资格成立后复核变化 owner 及全部传递消费者；读取发现范围逃逸时同 episode 升 R2。",
+      "failure_example": "计算了 affected_components，却只阅读变化文件而没有复核消费者。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#recovery",
+          "scripts/assess_recovery.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "REC.R1.TRANSITIVE"
+      ]
+    },
+    {
+      "id": "REC.R1.READ_SCOPE",
+      "revision": 2,
+      "status": "active",
+      "capability": "REC-R1-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R1.READ_SCOPE",
+      "strength": "MUST",
+      "semantic_key": "recovery.r1.read_scope",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R1_TARGETED"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "recovery_read_scope",
+        "value": "affected_closure_and_declared_inputs"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "observation"
+        ],
+        "fields": [
+          "affected_components",
+          "declared_input_ids",
+          "read_paths"
+        ]
+      },
+      "outcomes": {
+        "pass": "读取集合可追溯到受影响闭包或其声明输入。",
+        "fail": "无原因读取未受影响的项目区域，或漏读闭包成员。",
+        "not_applicable": "恢复级别不是 R1_TARGETED。"
+      },
+      "exceptions": [],
+      "conflicts_with": [
+        "REC.R0.READ_SCOPE"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R1-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "R1 的读取范围限于受影响闭包及这些组件已声明的直接输入。",
+      "failure_example": "一个局部数据变化触发与依赖图无关的全项目遍历。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#recovery",
+          "scripts/assess_recovery.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "REC.R1.REVIEW_CLOSURE"
+      ]
+    },
+    {
+      "id": "REC.R2.FULL",
+      "revision": 4,
+      "status": "active",
+      "capability": "REC-R2-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R2.FULL",
+      "strength": "MUST",
+      "semantic_key": "recovery.r2.full",
+      "scope": {
+        "objects": [
+          "project",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R2_FULL"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "select",
+        "target": "recovery_level",
+        "value": "R2_FULL"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "state"
+        ],
+        "fields": [
+          "explicit_full_recovery",
+          "state_errors",
+          "project_identity_conflicts",
+          "baseline_eligibility",
+          "unattributed_relevant_changes",
+          "consumer_closure_complete",
+          "escalated_from_r1",
+          "classification_reasons"
+        ]
+      },
+      "outcomes": {
+        "pass": "显式全量请求或至少一项不能建立有界恢复的原因机器可核，最终等级为 R2_FULL。",
+        "fail": "R2 无机器可核原因，或明确触发 R2 的情况被降为 R1。",
+        "not_applicable": "状态与项目身份有效，baseline 合格，变化可定位且消费者闭包完整，也没有显式全量请求。"
+      },
+      "exceptions": [
+        {
+          "kind": "runtime_condition",
+          "when": {
+            "field": "request_explicit_full_recovery",
+            "op": "eq",
+            "value": true
+          },
+          "disposition": "override_applicability"
+        }
+      ],
+      "conflicts_with": [
+        "REC.R0.CONTINUE",
+        "REC.R1.TRANSITIVE"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R2-001"
+      ],
+      "routes": [
+        "@recovery",
+        "RT.PROJECT.RECOVER.MISSING"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "显式全量请求、状态/项目身份异常、baseline 不合格、变化不可定位或闭包不可证时选择 R2。",
+      "failure_example": "baseline 缺失或消费者闭包不可证时仍把所有变化无条件塞进 R1。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "scripts/assess_recovery.py",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "REC.R2.FULL_READ",
+      "revision": 1,
+      "status": "active",
+      "capability": "REC-R2-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R2.FULL_READ",
+      "strength": "MUST",
+      "semantic_key": "recovery.r2.full_read",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R2_FULL"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "require",
+        "target": "full_project_read_coverage",
+        "value": "complete_inventory_unique_text_code_config_to_EOF_native_structured_visual_binary_inspection_hash_deduplicated_and_no_unclassified_live_object"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command",
+          "receipt"
+        ],
+        "fields": [
+          "full_manifest_path",
+          "full_manifest_sha256",
+          "full_manifest_counts",
+          "read_receipts",
+          "duplicate_bindings",
+          "unclassified_paths",
+          "truncated_paths"
+        ]
+      },
+      "outcomes": {
+        "pass": "全项目 live inventory 已表示；唯一文本/代码/配置读到 EOF，其他载体按类型检查，重复项有 canonical 绑定，且没有漏读、截断或未分类当前对象。",
+        "fail": "只读取登记 identity、只重建状态、遗漏项目区域，或仍有漏读、截断、未分类 live object。",
+        "not_applicable": "恢复级别不是 R2_FULL。"
+      },
+      "exceptions": [],
+      "conflicts_with": [
+        "REC.R0.READ_SCOPE",
+        "REC.R1.READ_SCOPE"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R2-001"
+      ],
+      "routes": [
+        "@recovery",
+        "RT.PROJECT.RECOVER.MISSING"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "R2 必须完成全项目逐对象读取；文本类到 EOF，复合载体按原生方式检查，重复件可 hash 去重。",
+      "failure_example": "显式 R2 只读取状态与登记工件后就声称全量恢复完成。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "scripts/assess_recovery.py",
+          "scripts/recovery_v14.py",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "REC.R2.FULL"
+      ]
+    },
+    {
+      "id": "REC.R2.EVIDENCE_REBUILD",
+      "revision": 3,
+      "status": "active",
+      "capability": "REC-R2-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R2.EVIDENCE_REBUILD",
+      "strength": "MUST",
+      "semantic_key": "recovery.r2.evidence_rebuild",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R2_FULL"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "require",
+        "target": "recovery_control_reconstruction",
+        "value": "components_dependencies_identities_and_provenance_rebuilt_with_all_known_project_gaps_recorded"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command",
+          "state",
+          "receipt"
+        ],
+        "fields": [
+          "component_ids",
+          "artifact_identities",
+          "evidence_ids",
+          "known_project_gaps",
+          "recovery_conclusion"
+        ]
+      },
+      "outcomes": {
+        "pass": "控制元数据已从全读材料重建；无 gap 时 closed_ready，有已知 stale/missing/authorization gap 时 closed_blocked。",
+        "fail": "遗漏已发现 gap、把 stale/missing 证据伪装为 PASS，或在全读覆盖未完成时关闭恢复。",
+        "not_applicable": "恢复级别不是 R2_FULL。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R2-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "R2 全读后重建控制身份并如实登记证据 gap；gap 决定 ready/blocked，不否定已经完成的读取覆盖。",
+      "failure_example": "为取得 closed_ready 而隐藏 stale 证据，或因存在已知 gap 永久不允许恢复闭合。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#recovery",
+          "scripts/assess_recovery.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "REC.R2.FULL_READ"
+      ]
+    },
+    {
+      "id": "REC.R2.NO_NARRATIVE_ONLY",
+      "revision": 3,
+      "status": "active",
+      "capability": "REC-R2-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#REC.R2.NO_NARRATIVE_ONLY",
+      "strength": "MUST",
+      "semantic_key": "recovery.r2.no_narrative_only",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "recovery_assessment"
+        ],
+        "predicates": [
+          {
+            "field": "recovery_level",
+            "op": "eq",
+            "value": "R2_FULL"
+          }
+        ]
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "recovery_claim_basis",
+        "value": "narrative_summary_only"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "state",
+          "receipt"
+        ],
+        "fields": [
+          "rebuild_commands",
+          "verified_evidence_ids",
+          "coverage_gaps"
+        ]
+      },
+      "outcomes": {
+        "pass": "恢复声明由重建结果和机器可核证据支持。",
+        "fail": "恢复结论只引用叙述摘要、交接说明或自述。",
+        "not_applicable": "恢复级别不是 R2_FULL。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "REC-R2-001"
+      ],
+      "routes": [
+        "@recovery"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "不得仅凭叙述摘要、交接文字或模型自述宣称 R2 恢复完成。",
+      "failure_example": "把旧 handoff 中的“已验证”一句话当作完整恢复证据。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#recovery",
+          "scripts/assess_recovery.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "REC.R2.EVIDENCE_REBUILD"
+      ]
+    },
+    {
+      "id": "ART.ADMIT.CONSUMER",
+      "revision": 3,
+      "status": "active",
+      "capability": "ART-LAZY-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#ART.ADMIT.CONSUMER",
+      "strength": "MUST",
+      "semantic_key": "artifact.admission.consumer",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_file_creation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "artifact_consumer_count",
+        "value": ">=1"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "path",
+          "purpose",
+          "consumer_ids"
+        ]
+      },
+      "outcomes": {
+        "pass": "消费者可在项目中定位。",
+        "fail": "消费者为空或虚构。",
+        "not_applicable": "没有项目文件创建。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "artifact.admission.consumer.exception.1",
+          "when": "系统临时目录中的短期计算",
+          "disposition": "不登记正式工件"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.ARTIFACT.AFTER_THE_FACT"
+      ],
+      "legacy_refs": [
+        "ART-LAZY-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在创建正式文件前声明至少一个真实消费者。",
+      "failure_example": "创建无消费者的占位文件或目录。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/artifact-contract.json",
+          "scripts/artifact_guard.py",
+          "scripts/state_manager.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "ART.ADMIT.PROPOSAL_FIELDS",
+      "revision": 2,
+      "status": "active",
+      "capability": "ART-LAZY-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#ART.ADMIT.PROPOSAL_FIELDS",
+      "strength": "MUST",
+      "semantic_key": "artifact.admission.proposal_metadata_validation",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_file_creation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "artifact_proposal_metadata_validation",
+        "value": "current_artifact_contract_metadata_profile_pass"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "proposal_path",
+          "artifact_contract_id",
+          "validation_status",
+          "validation_errors"
+        ]
+      },
+      "outcomes": {
+        "pass": "提案通过当前工件契约的 required、enum 和语义校验。",
+        "fail": "提案绕过校验，或当前工件契约返回任一错误。",
+        "not_applicable": "不创建项目工件。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "artifact.admission.proposal_fields.exception.1",
+          "when": "系统临时目录中的短期计算输出不作为项目工件",
+          "disposition": "使用系统临时目录且不登记正式工件"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "ART-LAZY-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "正式文件创建前必须通过当前 artifact-contract 的提案元数据校验；字段名和枚举由该契约唯一拥有。",
+      "failure_example": "复制一份旧字段清单自行判断通过，而没有运行当前工件契约校验。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/artifact-contract.json",
+          "scripts/artifact_guard.py",
+          "scripts/lib_v10.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "ART.ADMIT.CONSUMER"
+      ]
+    },
+    {
+      "id": "ART.ADMIT.NO_SPECULATION",
+      "revision": 2,
+      "status": "active",
+      "capability": "ART-LAZY-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#ART.ADMIT.NO_SPECULATION",
+      "strength": "MUST",
+      "semantic_key": "artifact.admission.no_bypass",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_file_creation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "artifact_admission_bypass",
+        "value": "project_file_or_directory_creation_without_current_contract_pass"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "command"
+        ],
+        "fields": [
+          "proposed_path",
+          "artifact_guard_status",
+          "created_paths"
+        ]
+      },
+      "outcomes": {
+        "pass": "新增路径均属于已准入文件或其必要父目录。",
+        "fail": "路径未经工件契约准入就被直接创建。",
+        "not_applicable": "不创建项目路径。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "ART-LAZY-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "不得绕过当前 artifact-contract 直接创建项目文件或目录；占位与推测性路径由该契约判拒。",
+      "failure_example": "未提交提案就预建 data、results、figures 和逐题空目录。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/artifact-contract.json",
+          "scripts/artifact_guard.py",
+          "scripts/lib_v10.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "ART.ADMIT.PROPOSAL_FIELDS"
+      ]
+    },
+    {
+      "id": "ART.ADMIT.MINIMAL",
+      "revision": 2,
+      "status": "active",
+      "capability": "ART-LAZY-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#ART.ADMIT.MINIMAL",
+      "strength": "MUST",
+      "semantic_key": "artifact.admission.minimal",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "project_initialization"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "default_project_files",
+        "value": [
+          ".modeling/state.json"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "created_paths"
+        ]
+      },
+      "outcomes": {
+        "pass": "默认仅产生权威状态。",
+        "fail": "出现未准入文件。",
+        "not_applicable": "不是初始化。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "artifact.admission.minimal.exception.1",
+          "when": "用户逐项明确要求附加文件",
+          "disposition": "每项仍须通过工件准入"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [
+        "V8.PROJECT.SCAFFOLD"
+      ],
+      "legacy_refs": [
+        "ART-LAZY-001"
+      ],
+      "routes": [
+        "RT.PROJECT.INIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "初始化时只创建当前必需的控制文件。",
+      "failure_example": "默认生成 README、逐题 brief、审计报告或空脚手架。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/artifact-contract.json",
+          "scripts/artifact_guard.py",
+          "scripts/state_manager.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "ART.PROMOTE.VALIDATE",
+      "revision": 2,
+      "status": "active",
+      "capability": "ART-PROMOTE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#ART.PROMOTE.VALIDATE",
+      "strength": "MUST",
+      "semantic_key": "artifact.promotion.validate",
+      "scope": {
+        "objects": [
+          "data",
+          "model",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "shared_data",
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "artifact_promotion"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "promotion_gate",
+        "value": "declared_validation_pass"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "path",
+          "sha256",
+          "validation"
+        ]
+      },
+      "outcomes": {
+        "pass": "提升身份绑定到验证证据。",
+        "fail": "提升工件未验证。",
+        "not_applicable": "没有工件提升。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "ART-PROMOTE-001"
+      ],
+      "routes": [
+        "RT.DATA.FREEZE",
+        "RT.DELIVERY.FINAL",
+        "RT.VISUAL.AUDIT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "只把通过声明验证门的工件提升为正式产物。",
+      "failure_example": "把临时输出直接放入最终交付。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/artifact-contract.json",
+          "scripts/artifact_guard.py",
+          "scripts/state_manager.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "ART.REGISTER.IDENTITY",
+      "revision": 2,
+      "status": "active",
+      "capability": "ART-PROMOTE-001",
+      "domain": "governance",
+      "owner": "rules/governance.json#ART.REGISTER.IDENTITY",
+      "strength": "MUST",
+      "semantic_key": "artifact.registry.identity",
+      "scope": {
+        "objects": [
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "shared_data",
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "artifact_register",
+          "artifact_refresh"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "artifact_identity",
+        "value": "path_hash_size_producer_consumers"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "path",
+          "sha256",
+          "size",
+          "producer",
+          "consumers"
+        ]
+      },
+      "outcomes": {
+        "pass": "登记身份可由磁盘复算。",
+        "fail": "登记身份与磁盘不一致。",
+        "not_applicable": "没有正式工件。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "ART-PROMOTE-001"
+      ],
+      "routes": [
+        "@write"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "按实际文件记录工件身份和依赖关系。",
+      "failure_example": "登记不存在、空文件或哈希不符的工件。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/artifact-contract.json",
+          "scripts/artifact_guard.py",
+          "scripts/state_manager.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    }
+  ]
+}

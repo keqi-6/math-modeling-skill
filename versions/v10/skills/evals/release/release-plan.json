@@ -1,0 +1,114 @@
+{
+  "schema_version": "10.0",
+  "release_id": "V10.0.0",
+  "required_drivers": [
+    "quick_package",
+    "contracts",
+    "behavior",
+    "atomic",
+    "scenario",
+    "maintenance",
+    "change",
+    "transaction",
+    "migration"
+  ],
+  "drivers": [
+    {
+      "id": "quick_package",
+      "script": "scripts/quick_validate.py",
+      "registry": {
+        "kind": "declared_ids",
+        "ids": [
+          "PKG.REQUIRED",
+          "PKG.CLEAN_TREE",
+          "PKG.NO_SYMLINKS",
+          "PKG.JSON_PARSE",
+          "PKG.JSON_SCHEMA_META",
+          "PKG.SCHEMA_INSTANCES",
+          "PKG.PYTHON_COMPILE",
+          "PKG.REFERENCES",
+          "PKG.EVAL_REGISTRY",
+          "PKG.RELEASE_METADATA"
+        ]
+      }
+    },
+    {
+      "id": "contracts",
+      "script": "scripts/validate_contracts.py",
+      "registry": {
+        "kind": "metrics",
+        "paths": ["metrics.active_rules", "metrics.capabilities", "metrics.routes", "metrics.test_ids"]
+      }
+    },
+    {
+      "id": "behavior",
+      "script": "scripts/run_behavior_evals.py",
+      "registry": {
+        "kind": "cases",
+        "files": ["evals/behavior-cases.json"],
+        "filters": {"kind": "route"}
+      }
+    },
+    {
+      "id": "atomic",
+      "script": "scripts/run_atomic_rule_evals.py",
+      "args": ["--mutation-check"],
+      "registry": {
+        "kind": "cases",
+        "files": ["evals/atomic-rule-cases.json"],
+        "filters": {}
+      }
+    },
+    {
+      "id": "scenario",
+      "script": "scripts/run_scenario_tests.py",
+      "registry": {
+        "kind": "cases_recursive",
+        "glob": "evals/**/*.json",
+        "filters": {"kind": "scenario", "driver": "scenario_tests"}
+      }
+    },
+    {
+      "id": "maintenance",
+      "script": "scripts/run_maintenance_tests.py",
+      "registry": {
+        "kind": "cases_recursive",
+        "glob": "evals/**/*.json",
+        "filters": {"kind": "scenario", "driver": "maintenance_tests"}
+      }
+    },
+    {
+      "id": "change",
+      "script": "scripts/run_change_evals.py",
+      "registry": {
+        "kind": "cases",
+        "files": ["evals/change-cases.json"],
+        "filters": {}
+      }
+    },
+    {
+      "id": "transaction",
+      "script": "scripts/run_transaction_tests.py",
+      "requires_v9_root": true,
+      "registry": {
+        "kind": "metrics",
+        "paths": ["metrics.successful_transactions", "metrics.production_gates_executed"]
+      }
+    },
+    {
+      "id": "migration",
+      "script": "scripts/validate_migration.py",
+      "requires_v9_root": true,
+      "registry": {
+        "kind": "metrics",
+        "paths": ["metrics.v9_capabilities", "metrics.v10_active_rules", "metrics.reviewed_source_clauses", "metrics.reviewed_active_atoms", "metrics.legacy_entries", "metrics.native_entries"]
+      }
+    }
+  ],
+  "unverified_boundaries": [
+    "No external signing key or third-party transparency log is available; the frozen manifest is tamper-evident and independently re-gated, not identity-signed.",
+    "External services, future dependency versions, and operating systems other than the release host are outside this local gate.",
+    "Migration lineage proves registered dispositions and hashes; semantic preservation is bounded by the versioned clause-review seal and executable local gates.",
+    "JSON Schema and compilation establish structure and syntax, not arbitrary domain truth beyond the executed scenarios."
+  ]
+}

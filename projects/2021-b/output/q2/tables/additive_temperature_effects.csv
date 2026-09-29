@@ -1,0 +1,9 @@
+response,response_cn,temperature_c,temperature_mean_pct,temperature_effect_pct_point
+ethanol_conversion_pct,乙醇转化率,250.0,4.606623014284929,-9.172713289157365
+ethanol_conversion_pct,乙醇转化率,275.0,7.706404397877267,-6.072931905565027
+ethanol_conversion_pct,乙醇转化率,300.0,13.736490635082934,-0.042845668359360545
+ethanol_conversion_pct,乙醇转化率,350.0,29.067827166524033,15.288490863081739
+c4_selectivity_pct,C4 烯烃选择性,250.0,6.511904761904762,-5.548333333333333
+c4_selectivity_pct,C4 烯烃选择性,275.0,8.212857142857143,-3.847380952380952
+c4_selectivity_pct,C4 烯烃选择性,300.0,11.7,-0.36023809523809547
+c4_selectivity_pct,C4 烯烃选择性,350.0,21.816190476190474,9.75595238095238

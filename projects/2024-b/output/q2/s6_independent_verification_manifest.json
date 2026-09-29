@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "run_status": "complete",
+  "artifact_status": "s6_frozen_awaiting_human_review",
+  "producer": "src/q2/02_verify_independent.py",
+  "started_at_utc": "2026-08-23T14:21:38.515100+00:00",
+  "finished_at_utc": "2026-08-23T14:21:38.559627+00:00",
+  "python_version": "3.12.3",
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "randomness": "none",
+  "solver": "independent exact Fraction closed forms plus analytic correlation breakpoints",
+  "inputs": {
+    "planning/analysis/2026-08-23_q2_s2_assessment.md": "02ccfa086330a2b679cba87287e50aecc6324b0b8370d1e08d36366675909635",
+    "planning/analysis/2026-08-23_q2_s4_specification.md": "c063079de8a375fc968a274496b0b4f6586c768180bbda0f52d3e72acfe3da8b",
+    "output/q2/s5_results.json": "28c003c3dfc6531f3f14f074fa192bd8cda46f302113657ed731971d740d5190"
+  },
+  "verification_code": {
+    "src/q2/02_verify_independent.py": "3835f1e77b49fbc774d6438efcfa2c5f20e995e5f530b9adcd5590bc5523c4b2"
+  },
+  "outputs": {
+    "output/q2/s6_independent_verification.json": "850323dc163687a4fb733ab54eed5831d597bce1cd16e0fac11327c10059def8"
+  },
+  "dimensions": {
+    "scenarios": 6,
+    "policies_per_scenario": 16,
+    "candidate_records_compared": 96,
+    "exact_field_comparisons": 930,
+    "flow_and_cost_invariant_checks": 336
+  },
+  "consumers": [
+    "planning/analysis/2026-08-23_q2_s6_independent_verification.md",
+    "docs/q2/solution_brief.md",
+    "planning/q2_claim_test_paper_map.md"
+  ]
+}

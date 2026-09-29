@@ -1,0 +1,8 @@
+{
+  "schema_version": "16.2",
+  "release_id": "V16.2.0",
+  "status": "stable",
+  "frozen_at": "2026-09-13T02:33:10Z",
+  "manifest": "evals/release/frozen-manifest.json",
+  "gate_report_sha256": "90e34f28c08b68085f15740fc4a3b687ecb26aaebe63f3cd0c6f5235474c6977"
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "identity": {
+    "problem": "2021 CUMCM B题",
+    "stage": "技术主线第2步",
+    "attachment2_catalyst_identity": "题面未给出；默认不映射到A1—B7",
+    "catalyst_domain": "A1—A14、B1—B7共21种完整不可拆分类别",
+    "temperature_domain": "250、275、300、325、350、400、450°C有序离散标签"
+  },
+  "source_files": {
+    "data/附件1.xlsx": {
+      "sha256": "de8e67e2c3fafb703553cb20e46f1a6db7109c5039bd50fd450c1e093a7080a3",
+      "bytes": 20897,
+      "sheet_name": "性能数据表",
+      "max_row": 115,
+      "max_column": 11,
+      "blank_trailing_columns": 1,
+      "effective_records": 114,
+      "combination_count": 21
+    },
+    "data/附件2.xlsx": {
+      "sha256": "9aa92011182076833ced7cc47b57c57875a85ed8fb2b8edd2b1f66dd3c10ac82",
+      "bytes": 11200,
+      "sheet_name": "稳定性测试",
+      "max_row": 10,
+      "max_column": 8,
+      "effective_records": 7,
+      "time_min": 20.0,
+      "time_max": 273.0,
+      "is_strictly_increasing_time": true
+    }
+  },
+  "attachment1": {
+    "record_count": 114,
+    "catalyst_count": 21,
+    "loading_method_counts": {
+      "I": 14,
+      "II": 7
+    },
+    "temperature_levels_c": [
+      250.0,
+      275.0,
+      300.0,
+      325.0,
+      350.0,
+      400.0,
+      450.0
+    ],
+    "missing_core_value_count": 0,
+    "duplicate_catalyst_temperature_count": 0,
+    "selectivity_sum_range_pct": [
+      99.99999999999999,
+      100.00000000000001
+    ],
+    "max_abs_closure_error_pct_point": 1.4210854715202004e-14,
+    "matched_recipe_across_loading_method_count": 2,
+    "observed_best": {
+      "catalyst_id": "A3",
+      "temperature_c": 400.0,
+      "conversion_pct": 83.7133815760754,
+      "c4_selectivity_pct": 53.43,
+      "c4_yield_pct": 44.72805977609709
+    },
+    "observed_best_below_350": {
+      "catalyst_id": "A2",
+      "temperature_c": 325.0,
+      "conversion_pct": 56.3824602331247,
+      "c4_selectivity_pct": 30.62,
+      "c4_yield_pct": 17.264309323382783
+    },
+    "global_iqr_flag_counts": {
+      "ethanol_conversion_pct": 4,
+      "c4_selectivity_pct": 1,
+      "c4_yield_pct": 13
+    },
+    "within_temperature_robust_flag_counts": {
+      "ethanol_conversion_pct": 4,
+      "c4_selectivity_pct": 5,
+      "c4_yield_pct": 10
+    }
+  },
+  "attachment2": {
+    "record_count": 7,
+    "time_points_min": [
+      20.0,
+      70.0,
+      110.0,
+      163.0,
+      197.0,
+      240.0,
+      273.0
+    ],
+    "time_gap_min": [
+      50.0,
+      40.0,
+      53.0,
+      34.0,
+      43.0,
+      33.0
+    ],
+    "selectivity_sum_range_pct": [
+      100.0,
+      100.0
+    ],
+    "conversion_first_last_pct": [
+      43.5473885704829,
+      29.9060085761557
+    ],
+    "c4_selectivity_first_last_pct": [
+      39.9,
+      39.04
+    ],
+    "yield_first_last_pct": [
+      17.375408039622677,
+      11.675305748131183
+    ]
+  },
+  "data_treatments": [
+    "附件1合并单元格按Excel视觉语义前向填充",
+    "完全空的尾列不进入数据表，不删除有效观测",
+    "催化剂描述解析为数值因素并保留原始描述",
+    "百分数收率按转化率乘选择性再除以100",
+    "异常观测只加标记，不删除、不缩尾、不插补",
+    "附件2催化剂身份记录为未知，不自动匹配附件1",
+    "正式模型接口不读取配方拆分字段，只使用21种完整组合类别",
+    "温度按7水平有序离散标签处理，不连续插值或推荐标签外温度"
+  ],
+  "known_design_risks": [
+    "组合温度覆盖不完全一致",
+    "催化剂因素不是完整平衡析因设计，存在混杂",
+    "附件1没有独立重复实验",
+    "附件2是一次实验的7个时间点，不是独立重复",
+    "附件乙醇字段保留ml/min单位，结构化字段不自行判定为浓度或流量"
+  ]
+}

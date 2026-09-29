@@ -1,0 +1,722 @@
+{
+  "schema_version": "11.0",
+  "registry_kind": "semantic_plan_behavior_cases",
+  "scope": "manuscript_minimum_consistency_and_negative_activation",
+  "cases": [
+    {
+      "id": "BEH.V11.MAN.TYPO.LOCAL.MINIMAL",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q1", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A2", "dependencies": ["q1"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-typo",
+        "request": "修正 paper.tex 中的一个错别字。",
+        "steps": [
+          {
+            "id": "fix-typo",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "local_edit",
+            "component_id": "paper",
+            "events": ["local_manuscript_edit"],
+            "facts": {"change_class": "typo", "completion_scope": "changed_scope_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["paper.tex"], "facets": ["orthography"], "claim_refs": []}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["fix-typo"], "route_ids": ["RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.LOCAL.DEPENDENCIES", "MAN.LOCAL.NO_FULL_AUDIT", "MAN.LOCAL.SCOPE"], "events": ["local_manuscript_edit"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT", "RT.MANUSCRIPT.DRAFT"], "rule_ids": ["MAN.LOCAL.REOPEN_A3"], "rule_prefixes": ["MAN.CONTENT.", "MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "manuscript_write", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation"], "component_ids": ["data-main", "q1"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["fix-typo"], "route_ids_by_step": {"fix-typo": "RT.MANUSCRIPT.LOCAL"}, "modes_by_step": {"fix-typo": "mutate"}, "tiers_by_step": {"fix-typo": "G1_WORKING"}, "actions_by_step": {"fix-typo": "local_edit"}, "component_ids_by_step": {"fix-typo": ["paper"]}, "events_by_step": {"fix-typo": ["local_manuscript_edit"]}, "normalized_legacy_events_by_step": {"fix-typo": []}, "change_sets_by_step": {"fix-typo": {"paths": ["paper.tex"], "facets": ["orthography"], "claim_refs": []}}, "depends_on_by_step": {"fix-typo": []}, "recovery_by_step": {"fix-typo": "not_applicable"}, "status_by_step": {"fix-typo": "resolved"}, "manuscript_closures_by_step": {"fix-typo": "typo"}},
+        "budgets": {"max_total_rules": 12, "max_rules_by_step": {"fix-typo": 12}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 100000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.LOCAL.SUBSTANTIVE.CLOSURE",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q1", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A2", "dependencies": ["q1"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-local-substantive",
+        "request": "改清楚第二节的一处主张及其解释，但不要重跑模型或全文审计。",
+        "steps": [
+          {
+            "id": "revise-claim",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "local_edit",
+            "component_id": "paper",
+            "events": ["local_manuscript_edit", "manuscript_write"],
+            "facts": {"change_class": "local_substantive", "completion_scope": "changed_scope_and_direct_dependencies_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["paper.tex"], "facets": ["claim", "explanation"], "claim_refs": ["claim:q2:objective"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["revise-claim"], "route_ids": ["RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP", "MAN.LOCAL.DEPENDENCIES", "MAN.LOCAL.NO_FULL_AUDIT", "MAN.LOCAL.SCOPE"], "events": ["local_manuscript_edit", "manuscript_write"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT", "RT.MODEL.IMPLEMENT"], "rule_ids": ["MAN.LOCAL.REOPEN_A3"], "rule_prefixes": ["MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution", "model_implementation", "numerical_verification"], "component_ids": ["data-main", "q1"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["revise-claim"], "route_ids_by_step": {"revise-claim": "RT.MANUSCRIPT.LOCAL"}, "modes_by_step": {"revise-claim": "mutate"}, "tiers_by_step": {"revise-claim": "G1_WORKING"}, "actions_by_step": {"revise-claim": "local_edit"}, "component_ids_by_step": {"revise-claim": ["paper"]}, "events_by_step": {"revise-claim": ["local_manuscript_edit", "manuscript_write"]}, "normalized_legacy_events_by_step": {"revise-claim": []}, "change_sets_by_step": {"revise-claim": {"paths": ["paper.tex"], "facets": ["claim", "explanation"], "claim_refs": ["claim:q2:objective"]}}, "depends_on_by_step": {"revise-claim": []}, "recovery_by_step": {"revise-claim": "not_applicable"}, "status_by_step": {"revise-claim": "resolved"}, "manuscript_closures_by_step": {"revise-claim": "local_substantive"}},
+        "budgets": {"max_total_rules": 16, "max_rules_by_step": {"revise-claim": 16}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 130000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.SECTION.METHOD.FACET_ADAPTER",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["sections/q2.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q2", "type": "question", "state": "S6", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A1", "dependencies": ["q2"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-section-method",
+        "request": "重写第二问的方法节，保持符号和解释链清楚。",
+        "steps": [
+          {
+            "id": "rewrite-method",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "rewrite",
+            "component_id": "paper",
+            "events": ["manuscript_write"],
+            "facts": {"change_class": "section_substantive", "completion_scope": "section_working_change_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["sections/q2.tex"], "facets": ["explanation", "method", "notation"], "claim_refs": ["claim:q2:method"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["rewrite-method"], "route_ids": ["RT.MANUSCRIPT.DRAFT"], "rule_ids": ["MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.METHOD", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP"], "events": ["manuscript_write"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT", "RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.CONTENT.RESULT", "MAN.CONTENT.LIMITATION"], "rule_prefixes": ["MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "MAN.LOCAL.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution"], "component_ids": ["data-main", "q2"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["rewrite-method"], "route_ids_by_step": {"rewrite-method": "RT.MANUSCRIPT.DRAFT"}, "modes_by_step": {"rewrite-method": "mutate"}, "tiers_by_step": {"rewrite-method": "G1_WORKING"}, "actions_by_step": {"rewrite-method": "rewrite"}, "component_ids_by_step": {"rewrite-method": ["paper"]}, "events_by_step": {"rewrite-method": ["manuscript_write"]}, "normalized_legacy_events_by_step": {"rewrite-method": ["method_section_write"]}, "change_sets_by_step": {"rewrite-method": {"paths": ["sections/q2.tex"], "facets": ["explanation", "method", "notation"], "claim_refs": ["claim:q2:method"]}}, "depends_on_by_step": {"rewrite-method": []}, "recovery_by_step": {"rewrite-method": "not_applicable"}, "status_by_step": {"rewrite-method": "resolved"}, "manuscript_closures_by_step": {"rewrite-method": "section_substantive"}},
+        "budgets": {"max_total_rules": 18, "max_rules_by_step": {"rewrite-method": 18}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 150000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.FULL.DRAFT.NO_AUDIT",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex", "sections/q1.tex", "sections/q2.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q1", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "q2", "type": "question", "state": "S6", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A1", "dependencies": ["q1", "q2"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-full-draft",
+        "request": "继续完成整篇工作稿，覆盖结构、方法、结果与结论，但不声称通过终审。",
+        "steps": [
+          {
+            "id": "write-full-draft",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "draft",
+            "component_id": "paper",
+            "events": ["manuscript_structure", "manuscript_write", "method_section_write", "result_section_write", "conclusion_write"],
+            "facts": {"change_class": "full_draft", "completion_scope": "working_draft_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["paper.tex", "sections/q1.tex", "sections/q2.tex"], "facets": ["conclusion", "method", "result", "structure"], "claim_refs": ["claim:q1:result", "claim:q2:result"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["write-full-draft"], "route_ids": ["RT.MANUSCRIPT.DRAFT"], "rule_ids": ["MAN.STRUCTURE.REQUIREMENTS", "MAN.STRUCTURE.TRACE", "MAN.CONTENT.METHOD", "MAN.CONTENT.RESULT", "MAN.CONTENT.LIMITATION", "MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP"], "events": ["manuscript_structure", "manuscript_write", "method_section_write", "result_section_write", "conclusion_write"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT"], "rule_ids": ["MAN.ACCEPT.GLOBAL", "MAN.ACCEPT.NO_PLACEHOLDER", "MAN.ACCEPT.RENDER"], "rule_prefixes": ["MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "MAN.LOCAL.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution"], "component_ids": ["data-main", "q1", "q2"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["write-full-draft"], "route_ids_by_step": {"write-full-draft": "RT.MANUSCRIPT.DRAFT"}, "modes_by_step": {"write-full-draft": "mutate"}, "tiers_by_step": {"write-full-draft": "G1_WORKING"}, "actions_by_step": {"write-full-draft": "draft"}, "component_ids_by_step": {"write-full-draft": ["paper"]}, "events_by_step": {"write-full-draft": ["manuscript_structure", "manuscript_write", "method_section_write", "result_section_write", "conclusion_write"]}, "normalized_legacy_events_by_step": {"write-full-draft": ["conclusion_write", "manuscript_structure", "method_section_write", "result_section_write"]}, "change_sets_by_step": {"write-full-draft": {"paths": ["paper.tex", "sections/q1.tex", "sections/q2.tex"], "facets": ["conclusion", "method", "result", "structure"], "claim_refs": ["claim:q1:result", "claim:q2:result"]}}, "depends_on_by_step": {"write-full-draft": []}, "recovery_by_step": {"write-full-draft": "not_applicable"}, "status_by_step": {"write-full-draft": "resolved"}, "manuscript_closures_by_step": {"write-full-draft": "full_draft"}},
+        "budgets": {"max_total_rules": 24, "max_rules_by_step": {"write-full-draft": 24}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 220000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.SECTION.CHECKPOINT.NA_GLOBAL",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["sections/q2.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q2", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A2", "dependencies": ["q2"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-section-checkpoint",
+        "request": "只检查第二问方法节是否达到章节检查点，不宣称全文完成。",
+        "steps": [
+          {
+            "id": "audit-method-section",
+            "tier": "G2_CHECKPOINT",
+            "mode": "project_readonly",
+            "object": "manuscript",
+            "action": "audit",
+            "component_id": "paper",
+            "events": ["manuscript_audit"],
+            "facts": {"change_class": "section_checkpoint", "completion_scope": "section_checkpoint_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["sections/q2.tex"], "facets": ["acceptance", "cross_reference", "explanation", "method", "notation"], "claim_refs": ["claim:q2:method"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["audit-method-section"], "route_ids": ["RT.MANUSCRIPT.AUDIT"], "rule_ids": ["MAN.ACCEPT.CROSSREF", "MAN.ACCEPT.GLOBAL", "MAN.ACCEPT.SECTION", "MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.LIMITATION", "MAN.CONTENT.METHOD", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP", "MAN.READER.NO_META", "MAN.READER.SCOPE", "MAN.STRUCTURE.NO_WORKLOG"], "events": ["manuscript_audit"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.DELIVERY.FINAL"], "rule_ids": ["MAN.ACCEPT.NO_PLACEHOLDER", "MAN.ACCEPT.RENDER", "MAN.READER.FRONT", "MAN.READER.FLOW", "MAN.READER.STANDALONE"], "rule_prefixes": ["MAN.PROFILE.", "MAN.LOCAL.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution"], "component_ids": ["data-main", "q2"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["audit-method-section"], "route_ids_by_step": {"audit-method-section": "RT.MANUSCRIPT.AUDIT"}, "modes_by_step": {"audit-method-section": "project_readonly"}, "tiers_by_step": {"audit-method-section": "G2_CHECKPOINT"}, "actions_by_step": {"audit-method-section": "audit"}, "component_ids_by_step": {"audit-method-section": ["paper"]}, "events_by_step": {"audit-method-section": ["manuscript_audit"]}, "normalized_legacy_events_by_step": {"audit-method-section": ["method_section_write"]}, "change_sets_by_step": {"audit-method-section": {"paths": ["sections/q2.tex"], "facets": ["acceptance", "cross_reference", "explanation", "method", "notation"], "claim_refs": ["claim:q2:method"]}}, "depends_on_by_step": {"audit-method-section": []}, "recovery_by_step": {"audit-method-section": "not_applicable"}, "status_by_step": {"audit-method-section": "resolved"}, "manuscript_closures_by_step": {"audit-method-section": "section_checkpoint"}},
+        "budgets": {"max_total_rules": 24, "max_rules_by_step": {"audit-method-section": 24}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 220000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.FULL.CHECKPOINT.G2",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex", "sections/q1.tex", "sections/q2.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q1", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "q2", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A2", "dependencies": ["q1", "q2"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-full-checkpoint",
+        "request": "做一次全文检查点审计，覆盖结构、方法、结果、结论和读者路径，但不发布。",
+        "steps": [
+          {
+            "id": "audit-full-draft",
+            "tier": "G2_CHECKPOINT",
+            "mode": "project_readonly",
+            "object": "manuscript",
+            "action": "final_audit",
+            "component_id": "paper",
+            "events": ["full_manuscript_audit", "manuscript_audit"],
+            "facts": {"change_class": "full_checkpoint", "completion_scope": "full_manuscript_checkpoint", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["paper.tex", "sections/q1.tex", "sections/q2.tex"], "facets": ["acceptance", "conclusion", "cross_reference", "method", "reader", "result", "structure"], "claim_refs": ["claim:q1:result", "claim:q2:result"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["audit-full-draft"], "route_ids": ["RT.MANUSCRIPT.AUDIT"], "rule_ids": ["MAN.ACCEPT.CROSSREF", "MAN.ACCEPT.GLOBAL", "MAN.ACCEPT.SECTION", "MAN.CONTENT.METHOD", "MAN.CONTENT.RESULT", "MAN.CONTENT.LIMITATION", "MAN.READER.FRONT", "MAN.READER.FLOW", "MAN.READER.NO_META", "MAN.READER.SCOPE", "MAN.READER.STANDALONE", "MAN.STRUCTURE.REQUIREMENTS", "MAN.STRUCTURE.RESPONSIBILITY", "MAN.STRUCTURE.DEPENDENCY"], "events": ["full_manuscript_audit", "manuscript_audit"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.DELIVERY.FINAL"], "rule_ids": ["MAN.ACCEPT.NO_PLACEHOLDER", "MAN.ACCEPT.RENDER"], "rule_prefixes": ["MAN.PROFILE.", "MAN.LOCAL.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution"], "component_ids": ["data-main", "q1", "q2"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["audit-full-draft"], "route_ids_by_step": {"audit-full-draft": "RT.MANUSCRIPT.AUDIT"}, "modes_by_step": {"audit-full-draft": "project_readonly"}, "tiers_by_step": {"audit-full-draft": "G2_CHECKPOINT"}, "actions_by_step": {"audit-full-draft": "final_audit"}, "component_ids_by_step": {"audit-full-draft": ["paper"]}, "events_by_step": {"audit-full-draft": ["full_manuscript_audit", "manuscript_audit"]}, "normalized_legacy_events_by_step": {"audit-full-draft": ["conclusion_write", "manuscript_structure", "method_section_write", "result_section_write"]}, "change_sets_by_step": {"audit-full-draft": {"paths": ["paper.tex", "sections/q1.tex", "sections/q2.tex"], "facets": ["acceptance", "conclusion", "cross_reference", "method", "reader", "result", "structure"], "claim_refs": ["claim:q1:result", "claim:q2:result"]}}, "depends_on_by_step": {"audit-full-draft": []}, "recovery_by_step": {"audit-full-draft": "not_applicable"}, "status_by_step": {"audit-full-draft": "resolved"}, "manuscript_closures_by_step": {"audit-full-draft": "full_checkpoint"}},
+        "budgets": {"max_total_rules": 32, "max_rules_by_step": {"audit-full-draft": 32}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 300000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.RELEASE.G3",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex", "sections/q1.tex", "sections/q2.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q1", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "q2", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A2", "dependencies": ["q1", "q2"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-release",
+        "request": "对论文做发布审计并推进发布候选。",
+        "steps": [
+          {
+            "id": "release-paper",
+            "tier": "G3_RELEASE",
+            "mode": "promote",
+            "object": "manuscript",
+            "action": "final_audit",
+            "component_id": "paper",
+            "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion"],
+            "facts": {"change_class": "release", "completion_scope": "release_candidate", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["paper.tex", "sections/q1.tex", "sections/q2.tex"], "facets": ["acceptance", "conclusion", "cross_reference", "method", "reader", "render", "result", "structure"], "claim_refs": ["claim:q1:result", "claim:q2:result"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["release-paper"], "route_ids": ["RT.MANUSCRIPT.AUDIT"], "rule_ids": ["MAN.ACCEPT.CROSSREF", "MAN.ACCEPT.GLOBAL", "MAN.ACCEPT.NO_PLACEHOLDER", "MAN.ACCEPT.RENDER", "MAN.ACCEPT.SECTION", "MAN.CONTENT.METHOD", "MAN.CONTENT.RESULT", "MAN.CONTENT.LIMITATION", "MAN.READER.FRONT", "MAN.READER.FLOW", "MAN.READER.STANDALONE", "MAN.STRUCTURE.REQUIREMENTS"], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.LOCAL", "RT.MANUSCRIPT.REOPEN"], "rule_ids": ["MAN.LOCAL.REOPEN_A3"], "rule_prefixes": ["MAN.PROFILE.", "MAN.LOCAL.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution"], "component_ids": ["data-main", "q1", "q2"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["release-paper"], "route_ids_by_step": {"release-paper": "RT.MANUSCRIPT.AUDIT"}, "modes_by_step": {"release-paper": "promote"}, "tiers_by_step": {"release-paper": "G3_RELEASE"}, "actions_by_step": {"release-paper": "final_audit"}, "component_ids_by_step": {"release-paper": ["paper"]}, "events_by_step": {"release-paper": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion"]}, "normalized_legacy_events_by_step": {"release-paper": ["conclusion_write", "manuscript_structure", "method_section_write", "result_section_write"]}, "change_sets_by_step": {"release-paper": {"paths": ["paper.tex", "sections/q1.tex", "sections/q2.tex"], "facets": ["acceptance", "conclusion", "cross_reference", "method", "reader", "render", "result", "structure"], "claim_refs": ["claim:q1:result", "claim:q2:result"]}}, "depends_on_by_step": {"release-paper": []}, "recovery_by_step": {"release-paper": "not_applicable"}, "status_by_step": {"release-paper": "resolved"}, "manuscript_closures_by_step": {"release-paper": "release"}},
+        "budgets": {"max_total_rules": 36, "max_rules_by_step": {"release-paper": 36}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 340000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.PROFILE.EXPLICIT.OPT_IN",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex"],
+        "components": [
+          {"id": "paper", "type": "artifact", "state": "A2", "dependencies": []}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-profile-local",
+        "request": "按我明确选中的写作画像润色这一段，不改变事实。",
+        "steps": [
+          {
+            "id": "apply-profile",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "local_edit",
+            "component_id": "paper",
+            "events": ["local_manuscript_edit", "writing_profile_apply"],
+            "facts": {"change_class": "profile_local", "completion_scope": "profiled_local_change_only", "profile_selected": true, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["paper.tex"], "facets": ["writing_profile"], "claim_refs": []}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["apply-profile"], "route_ids": ["RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.LOCAL.DEPENDENCIES", "MAN.LOCAL.NO_FULL_AUDIT", "MAN.LOCAL.SCOPE", "MAN.PROFILE.FORMAT", "MAN.PROFILE.OPT_IN", "MAN.PROFILE.TRUTH"], "events": ["local_manuscript_edit", "writing_profile_apply"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT"], "rule_ids": ["MAN.LOCAL.REOPEN_A3"], "rule_prefixes": ["MAN.CONTENT.", "MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "manuscript_write", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation"], "component_ids": [], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["apply-profile"], "route_ids_by_step": {"apply-profile": "RT.MANUSCRIPT.LOCAL"}, "modes_by_step": {"apply-profile": "mutate"}, "tiers_by_step": {"apply-profile": "G1_WORKING"}, "actions_by_step": {"apply-profile": "local_edit"}, "component_ids_by_step": {"apply-profile": ["paper"]}, "events_by_step": {"apply-profile": ["local_manuscript_edit", "writing_profile_apply"]}, "normalized_legacy_events_by_step": {"apply-profile": []}, "change_sets_by_step": {"apply-profile": {"paths": ["paper.tex"], "facets": ["writing_profile"], "claim_refs": []}}, "depends_on_by_step": {"apply-profile": []}, "recovery_by_step": {"apply-profile": "not_applicable"}, "status_by_step": {"apply-profile": "resolved"}, "manuscript_closures_by_step": {"apply-profile": "profile_local"}},
+        "budgets": {"max_total_rules": 16, "max_rules_by_step": {"apply-profile": 16}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 140000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.MIXED.CLOSE_S6.THEN_WRITE",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex", "sections/q1.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q1", "type": "question", "state": "S6", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A1", "dependencies": ["q1"]}
+        ],
+        "evidence": [
+          {"component_id": "q1", "level": "E1_IMPLEMENTATION"},
+          {"component_id": "q1", "level": "E2_NUMERICAL"},
+          {"component_id": "q1", "level": "E3_STRUCTURAL"},
+          {"component_id": "q1", "level": "E4_REALITY"}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-close-s6-then-write",
+        "request": "关闭第一问 S6 后继续写论文，不要让我再发一条推进指令。",
+        "steps": [
+          {
+            "id": "close-q1-s6",
+            "tier": "G2_CHECKPOINT",
+            "mode": "promote",
+            "object": "verification",
+            "action": "close_s6",
+            "component_id": "q1",
+            "events": ["s6_close"],
+            "facts": {},
+            "depends_on": [],
+            "change_set": {"paths": [], "facets": ["verification_state"], "claim_refs": ["claim:q1:s6-closed"]},
+            "state_effect": {"component_id": "q1", "from": "S6", "to": "S7"}
+          },
+          {
+            "id": "continue-paper",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "draft",
+            "component_id": "paper",
+            "events": ["manuscript_structure", "manuscript_write", "method_section_write", "result_section_write", "conclusion_write"],
+            "facts": {"change_class": "full_draft", "completion_scope": "working_draft_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": ["close-q1-s6"],
+            "change_set": {"paths": ["paper.tex", "sections/q1.tex"], "facets": ["conclusion", "method", "result", "structure"], "claim_refs": ["claim:q1:result"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["close-q1-s6", "continue-paper"], "route_ids": ["RT.VERIFY.S6.CLOSE", "RT.MANUSCRIPT.DRAFT"], "rule_ids": ["VER.S6.DUAL_AXIS", "MAN.CONTENT.METHOD", "MAN.CONTENT.RESULT", "MAN.CONTENT.LIMITATION", "MAN.STRUCTURE.REQUIREMENTS"], "events": ["s6_close", "manuscript_write"], "component_ids": ["q1", "paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.PROJECT.RESUME", "RT.MANUSCRIPT.AUDIT"], "rule_ids": ["MAN.ACCEPT.GLOBAL", "MAN.ACCEPT.NO_PLACEHOLDER", "MAN.ACCEPT.RENDER"], "rule_prefixes": ["MAN.PROFILE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.LOCAL.", "ART.", "REC."], "rule_prefixes_by_step": {"close-q1-s6": ["MAN."], "continue-paper": ["DATA.", "MOD.", "VER."]}, "events": ["s6_readiness", "implementation_verification", "numerical_verification", "numerical_comparison", "structural_verification", "reality_verification", "full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation"], "component_ids": ["data-main"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["close-q1-s6", "continue-paper"], "route_ids_by_step": {"close-q1-s6": "RT.VERIFY.S6.CLOSE", "continue-paper": "RT.MANUSCRIPT.DRAFT"}, "modes_by_step": {"close-q1-s6": "promote", "continue-paper": "mutate"}, "tiers_by_step": {"close-q1-s6": "G2_CHECKPOINT", "continue-paper": "G1_WORKING"}, "actions_by_step": {"close-q1-s6": "close_s6", "continue-paper": "draft"}, "component_ids_by_step": {"close-q1-s6": ["q1"], "continue-paper": ["paper"]}, "events_by_step": {"close-q1-s6": ["s6_close"], "continue-paper": ["manuscript_structure", "manuscript_write", "method_section_write", "result_section_write", "conclusion_write"]}, "normalized_legacy_events_by_step": {"continue-paper": ["conclusion_write", "manuscript_structure", "method_section_write", "result_section_write"]}, "change_sets_by_step": {"close-q1-s6": {"paths": [], "facets": ["verification_state"], "claim_refs": ["claim:q1:s6-closed"]}, "continue-paper": {"paths": ["paper.tex", "sections/q1.tex"], "facets": ["conclusion", "method", "result", "structure"], "claim_refs": ["claim:q1:result"]}}, "depends_on_by_step": {"close-q1-s6": [], "continue-paper": ["close-q1-s6"]}, "recovery_by_step": {"close-q1-s6": "not_applicable", "continue-paper": "not_applicable"}, "status_by_step": {"close-q1-s6": "resolved", "continue-paper": "resolved"}, "manuscript_closures_by_step": {"continue-paper": "full_draft"}},
+        "budgets": {"max_total_rules": 42, "max_rules_by_step": {"close-q1-s6": 12, "continue-paper": 24}, "max_context_refs": 4, "max_steps": 2, "max_output_bytes": 360000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.MULTI_FILE.ONE_CHANGESET",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex", "sections/q2.tex", "tables/q2-notes.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q2", "type": "question", "state": "S7", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A2", "dependencies": ["q2"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-multi-file",
+        "request": "一次性同步修改正文、第二问分节和其表注中的同一处结论引用。",
+        "steps": [
+          {
+            "id": "sync-cross-file-claim",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "local_edit",
+            "component_id": "paper",
+            "events": ["local_manuscript_edit", "manuscript_write"],
+            "facts": {"change_class": "multi_file_substantive", "completion_scope": "one_coherent_multi_file_change_set", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["paper.tex", "sections/q2.tex", "tables/q2-notes.tex"], "facets": ["claim", "cross_reference", "explanation"], "claim_refs": ["claim:q2:final"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["sync-cross-file-claim"], "route_ids": ["RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP", "MAN.LOCAL.DEPENDENCIES", "MAN.LOCAL.NO_FULL_AUDIT", "MAN.LOCAL.SCOPE"], "events": ["local_manuscript_edit", "manuscript_write"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT", "RT.MODEL.IMPLEMENT"], "rule_ids": ["MAN.LOCAL.REOPEN_A3"], "rule_prefixes": ["MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution", "model_implementation", "numerical_verification"], "component_ids": ["data-main", "q2"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["sync-cross-file-claim"], "route_ids_by_step": {"sync-cross-file-claim": "RT.MANUSCRIPT.LOCAL"}, "modes_by_step": {"sync-cross-file-claim": "mutate"}, "tiers_by_step": {"sync-cross-file-claim": "G1_WORKING"}, "actions_by_step": {"sync-cross-file-claim": "local_edit"}, "component_ids_by_step": {"sync-cross-file-claim": ["paper"]}, "events_by_step": {"sync-cross-file-claim": ["local_manuscript_edit", "manuscript_write"]}, "normalized_legacy_events_by_step": {"sync-cross-file-claim": []}, "change_sets_by_step": {"sync-cross-file-claim": {"paths": ["paper.tex", "sections/q2.tex", "tables/q2-notes.tex"], "facets": ["claim", "cross_reference", "explanation"], "claim_refs": ["claim:q2:final"]}}, "depends_on_by_step": {"sync-cross-file-claim": []}, "recovery_by_step": {"sync-cross-file-claim": "not_applicable"}, "status_by_step": {"sync-cross-file-claim": "resolved"}, "manuscript_closures_by_step": {"sync-cross-file-claim": "multi_file_substantive"}},
+        "budgets": {"max_total_rules": 16, "max_rules_by_step": {"sync-cross-file-claim": 16}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 150000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.PUBLISHED.REOPEN.NEW_REVISION",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex"],
+        "components": [
+          {"id": "paper", "type": "artifact", "state": "A3", "dependencies": []}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-published-reopen",
+        "request": "在不覆盖已发布快照的前提下打开一个新论文修订。",
+        "steps": [
+          {
+            "id": "open-new-revision",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "reopen_published",
+            "component_id": "paper",
+            "events": ["published_manuscript_change"],
+            "facts": {"change_class": "published_revision_edit", "completion_scope": "new_revision_opened_only", "profile_selected": false, "published_revision": true, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["paper.tex"], "facets": [], "claim_refs": []}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["open-new-revision"], "route_ids": ["RT.MANUSCRIPT.REOPEN"], "rule_ids": ["MAN.LOCAL.REOPEN_A3"], "events": ["published_manuscript_change"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.LOCAL", "RT.MANUSCRIPT.AUDIT"], "rule_ids": ["MAN.LOCAL.SCOPE", "MAN.LOCAL.DEPENDENCIES", "MAN.LOCAL.NO_FULL_AUDIT"], "rule_prefixes": ["MAN.CONTENT.", "MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["local_manuscript_edit", "full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "manuscript_write", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation"], "component_ids": [], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["open-new-revision"], "route_ids_by_step": {"open-new-revision": "RT.MANUSCRIPT.REOPEN"}, "modes_by_step": {"open-new-revision": "mutate"}, "tiers_by_step": {"open-new-revision": "G1_WORKING"}, "actions_by_step": {"open-new-revision": "reopen_published"}, "component_ids_by_step": {"open-new-revision": ["paper"]}, "events_by_step": {"open-new-revision": ["published_manuscript_change"]}, "normalized_legacy_events_by_step": {"open-new-revision": []}, "change_sets_by_step": {"open-new-revision": {"paths": ["paper.tex"], "facets": [], "claim_refs": []}}, "depends_on_by_step": {"open-new-revision": []}, "recovery_by_step": {"open-new-revision": "not_applicable"}, "status_by_step": {"open-new-revision": "resolved"}, "manuscript_closures_by_step": {"open-new-revision": "published_revision_edit"}},
+        "budgets": {"max_total_rules": 10, "max_rules_by_step": {"open-new-revision": 10}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 100000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.SECTION.RESULT.FACET_ADAPTER",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["sections/results.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q2", "type": "question", "state": "S6", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A1", "dependencies": ["q2"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-section-result",
+        "request": "重写结果节，只激活结果身份与通用论文内容规则。",
+        "steps": [
+          {
+            "id": "rewrite-result",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "rewrite",
+            "component_id": "paper",
+            "events": ["manuscript_write"],
+            "facts": {"change_class": "section_substantive", "completion_scope": "section_working_change_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["sections/results.tex"], "facets": ["explanation", "notation", "result"], "claim_refs": ["claim:q2:result"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["rewrite-result"], "route_ids": ["RT.MANUSCRIPT.DRAFT"], "rule_ids": ["MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP", "MAN.CONTENT.RESULT"], "events": ["manuscript_write"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT", "RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.CONTENT.METHOD", "MAN.CONTENT.LIMITATION"], "rule_prefixes": ["MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "MAN.LOCAL.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution"], "component_ids": ["data-main", "q2"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["rewrite-result"], "route_ids_by_step": {"rewrite-result": "RT.MANUSCRIPT.DRAFT"}, "modes_by_step": {"rewrite-result": "mutate"}, "tiers_by_step": {"rewrite-result": "G1_WORKING"}, "actions_by_step": {"rewrite-result": "rewrite"}, "component_ids_by_step": {"rewrite-result": ["paper"]}, "events_by_step": {"rewrite-result": ["manuscript_write"]}, "normalized_legacy_events_by_step": {"rewrite-result": ["result_section_write"]}, "change_sets_by_step": {"rewrite-result": {"paths": ["sections/results.tex"], "facets": ["explanation", "notation", "result"], "claim_refs": ["claim:q2:result"]}}, "depends_on_by_step": {"rewrite-result": []}, "recovery_by_step": {"rewrite-result": "not_applicable"}, "status_by_step": {"rewrite-result": "resolved"}, "manuscript_closures_by_step": {"rewrite-result": "section_substantive"}},
+        "budgets": {"max_total_rules": 18, "max_rules_by_step": {"rewrite-result": 18}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 150000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.SECTION.CONCLUSION.FACET_ADAPTER",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["sections/conclusion.tex"],
+        "components": [
+          {"id": "data-main", "type": "shared_data", "state": "D3", "dependencies": []},
+          {"id": "q2", "type": "question", "state": "S6", "dependencies": ["data-main"]},
+          {"id": "paper", "type": "artifact", "state": "A1", "dependencies": ["q2"]}
+        ]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-section-conclusion",
+        "request": "重写结论节，只激活局限边界与通用论文内容规则。",
+        "steps": [
+          {
+            "id": "rewrite-conclusion",
+            "tier": "G1_WORKING",
+            "mode": "mutate",
+            "object": "manuscript",
+            "action": "rewrite",
+            "component_id": "paper",
+            "events": ["manuscript_write"],
+            "facts": {"change_class": "section_substantive", "completion_scope": "section_working_change_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": [],
+            "change_set": {"paths": ["sections/conclusion.tex"], "facets": ["conclusion", "explanation", "notation"], "claim_refs": ["claim:q2:conclusion"]}
+          }
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["rewrite-conclusion"], "route_ids": ["RT.MANUSCRIPT.DRAFT"], "rule_ids": ["MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.LIMITATION", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP"], "events": ["manuscript_write"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT", "RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.CONTENT.METHOD", "MAN.CONTENT.RESULT"], "rule_prefixes": ["MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "MAN.LOCAL.", "ART.", "DATA.", "MOD.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment", "artifact_register", "artifact_refresh", "before_file_creation", "model_execution"], "component_ids": ["data-main", "q2"], "recovery_values": ["R0", "R1", "R2"], "context_refs": ["references/recovery-method-notes.md", "references/visual-method-notes.md#audit"]},
+        "exact": {"step_ids": ["rewrite-conclusion"], "route_ids_by_step": {"rewrite-conclusion": "RT.MANUSCRIPT.DRAFT"}, "modes_by_step": {"rewrite-conclusion": "mutate"}, "tiers_by_step": {"rewrite-conclusion": "G1_WORKING"}, "actions_by_step": {"rewrite-conclusion": "rewrite"}, "component_ids_by_step": {"rewrite-conclusion": ["paper"]}, "events_by_step": {"rewrite-conclusion": ["manuscript_write"]}, "normalized_legacy_events_by_step": {"rewrite-conclusion": ["conclusion_write"]}, "change_sets_by_step": {"rewrite-conclusion": {"paths": ["sections/conclusion.tex"], "facets": ["conclusion", "explanation", "notation"], "claim_refs": ["claim:q2:conclusion"]}}, "depends_on_by_step": {"rewrite-conclusion": []}, "recovery_by_step": {"rewrite-conclusion": "not_applicable"}, "status_by_step": {"rewrite-conclusion": "resolved"}, "manuscript_closures_by_step": {"rewrite-conclusion": "section_substantive"}},
+        "budgets": {"max_total_rules": 18, "max_rules_by_step": {"rewrite-conclusion": 18}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 150000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.TYPO.FIX_ACTION",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex"],
+        "components": [{"id": "paper", "type": "artifact", "state": "A2", "dependencies": []}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-fix-typo-action",
+        "request": "修正 paper.tex 中的一个错别字，不扩大修改范围。",
+        "steps": [{
+          "id": "fix-typo-action", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "manuscript", "action": "fix_typo", "component_id": "paper",
+          "events": ["local_manuscript_edit"],
+          "facts": {"change_class": "typo", "completion_scope": "changed_scope_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+          "depends_on": [],
+          "change_set": {"paths": ["paper.tex"], "facets": ["orthography"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["fix-typo-action"], "route_ids": ["RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.LOCAL.DEPENDENCIES", "MAN.LOCAL.NO_FULL_AUDIT", "MAN.LOCAL.SCOPE"], "events": ["local_manuscript_edit"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.AUDIT"], "rule_prefixes": ["MAN.CONTENT.", "MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "ART.", "REC."], "events": ["manuscript_write", "manuscript_audit", "writing_profile_apply", "recovery_assessment"], "component_ids": [], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["fix-typo-action"], "route_ids_by_step": {"fix-typo-action": "RT.MANUSCRIPT.LOCAL"}, "modes_by_step": {"fix-typo-action": "mutate"}, "tiers_by_step": {"fix-typo-action": "G1_WORKING"}, "actions_by_step": {"fix-typo-action": "fix_typo"}, "component_ids_by_step": {"fix-typo-action": ["paper"]}, "events_by_step": {"fix-typo-action": ["local_manuscript_edit"]}, "normalized_legacy_events_by_step": {"fix-typo-action": []}, "change_sets_by_step": {"fix-typo-action": {"paths": ["paper.tex"], "facets": ["orthography"], "claim_refs": []}}, "depends_on_by_step": {"fix-typo-action": []}, "recovery_by_step": {"fix-typo-action": "not_applicable"}, "status_by_step": {"fix-typo-action": "resolved"}, "manuscript_closures_by_step": {"fix-typo-action": "typo"}},
+        "budgets": {"max_total_rules": 12, "max_rules_by_step": {"fix-typo-action": 12}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 100000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.POLISH.PARAGRAPH.NON_SEMANTIC",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["sections/introduction.tex"],
+        "components": [{"id": "paper", "type": "artifact", "state": "A1", "dependencies": []}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-polish-paragraph",
+        "request": "只润色引言中的一个段落，不改变主张、数字或引用。",
+        "steps": [{
+          "id": "polish-paragraph", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "manuscript", "action": "polish_paragraph", "component_id": "paper",
+          "events": ["local_manuscript_edit"],
+          "facts": {"change_class": "paragraph_polish", "completion_scope": "changed_paragraph_wording_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+          "depends_on": [],
+          "change_set": {"paths": ["sections/introduction.tex"], "facets": ["wording"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["polish-paragraph"], "route_ids": ["RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.LOCAL.DEPENDENCIES", "MAN.LOCAL.NO_FULL_AUDIT", "MAN.LOCAL.SCOPE"], "events": ["local_manuscript_edit"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.AUDIT"], "rule_prefixes": ["MAN.CONTENT.", "MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "ART.", "REC."], "events": ["manuscript_write", "manuscript_audit", "writing_profile_apply", "recovery_assessment"], "component_ids": [], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["polish-paragraph"], "route_ids_by_step": {"polish-paragraph": "RT.MANUSCRIPT.LOCAL"}, "modes_by_step": {"polish-paragraph": "mutate"}, "tiers_by_step": {"polish-paragraph": "G1_WORKING"}, "actions_by_step": {"polish-paragraph": "polish_paragraph"}, "component_ids_by_step": {"polish-paragraph": ["paper"]}, "events_by_step": {"polish-paragraph": ["local_manuscript_edit"]}, "normalized_legacy_events_by_step": {"polish-paragraph": []}, "change_sets_by_step": {"polish-paragraph": {"paths": ["sections/introduction.tex"], "facets": ["wording"], "claim_refs": []}}, "depends_on_by_step": {"polish-paragraph": []}, "recovery_by_step": {"polish-paragraph": "not_applicable"}, "status_by_step": {"polish-paragraph": "resolved"}, "manuscript_closures_by_step": {"polish-paragraph": "paragraph_polish"}},
+        "budgets": {"max_total_rules": 12, "max_rules_by_step": {"polish-paragraph": 12}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 100000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.STRUCTURE.ONLY",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex", "sections/introduction.tex"],
+        "components": [{"id": "paper", "type": "artifact", "state": "A1", "dependencies": []}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-structure-only",
+        "request": "只调整引言结构与段落顺序，不改方法、结果或结论内容。",
+        "steps": [{
+          "id": "structure-introduction", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "manuscript", "action": "structure", "component_id": "paper",
+          "events": ["manuscript_structure"],
+          "facts": {"change_class": "structure_only", "completion_scope": "structure_working_change_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+          "depends_on": [],
+          "change_set": {"paths": ["paper.tex", "sections/introduction.tex"], "facets": ["structure"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["structure-introduction"], "route_ids": ["RT.MANUSCRIPT.DRAFT"], "rule_ids": ["MAN.STRUCTURE.DEPENDENCY", "MAN.STRUCTURE.NO_WORKLOG", "MAN.STRUCTURE.REQUIREMENTS", "MAN.STRUCTURE.RESPONSIBILITY", "MAN.STRUCTURE.TRACE"], "events": ["manuscript_structure"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT", "RT.MANUSCRIPT.LOCAL"], "rule_prefixes": ["MAN.CONTENT.", "MAN.READER.", "MAN.ACCEPT.", "MAN.PROFILE.", "MAN.LOCAL.", "ART.", "REC.", "VER."], "events": ["manuscript_write", "method_section_write", "result_section_write", "conclusion_write", "manuscript_audit", "writing_profile_apply", "recovery_assessment"], "component_ids": [], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["structure-introduction"], "route_ids_by_step": {"structure-introduction": "RT.MANUSCRIPT.DRAFT"}, "modes_by_step": {"structure-introduction": "mutate"}, "tiers_by_step": {"structure-introduction": "G1_WORKING"}, "actions_by_step": {"structure-introduction": "structure"}, "component_ids_by_step": {"structure-introduction": ["paper"]}, "events_by_step": {"structure-introduction": ["manuscript_structure"]}, "normalized_legacy_events_by_step": {"structure-introduction": ["manuscript_structure"]}, "change_sets_by_step": {"structure-introduction": {"paths": ["paper.tex", "sections/introduction.tex"], "facets": ["structure"], "claim_refs": []}}, "depends_on_by_step": {"structure-introduction": []}, "recovery_by_step": {"structure-introduction": "not_applicable"}, "status_by_step": {"structure-introduction": "resolved"}, "manuscript_closures_by_step": {"structure-introduction": "structure_only"}},
+        "budgets": {"max_total_rules": 16, "max_rules_by_step": {"structure-introduction": 16}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 130000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.RENDER.ACTION",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex", "paper.pdf"],
+        "components": [{"id": "paper", "type": "artifact", "state": "A2", "dependencies": []}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-render-action",
+        "request": "从现有论文源文件渲染工作 PDF，不声明通过版面验收。",
+        "steps": [{
+          "id": "render-paper", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "manuscript", "action": "render", "component_id": "paper",
+          "events": ["visual_render"],
+          "facts": {"change_class": "render_output", "completion_scope": "render_attempt_and_output_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+          "depends_on": [],
+          "change_set": {"paths": ["paper.tex", "paper.pdf"], "facets": ["render"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["render-paper"], "route_ids": ["RT.MANUSCRIPT.RENDER"], "rule_ids": ["VIS.LAYOUT.LABELS", "VIS.LAYOUT.LEGIBILITY", "VIS.LAYOUT.FONTS", "VIS.LAYOUT.PAGINATION"], "events": ["visual_render"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.AUDIT"], "rule_prefixes": ["MAN.", "REC."], "events": ["manuscript_write", "manuscript_audit", "manuscript_promotion", "recovery_assessment"], "component_ids": [], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["render-paper"], "route_ids_by_step": {"render-paper": "RT.MANUSCRIPT.RENDER"}, "modes_by_step": {"render-paper": "mutate"}, "tiers_by_step": {"render-paper": "G1_WORKING"}, "actions_by_step": {"render-paper": "render"}, "component_ids_by_step": {"render-paper": ["paper"]}, "events_by_step": {"render-paper": ["visual_render"]}, "normalized_legacy_events_by_step": {"render-paper": []}, "change_sets_by_step": {"render-paper": {"paths": ["paper.tex", "paper.pdf"], "facets": ["render"], "claim_refs": []}}, "depends_on_by_step": {"render-paper": []}, "recovery_by_step": {"render-paper": "not_applicable"}, "status_by_step": {"render-paper": "resolved"}, "manuscript_closures_by_step": {"render-paper": "render_output"}},
+        "budgets": {"max_total_rules": 16, "max_rules_by_step": {"render-paper": 16}, "max_context_refs": 3, "max_steps": 1, "max_output_bytes": 150000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.TYPESET.ACTION",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex", "paper.pdf"],
+        "components": [{"id": "paper", "type": "artifact", "state": "A2", "dependencies": []}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-typeset-action",
+        "request": "排版现有论文并生成工作 PDF，不执行全文审计。",
+        "steps": [{
+          "id": "typeset-paper", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "manuscript", "action": "typeset", "component_id": "paper",
+          "events": ["visual_render"],
+          "facts": {"change_class": "render_output", "completion_scope": "render_attempt_and_output_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+          "depends_on": [],
+          "change_set": {"paths": ["paper.tex", "paper.pdf"], "facets": ["render"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["typeset-paper"], "route_ids": ["RT.MANUSCRIPT.RENDER"], "rule_ids": ["VIS.LAYOUT.LABELS", "VIS.LAYOUT.LEGIBILITY", "VIS.LAYOUT.FONTS", "VIS.LAYOUT.PAGINATION"], "events": ["visual_render"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.AUDIT"], "rule_prefixes": ["MAN.", "REC."], "events": ["manuscript_write", "manuscript_audit", "manuscript_promotion", "recovery_assessment"], "component_ids": [], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["typeset-paper"], "route_ids_by_step": {"typeset-paper": "RT.MANUSCRIPT.RENDER"}, "modes_by_step": {"typeset-paper": "mutate"}, "tiers_by_step": {"typeset-paper": "G1_WORKING"}, "actions_by_step": {"typeset-paper": "typeset"}, "component_ids_by_step": {"typeset-paper": ["paper"]}, "events_by_step": {"typeset-paper": ["visual_render"]}, "normalized_legacy_events_by_step": {"typeset-paper": []}, "change_sets_by_step": {"typeset-paper": {"paths": ["paper.tex", "paper.pdf"], "facets": ["render"], "claim_refs": []}}, "depends_on_by_step": {"typeset-paper": []}, "recovery_by_step": {"typeset-paper": "not_applicable"}, "status_by_step": {"typeset-paper": "resolved"}, "manuscript_closures_by_step": {"typeset-paper": "render_output"}},
+        "budgets": {"max_total_rules": 16, "max_rules_by_step": {"typeset-paper": 16}, "max_context_refs": 3, "max_steps": 1, "max_output_bytes": 150000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.LAYOUT_CHECK.ACTION",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.pdf"],
+        "components": [{"id": "paper", "type": "artifact", "state": "A2", "dependencies": []}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-layout-check-action",
+        "request": "只检查现有 PDF 的字体、分页、图注与可读性，不修改论文。",
+        "steps": [{
+          "id": "check-layout", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "manuscript", "action": "layout_check", "component_id": "paper",
+          "events": ["visual_audit"],
+          "facts": {"change_class": "layout_check", "completion_scope": "declared_layout_scope_checked_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+          "depends_on": [],
+          "change_set": {"paths": ["paper.pdf"], "facets": ["layout"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["check-layout"], "route_ids": ["RT.MANUSCRIPT.RENDER"], "rule_ids": ["VIS.LAYOUT.LABELS", "VIS.LAYOUT.LEGIBILITY", "VIS.LAYOUT.COLOR", "VIS.LAYOUT.CAPTION", "VIS.LAYOUT.FONTS", "VIS.LAYOUT.PAGINATION", "VIS.LAYOUT.PLACEMENT"], "events": ["visual_audit"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.AUDIT"], "rule_prefixes": ["MAN.", "REC."], "events": ["manuscript_write", "manuscript_audit", "manuscript_promotion", "recovery_assessment"], "component_ids": [], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["check-layout"], "route_ids_by_step": {"check-layout": "RT.MANUSCRIPT.RENDER"}, "modes_by_step": {"check-layout": "project_readonly"}, "tiers_by_step": {"check-layout": "G0_ADVISORY"}, "actions_by_step": {"check-layout": "layout_check"}, "component_ids_by_step": {"check-layout": ["paper"]}, "events_by_step": {"check-layout": ["visual_audit"]}, "normalized_legacy_events_by_step": {"check-layout": []}, "change_sets_by_step": {"check-layout": {"paths": ["paper.pdf"], "facets": ["layout"], "claim_refs": []}}, "depends_on_by_step": {"check-layout": []}, "recovery_by_step": {"check-layout": "not_applicable"}, "status_by_step": {"check-layout": "resolved"}, "manuscript_closures_by_step": {"check-layout": "layout_check"}},
+        "budgets": {"max_total_rules": 18, "max_rules_by_step": {"check-layout": 18}, "max_context_refs": 3, "max_steps": 1, "max_output_bytes": 170000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.SECTION.CHECKPOINT.RESULT_NOT_METHOD",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["sections/results.tex"],
+        "components": [{"id": "paper", "type": "artifact", "state": "A2", "dependencies": []}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-result-section-checkpoint",
+        "request": "只检查结果节是否达到章节检查点，不把方法规则当成固定门。",
+        "steps": [{
+          "id": "audit-result-section", "tier": "G2_CHECKPOINT", "mode": "project_readonly",
+          "object": "manuscript", "action": "audit", "component_id": "paper",
+          "events": ["manuscript_audit"],
+          "facts": {"change_class": "section_checkpoint", "completion_scope": "section_checkpoint_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+          "depends_on": [],
+          "change_set": {"paths": ["sections/results.tex"], "facets": ["acceptance", "cross_reference", "explanation", "notation", "result"], "claim_refs": ["claim:q2:result"]}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["audit-result-section"], "route_ids": ["RT.MANUSCRIPT.AUDIT"], "rule_ids": ["MAN.ACCEPT.CROSSREF", "MAN.ACCEPT.GLOBAL", "MAN.ACCEPT.SECTION", "MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.LIMITATION", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP", "MAN.CONTENT.RESULT", "MAN.READER.NO_META", "MAN.READER.SCOPE", "MAN.STRUCTURE.NO_WORKLOG"], "events": ["manuscript_audit"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.DRAFT", "RT.DELIVERY.FINAL"], "rule_ids": ["MAN.CONTENT.METHOD"], "rule_prefixes": ["MAN.PROFILE.", "MAN.LOCAL.", "ART.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_promotion", "writing_profile_apply", "recovery_assessment"], "component_ids": [], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["audit-result-section"], "route_ids_by_step": {"audit-result-section": "RT.MANUSCRIPT.AUDIT"}, "modes_by_step": {"audit-result-section": "project_readonly"}, "tiers_by_step": {"audit-result-section": "G2_CHECKPOINT"}, "actions_by_step": {"audit-result-section": "audit"}, "component_ids_by_step": {"audit-result-section": ["paper"]}, "events_by_step": {"audit-result-section": ["manuscript_audit"]}, "normalized_legacy_events_by_step": {"audit-result-section": ["result_section_write"]}, "change_sets_by_step": {"audit-result-section": {"paths": ["sections/results.tex"], "facets": ["acceptance", "cross_reference", "explanation", "notation", "result"], "claim_refs": ["claim:q2:result"]}}, "depends_on_by_step": {"audit-result-section": []}, "recovery_by_step": {"audit-result-section": "not_applicable"}, "status_by_step": {"audit-result-section": "resolved"}, "manuscript_closures_by_step": {"audit-result-section": "section_checkpoint"}},
+        "budgets": {"max_total_rules": 24, "max_rules_by_step": {"audit-result-section": 24}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 220000}
+      }
+    },
+    {
+      "id": "BEH.V11.MAN.LOCAL.SUBSTANTIVE.PROFILE.COMPOSED",
+      "kind": "semantic_plan",
+      "fixture": {
+        "files": ["paper.tex"],
+        "components": [{"id": "paper", "type": "artifact", "state": "A2", "dependencies": []}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "plan-man-local-substantive-profile-composed",
+        "request": "修改一处主张及解释，并同时应用我已经选择的写作 profile。",
+        "steps": [{
+          "id": "revise-and-profile", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "manuscript", "action": "local_edit", "component_id": "paper",
+          "events": ["local_manuscript_edit", "manuscript_write", "writing_profile_apply"],
+          "facts": {"change_class": "local_substantive", "completion_scope": "changed_scope_and_direct_dependencies_only", "profile_selected": true, "published_revision": false, "existing_paths_only": true},
+          "depends_on": [],
+          "change_set": {"paths": ["paper.tex"], "facets": ["claim", "explanation", "writing_profile"], "claim_refs": ["claim:q2:objective"]}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["revise-and-profile"], "route_ids": ["RT.MANUSCRIPT.LOCAL"], "rule_ids": ["MAN.CONTENT.CLAIM_EVIDENCE", "MAN.CONTENT.EXPLANATION_TRACE", "MAN.CONTENT.NOTATION", "MAN.CONTENT.NO_DUMP", "MAN.LOCAL.DEPENDENCIES", "MAN.LOCAL.NO_FULL_AUDIT", "MAN.LOCAL.SCOPE", "MAN.PROFILE.FORMAT", "MAN.PROFILE.OPT_IN", "MAN.PROFILE.TRUTH"], "events": ["local_manuscript_edit", "manuscript_write", "writing_profile_apply"], "component_ids": ["paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT", "RT.MODEL.IMPLEMENT"], "rule_prefixes": ["MAN.STRUCTURE.", "MAN.READER.", "MAN.ACCEPT.", "ART.", "REC.", "VER."], "events": ["full_manuscript_audit", "manuscript_audit", "manuscript_promotion", "recovery_assessment"], "component_ids": [], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"], "context_refs": ["references/recovery-method-notes.md"]},
+        "exact": {"step_ids": ["revise-and-profile"], "route_ids_by_step": {"revise-and-profile": "RT.MANUSCRIPT.LOCAL"}, "modes_by_step": {"revise-and-profile": "mutate"}, "tiers_by_step": {"revise-and-profile": "G1_WORKING"}, "actions_by_step": {"revise-and-profile": "local_edit"}, "component_ids_by_step": {"revise-and-profile": ["paper"]}, "events_by_step": {"revise-and-profile": ["local_manuscript_edit", "manuscript_write", "writing_profile_apply"]}, "normalized_legacy_events_by_step": {"revise-and-profile": []}, "change_sets_by_step": {"revise-and-profile": {"paths": ["paper.tex"], "facets": ["claim", "explanation", "writing_profile"], "claim_refs": ["claim:q2:objective"]}}, "depends_on_by_step": {"revise-and-profile": []}, "recovery_by_step": {"revise-and-profile": "not_applicable"}, "status_by_step": {"revise-and-profile": "resolved"}},
+        "budgets": {"max_total_rules": 22, "max_rules_by_step": {"revise-and-profile": 22}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 180000}
+      }
+    }
+  ]
+}

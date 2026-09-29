@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.1",
+  "status": "working_visuals",
+  "generation_command": "python3 -B src/figures/build_explanatory_figures.py --project-root . --output-dir docs/figures",
+  "sources": [
+    {
+      "path": "output/q1/s5_results.json",
+      "sha256": "fb674e2b4f3cb425fff1de79ee461b8c24112fc6e499e9a8fd54ab61db87374f",
+      "schema": "project frozen JSON result",
+      "units": "risk as probability; ASN and absolute gap in inspected items; N as items",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q1/s5_finite_closure.json",
+      "sha256": "28bac9784cc8ab21d4e5455d2ee66909d901b18d85905699deb22f3265e6c2bc",
+      "schema": "project frozen JSON result",
+      "units": "risk and relative gap as proportions; ASN and absolute gap in inspected items",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q1/s5_large_batch_extension.json",
+      "sha256": "28a794aa079c2f22036ecba1f1e483f3eba90b05995d6b89173ab4c7a1e9991b",
+      "schema": "project frozen JSON result",
+      "units": "risk and average inspection ratio as exact fractions; N as items",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q1/s6_large_batch_verification.json",
+      "sha256": "ce914398f097dbab70e32bc69c83d1819a30fee7844ac7daa634b4bd3d0adcf6",
+      "schema": "project frozen JSON result",
+      "units": "independent exact-fraction verification of large-batch thresholds and metrics",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q1/s7_quality_state_evaluation.json",
+      "sha256": "4dffd9d8a689f792b7912d2856e4c8862450e7777cf46474cee61b2df6ba1cb8",
+      "schema": "project post-solution evaluation JSON",
+      "units": "exact average inspected items and ratios over hypothetical within-batch defect counts; N as items",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q1/s7_quality_state_verification.json",
+      "sha256": "50edb5eb61da5e6809be4fa95aeac61eddf54c3b2ff4b829ccc47564120ec32d",
+      "schema": "project post-solution evaluation JSON",
+      "units": "independent exact-fraction verification of all plotted Q1 quality-state points",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q2/s5_results.json",
+      "sha256": "28c003c3dfc6531f3f14f074fa192bd8cda46f302113657ed731971d740d5190",
+      "schema": "project frozen JSON result",
+      "units": "profit in yuan per completed order; policy as four binary decisions",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q3/s5_results.json",
+      "sha256": "4c9360bc7ad14b5557917c8b487da1e8a631b2f8a71710e54533819205ed1642",
+      "schema": "project frozen JSON result",
+      "units": "defect rate as proportion; profit change in yuan per completed order",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q4/s5_intervals.json",
+      "sha256": "a5b9731ffbbbe9cbf9d167496b3bf4f0df97cde30a31becf25d79c481310971d",
+      "schema": "project frozen JSON result",
+      "units": "L, Q and U as exact defect-rate fractions",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q4/s5_q2_summary.json",
+      "sha256": "31cb6ac2e22f792cabc0e9cd8a521618ce7d0ce509406e528dcbc89dad4e7e37",
+      "schema": "project frozen JSON result",
+      "units": "strategy switches as labeled scenario counts",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    },
+    {
+      "path": "output/q4/s5_q3_summary.json",
+      "sha256": "3a6a06df0a57294283cff08a3172a942517be3605d84b6f9704d9cdc5fd6fdc7",
+      "schema": "project frozen JSON result",
+      "units": "strategy switches as labeled scenario counts",
+      "time_scope": "not_applicable_competition_scenario",
+      "space_scope": "not_applicable_competition_scenario"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/figures/q1_sequential_state.png",
+      "sha256": "3eedb18cd2f0be62d0998ef0a364160a7ba62b6169a966c359180c3829d81e82"
+    },
+    {
+      "path": "docs/figures/q1_sequential_state.svg",
+      "sha256": "73a7b1562cec1599c5e7ee8156317721e3b012d5a64f6119a2cb28af1a931883"
+    },
+    {
+      "path": "docs/figures/q1_average_inspection_ratio.png",
+      "sha256": "e308ba4531128600f40a5ff399e74c44a7a2224e23832c6c149fbf44882ae858"
+    },
+    {
+      "path": "docs/figures/q1_average_inspection_ratio.svg",
+      "sha256": "b95342494b0fae429ce98a7fc6767e863fb8b4b1513c9f58235aaa98a74e2fb4"
+    },
+    {
+      "path": "docs/figures/q2_decision_profit.png",
+      "sha256": "b4bc743dd2bbab171992422611737c7487f66663f7e0f3daf3a26cacc048edf2"
+    },
+    {
+      "path": "docs/figures/q2_decision_profit.svg",
+      "sha256": "b087b3ee7f4348e850831d7e16bb7f325f6e370f7c42b43f8880dd62b84915d8"
+    },
+    {
+      "path": "docs/figures/q3_oat_sensitivity.png",
+      "sha256": "8e85f50f656f6b352d720e55a014e32a1e943ab9ce53018736a34a1a2324d6c2"
+    },
+    {
+      "path": "docs/figures/q3_oat_sensitivity.svg",
+      "sha256": "9e2b411c25856c53906891b15ee18f00807540fefd5356ac932ee09d60da0c61"
+    },
+    {
+      "path": "docs/figures/q4_sampling_stability.png",
+      "sha256": "01d8f36fe2deb245378e88b05406290a9e8df8431c2bba78e5054029b327d678"
+    },
+    {
+      "path": "docs/figures/q4_sampling_stability.svg",
+      "sha256": "e1fc78969c920e7e2f192592d06022792b0ff23c547e71ad9e55cddbbb7b81d8"
+    }
+  ],
+  "interpretation_boundaries": [
+    "q1 panels are separate sampling scenarios and must not be combined into one two-sided rule",
+    "q1 star markers are zero-risk factual stops and do not consume either scenario's statistical error budget",
+    "q1 quality-state rates are post-solution evaluation fixtures and do not enter threshold design or create a second quality point",
+    "q1 plotted ratios are exact finite-population expected inspection counts divided by N=1000; line segments only guide the eye",
+    "q1 large-batch points are exact-risk-verified feasible threshold candidates and are not global optimality claims",
+    "q3 OAT changes one node at a time and is not a confidence interval",
+    "q4 single-rate confidence sets do not form a joint 95 percent region"
+  ]
+}

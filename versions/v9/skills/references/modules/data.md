@@ -1,0 +1,204 @@
+# 数据身份、审计、处理与冻结
+
+> 本文件由 `scripts/build_modules.py` 从冻结的 V8 详细规则确定性生成。
+> 下列来源块中的领域步骤、数学判据、失败条件和验收细节继续生效；
+> 任何关于全局权限、状态、路由、回执、项目初始化、强制复读、版本身份或第一入口的旧指令均不执行，由 V9 `SKILL.md` 与机器契约唯一负责。
+> 旧文件路径仅表示迁移谱系，不触发递归加载。
+
+**模块边界：** 数据方法完整保留；数据状态采用 D0-D3，原始数据不得被静默覆盖。
+
+---
+
+## V8 来源：`rules/16-data-audit-methodology.md`
+
+# 16 — 数据审计、结构化预处理与审计图方法
+
+## 职责与规则强度
+
+本文件负责模型选择前的数据方法规格、原始—清洁转换、质量诊断、设计结构审计和审计图
+语义。`04`负责通用制图与论文视觉质量，`10`负责机器产物冻结，`05`负责事后审计。
+
+- 原始证据不变、统计单位正确、转换可追溯、诊断与处理分离、用户批准实质处理：A。
+- 逐字段对账、结构性空值、图件误读边界、独立实现复核：B。
+- 具体异常阈值、图形种类、表名和文件数量：D，按题目选择。
+
+## 进入条件
+
+完整读取题面、附件和当前题意权威后再制定数据方案。不要从现有脚本、列名或图形反推
+题目需要什么。
+
+在编写主数据脚本前，在 `planning/` 建立项目专属数据方法论，并交代：
+
+1. 数据实体、观测、重复测量、时间点、空间单元和情景的统计层次；
+2. 每个原始字段的名称、单位、类型、合法域、缺失语义和任务用途；
+3. 原始到清洁数据的每项转换、理由、可逆性和失败方式；
+4. 派生量的公式、单位、边界和手算样例；
+5. 异常、相似性、相关性、聚合和插补规则的角色与禁止推断；
+6. 预期表图各自回答的问题、数据层次和误读风险；
+7. 独立复核路线和用户必须决定的数据处理。
+
+方法文件可以先作为待审候选；未经用户接受，会改变下游结果的规则不能升级为正式数据
+接口。纯读取、对账、标记和不改变观测的诊断可以先实现，但必须保持可撤销与可追溯。
+
+## 统计单位与伪重复
+
+先列出数据层次，再计算统计量。常见层次包括：
+
+- 实体或配方层；
+- 实体—条件观测层；
+- 同一实体的重复测量或纵向时间层；
+- 批次、场景、空间或网络层。
+
+只在与问题一致的层次计算频数、相关、差异和不确定性。以下做法默认不合格：
+
+- 把随条件重复出现的实体属性当作多份独立实体；
+- 把同一次实验的多个时间点当作独立重复实验；
+- 把不平衡组的总体均值差异写成公平因素效应；
+- 把缺少共同条件的组直接比较；
+- 先聚合再忘记聚合权重、样本组成和缺测结构。
+
+若同一数据需要多个层次，分别冻结表并明确主键、消费者和允许声明。
+
+## 原始证据与结构化转换
+
+原始文件保持只读。保留文件哈希、工作表或页面身份、原始行号和原始文字。区分：
+
+| 类型 | 处理 |
+|---|---|
+| 原始事实 | 原样保存，不因展示或建模覆盖 |
+| 结构化字段 | 从原文或布局确定性解析，同时保留原文 |
+| 派生字段 | 保存公式、单位、输入字段和复算证据 |
+| 纠正记录 | 保存原值、新值、直接证据、批准者和影响范围 |
+| 分析设置 | 与数据字段分开，不能伪装成观测 |
+
+解析器必须显式失败，不能静默猜测。对合并单元格、跨行标签或空列，只执行能由文件布局
+直接证明的转换；响应值不得因相邻单元格非空而自动填充。
+
+结构性空值与缺失值必须分开。例如“分母为零导致比例未定义”“对象不存在该属性”和
+“应该测量但没有值”具有不同语义，不能统一插补。
+
+## 必做对账与质量门
+
+至少冻结以下检查，具体载体可用CSV、JSON或其他结构化格式：
+
+1. 文件、工作表、行列、合并或隐藏结构和输入哈希；
+2. 字段数据类型、单位、最小值、最大值、合法域、违规数；
+3. 主键、重复键、排序、时间间隔、覆盖和采样粒度；
+4. 原始表与清洁表所有保留字段的逐字段不一致数和数值最大绝对差；
+5. 每个解析实体的原文与解析字段，配合全量或可证明充分的人工核验；
+6. 守恒、闭合、合计、范围和题面公式；
+7. 至少一个手算样例；
+8. 数据处理前后记录数及每类增删改原因。
+
+不能用“摘要数字相等”代替逐字段对账，也不能用主脚本再次读取自己的输出证明自身正确。
+
+## 缺失、异常与修正
+
+先区分数据错误、合理极端值、设计边界、结构性空值和未知原因缺失。异常算法只产生候选：
+
+- 报告比较总体、分组依据、样本量、阈值、被标记录和失败条件；
+- 检查规则是否混合了不同条件、实体或场景；
+- 小组、零方差、单点层次和无重复设计不得包装成可靠异常判定；
+- 高价值、高响应、边界或稀有观测不能仅因“极端”而删除；
+- 没有现实误差证据时，默认保留并在后续做影响分析。
+
+删除、插补、纠正、缩尾、平滑、重新编码未知类别或改变单位都可能使下游结论变化。
+向用户说明证据、替代方案与影响后再执行，并使所有消费者失效重算。
+
+## 实验设计与数据能力
+
+审计覆盖矩阵、共同条件、重复实验、因素水平、因素间依赖、批次、时间间隔和可观测域。
+相关系数、总体均值和最近邻距离只能回答其数学定义内的问题：
+
+- 相关不等于独立效应或因果；
+- 不平衡组均值不等于控制其他因素后的差异；
+- 最近邻不等于身份；
+- 已测最大值不等于连续域或未测条件的最优值；
+- 单条纵向序列不等于总体稳定性分布。
+
+明确数据能支持、不能支持和需要额外实验才能支持的声明。
+
+## 审计图设计
+
+为每幅图登记：
+
+`数据层次 → 原始/结构化/派生字段 → 证据功能 → 编码 → 精确值载体 → 禁止推断`
+
+优先使用：
+
+- 覆盖矩阵揭示缺测与不平衡；
+- 小多图展示实体内趋势，避免只画混合均值；
+- 原始点、箱线或分布图展示范围，同时说明非独立结构；
+- 热图展示完整结构，但明确空白与零；
+- 匹配差异图替代无控制的组均值比较；
+- 时间折线按真实时间间隔绘制；
+- 组成数据同时提供总览和可读取小分量的载体。
+
+若清洁过程没有改变响应值，不要制造完全重合的“前后图”。用逐字段对账证明一致，图
+用于展示结构化后新增的信息。诊断图若容易误读，必须加醒目边界或排除在论文候选之外。
+
+按 `04-figure-generator.md` 做颜色、冗余编码、矢量导出和视觉验收。
+
+## 相似性与身份线索
+
+身份未知时，相似性分析只能搜集线索。记录特征集、缩放、距离、候选域、排名间隔和时间
+或场景差异。确认身份通常还需要：
+
+- 样品、配方、批次或编号等直接证据；
+- 多种合理特征与距离下稳定的唯一候选；
+- 相对次优候选的清晰间隔；
+- 与测量误差和时间漂移相容。
+
+缺少这些条件时，只报告“在指定度量下最相似”，保留未知身份。
+
+## 独立复核与完成门
+
+独立验证不得导入主审计实现或复用其解析函数。它应直接读取权威输入和冻结产物，复核
+关键计数、主键、全部公式、原始—清洁对账、关键解析样例和产物哈希。
+
+独立复核只能证明另一实现得到相容结果，不能证明方法选择合理。关闭数据阶段前同时检查：
+
+1. 方法文件是否先于或已追认实现，二者是否一致；
+2. 原始数据是否保持不变；
+3. 全部实质转换是否有理由、证据和用户决定；
+4. 诊断结论是否没有越权成为删除、因果、身份或最优结论；
+5. 数据、脚本、表图、验证和方法文档是否都保存在项目目录；
+6. 下游任务是否使用唯一且已批准的数据接口。
+
+---
+
+## V8 来源：`rules/30-data-minimum.md`
+
+# Data quality
+
+Apply this file only after the controller permits `S2_ASSESS` data work.
+
+## Data identity
+
+- Preserve original files immutably and record hashes.
+- Identify the observational unit, experimental unit, repeated measure, cluster, time or spatial
+  level before analysis.
+- Distinguish missing values, structural absence, censored values, zeros, outliers, and parse errors.
+- Record units, percentage conventions, encodings, sheet meanings, keys, duplicates, and ranges.
+- Never treat repeated measurements from one experiment as independent experiments.
+
+## Transformation and cleaning
+
+- Make every cleaning, recoding, merge, exclusion, imputation, and derived field explicit.
+- Reconcile raw and cleaned row counts, columns, keys, aggregates, and representative records.
+- Preserve a mapping back to the original row or cell.
+- Do not delete an outlier merely because it harms a preferred model.
+- Explain how each material treatment changes the claims the data can support.
+
+## Evidence capacity
+
+- Compare the requested effects with the actual design: replication, balance, overlap, confounding,
+  rank, support, and extrapolation.
+- Separate association, controlled local comparison, prediction, causal effect, and mechanism.
+- State identifiable and non-identifiable quantities.
+- Build the simplest hand-checkable baseline before proposing a more demanding method.
+
+## Outputs and checks
+
+Freeze cleaned data, data dictionary, audit summary, anomaly ledger, transformations, hashes, and
+independent reconciliation. Visual audit figures must answer a named data-quality question.

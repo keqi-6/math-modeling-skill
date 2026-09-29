@@ -1,0 +1,43 @@
+{
+  "checks_report": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\checks_structure_startsafe.json",
+  "spatial_runs": [
+    {
+      "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n160_startsafe.npz",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n160_startsafe.json"
+    },
+    {
+      "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n320_startsafe.npz",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n320_startsafe.json"
+    },
+    {
+      "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n640_startsafe.npz",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n640_startsafe.json"
+    },
+    {
+      "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n1280_startsafe.npz",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n1280_startsafe.json"
+    },
+    {
+      "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n2560_startsafe.npz",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n2560_startsafe.json"
+    },
+    {
+      "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n5120_startsafe.npz",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n5120_startsafe.json"
+    },
+    {
+      "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.npz",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.json"
+    }
+  ],
+  "tight_run": {
+    "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_tight_startsafe.npz",
+    "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_tight_startsafe.json",
+    "role": "tight"
+  },
+  "sensitivity_run": {
+    "npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_last_startsafe.npz",
+    "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_last_startsafe.json",
+    "role": "sensitivity"
+  }
+}

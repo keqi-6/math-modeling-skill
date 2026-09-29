@@ -1,0 +1,859 @@
+{
+  "schema_version": "1.0",
+  "status": "ok",
+  "generated_at_utc": "2026-08-28T04:09:03.280393+00:00",
+  "purpose": "Cross-evaluate A196 and audit whether the current Q3 algorithm can discover genuine partial-cover three-cloud synergy.",
+  "source": {
+    "paper_id": "A196",
+    "role": "internal_regression_candidate_hint",
+    "official_display_url": "https://dxs.moe.gov.cn/zx/a/hd_sxjm_sxjmlw_2025qgdxssxjmjslwzs_2025atlw/251101/2022729.shtml?source=hd_sxjm_sxjmlw",
+    "archive_pdf_url": "https://github.com/yushugulao/CUMCM-Archive/blob/main/%E7%AB%9E%E8%B5%9B%E8%B5%84%E6%96%99/2025/A/%E4%BC%98%E7%A7%80%E8%AE%BA%E6%96%87/A196.pdf",
+    "location": "section 8.2.2, table 5, PDF page 24; appendix fr_third.m, PDF pages 50-63"
+  },
+  "published": {
+    "reported_joint_duration_s": 6.93586,
+    "reported_heading_deg": 13.57377,
+    "reported_speed_mps": 116.81318,
+    "release_points_m": [
+      [
+        17800.0,
+        0.0,
+        1800.0
+      ],
+      [
+        17915.99463,
+        13.8046,
+        1800.0
+      ],
+      [
+        22048.21768,
+        505.58318,
+        1800.0
+      ]
+    ],
+    "explosion_points_m": [
+      [
+        17800.0,
+        0.0,
+        1800.0
+      ],
+      [
+        17915.99463,
+        13.8046,
+        1800.0
+      ],
+      [
+        23913.0268,
+        727.51534,
+        533.54687
+      ]
+    ],
+    "reported_effective_time_s": [
+      0.79116,
+      1.0,
+      0.0
+    ],
+    "reported_failure_time_s": [
+      5.41117,
+      5.07793,
+      0.0
+    ],
+    "reported_attributed_duration_s": [
+      2.556,
+      4.37985,
+      0.0
+    ],
+    "paper_sampling": {
+      "declared_sample_num": 250,
+      "generated_heights": 5,
+      "circumference_samples_per_height": 125,
+      "generated_point_count": 625,
+      "downstream_loop_point_count": 250,
+      "effectively_checked_heights_m": [
+        0.0,
+        2.5
+      ],
+      "end_cap_interiors": false,
+      "all_circumference_points_checked": true,
+      "joint_logic": "intersection_over_points(union_over_three_clouds)",
+      "implementation_defect": "The array grows to 625 points, but downstream loops retain sample_num=250 and therefore use only the first two height rings."
+    }
+  },
+  "source_consistency": {
+    "coordinate_implied_heading_deg": 6.786886427923817,
+    "prose_heading_deg": 13.57377,
+    "prose_minus_coordinate_heading_deg": 6.786883572076182,
+    "release_coordinate_max_abs_residual_m": 2.7590378461894716e-06,
+    "explosion_coordinate_max_abs_residual_m": 7.39977721195828e-05,
+    "third_explosion_height_residual_m": -7.39977721195828e-05,
+    "diagnosis": "The prose angle is almost exactly twice the coordinate-implied angle; table coordinates and appendix cos(theta), sin(theta) cannot both support the prose value."
+  },
+  "a196_variants": {
+    "table_reconstructed": {
+      "decision": {
+        "heading_rad": 0.11845351412618743,
+        "speed_mps": 116.81318,
+        "release_times_s": [
+          0.0,
+          1.0000000787187404,
+          36.62426443697049
+        ],
+        "fuse_delays_s": [
+          0.0,
+          0.0,
+          16.076686149532364
+        ],
+        "source": "A196_table5_reconstructed",
+        "proposal_index": 0,
+        "heading_deg": 6.786886427923817,
+        "heading_unit": [
+          0.9929925818080244,
+          0.11817670021723346,
+          0.0
+        ],
+        "explosion_times_s": [
+          0.0,
+          1.0000000787187404,
+          52.700950586502856
+        ],
+        "release_points_m": [
+          [
+            17800.0,
+            0.0,
+            1800.0
+          ],
+          [
+            17915.994630328358,
+            13.804597240962154,
+            1800.0
+          ],
+          [
+            22048.21768,
+            505.58318,
+            1800.0
+          ]
+        ],
+        "explosion_points_m": [
+          [
+            17800.0,
+            0.0,
+            1800.0
+          ],
+          [
+            17915.994630328358,
+            13.804597240962154,
+            1800.0
+          ],
+          [
+            23913.026800024585,
+            727.5153397934289,
+            533.5467960022279
+          ]
+        ],
+        "constraint_margins": {
+          "heading_domain_rad": 0.11845351412618743,
+          "speed_lower_mps": 46.81318,
+          "speed_upper_mps": 23.186819999999997,
+          "release_1_lower_s": 0.0,
+          "release_gap_12_s": 7.871874041498472e-08,
+          "release_gap_23_s": 34.62426435825175,
+          "last_release_margin_s": 30.374906370502117,
+          "minimum_fuse_delay_s": 0.0,
+          "minimum_explosion_height_m": 533.5467960022279,
+          "minimum_explosion_arrival_margin_s": 14.298220220969753
+        },
+        "official_literal_sum_release_margin_s": 29.374906291783375,
+        "official_literal_sum_release_pass": true
+      },
+      "paper_sample_model": {
+        "joint": {
+          "surface_point_count": 250,
+          "scan_count": 7064,
+          "intervals_s": [
+            [
+              1.0000000787187404,
+              7.40315940636996
+            ]
+          ],
+          "effective_duration_s": 6.40315932765122,
+          "minimum_scan_margin_m": -8.401238024836163,
+          "root_fallback_count": 0,
+          "recovered_unsampled_interval_count": 0
+        },
+        "individuals": [
+          {
+            "surface_point_count": 250,
+            "scan_count": 4001,
+            "intervals_s": [
+              [
+                4.8471398368477825,
+                7.4031594063341615
+              ]
+            ],
+            "effective_duration_s": 2.556019569486379,
+            "minimum_scan_margin_m": -8.401238025546686,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 250,
+            "scan_count": 4001,
+            "intervals_s": [
+              [
+                1.0000000787187404,
+                5.379859438281139
+              ]
+            ],
+            "effective_duration_s": 4.379859359562399,
+            "minimum_scan_margin_m": -7.048876535098234,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 250,
+            "scan_count": 2861,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": 19648.60482639851,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          }
+        ],
+        "individual_union_intervals_s": [
+          [
+            1.0000000787187404,
+            7.4031594063341615
+          ]
+        ],
+        "pure_synergy_intervals_s": [],
+        "pure_synergy_duration_s": 0.0
+      },
+      "project_precise_model": {
+        "joint": {
+          "surface_point_count": 33281,
+          "scan_count": 7064,
+          "intervals_s": [
+            [
+              1.0000000787187404,
+              7.40315940636996
+            ]
+          ],
+          "effective_duration_s": 6.40315932765122,
+          "minimum_scan_margin_m": -8.372570085417543,
+          "root_fallback_count": 0,
+          "recovered_unsampled_interval_count": 0
+        },
+        "individuals": [
+          {
+            "surface_point_count": 33281,
+            "scan_count": 4001,
+            "intervals_s": [
+              [
+                4.847156616151333,
+                7.4031594063341615
+              ]
+            ],
+            "effective_duration_s": 2.556002790182829,
+            "minimum_scan_margin_m": -8.372570084626485,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 33281,
+            "scan_count": 4001,
+            "intervals_s": [
+              [
+                1.0000000787187404,
+                5.356579206924517
+              ]
+            ],
+            "effective_duration_s": 4.356579128205777,
+            "minimum_scan_margin_m": -7.048833059882131,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 33281,
+            "scan_count": 2861,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": 19648.60482639851,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          }
+        ],
+        "individual_union_intervals_s": [
+          [
+            1.0000000787187404,
+            7.4031594063341615
+          ]
+        ],
+        "pure_synergy_intervals_s": [],
+        "pure_synergy_duration_s": 0.0
+      },
+      "project_densified_model": {
+        "joint": {
+          "surface_point_count": 132097,
+          "scan_count": 1285,
+          "intervals_s": [
+            [
+              1.0000000787187404,
+              7.403159406353072
+            ]
+          ],
+          "effective_duration_s": 6.403159327634331,
+          "minimum_scan_margin_m": -8.372554393011118,
+          "root_fallback_count": 0,
+          "recovered_unsampled_interval_count": 0
+        },
+        "individuals": [
+          {
+            "surface_point_count": 132097,
+            "scan_count": 515,
+            "intervals_s": [
+              [
+                4.847156616350024,
+                7.403159406358638
+              ]
+            ],
+            "effective_duration_s": 2.5560027900086135,
+            "minimum_scan_margin_m": -8.372542927803597,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 132097,
+            "scan_count": 874,
+            "intervals_s": [
+              [
+                1.0000000787187404,
+                5.356578805563183
+              ]
+            ],
+            "effective_duration_s": 4.356578726844443,
+            "minimum_scan_margin_m": -7.048819751999108,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 132097,
+            "scan_count": 0,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": Infinity,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          }
+        ],
+        "individual_union_intervals_s": [
+          [
+            1.0000000787187404,
+            7.403159406358638
+          ]
+        ],
+        "pure_synergy_intervals_s": [],
+        "pure_synergy_duration_s": 0.0
+      },
+      "densified_joint_change_s": -1.688960082901758e-11,
+      "leave_one_out": [
+        {
+          "omitted_bomb": 1,
+          "duration_s": 4.356579128205777,
+          "marginal_contribution_s": 2.046580199445444
+        },
+        {
+          "omitted_bomb": 2,
+          "duration_s": 2.556002790182829,
+          "marginal_contribution_s": 3.8471565374683916
+        },
+        {
+          "omitted_bomb": 3,
+          "duration_s": 6.40315932765122,
+          "marginal_contribution_s": 0.0
+        }
+      ]
+    },
+    "prose_heading_literal": {
+      "decision": {
+        "heading_rad": 0.2369069784084307,
+        "speed_mps": 116.81318,
+        "release_times_s": [
+          0.0,
+          1.0000000787187404,
+          36.62426443697049
+        ],
+        "fuse_delays_s": [
+          0.0,
+          0.0,
+          16.076686149532364
+        ],
+        "source": "A196_prose_heading_literal",
+        "proposal_index": 1,
+        "heading_deg": 13.57377,
+        "heading_unit": [
+          0.9720685467497638,
+          0.23469712486479707,
+          0.0
+        ],
+        "explosion_times_s": [
+          0.0,
+          1.0000000787187404,
+          52.700950586502856
+        ],
+        "release_points_m": [
+          [
+            17800.0,
+            0.0,
+            1800.0
+          ],
+          [
+            17913.550427062364,
+            27.415719650444768,
+            1800.0
+          ],
+          [
+            21958.7005402953,
+            1004.080487167786,
+            1800.0
+          ]
+        ],
+        "explosion_points_m": [
+          [
+            17800.0,
+            0.0,
+            1800.0
+          ],
+          [
+            17913.550427062364,
+            27.415719650444768,
+            1800.0
+          ],
+          [
+            23784.214974620103,
+            1444.834372855963,
+            533.5467960022279
+          ]
+        ],
+        "constraint_margins": {
+          "heading_domain_rad": 0.2369069784084307,
+          "speed_lower_mps": 46.81318,
+          "speed_upper_mps": 23.186819999999997,
+          "release_1_lower_s": 0.0,
+          "release_gap_12_s": 7.871874041498472e-08,
+          "release_gap_23_s": 34.62426435825175,
+          "last_release_margin_s": 30.374906370502117,
+          "minimum_fuse_delay_s": 0.0,
+          "minimum_explosion_height_m": 533.5467960022279,
+          "minimum_explosion_arrival_margin_s": 14.298220220969753
+        },
+        "official_literal_sum_release_margin_s": 29.374906291783375,
+        "official_literal_sum_release_pass": true
+      },
+      "paper_sample_model": {
+        "joint": {
+          "surface_point_count": 250,
+          "scan_count": 7064,
+          "intervals_s": [
+            [
+              4.847139836446546,
+              7.40315940636996
+            ]
+          ],
+          "effective_duration_s": 2.5560195699234143,
+          "minimum_scan_margin_m": -8.401238024836163,
+          "root_fallback_count": 0,
+          "recovered_unsampled_interval_count": 0
+        },
+        "individuals": [
+          {
+            "surface_point_count": 250,
+            "scan_count": 4001,
+            "intervals_s": [
+              [
+                4.8471398368477825,
+                7.4031594063341615
+              ]
+            ],
+            "effective_duration_s": 2.556019569486379,
+            "minimum_scan_margin_m": -8.401238025546686,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 250,
+            "scan_count": 4001,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": 3.12284055146106,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 250,
+            "scan_count": 2861,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": 19559.737514905144,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          }
+        ],
+        "individual_union_intervals_s": [
+          [
+            4.8471398368477825,
+            7.4031594063341615
+          ]
+        ],
+        "pure_synergy_intervals_s": [
+          [
+            4.847139836446546,
+            4.8471398368477825
+          ]
+        ],
+        "pure_synergy_duration_s": 4.0123637745637097e-10
+      },
+      "project_precise_model": {
+        "joint": {
+          "surface_point_count": 33281,
+          "scan_count": 7064,
+          "intervals_s": [
+            [
+              4.847156616346075,
+              7.40315940636996
+            ]
+          ],
+          "effective_duration_s": 2.5560027900238858,
+          "minimum_scan_margin_m": -8.372570085417543,
+          "root_fallback_count": 0,
+          "recovered_unsampled_interval_count": 0
+        },
+        "individuals": [
+          {
+            "surface_point_count": 33281,
+            "scan_count": 4001,
+            "intervals_s": [
+              [
+                4.847156616151333,
+                7.4031594063341615
+              ]
+            ],
+            "effective_duration_s": 2.556002790182829,
+            "minimum_scan_margin_m": -8.372570084626485,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 33281,
+            "scan_count": 4001,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": 3.122985286127408,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 33281,
+            "scan_count": 2861,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": 19559.737514905144,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          }
+        ],
+        "individual_union_intervals_s": [
+          [
+            4.847156616151333,
+            7.4031594063341615
+          ]
+        ],
+        "pure_synergy_intervals_s": [],
+        "pure_synergy_duration_s": 0.0
+      },
+      "project_densified_model": {
+        "joint": {
+          "surface_point_count": 132097,
+          "scan_count": 515,
+          "intervals_s": [
+            [
+              4.847156616246897,
+              7.4031594063575525
+            ]
+          ],
+          "effective_duration_s": 2.5560027901106555,
+          "minimum_scan_margin_m": -8.372542927802758,
+          "root_fallback_count": 0,
+          "recovered_unsampled_interval_count": 0
+        },
+        "individuals": [
+          {
+            "surface_point_count": 132097,
+            "scan_count": 515,
+            "intervals_s": [
+              [
+                4.847156616350024,
+                7.403159406358638
+              ]
+            ],
+            "effective_duration_s": 2.5560027900086135,
+            "minimum_scan_margin_m": -8.372542927803597,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 132097,
+            "scan_count": 0,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": Infinity,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          },
+          {
+            "surface_point_count": 132097,
+            "scan_count": 0,
+            "intervals_s": [],
+            "effective_duration_s": 0.0,
+            "minimum_scan_margin_m": Infinity,
+            "root_fallback_count": 0,
+            "recovered_unsampled_interval_count": 0
+          }
+        ],
+        "individual_union_intervals_s": [
+          [
+            4.847156616350024,
+            7.403159406358638
+          ]
+        ],
+        "pure_synergy_intervals_s": [
+          [
+            4.847156616246897,
+            4.847156616350024
+          ]
+        ],
+        "pure_synergy_duration_s": 1.0312728448980124e-10
+      },
+      "densified_joint_change_s": 8.676970253418403e-11,
+      "leave_one_out": [
+        {
+          "omitted_bomb": 1,
+          "duration_s": 0.0,
+          "marginal_contribution_s": 2.5560027900238858
+        },
+        {
+          "omitted_bomb": 2,
+          "duration_s": 2.556002790182829,
+          "marginal_contribution_s": -1.589430809190162e-10
+        },
+        {
+          "omitted_bomb": 3,
+          "duration_s": 2.5560027900238858,
+          "marginal_contribution_s": 0.0
+        }
+      ]
+    }
+  },
+  "current_project_result": {
+    "result_sha256": "21ee8cf9baedf27f604ff4ea2b533c42b294612a9e7b35a9f27d23337f85db90",
+    "decision": {
+      "heading_rad": 0.11104254921947203,
+      "speed_mps": 131.5273325788204,
+      "release_times_s": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "fuse_delays_s": [
+        0.045716332532606915,
+        0.0,
+        0.1415478172825979
+      ],
+      "source": "TRUST8D_from_C3_250829_182",
+      "proposal_index": 182,
+      "heading_deg": 6.362269416649461,
+      "heading_unit": [
+        0.9938411085257736,
+        0.11081448914407183,
+        0.0
+      ],
+      "explosion_times_s": [
+        0.045716332532606915,
+        1.0,
+        2.141547817282598
+      ],
+      "release_points_m": [
+        [
+          17800.0,
+          0.0,
+          1800.0
+        ],
+        [
+          17930.717270011573,
+          14.575134168204418,
+          1800.0
+        ],
+        [
+          18061.434540023147,
+          29.150268336408836,
+          1800.0
+        ]
+      ],
+      "explosion_points_m": [
+        [
+          17805.975914183604,
+          0.6663216803409941,
+          1799.9897590830049
+        ],
+        [
+          17930.717270011573,
+          14.575134168204418,
+          1800.0
+        ],
+        [
+          18079.937284274423,
+          31.213346764519187,
+          1799.9018246555704
+        ]
+      ],
+      "constraint_margins": {
+        "heading_domain_rad": 0.11104254921947203,
+        "speed_lower_mps": 61.52733257882039,
+        "speed_upper_mps": 8.472667421179608,
+        "release_1_lower_s": 0.0,
+        "release_gap_12_s": 0.0,
+        "release_gap_23_s": 0.0,
+        "last_release_margin_s": 64.99917080747261,
+        "minimum_fuse_delay_s": 0.0,
+        "minimum_explosion_height_m": 1799.9018246555704,
+        "minimum_explosion_arrival_margin_s": 64.85762299019001
+      },
+      "official_literal_sum_release_margin_s": 63.99917080747261,
+      "official_literal_sum_release_pass": true
+    },
+    "joint": {
+      "surface_point_count": 33281,
+      "scan_count": 4422,
+      "intervals_s": [
+        [
+          1.0,
+          7.3828630599130625
+        ]
+      ],
+      "effective_duration_s": 6.3828630599130625,
+      "minimum_scan_margin_m": -8.480876020824851,
+      "root_fallback_count": 0,
+      "recovered_unsampled_interval_count": 0
+    },
+    "individuals": [
+      {
+        "surface_point_count": 33281,
+        "scan_count": 4001,
+        "intervals_s": [
+          [
+            4.645006398596012,
+            7.382863059900842
+          ]
+        ],
+        "effective_duration_s": 2.7378566613048303,
+        "minimum_scan_margin_m": -8.48088016066816,
+        "root_fallback_count": 0,
+        "recovered_unsampled_interval_count": 0
+      },
+      {
+        "surface_point_count": 33281,
+        "scan_count": 4001,
+        "intervals_s": [
+          [
+            1.0,
+            4.976764040291309
+          ]
+        ],
+        "effective_duration_s": 3.976764040291309,
+        "minimum_scan_margin_m": -7.3873664150773575,
+        "root_fallback_count": 0,
+        "recovered_unsampled_interval_count": 0
+      },
+      {
+        "surface_point_count": 33281,
+        "scan_count": 4001,
+        "intervals_s": [],
+        "effective_duration_s": 0.0,
+        "minimum_scan_margin_m": 10.390943659333164,
+        "root_fallback_count": 0,
+        "recovered_unsampled_interval_count": 0
+      }
+    ],
+    "pure_synergy_intervals_s": [],
+    "pure_synergy_duration_s": 0.0,
+    "densified_joint_duration_s": 6.382863059913893,
+    "densified_joint_change_s": 8.304468224196171e-13,
+    "leave_one_out": [
+      {
+        "omitted_bomb": 1,
+        "duration_s": 3.9767640400358815,
+        "marginal_contribution_s": 2.406099019877181
+      },
+      {
+        "omitted_bomb": 2,
+        "duration_s": 2.737856661066579,
+        "marginal_contribution_s": 3.6450063988464834
+      },
+      {
+        "omitted_bomb": 3,
+        "duration_s": 6.382863059944291,
+        "marginal_contribution_s": -3.12283532366564e-11
+      }
+    ]
+  },
+  "algorithm_audit": {
+    "evaluator_supports_pointwise_cloud_identity_switching": true,
+    "formal_objective_can_score_pure_synergy": true,
+    "existing_pure_synergy_certifies": "at_least_two_clouds_needed",
+    "existing_pure_synergy_set": "S_123 \\ (S_1 union S_2 union S_3)",
+    "true_three_cloud_necessity_set_needed": "S_123 \\ (S_12 union S_13 union S_23)",
+    "true_three_cloud_necessity_metric_currently_recorded": false,
+    "formal_seed_sources": [
+      "C2",
+      "C3",
+      "B0",
+      "C1"
+    ],
+    "dedicated_complementary_point_time_source": "C4",
+    "c4_current_role": "internal_synergy_validator_only",
+    "c4_has_formal_seed_quota": false,
+    "c4_ranking_primary": "union_of_individually_complete_cover_times",
+    "c4_joint_surface_coverage_priority": "secondary",
+    "c4_pilot_maximum_precise_pure_synergy_s": 0.0,
+    "c4_pilot_maximum_densified_pure_synergy_s": 0.0,
+    "can_find_in_principle": true,
+    "reliable_discovery_guarantee": false,
+    "observed_current_pure_synergy_s": 0.0
+  },
+  "geometry_reduction_plan": {
+    "status": "working_design_not_frozen",
+    "missile_x_speed_mps": 298.511157062997,
+    "rigorous_safe_bounds": {
+      "any_coverage_service_time_upper_s": 13.942236249791,
+      "coverage_service_time_upper_when_cos_heading_nonnegative_s": 7.403408374226,
+      "true_three_cloud_each_explosion_time_upper_s": 13.942236249791,
+      "true_three_cloud_each_release_time_upper_s": 13.942236249791,
+      "true_three_cloud_each_fuse_delay_upper_s": 13.942236249791,
+      "essential_cloud_xy_box_at_service_time": [
+        "-17 <= cloud_x <= missile_x(t)+10",
+        "-10 <= cloud_y <= 217"
+      ],
+      "essential_cloud_z_box_at_service_time": "-10 <= cloud_z <= missile_z(t)+10",
+      "true_three_negative_sine_heading_condition": "sin(theta) >= -1/14 for the third released bomb to be essential"
+    },
+    "recommended_candidate": "C5_GEOMETRY_ANCHORED_THREE_SET_COVER_PILOT",
+    "recommended_sequence": [
+      "add S_123 minus union(S_12,S_13,S_23) time-resolved diagnostic",
+      "apply rigorous service/explosion/release/fuse bounds before candidate generation",
+      "anchor on service time and build feasible single-cloud coverage masks from the sight-cone tube",
+      "select triples whose union is full while every pair union is incomplete",
+      "recover release/fuse variables and reject gap violations analytically",
+      "send only surviving triples to the unchanged continuous full-surface evaluator and final J3 ranking"
+    ],
+    "formal_spec_changed": false
+  }
+}

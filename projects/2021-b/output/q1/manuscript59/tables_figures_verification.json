@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "passed": true,
+  "checks_passed": 2,
+  "checks_total": 2,
+  "checks": [
+    {
+      "check": "底稿表1显示值",
+      "passed": true,
+      "detail": "ethanol_conversion_pct=(3.283, 16.574, 8.33, 4.183, 0.883); c4_selectivity_pct=(1.292, 6.53, 5.068, 1.986, 0.943)"
+    },
+    {
+      "check": "图1—3双格式非空",
+      "passed": true,
+      "detail": "files=6"
+    }
+  ]
+}

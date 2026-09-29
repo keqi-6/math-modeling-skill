@@ -1,0 +1,314 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v11/state.schema.json",
+  "title": "Mathematical modeling project state V11",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "revision", "project", "components", "artifacts", "open_decisions",
+    "next_actions", "history"
+  ],
+  "properties": {
+    "schema_version": {"const": "11.0"},
+    "revision": {"type": "integer", "minimum": 0},
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "state", "required_components", "created_at", "updated_at"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "state": {"enum": ["P0", "P1", "P2"]},
+        "required_components": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "created_at": {"type": "string", "format": "date-time"},
+        "updated_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/component"}
+    },
+    "artifacts": {
+      "type": "object",
+      "propertyNames": {"pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"},
+      "additionalProperties": {"$ref": "#/$defs/artifact"}
+    },
+    "open_decisions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/decision"}
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/next_action"}
+    },
+    "last_route": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["request_hash", "route_ids", "rule_ids", "component_ids", "resolved_at"],
+          "properties": {
+            "request_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "route_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "rule_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "component_ids": {"type": "array", "items": {"type": "string"}},
+            "resolved_at": {"type": "string", "format": "date-time"}
+          }
+        }
+      ]
+    },
+    "executions": {
+      "type": "object",
+      "propertyNames": {"pattern": "^[A-Za-z0-9._-]+$"},
+      "additionalProperties": {"$ref": "#/$defs/execution"}
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["revision", "event", "at", "subject", "details"],
+        "properties": {
+          "revision": {"type": "integer", "minimum": 1},
+          "event": {"type": "string"},
+          "at": {"type": "string", "format": "date-time"},
+          "subject": {"type": "string"},
+          "details": {"type": "object"}
+        }
+      }
+    },
+    "watch_roots": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "workspace_baseline": {
+      "type": "object",
+      "propertyNames": {"pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"},
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sha256", "size"],
+        "properties": {
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "size": {"type": "integer", "minimum": 0}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "state", "status", "dependencies", "consumers", "evidence", "decisions", "invalidated_at_revision", "updated_at"],
+      "properties": {
+        "type": {"enum": ["question", "shared_data", "artifact"]},
+        "state": {"pattern": "^(?:S[0-7]|D[0-3]|A[0-3])$"},
+        "status": {"enum": ["active", "blocked", "invalidated", "closed"]},
+        "dependencies": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "consumers": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+        "decisions": {"type": "array", "items": {"type": "string"}},
+        "invalidated_at_revision": {"type": ["integer", "null"], "minimum": 1},
+        "updated_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "level", "status", "kind", "locator", "claim", "observed_at", "producer", "subject_id", "input_refs", "claim_refs", "binding_hash", "recorded_revision"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "level": {
+          "enum": [
+            "scope", "problem_definition", "evidence_plan", "candidate_set", "model_spec",
+            "selection_rationale", "implementation_ref", "result_claims", "data_identity",
+            "provenance", "data_audit", "treatment_decision", "processed_identity",
+            "artifact_draft", "artifact_validation", "artifact_acceptance", "delivery_acceptance",
+            "uncertainty", "robustness", "model_redesign_control", "consumer_invalidation",
+            "E1_IMPLEMENTATION", "E2_NUMERICAL", "E3_STRUCTURAL", "E4_REALITY"
+          ]
+        },
+        "status": {"enum": ["pass", "fail", "not_applicable", "stale"]},
+        "kind": {"enum": ["file", "command", "citation", "observation", "decision"]},
+        "locator": {
+          "oneOf": [
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["path", "sha256"],
+              "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+            },
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["command_hash", "exit_code", "output_ref", "output_sha256"],
+              "properties": {"command_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "exit_code": {"type": "integer"}, "output_ref": {"type": "string"}, "output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+            },
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["uri", "accessed_at"],
+              "properties": {"uri": {"type": "string", "format": "uri"}, "accessed_at": {"type": "string", "format": "date-time"}}
+            },
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["subject", "method", "value"],
+              "properties": {"subject": {"type": "string"}, "method": {"type": "string"}, "value": {}}
+            },
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["decision_id", "recorded_at"],
+              "properties": {"decision_id": {"type": "string"}, "recorded_at": {"type": "string", "format": "date-time"}}
+            }
+          ]
+        },
+        "claim": {"type": "string", "minLength": 3},
+        "observed_at": {"type": "string", "format": "date-time"},
+        "producer": {"type": "string", "minLength": 1},
+        "subject_id": {"type": "string", "minLength": 1},
+        "input_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/input_ref"}
+        },
+        "claim_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "binding_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "subject_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$", "deprecated": true},
+        "recorded_revision": {"type": "integer", "minimum": 1}
+      }
+    },
+    "input_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id", "identity", "facet"],
+      "properties": {
+        "kind": {"enum": ["artifact", "claim", "decision", "run", "spec", "external"]},
+        "id": {"type": "string", "minLength": 1},
+        "identity": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "facet": {"enum": ["content", "interface", "frozen_input", "result", "claim", "render", "format", "metadata", "decision", "run", "specification", "source"]}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256", "size", "media_type", "role", "class", "purpose", "authorization_basis", "lifecycle", "identity_class", "producer", "consumers", "status", "validated_at", "validation_evidence_id", "supersedes"],
+      "allOf": [
+        {"if": {"properties": {"lifecycle": {"enum": ["ephemeral", "working"]}}}, "then": {"properties": {"identity_class": {"const": "working"}}}},
+        {"if": {"properties": {"lifecycle": {"const": "milestone"}}}, "then": {"properties": {"identity_class": {"enum": ["milestone", "frozen"]}}}},
+        {"if": {"properties": {"lifecycle": {"const": "final"}}}, "then": {"properties": {"identity_class": {"const": "final"}}}}
+      ],
+      "properties": {
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "size": {"type": "integer", "minimum": 1},
+        "media_type": {"type": "string"},
+        "role": {
+          "enum": [
+            "source", "intermediate", "official_input", "external_evidence", "planning",
+            "code", "result", "technical_documentation", "manuscript", "visual",
+            "delivery", "control", "skill_support", "navigation"
+          ],
+          "description": "V12 stores the canonical platform_role; V11 source/intermediate values remain readable for inherited states."
+        },
+        "class": {"enum": ["source", "code", "data", "result", "manuscript", "visual", "delivery", "control"]},
+        "purpose": {"type": "string", "minLength": 8},
+        "authorization_basis": {"type": "string", "minLength": 4},
+        "lifecycle": {"enum": ["ephemeral", "working", "milestone", "final"]},
+        "identity_class": {"enum": ["working", "milestone", "frozen", "final"]},
+        "producer": {"type": "string"},
+        "consumers": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "status": {"enum": ["registered", "validated", "invalidated", "superseded"]},
+        "validated_at": {"type": ["string", "null"], "format": "date-time"},
+        "validation_evidence_id": {"type": ["string", "null"]},
+        "supersedes": {"type": ["string", "null"]}
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "request", "request_hash", "plan_id", "plan_hash", "step_ids", "step_modes", "mode", "component_selector", "component_map", "component_ids", "route_ids", "rule_ids", "resolved_revision", "start_revision", "recovery", "write_authorized", "started_at", "end_revision", "ended_at"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["open", "closed", "void"]},
+        "request": {"type": "string", "minLength": 1},
+        "request_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "plan_id": {"type": ["string", "null"]},
+        "plan_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "change_set": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["paths", "facets", "claim_refs"],
+          "properties": {
+            "paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "facets": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "claim_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+          }
+        },
+        "state_effect": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["component_id", "from", "to"],
+          "properties": {
+            "component_id": {"type": "string", "minLength": 1},
+            "from": {"type": "string", "minLength": 2},
+            "to": {"type": "string", "minLength": 2}
+          }
+        },
+        "step_ids": {"type": "array", "minItems": 1, "maxItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "step_modes": {"type": "object", "additionalProperties": {"enum": ["project_readonly", "mutate", "promote", "skill_maintenance"]}},
+        "mode": {"enum": ["project_readonly", "mutate", "promote", "skill_maintenance"]},
+        "component_selector": {"type": ["string", "null"]},
+        "component_map": {"type": "object", "propertyNames": {"type": "string", "minLength": 1}, "additionalProperties": {"type": "string", "minLength": 1}},
+        "component_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "route_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "rule_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "resolved_revision": {"type": "integer", "minimum": 1},
+        "start_revision": {"type": "integer", "minimum": 1},
+        "start_manifest": {
+          "deprecated": true,
+          "type": "object",
+          "additionalProperties": {
+            "type": "object", "additionalProperties": false,
+            "required": ["sha256", "size"],
+            "properties": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "size": {"type": "integer", "minimum": 0}}
+          }
+        },
+        "start_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$", "deprecated": true},
+        "recovery": {"enum": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "write_authorized": {"type": "boolean"},
+        "started_at": {"type": "string", "format": "date-time"},
+        "end_revision": {"type": ["integer", "null"], "minimum": 1},
+        "ended_at": {"type": ["string", "null"], "format": "date-time"}
+        ,"void_reason": {"type": ["string", "null"], "minLength": 4}
+        ,"void_failure_code": {"type": ["string", "null"], "minLength": 2}
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "subject", "options", "status", "opened_at", "affects"],
+      "properties": {
+        "id": {"type": "string"},
+        "subject": {"type": "string"},
+        "options": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+        "status": {"enum": ["open", "resolved"]},
+        "opened_at": {"type": "string", "format": "date-time"},
+        "resolved_at": {"type": ["string", "null"], "format": "date-time"},
+        "selected": {"type": ["string", "null"]},
+        "affects": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "next_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "component_id", "action", "blocked_by"],
+      "properties": {
+        "id": {"type": "string"},
+        "component_id": {"type": "string"},
+        "action": {"type": "string"},
+        "blocked_by": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

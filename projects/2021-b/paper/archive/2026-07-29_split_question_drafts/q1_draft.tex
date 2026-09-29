@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+% 历史独立审阅入口；当前草稿入口为 manuscript_draft.tex。
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,longtable,array}
+\usepackage{graphicx}
+\usepackage{fontspec}
+% 用户确认的项目版式：四边页边距均为 2.5 cm。
+% 这不是把 DOCX 样例隐藏页边距冒充模板硬要求。
+\usepackage[margin=2.5cm,headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage[section]{placeins}
+
+\singlespacing
+\setkeys{Gin}{width=\linewidth,keepaspectratio}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% 模板要求英文与数字使用 Times New Roman。字体从本机 Windows 字体目录显式载入，
+% 避免 XeLaTeX 回退到 Latin Modern。
+\setmainfont[
+  Path=C:/Windows/Fonts/,
+  UprightFont=times.ttf,
+  BoldFont=timesbd.ttf,
+  ItalicFont=timesi.ttf,
+  BoldItalicFont=timesbi.ttf
+]{Times New Roman}
+\captionsetup{font=small,labelfont=bf}
+
+\titleformat{\section}{\centering\heiti\fontsize{14pt}{16pt}\selectfont}{}{0pt}{}
+\titlespacing{\section}{0pt}{12pt}{12pt}
+\titleformat{\subsection}{\heiti\fontsize{12pt}{14pt}\selectfont}{}{0pt}{}
+\titlespacing{\subsection}{0pt}{6pt}{6pt}
+\titleformat{\subsubsection}{\heiti\fontsize{12pt}{14pt}\selectfont}{}{0pt}{}
+\titlespacing{\subsubsection}{0pt}{6pt}{6pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small 第一问内容草稿（非正式论文）}
+\fancyfoot[C]{\thepage}
+
+\hypersetup{
+  pdftitle={第一问内容草稿（非正式论文）},
+  pdfsubject={内部审阅稿，不作为正式提交论文}
+}
+
+\title{\heiti\fontsize{16pt}{19pt}\selectfont
+乙醇偶合制备 C4 烯烃的实验关系分析与条件优化\\[6pt]
+\zihao{-4}第一问内容草稿}
+\author{}
+\date{2026年7月29日}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{草稿边界：}本 PDF 仅用于逐段审阅第一问的建模内容。
+它不等于正式论文，不得改名或替代未来唯一正式入口 \texttt{paper/paper.tex}。
+}}
+\end{center}
+
+\input{q1_body.tex}
+\input{references_q1.tex}
+
+\end{document}

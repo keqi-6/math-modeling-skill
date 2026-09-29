@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "status": "q4_s11_independent_verification_passed",
+  "independent_of_s11_import": true,
+  "verification_count": 9,
+  "passed_count": 9,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "five_omission_cases",
+      "passed": true
+    },
+    {
+      "name": "independent_loss_pattern",
+      "passed": true
+    },
+    {
+      "name": "no_omission_retains_all_roles",
+      "passed": true
+    },
+    {
+      "name": "formal_policy_retains_G1_G5",
+      "passed": true
+    },
+    {
+      "name": "symmetric_policy_loses_competitor",
+      "passed": true
+    },
+    {
+      "name": "unsupported_337_5_reopens_spec",
+      "passed": true
+    },
+    {
+      "name": "batch_execution_uses_A",
+      "passed": true
+    },
+    {
+      "name": "summary_matches",
+      "passed": true
+    },
+    {
+      "name": "manifest_hashes",
+      "passed": true
+    }
+  ]
+}

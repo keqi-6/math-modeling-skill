@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "status": "q3_s11_independent_verification",
+  "passed": true,
+  "check_count": 8,
+  "passed_count": 8,
+  "checks": [
+    {
+      "check": "1_遮点误差复算",
+      "passed": true,
+      "detail": "rows=72, wins=68/72, max_metric_error=3.553e-15"
+    },
+    {
+      "check": "2_最高候选识别边界",
+      "passed": true,
+      "detail": "top1_correct=4/5"
+    },
+    {
+      "check": "3_D1局部直线独立复算",
+      "passed": true,
+      "detail": "rows=11, max_abs_error=2.220e-16"
+    },
+    {
+      "check": "4_两种插值均不改变推荐",
+      "passed": true,
+      "detail": "max_linear=7.229295, max_pchip=6.551703, low_d0_best=17.264309"
+    },
+    {
+      "check": "5_温度覆盖复算",
+      "passed": true,
+      "detail": "coverage={250.0: 21, 275.0: 21, 300.0: 21, 325.0: 10, 350.0: 21, 400.0: 19, 450.0: 1}"
+    },
+    {
+      "check": "6_排名差距复算",
+      "passed": true,
+      "detail": "max_abs_error=0.000e+00"
+    },
+    {
+      "check": "7_声明边界",
+      "passed": true,
+      "detail": "forbidden_hits=0"
+    },
+    {
+      "check": "8_产物合同与哈希",
+      "passed": true,
+      "detail": "pre_verification_hashes=13/13"
+    }
+  ],
+  "note": "通过支持S11所述稳定范围与失败边界，不构成显著性、因果或连续温度最优证明。"
+}

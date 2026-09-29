@@ -1,0 +1,11 @@
+{
+  "grid_n": 5120,
+  "tight": false,
+  "elapsed_s": 2.2393703999987338,
+  "max_step_s": 5.0,
+  "rtol": 2e-09,
+  "atol_temperature": 2e-09,
+  "atol_moisture": 2e-11,
+  "numpy": "2.5.3",
+  "scipy": "1.18.1"
+}

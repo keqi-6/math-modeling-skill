@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "status": "s9_formal_design_generated_pending_s10_verification",
+  "producer": "src/q4/01_build_formal_design.py",
+  "formal_policy": "one_shot_evidence_directed_five_run_design",
+  "experiment_count": 5,
+  "experiment_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+  ],
+  "future_responses_created": false,
+  "responsibilities_covered": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5"
+  ],
+  "upstream_frozen_facts": {
+    "general_recommendation": {
+      "catalyst_id": "A3",
+      "temperature_c": 400.0,
+      "c4_yield_pct": 44.72805977609709,
+      "lead_over_runner_up_pct_point": 1.609618108690185,
+      "lead_over_best_distinct_combination_pct_point": 8.450240685175878
+    },
+    "strict_low_recommendation": {
+      "catalyst_id": "A2",
+      "temperature_c": 325.0,
+      "c4_yield_pct": 17.264309323382783,
+      "lead_over_best_distinct_combination_pct_point": 6.471567352850483
+    },
+    "coverage_325": 10,
+    "coverage_450": 1,
+    "pchip_worst_holdout_error_pct_point": 13.490627137330009
+  },
+  "claim_boundaries": [
+    "本产物是实验计划，不是已经执行的实验结果",
+    "五次实验由前三问证据缺口推出，不声称全局唯一最优",
+    "一次重复只支持关键条件的局部描述性复现",
+    "375摄氏度A3/A4比较只支持该温度",
+    "新增非均衡点不替代第二问四共同温度主体模型",
+    "不拟合完整响应面，不采用贝叶斯优化，不生成预测响应",
+    "337.5摄氏度正式执行前须确认设备控温能力"
+  ],
+  "run": {
+    "started_at": "2026-07-31T09:57:47.010769+08:00",
+    "finished_at": "2026-07-31T09:57:47.136771+08:00",
+    "python": "3.12.3",
+    "pandas": "3.0.3",
+    "random_seed": null
+  }
+}

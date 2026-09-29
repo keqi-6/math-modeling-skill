@@ -1,0 +1,7 @@
+interface:
+  display_name: "数学建模项目控制器 V9"
+  short_description: "可恢复、可路由、可审计并可受控维护的建模项目工作流"
+  default_prompt: "使用 $mathematical-modeling-project-controller 按当前授权与项目状态推进这个数学建模任务。"
+policy:
+  allow_implicit_invocation: true
+

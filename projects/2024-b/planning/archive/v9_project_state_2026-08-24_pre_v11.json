@@ -1,0 +1,613 @@
+{
+  "schema_version": "9.0.0",
+  "project_id": "cumcm2024-b",
+  "components": [
+    {
+      "id": "q1",
+      "type": "question",
+      "state": "S7",
+      "evidence": {
+        "problem_scope": "planning/q1_understanding.md",
+        "evidence_inventory": "planning/analysis/2026-08-23_q1_s2_reentry_assessment.md",
+        "data_identity": "data/README.md",
+        "candidate_comparison": "planning/analysis/2026-08-23_q1_s3_decision_package.md",
+        "frozen_specification": "planning/analysis/2026-08-23_q1_s4_separate_sequential_specification.md",
+        "implementation_artifacts": "planning/analysis/2026-08-23_q1_s5_implementation.md",
+        "E1_IMPLEMENTATION": "src/q1/02_solve.py",
+        "E2_NUMERICAL": "output/q1/s6_independent_verification.json",
+        "E3_STRUCTURAL": "planning/analysis/2026-08-23_q1_s6_independent_verification.md",
+        "E4_REALITY": "planning/audits/2026-08-23_q1_s6_closure.md",
+        "delivery_acceptance": "planning/audits/2026-08-23_q1_s6_closure.md"
+      },
+      "consumers": []
+    },
+    {
+      "id": "q2",
+      "type": "question",
+      "state": "S7",
+      "evidence": {
+        "problem_scope": "planning/q2_understanding.md",
+        "evidence_inventory": "planning/analysis/2026-08-23_q2_s2_assessment.md",
+        "data_identity": "data/README.md",
+        "candidate_comparison": "planning/analysis/2026-08-23_q2_s3_decision_package.md",
+        "frozen_specification": "planning/analysis/2026-08-23_q2_s4_specification.md",
+        "implementation_artifacts": "planning/analysis/2026-08-23_q2_s5_implementation.md",
+        "E1_IMPLEMENTATION": "src/q2/01_solve.py",
+        "E2_NUMERICAL": "output/q2/s6_independent_verification.json",
+        "E3_STRUCTURAL": "planning/analysis/2026-08-23_q2_s6_independent_verification.md",
+        "E4_REALITY": "planning/audits/2026-08-24_q2_s6_closure.md",
+        "delivery_acceptance": "planning/audits/2026-08-24_q2_s6_closure.md"
+      },
+      "consumers": []
+    },
+    {
+      "id": "q3",
+      "type": "question",
+      "state": "S7",
+      "evidence": {
+        "problem_scope": "planning/q3_understanding.md",
+        "evidence_inventory": "planning/analysis/2026-08-24_q3_s2_assessment.md",
+        "data_identity": "data/README.md",
+        "candidate_comparison": "planning/analysis/2026-08-24_q3_s3_decision_package.md",
+        "frozen_specification": "planning/analysis/2026-08-24_q3_s4_specification.md",
+        "implementation_artifacts": "planning/analysis/2026-08-24_q3_s5_implementation.md",
+        "E1_IMPLEMENTATION": "src/q3/01_solve.py",
+        "E2_NUMERICAL": "output/q3/s6_independent_verification.json",
+        "E3_STRUCTURAL": "planning/analysis/2026-08-24_q3_s6_independent_verification.md",
+        "E4_REALITY": "planning/analysis/2026-08-24_q3_s6_independent_verification.md",
+        "delivery_acceptance": "HANDOFF.md"
+      },
+      "consumers": []
+    },
+    {
+      "id": "q4",
+      "type": "question",
+      "state": "S6",
+      "evidence": {
+        "problem_scope": "planning/understanding.md",
+        "evidence_inventory": "planning/understanding.md",
+        "data_identity": "data/README.md",
+        "candidate_comparison": "planning/analysis/2026-08-24_q4_s2_wp3_wp4_decision_package.md",
+        "method_decision": "planning/analysis/2026-08-24_q4_s3_approved_light_loop.md",
+        "method_decision_audit": "planning/audits/2026-08-24_q4_s3_closure.md",
+        "specification_draft": "planning/analysis/2026-08-24_q4_s4_specification.md",
+        "specification_review": "planning/analysis/2026-08-24_q4_s4_review.md",
+        "frozen_specification": "planning/analysis/2026-08-24_q4_s4_specification.md",
+        "implementation_artifacts": "planning/analysis/2026-08-24_q4_s5_implementation.md",
+        "E1_IMPLEMENTATION": "src/q4/02_verify_independent.py",
+        "E2_NUMERICAL": "output/q4/s6_independent_verification.json",
+        "E3_STRUCTURAL": "planning/analysis/2026-08-24_q4_s6_independent_verification.md",
+        "E4_REALITY": "planning/analysis/2026-08-24_q4_s6_independent_verification.md"
+      },
+      "consumers": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "B题/B题.pdf",
+      "sha256": "f54529dd15d729b046e248ea41033b4f66ef68333be2bee912b0c54eafd227ab",
+      "artifact_class": "formal",
+      "consumer": "四问建模与验证",
+      "purpose": "唯一官方题面和数据事实源",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "validation": [
+        "data/README.md"
+      ]
+    },
+    {
+      "path": "PROJECT.md",
+      "sha256": "4638fdc89db6149ae83e2f84ea22b810088f58d4971f8d7bcee455a20230cb87",
+      "artifact_class": "working",
+      "consumer": "项目接手",
+      "purpose": "项目范围、状态与目录总览",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "57cc50b319caeb7f17275f452d749115e309a3dc2f766b9df4cf6370aa475261",
+      "artifact_class": "working",
+      "consumer": "新会话恢复",
+      "purpose": "人工暂停点、冻结边界和下一动作",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/index.md",
+      "sha256": "6099e442edbe5f67ce90b2f47c2bae4f81d5a135ccae502f659f3f5277051699",
+      "artifact_class": "working",
+      "consumer": "规划导航",
+      "purpose": "当前权威材料索引",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/understanding.md",
+      "sha256": "b5b5990d5ef1449667230a2dd5c62b17006f3c16d03d64015e629484b75d6b82",
+      "artifact_class": "working",
+      "consumer": "问题四S2",
+      "purpose": "共享题面与问题四证据计划",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/task_matrix.md",
+      "sha256": "7cc747530abadf760faeb3952f6865bd84a57717665ce5081c6b0e15c54dd1e3",
+      "artifact_class": "working",
+      "consumer": "跨问依赖检查",
+      "purpose": "四问任务、输入、输出与状态导航",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/analysis/2026-08-24_q4_two_sided_sampling_interface_candidate.md",
+      "sha256": "eff51ddb86a678cc3176e3ba34ef1f528c6b34b134279b1a73ffb127028eb1af",
+      "artifact_class": "working",
+      "consumer": "问题四S2候选审计",
+      "purpose": "保留未批准的历史候选及其边界",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/archive/v10_project_state_2026-08-24.json",
+      "sha256": "88598ba51d0e57bbad0206c95710e89850ea82efd47044ccba48509f821da04c",
+      "artifact_class": "working",
+      "consumer": "控制器回滚与审计",
+      "purpose": "保留V10最终状态快照但不作为当前权威",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/archive/legacy_project_state_pre_v9_rebuild.json",
+      "sha256": "277f3999e0f65cf346c2ab05602062ae8a9fae5f8adedc84ed09aee3e1b3aa6c",
+      "artifact_class": "working",
+      "consumer": "历史追溯",
+      "purpose": "保留旧根状态但不作为当前权威",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "src/q1/02_solve.py",
+      "sha256": "11dc8f37f2c9174e0db7bbfb124ad7dce405ca9cc05d3f719809a39b0a596028",
+      "artifact_class": "formal",
+      "consumer": "问题一复现",
+      "purpose": "问题一主求解实现",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1"
+      ],
+      "validation": [
+        "output/q1/s6_independent_verification.json"
+      ]
+    },
+    {
+      "path": "output/q1/s6_independent_verification.json",
+      "sha256": "3edbb14971658bd98cd37a7167f45ffd891daacaa55437ec04581268822a0f81",
+      "artifact_class": "formal",
+      "consumer": "问题一主张",
+      "purpose": "问题一独立数值验证",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1"
+      ],
+      "validation": [
+        "planning/audits/2026-08-23_q1_s6_closure.md"
+      ]
+    },
+    {
+      "path": "planning/audits/2026-08-23_q1_s6_closure.md",
+      "sha256": "6c683a658e7b9cf9f1394c8a470411e3dbf4404ddcd5e89b2a49b7619f268e28",
+      "artifact_class": "formal",
+      "consumer": "问题一交付边界",
+      "purpose": "问题一S7接受与禁止外推",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q1"
+      ],
+      "validation": [
+        "docs/q1/solution_brief.md"
+      ]
+    },
+    {
+      "path": "src/q2/01_solve.py",
+      "sha256": "194ace75063cfce3dc845e0407aaf45585bc761c89b1073c50b5058eb29d184d",
+      "artifact_class": "formal",
+      "consumer": "问题二复现",
+      "purpose": "问题二主求解实现",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q2"
+      ],
+      "validation": [
+        "output/q2/s6_independent_verification.json"
+      ]
+    },
+    {
+      "path": "output/q2/s6_independent_verification.json",
+      "sha256": "850323dc163687a4fb733ab54eed5831d597bce1cd16e0fac11327c10059def8",
+      "artifact_class": "formal",
+      "consumer": "问题二主张",
+      "purpose": "问题二独立数值验证",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q2"
+      ],
+      "validation": [
+        "planning/audits/2026-08-24_q2_s6_closure.md"
+      ]
+    },
+    {
+      "path": "planning/audits/2026-08-24_q2_s6_closure.md",
+      "sha256": "5b19d85b96b7aaa79a4eaf5763589654bfff035e839216a9a8a5724e758c9492",
+      "artifact_class": "formal",
+      "consumer": "问题二交付边界",
+      "purpose": "问题二S7接受与禁止外推",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q2"
+      ],
+      "validation": [
+        "docs/q2/solution_brief.md"
+      ]
+    },
+    {
+      "path": "src/q3/01_solve.py",
+      "sha256": "8532a61d7319afa9226162469b78fd3f39a39452eb06ee835da05c65cb594f44",
+      "artifact_class": "formal",
+      "consumer": "问题三复现",
+      "purpose": "问题三主求解实现",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q3"
+      ],
+      "validation": [
+        "output/q3/s6_independent_verification.json"
+      ]
+    },
+    {
+      "path": "output/q3/s6_independent_verification.json",
+      "sha256": "8f8b38b9e1c251f1e8eee6c3970d016d370c5e62b17f07782273f28cb0fbe410",
+      "artifact_class": "formal",
+      "consumer": "问题三主张",
+      "purpose": "问题三独立数值验证",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q3"
+      ],
+      "validation": [
+        "planning/audits/2026-08-24_q3_s6_closure.md"
+      ]
+    },
+    {
+      "path": "planning/q3_claim_test_paper_map.md",
+      "sha256": "f2b3b20c0c58ba1d84262fb1dc4972277d037dd832ed0f8e0aebd36d2f238b90",
+      "artifact_class": "formal",
+      "consumer": "问题三交付边界",
+      "purpose": "问题三条件性主张、证据与禁止外推映射",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求按V9重建项目现场",
+      "component_ids": [
+        "q3"
+      ],
+      "validation": [
+        "HANDOFF.md"
+      ]
+    },
+    {
+      "path": "planning/analysis/2026-08-24_q4_s2_wp1_wp2_audit.md",
+      "sha256": "9ef9c0f3c55eda64c9c2497b040e5cd99f469be49cdd4c1009b1850689ca35bc",
+      "artifact_class": "working",
+      "consumer": "q4-s2-wp3-wp4",
+      "purpose": "问题四数据能力与不确定性接口权威",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求推进问题四S2",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/analysis/2026-08-24_q4_s2_wp3_wp4_decision_package.md",
+      "sha256": "699505b90f11ec0460c2527644724b844fc4ee0514c1d76278f3e2fd63598618",
+      "artifact_class": "working",
+      "consumer": "q4-s3-human-decision",
+      "purpose": "问题四传播映射、候选比较与验证合同",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确要求推进问题四S2",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/analysis/2026-08-24_q4_s3_approved_light_loop.md",
+      "sha256": "2eecfe9bbb9d77aac7e442a24c24fd078087ece2a1293798ced1809af055f13b",
+      "artifact_class": "formal",
+      "consumer": "问题四S4数学规格",
+      "purpose": "冻结问题四轻闭环方法、继承边界与S4责任",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确回复确认这种方案",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "planning/audits/2026-08-24_q4_s3_closure.md"
+      ]
+    },
+    {
+      "path": "planning/audits/2026-08-24_q4_s3_closure.md",
+      "sha256": "73dbedbf50339c7d355f28d0e08ab837f30f7d051bc809fbda9d1303eaab2a00",
+      "artifact_class": "working",
+      "consumer": "问题四S4入口与恢复审计",
+      "purpose": "记录S3人工授权、批准范围和生命周期边界",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确回复确认这种方案",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/analysis/2026-08-24_q4_s4_specification.md",
+      "sha256": "6fc6327513bada79130e250f2bf34942eddf8c649d1f6fad4f05eee990924761",
+      "artifact_class": "formal",
+      "consumer": "问题四S5实现",
+      "purpose": "问题四冻结数学规格、抽样合同与完整离散传播规则",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确确认完整S4规格并进入S5",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "planning/audits/2026-08-24_q4_s4_closure.md",
+        "output/q4/s5_acceptance.json"
+      ]
+    },
+    {
+      "path": "planning/analysis/2026-08-24_q4_s4_review.md",
+      "sha256": "ee8ccb152967204e0e53e4e841aff11323e6afd1abf6931d80acee94fe5c8f7d",
+      "artifact_class": "working",
+      "consumer": "q4-s4-human-specification-gate",
+      "purpose": "问题四S4约束传播、统计身份、可实现性与风险审查",
+      "lifecycle": "active",
+      "authorization_basis": "用户明确指令进入s4",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/audits/2026-08-24_q4_s4_closure.md",
+      "sha256": "ef2195603de30fc6b308cfb2b4b97754e0b7094dde5290e693a47409a73fdf56",
+      "artifact_class": "formal",
+      "consumer": "q4-s5-entry",
+      "purpose": "问题四S4人工确认、冻结范围与实现授权",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户明确确认完整S4规格并进入S5",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "planning/analysis/2026-08-24_q4_s4_review.md"
+      ]
+    },
+    {
+      "path": "src/q4/01_solve.py",
+      "sha256": "301b03a829ef46d8e673be5aee511e8012bcffb3ddd2496b734465b632cbe620",
+      "artifact_class": "formal",
+      "consumer": "问题四S5复现",
+      "purpose": "问题四主求解入口",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "output/q4/s5_acceptance.json"
+      ]
+    },
+    {
+      "path": "output/q4/s5_q2_summary.json",
+      "sha256": "31cb6ac2e22f792cabc0e9cd8a521618ce7d0ce509406e528dcbc89dad4e7e37",
+      "artifact_class": "formal",
+      "consumer": "问题四问题二主张",
+      "purpose": "问题二完整三率灵敏度摘要",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "output/q4/s6_independent_verification.json"
+      ]
+    },
+    {
+      "path": "output/q4/s5_q3_summary.json",
+      "sha256": "3a6a06df0a57294283cff08a3172a942517be3605d84b6f9704d9cdc5fd6fdc7",
+      "artifact_class": "formal",
+      "consumer": "问题四问题三主张",
+      "purpose": "问题三十二率完整映射摘要",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "output/q4/s6_independent_verification.json"
+      ]
+    },
+    {
+      "path": "src/q4/02_verify_independent.py",
+      "sha256": "1d3814040f24dbaa2d5708e6bfe950b0e48068ab5186568738bf36f4a8505513",
+      "artifact_class": "formal",
+      "consumer": "问题四S6复现",
+      "purpose": "问题四独立实现与结构验证入口",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "output/q4/s6_independent_verification.json"
+      ]
+    },
+    {
+      "path": "output/q4/s6_independent_verification.json",
+      "sha256": "de24559c3b5d356a00c9cef8873657b7e5147b75fa510fdb36f7898e5d65d3aa",
+      "artifact_class": "formal",
+      "consumer": "问题四S6主张",
+      "purpose": "问题四独立数值与结构验证",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "planning/analysis/2026-08-24_q4_s6_independent_verification.md"
+      ]
+    },
+    {
+      "path": "docs/q4/solution_brief.md",
+      "sha256": "a9da027596354f380044b480009d3ccb10984c586b6acc12cc75b7f1f4195a94",
+      "artifact_class": "working",
+      "consumer": "问题四S6人工审阅",
+      "purpose": "问题四模型结果检验讲解稿",
+      "lifecycle": "active",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/q4_claim_test_paper_map.md",
+      "sha256": "770f36a39c99f984d7c6a26a87515c3474ed247415d9608068788821204fa665",
+      "artifact_class": "working",
+      "consumer": "问题四S6人工审阅",
+      "purpose": "问题四条件性主张与禁止外推映射",
+      "lifecycle": "active",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    },
+    {
+      "path": "planning/analysis/2026-08-24_q4_s5_implementation.md",
+      "sha256": "7acd13c4827f31621aac6e36245fba58a45632251ec0923923f37c8bcf37f5b8",
+      "artifact_class": "formal",
+      "consumer": "问题四S6入口",
+      "purpose": "问题四S5实现与求解权威记录",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "output/q4/s6_independent_verification.json"
+      ]
+    },
+    {
+      "path": "planning/audits/2026-08-24_q4_s5_closure.md",
+      "sha256": "04bd3747f946ec85a3ce48528336ca84785760f2ce4ba76fa1abc040bacad9f4",
+      "artifact_class": "formal",
+      "consumer": "问题四S6入口",
+      "purpose": "问题四S5关闭范围与S6责任",
+      "lifecycle": "milestone",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": [
+        "planning/analysis/2026-08-24_q4_s6_independent_verification.md"
+      ]
+    },
+    {
+      "path": "planning/analysis/2026-08-24_q4_s6_independent_verification.md",
+      "sha256": "144073a546b93b985ac5163eff8ac5bc312b9f3729c95899adbf98da00116fb3",
+      "artifact_class": "working",
+      "consumer": "问题四S6人工审阅",
+      "purpose": "问题四双轴独立验证与现实边界",
+      "lifecycle": "active",
+      "authorization_basis": "用户确认完整S4并授权自主推进至S6关闭门前",
+      "component_ids": [
+        "q4"
+      ],
+      "validation": []
+    }
+  ],
+  "open_decisions": [],
+  "next_actions": [
+    {
+      "component_id": "q4",
+      "action": "用户实际审阅问题四S6条件性结果、独立验证、讲解稿和适用边界，并决定是否关闭S6进入S7；在此之前不得创建关闭审计或正式论文"
+    }
+  ],
+  "last_route": "RT-VERIFY-IMPLEMENTATION",
+  "updated_at": "2026-08-24T11:37:55.392009+00:00"
+}

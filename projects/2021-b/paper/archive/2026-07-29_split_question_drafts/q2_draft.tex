@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+% 历史独立审阅入口；当前草稿入口为 manuscript_draft.tex。
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,array}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage[margin=2.5cm,headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage[section]{placeins}
+
+\singlespacing
+\setkeys{Gin}{width=\linewidth,keepaspectratio}
+
+\setmainfont[
+  Path=C:/Windows/Fonts/,
+  UprightFont=times.ttf,
+  BoldFont=timesbd.ttf,
+  ItalicFont=timesi.ttf,
+  BoldItalicFont=timesbi.ttf
+]{Times New Roman}
+\captionsetup{font=small,labelfont=bf}
+
+\titleformat{\section}{\centering\heiti\fontsize{14pt}{16pt}\selectfont}{}{0pt}{}
+\titlespacing{\section}{0pt}{12pt}{12pt}
+\titleformat{\subsection}{\heiti\fontsize{12pt}{14pt}\selectfont}{}{0pt}{}
+\titlespacing{\subsection}{0pt}{6pt}{6pt}
+\titleformat{\subsubsection}{\heiti\fontsize{12pt}{14pt}\selectfont}{}{0pt}{}
+\titlespacing{\subsubsection}{0pt}{6pt}{6pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small 第二问内容草稿（非正式论文）}
+\fancyfoot[C]{\thepage}
+
+\hypersetup{
+  pdftitle={第二问内容草稿（非正式论文）},
+  pdfsubject={内部审阅稿，不作为正式提交论文}
+}
+
+\title{\heiti\fontsize{16pt}{19pt}\selectfont
+乙醇偶合制备 C4 烯烃的实验关系分析与条件优化\\[6pt]
+\zihao{-4}第二问内容草稿}
+\author{}
+\date{2026年7月29日}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\textbf{草稿边界：}本 PDF 仅用于审阅第二问的建模内容和文字表达。
+数学结果已经冻结，但本稿措辞、图表取舍和版面尚未获得正式论文批准。
+}}
+\end{center}
+
+\input{q2_body.tex}
+\input{references_q2.tex}
+
+\end{document}

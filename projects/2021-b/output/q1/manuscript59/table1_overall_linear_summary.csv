@@ -1,0 +1,3 @@
+response,response_cn,slope_per_25c_min_pct_point,slope_per_25c_max_pct_point,median_slope_per_25c_pct_point,median_mae_pct_point,median_r_squared
+ethanol_conversion_pct,乙醇转化率,3.282794767302549,16.57395183467561,8.32973331534967,4.182541393034969,0.8834258401138424
+c4_selectivity_pct,C4烯烃选择性,1.2918103448275855,6.529940119760479,5.068275862068966,1.9862068965517303,0.9427780122746828

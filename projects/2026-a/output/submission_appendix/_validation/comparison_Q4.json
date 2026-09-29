@@ -1,0 +1,77 @@
+{
+  "ast": [
+    {
+      "source": "src/Q4/solve.py",
+      "target": "q4_model.py",
+      "object": "System",
+      "equal": true
+    },
+    {
+      "source": "src/Q4/solve.py",
+      "target": "q4_model.py",
+      "object": "Recorder",
+      "equal": true
+    },
+    {
+      "source": "src/Q4/solve.py",
+      "target": "q4_model.py",
+      "object": "solve",
+      "equal": true
+    }
+  ],
+  "numerical": [
+    {
+      "case": "q4",
+      "elapsed_s": 106.49972719998914,
+      "fields": {
+        "temperature_C": 0.0,
+        "moisture_kg_kg": 2.7755575615628914e-17,
+        "max_moisture_kg_kg": 2.7755575615628914e-17,
+        "temperature_mean": 0.0,
+        "moisture_mean": 2.7755575615628914e-17,
+        "surface_radius_m": 0.0,
+        "surface_temperature_C": 0.0,
+        "surface_moisture_kg_kg": 0.0
+      },
+      "snapshots": {
+        "temperature_snapshots@0": 0.0,
+        "moisture_snapshots@0": 0.0,
+        "temperature_snapshots@14400": 0.0,
+        "moisture_snapshots@14400": 0.0,
+        "temperature_snapshots@21600": 0.0,
+        "moisture_snapshots@21600": 0.0,
+        "temperature_snapshots@43200": 0.0,
+        "moisture_snapshots@43200": 0.0,
+        "temperature_snapshots@64800": 0.0,
+        "moisture_snapshots@64800": 0.0,
+        "temperature_snapshots@86400": 0.0,
+        "moisture_snapshots@86400": 0.0,
+        "temperature_snapshots@108000": 0.0,
+        "moisture_snapshots@108000": 0.0,
+        "temperature_snapshots@129600": 0.0,
+        "moisture_snapshots@129600": 0.0,
+        "temperature_snapshots@151200": 0.0,
+        "moisture_snapshots@151200": 0.0,
+        "temperature_snapshots@172800": 0.0,
+        "moisture_snapshots@172800": 0.0,
+        "temperature_snapshots@183948": 0.0,
+        "moisture_snapshots@183948": 0.0,
+        "temperature_snapshots@183949": 0.0,
+        "moisture_snapshots@183949": 2.7755575615628914e-17
+      },
+      "new_sha256": "9ffac87407bb4ec7ab481d215bbda85f8a908f1d1881c8b933ecce84fc90459d",
+      "original_sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92",
+      "n_end": 183949,
+      "continuous_crossing_difference_s": 0.0
+    }
+  ],
+  "workbooks": [
+    {
+      "workbook": "result4.xlsx",
+      "compared_cells": 70541,
+      "difference_count": 0,
+      "examples": []
+    }
+  ],
+  "pass": true
+}

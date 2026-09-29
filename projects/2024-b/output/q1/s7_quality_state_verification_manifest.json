@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s7_verification_run_identity",
+  "producer": "src/q1/10_verify_quality_state_evaluation.py",
+  "started_at": "2026-08-25T17:48:28.295404+08:00",
+  "finished_at": "2026-08-25T17:49:05.733934+08:00",
+  "command": [
+    "/usr/bin/python3",
+    "src/q1/10_verify_quality_state_evaluation.py"
+  ],
+  "environment": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "random_seed": null
+  },
+  "inputs": {
+    "output/q1/s5_large_batch_extension.json": "28a794aa079c2f22036ecba1f1e483f3eba90b05995d6b89173ab4c7a1e9991b",
+    "output/q1/s7_quality_state_evaluation.json": "4dffd9d8a689f792b7912d2856e4c8862450e7777cf46474cee61b2df6ba1cb8",
+    "src/q1/10_verify_quality_state_evaluation.py": "f7396072050d16807084a66f9dc2468c44b61682ddce418f565e5312f0ccde19"
+  },
+  "outputs": {
+    "output/q1/s7_quality_state_verification.json": "50edb5eb61da5e6809be4fa95aeac61eddf54c3b2ff4b829ccc47564120ec32d"
+  }
+}

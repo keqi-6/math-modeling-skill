@@ -1,0 +1,493 @@
+{
+  "schema_version": "1.0",
+  "axis": "E4_REALITY_AND_SENSITIVITY",
+  "spec_id": "SPEC-Q3-WORKING-2.0",
+  "formal_result_sha256": "569e8444cfe1f7106b90742d6341f8e351a99bcffb26d094eb8748eb9ae7e0c9",
+  "verification_spec_sha256": "8d8639eb0181e7dd8f20806c22e3e30476d8a4a7fe9683a1e71a63ac8177c1f5",
+  "validator_sha256": "e9ddd240bfcacb7f3d31ea52ce27568fd58cbf0e00e066a403472400a0b749c1",
+  "run_identity": {
+    "executed_at": "2026-08-28T08:34:35.349658+00:00",
+    "python": "3.12.3",
+    "elapsed_seconds": 12.261577435001527
+  },
+  "result_id": "Q3-E4-SENSITIVITY-20260828",
+  "status": "pass",
+  "method_role": "diagnostic_fixed_policy_sensitivity",
+  "nominal": {
+    "duration_s": 6.926038727693494,
+    "settings": {
+      "name": "sensitivity",
+      "scan_step_s": 0.01,
+      "n_theta": 256,
+      "n_levels": 17,
+      "root_time_tolerance_s": 1e-09,
+      "margin_tolerance_m": 1e-08,
+      "surface_refinement": false
+    }
+  },
+  "control_sensitivity": {
+    "design": "one-factor fixed-policy local exploration; no re-optimization",
+    "grids": {
+      "heading_offset_deg": [
+        -0.2,
+        -0.1,
+        0.0,
+        0.1,
+        0.2
+      ],
+      "speed_offset_mps": [
+        -1.0,
+        -0.5,
+        0.0,
+        0.5,
+        1.0
+      ],
+      "release_shift_s": [
+        -0.1,
+        -0.05,
+        0.0,
+        0.05,
+        0.1
+      ],
+      "fuse_shift_s": [
+        -0.1,
+        -0.05,
+        0.0,
+        0.05,
+        0.1
+      ]
+    },
+    "records": {
+      "heading_offset_deg": [
+        {
+          "value": -0.2,
+          "status": "feasible",
+          "duration_s": 6.936982545787145,
+          "change_s": 0.010943818093650748,
+          "retention_ratio": 1.0015800977331952
+        },
+        {
+          "value": -0.1,
+          "status": "feasible",
+          "duration_s": 7.142122334772678,
+          "change_s": 0.21608360707918361,
+          "retention_ratio": 1.0311987292556106
+        },
+        {
+          "value": 0.0,
+          "status": "feasible",
+          "duration_s": 6.926038727693494,
+          "change_s": 0.0,
+          "retention_ratio": 1.0
+        },
+        {
+          "value": 0.1,
+          "status": "feasible",
+          "duration_s": 6.6934292174836045,
+          "change_s": -0.23260951020988951,
+          "retention_ratio": 0.966415216640385
+        },
+        {
+          "value": 0.2,
+          "status": "feasible",
+          "duration_s": 6.291338620825099,
+          "change_s": -0.6347001068683946,
+          "retention_ratio": 0.9083603006245733
+        }
+      ],
+      "speed_offset_mps": [
+        {
+          "value": -1.0,
+          "status": "feasible",
+          "duration_s": 6.908476598490281,
+          "change_s": -0.017562129203213317,
+          "retention_ratio": 0.9974643328035415
+        },
+        {
+          "value": -0.5,
+          "status": "feasible",
+          "duration_s": 6.91764369670601,
+          "change_s": -0.008395030987483842,
+          "retention_ratio": 0.9987879029676925
+        },
+        {
+          "value": 0.0,
+          "status": "feasible",
+          "duration_s": 6.926038727693494,
+          "change_s": 0.0,
+          "retention_ratio": 1.0
+        },
+        {
+          "value": 0.5,
+          "status": "feasible",
+          "duration_s": 6.933712262406162,
+          "change_s": 0.007673534712667518,
+          "retention_ratio": 1.001107925470007
+        },
+        {
+          "value": 1.0,
+          "status": "feasible",
+          "duration_s": 6.940703464124682,
+          "change_s": 0.01466473643118782,
+          "retention_ratio": 1.0021173338769465
+        }
+      ],
+      "release_shift_s": [
+        {
+          "value": -0.1,
+          "status": "infeasible",
+          "failure_code": "Q3_CONSTRAINT_FAILURE",
+          "reason": "negative hard-constraint margin: {'heading_domain_rad': 3.139170644681572, 'speed_lower_mps': 68.49032515203004, 'speed_upper_mps': 1.5096748479699613, 'release_1_lower_s': np.float64(-0.1), 'release_gap_12_s': np.float64(2.475169870322561), 'release_gap_23_s': np.float64(0.8195965178436997), 'last_release_margin_s': np.float64(61.80440441930635), 'minimum_fuse_delay_s': 3.5059079995793145, 'minimum_explosion_height_m': 1621.294070111546, 'minimum_explosion_arrival_margin_s': 55.76531525483633}"
+        },
+        {
+          "value": -0.05,
+          "status": "infeasible",
+          "failure_code": "Q3_CONSTRAINT_FAILURE",
+          "reason": "negative hard-constraint margin: {'heading_domain_rad': 3.139170644681572, 'speed_lower_mps': 68.49032515203004, 'speed_upper_mps': 1.5096748479699613, 'release_1_lower_s': np.float64(-0.05), 'release_gap_12_s': np.float64(2.475169870322561), 'release_gap_23_s': np.float64(0.8195965178436992), 'last_release_margin_s': np.float64(61.75440441930635), 'minimum_fuse_delay_s': 3.5059079995793145, 'minimum_explosion_height_m': 1621.294070111546, 'minimum_explosion_arrival_margin_s': 55.715315254836334}"
+        },
+        {
+          "value": 0.0,
+          "status": "feasible",
+          "duration_s": 6.926038727693494,
+          "change_s": 0.0,
+          "retention_ratio": 1.0
+        },
+        {
+          "value": 0.05,
+          "status": "feasible",
+          "duration_s": 6.890192327337874,
+          "change_s": -0.035846400355620034,
+          "retention_ratio": 0.9948244008205889
+        },
+        {
+          "value": 0.1,
+          "status": "feasible",
+          "duration_s": 6.842656225716282,
+          "change_s": -0.08338250197721209,
+          "retention_ratio": 0.9879610113001808
+        }
+      ],
+      "fuse_shift_s": [
+        {
+          "value": -0.1,
+          "status": "feasible",
+          "duration_s": 6.810117986398087,
+          "change_s": -0.1159207412954073,
+          "retention_ratio": 0.9832630532613249
+        },
+        {
+          "value": -0.05,
+          "status": "feasible",
+          "duration_s": 6.875906223131798,
+          "change_s": -0.050132504561696045,
+          "retention_ratio": 0.9927617348772187
+        },
+        {
+          "value": 0.0,
+          "status": "feasible",
+          "duration_s": 6.926038727693494,
+          "change_s": 0.0,
+          "retention_ratio": 1.0
+        },
+        {
+          "value": 0.05,
+          "status": "feasible",
+          "duration_s": 6.697258205444768,
+          "change_s": -0.22878052224872647,
+          "retention_ratio": 0.9669680561655024
+        },
+        {
+          "value": 0.1,
+          "status": "feasible",
+          "duration_s": 5.8234757687960315,
+          "change_s": -1.1025629588974626,
+          "retention_ratio": 0.8408090104248324
+        }
+      ]
+    },
+    "minimum_feasible_retention_ratio": 0.8408090104248324,
+    "all_tested_feasible_scenarios_retain_90_percent": false
+  },
+  "q4_bridge_sensitivity": {
+    "role": "local structural sensitivity of Q3 shared-platform coupling; not a Q4 strategy",
+    "official_platform_positions_m": {
+      "FY1": [
+        17800.0,
+        0.0,
+        1800.0
+      ],
+      "FY2": [
+        12000.0,
+        1400.0,
+        1400.0
+      ],
+      "FY3": [
+        6000.0,
+        -3000.0,
+        700.0
+      ]
+    },
+    "distance_grid_m": [
+      -25.0,
+      -10.0,
+      0.0,
+      10.0,
+      25.0
+    ],
+    "zero_shift_oracle_difference_s": 0.0,
+    "records": [
+      {
+        "direction_toward": "FY2",
+        "direction_unit": [
+          -0.9699050900314442,
+          0.2341150217317279,
+          -0.06689000620906511
+        ],
+        "bomb": 1,
+        "scenarios": [
+          {
+            "distance_m": -25.0,
+            "duration_s": 4.712700015253859,
+            "change_s": -2.2133387124396346
+          },
+          {
+            "distance_m": -10.0,
+            "duration_s": 6.260433566618769,
+            "change_s": -0.6656051610747253
+          },
+          {
+            "distance_m": 0.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 10.0,
+            "duration_s": 7.466836073551063,
+            "change_s": 0.5407973458575688
+          },
+          {
+            "distance_m": 25.0,
+            "duration_s": 8.121085258018152,
+            "change_s": 1.1950465303246576
+          }
+        ],
+        "central_sensitivity_s_per_m": 0.060320125346614704,
+        "best_change_s": 1.1950465303246576,
+        "worst_change_s": -2.2133387124396346
+      },
+      {
+        "direction_toward": "FY2",
+        "direction_unit": [
+          -0.9699050900314442,
+          0.2341150217317279,
+          -0.06689000620906511
+        ],
+        "bomb": 2,
+        "scenarios": [
+          {
+            "distance_m": -25.0,
+            "duration_s": 6.085144073275342,
+            "change_s": -0.8408946544181521
+          },
+          {
+            "distance_m": -10.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 0.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 10.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 25.0,
+            "duration_s": 6.652170610277241,
+            "change_s": -0.27386811741625294
+          }
+        ],
+        "central_sensitivity_s_per_m": 0.0,
+        "best_change_s": 0.0,
+        "worst_change_s": -0.8408946544181521
+      },
+      {
+        "direction_toward": "FY2",
+        "direction_unit": [
+          -0.9699050900314442,
+          0.2341150217317279,
+          -0.06689000620906511
+        ],
+        "bomb": 3,
+        "scenarios": [
+          {
+            "distance_m": -25.0,
+            "duration_s": 6.845920400784855,
+            "change_s": -0.0801183269086394
+          },
+          {
+            "distance_m": -10.0,
+            "duration_s": 6.895780614985299,
+            "change_s": -0.030258112708194673
+          },
+          {
+            "distance_m": 0.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 10.0,
+            "duration_s": 6.9531125353232754,
+            "change_s": 0.0270738076297814
+          },
+          {
+            "distance_m": 25.0,
+            "duration_s": 6.775777071361824,
+            "change_s": -0.15026165633167032
+          }
+        ],
+        "central_sensitivity_s_per_m": 0.0028665960168988034,
+        "best_change_s": 0.0270738076297814,
+        "worst_change_s": -0.15026165633167032
+      },
+      {
+        "direction_toward": "FY3",
+        "direction_unit": [
+          -0.9652371921290922,
+          -0.24539928613451498,
+          -0.08997973824932215
+        ],
+        "bomb": 1,
+        "scenarios": [
+          {
+            "distance_m": -25.0,
+            "duration_s": 8.211182842879357,
+            "change_s": 1.2851441151858625
+          },
+          {
+            "distance_m": -10.0,
+            "duration_s": 7.576458217826716,
+            "change_s": 0.6504194901332223
+          },
+          {
+            "distance_m": 0.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 10.0,
+            "duration_s": 6.160562734205192,
+            "change_s": -0.7654759934883018
+          },
+          {
+            "distance_m": 25.0,
+            "duration_s": 4.552061276082215,
+            "change_s": -2.373977451611279
+          }
+        ],
+        "central_sensitivity_s_per_m": -0.0707947741810762,
+        "best_change_s": 1.2851441151858625,
+        "worst_change_s": -2.373977451611279
+      },
+      {
+        "direction_toward": "FY3",
+        "direction_unit": [
+          -0.9652371921290922,
+          -0.24539928613451498,
+          -0.08997973824932215
+        ],
+        "bomb": 2,
+        "scenarios": [
+          {
+            "distance_m": -25.0,
+            "duration_s": 6.374516284895331,
+            "change_s": -0.5515224427981629
+          },
+          {
+            "distance_m": -10.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 0.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 10.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 25.0,
+            "duration_s": 5.897263311675528,
+            "change_s": -1.0287754160179663
+          }
+        ],
+        "central_sensitivity_s_per_m": 0.0,
+        "best_change_s": 0.0,
+        "worst_change_s": -1.0287754160179663
+      },
+      {
+        "direction_toward": "FY3",
+        "direction_unit": [
+          -0.9652371921290922,
+          -0.24539928613451498,
+          -0.08997973824932215
+        ],
+        "bomb": 3,
+        "scenarios": [
+          {
+            "distance_m": -25.0,
+            "duration_s": 6.511880384691588,
+            "change_s": -0.41415834300190646
+          },
+          {
+            "distance_m": -10.0,
+            "duration_s": 6.887362012686666,
+            "change_s": -0.03867671500682768
+          },
+          {
+            "distance_m": 0.0,
+            "duration_s": 6.926038727693494,
+            "change_s": 0.0
+          },
+          {
+            "distance_m": 10.0,
+            "duration_s": 6.961025683090512,
+            "change_s": 0.03498695539701835
+          },
+          {
+            "distance_m": 25.0,
+            "duration_s": 7.00867676622375,
+            "change_s": 0.08263803853025564
+          }
+        ],
+        "central_sensitivity_s_per_m": 0.003683183520192301,
+        "best_change_s": 0.08263803853025564,
+        "worst_change_s": -0.41415834300190646
+      }
+    ],
+    "best_observed_change_s": 1.2851441151858625,
+    "worst_observed_change_s": -2.373977451611279,
+    "prohibited_interpretations": [
+      "Q4 solved",
+      "Q4 feasible strategy",
+      "re-optimized multi-platform result"
+    ]
+  },
+  "reality_boundary": {
+    "parameter_ranges_are": "pre-registered exploratory local bands, not probability distributions",
+    "fixed_policy_only": true,
+    "empirical_data_used": false,
+    "deployment_validity": "not established"
+  },
+  "claim_boundary": [
+    "reports response of the fixed Q3 solution in tested bands",
+    "Q4 bridge points violate Q3 shared-platform feasibility by construction",
+    "does not solve Q4 or establish probabilistic robustness"
+  ]
+}

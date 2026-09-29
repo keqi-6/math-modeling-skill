@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "release_id": "V16.2.0",
+  "frozen_at_utc": "2026-09-13T02:33:10Z",
+  "authorization": "冻结吧",
+  "formal_gate_runs": 1,
+  "formal_active_drivers": [
+    "package",
+    "contracts",
+    "scenarios"
+  ],
+  "formal_required_cases": 73,
+  "formal_gate_report_sha256": "90e34f28c08b68085f15740fc4a3b687ecb26aaebe63f3cd0c6f5235474c6977",
+  "evidence_boundary": "freeze_release internally ran and accepted validate_release; it emits the accepted report hash, not the full report body. The original freeze output is retained. Existing candidate targeted-validation reports remain in the approved candidate review directory.",
+  "manifest_sha256": "bdc02b55280dc3dc50c874f3de3a04691b3fcae9febe92a9386420a4070079b6",
+  "release_tree_sha256": "442b09c00406789b6f814ec5d6607e97abd448f568ff84357c236967d47f3964",
+  "package_file_count_including_manifest": 119,
+  "zip_crc_and_every_payload_verified": true,
+  "zip_sha256": "62fe1d7785d40a1ee723a15df5fa6cbbacd79f60c75e672e75665dd05a3ead83",
+  "approved_candidate_unchanged": true,
+  "rules_methods_scripts_unchanged_from_approved": true,
+  "freeze_only_changes_from_source": [
+    "SKILL.md",
+    "evals/release/frozen-manifest.json",
+    "evals/release/release-state.json"
+  ],
+  "intended_publication": "<WORKSPACE>\\总skill\\skills_v16.2",
+  "installation_performed": false
+}

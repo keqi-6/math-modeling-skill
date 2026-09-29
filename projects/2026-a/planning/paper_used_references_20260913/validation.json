@@ -1,0 +1,151 @@
+{
+  "paper_sha256": "c2104534e08572ef964f444c7c61009bbc945174392f42b2a7a633f0dba34b09",
+  "paper_unchanged": true,
+  "explicit_citation_pages": {
+    "1": [
+      2
+    ],
+    "2": [
+      3
+    ],
+    "3": [
+      3
+    ],
+    "4": [
+      3
+    ],
+    "5": [
+      3
+    ]
+  },
+  "main_table_count": 5,
+  "separate_uncited_suggestions_count": 3,
+  "keyword_basis": "Task-oriented subject keywords prepared by editor, not quoted author keywords",
+  "metadata_correction": "Seventh-edition author order for Fundamentals of Heat and Mass Transfer",
+  "sources": [
+    {
+      "n": 1,
+      "key": "mujumdar2014drying",
+      "author": "Mujumdar, Arun S.",
+      "editor": true,
+      "title": "Handbook of Industrial Drying",
+      "edition": "4",
+      "year": "2014",
+      "place": "Boca Raton",
+      "publisher": "CRC Press",
+      "citation": "MUJUMDAR A S, ed. Handbook of Industrial Drying[M]. 4th ed. Boca Raton: CRC Press, 2014.",
+      "keywords": "工业干燥；热风干燥；干燥工艺",
+      "location": "第2页\n问题背景",
+      "url": "https://arunmujumdar.com/wp-content/uploads/2020/03/K20788_output_V2.pdf",
+      "anchor": "改进烘干工艺很有帮助",
+      "audit": "背景中的引用位置明确。可用作工业干燥及工艺研究的背景来源；本轮核对了出版信息与目录，未声称读完该书。作者网站所存出版宣传页标明 July 2014；出版社网页显示 Copyright 2015，两种日期口径不同，本表沿用已核对的2014年发行信息。"
+    },
+    {
+      "n": 2,
+      "key": "crank1975diffusion",
+      "author": "Crank, John",
+      "editor": false,
+      "title": "The Mathematics of Diffusion",
+      "edition": "2",
+      "year": "1975",
+      "place": "Oxford",
+      "publisher": "Clarendon Press",
+      "citation": "CRANK J. The Mathematics of Diffusion[M]. 2nd ed. Oxford: Clarendon Press, 1975.",
+      "keywords": "扩散方程；扩散过程；解析与数值方法",
+      "location": "第3页\n问题一分析",
+      "url": "https://biblio.neel.cnrs.fr/index.php?id=8642&lang_sel=fr_FR&lvl=notice_display",
+      "anchor": "常用方法有解析法、有限差分法和有限体积法",
+      "audit": "当前用于解析法、差分法和有限体积法的比较。现有项目记录不足以证明该书支持附近全部优劣判断；扩散理论可继续引用，有限体积的控制体与面通量依据宜补引 NIST 官方说明。"
+    },
+    {
+      "n": 3,
+      "key": "bergman2011heat",
+      "author": "Bergman, Theodore L. and Lavine, Adrienne S. and Incropera, Frank P. and DeWitt, David P.",
+      "editor": false,
+      "title": "Fundamentals of Heat and Mass Transfer",
+      "edition": "7",
+      "year": "2011",
+      "place": "Hoboken",
+      "publisher": "John Wiley & Sons",
+      "citation": "BERGMAN T L, LAVINE A S, INCROPERA F P, et al. Fundamentals of Heat and Mass Transfer[M]. 7th ed. Hoboken: John Wiley & Sons, 2011.",
+      "keywords": "非稳态导热；对流边界；传热传质",
+      "location": "第3页\n问题一分析",
+      "url": "https://bcs.wiley.com/he-bcs/Books?action=index&bcsId=6563&itemId=0470501979",
+      "anchor": "向后差分隐式格式",
+      "audit": "第7版作者顺序已按 Wiley 官方配套站更正：Bergman、Lavine、Incropera、DeWitt。当前将此书引在自适应向后差分算法之后，来源不够直接；宜移至传热理论或边界说明处，算法处引用实际积分器的官方资料。年份由作者所在大学的书目页交叉核对。"
+    },
+    {
+      "n": 4,
+      "key": "luikov1966porous",
+      "author": "Luikov, A. V.",
+      "editor": false,
+      "title": "Heat and Mass Transfer in Capillary-Porous Bodies",
+      "edition": null,
+      "year": "1966",
+      "place": "Oxford",
+      "publisher": "Pergamon Press",
+      "citation": "LUIKOV A V. Heat and Mass Transfer in Capillary-Porous Bodies[M]. Oxford: Pergamon Press, 1966.",
+      "keywords": "毛细多孔介质；热量与水分迁移；传递理论",
+      "location": "第3页\n问题二分析",
+      "url": "https://shop.elsevier.com/books/heat-and-mass-transfer-in-capillary-porous-bodies/luikov/978-1-4832-0065-1",
+      "anchor": "常用策略有显式求解、交替迭代和全隐式联合求解",
+      "audit": "可支撑毛细多孔介质中热量和水分传递的理论背景。当前引文承载了显式、交替及联合求解的性能比较；本轮没有取得支持该整组比较的书中页码，不能据此宣称某种算法普遍更稳定或更高效。"
+    },
+    {
+      "n": 5,
+      "key": "geankoplis1993transport",
+      "author": "Geankoplis, Christie J.",
+      "editor": false,
+      "title": "Transport Processes and Unit Operations",
+      "edition": "3",
+      "year": "1993",
+      "place": "Englewood Cliffs",
+      "publisher": "PTR Prentice Hall",
+      "citation": "GEANKOPLIS C J. Transport Processes and Unit Operations[M]. 3rd ed. Englewood Cliffs: PTR Prentice Hall, 1993.",
+      "keywords": "传递过程；传热；传质；单元操作",
+      "location": "第3页\n问题二分析",
+      "url": "https://library.kaist.ac.kr/search/ctlgSearch/posesn/view.do?bibctrlno=129772&ty=B",
+      "anchor": "这种联合求解方式与多孔介质传热传质模型",
+      "audit": "当前用于说明联合求解与领域常见处理一致。书目存在且版次、年份可核对，但项目尚无可对应到该具体论断的章节或页码。建议将引文用于一般传递过程背景，联合算法的具体选择由本文方程依赖关系和实际数值方法说明。"
+    }
+  ],
+  "supplement": [
+    {
+      "key": "nistfipy",
+      "citation": "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY. Finite Volume Method: FiPy Documentation[EB/OL]. [2026-09-13].",
+      "keywords": "有限体积；控制体积分；面通量；散度离散",
+      "url": "https://pages.nist.gov/fipy/en/stable/numerical/discret.html",
+      "location": "第9—10页圆环控制体与面通量；第26—27页收缩坐标离散。",
+      "reason": "项目已有查阅记录，当前正文已有对应离散内容，宜在首次介绍控制体积分与通量差处补引。它支持离散思路，不代表本项目使用 FiPy 软件，也不支持“有限差分不能守恒”等绝对判断。"
+    },
+    {
+      "key": "scipybdf",
+      "citation": "SCIPY COMMUNITY. scipy.integrate.BDF: SciPy Reference Guide[EB/OL]. [2026-09-13].",
+      "keywords": "隐式BDF；变阶；自适应步长；稀疏Jacobian",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.BDF.html",
+      "location": "第3页算法选择；第11页式（9）—（10）；第16页式（16）—（18）。",
+      "reason": "项目实际阅读并使用相应求解器，适合替代现稿[3]对具体积分算法的支撑。官方说明涉及1—5阶变化、NDF修正、误差容差与Jacobian；正文算法表述仍须与实现相符，添加引文不能替代修正。"
+    },
+    {
+      "key": "brasiello2021drying",
+      "citation": "BRASIELLO A, VENDITTI C, ADROVER A. Non-Isothermal Moving-Boundary Model for Food Drying[J]. Chemical Engineering Transactions, 2021, 87: 193–198. DOI: 10.3303/CET2187033.",
+      "keywords": "热风干燥；收缩；移动边界；材料运动",
+      "url": "https://doi.org/10.3303/CET2187033",
+      "location": "第23—25页Q4坐标变换与移动域方程；第30页关于收缩模型的讨论。",
+      "reason": "由队友提供，项目已阅读正文并核对关键公式。它是本题收缩建模的领域参照，当前PDF尚未补引。引用时说明本题使用实测半径和干基含水率，不能把原文的体积含水浓度方程、收缩关系或材料参数直接移入。"
+    }
+  ],
+  "rendered_pages": 1,
+  "pdf_visual_qa": "Full page rendered and inspected; complete table, readable adjacent keywords, no clipping or overlap.",
+  "artifacts": {
+    "论文参考文献表_附关键词.pdf": "540d7c6168ba74274a67565a5b44fecb32bbd8bd252e10238e1849addefc6bee",
+    "论文参考文献表_附关键词.tex": "ebecb738a56bd3e0e664fcf3eacab8939854addae20d2ce2b9f5c5841079f4cc",
+    "论文参考文献表_附关键词.html": "ea6cceb08e300399fca6feb2c58e51f21b31de60685e96185314e66c22ee7385",
+    "论文参考文献表_附关键词.md": "255f70fd9dda169f4d40e0e0f64b20d0df15c3852f797771abdec80a4f1048e7",
+    "现稿已引用文献.bib": "85f7659e2455a24920bc812a9d2b03a4b4f5bdb35e887e1faa7eda38899eae53",
+    "引用位置核对与补引建议.md": "62549801fc968307b55bfca580f6873929cbeec3f4020ec5e4994d7942a92349",
+    "引用位置核对与补引建议.html": "cbb1557de43bbaa5d06e3a933896f789a064cb787e821259ade08a9e1f5ff7f1"
+  },
+  "zip_crc_and_hashes_verified": true,
+  "local_html_links_checked": true
+}

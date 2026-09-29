@@ -1,0 +1,378 @@
+{
+  "schema": "q2_workbook_audit_v1",
+  "status": "pass",
+  "data_status": "pass",
+  "authoring_route": "conditional_streaming_OOXML",
+  "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\result2.xlsx",
+  "template": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件3\\result2.xlsx",
+  "input_npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.npz",
+  "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.json",
+  "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "metadata_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+  "template_sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4",
+  "exporter_sha256": "59646af15d608ddddde240b83f678dfa477e8d5e27fd185b40fee8ddaa8dfc9d",
+  "placement_generator_sha256": "ac93ef89cd5ee94f9fb3e67a6df5eae56f152fa8538e0fb356abdb553e09811a",
+  "post_patch_full_generation_executed": false,
+  "placement_finalizer_sha256": "828a5101a9a67475277e68cb6429a1068a8ec91a8bdc50184f5f95e2454aa423",
+  "units": {
+    "time": "s",
+    "radius": "cm",
+    "temperature": "°C",
+    "moisture": "kg water/kg dry solid"
+  },
+  "rounding": "Exact binary64 integer-ratio rounding to four decimal places, ties away from zero; numeric 0.0000 cells",
+  "n_end": 206927,
+  "independent_xml": {
+    "status": "pass",
+    "error_count": 0,
+    "errors": [],
+    "sheets": [
+      {
+        "sheet": "温度",
+        "rows": 206928,
+        "columns": 22,
+        "cells": 4552416,
+        "result_values": 4345467,
+        "number_formats_checked": 4345467,
+        "formula_count": 0,
+        "dimension": "A1:V206928",
+        "pane": {
+          "xSplit": "1",
+          "ySplit": "1",
+          "topLeftCell": "B2",
+          "activePane": "bottomRight",
+          "state": "frozen"
+        }
+      },
+      {
+        "sheet": "水分浓度",
+        "rows": 206928,
+        "columns": 22,
+        "cells": 4552416,
+        "result_values": 4345467,
+        "number_formats_checked": 4345467,
+        "formula_count": 0,
+        "dimension": "A1:V206928",
+        "pane": {
+          "xSplit": "1",
+          "ySplit": "1",
+          "topLeftCell": "B2",
+          "activePane": "bottomRight",
+          "state": "frozen"
+        }
+      }
+    ],
+    "result_values_checked": 8690934,
+    "maximum_saved_vs_rounded_difference": 0,
+    "maximum_absolute_export_rounding": 4.999999727947624e-05,
+    "xlsx_sha256": "74065813689079c52b87b9a83cbb3f4a4f4eed64921828c2a15cad5a16b094e1",
+    "xlsx_bytes": 27769853,
+    "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+    "metadata_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f"
+  },
+  "template_preservation": {
+    "status": "pass",
+    "output": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-fallback\\result2.xlsx",
+    "n_end": 206927,
+    "sheets": [
+      {
+        "field": "temperature_C",
+        "values": 4345467
+      },
+      {
+        "field": "moisture_kg_kg",
+        "values": 4345467
+      }
+    ],
+    "unchanged_members": {
+      "[Content_Types].xml": "8be0821392a81066be49da66fb7f27c2da28d00c88b7642c91286af810163cc7",
+      "_rels/.rels": "ad78dfe44ec71f967f96e95bdf6baf2545c39e1a5e4413e7b8e9413eb95fd922",
+      "xl/_rels/workbook.xml.rels": "15e353ac27ab7362603f4a0d0754a97885e8e2ce523615a3cd59b458ddcd60e9",
+      "xl/workbook.xml": "9cb4300085f87ebe3e29a456625314d16badbfc0a63f0e10f00def83bbb4ea95",
+      "xl/theme/theme1.xml": "2f76007802b3280e4f0de927b36972248c52c0b52d4f75c063a785f932af083e",
+      "docProps/core.xml": "5a08f0699c04170dde36c7e0222ce4b736cabc7ab110d53218d7615364aecc8b",
+      "docProps/app.xml": "aadd2851a84503da8d83d8dbcf027a7e0b59a4bfbfb4494d686594bb8fbee556",
+      "docProps/custom.xml": "860e3dc310342e6f3ee34a85a2567b4faf03c2d16456f3c48af1d08b1c692685"
+    },
+    "changed_members": [
+      "xl/sharedStrings.xml",
+      "xl/styles.xml",
+      "xl/worksheets/sheet1.xml",
+      "xl/worksheets/sheet2.xml"
+    ],
+    "appended_style_ids": [
+      4,
+      5
+    ],
+    "rounding_implementation": "exact binary64 integer ratio, nearest 1e-4, ties away from zero",
+    "elapsed_s": 11.725218999999925,
+    "sha256": "74065813689079c52b87b9a83cbb3f4a4f4eed64921828c2a15cad5a16b094e1",
+    "bytes": 27769853
+  },
+  "fallback_failure_evidence": {
+    "source_record": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook\\runtime_failure.json",
+    "source_record_sha256": "8471532689116ddb2c3f492a4edc9d98887208f3de567caac5d031e3f3616408",
+    "detailed_report": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook\\q2_export_report.json",
+    "detailed_report_sha256": "330a690e2c96eba7ab02c32ceaa0460dc4e59e11938d5b68532fa2a2d634b66d",
+    "tool": "@oai/artifact-tool",
+    "scope": "This complete two-sheet authoring task exceeded the configured memory budget on this host; small artifact-tool imports/renders remain available.",
+    "failure_kind": "configured_RSS_limit_exceeded",
+    "reason": "RSS limit exceeded at temperature_C:197632/206927; no cell flush is available.",
+    "runtime_action_id": "q2-export-workbook-20260910",
+    "grant_id": "d773de141e61f4cd208fe52e638aac4a523f12f972199da5840f4b3421625a7b",
+    "command_hash": "eb58802b73c0f307fe996a1ba29ebfb6c7b3095a17e8ac024bc0948d42d3bdb4",
+    "exit_code": 1,
+    "elapsed_s": 351.141,
+    "last_field": "temperature_C",
+    "completed_field_rows": 197632,
+    "required_field_rows": 206927,
+    "last_rss_bytes": 2945056768,
+    "configured_rss_limit_mib": 2800,
+    "memory_sample_count": 13,
+    "memory_samples": [
+      {
+        "label": "temperature_C:1024/206927",
+        "rss": 394670080,
+        "heap_used_bytes": 74408584
+      },
+      {
+        "label": "temperature_C:17408/206927",
+        "rss": 682094592,
+        "heap_used_bytes": 262975592
+      },
+      {
+        "label": "temperature_C:33792/206927",
+        "rss": 947781632,
+        "heap_used_bytes": 553905248
+      },
+      {
+        "label": "temperature_C:50176/206927",
+        "rss": 1355149312,
+        "heap_used_bytes": 960218704
+      },
+      {
+        "label": "temperature_C:66560/206927",
+        "rss": 1250222080,
+        "heap_used_bytes": 851674936
+      },
+      {
+        "label": "temperature_C:82944/206927",
+        "rss": 1428791296,
+        "heap_used_bytes": 1023040776
+      },
+      {
+        "label": "temperature_C:99328/206927",
+        "rss": 2078056448,
+        "heap_used_bytes": 1664858800
+      },
+      {
+        "label": "temperature_C:115712/206927",
+        "rss": 2258989056,
+        "heap_used_bytes": 1837210680
+      },
+      {
+        "label": "temperature_C:132096/206927",
+        "rss": 2005807104,
+        "heap_used_bytes": 1521514208
+      },
+      {
+        "label": "temperature_C:148480/206927",
+        "rss": 2090065920,
+        "heap_used_bytes": 1662875016
+      },
+      {
+        "label": "temperature_C:164864/206927",
+        "rss": 2245402624,
+        "heap_used_bytes": 1810738872
+      },
+      {
+        "label": "temperature_C:181248/206927",
+        "rss": 2364121088,
+        "heap_used_bytes": 1919537152
+      },
+      {
+        "label": "temperature_C:197632/206927",
+        "rss": 2945056768,
+        "heap_used_bytes": 2495541984
+      }
+    ],
+    "original_exporter_sha256": "537a8e6bfd0c924c990125bbfe709702d8b98fc6335d5af9c9dfdd3e4d11501d",
+    "marker_receipt_sha256": "573f4764a3eaa89aa20c323078a53330124250726be4605f262bebf798ef68bd"
+  },
+  "commit_recovery": {
+    "status": "pass",
+    "method": "copy_to_destination_volume_verify_hash_then_same_volume_rename",
+    "original_runtime_action_id": "q2-stream-workbook-20260911",
+    "original_exit_code": 1,
+    "original_elapsed_s": 82.532,
+    "original_error": "Error: EXDEV: cross-device link not permitted, rename '~\\AppData\\Local\\Temp\\cumcm-q2-workbook-fallback\\result2.xlsx' -> '<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\result2.xlsx'\n    at async Object.rename (node:internal/fs/promises:842:10)\n    at async main (file:///<AI_ROOT>/%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B2026/CUMCM2026Problems/A%E9%A2%98/src/Q2/stream_workbook.mjs:331:59)",
+    "original_report_sha256": "051e0cce04b6ee0c5f4197f0c634090cb220517c234e213ca28bb93c9897a416",
+    "source_workbook_sha256": "74065813689079c52b87b9a83cbb3f4a4f4eed64921828c2a15cad5a16b094e1",
+    "copied_stage_sha256": "74065813689079c52b87b9a83cbb3f4a4f4eed64921828c2a15cad5a16b094e1",
+    "committed_workbook_sha256": "74065813689079c52b87b9a83cbb3f4a4f4eed64921828c2a15cad5a16b094e1",
+    "destination_stage_removed": true,
+    "marker_repeated": false,
+    "generator_reexecuted": false,
+    "full_xml_audit_reexecuted": false,
+    "finalize_elapsed_s": 0.12379439998767339
+  },
+  "visual_review": {
+    "status": "pass",
+    "reviewer": "/root/q1_data_audit",
+    "reviewed_at": "2026-09-10T16:31:01.640788+00:00",
+    "method": "Six actual view_image(original) inspections of artifact-tool native range projections",
+    "scope": "Read-only range projections extracted from final XLSX XML; not a full-workbook engine import",
+    "full_workbook_native_import": false,
+    "mappings": [
+      {
+        "label": "first",
+        "source_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "projection_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "range": "A1:V9"
+      },
+      {
+        "label": "middle",
+        "source_rows": [
+          1,
+          103461,
+          103462,
+          103463,
+          103464,
+          103465,
+          103466,
+          103467,
+          103468
+        ],
+        "projection_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "range": "A1:V9"
+      },
+      {
+        "label": "last",
+        "source_rows": [
+          1,
+          206921,
+          206922,
+          206923,
+          206924,
+          206925,
+          206926,
+          206927,
+          206928
+        ],
+        "projection_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "range": "A1:V9"
+      }
+    ],
+    "images": [
+      {
+        "sheet": "温度",
+        "segment": "first",
+        "png": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-fallback\\temperature_first.png",
+        "sha256": "95f207cd88f32f068095efffc94f590fe106bd23c1ab596d31b80f32fd646332",
+        "width_px": 3180,
+        "height_px": 336,
+        "actual_view_image_review": "pass"
+      },
+      {
+        "sheet": "温度",
+        "segment": "middle",
+        "png": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-fallback\\temperature_middle.png",
+        "sha256": "e87b217dcfd5b28799d8b3a3d73f4810c26f19a09028de4f8619802618b10883",
+        "width_px": 3180,
+        "height_px": 336,
+        "actual_view_image_review": "pass"
+      },
+      {
+        "sheet": "温度",
+        "segment": "last",
+        "png": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-fallback\\temperature_last.png",
+        "sha256": "ce1f181271c0dce7add79e3dd2f3cebbd0467e47c73c40bf73d76dd6af801c76",
+        "width_px": 3180,
+        "height_px": 336,
+        "actual_view_image_review": "pass"
+      },
+      {
+        "sheet": "水分浓度",
+        "segment": "first",
+        "png": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-fallback\\moisture_first.png",
+        "sha256": "59ebcc1448fa02666c47cda0bd10ac5a4b56c3bc0661a4f51f9fe6e9fb2fc3bf",
+        "width_px": 3180,
+        "height_px": 336,
+        "actual_view_image_review": "pass"
+      },
+      {
+        "sheet": "水分浓度",
+        "segment": "middle",
+        "png": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-fallback\\moisture_middle.png",
+        "sha256": "ab5bf114420c279fc7dc51252ad3cdb5c6d885b56143a385bc7d68149188d62b",
+        "width_px": 3180,
+        "height_px": 336,
+        "actual_view_image_review": "pass"
+      },
+      {
+        "sheet": "水分浓度",
+        "segment": "last",
+        "png": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-fallback\\moisture_last.png",
+        "sha256": "6f5cb6d0b5fdfdc09fa3afaa2890be105310588e6778fc030eac4b1bddca7ac9",
+        "width_px": 3180,
+        "height_px": 336,
+        "actual_view_image_review": "pass"
+      }
+    ],
+    "observations": [
+      "Official A1 label and 21 physical-radius columns from 0.0 to 2.0 cm are complete.",
+      "First, middle, and final time rows on both sheets are visible; no clipped numbers, labels, or ####.",
+      "Temperature and moisture values visibly retain four decimal places with consistent template typography.",
+      "The final center moisture displays 0.1500 after rounding. The strict endpoint uses the unrounded accepted NPZ, not displayed cells."
+    ]
+  },
+  "resource_observations": {
+    "scope": "One OS process observation during independent XML audit, not an end-to-end peak measurement",
+    "node_pid": 38416,
+    "node_observed_peak_working_set_bytes": 44814336,
+    "audit_python_pid": 30688,
+    "audit_python_observed_peak_working_set_bytes": 67084288,
+    "stream_generation_elapsed_s": 11.725218999999925,
+    "generation_audit_preview_attempt_elapsed_s": 82.532
+  }
+}

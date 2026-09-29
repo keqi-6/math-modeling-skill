@@ -1,0 +1,30 @@
+% Local appendix facilities: no global page layout, body font or PDF metadata.
+\usepackage{booktabs,longtable,array,xcolor,listings,needspace,hyperref}
+\usepackage[most]{tcolorbox}
+\IfFontExistsTF{Consolas}
+  {\newfontfamily\AppendixMono{Consolas}}
+  {\newfontfamily\AppendixMono{DejaVuSansMono.ttf}}
+\IfFontExistsTF{SimSun}
+  {\newCJKfontfamily\AppendixCJKMono{SimSun}}
+  {\newCJKfontfamily\AppendixCJKMono{FandolSong-Regular.otf}}
+\definecolor{AppendixKeyword}{HTML}{17467A}
+\definecolor{AppendixString}{HTML}{16716B}
+\definecolor{AppendixComment}{HTML}{5E6670}
+\lstdefinestyle{appendixcode}{
+  basicstyle=\linespread{1}\fontsize{9}{13}\selectfont\AppendixMono\AppendixCJKMono,
+  keywordstyle=\color{AppendixKeyword}\bfseries,
+  stringstyle=\color{AppendixString},commentstyle=\color{AppendixComment},
+  numbers=left,numberstyle=\normalfont\fontsize{6}{8}\selectfont\color{black!50},
+  numbersep=8pt,stepnumber=1,firstnumber=1,numberblanklines=true,
+  columns=fullflexible,keepspaces=true,showstringspaces=false,tabsize=4,
+  breaklines=true,breakatwhitespace=false,breakindent=1.5em,breakautoindent=false,
+  frame=none,xleftmargin=0pt,aboveskip=0pt,belowskip=0pt}
+\newcommand{\AppendixListing}[5][13]{%
+  \tcbinputlisting{enhanced,breakable,listing only,listing engine=listings,
+    listing file={#4},listing options={style=appendixcode,language=#5,
+      basicstyle=\linespread{1}\fontsize{9}{#1}\selectfont\AppendixMono\AppendixCJKMono},
+    colback=white,colframe=black!30,colbacktitle=black!3,coltitle=black,
+    boxrule=0.35pt,sharp corners,left=6mm,right=2mm,top=2mm,bottom=2mm,
+    before skip=8pt,after skip=14pt,
+    title={\normalfont\fontsize{10.5}{14}\selectfont 程序#2\quad\texttt{#3}},
+    title after break={\normalfont\fontsize{10.5}{14}\selectfont 程序#2\quad\texttt{#3}（续）}}}

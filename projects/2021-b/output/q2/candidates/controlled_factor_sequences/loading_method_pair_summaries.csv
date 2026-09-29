@@ -1,0 +1,5 @@
+pair,response,response_cn,mean_method_ii_minus_i_pct_point,positive_temperature_count,negative_temperature_count,allowed_claim
+A12-B1,ethanol_conversion_pct,乙醇转化率,-0.22073521972684956,0,4,该完全匹配配方对内的装料方式差异，不推广到全部组合
+A12-B1,c4_selectivity_pct,C4烯烃选择性,1.2649999999999992,4,0,该完全匹配配方对内的装料方式差异，不推广到全部组合
+A9-B5,ethanol_conversion_pct,乙醇转化率,1.1131301101470628,4,0,该完全匹配配方对内的装料方式差异，不推广到全部组合
+A9-B5,c4_selectivity_pct,C4烯烃选择性,-7.4,0,4,该完全匹配配方对内的装料方式差异，不推广到全部组合

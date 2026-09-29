@@ -1,0 +1,72 @@
+{
+  "status": "s5_descriptive_baseline_not_formal_model",
+  "input": "output/data_audit/tables/cleaned_attachment1.csv",
+  "common_temperature_domain": [
+    250.0,
+    275.0,
+    300.0,
+    350.0
+  ],
+  "common_cell_count": 84,
+  "common_combination_count": 21,
+  "common_pair_change_count": 126,
+  "supplemental_pair_change_count": 80,
+  "top_bottom_rank_summary": {
+    "ethanol_conversion_pct": {
+      "response_cn": "乙醇转化率",
+      "best_mean_rank_combinations": [
+        "A7",
+        "A2",
+        "A3",
+        "A6",
+        "A5"
+      ],
+      "worst_mean_rank_combinations": [
+        "A13",
+        "B4",
+        "A10",
+        "B3",
+        "A11"
+      ],
+      "largest_rank_range_combinations": [
+        "A4",
+        "A1",
+        "A2",
+        "A5",
+        "B2"
+      ]
+    },
+    "c4_selectivity_pct": {
+      "response_cn": "C4烯烃选择性",
+      "best_mean_rank_combinations": [
+        "A1",
+        "A2",
+        "A9",
+        "A4",
+        "A3"
+      ],
+      "worst_mean_rank_combinations": [
+        "A6",
+        "B3",
+        "A14",
+        "A10",
+        "A11"
+      ],
+      "largest_rank_range_combinations": [
+        "B4",
+        "A6",
+        "B7",
+        "A5",
+        "A9"
+      ]
+    }
+  },
+  "claim_boundaries": [
+    "完整组合是比较单位，不拆分配方成分因果作用",
+    "共同温度使用相同21种组合",
+    "325和400摄氏度只在匹配子集内比较",
+    "450摄氏度只作A3个案",
+    "增量异质性只称非加和或交互迹象",
+    "本基线不进行显著性检验或未测条件预测"
+  ]
+}

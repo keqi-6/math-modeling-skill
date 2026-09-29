@@ -1,0 +1,1325 @@
+{
+  "schema_version": "11.0",
+  "status": "resolved",
+  "plan_id": "paper_used_references_20260913",
+  "plan_hash": "465c3f24c7899adeca6688aaf5de46e397b22de8364434ff29619d1579339f3a",
+  "request": "然后还要整理一份真正用上，在论文里体现的参考文献表，以及文献的关键词，关键词就放在文献旁边",
+  "request_hash": "bb8d126339055a6b11602ac0428177dbf27001a69b58f068b40e0a47ea0312d5",
+  "project_root": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题",
+  "mode_model": {
+    "single_global_mode": false,
+    "step_modes": {
+      "assemble_used_references": "mutate",
+      "render_used_references": "mutate"
+    }
+  },
+  "steps": [
+    {
+      "id": "assemble_used_references",
+      "tier": "G1_WORKING",
+      "mode": "mutate",
+      "object": "manuscript",
+      "action": "draft",
+      "component_id": "PAPER_USED_REFERENCES",
+      "events": [
+        "manuscript_write"
+      ],
+      "normalized_legacy_events": [],
+      "event_normalization_provenance": [],
+      "controller_events": [
+        "before_write",
+        "request_received",
+        "route_execution",
+        "route_resolution"
+      ],
+      "facts": {
+        "change_class": "section_substantive",
+        "completion_scope": "section_working_change_only",
+        "profile_selected": false,
+        "published_revision": false,
+        "existing_paths_only": false,
+        "project_root": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题",
+        "detected_objects": "single",
+        "component_state": "A1",
+        "state_revision": 524,
+        "window_context": "same_window"
+      },
+      "working_context": {
+        "component_type": "artifact",
+        "state": "A1"
+      },
+      "depends_on": [],
+      "change_set": {
+        "paths": [
+          "docs/paper_references",
+          "planning/paper_used_references_20260913",
+          "scripts/build_paper_used_references.py"
+        ],
+        "facets": [
+          "explanation",
+          "source_identity",
+          "format",
+          "notation"
+        ],
+        "claim_refs": []
+      },
+      "state_effect": null,
+      "runtime_actions": [],
+      "action_grants": [],
+      "projected_pre_states": {},
+      "recovery": "not_applicable",
+      "route_id": "RT.MANUSCRIPT.DRAFT",
+      "rule_ids": [
+        "GOV.AUTH.WRITE_SCOPE",
+        "GOV.MODE.DERIVE",
+        "GOV.MODE.STABLE",
+        "GOV.ROUTE.PROOF_SOURCE",
+        "GOV.ROUTE.RAW_REQUEST",
+        "GOV.ROUTE.STATE_BIND",
+        "GOV.ROUTE.TUPLE",
+        "GOV.ROUTE.UNIQUE_WRITE",
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP"
+      ],
+      "deferred_rule_ids": [],
+      "blocking_rule_ids": [],
+      "unverified_effects": [],
+      "context_refs": [
+        "references/manuscript-method-notes.md",
+        "references/manuscript-change-closure.json"
+      ],
+      "reasons": [],
+      "recovery_posture": "NORMAL",
+      "recovery_decision_id": null,
+      "state": "A1",
+      "state_source": "declared_working_context",
+      "component_type": "artifact",
+      "component_ids": [
+        "PAPER_USED_REFERENCES"
+      ],
+      "write_policy": "authorized",
+      "expected_outputs": [
+        "manuscript_content"
+      ],
+      "exclusions": [
+        "placeholder_sections",
+        "unsupported_claims"
+      ],
+      "warnings": [
+        "component_not_registered:PAPER_USED_REFERENCES"
+      ],
+      "manuscript_closure": {
+        "change_class": "section_substantive",
+        "check_scope": [
+          "target_section",
+          "incoming_definitions",
+          "outgoing_claim_refs",
+          "shared_notation",
+          "direct_cross_references"
+        ],
+        "completion_claim": "section_working_change_only",
+        "recovery": "not_applicable",
+        "required_evaluation_rule_ids": [],
+        "expected_not_applicable_rule_ids": [],
+        "selection_telemetry": {
+          "selected_rule_count": 12,
+          "regression_budget": null,
+          "budget_is_runtime_gate": false
+        }
+      },
+      "applicability_evidence": [
+        {
+          "rule_id": "GOV.MODE.DERIVE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "request_received"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.MODE.STABLE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_execution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.AUTH.WRITE_SCOPE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "before_write"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.RAW_REQUEST",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_resolution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.STATE_BIND",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_resolution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.UNIQUE_WRITE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "before_write"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.TUPLE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_resolution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.PROOF_SOURCE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_resolution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "MAN.CONTENT.CLAIM_EVIDENCE",
+          "applicability": "applicable",
+          "activation": "actual_event",
+          "matched_events": [
+            "manuscript_write"
+          ],
+          "matched_normalized_events": [],
+          "matched_controller_events": [],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "MAN.CONTENT.NOTATION",
+          "applicability": "applicable",
+          "activation": "actual_event",
+          "matched_events": [
+            "manuscript_write"
+          ],
+          "matched_normalized_events": [],
+          "matched_controller_events": [],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "MAN.CONTENT.EXPLANATION_TRACE",
+          "applicability": "applicable",
+          "activation": "actual_event",
+          "matched_events": [
+            "manuscript_write"
+          ],
+          "matched_normalized_events": [],
+          "matched_controller_events": [],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "MAN.CONTENT.NO_DUMP",
+          "applicability": "applicable",
+          "activation": "actual_event",
+          "matched_events": [
+            "manuscript_write"
+          ],
+          "matched_normalized_events": [],
+          "matched_controller_events": [],
+          "disposition": "selected"
+        }
+      ],
+      "governance_evidence": {
+        "request_hash": "bb8d126339055a6b11602ac0428177dbf27001a69b58f068b40e0a47ea0312d5",
+        "raw_request_preserved": true,
+        "semantic_interpreter": "agent",
+        "machine_keyword_classification": false,
+        "mode_scope": "step",
+        "mode": "mutate",
+        "mode_stability_key": "abe58120f5f1773b9aefe22b06f69c8e90a369b4fa1f2a773c5534a8324d210c",
+        "status": "resolved",
+        "route_ids": [
+          "RT.MANUSCRIPT.DRAFT"
+        ],
+        "contract_entry": "RT.MANUSCRIPT.DRAFT",
+        "route_tuple": {
+          "mode": "mutate",
+          "object": "manuscript",
+          "action": "draft",
+          "state": "A1"
+        },
+        "dependencies": [],
+        "controller_events": [
+          "before_write",
+          "request_received",
+          "route_execution",
+          "route_resolution"
+        ],
+        "plan_step_ids": [
+          "assemble_used_references",
+          "render_used_references"
+        ],
+        "plan_route_ids": [
+          "RT.MANUSCRIPT.DRAFT",
+          "RT.MANUSCRIPT.RENDER"
+        ],
+        "plan_dependencies": [
+          {
+            "from": "assemble_used_references",
+            "to": "render_used_references"
+          }
+        ],
+        "plan_step_modes": {
+          "assemble_used_references": "mutate",
+          "render_used_references": "mutate"
+        }
+      },
+      "status": "resolved",
+      "projected_post_states": {}
+    },
+    {
+      "id": "render_used_references",
+      "tier": "G1_WORKING",
+      "mode": "mutate",
+      "object": "manuscript",
+      "action": "render",
+      "component_id": "PAPER_USED_REFERENCES",
+      "events": [
+        "visual_render"
+      ],
+      "normalized_legacy_events": [],
+      "event_normalization_provenance": [],
+      "controller_events": [
+        "before_write",
+        "request_received",
+        "route_execution",
+        "route_resolution"
+      ],
+      "facts": {
+        "change_class": "render_output",
+        "completion_scope": "render_attempt_and_output_only",
+        "profile_selected": false,
+        "published_revision": false,
+        "existing_paths_only": false,
+        "project_root": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题",
+        "detected_objects": "single",
+        "component_state": "A1",
+        "state_revision": 524,
+        "window_context": "same_window"
+      },
+      "working_context": {
+        "component_type": "artifact",
+        "state": "A1"
+      },
+      "depends_on": [
+        "assemble_used_references"
+      ],
+      "change_set": {
+        "paths": [
+          "docs/paper_references/论文参考文献表_附关键词.pdf",
+          "planning/paper_used_references_20260913/validation.json"
+        ],
+        "facets": [
+          "render"
+        ],
+        "claim_refs": []
+      },
+      "state_effect": null,
+      "runtime_actions": [],
+      "action_grants": [],
+      "projected_pre_states": {},
+      "recovery": "not_applicable",
+      "route_id": "RT.MANUSCRIPT.RENDER",
+      "rule_ids": [
+        "GOV.AUTH.WRITE_SCOPE",
+        "GOV.MODE.DERIVE",
+        "GOV.MODE.STABLE",
+        "GOV.ROUTE.PROOF_SOURCE",
+        "GOV.ROUTE.RAW_REQUEST",
+        "GOV.ROUTE.STATE_BIND",
+        "GOV.ROUTE.TUPLE",
+        "GOV.ROUTE.UNIQUE_WRITE",
+        "VIS.LAYOUT.FONTS",
+        "VIS.LAYOUT.LABELS",
+        "VIS.LAYOUT.LEGIBILITY",
+        "VIS.LAYOUT.PAGINATION"
+      ],
+      "deferred_rule_ids": [],
+      "blocking_rule_ids": [],
+      "unverified_effects": [],
+      "context_refs": [
+        "references/manuscript-method-notes.md#render",
+        "references/visual-method-notes.md#audit",
+        "references/manuscript-change-closure.json"
+      ],
+      "reasons": [],
+      "recovery_posture": "NORMAL",
+      "recovery_decision_id": null,
+      "state": "A1",
+      "state_source": "declared_working_context",
+      "component_type": "artifact",
+      "component_ids": [
+        "PAPER_USED_REFERENCES"
+      ],
+      "write_policy": "mode_dependent",
+      "expected_outputs": [
+        "rendered_manuscript",
+        "layout_audit"
+      ],
+      "exclusions": [
+        "source_only_layout_claim"
+      ],
+      "warnings": [
+        "component_not_registered:PAPER_USED_REFERENCES"
+      ],
+      "manuscript_closure": {
+        "change_class": "render_output",
+        "check_scope": [
+          "declared_source_paths",
+          "rendered_output",
+          "render_command_result"
+        ],
+        "completion_claim": "render_attempt_and_output_only",
+        "recovery": "not_applicable",
+        "required_evaluation_rule_ids": [],
+        "expected_not_applicable_rule_ids": [],
+        "selection_telemetry": {
+          "selected_rule_count": 12,
+          "regression_budget": null,
+          "budget_is_runtime_gate": false
+        }
+      },
+      "applicability_evidence": [
+        {
+          "rule_id": "GOV.MODE.DERIVE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "request_received"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.MODE.STABLE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_execution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.AUTH.WRITE_SCOPE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "before_write"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.RAW_REQUEST",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_resolution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.STATE_BIND",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_resolution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.UNIQUE_WRITE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "before_write"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.TUPLE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_resolution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "GOV.ROUTE.PROOF_SOURCE",
+          "applicability": "applicable",
+          "activation": "controller_step_event",
+          "matched_events": [],
+          "matched_normalized_events": [],
+          "matched_controller_events": [
+            "route_resolution"
+          ],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "VIS.LAYOUT.LABELS",
+          "applicability": "applicable",
+          "activation": "actual_event",
+          "matched_events": [
+            "visual_render"
+          ],
+          "matched_normalized_events": [],
+          "matched_controller_events": [],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "VIS.LAYOUT.LEGIBILITY",
+          "applicability": "applicable",
+          "activation": "actual_event",
+          "matched_events": [
+            "visual_render"
+          ],
+          "matched_normalized_events": [],
+          "matched_controller_events": [],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "VIS.LAYOUT.FONTS",
+          "applicability": "applicable",
+          "activation": "actual_event",
+          "matched_events": [
+            "visual_render"
+          ],
+          "matched_normalized_events": [],
+          "matched_controller_events": [],
+          "disposition": "selected"
+        },
+        {
+          "rule_id": "VIS.LAYOUT.PAGINATION",
+          "applicability": "applicable",
+          "activation": "actual_event",
+          "matched_events": [
+            "visual_render"
+          ],
+          "matched_normalized_events": [],
+          "matched_controller_events": [],
+          "disposition": "selected"
+        }
+      ],
+      "governance_evidence": {
+        "request_hash": "bb8d126339055a6b11602ac0428177dbf27001a69b58f068b40e0a47ea0312d5",
+        "raw_request_preserved": true,
+        "semantic_interpreter": "agent",
+        "machine_keyword_classification": false,
+        "mode_scope": "step",
+        "mode": "mutate",
+        "mode_stability_key": "c20f12138d36e1254a360063cf2a938e19136bead5695246f245e885075fe528",
+        "status": "resolved",
+        "route_ids": [
+          "RT.MANUSCRIPT.RENDER"
+        ],
+        "contract_entry": "RT.MANUSCRIPT.RENDER",
+        "route_tuple": {
+          "mode": "mutate",
+          "object": "manuscript",
+          "action": "render",
+          "state": "A1"
+        },
+        "dependencies": [
+          "assemble_used_references"
+        ],
+        "controller_events": [
+          "before_write",
+          "request_received",
+          "route_execution",
+          "route_resolution"
+        ],
+        "plan_step_ids": [
+          "assemble_used_references",
+          "render_used_references"
+        ],
+        "plan_route_ids": [
+          "RT.MANUSCRIPT.DRAFT",
+          "RT.MANUSCRIPT.RENDER"
+        ],
+        "plan_dependencies": [
+          {
+            "from": "assemble_used_references",
+            "to": "render_used_references"
+          }
+        ],
+        "plan_step_modes": {
+          "assemble_used_references": "mutate",
+          "render_used_references": "mutate"
+        }
+      },
+      "status": "resolved",
+      "projected_post_states": {}
+    }
+  ],
+  "route_ids": [
+    "RT.MANUSCRIPT.DRAFT",
+    "RT.MANUSCRIPT.RENDER"
+  ],
+  "dependencies": [
+    {
+      "from": "assemble_used_references",
+      "to": "render_used_references"
+    }
+  ],
+  "execution_order": [
+    "assemble_used_references",
+    "render_used_references"
+  ],
+  "recovery": "not_applicable",
+  "recovery_decision_id": null,
+  "recovery_posture": "NORMAL",
+  "action_grants": [],
+  "rule_ids": [
+    "GOV.AUTH.WRITE_SCOPE",
+    "GOV.MODE.DERIVE",
+    "GOV.MODE.STABLE",
+    "GOV.ROUTE.PROOF_SOURCE",
+    "GOV.ROUTE.RAW_REQUEST",
+    "GOV.ROUTE.STATE_BIND",
+    "GOV.ROUTE.TUPLE",
+    "GOV.ROUTE.UNIQUE_WRITE",
+    "MAN.CONTENT.CLAIM_EVIDENCE",
+    "MAN.CONTENT.EXPLANATION_TRACE",
+    "MAN.CONTENT.NOTATION",
+    "MAN.CONTENT.NO_DUMP",
+    "VIS.LAYOUT.FONTS",
+    "VIS.LAYOUT.LABELS",
+    "VIS.LAYOUT.LEGIBILITY",
+    "VIS.LAYOUT.PAGINATION"
+  ],
+  "rules": [
+    {
+      "id": "GOV.AUTH.WRITE_SCOPE",
+      "strength": "MUST",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.AUTH.WRITE_SCOPE",
+      "instruction_gloss": "把写入限制在当前请求的合理授权边界。",
+      "effect": {
+        "verb": "limit",
+        "target": "write_scope",
+        "value": "explicit_request_boundary"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "mode",
+          "write_policy"
+        ]
+      },
+      "outcomes": {
+        "pass": "每项写入均有授权依据。",
+        "fail": "存在越界写入。",
+        "not_applicable": "没有写入。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "把只读请求或沉默解释为写权限。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_receipt.py"
+        ]
+      }
+    },
+    {
+      "id": "GOV.MODE.DERIVE",
+      "strength": "MUST",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.MODE.DERIVE",
+      "instruction_gloss": "从用户完整请求推导唯一执行模式。",
+      "effect": {
+        "verb": "select",
+        "target": "execution_mode",
+        "value": "derive_from_complete_request"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "request_hash",
+          "mode"
+        ]
+      },
+      "outcomes": {
+        "pass": "模式与原请求一致。",
+        "fail": "模式扩大或缩小了授权。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "用单个关键词或调用者声明代替授权判断。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      }
+    },
+    {
+      "id": "GOV.MODE.STABLE",
+      "strength": "MUST",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.MODE.STABLE",
+      "instruction_gloss": "仅在请求或授权实质变化时重选模式。",
+      "effect": {
+        "verb": "require",
+        "target": "mode_change",
+        "value": "material_authorization_change"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "request_hash",
+          "mode"
+        ]
+      },
+      "outcomes": {
+        "pass": "同一请求保持同一授权模式。",
+        "fail": "无新授权却发生模式跃迁。",
+        "not_applicable": "新的独立请求。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "在同一请求中为方便写入而切换模式。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      }
+    },
+    {
+      "id": "GOV.ROUTE.PROOF_SOURCE",
+      "strength": "MUST",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.PROOF_SOURCE",
+      "instruction_gloss": "路由证据必须来自当前契约的显式匹配，不得以 catchall 或旧版传递链接代替。",
+      "effect": {
+        "verb": "forbid",
+        "target": "route_proof_source",
+        "value": [
+          "catchall_match",
+          "legacy_transitive_link"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "route_id",
+          "matched_clause",
+          "matched_pattern",
+          "contract_entry"
+        ]
+      },
+      "outcomes": {
+        "pass": "路由由当前契约中的显式请求匹配直接证明。",
+        "fail": "路由证明仅来自兜底匹配或旧版传递引用。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [
+        "GOV.ROUTE.TUPLE"
+      ],
+      "failure_example": "因为旧版模块曾链接到某流程，就把该链接当成本次请求的可达性证明。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      }
+    },
+    {
+      "id": "GOV.ROUTE.RAW_REQUEST",
+      "strength": "MUST",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.RAW_REQUEST",
+      "instruction_gloss": "用原始用户请求作为路由分类输入。",
+      "effect": {
+        "verb": "require",
+        "target": "route_input",
+        "value": "raw_user_request"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "request_hash"
+        ]
+      },
+      "outcomes": {
+        "pass": "路由保留原请求哈希。",
+        "fail": "路由来源不可复核。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "仅传入预分类的 mode、object、action 或 state。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      }
+    },
+    {
+      "id": "GOV.ROUTE.STATE_BIND",
+      "strength": "MUST",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.STATE_BIND",
+      "instruction_gloss": "从项目权威状态读取路由状态。",
+      "effect": {
+        "verb": "require",
+        "target": "route_state",
+        "value": "authoritative_state_lookup"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "route"
+        ],
+        "fields": [
+          "state_revision",
+          "component_state"
+        ]
+      },
+      "outcomes": {
+        "pass": "路由状态与磁盘状态一致。",
+        "fail": "路由使用伪造或陈旧状态。",
+        "not_applicable": "纯咨询没有项目根。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "接受调用者传入的状态作为事实。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      }
+    },
+    {
+      "id": "GOV.ROUTE.TUPLE",
+      "strength": "MUST",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.TUPLE",
+      "instruction_gloss": "在实质执行前逐项核验 mode、object、action、state 与同一条路由契约一致。",
+      "effect": {
+        "verb": "verify",
+        "target": "route_tuple",
+        "value": "mode_object_action_state_contract_match"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route",
+          "state"
+        ],
+        "fields": [
+          "mode",
+          "object",
+          "action",
+          "state",
+          "route_id"
+        ]
+      },
+      "outcomes": {
+        "pass": "四元组的每个维度均由同一可执行路由契约支持。",
+        "fail": "任一维度缺失、未绑定或与所选路由不一致。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [
+        "GOV.MODE.DERIVE",
+        "GOV.ROUTE.RAW_REQUEST",
+        "GOV.ROUTE.STATE_BIND"
+      ],
+      "failure_example": "只验证对象和状态，却没有证明请求动作属于该路由的 intents。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      }
+    },
+    {
+      "id": "GOV.ROUTE.UNIQUE_WRITE",
+      "strength": "MUST",
+      "domain": "governance",
+      "owner": "rules/governance.json#GOV.ROUTE.UNIQUE_WRITE",
+      "instruction_gloss": "只在可执行路由链无冲突时写入。",
+      "effect": {
+        "verb": "require",
+        "target": "writable_route_status",
+        "value": "resolved"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "route"
+        ],
+        "fields": [
+          "status",
+          "route_ids",
+          "dependencies"
+        ]
+      },
+      "outcomes": {
+        "pass": "写路由链有确定顺序。",
+        "fail": "写路由仍有歧义。",
+        "not_applicable": "只读请求。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "用 catchall 或最高分候选掩盖写路由歧义。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ]
+      }
+    },
+    {
+      "id": "MAN.CONTENT.CLAIM_EVIDENCE",
+      "strength": "MUST",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.CLAIM_EVIDENCE",
+      "instruction_gloss": "把每个关键主张链接到数据、运行、推导或外部来源。",
+      "effect": {
+        "verb": "require",
+        "target": "manuscript_claim",
+        "value": "exact_evidence_link"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command",
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "claim",
+          "evidence_ref"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键主张可追溯。",
+        "fail": "存在孤立关键主张。",
+        "not_applicable": "纯格式修改。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "用流畅表达掩盖无证据主张。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "MAN.CONTENT.EXPLANATION_TRACE",
+      "strength": "MUST",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.EXPLANATION_TRACE",
+      "instruction_gloss": "让读者能沿对象、数据、推导、结果和含义追踪论证。",
+      "effect": {
+        "verb": "require",
+        "target": "reader_explanation_chain",
+        "value": [
+          "objects",
+          "data",
+          "derivation",
+          "results",
+          "meaning"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "file"
+        ],
+        "fields": [
+          "claim",
+          "objects",
+          "data",
+          "derivation",
+          "result",
+          "meaning"
+        ]
+      },
+      "outcomes": {
+        "pass": "解释链闭合。",
+        "fail": "解释链存在断点。",
+        "not_applicable": "纯格式改动。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "只给公式和数字，不解释它们回答什么问题。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "MAN.CONTENT.NOTATION",
+      "strength": "MUST",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.NOTATION",
+      "instruction_gloss": "保持符号、下标、单位和索引含义一致。",
+      "effect": {
+        "verb": "verify",
+        "target": "notation_consistency",
+        "value": "one_symbol_one_meaning"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "symbol_index",
+          "conflicts"
+        ]
+      },
+      "outcomes": {
+        "pass": "符号身份一致。",
+        "fail": "符号冲突未解决。",
+        "not_applicable": "文本无数学符号。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "同一符号跨章节改变含义。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "MAN.CONTENT.NO_DUMP",
+      "strength": "MUST",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.NO_DUMP",
+      "instruction_gloss": "公式和数值必须嵌入解释链，不能代替解释。",
+      "effect": {
+        "verb": "forbid",
+        "target": "explanation_substitute",
+        "value": "formula_or_number_dump"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "location",
+          "formula_or_number",
+          "explanatory_context"
+        ]
+      },
+      "outcomes": {
+        "pass": "公式与数字有解释。",
+        "fail": "存在公式或数字堆积。",
+        "not_applicable": "内容不含公式或数值。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [
+        "MAN.CONTENT.EXPLANATION_TRACE"
+      ],
+      "failure_example": "连续堆放公式或结果表，却不说明对象、依据和含义。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "VIS.LAYOUT.FONTS",
+      "strength": "MUST",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.FONTS",
+      "instruction_gloss": "在实际渲染件中核对字体嵌入、替代和最终尺寸可读性。",
+      "effect": {
+        "verb": "verify",
+        "target": "rendered_fonts",
+        "value": "embedded_supported_and_legible"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "render_path",
+          "font_inventory",
+          "glyph_check",
+          "legibility"
+        ]
+      },
+      "outcomes": {
+        "pass": "字体渲染正确。",
+        "fail": "字体缺失、替代或不可读。",
+        "not_applicable": "输出不含文字。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [
+        "VIS.LAYOUT.LEGIBILITY"
+      ],
+      "failure_example": "源码指定字体但导出时被缺字或错误替代。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "VIS.LAYOUT.LABELS",
+      "strength": "MUST",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.LABELS",
+      "instruction_gloss": "核对坐标、图例和标注的含义与单位。",
+      "effect": {
+        "verb": "verify",
+        "target": "axis_and_legend_labels",
+        "value": "meaning_unit_identity"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "render_path",
+          "labels_checked"
+        ]
+      },
+      "outcomes": {
+        "pass": "标注完整且准确。",
+        "fail": "标注缺失或歧义。",
+        "not_applicable": "无坐标或图例的示意图。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "省略读者理解所需的单位或类别解释。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "VIS.LAYOUT.LEGIBILITY",
+      "strength": "MUST",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.LEGIBILITY",
+      "instruction_gloss": "在最终输出尺寸下检查文字、线条和重叠。",
+      "effect": {
+        "verb": "verify",
+        "target": "render_legibility",
+        "value": "target_output_size"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "target_size",
+          "render_hash",
+          "inspection"
+        ]
+      },
+      "outcomes": {
+        "pass": "最终尺寸可读。",
+        "fail": "存在遮挡或不可读元素。",
+        "not_applicable": "非视觉产物。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "只在放大编辑视图中判断可读性。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "VIS.LAYOUT.PAGINATION",
+      "strength": "MUST",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.PAGINATION",
+      "instruction_gloss": "逐页检查页码、分页、孤行和内容越界。",
+      "effect": {
+        "verb": "verify",
+        "target": "page_layout",
+        "value": "pagination_and_page_breaks"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "render_path",
+          "pages_inspected",
+          "pagination_findings"
+        ]
+      },
+      "outcomes": {
+        "pass": "分页与页码正确。",
+        "fail": "存在分页或越界问题。",
+        "not_applicable": "非分页输出。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "depends_on": [],
+      "failure_example": "只确认 PDF 可打开，不检查断页和越界。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    }
+  ],
+  "context_refs": [
+    "references/manuscript-method-notes.md",
+    "references/manuscript-change-closure.json",
+    "references/manuscript-method-notes.md#render",
+    "references/visual-method-notes.md#audit"
+  ],
+  "reasons": []
+}

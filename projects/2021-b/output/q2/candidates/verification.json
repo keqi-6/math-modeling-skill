@@ -1,0 +1,31 @@
+{
+  "status": "s6_candidate_diagnostic_independent_verification",
+  "passed": true,
+  "checks": [
+    {
+      "check": "平衡主体覆盖",
+      "passed": true,
+      "detail": "rows=84"
+    },
+    {
+      "check": "ethanol_conversion_pct平方和独立复算",
+      "passed": true,
+      "detail": "max_abs_error=1.046e-11"
+    },
+    {
+      "check": "ethanol_conversion_pct正交分解闭合",
+      "passed": true,
+      "detail": "closure_error=0.000e+00"
+    },
+    {
+      "check": "c4_selectivity_pct平方和独立复算",
+      "passed": true,
+      "detail": "max_abs_error=1.819e-12"
+    },
+    {
+      "check": "c4_selectivity_pct正交分解闭合",
+      "passed": true,
+      "detail": "closure_error=0.000e+00"
+    }
+  ]
+}

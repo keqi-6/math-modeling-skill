@@ -1,0 +1,31 @@
+{
+  "status": "s5_baseline_independent_verification",
+  "passed": true,
+  "checks": [
+    {
+      "check": "共同温度覆盖",
+      "passed": true,
+      "detail": "cells=84, coverage={250.0: 21, 275.0: 21, 300.0: 21, 350.0: 21}"
+    },
+    {
+      "check": "主体配对记录数",
+      "passed": true,
+      "detail": "rows=126, expected=126"
+    },
+    {
+      "check": "补充配对记录数",
+      "passed": true,
+      "detail": "rows=80, expected=80"
+    },
+    {
+      "check": "同温分布独立复算",
+      "passed": true,
+      "detail": "max_abs_error=3.553e-15"
+    },
+    {
+      "check": "主体配对增量独立复算",
+      "passed": true,
+      "detail": "max_abs_error=3.553e-15"
+    }
+  ]
+}

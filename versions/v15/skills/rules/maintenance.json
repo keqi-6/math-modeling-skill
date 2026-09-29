@@ -1,0 +1,1213 @@
+{
+  "schema_version": "10.0",
+  "domain": "maintenance",
+  "rules": [
+    {
+      "id": "MNT.CLASSIFY.OLD",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-CLASSIFY-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.CLASSIFY.OLD",
+      "strength": "MUST",
+      "semantic_key": "maintenance.classify.old_behavior",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_change_request"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "old_behavior",
+        "value": "current_owner_effect"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "rule_id",
+          "owner",
+          "effect"
+        ]
+      },
+      "outcomes": {
+        "pass": "旧行为可定位。",
+        "fail": "旧行为来源不明。",
+        "not_applicable": "新增全新语义规则。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.MNT.GENERATED.OWNER"
+      ],
+      "legacy_refs": [
+        "MNT-CLASSIFY-001"
+      ],
+      "routes": [
+        "RT.SKILL.AUDIT",
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "从当前规范 owner 提取旧行为。",
+      "failure_example": "根据摘要或记忆猜测旧规则。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.CLASSIFY.NEW",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-CLASSIFY-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.CLASSIFY.NEW",
+      "strength": "MUST",
+      "semantic_key": "maintenance.classify.new_behavior",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_change_request"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "new_behavior",
+        "value": "single_observable_effect"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "effect",
+          "pass",
+          "fail"
+        ]
+      },
+      "outcomes": {
+        "pass": "新行为可独立判定。",
+        "fail": "新行为仍是复合段落。",
+        "not_applicable": "仅修正文档错字。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MNT-CLASSIFY-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把新行为表达为一个可观察规范效果。",
+      "failure_example": "把多个独立义务塞入一条规则文本。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.CLASSIFY.TRIGGER",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-CLASSIFY-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.CLASSIFY.TRIGGER",
+      "strength": "MUST",
+      "semantic_key": "maintenance.classify.trigger_exception",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_change_request"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "rule_applicability",
+        "value": "trigger_scope_exceptions"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "trigger",
+          "scope",
+          "exceptions"
+        ]
+      },
+      "outcomes": {
+        "pass": "适用边界可测试。",
+        "fail": "规则无法确定路由。",
+        "not_applicable": "非规范性参考资料更正。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MNT-CLASSIFY-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为变更明确触发、作用域和例外。",
+      "failure_example": "只改规则正文而不定义何时生效。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.CLASSIFY.RISK",
+      "revision": 3,
+      "status": "active",
+      "capability": "MNT-CLASSIFY-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.CLASSIFY.RISK",
+      "strength": "MUST",
+      "semantic_key": "maintenance.classify.risk",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_change_request"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "select",
+        "target": "change_risk",
+        "value": [
+          "L0",
+          "L1",
+          "L2",
+          "L3",
+          "L4"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "risk",
+          "affected_surfaces"
+        ]
+      },
+      "outcomes": {
+        "pass": "风险等级覆盖传递影响。",
+        "fail": "风险被低估。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MNT-CLASSIFY-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "按运行影响把变更分为 L0–L4。",
+      "failure_example": "把权限、路由或状态机变更标为低风险。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.IMPACT.TRANSITIVE",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-IMPACT-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.IMPACT.TRANSITIVE",
+      "strength": "MUST",
+      "semantic_key": "maintenance.impact.transitive",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_change_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "change_impact",
+        "value": "rules_capabilities_routes_state_schemas_scripts_evals"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "direct",
+          "transitive",
+          "edges"
+        ]
+      },
+      "outcomes": {
+        "pass": "影响闭包可复算。",
+        "fail": "受影响消费者漏报。",
+        "not_applicable": "纯拼写修正且无语义变化。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.MNT.EXISTENCE_ONLY"
+      ],
+      "legacy_refs": [
+        "MNT-IMPACT-001"
+      ],
+      "routes": [
+        "RT.SKILL.AUDIT",
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "计算规则到路由、契约、脚本和评测的传递影响集合。",
+      "failure_example": "只报告被编辑文件。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.IMPACT.ROUTE_REACH",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-IMPACT-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.IMPACT.ROUTE_REACH",
+      "strength": "MUST",
+      "semantic_key": "maintenance.impact.route_reachability",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_add",
+          "rule_modify"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "rule_reachability",
+        "value": "at_least_one_executable_route"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "route"
+        ],
+        "fields": [
+          "rule_id",
+          "reachable_routes"
+        ]
+      },
+      "outcomes": {
+        "pass": "活动规则有可达路由。",
+        "fail": "规则是运行时死规则。",
+        "not_applicable": "已废弃规则。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.MNT.ROUTE.DEAD"
+      ],
+      "legacy_refs": [
+        "MNT-IMPACT-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "证明每条活动规则至少可由一个合法路由选中。",
+      "failure_example": "把仅存在于文件中当成可路由。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.OWNER.CANONICAL",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-OWNER-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.OWNER.CANONICAL",
+      "strength": "MUST",
+      "semantic_key": "maintenance.owner.canonical",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "edit_target",
+        "value": "declared_rule_owner"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command"
+        ],
+        "fields": [
+          "rule_id",
+          "owner",
+          "changed_path"
+        ]
+      },
+      "outcomes": {
+        "pass": "编辑路径与 owner 一致。",
+        "fail": "编辑会被生成器覆盖或不生效。",
+        "not_applicable": "不改规则。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.MNT.GENERATED.OWNER"
+      ],
+      "legacy_refs": [
+        "MNT-OWNER-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "只修改规则声明的规范 owner。",
+      "failure_example": "编辑生成视图或旧版本文本期待运行生效。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.IMPACT.CONFLICT_GRAPH",
+      "revision": 4,
+      "status": "active",
+      "capability": "MNT-IMPACT-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.IMPACT.CONFLICT_GRAPH",
+      "strength": "MUST",
+      "semantic_key": "maintenance.impact.conflict_graph",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_load",
+          "rule_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "structured_conflicts",
+        "value": "overlapping_scope_target_effect_explicit_resolution"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "candidate_rule_ids",
+          "semantic_keys",
+          "effect_targets",
+          "overlap_evidence",
+          "resolution"
+        ]
+      },
+      "outcomes": {
+        "pass": "所有跨语义键的同作用域效果重叠均有结构化处置。",
+        "fail": "存在未声明或未解决的跨语义键效果冲突。",
+        "not_applicable": "从不适用。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "maintenance.impact.conflict_graph.exception.1",
+          "when": "规则显式 supersedes 旧规则",
+          "disposition": "旧规则必须 retired"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.MNT.MANUAL.CONFLICT.COUNT"
+      ],
+      "legacy_refs": [
+        "MNT-IMPACT-001"
+      ],
+      "routes": [
+        "RT.SKILL.AUDIT",
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "构建跨 semantic_key 的作用域—target—effect 冲突图，并要求每个重叠有显式关系或阻断决定。",
+      "failure_example": "两个不同语义键在同一路由和状态对同一 target 施加互斥效果，却因键名不同而漏检。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.EVAL.POSITIVE",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-EVAL-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.EVAL.POSITIVE",
+      "strength": "MUST",
+      "semantic_key": "maintenance.eval.positive",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "normative_behavior_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "behavior_eval_set",
+        "value": "positive_prompt"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "prompt",
+          "observed_route",
+          "expected"
+        ]
+      },
+      "outcomes": {
+        "pass": "正例触发新行为。",
+        "fail": "新行为未触发。",
+        "not_applicable": "非行为变更。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.EVAL.PRECLASSIFIED"
+      ],
+      "legacy_refs": [
+        "MNT-EVAL-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为新行为添加原始自然语言正例。",
+      "failure_example": "只测试预分类 JSON 标签。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.EVAL.NEAR_NEGATIVE",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-EVAL-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.EVAL.NEAR_NEGATIVE",
+      "strength": "MUST",
+      "semantic_key": "maintenance.eval.near_negative",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "normative_behavior_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "behavior_eval_set",
+        "value": "near_negative_prompt"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "prompt",
+          "observed_route",
+          "expected"
+        ]
+      },
+      "outcomes": {
+        "pass": "近似反例未误触发。",
+        "fail": "规则过度路由。",
+        "not_applicable": "非行为变更。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MNT-EVAL-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为新行为添加相似但不应触发的反例。",
+      "failure_example": "只测试明显无关的负例。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MNT.EVAL.POSITIVE"
+      ]
+    },
+    {
+      "id": "MNT.EVAL.CONFLICT",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-EVAL-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.EVAL.CONFLICT",
+      "strength": "MUST",
+      "semantic_key": "maintenance.eval.conflict",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "normative_behavior_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "behavior_eval_set",
+        "value": "conflict_and_state_binding_prompt"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "prompt",
+          "state_fixture",
+          "expected"
+        ]
+      },
+      "outcomes": {
+        "pass": "冲突与状态边界符合预期。",
+        "fail": "新规则绕过控制面。",
+        "not_applicable": "非行为变更。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MNT-EVAL-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为新行为添加冲突例和状态绑定例。",
+      "failure_example": "只测理想单规则场景。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MNT.EVAL.POSITIVE",
+        "MNT.EVAL.NEAR_NEGATIVE"
+      ]
+    },
+    {
+      "id": "MNT.RELOAD.ISOLATED",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-RELOAD-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.RELOAD.ISOLATED",
+      "strength": "MUST",
+      "semantic_key": "maintenance.reload.isolated",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "release_candidate_validation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "candidate_behavior",
+        "value": "fresh_process_from_candidate_root"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "candidate_root",
+          "process_id",
+          "scenario_results"
+        ]
+      },
+      "outcomes": {
+        "pass": "新进程加载候选并通过场景。",
+        "fail": "候选未独立加载或场景失败。",
+        "not_applicable": "只读审计。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.EVAL.STATIC.FORWARD_RESULTS"
+      ],
+      "legacy_refs": [
+        "MNT-RELOAD-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "从隔离候选根启动新进程执行行为场景。",
+      "failure_example": "用编辑进程中的内存印象证明规则生效。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.RELOAD.INDEPENDENT_AGENT",
+      "revision": 3,
+      "status": "active",
+      "capability": "MNT-RELOAD-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.RELOAD.INDEPENDENT_AGENT",
+      "strength": "MUST",
+      "semantic_key": "maintenance.reload.independent_agent",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "high_risk_release_validation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "agent_behavior",
+        "value": "independent_reloaded_invocation"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "receipt",
+          "command"
+        ],
+        "fields": [
+          "invocation_identity",
+          "observed_behavior"
+        ]
+      },
+      "outcomes": {
+        "pass": "独立调用观察到目标行为。",
+        "fail": "独立调用未通过。",
+        "not_applicable": "环境不提供或未授权独立调用。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "maintenance.reload.independent_agent.exception.1",
+          "when": "无独立调用能力",
+          "disposition": "明确报告未验证边界并保留新进程场景证据"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MNT-RELOAD-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在可用且获授权时由独立重载调用执行前向测试。",
+      "failure_example": "伪造独立 Agent 结果文件。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.ROLLBACK.PRESERVE",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-ROLLBACK-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.ROLLBACK.PRESERVE",
+      "strength": "MUST",
+      "semantic_key": "maintenance.rollback.preserve",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "major_release",
+          "high_risk_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "rollback_point",
+        "value": "immutable_previous_version"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command"
+        ],
+        "fields": [
+          "previous_root",
+          "previous_hash"
+        ]
+      },
+      "outcomes": {
+        "pass": "回滚点可读且身份已记录。",
+        "fail": "旧版本不可恢复。",
+        "not_applicable": "未触发高风险变更。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MNT-ROLLBACK-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为高风险发布保留不可变旧主版本。",
+      "failure_example": "原地覆盖唯一可用版本。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MNT.ROLLBACK.COMPATIBILITY",
+      "revision": 2,
+      "status": "active",
+      "capability": "MNT-ROLLBACK-001",
+      "domain": "maintenance",
+      "owner": "rules/maintenance.json#MNT.ROLLBACK.COMPATIBILITY",
+      "strength": "MUST",
+      "semantic_key": "maintenance.rollback.compatibility",
+      "scope": {
+        "objects": [
+          "skill"
+        ],
+        "component_types": [
+          "skill"
+        ],
+        "states": [
+          "V10"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "release_report"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "compatibility_report",
+        "value": "preserved_changed_retired_unverified"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "file"
+        ],
+        "fields": [
+          "gate_results",
+          "coverage",
+          "limitations"
+        ]
+      },
+      "outcomes": {
+        "pass": "报告由本次运行生成。",
+        "fail": "报告与测试结果不一致。",
+        "not_applicable": "不是发布。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.RELEASE.HARDCODED.PASS"
+      ],
+      "legacy_refs": [
+        "MNT-ROLLBACK-001"
+      ],
+      "routes": [
+        "RT.SKILL.CHANGE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "报告能力的保留、改变、废弃和未验证边界。",
+      "failure_example": "用硬编码 PASS 掩盖未执行门禁。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/capability-packets/governance/skill-maintenance.md",
+          "evals/release/release-plan.json",
+          "scripts/validate_release.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    }
+  ]
+}

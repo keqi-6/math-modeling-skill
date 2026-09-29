@@ -1,0 +1,665 @@
+{
+  "status": "pass",
+  "producer_independence": {
+    "imports_primary_core": false,
+    "reads_primary_source": false,
+    "method": "independent_dict_reward_renewal_reconstruction"
+  },
+  "solution_verification": {
+    "V1": {
+      "status": "pass",
+      "candidate_records_compared": 1638400,
+      "exact_field_checks": 17777800,
+      "feasible_flow_invariants": 426500,
+      "scenario_counts": {
+        "NOMINAL": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P1_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P1_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P2_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P2_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P3_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P3_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P4_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P4_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P5_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P5_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P6_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P6_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P7_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P7_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P8_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "P8_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "S1_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "S1_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "S2_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "S2_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "S3_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "S3_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "F_LOW": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        },
+        "F_HIGH": {
+          "candidate": 65536,
+          "feasible": 17060,
+          "infeasible": 48476
+        }
+      },
+      "best": {
+        "NOMINAL": {
+          "profit_exact": "173/3",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P1_LOW": {
+          "profit_exact": "1099/19",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P1_HIGH": {
+          "profit_exact": "977/17",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P2_LOW": {
+          "profit_exact": "3317/57",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P2_HIGH": {
+          "profit_exact": "2911/51",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P3_LOW": {
+          "profit_exact": "10001/171",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P3_HIGH": {
+          "profit_exact": "8683/153",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P4_LOW": {
+          "profit_exact": "1099/19",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P4_HIGH": {
+          "profit_exact": "977/17",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P5_LOW": {
+          "profit_exact": "3317/57",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P5_HIGH": {
+          "profit_exact": "2911/51",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P6_LOW": {
+          "profit_exact": "10001/171",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P6_HIGH": {
+          "profit_exact": "8683/153",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P7_LOW": {
+          "profit_exact": "3317/57",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P7_HIGH": {
+          "profit_exact": "2911/51",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P8_LOW": {
+          "profit_exact": "10001/171",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "P8_HIGH": {
+          "profit_exact": "8683/153",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "S1_LOW": {
+          "profit_exact": "10081/171",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "S1_HIGH": {
+          "profit_exact": "8603/153",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "S2_LOW": {
+          "profit_exact": "10081/171",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "S2_HIGH": {
+          "profit_exact": "8603/153",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "S3_LOW": {
+          "profit_exact": "1119/19",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "S3_HIGH": {
+          "profit_exact": "957/17",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "F_LOW": {
+          "profit_exact": "10561/171",
+          "policy_ids": [
+            "1111111111101111"
+          ]
+        },
+        "F_HIGH": {
+          "profit_exact": "8123/153",
+          "policy_ids": [
+            "1111111111101111",
+            "1111111111111111"
+          ]
+        }
+      }
+    },
+    "V2": {
+      "status": "not_triggered",
+      "reason": "all probabilities, renewals, costs and rankings are exact Fractions; the candidate domain is exhaustively enumerated without tolerance, iteration or random search"
+    }
+  },
+  "model_examination": {
+    "V3": {
+      "status": "pass",
+      "tests": [
+        {
+          "id": "posterior_dependence",
+          "claim": "拆回对象必须保留父失败条件下的联合质量信息",
+          "failure_risk": "把条件后验边际重新相乘会错误恢复独立性",
+          "relation": "Cov(1_child1_good,1_child2_good | parent_bad) != 0",
+          "criterion": "精确条件协方差非零",
+          "result": {
+            "joint_GG": "81/271",
+            "marginal_G": "171/271",
+            "covariance": "-7290/73441"
+          },
+          "boundary": "two-child analytic fixture; it proves the aggregation risk, not arbitrary factory dependence"
+        },
+        {
+          "id": "persistent_object_counterexample",
+          "claim": "不可终止策略必须在利润比较前排除",
+          "failure_risk": "有限轮截断会给永久坏件回流策略伪造有限利润",
+          "relation": "P(nonabsorption) >= marginal primitive defect rate = 1/10",
+          "criterion": "存在正概率可达且不含成功态的闭类",
+          "result": "pass; all 48476 rejected policies per scenario carry the scenario-specific conservative lower bound min_j(q_j), equal to 1/20 or 1/10 here",
+          "boundary": "the 25 stated node-rate scenarios and fixed strategy domain"
+        },
+        {
+          "id": "order_flow_conservation",
+          "claim": "每个完成订单只吸收一次并只计一次售价",
+          "failure_risk": "调换轮次重复收入或根尝试漏计",
+          "relation": "E[root attempts]-E[market bad]=1 when final inspection is off; E[assemble_F]=E[root attempts] always",
+          "criterion": "all feasible policy-scenario records satisfy the exact identities",
+          "result": "pass; 426500 feasible records",
+          "boundary": "event-flow necessity, not real production validation"
+        },
+        {
+          "id": "node_rate_oat_reoptimization",
+          "claim": "问题三决策对题定12个节点次品率的局部敏感性已直接检验",
+          "failure_risk": "单个节点次品率估计偏差可能改变最优策略或利润",
+          "relation": "one node at a time: q_j in {0.05,0.15}, all other q=0.10; re-optimize all 65536 policies",
+          "criterion": "report all 25 scenarios, exact profit changes and every exact policy switch",
+          "result": [
+            {
+              "scenario": "NOMINAL",
+              "changed_node": null,
+              "direction": "nominal",
+              "changed_rate_exact": null,
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "173/3",
+              "profit_change_from_nominal_exact": "0",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P1_LOW",
+              "changed_node": "P1",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "1099/19",
+              "profit_change_from_nominal_exact": "10/57",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P1_HIGH",
+              "changed_node": "P1",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "977/17",
+              "profit_change_from_nominal_exact": "-10/51",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P2_LOW",
+              "changed_node": "P2",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "3317/57",
+              "profit_change_from_nominal_exact": "10/19",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P2_HIGH",
+              "changed_node": "P2",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "2911/51",
+              "profit_change_from_nominal_exact": "-10/17",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P3_LOW",
+              "changed_node": "P3",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "10001/171",
+              "profit_change_from_nominal_exact": "140/171",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P3_HIGH",
+              "changed_node": "P3",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "8683/153",
+              "profit_change_from_nominal_exact": "-140/153",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P4_LOW",
+              "changed_node": "P4",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "1099/19",
+              "profit_change_from_nominal_exact": "10/57",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P4_HIGH",
+              "changed_node": "P4",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "977/17",
+              "profit_change_from_nominal_exact": "-10/51",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P5_LOW",
+              "changed_node": "P5",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "3317/57",
+              "profit_change_from_nominal_exact": "10/19",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P5_HIGH",
+              "changed_node": "P5",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "2911/51",
+              "profit_change_from_nominal_exact": "-10/17",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P6_LOW",
+              "changed_node": "P6",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "10001/171",
+              "profit_change_from_nominal_exact": "140/171",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P6_HIGH",
+              "changed_node": "P6",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "8683/153",
+              "profit_change_from_nominal_exact": "-140/153",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P7_LOW",
+              "changed_node": "P7",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "3317/57",
+              "profit_change_from_nominal_exact": "10/19",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P7_HIGH",
+              "changed_node": "P7",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "2911/51",
+              "profit_change_from_nominal_exact": "-10/17",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P8_LOW",
+              "changed_node": "P8",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "10001/171",
+              "profit_change_from_nominal_exact": "140/171",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "P8_HIGH",
+              "changed_node": "P8",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "8683/153",
+              "profit_change_from_nominal_exact": "-140/153",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "S1_LOW",
+              "changed_node": "S1",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "10081/171",
+              "profit_change_from_nominal_exact": "220/171",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "S1_HIGH",
+              "changed_node": "S1",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "8603/153",
+              "profit_change_from_nominal_exact": "-220/153",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "S2_LOW",
+              "changed_node": "S2",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "10081/171",
+              "profit_change_from_nominal_exact": "220/171",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "S2_HIGH",
+              "changed_node": "S2",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "8603/153",
+              "profit_change_from_nominal_exact": "-220/153",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "S3_LOW",
+              "changed_node": "S3",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "1119/19",
+              "profit_change_from_nominal_exact": "70/57",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "S3_HIGH",
+              "changed_node": "S3",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "957/17",
+              "profit_change_from_nominal_exact": "-70/51",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "F_LOW",
+              "changed_node": "F",
+              "direction": "low",
+              "changed_rate_exact": "1/20",
+              "best_policy_ids": [
+                "1111111111101111"
+              ],
+              "best_profit_exact": "10561/171",
+              "profit_change_from_nominal_exact": "700/171",
+              "policy_switch_from_nominal": false
+            },
+            {
+              "scenario": "F_HIGH",
+              "changed_node": "F",
+              "direction": "high",
+              "changed_rate_exact": "3/20",
+              "best_policy_ids": [
+                "1111111111101111",
+                "1111111111111111"
+              ],
+              "best_profit_exact": "8123/153",
+              "profit_change_from_nominal_exact": "-700/153",
+              "policy_switch_from_nominal": true
+            }
+          ],
+          "boundary": "discrete plus/minus five percentage-point OAT perturbations; not a joint confidence region or a proof for simultaneous changes"
+        }
+      ]
+    },
+    "V4": {
+      "status": "not_triggered",
+      "reason": "the official problem provides no factory history, joint-quality observations, inspection-error study, or out-of-sample profit comparator",
+      "unconfirmed_domain": "real factory defect dependence, inspection accuracy, reuse practice, and realized profit"
+    }
+  },
+  "uncertainty_register": {
+    "input_parameter_uncertainty": "locally examined by 24 OAT perturbations; problem four owns sampling-based rate estimation and joint uncertainty",
+    "numerical_approximation": "not_triggered; exact rational arithmetic",
+    "optimization_uncertainty": "not_triggered; complete 65536 enumeration",
+    "model_form_dependence": "not varied; the task-stated independent node-rate model is held fixed while its 12 rates are perturbed"
+  },
+  "headline_independent_fixture": {
+    "policy_id": "1111111111101111",
+    "nominal_cost": "427/3",
+    "nominal_profit": "173/3"
+  }
+}

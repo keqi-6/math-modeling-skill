@@ -1,0 +1,21 @@
+# 文档与规则统一按仓库内容逐字保存，避免跨平台换行改写
+*.md   -text
+*.json -text
+*.tex  -text
+*.yml  -text
+*.yaml -text
+*.csv  -text
+
+# 代码文件以 LF 保存
+*.py  text eol=lf
+*.sh  text eol=lf
+*.ps1 text eol=crlf
+
+# 二进制
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.xlsx binary
+*.docx binary
+*.zip  binary

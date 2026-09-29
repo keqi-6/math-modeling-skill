@@ -1,0 +1,8 @@
+{
+  "schema_version": "15.0",
+  "release_id": "V15.0.0",
+  "status": "stable",
+  "frozen_at": "2026-08-27T06:17:39Z",
+  "manifest": "evals/release/frozen-manifest.json",
+  "gate_report_sha256": "f812f5c37d9f38dd6828e5f7495d8dc698914301d64d27ff9c1e69d264647f06"
+}

@@ -1,0 +1,18 @@
+{
+  "producer": "src/eda/01_discrete_eda.py",
+  "started_at": "2026-07-31T09:56:56.369052+08:00",
+  "finished_at": "2026-07-31T09:57:05.923836+08:00",
+  "inputs": {
+    "output/data_audit/tables/modeling_dataset.csv": "3bcd0544218d0b68e75812619b1462bcf8188e668770eacbe0dff0f25ce49f9f",
+    "output/data_audit/tables/cleaned_attachment2.csv": "996ebdb9783cd9bab4572b5bafba75909843511f9278fea1ddbc632914b61a2a"
+  },
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "packages": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.0",
+    "seaborn": "0.13.2"
+  },
+  "random_seed": null
+}

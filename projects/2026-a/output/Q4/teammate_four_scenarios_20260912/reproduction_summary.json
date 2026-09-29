@@ -1,0 +1,862 @@
+{
+  "status": "internal_numerical_reproduction_completed_at_two_decimal_hour_scope",
+  "request": "队友另行计算的，你看看能不能复现",
+  "solver_unchanged_sha256": "8a075fa2890c0f6265c33df8b75664f62b05e6ba4b765b8fa32cce69041dc0ef",
+  "model_spec_sha256": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+  "boundary_sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+  "radius_input_sha256": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+  "predeclared_criterion_h": 0.005,
+  "source_team_table_h": {
+    "A": 57.44,
+    "B": 25.24,
+    "C": 129.83,
+    "D": 51.09
+  },
+  "runs": [
+    {
+      "case": "A",
+      "n": 1280,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/A_n1280.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/A_n1280.npz",
+      "npz_sha256": "5d06f1a8205de85ad83e0a92f649badfbda2dd7adfb4bcdbc097f8b161080e26",
+      "metadata_sha256": "5d3eb3e5765ff0d2af2204e9b0421e959ddd0ce3c76ff9dcc7295acb604b5d95",
+      "properties": "appendix3",
+      "radius_method": "constant",
+      "scenario": "mean_tail",
+      "t_cross_s": 206914.60342598683,
+      "n_end_s": 206915,
+      "t_cross_h": 57.476278729440786,
+      "n_end_h": 57.47638888888889,
+      "display_h_2": "57.48",
+      "elapsed_solver_s": 18.13060740000219,
+      "work_limit_s": 604800,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 206914.0,
+          "max_C": 0.15000017576635527,
+          "max_node": 0,
+          "min_C": 0.05264933043891549,
+          "nodes": 1281,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 206914.60342598683,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05264931612735344,
+          "nodes": 1281,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 206915.0,
+          "max_C": 0.1499998844862924,
+          "max_node": 0,
+          "min_C": 0.05264930672181565,
+          "nodes": 1281,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "A",
+      "n": 320,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/A_n320.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/A_n320.npz",
+      "npz_sha256": "e7c12441af6c61df7e70ba9cc17af43d346a9ead12523d995db80f9e95e6487c",
+      "metadata_sha256": "485611804bbd3f9453bac2c4a29cdd16004840c6e434159578af165f2349798f",
+      "properties": "appendix3",
+      "radius_method": "constant",
+      "scenario": "mean_tail",
+      "t_cross_s": 206814.00317937962,
+      "n_end_s": 206815,
+      "t_cross_h": 57.44833421649434,
+      "n_end_h": 57.44861111111111,
+      "display_h_2": "57.45",
+      "elapsed_solver_s": 6.678452100022696,
+      "work_limit_s": 604800,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 206814.0,
+          "max_C": 0.15000000092699411,
+          "max_node": 0,
+          "min_C": 0.052648651333316664,
+          "nodes": 321,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 206814.00317937962,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.052648651257797954,
+          "nodes": 321,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 206815.0,
+          "max_C": 0.1499997093642419,
+          "max_node": 0,
+          "min_C": 0.05264862758088842,
+          "nodes": 321,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "B",
+      "n": 1280,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/B_n1280.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/B_n1280.npz",
+      "npz_sha256": "66edc1b310e8387585601cccdc96d98316ac6e90ddddc8f67140bbc6accd5e1c",
+      "metadata_sha256": "77578856c28924fd0046b5d6d6683ceee529fdd8e0d80738b73d92e1f1a0ea4f",
+      "properties": "appendix3",
+      "radius_method": "linear",
+      "scenario": "mean_tail",
+      "t_cross_s": 90883.35140893693,
+      "n_end_s": 90884,
+      "t_cross_h": 25.24537539137137,
+      "n_end_h": 25.245555555555555,
+      "display_h_2": "25.25",
+      "elapsed_solver_s": 18.12509180000052,
+      "work_limit_s": 259200,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 90883.0,
+          "max_C": 0.15000028276452168,
+          "max_node": 0,
+          "min_C": 0.054413328635800874,
+          "nodes": 1281,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 90883.35140893693,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05441329031821707,
+          "nodes": 1281,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 90884.0,
+          "max_C": 0.14999947811261036,
+          "max_node": 0,
+          "min_C": 0.054413219597634344,
+          "nodes": 1281,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "B",
+      "n": 2560,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/B_n2560.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/B_n2560.npz",
+      "npz_sha256": "454be75cb3102568ab0f056e48855e4b6a9dc2fb1d7b1a6750b4279f852ae43c",
+      "metadata_sha256": "23d174892854c76fb76f638a0a5574fd070eac585ae59f99ae026a25505e357f",
+      "properties": "appendix3",
+      "radius_method": "linear",
+      "scenario": "mean_tail",
+      "t_cross_s": 90884.807318687,
+      "n_end_s": 90885,
+      "t_cross_h": 25.245779810746388,
+      "n_end_h": 25.245833333333334,
+      "display_h_2": "25.25",
+      "elapsed_solver_s": 35.59290550000151,
+      "work_limit_s": 259200,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 90884.0,
+          "max_C": 0.15000064958450005,
+          "max_node": 0,
+          "min_C": 0.05441335791920997,
+          "nodes": 2561,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 90884.807318687,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.054413269902506604,
+          "nodes": 2561,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 90885.0,
+          "max_C": 0.1499998449669277,
+          "max_node": 0,
+          "min_C": 0.05441324889613313,
+          "nodes": 2561,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "B",
+      "n": 320,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/B_n320.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/B_n320.npz",
+      "npz_sha256": "7283bc7cbf2a7f8dec3dd7265ce139deefeb457ad3e3088a117d68cbc8258364",
+      "metadata_sha256": "c49faa32f073beec1225b308a35be48d2e8c18e762faf8e927906e6ef814fbfd",
+      "properties": "appendix3",
+      "radius_method": "linear",
+      "scenario": "mean_tail",
+      "t_cross_s": 90862.4819970111,
+      "n_end_s": 90863,
+      "t_cross_h": 25.239578332503083,
+      "n_end_h": 25.239722222222223,
+      "display_h_2": "25.24",
+      "elapsed_solver_s": 7.3932684999890625,
+      "work_limit_s": 259200,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 90862.0,
+          "max_C": 0.1500003881257953,
+          "max_node": 0,
+          "min_C": 0.054413945509291115,
+          "nodes": 321,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 90862.4819970111,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05441389286204398,
+          "nodes": 321,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 90863.0,
+          "max_C": 0.14999958288652493,
+          "max_node": 0,
+          "min_C": 0.054413836283857285,
+          "nodes": 321,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "B",
+      "n": 5120,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/B_n5120.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/B_n5120.npz",
+      "npz_sha256": "08237ff008ff84b574d92022b6cbb6ddd4b76a6cde4a127f53f0f0d62cfdb662",
+      "metadata_sha256": "01058d541ee5d39114c2ba264c8b5ea08adc119c83179be91626d5bf3e033bb0",
+      "properties": "appendix3",
+      "radius_method": "linear",
+      "scenario": "mean_tail",
+      "t_cross_s": 90885.19469821571,
+      "n_end_s": 90886,
+      "t_cross_h": 25.24588741617103,
+      "n_end_h": 25.246111111111112,
+      "display_h_2": "25.25",
+      "elapsed_solver_s": 72.85537940001814,
+      "work_limit_s": 259200,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 90885.0,
+          "max_C": 0.15000015665443323,
+          "max_node": 0,
+          "min_C": 0.054413288353883475,
+          "nodes": 5121,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 90885.19469821571,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05441326712846225,
+          "nodes": 5121,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 90886.0,
+          "max_C": 0.1499993520625673,
+          "max_node": 0,
+          "min_C": 0.05441317933845087,
+          "nodes": 5121,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "C",
+      "n": 1280,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/C_n1280.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/C_n1280.npz",
+      "npz_sha256": "574b3be328565da0479b62991ce6592b60c79a0b094592cd3f1fdca049ad0fce",
+      "metadata_sha256": "9987b6cfc2fbd668dbb811d5ba00b5519178260881d69e0399b0f349bc043c94",
+      "properties": "appendix4",
+      "radius_method": "constant",
+      "scenario": "mean_tail",
+      "t_cross_s": 467496.7470723846,
+      "n_end_s": 467497,
+      "t_cross_h": 129.86020752010683,
+      "n_end_h": 129.86027777777778,
+      "display_h_2": "129.86",
+      "elapsed_solver_s": 20.36940019999747,
+      "work_limit_s": 604800,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 467496.0,
+          "max_C": 0.15000013821119204,
+          "max_node": 0,
+          "min_C": 0.05156165119885017,
+          "nodes": 1281,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 467496.7470723846,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05156164607851532,
+          "nodes": 1281,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 467497.0,
+          "max_C": 0.14999995320755644,
+          "max_node": 0,
+          "min_C": 0.0515616443449894,
+          "nodes": 1281,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "C",
+      "n": 2560,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/C_n2560.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/C_n2560.npz",
+      "npz_sha256": "4ee1d07f1a877a125cba2e6a84ef45266cc461629e3de5bdc191d1e464678f43",
+      "metadata_sha256": "436f818c7b11fc9e9aa1270bd88bfd97cf6bdd67c95dd18c4ee4d344d74563cf",
+      "properties": "appendix4",
+      "radius_method": "constant",
+      "scenario": "mean_tail",
+      "t_cross_s": 467501.8932756274,
+      "n_end_s": 467502,
+      "t_cross_h": 129.86163702100762,
+      "n_end_h": 129.86166666666668,
+      "display_h_2": "129.86",
+      "elapsed_solver_s": 39.700350900006015,
+      "work_limit_s": 604800,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 467501.0,
+          "max_C": 0.15000016525685295,
+          "max_node": 0,
+          "min_C": 0.05156168222853307,
+          "nodes": 2561,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 467501.8932756274,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05156167610609583,
+          "nodes": 2561,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 467502.0,
+          "max_C": 0.14999998025593445,
+          "max_node": 0,
+          "min_C": 0.051561675374618386,
+          "nodes": 2561,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "C",
+      "n": 320,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/C_n320.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/C_n320.npz",
+      "npz_sha256": "20acaae7aa343701c83de872493fc142a1cd0932d91e31418dc7d7524a95d090",
+      "metadata_sha256": "5116143c757be29c86758d876ed767fea039ad5c64dba64fe74a1c990c6a98d9",
+      "properties": "appendix4",
+      "radius_method": "constant",
+      "scenario": "mean_tail",
+      "t_cross_s": 467413.1408882996,
+      "n_end_s": 467414,
+      "t_cross_h": 129.83698358008323,
+      "n_end_h": 129.8372222222222,
+      "display_h_2": "129.84",
+      "elapsed_solver_s": 8.81114289999823,
+      "work_limit_s": 604800,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 467413.0,
+          "max_C": 0.15000002607170232,
+          "max_node": 0,
+          "min_C": 0.05156118454519753,
+          "nodes": 321,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 467413.1408882996,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05156118357957312,
+          "nodes": 321,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 467414.0,
+          "max_C": 0.1499998410198666,
+          "max_node": 0,
+          "min_C": 0.051561177691393296,
+          "nodes": 321,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "C",
+      "n": 5120,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/C_n5120.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/C_n5120.npz",
+      "npz_sha256": "2f2d5c17b51137c4e1204aa5df3b8ebdaa3802db3cd0c333f8bb2abd2bced1f2",
+      "metadata_sha256": "da36339d38212d8c00f2fcfd5197af776b3ba464bc3dda5cc63320b5d72b43fb",
+      "properties": "appendix4",
+      "radius_method": "constant",
+      "scenario": "mean_tail",
+      "t_cross_s": 467503.21176900255,
+      "n_end_s": 467504,
+      "t_cross_h": 129.8620032691674,
+      "n_end_h": 129.86222222222221,
+      "display_h_2": "129.86",
+      "elapsed_solver_s": 80.13943179999478,
+      "work_limit_s": 604800,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 467503.0,
+          "max_C": 0.1500000391772559,
+          "max_node": 0,
+          "min_C": 0.051561685264065356,
+          "nodes": 5121,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 467503.21176900255,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05156168381261869,
+          "nodes": 5121,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 467504.0,
+          "max_C": 0.14999985417771847,
+          "max_node": 0,
+          "min_C": 0.0515616784101738,
+          "nodes": 5121,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "D",
+      "n": 1280,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/D_n1280.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/D_n1280.npz",
+      "npz_sha256": "a0b75bb239b3d7ae89bbe311c01fdfcd49d377b04300d16da7a1dc7bd32cbc98",
+      "metadata_sha256": "f5805d9039f3296da2a2da55643e0d35572070c886a8341c4d28a907b7ec3d2c",
+      "properties": "appendix4",
+      "radius_method": "linear",
+      "scenario": "mean_tail",
+      "t_cross_s": 183947.45673780047,
+      "n_end_s": 183948,
+      "t_cross_h": 51.09651576050013,
+      "n_end_h": 51.096666666666664,
+      "display_h_2": "51.10",
+      "elapsed_solver_s": 19.49880289999419,
+      "work_limit_s": 259200,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 183947.0,
+          "max_C": 0.15000023450708314,
+          "max_node": 0,
+          "min_C": 0.052610050874624475,
+          "nodes": 1281,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 183947.45673780047,
+          "max_C": 0.15000000000000002,
+          "max_node": 0,
+          "min_C": 0.052610036383803994,
+          "nodes": 1281,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 183948.0,
+          "max_C": 0.1499997210710894,
+          "max_node": 0,
+          "min_C": 0.05261001914862187,
+          "nodes": 1281,
+          "finite": true
+        }
+      }
+    },
+    {
+      "case": "D",
+      "n": 320,
+      "metadata": "output/Q4/teammate_four_scenarios_20260912/D_n320.json",
+      "npz": "output/Q4/teammate_four_scenarios_20260912/D_n320.npz",
+      "npz_sha256": "d80ca2fc2ed1a7275953223a852808a153adf96624ee85a0f4a9afc42e23c863",
+      "metadata_sha256": "7aaca2d90c97ceb09fdc866e26e3ab35dd016ef5ac6f46e093a96267e37df4ee",
+      "properties": "appendix4",
+      "radius_method": "linear",
+      "scenario": "mean_tail",
+      "t_cross_s": 183930.0782267262,
+      "n_end_s": 183931,
+      "t_cross_h": 51.09168839631284,
+      "n_end_h": 51.091944444444444,
+      "display_h_2": "51.09",
+      "elapsed_solver_s": 7.479325399996014,
+      "work_limit_s": 259200,
+      "endpoint_independent_reconstruction": {
+        "before_n_end": {
+          "time_s": 183930.0,
+          "max_C": 0.1500000401727486,
+          "max_node": 0,
+          "min_C": 0.052609542131726056,
+          "nodes": 321,
+          "finite": true
+        },
+        "threshold_crossing": {
+          "time_s": 183930.0782267262,
+          "max_C": 0.15,
+          "max_node": 0,
+          "min_C": 0.05260953964952502,
+          "nodes": 321,
+          "finite": true
+        },
+        "n_end": {
+          "time_s": 183931.0,
+          "max_C": 0.14999952663574048,
+          "max_node": 0,
+          "min_C": 0.05260951040157496,
+          "nodes": 321,
+          "finite": true
+        }
+      }
+    }
+  ],
+  "refinement": {
+    "B": {
+      "N": [
+        320,
+        1280,
+        2560,
+        5120
+      ],
+      "crossing_differences_s": [
+        20.8694119258289,
+        1.4559097500750795,
+        0.38737952870724257
+      ],
+      "last_halving_difference_ratio": 3.7583549005124786,
+      "last_delta_h": 0.00010760542464090071,
+      "last_delta_within_predeclared_0_005h": true,
+      "last_two_decimal_display_stable": true,
+      "last_integer_endpoint_stable": false
+    },
+    "C": {
+      "N": [
+        320,
+        1280,
+        2560,
+        5120
+      ],
+      "crossing_differences_s": [
+        83.60618408495793,
+        5.146203242824413,
+        1.3184933751472272
+      ],
+      "last_halving_difference_ratio": 3.9030937430760857,
+      "last_delta_h": 0.00036624815976311865,
+      "last_delta_within_predeclared_0_005h": true,
+      "last_two_decimal_display_stable": true,
+      "last_integer_endpoint_stable": false
+    }
+  },
+  "matched_existing_baselines": [
+    {
+      "case": "A",
+      "n": 320,
+      "prior_npz": "output/Q2/run_n320_startsafe.npz",
+      "prior_npz_sha256": "c5cec35b80028dfe5fc28389a0836d7ba072a69ee9f49e0cfa755b6852eb861b",
+      "crossing_difference_s": 3.4924596548080444e-10,
+      "same_integer_endpoint": true,
+      "shared_snapshots": [
+        {
+          "time_s": 0.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 14400.0,
+          "temperature_max_abs_difference_C": 1.4210854715202004e-14,
+          "moisture_max_abs_difference_kg_kg": 1.3322676295501878e-15
+        },
+        {
+          "time_s": 206814.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 1.3877787807814457e-16
+        },
+        {
+          "time_s": 206815.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 1.3877787807814457e-16
+        }
+      ]
+    },
+    {
+      "case": "A",
+      "n": 1280,
+      "prior_npz": "output/Q2/run_n1280_startsafe.npz",
+      "prior_npz_sha256": "27278561b4984c033925c644d883eab2fe901b96c3e122911b26fb4703628bbe",
+      "crossing_difference_s": -3.2014213502407074e-10,
+      "same_integer_endpoint": true,
+      "shared_snapshots": [
+        {
+          "time_s": 0.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 14400.0,
+          "temperature_max_abs_difference_C": 2.1316282072803006e-14,
+          "moisture_max_abs_difference_kg_kg": 1.3322676295501878e-15
+        },
+        {
+          "time_s": 206914.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 1.1102230246251565e-16
+        },
+        {
+          "time_s": 206915.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 1.1102230246251565e-16
+        }
+      ]
+    },
+    {
+      "case": "D",
+      "n": 320,
+      "prior_npz": "output/Q4/run_n320-v1-20260911.npz",
+      "prior_npz_sha256": "93ae0b33d9859d9112e2466b71ea2238db966a05d04957272da2cb789e6956f9",
+      "crossing_difference_s": 0.0,
+      "same_integer_endpoint": true,
+      "shared_snapshots": [
+        {
+          "time_s": 0.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 14400.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 21600.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 43200.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 64800.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 86400.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 108000.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 129600.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 151200.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 172800.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 183930.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 183930.0782267262,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 183931.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 2.7755575615628914e-17
+        }
+      ]
+    },
+    {
+      "case": "D",
+      "n": 1280,
+      "prior_npz": "output/Q4/run_n1280-v1-20260911.npz",
+      "prior_npz_sha256": "55c2d281f844ee959c4e02b99b7cb2bbe1893b714afc042d3adeeef4a999a64b",
+      "crossing_difference_s": 0.0,
+      "same_integer_endpoint": true,
+      "shared_snapshots": [
+        {
+          "time_s": 0.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 14400.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 21600.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 43200.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 64800.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 86400.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 108000.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 129600.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 151200.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 172800.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 183947.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 183947.45673780047,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 0.0
+        },
+        {
+          "time_s": 183948.0,
+          "temperature_max_abs_difference_C": 0.0,
+          "moisture_max_abs_difference_kg_kg": 2.7755575615628914e-17
+        }
+      ]
+    }
+  ],
+  "selected_for_two_decimal_comparison": {
+    "A": {
+      "n": 10240,
+      "n_end_s": 206927,
+      "duration_h": 57.47972222222222,
+      "display_h_2": "57.48",
+      "source": "output/Q2/run_n10240_startsafe.json",
+      "source_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+      "role": "existing official baseline"
+    },
+    "B": {
+      "n": 5120,
+      "n_end_s": 90886,
+      "duration_h": 25.246111111111112,
+      "display_h_2": "25.25",
+      "source": "output/Q4/teammate_four_scenarios_20260912/B_n5120.json",
+      "source_sha256": "01058d541ee5d39114c2ba264c8b5ea08adc119c83179be91626d5bf3e033bb0",
+      "role": "new auxiliary scenario"
+    },
+    "C": {
+      "n": 5120,
+      "n_end_s": 467504,
+      "duration_h": 129.86222222222221,
+      "display_h_2": "129.86",
+      "source": "output/Q4/teammate_four_scenarios_20260912/C_n5120.json",
+      "source_sha256": "da36339d38212d8c00f2fcfd5197af776b3ba464bc3dda5cc63320b5d72b43fb",
+      "role": "new auxiliary scenario"
+    },
+    "D": {
+      "n": 10240,
+      "n_end_s": 183949,
+      "duration_h": 51.096944444444446,
+      "display_h_2": "51.10",
+      "source": "output/Q4/run_n10240-v1-20260911.json",
+      "source_sha256": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8",
+      "role": "existing official baseline"
+    }
+  },
+  "contrasts_from_unrounded_hours": {
+    "delta_R_at_appendix3_h": -32.23361111111111,
+    "delta_P_at_fixed_radius_h": 72.3825,
+    "interaction_h": -46.531666666666666,
+    "total_D_minus_A_h": -6.382777777777775,
+    "delta_R_at_appendix4_h": -78.76527777777777,
+    "delta_P_at_shrinking_radius_h": 25.850833333333334,
+    "A_to_D_reduction_percent": 11.10439913592716,
+    "A_to_B_reduction_percent": 56.07823048707998,
+    "A_to_C_increase_percent": 125.92701774055584
+  },
+  "same_state_diffusivity_ratio": {
+    "expression": "D4/D3=0.175 exp(0.15/C)",
+    "crossover_C_kg_kg": 0.08606003534580599,
+    "ratios": {
+      "2.55": 0.18560291078450278,
+      "0.15": 0.4756993199803329,
+      "0.05": 3.5149689615578397
+    }
+  },
+  "limitations": [
+    "No exact reproduction of teammate code/settings without their code: results reproduce scenario magnitudes, ordering and effect directions with our unchanged adopted equations.",
+    "Grid differences are empirical convergence evidence, not rigorous continuum error bounds.",
+    "B/C two-decimal hours stable; neighboring refined grids do not share the identical integer endpoint, so no exact integer-grid-independent endpoint or four-decimal-hour certification is asserted.",
+    "No new full time-tolerance refinement was run for B/C; original tight solver tolerances are retained, and previous validated solver tests plus current spatial refinement are the stated numerical evidence.",
+    "A and D retain official N10240 endpoints; B/C use N5120, adequate here for two-decimal comparison, not promoted into official result files.",
+    "Constitutive change includes rho,cp,k,D; duration contrast is not a D-only causal experiment.",
+    "No original draft, teammate brief, official workbook, figure or submission package changed."
+  ]
+}

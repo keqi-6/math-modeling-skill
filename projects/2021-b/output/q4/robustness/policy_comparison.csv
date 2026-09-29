@@ -1,0 +1,4 @@
+policy,experiment_conditions,responsibilities,general_best_replicated,strict_low_best_replicated,new_same_temperature_competitor,requires_feedback,disposition
+A_formal_one_shot,A3@375|A3@425|A2@337.5|A3@400_repeat|A4@375,G1|G2|G3|G4|G5,True,False,True,False,formal
+B_conditional_three_plus_two,A3@375|A3@425|A2@337.5|conditional_run4|conditional_run5,G1|G2|G3|G4|G5_conditionally,True,True,True,True,conditional_alternative
+C_symmetric_replication,A3@375|A3@425|A2@337.5|A3@400_repeat|A2@325_repeat,G1|G2|G3|G4,True,True,False,False,rejected_loses_G5

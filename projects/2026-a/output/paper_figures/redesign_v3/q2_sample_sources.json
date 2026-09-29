@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "role": "Q2 visual redesign sample for team review; v1 not replaced",
+  "title": "Q2前三小时温度与含水率的时空分布",
+  "caption": "横轴为时间，纵轴为实际半径；(a)温度，(b)干基含水率。色场来自前三小时逐秒保存的21个规定半径值，仅在相邻保存点之间作数据值的双线性显示内插，再映射为颜色。细线为标注数值对应的等值线，由同一组已有网格数据在线性单元内定位。显示内插与等值线仅辅助读图，不代表新增细网格求解精度或物理阈值。含水率色标固定为0–2.55 kg/kg，便于与其他含水率图保持同值同色。",
+  "source": {
+    "path": "output/Q2/run_n10240_startsafe.npz",
+    "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+    "bytes": 38314283
+  },
+  "generator": {
+    "path": "scripts/build_q2_field_sample.py",
+    "sha256": "e32c36d5a17a7b03efb9adeaeac72b9d77c1e4b9ca8b261197d6677317353d84",
+    "bytes": 10731
+  },
+  "data": {
+    "time_s": [
+      0,
+      10800
+    ],
+    "time_count": 10801,
+    "time_stride_s": 1,
+    "radius_cm": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7000000000000001,
+      0.8,
+      0.9000000000000001,
+      1.0,
+      1.0999999999999999,
+      1.2,
+      1.3,
+      1.4000000000000001,
+      1.5,
+      1.6,
+      1.7000000000000002,
+      1.8000000000000003,
+      1.9,
+      2.0
+    ],
+    "field_shape_radius_by_time": [
+      21,
+      10801
+    ],
+    "temperature_range_C": [
+      28.0,
+      49.96641284498236
+    ],
+    "moisture_range_kg_kg": [
+      1.0081231261700119,
+      2.5500000000000003
+    ],
+    "end_center_surface": {
+      "temperature_C": [
+        49.8494955728103,
+        49.96641284498236
+      ],
+      "moisture_kg_kg": [
+        1.7661771073155368,
+        1.0081231261700119
+      ]
+    },
+    "data_change": "saved arrays unchanged; linear display interpolation only; no solver run or fitted field"
+  },
+  "color_encoding": {
+    "node_positions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "temperature_hex": [
+      "#fffaf1",
+      "#fee0c5",
+      "#f9b39d",
+      "#e77968",
+      "#b8443f"
+    ],
+    "temperature_limits_C": [
+      28.0,
+      49.96641284498236
+    ],
+    "moisture_hex": [
+      "#eaf3f7",
+      "#d6eff5",
+      "#99d3e1",
+      "#469dbf",
+      "#155c88"
+    ],
+    "moisture_limits_kg_kg": [
+      0.0,
+      2.55
+    ],
+    "normalization": "linear in each physical quantity",
+    "colormap_generation": "LinearSegmentedColormap with 256 entries and the listed equally spaced sRGB nodes",
+    "shared_semantics": "Use the exact moisture nodes and 0–2.55 limits for Q4 to preserve equal-value colors."
+  },
+  "display": {
+    "base_field": "imshow interpolation=bilinear, interpolation_stage=data; scalar values interpolated before color mapping; axes and contours vector",
+    "image_extent_time_h_radius_cm": [
+      -0.0001388888888888889,
+      3.000138888888889,
+      -0.05,
+      2.05
+    ],
+    "image_origin": "lower; saved nodes are cell centers; half-cell outer extent clipped to t=0–3 h and r=0–2 cm",
+    "temperature_contours_C": [
+      35.0,
+      40.0,
+      45.0,
+      48.0
+    ],
+    "moisture_contours_kg_kg": [
+      1.5,
+      2.0,
+      2.4
+    ],
+    "contour_interpolation": "linear crossing locations in adjacent saved-data grid cells; no smoothing",
+    "contour_linewidth_pt": 0.7,
+    "contour_labels": "upright; placement hints snapped onto actual contours",
+    "width_cm": 15.8,
+    "height_cm": 8.128,
+    "png_dpi": 300,
+    "textfree_height_cm": 8.128,
+    "textfree": "identical figure layout frozen before hiding all Text artists; no graphical elements removed"
+  },
+  "outputs": {
+    "png": {
+      "file": "fig04_q2_fields_sample.png",
+      "sha256": "0cc87331bb2e0f2e264e03938bb75572fc166ca4fe9ab82e8019b5e8d0577a4b",
+      "bytes": 200668
+    },
+    "pdf": {
+      "file": "fig04_q2_fields_sample.pdf",
+      "sha256": "031ca5b1ba9d03fb244b4ab9b3f4d0cd21b28d594511224facb842ddf995cb80",
+      "bytes": 61764
+    },
+    "svg": {
+      "file": "fig04_q2_fields_sample.svg",
+      "sha256": "17abb8b57ec8aefdced81e2636f8b6dbddb4d1c1a937c52931256cdbbab9675e",
+      "bytes": 128455
+    },
+    "textfree_png": {
+      "file": "fig04_q2_fields_textfree.png",
+      "sha256": "1eb445a8d85e821337abba2b9563c2b8c36e093dd7c3230b07696716ec0f7e21",
+      "bytes": 137202,
+      "purpose": "same composition with text hidden; contours, axes, ticks and colorbars retained"
+    }
+  },
+  "claim_boundary": "Existing Q2 model results visualized over 0–3 h. No solver run, new physical claim, or promotion into v1/teammate manuscript."
+}

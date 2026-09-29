@@ -1,0 +1,11 @@
+temperature_c,model,actual_top_catalyst,predicted_top_catalyst,top1_correct,top3_overlap
+275.0,linear,A2,A2,True,2
+275.0,pchip,A2,A1,False,2
+300.0,linear,A2,A2,True,3
+300.0,pchip,A2,A2,True,3
+325.0,linear,A2,A2,True,3
+325.0,pchip,A2,A2,True,3
+350.0,linear,A3,A3,True,2
+350.0,pchip,A3,A3,True,3
+400.0,linear,A3,A3,True,1
+400.0,pchip,A3,A3,True,1

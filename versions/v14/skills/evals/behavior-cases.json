@@ -1,0 +1,308 @@
+{
+  "schema_version": "11.0",
+  "registry_kind": "semantic_plan_behavior_cases",
+  "scope": "general_v11_routing_authorization_tiers_and_failure_isolation",
+  "cases": [
+    {
+      "id": "BEH.V11.CORE.G0.STATELESS.ADVICE",
+      "kind": "semantic_plan",
+      "fixture": null,
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "core-g0-stateless",
+        "request": "先解释这个项目该怎么推进，不要改任何文件。",
+        "steps": [{
+          "id": "advise", "tier": "G0_ADVISORY", "mode": "advisory_readonly",
+          "object": "project", "action": "advise", "component_id": null,
+          "events": [], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["advise"], "route_ids": ["RT.PROJECT.ADVISE"], "rule_ids": ["GOV.MODE.DERIVE", "GOV.ROUTE.RAW_REQUEST"]},
+        "forbidden": {"rule_prefixes": ["ART.", "REC.", "STATE."], "events": ["before_write", "recovery_assessment", "state_write"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["advise"], "route_ids_by_step": {"advise": "RT.PROJECT.ADVISE"}, "modes_by_step": {"advise": "advisory_readonly"}, "tiers_by_step": {"advise": "G0_ADVISORY"}, "actions_by_step": {"advise": "advise"}, "component_ids_by_step": {"advise": []}, "events_by_step": {"advise": []}, "change_sets_by_step": {"advise": {"paths": [], "facets": [], "claim_refs": []}}, "depends_on_by_step": {"advise": []}, "recovery_by_step": {"advise": "not_applicable"}, "status_by_step": {"advise": "resolved"}},
+        "budgets": {"max_total_rules": 8, "max_rules_by_step": {"advise": 8}, "max_context_refs": 1, "max_steps": 1, "max_output_bytes": 90000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.G1.STATELESS.WORKING_CONTEXT",
+      "kind": "semantic_plan",
+      "fixture": null,
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "core-g1-working-context",
+        "request": "比较当前阶段可用的模型方案。",
+        "steps": [{
+          "id": "compare", "tier": "G1_WORKING", "mode": "project_readonly",
+          "object": "model", "action": "compare", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S3"},
+          "events": ["model_comparison"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["compare"], "route_ids": ["RT.MODEL.COMPARE"], "rule_ids": ["MOD.COMPARE.ASSUMPTIONS", "MOD.COMPARE.SAME_EVIDENCE", "GOV.ROUTE.TUPLE"], "events": ["model_comparison"]},
+        "forbidden": {"rule_prefixes": ["REC.", "STATE.TRANSITION", "ART."], "events": ["before_write", "recovery_assessment", "state_transition"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["compare"], "route_ids_by_step": {"compare": "RT.MODEL.COMPARE"}, "modes_by_step": {"compare": "project_readonly"}, "tiers_by_step": {"compare": "G1_WORKING"}, "actions_by_step": {"compare": "compare"}, "component_ids_by_step": {"compare": []}, "events_by_step": {"compare": ["model_comparison"]}, "change_sets_by_step": {"compare": {"paths": [], "facets": [], "claim_refs": []}}, "depends_on_by_step": {"compare": []}, "recovery_by_step": {"compare": "not_applicable"}, "status_by_step": {"compare": "resolved"}},
+        "budgets": {"max_total_rules": 16, "max_rules_by_step": {"compare": 16}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 150000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.RAW_REQUEST.AUDIT_NOT_KEYWORDS",
+      "kind": "semantic_plan",
+      "fixture": {"project_state": "P0", "components": []},
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "core-raw-audit",
+        "request": "只审计项目。这里提到“修改”二字只是说明不要修改，并非写入授权。",
+        "steps": [{
+          "id": "audit", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "project", "action": "audit", "component_id": null,
+          "events": ["scope_definition"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["audit"], "route_ids": ["RT.PROJECT.AUDIT"], "rule_ids": ["GOV.MODE.DERIVE", "GOV.ROUTE.RAW_REQUEST"], "events": ["scope_definition"]},
+        "forbidden": {"route_ids": ["RT.SKILL.CHANGE", "RT.PROJECT.INIT"], "rule_ids": ["GOV.AUTH.WRITE_SCOPE", "GOV.ROUTE.UNIQUE_WRITE"], "events": ["before_write", "state_write", "artifact_register"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["audit"], "route_ids_by_step": {"audit": "RT.PROJECT.AUDIT"}, "modes_by_step": {"audit": "project_readonly"}, "tiers_by_step": {"audit": "G0_ADVISORY"}, "actions_by_step": {"audit": "audit"}, "component_ids_by_step": {"audit": []}, "events_by_step": {"audit": ["scope_definition"]}, "change_sets_by_step": {"audit": {"paths": [], "facets": [], "claim_refs": []}}, "depends_on_by_step": {"audit": []}, "recovery_by_step": {"audit": "not_applicable"}, "status_by_step": {"audit": "resolved"}},
+        "budgets": {"max_total_rules": 14, "max_rules_by_step": {"audit": 14}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 160000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.G1.MULTIFILE.ONE_CHANGESET",
+      "kind": "semantic_plan",
+      "fixture": {"files": ["src/q1/model.py", "src/q1/check.py"], "components": [{"id": "q1", "type": "question", "state": "S4", "dependencies": []}]},
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "core-multifile",
+        "request": "一起实现模型和配套检查，两个现有文件属于同一项工作。",
+        "steps": [{
+          "id": "implement", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "model", "action": "implement", "component_id": "q1",
+          "events": ["model_implementation"], "facts": {}, "depends_on": [],
+          "change_set": {"paths": ["src/q1/model.py", "src/q1/check.py"], "facets": ["implementation", "verification_hook"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["implement"], "route_ids": ["RT.MODEL.IMPLEMENT"], "rule_ids": ["MOD.IMPLEMENT.SPEC_BIND", "MOD.SPEC.READINESS", "GOV.ROUTE.UNIQUE_WRITE"], "events": ["model_implementation"], "component_ids": ["q1"]},
+        "forbidden": {"rule_prefixes": ["ART.ADMIT.", "REC."], "events": ["before_file_creation", "artifact_register", "recovery_assessment"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["implement"], "route_ids_by_step": {"implement": "RT.MODEL.IMPLEMENT"}, "modes_by_step": {"implement": "mutate"}, "tiers_by_step": {"implement": "G1_WORKING"}, "actions_by_step": {"implement": "implement"}, "component_ids_by_step": {"implement": ["q1"]}, "events_by_step": {"implement": ["model_implementation"]}, "change_sets_by_step": {"implement": {"paths": ["src/q1/model.py", "src/q1/check.py"], "facets": ["implementation", "verification_hook"], "claim_refs": []}}, "depends_on_by_step": {"implement": []}, "recovery_by_step": {"implement": "not_applicable"}, "status_by_step": {"implement": "resolved"}},
+        "budgets": {"max_total_rules": 24, "max_rules_by_step": {"implement": 24}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 240000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.S6.READINESS.G0",
+      "kind": "semantic_plan",
+      "fixture": {"components": [{"id": "q1", "type": "question", "state": "S6", "dependencies": []}], "evidence": [{"component_id": "q1", "level": "E1_IMPLEMENTATION"}, {"component_id": "q1", "level": "E2_NUMERICAL"}, {"component_id": "q1", "level": "E3_STRUCTURAL"}, {"component_id": "q1", "level": "E4_REALITY"}]},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-s6-readiness", "request": "第一问现在能不能通过 S6？只告诉我检查结果。",
+        "steps": [{
+          "id": "readiness", "tier": "G0_ADVISORY", "mode": "advisory_readonly",
+          "object": "verification", "action": "assess_s6_readiness", "component_id": "q1",
+          "events": ["s6_readiness"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["readiness"], "route_ids": ["RT.VERIFY.S6.READINESS"], "rule_ids": ["VER.S6.DUAL_AXIS"], "events": ["s6_readiness"], "component_ids": ["q1"]},
+        "forbidden": {"route_ids": ["RT.VERIFY.S6.CLOSE"], "events": ["s6_close", "state_transition", "artifact_promotion", "recovery_assessment"], "rule_prefixes": ["REC."], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["readiness"], "route_ids_by_step": {"readiness": "RT.VERIFY.S6.READINESS"}, "modes_by_step": {"readiness": "advisory_readonly"}, "tiers_by_step": {"readiness": "G0_ADVISORY"}, "actions_by_step": {"readiness": "assess_s6_readiness"}, "component_ids_by_step": {"readiness": ["q1"]}, "events_by_step": {"readiness": ["s6_readiness"]}, "change_sets_by_step": {"readiness": {"paths": [], "facets": [], "claim_refs": []}}, "depends_on_by_step": {"readiness": []}, "recovery_by_step": {"readiness": "not_applicable"}, "status_by_step": {"readiness": "resolved"}},
+        "budgets": {"max_total_rules": 16, "max_rules_by_step": {"readiness": 16}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 170000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.S6.CLOSE.G2",
+      "kind": "semantic_plan",
+      "fixture": {"components": [{"id": "q1", "type": "question", "state": "S6", "dependencies": []}], "evidence": [{"component_id": "q1", "level": "E1_IMPLEMENTATION"}, {"component_id": "q1", "level": "E2_NUMERICAL"}, {"component_id": "q1", "level": "E3_STRUCTURAL"}, {"component_id": "q1", "level": "E4_REALITY"}]},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-s6-close", "request": "关闭第一问 S6。",
+        "steps": [{
+          "id": "close", "tier": "G2_CHECKPOINT", "mode": "promote",
+          "object": "verification", "action": "close_s6", "component_id": "q1",
+          "events": ["s6_close"],
+          "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["question_state"], "claim_refs": []},
+          "state_effect": {"component_id": "q1", "from": "S6", "to": "S7"}
+        }]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["close"], "route_ids": ["RT.VERIFY.S6.CLOSE"], "rule_ids": ["VER.S6.DUAL_AXIS", "GOV.ROUTE.UNIQUE_WRITE"], "events": ["s6_close"], "component_ids": ["q1"]},
+        "forbidden": {"route_ids": ["RT.VERIFY.S6.READINESS"], "events": ["recovery_assessment"], "rule_prefixes": ["REC.", "MAN."], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["close"], "route_ids_by_step": {"close": "RT.VERIFY.S6.CLOSE"}, "modes_by_step": {"close": "promote"}, "tiers_by_step": {"close": "G2_CHECKPOINT"}, "actions_by_step": {"close": "close_s6"}, "component_ids_by_step": {"close": ["q1"]}, "events_by_step": {"close": ["s6_close"]}, "change_sets_by_step": {"close": {"paths": [], "facets": ["question_state"], "claim_refs": []}}, "depends_on_by_step": {"close": []}, "recovery_by_step": {"close": "not_applicable"}, "status_by_step": {"close": "resolved"}},
+        "budgets": {"max_total_rules": 36, "max_rules_by_step": {"close": 36}, "max_context_refs": 3, "max_steps": 1, "max_output_bytes": 320000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.COLLOQUIAL.CLOSE_THEN_WRITE",
+      "kind": "semantic_plan",
+      "fixture": {"files": ["paper.tex"], "components": [{"id": "q1", "type": "question", "state": "S6", "dependencies": []}, {"id": "paper", "type": "artifact", "state": "A1", "dependencies": ["q1"]}], "evidence": [{"component_id": "q1", "level": "E1_IMPLEMENTATION"}, {"component_id": "q1", "level": "E2_NUMERICAL"}, {"component_id": "q1", "level": "E3_STRUCTURAL"}, {"component_id": "q1", "level": "E4_REALITY"}]},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-colloquial-chain", "request": "第一问我看过了，可以过了；接着把这处结果写进论文就行，不用停下来等我再说一次。",
+        "steps": [
+          {"id": "close", "tier": "G2_CHECKPOINT", "mode": "promote", "object": "verification", "action": "close_s6", "component_id": "q1", "events": ["s6_close"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["question_state"], "claim_refs": []}, "state_effect": {"component_id": "q1", "from": "S6", "to": "S7"}},
+          {"id": "write", "tier": "G1_WORKING", "mode": "mutate", "object": "manuscript", "action": "local_edit", "component_id": "paper", "events": ["local_manuscript_edit", "manuscript_write"], "facts": {"change_class": "local_substantive", "completion_scope": "changed_scope_and_direct_dependencies_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true}, "depends_on": ["close"], "change_set": {"paths": ["paper.tex"], "facets": ["claim", "explanation"], "claim_refs": ["claim:q1:result"]}}
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["close", "write"], "route_ids": ["RT.VERIFY.S6.CLOSE", "RT.MANUSCRIPT.LOCAL"], "rule_ids": ["VER.S6.DUAL_AXIS", "MAN.CONTENT.CLAIM_EVIDENCE", "MAN.LOCAL.SCOPE"], "events": ["s6_close", "manuscript_write"], "component_ids": ["q1", "paper"], "context_refs": ["references/manuscript-change-closure.json"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT"], "rule_prefixes": ["REC.", "MAN.READER.", "MAN.ACCEPT."], "events": ["recovery_assessment", "full_manuscript_audit", "manuscript_promotion"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["close", "write"], "route_ids_by_step": {"close": "RT.VERIFY.S6.CLOSE", "write": "RT.MANUSCRIPT.LOCAL"}, "modes_by_step": {"close": "promote", "write": "mutate"}, "tiers_by_step": {"close": "G2_CHECKPOINT", "write": "G1_WORKING"}, "actions_by_step": {"close": "close_s6", "write": "local_edit"}, "component_ids_by_step": {"close": ["q1"], "write": ["paper"]}, "events_by_step": {"close": ["s6_close"], "write": ["local_manuscript_edit", "manuscript_write"]}, "normalized_legacy_events_by_step": {"write": []}, "change_sets_by_step": {"close": {"paths": [], "facets": ["question_state"], "claim_refs": []}, "write": {"paths": ["paper.tex"], "facets": ["claim", "explanation"], "claim_refs": ["claim:q1:result"]}}, "depends_on_by_step": {"close": [], "write": ["close"]}, "recovery_by_step": {"close": "not_applicable", "write": "not_applicable"}, "status_by_step": {"close": "resolved", "write": "resolved"}, "manuscript_closures_by_step": {"write": "local_substantive"}},
+        "budgets": {"max_total_rules": 52, "max_rules_by_step": {"close": 36, "write": 16}, "max_context_refs": 5, "max_steps": 2, "max_output_bytes": 470000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.AUTHORIZATION.STEP_LOCAL_MODES",
+      "kind": "semantic_plan",
+      "fixture": {"files": ["src/q1/model.py"], "components": [{"id": "data", "type": "shared_data", "state": "D1", "dependencies": []}, {"id": "q1", "type": "question", "state": "S4", "dependencies": ["data"]}]},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-step-local-auth", "request": "只读审计数据，同时实现已经授权的第一问模型。",
+        "steps": [
+          {"id": "audit-data", "tier": "G1_WORKING", "mode": "project_readonly", "object": "data", "action": "audit", "component_id": "data", "events": ["data_audit"], "facts": {"predictive_or_evaluative_use": false}, "depends_on": []},
+          {"id": "implement-q1", "tier": "G1_WORKING", "mode": "mutate", "object": "model", "action": "implement", "component_id": "q1", "events": ["model_implementation"], "facts": {}, "depends_on": [], "change_set": {"paths": ["src/q1/model.py"], "facets": ["implementation"], "claim_refs": []}}
+        ]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["audit-data", "implement-q1"], "route_ids": ["RT.DATA.AUDIT", "RT.MODEL.IMPLEMENT"], "rule_ids": ["DATA.AUDIT.SCHEMA", "MOD.IMPLEMENT.SPEC_BIND", "GOV.ROUTE.DECOMPOSE", "GOV.ROUTE.UNIQUE_WRITE"], "events": ["data_audit", "model_implementation"], "component_ids": ["data", "q1"]},
+        "forbidden": {"rule_prefixes_by_step": {"audit-data": ["GOV.AUTH.", "GOV.ROUTE.UNIQUE_WRITE", "MOD."], "implement-q1": ["DATA.AUDIT.", "REC."]}, "events": ["recovery_assessment", "state_transition"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["audit-data", "implement-q1"], "route_ids_by_step": {"audit-data": "RT.DATA.AUDIT", "implement-q1": "RT.MODEL.IMPLEMENT"}, "modes_by_step": {"audit-data": "project_readonly", "implement-q1": "mutate"}, "tiers_by_step": {"audit-data": "G1_WORKING", "implement-q1": "G1_WORKING"}, "actions_by_step": {"audit-data": "audit", "implement-q1": "implement"}, "component_ids_by_step": {"audit-data": ["data"], "implement-q1": ["q1"]}, "events_by_step": {"audit-data": ["data_audit"], "implement-q1": ["model_implementation"]}, "change_sets_by_step": {"audit-data": {"paths": [], "facets": [], "claim_refs": []}, "implement-q1": {"paths": ["src/q1/model.py"], "facets": ["implementation"], "claim_refs": []}}, "depends_on_by_step": {"audit-data": [], "implement-q1": []}, "recovery_by_step": {"audit-data": "not_applicable", "implement-q1": "not_applicable"}, "status_by_step": {"audit-data": "resolved", "implement-q1": "resolved"}},
+        "budgets": {"max_total_rules": 34, "max_rules_by_step": {"audit-data": 24, "implement-q1": 20}, "max_context_refs": 4, "max_steps": 2, "max_output_bytes": 380000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.FAILURE.DESCENDANTS_ONLY",
+      "kind": "semantic_plan",
+      "fixture": null,
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-failure-isolation", "request": "三项分别处理；第二项依赖第一项，第三项独立。",
+        "steps": [
+          {"id": "bad", "tier": "G0_ADVISORY", "mode": "advisory_readonly", "object": "project", "action": "advise", "component_id": null, "events": ["invented_global_broadcast"], "facts": {}, "depends_on": []},
+          {"id": "dependent", "tier": "G1_WORKING", "mode": "project_readonly", "object": "model", "action": "compare", "component_id": null, "working_context": {"component_type": "question", "state": "S3"}, "events": ["model_comparison"], "facts": {}, "depends_on": ["bad"]},
+          {"id": "independent", "tier": "G0_ADVISORY", "mode": "advisory_readonly", "object": "project", "action": "advise", "component_id": null, "events": [], "facts": {}, "depends_on": []}
+        ]
+      },
+      "expected": {
+        "required": {"status": "partial", "step_ids": ["bad", "dependent", "independent"], "route_ids": ["RT.PROJECT.ADVISE"], "rule_ids": ["GOV.MODE.DERIVE", "GOV.ROUTE.RAW_REQUEST"]},
+        "forbidden": {"route_ids": ["RT.MODEL.COMPARE"], "rule_prefixes": ["MOD.", "REC."], "events": ["recovery_assessment", "before_write"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["bad", "dependent", "independent"], "route_ids_by_step": {"bad": "RT.PROJECT.ADVISE", "dependent": null, "independent": "RT.PROJECT.ADVISE"}, "modes_by_step": {"bad": "advisory_readonly", "dependent": "project_readonly", "independent": "advisory_readonly"}, "tiers_by_step": {"bad": "G0_ADVISORY", "dependent": "G1_WORKING", "independent": "G0_ADVISORY"}, "events_by_step": {"bad": ["invented_global_broadcast"], "dependent": ["model_comparison"], "independent": []}, "depends_on_by_step": {"bad": [], "dependent": ["bad"], "independent": []}, "recovery_by_step": {"bad": "not_applicable", "dependent": "not_applicable", "independent": "not_applicable"}, "status_by_step": {"bad": "blocked", "dependent": "dependency_blocked", "independent": "resolved"}},
+        "budgets": {"max_total_rules": 10, "max_rules_by_step": {"bad": 0, "dependent": 0, "independent": 10}, "max_context_refs": 1, "max_steps": 3, "max_output_bytes": 120000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.RECOVERY.IMPLICIT.NONE",
+      "kind": "semantic_plan",
+      "fixture": {"project_state": "P0", "components": []},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-no-recovery", "request": "继续当前项目的下一项普通工作。", "window_context": "same_window",
+        "steps": [{"id": "resume", "tier": "G1_WORKING", "mode": "mutate", "object": "project", "action": "resume", "component_id": null, "events": ["project_resume"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["project_resume"], "claim_refs": []}}]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["resume"], "route_ids": ["RT.PROJECT.RESUME"], "events": ["project_resume"]},
+        "forbidden": {"rule_prefixes": ["REC."], "events": ["recovery_assessment"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["resume"], "route_ids_by_step": {"resume": "RT.PROJECT.RESUME"}, "modes_by_step": {"resume": "mutate"}, "tiers_by_step": {"resume": "G1_WORKING"}, "actions_by_step": {"resume": "resume"}, "component_ids_by_step": {"resume": []}, "events_by_step": {"resume": ["project_resume"]}, "change_sets_by_step": {"resume": {"paths": [], "facets": ["project_resume"], "claim_refs": []}}, "depends_on_by_step": {"resume": []}, "recovery_by_step": {"resume": "not_applicable"}, "status_by_step": {"resume": "resolved"}},
+        "budgets": {"max_total_rules": 20, "max_rules_by_step": {"resume": 20}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 210000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.RECOVERY.NEW_WINDOW.RESUME_BLOCKED",
+      "kind": "semantic_plan",
+      "fixture": {"project_state": "P0", "components": []},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-new-window-resume-blocked", "request": "新窗口里继续当前项目的下一项普通工作。", "window_context": "new_window",
+        "steps": [{"id": "resume", "tier": "G1_WORKING", "mode": "mutate", "object": "project", "action": "resume", "component_id": null, "events": ["project_resume"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["project_resume"], "claim_refs": []}}]
+      },
+      "expected": {
+        "required": {"status": "blocked", "step_ids": ["resume"], "route_ids": ["RT.PROJECT.RESUME"]},
+        "forbidden": {"recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["resume"], "route_ids_by_step": {"resume": "RT.PROJECT.RESUME"}, "modes_by_step": {"resume": "mutate"}, "tiers_by_step": {"resume": "G1_WORKING"}, "events_by_step": {"resume": ["project_resume"]}, "depends_on_by_step": {"resume": []}, "recovery_by_step": {"resume": "not_applicable"}, "status_by_step": {"resume": "blocked"}, "reason_contains_by_step": {"resume": "new_window_requires_recovery_assessment"}},
+        "budgets": {"max_total_rules": 0, "max_rules_by_step": {"resume": 0}, "max_context_refs": 1, "max_steps": 1, "max_output_bytes": 60000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.RECOVERY.EXPLICIT.R0",
+      "kind": "semantic_plan",
+      "fixture": {"project_state": "P0", "components": []},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-explicit-recovery", "request": "先明确评估当前恢复范围，再决定下一动作。", "window_context": "same_window",
+        "steps": [{"id": "recover", "tier": "G1_WORKING", "mode": "mutate", "object": "project", "action": "recover", "component_id": null, "events": ["recovery_assessment"], "facts": {"request_explicit_full_recovery": false}, "depends_on": [], "change_set": {"paths": [], "facets": ["recovery_assessment"], "claim_refs": []}}]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["recover"], "route_ids": ["RT.PROJECT.RESUME"], "rule_ids": ["REC.R0.CONTINUE", "REC.R0.READ_SCOPE", "REC.R0.NO_MANIFEST"], "events": ["recovery_assessment"]},
+        "forbidden": {"rule_ids": ["REC.R1.TRANSITIVE", "REC.R2.FULL"], "events": ["state_transition", "artifact_promotion"], "recovery_values": ["R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["recover"], "route_ids_by_step": {"recover": "RT.PROJECT.RESUME"}, "modes_by_step": {"recover": "mutate"}, "tiers_by_step": {"recover": "G1_WORKING"}, "actions_by_step": {"recover": "recover"}, "component_ids_by_step": {"recover": []}, "events_by_step": {"recover": ["recovery_assessment"]}, "change_sets_by_step": {"recover": {"paths": [], "facets": ["recovery_assessment"], "claim_refs": []}}, "depends_on_by_step": {"recover": []}, "recovery_by_step": {"recover": "R0_CONTINUE"}, "status_by_step": {"recover": "resolved"}},
+        "budgets": {"max_total_rules": 18, "max_rules_by_step": {"recover": 18}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 200000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.RECOVERY.EXPLICIT.NEW_WINDOW.R1",
+      "kind": "semantic_plan",
+      "fixture": {"project_state": "P0", "components": []},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-explicit-recovery-new-window", "request": "新窗口里继续，先明确评估当前恢复范围，再决定下一动作。", "window_context": "new_window",
+        "steps": [{"id": "recover", "tier": "G1_WORKING", "mode": "mutate", "object": "project", "action": "recover", "component_id": null, "events": ["recovery_assessment"], "facts": {"request_explicit_full_recovery": false}, "depends_on": [], "change_set": {"paths": [], "facets": ["recovery_assessment"], "claim_refs": []}}]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["recover"], "route_ids": ["RT.PROJECT.RESUME"], "rule_ids": ["REC.R1.TRANSITIVE", "REC.R1.REVIEW_CLOSURE", "REC.R1.READ_SCOPE"], "events": ["recovery_assessment"]},
+        "forbidden": {"rule_ids": ["REC.R0.CONTINUE", "REC.R2.FULL"], "events": ["state_transition", "artifact_promotion"], "recovery_values": ["R0_CONTINUE", "R2_FULL"]},
+        "exact": {"step_ids": ["recover"], "route_ids_by_step": {"recover": "RT.PROJECT.RESUME"}, "modes_by_step": {"recover": "mutate"}, "tiers_by_step": {"recover": "G1_WORKING"}, "actions_by_step": {"recover": "recover"}, "component_ids_by_step": {"recover": []}, "events_by_step": {"recover": ["recovery_assessment"]}, "change_sets_by_step": {"recover": {"paths": [], "facets": ["recovery_assessment"], "claim_refs": []}}, "depends_on_by_step": {"recover": []}, "recovery_by_step": {"recover": "R1_TARGETED"}, "status_by_step": {"recover": "resolved"}},
+        "budgets": {"max_total_rules": 18, "max_rules_by_step": {"recover": 18}, "max_context_refs": 2, "max_steps": 1, "max_output_bytes": 200000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.DELIVERY.G3",
+      "kind": "semantic_plan",
+      "fixture": {"project_state": "P1", "files": ["paper.pdf"], "components": [{"id": "q1", "type": "question", "state": "S7", "dependencies": []}, {"id": "paper", "type": "artifact", "state": "A2", "dependencies": ["q1"]}]},
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-g3-delivery", "request": "打包并完成最终交付。",
+        "steps": [{"id": "deliver", "tier": "G3_RELEASE", "mode": "promote", "object": "delivery", "action": "deliver", "component_id": null, "events": ["final_delivery", "delivery_package_build", "handoff", "package_external_material"], "facts": {}, "depends_on": [], "change_set": {"paths": ["paper.pdf"], "facets": ["delivery_package"], "claim_refs": []}}]
+      },
+      "expected": {
+        "required": {"status": "resolved", "step_ids": ["deliver"], "route_ids": ["RT.DELIVERY.FINAL"], "rule_ids": ["DEL.FINAL.BOUNDARY", "DEL.FINAL.COVERAGE", "DEL.PROV.SECRETS", "DEL.PROV.WHITELIST"], "events": ["final_delivery", "delivery_package_build"]},
+        "forbidden": {"route_ids": ["RT.MANUSCRIPT.AUDIT"], "rule_prefixes": ["REC."], "events": ["recovery_assessment", "rule_change"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["deliver"], "route_ids_by_step": {"deliver": "RT.DELIVERY.FINAL"}, "modes_by_step": {"deliver": "promote"}, "tiers_by_step": {"deliver": "G3_RELEASE"}, "actions_by_step": {"deliver": "deliver"}, "component_ids_by_step": {"deliver": []}, "events_by_step": {"deliver": ["final_delivery", "delivery_package_build", "handoff", "package_external_material"]}, "change_sets_by_step": {"deliver": {"paths": ["paper.pdf"], "facets": ["delivery_package"], "claim_refs": []}}, "depends_on_by_step": {"deliver": []}, "recovery_by_step": {"deliver": "not_applicable"}, "status_by_step": {"deliver": "resolved"}},
+        "budgets": {"max_total_rules": 36, "max_rules_by_step": {"deliver": 36}, "max_context_refs": 3, "max_steps": 1, "max_output_bytes": 360000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.EVENT.UNKNOWN.BLOCK_STEP",
+      "kind": "semantic_plan",
+      "fixture": null,
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-unknown-event", "request": "解释项目。",
+        "steps": [{"id": "bad-event", "tier": "G0_ADVISORY", "mode": "advisory_readonly", "object": "project", "action": "advise", "component_id": null, "events": ["invented_global_broadcast"], "facts": {}, "depends_on": []}]
+      },
+      "expected": {
+        "required": {"status": "blocked", "step_ids": ["bad-event"], "route_ids": ["RT.PROJECT.ADVISE"]},
+        "forbidden": {"rule_prefixes": ["GOV.", "REC.", "ART."], "events": ["recovery_assessment"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["bad-event"], "route_ids_by_step": {"bad-event": "RT.PROJECT.ADVISE"}, "modes_by_step": {"bad-event": "advisory_readonly"}, "tiers_by_step": {"bad-event": "G0_ADVISORY"}, "events_by_step": {"bad-event": ["invented_global_broadcast"]}, "depends_on_by_step": {"bad-event": []}, "recovery_by_step": {"bad-event": "not_applicable"}, "status_by_step": {"bad-event": "blocked"}},
+        "budgets": {"max_total_rules": 0, "max_rules_by_step": {"bad-event": 0}, "max_context_refs": 0, "max_steps": 1, "max_output_bytes": 30000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.G2.WORKING_CONTEXT.REJECT",
+      "kind": "semantic_plan",
+      "fixture": null,
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-g2-context-reject", "request": "关闭 S6。",
+        "steps": [{"id": "close", "tier": "G2_CHECKPOINT", "mode": "promote", "object": "verification", "action": "close_s6", "component_id": "q1", "working_context": {"component_type": "question", "state": "S6"}, "events": ["s6_readiness", "s6_close"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["question_state"], "claim_refs": []}, "state_effect": {"component_id": "q1", "from": "S6", "to": "S7"}}]
+      },
+      "expected": {
+        "required": {"status": "blocked", "step_ids": ["close"]},
+        "forbidden": {"route_ids": ["RT.VERIFY.S6.CLOSE"], "rule_prefixes": ["VER.", "REC.", "GOV."], "events": ["recovery_assessment"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["close"], "route_ids_by_step": {"close": null}, "modes_by_step": {"close": "promote"}, "tiers_by_step": {"close": "G2_CHECKPOINT"}, "events_by_step": {"close": ["s6_readiness", "s6_close"]}, "depends_on_by_step": {"close": []}, "recovery_by_step": {"close": "not_applicable"}, "status_by_step": {"close": "blocked"}},
+        "budgets": {"max_total_rules": 0, "max_rules_by_step": {"close": 0}, "max_context_refs": 0, "max_steps": 1, "max_output_bytes": 30000}
+      }
+    },
+    {
+      "id": "BEH.V11.CORE.AUTHORIZATION.G0_MUTATE.REJECT",
+      "kind": "semantic_plan",
+      "fixture": null,
+      "plan": {
+        "schema_version": "11.0", "plan_id": "core-g0-mutate-reject", "request": "只解释如何初始化，不要真的创建。",
+        "steps": [{"id": "unauthorized", "tier": "G0_ADVISORY", "mode": "mutate", "object": "project", "action": "initialize", "component_id": null, "events": ["project_initialization"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["project_initialization"], "claim_refs": []}}]
+      },
+      "expected": {
+        "required": {"status": "blocked", "step_ids": ["unauthorized"]},
+        "forbidden": {"route_ids": ["RT.PROJECT.INIT"], "rule_prefixes": ["ART.", "GOV.", "REC."], "events": ["before_write", "artifact_register"], "recovery_values": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "exact": {"step_ids": ["unauthorized"], "route_ids_by_step": {"unauthorized": null}, "modes_by_step": {"unauthorized": "mutate"}, "tiers_by_step": {"unauthorized": "G0_ADVISORY"}, "events_by_step": {"unauthorized": ["project_initialization"]}, "depends_on_by_step": {"unauthorized": []}, "recovery_by_step": {"unauthorized": "not_applicable"}, "status_by_step": {"unauthorized": "blocked"}},
+        "budgets": {"max_total_rules": 0, "max_rules_by_step": {"unauthorized": 0}, "max_context_refs": 0, "max_steps": 1, "max_output_bytes": 30000}
+      }
+    }
+  ]
+}

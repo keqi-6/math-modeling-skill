@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "entries": [
+    {
+      "introduced_in": "V2",
+      "source": "skills_v2/source-portfolios/17-reader-first-manuscript-audit.md",
+      "source_sha256": "30df37bd9fb7b484e8524281e9fe9e896cfd5a9bb6ee28c70e10b5ae8c74650b",
+      "owner": "rules/17-reader-first-manuscript-audit.md",
+      "active_sha256": "30df37bd9fb7b484e8524281e9fe9e896cfd5a9bb6ee28c70e10b5ae8c74650b",
+      "treatment": "exact_active_integration",
+      "route": "manuscript drafting, revision, and audit",
+      "reason": "V2 introduced a reader-first audit not present in V1."
+    },
+    {
+      "introduced_in": "V2",
+      "source": "skills_v2/source-portfolios/03-paper-content-rules.md",
+      "source_sha256": "ee441f1d761691f1ecfbeb3628ff01219dc86948e0dc947072b7b883d2c91c03",
+      "owner": "rules/03-paper-content-rules.md",
+      "active_sha256": "ee441f1d761691f1ecfbeb3628ff01219dc86948e0dc947072b7b883d2c91c03",
+      "treatment": "V1_detail_plus_V2_reader_gate",
+      "route": "manuscript drafting, revision, and content audit",
+      "reason": "This is a verified line-preserving V1 superset adding the V2 reader gate."
+    },
+    {
+      "introduced_in": "V2",
+      "source": "skills_v2/source-portfolios/05-audit-protocol.md",
+      "source_sha256": "668244e2fddc4213ceaa4482a33e63596eb385232d581dc9d9844a46848a7d91",
+      "owner": "rules/05-audit-protocol.md",
+      "active_sha256": "668244e2fddc4213ceaa4482a33e63596eb385232d581dc9d9844a46848a7d91",
+      "treatment": "V1_detail_plus_V2_reader_gate",
+      "route": "artifact, manuscript, milestone, and final audit",
+      "reason": "This is a verified line-preserving V1 superset adding the V2 reader audit gate."
+    },
+    {
+      "introduced_in": "V2",
+      "source": "skills_v2/source-portfolios/02-latex-setup.md",
+      "source_sha256": "7997acace073fcf51a2660278a9192c0ba95ea83e2fcc3f90b46cea5c9c6c956",
+      "owner": "rules/02-latex-setup.md",
+      "treatment": "stale_relocation_note_rejected",
+      "route": "LaTeX setup and rendering",
+      "reason": "Its only substantive delta points to absent V2 rules/30; V5 retains the fuller V1 procedure and routes layout directly."
+    },
+    {
+      "introduced_in": "V2",
+      "source": "skills_v2/scripts/bootstrap_project.py",
+      "source_sha256": "379e286fbbd7ab3c0a4f633cde97b8271f2ad4b6167a1f3b9011422ae01dce27",
+      "owner": "scripts/bootstrap_project.py",
+      "treatment": "stale_generated_paths_rejected",
+      "route": "project bootstrap",
+      "reason": "The V2 delta generated references to absent rules/30 and rules/50; V5 keeps the working detailed bootstrap and package-relative resolution."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/01-execution-receipt.md",
+      "source_sha256": "4f4252dfe845869f56d2f1447522eec0d8b34f5baed59b4e20143d9027dfab22",
+      "owner": "rules/18-execution-receipt.md",
+      "active_sha256": "4f4252dfe845869f56d2f1447522eec0d8b34f5baed59b4e20143d9027dfab22",
+      "treatment": "exact_active_integration",
+      "route": "every substantive task",
+      "reason": "V3 introduced mechanically checkable execution receipts."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/05-project-lifecycle.md",
+      "source_sha256": "ffd4e8880b2ace8bb7d1c247845c1f6b6e8f55cd3d3e6f8fd98576462e7b9d96",
+      "owner": "rules/19-project-lifecycle.md",
+      "active_sha256": "ffd4e8880b2ace8bb7d1c247845c1f6b6e8f55cd3d3e6f8fd98576462e7b9d96",
+      "treatment": "exact_active_integration",
+      "route": "recovery, planning, data, model, and stage transition",
+      "reason": "V3 introduced explicit lifecycle checkpoints."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/00-execution-gates.md",
+      "source_sha256": "c8d02267c4007430ab04a37dbbfa6f3ebbb9b1bf1f747b93e40f26576325ac6f",
+      "owner": "rules/20-execution-gates.md",
+      "active_sha256": "c8d02267c4007430ab04a37dbbfa6f3ebbb9b1bf1f747b93e40f26576325ac6f",
+      "treatment": "exact_active_integration",
+      "route": "manuscript drafting, revision, and audit",
+      "reason": "V3 introduced stable execution gates."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/10-global-manuscript-rules.md",
+      "source_sha256": "c4f7fd5c88eb331dd267cbbe629637eded88ee50428d4401b7b94a2b775dad66",
+      "owner": "rules/21-global-manuscript-acceptance.md",
+      "active_sha256": "c4f7fd5c88eb331dd267cbbe629637eded88ee50428d4401b7b94a2b775dad66",
+      "treatment": "exact_active_acceptance",
+      "route": "manuscript drafting and audit",
+      "reason": "M-01 through M-12 are retained semantically in the fuller manuscript and expression rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/20-front-matter.md",
+      "source_sha256": "ac767eab84e7c97a65797eac9c4c7af57ba49ce58338403fbf963964dbf89a0b",
+      "owner": "rules/22-front-matter-acceptance.md",
+      "active_sha256": "ac767eab84e7c97a65797eac9c4c7af57ba49ce58338403fbf963964dbf89a0b",
+      "treatment": "exact_active_acceptance",
+      "route": "manuscript drafting and audit",
+      "reason": "F-01 through F-04 are covered by the fuller active paper-content rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/21-background-restatement-analysis.md",
+      "source_sha256": "1461a6ec1850aa6ae2beb410cde2597d8b42e34e376d4facfc557300bdc9322d",
+      "owner": "rules/23-background-analysis-acceptance.md",
+      "active_sha256": "1461a6ec1850aa6ae2beb410cde2597d8b42e34e376d4facfc557300bdc9322d",
+      "treatment": "exact_active_acceptance",
+      "route": "manuscript drafting and audit",
+      "reason": "B-01 through B-03 are covered by the fuller active paper-content rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/22-assumptions-symbols-data.md",
+      "source_sha256": "c6b6f7e222cc2ae70fdcf37028be00e5ead3f0c68f3b86d6a0e1285e2a073552",
+      "owner": "rules/24-assumptions-data-acceptance.md",
+      "active_sha256": "c6b6f7e222cc2ae70fdcf37028be00e5ead3f0c68f3b86d6a0e1285e2a073552",
+      "treatment": "exact_active_acceptance",
+      "route": "manuscript drafting and audit",
+      "reason": "A-01 through A-03 are covered by the fuller active paper-content and data rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/23-model-solution-results.md",
+      "source_sha256": "48008915ecce8ee3d69b250b53ef45ac81ac8bf166ddc7c0ccbb951de885c8c5",
+      "owner": "rules/25-model-results-acceptance.md",
+      "active_sha256": "48008915ecce8ee3d69b250b53ef45ac81ac8bf166ddc7c0ccbb951de885c8c5",
+      "treatment": "exact_active_acceptance",
+      "route": "model reporting and manuscript audit",
+      "reason": "S-01 through S-12 are covered by the fuller paper, algorithm, and robustness rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/24-evaluation-conclusion-references.md",
+      "source_sha256": "03311d9fa601447c798cad12401c5fc9b7990c332ea752ea9f5cb707d49b0332",
+      "owner": "rules/26-conclusion-references-acceptance.md",
+      "active_sha256": "03311d9fa601447c798cad12401c5fc9b7990c332ea752ea9f5cb707d49b0332",
+      "treatment": "exact_active_acceptance",
+      "route": "manuscript drafting and audit",
+      "reason": "C-01 through C-04 are covered by the fuller active paper and provenance rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/30-figures-tables-layout.md",
+      "source_sha256": "483ba0d4fd48c9d792735244ac7848e37bfa0a278358f14b75bf14b27096cce3",
+      "owner": "rules/27-visual-layout-acceptance.md",
+      "active_sha256": "483ba0d4fd48c9d792735244ac7848e37bfa0a278358f14b75bf14b27096cce3",
+      "treatment": "exact_active_acceptance",
+      "route": "figure, table, and layout work",
+      "reason": "V-01 through V-12 are covered by the fuller figure, LaTeX, and audit rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/40-evidence-provenance.md",
+      "source_sha256": "b3149b5275e66c275ceff642a7eb060bf72ec6bca02cc3581436cc64627de7ab",
+      "owner": "rules/28-evidence-acceptance.md",
+      "active_sha256": "b3149b5275e66c275ceff642a7eb060bf72ec6bca02cc3581436cc64627de7ab",
+      "treatment": "exact_active_acceptance",
+      "route": "source and evidence audit",
+      "reason": "E-01 through E-04 are covered by the fuller active provenance rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/50-governance-handoff.md",
+      "source_sha256": "a584fb464c183499f587cf4900c0796666c74e4ad7feba2706e383adb26d3244",
+      "owner": "rules/29-governance-acceptance.md",
+      "active_sha256": "a584fb464c183499f587cf4900c0796666c74e4ad7feba2706e383adb26d3244",
+      "treatment": "exact_active_acceptance",
+      "route": "handoff and project continuation",
+      "reason": "H-01 through H-05 are covered by the fuller active handoff and orchestration rules."
+    },
+    {
+      "introduced_in": "V3",
+      "source": "skills_v3/rules/rule-ownership-map.md",
+      "source_sha256": "1fcbf5876d16c6255bc5a8c2e0556e8bb67e5b55efce06a086b7097c8f3ff931",
+      "owner": "SKILL.md",
+      "treatment": "ownership_centralized_in_controller",
+      "route": "every substantive task",
+      "reason": "V5 centralizes permission and routing ownership in its sole controller and keeps quality rules non-authoritative."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/SKILL.md",
+      "source_sha256": "3e939469b38cd8a66becb1f9da76de6fca6247b6437480d49e0167aef933220c",
+      "owner": "SKILL.md",
+      "treatment": "controller_semantics_integrated_and_strengthened_in_V5",
+      "route": "every substantive task",
+      "reason": "V4 introduced the controller boundary; V5 retains it and adds recovery evidence plus direct detailed ownership."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/rules/data.md",
+      "source_sha256": "93f5ef4b5f0fbcdd344a70d1fecf32ef2368f9569eda60f86b38505e4e715a55",
+      "owner": "rules/30-data-minimum.md",
+      "active_sha256": "93f5ef4b5f0fbcdd344a70d1fecf32ef2368f9569eda60f86b38505e4e715a55",
+      "treatment": "exact_active_crosscheck",
+      "route": "data work and audit",
+      "reason": "V5 restores the more detailed data workflow while preserving V4 controller permissions."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/rules/modeling.md",
+      "source_sha256": "1717dc66369d72f53461772280c0bc3eea7335dbb47e27734c553d6f5cc86c25",
+      "owner": "rules/31-modeling-minimum.md",
+      "active_sha256": "1717dc66369d72f53461772280c0bc3eea7335dbb47e27734c553d6f5cc86c25",
+      "treatment": "exact_active_crosscheck",
+      "route": "model specification and implementation",
+      "reason": "V5 routes modeling to the complete algorithm and pipeline procedures."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/rules/verification.md",
+      "source_sha256": "61ea17c73fd518294ce72a08e0190a3aa4ee99650e1f5fce7c083370300cb6c3",
+      "owner": "rules/32-verification-minimum.md",
+      "active_sha256": "61ea17c73fd518294ce72a08e0190a3aa4ee99650e1f5fce7c083370300cb6c3",
+      "treatment": "exact_active_crosscheck",
+      "route": "verification and robustness",
+      "reason": "V5 restores the complete robustness and audit procedures."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/rules/manuscript.md",
+      "source_sha256": "90f65e8d385576001f18dd07054e08dee5cac42d496619750937001187749ab2",
+      "owner": "rules/33-manuscript-minimum.md",
+      "active_sha256": "90f65e8d385576001f18dd07054e08dee5cac42d496619750937001187749ab2",
+      "treatment": "exact_active_crosscheck",
+      "route": "manuscript work",
+      "reason": "V5 restores the full paper rules and adds the V2 reader-first audit."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/rules/visuals-layout.md",
+      "source_sha256": "2f47770074dc492d99b79822da2ecc0f9ffa600646f58cb7cfba026052e9fd87",
+      "owner": "rules/34-visuals-minimum.md",
+      "active_sha256": "2f47770074dc492d99b79822da2ecc0f9ffa600646f58cb7cfba026052e9fd87",
+      "treatment": "exact_active_crosscheck",
+      "route": "figures and layout",
+      "reason": "V5 restores detailed figure and LaTeX guidance."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/rules/provenance-delivery.md",
+      "source_sha256": "db1b38412ef94e1efad92c54e97c5126e8df99a06b65d4700de3f392b68601f4",
+      "owner": "rules/35-provenance-delivery-minimum.md",
+      "active_sha256": "db1b38412ef94e1efad92c54e97c5126e8df99a06b65d4700de3f392b68601f4",
+      "treatment": "exact_active_crosscheck",
+      "route": "provenance and delivery",
+      "reason": "V5 restores detailed provenance, finalization, and handoff rules."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/scripts/validate_receipt.py",
+      "source_sha256": "d5fe0fcc173de076f9579367dd12d17f372aee9159faea16dfb689ac2001dba0",
+      "owner": "scripts/validate_receipt.py",
+      "treatment": "validator_strengthened",
+      "route": "receipt validation",
+      "reason": "V5 retains receipt checks and adds manifest identity, recovery-gate, and S0 mutation enforcement."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/scripts/validate_skill.py",
+      "source_sha256": "e0a2f98ba64835cd3a1409fccb763083eb8c83d02af74e21ebe028212342cbc6",
+      "owner": "scripts/validate_skill.py",
+      "treatment": "validator_strengthened",
+      "route": "Skill maintenance",
+      "reason": "V5 validates direct V1 integration, all version deltas, internal paths, and recovery tooling."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/scripts/test_regressions.py",
+      "source_sha256": "a2d72e640ee166f6fa52c3275faffbe1ab38da3e6a970ae9ae56d29922c11e03",
+      "owner": "scripts/test_regressions.py",
+      "treatment": "regressions_integrated_and_expanded",
+      "route": "Skill maintenance",
+      "reason": "V5 retains V4 behavioral cases and adds recovery failure cases."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/references/migration-ledger.md",
+      "source_sha256": "a13c3a1796bbf41c307369b7e8df75541156e1347e7f51a45f6a671f8a70a0b9",
+      "owner": "references/migration-ledger.md",
+      "treatment": "ledger_extended",
+      "route": "Skill maintenance",
+      "reason": "V5 extends the ledger with direct V1 ownership and V2–V4 delta evidence."
+    },
+    {
+      "introduced_in": "V4",
+      "source": "skills_v4/agents/openai.yaml",
+      "source_sha256": "756406ccb4bb31432cbf7bae5c8abd643137cbc2034eccdc564dc4c45a652166",
+      "owner": "agents/openai.yaml",
+      "treatment": "metadata_updated",
+      "route": "Skill package discovery",
+      "reason": "V5 retains the package metadata surface with the current controller description."
+    }
+  ]
+}

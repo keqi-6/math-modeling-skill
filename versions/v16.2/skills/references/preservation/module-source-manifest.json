@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "release": "9.0.0",
+  "source_release": "V8",
+  "source_root_hint": "../../skills_v8/skills",
+  "source_count": 34,
+  "modules": [
+    {
+      "module": "references/modules/orchestration-detail.md",
+      "sha256": "7389c69d8a5bc48c0bdc85d8afb92fa8e7904090443063c1147540c1ebc68e2f",
+      "lines": 784,
+      "sources": [
+        {
+          "path": "rules/00-project-orchestration.md",
+          "sha256": "5cabd1e1c64996fee85056f76e5700978b57031652016147bdbc0eab44111132",
+          "lines": 771
+        }
+      ]
+    },
+    {
+      "module": "references/modules/project-platform.md",
+      "sha256": "82e94c69a1108c356555360d7788b2ff7e4be9c81d9ffeabe9196f051bd8e14c",
+      "lines": 242,
+      "sources": [
+        {
+          "path": "rules/01-contest-project-pattern.md",
+          "sha256": "5d83796cd1258673e808719eef7007be24f961a320438607257301d066cc4e1e",
+          "lines": 229
+        }
+      ]
+    },
+    {
+      "module": "references/modules/visuals-layout.md",
+      "sha256": "d441a04e9b85c4b7317dd75c2c7969cf91dda0b018dba69308ef1afa78ae4a14",
+      "lines": 902,
+      "sources": [
+        {
+          "path": "rules/02-latex-setup.md",
+          "sha256": "4f58c441ab943fd0bbc9b00bc0a7ee3d3049aa0790a0bdc19e75d15edc1d7548",
+          "lines": 275
+        },
+        {
+          "path": "rules/04-figure-generator.md",
+          "sha256": "ea21de01496de6f1e4f7b5fc4f94bfe8bb71f6d965853d4296c01b2043d5c457",
+          "lines": 205
+        },
+        {
+          "path": "rules/27-visual-layout-acceptance.md",
+          "sha256": "41432fe884a50c182e0c5b2743305d9ca044ef903e284b41b0b8cf2041f37212",
+          "lines": 188
+        },
+        {
+          "path": "rules/34-visuals-minimum.md",
+          "sha256": "2f47770074dc492d99b79822da2ecc0f9ffa600646f58cb7cfba026052e9fd87",
+          "lines": 33
+        },
+        {
+          "path": "rules/37-scientific-figure-design.md",
+          "sha256": "4cc77e81eed93276041df3fdd5aa2cc01d06b9ec9acf648ca5ea68d6482ed351",
+          "lines": 169
+        }
+      ]
+    },
+    {
+      "module": "references/modules/manuscript-content.md",
+      "sha256": "132468184bab72ce30c64c62afa79627fbd74948f7847cf7f20c7e181dd67ab5",
+      "lines": 1745,
+      "sources": [
+        {
+          "path": "rules/03-paper-content-rules.md",
+          "sha256": "1c27a1a293e8f69a3bdc64eda0e46e4f0f7d0645054046c0a7b4f9ea480ed9d1",
+          "lines": 1156
+        },
+        {
+          "path": "rules/13-excellent-paper-expression.md",
+          "sha256": "70487548e9ed2df106aba4434e333ab4feb6e0e4ce87ee3eba56a653a797697f",
+          "lines": 347
+        },
+        {
+          "path": "rules/17-reader-first-manuscript-audit.md",
+          "sha256": "6ab0fe996bd73fd12cbae8d1ca9167d8976178a01a1ce84ba2498da64f105308",
+          "lines": 219
+        }
+      ]
+    },
+    {
+      "module": "references/modules/verification.md",
+      "sha256": "49cbacbad7c872d5a2993fa11ed46639054aac0b234af32fdf89f9ac4b41007c",
+      "lines": 1044,
+      "sources": [
+        {
+          "path": "rules/05-audit-protocol.md",
+          "sha256": "668244e2fddc4213ceaa4482a33e63596eb385232d581dc9d9844a46848a7d91",
+          "lines": 688
+        },
+        {
+          "path": "rules/09-robustness-checker.md",
+          "sha256": "6129fba06f5e7eed1331687342cc6dba720f46962cec5c90bd88c6b5095365d9",
+          "lines": 82
+        },
+        {
+          "path": "rules/32-verification-minimum.md",
+          "sha256": "84321da316fd9f7154578101857a95fe1241028c1aec0d29542d3625f80f3725",
+          "lines": 66
+        },
+        {
+          "path": "rules/36-uncertainty-error-analysis.md",
+          "sha256": "45b6bc7727c0818bcb53e19e7526e0acf79287501745270e32d71eb680a0f209",
+          "lines": 180
+        }
+      ]
+    },
+    {
+      "module": "references/modules/writing-profile.md",
+      "sha256": "234cc18c2e20777db3db87d7b1107c3e0cec4ea61b82a0262dd1e25da6f2150c",
+      "lines": 146,
+      "sources": [
+        {
+          "path": "rules/06-weiwei-norms.md",
+          "sha256": "51536a090552421d36793265773903a1cc2e77d98f2674d5fed6e051f4fcf900",
+          "lines": 133
+        }
+      ]
+    },
+    {
+      "module": "references/modules/modeling.md",
+      "sha256": "bd7ec53c171d70fbb81ef297cbfeebdea12135a0796b2b21417281542c677633",
+      "lines": 532,
+      "sources": [
+        {
+          "path": "rules/07-algorithm-reference.md",
+          "sha256": "be84437437f449d2cce6501c2073ce76efa9282b75e37ef2834071307e948994",
+          "lines": 136
+        },
+        {
+          "path": "rules/15-pipeline-methodology.md",
+          "sha256": "a49bf5e182b877183db336ae5f290bd91b385895763ccdfc4518796f4f061e9e",
+          "lines": 331
+        },
+        {
+          "path": "rules/31-modeling-minimum.md",
+          "sha256": "1717dc66369d72f53461772280c0bc3eea7335dbb47e27734c553d6f5cc86c25",
+          "lines": 43
+        }
+      ]
+    },
+    {
+      "module": "references/modules/evidence-delivery.md",
+      "sha256": "11a1eaedf6634703923a56ad4898e5c83cd5691153197bb0f9e618f082e0a130",
+      "lines": 896,
+      "sources": [
+        {
+          "path": "rules/08-literature-search.md",
+          "sha256": "cb98b32575a69e3910f88b0e56c3374daab445f689d5f592a749d1ed9df448b1",
+          "lines": 128
+        },
+        {
+          "path": "rules/10-json-handoff.md",
+          "sha256": "e3331ea0db150c5e6e5cb978dc70ef9049520e5a36dc8e6c289c67e8f8ac4265",
+          "lines": 96
+        },
+        {
+          "path": "rules/11-paper-finalizer.md",
+          "sha256": "92338391a893be0c5627be20ff6ee05ec291671dcda9500616bd7e4fef1c5829",
+          "lines": 258
+        },
+        {
+          "path": "rules/12-source-audit-and-provenance.md",
+          "sha256": "78f5686704c0af98d86176d494c0b1ccb2fa0e984dc26132a115ac5122f35966",
+          "lines": 284
+        },
+        {
+          "path": "rules/28-evidence-acceptance.md",
+          "sha256": "b3149b5275e66c275ceff642a7eb060bf72ec6bca02cc3581436cc64627de7ab",
+          "lines": 52
+        },
+        {
+          "path": "rules/35-provenance-delivery-minimum.md",
+          "sha256": "db1b38412ef94e1efad92c54e97c5126e8df99a06b65d4700de3f392b68601f4",
+          "lines": 41
+        }
+      ]
+    },
+    {
+      "module": "references/modules/data.md",
+      "sha256": "1ee65783bc31506098320ceab466f2c3008bd6335a72e28afe9ba0d625135c6b",
+      "lines": 204,
+      "sources": [
+        {
+          "path": "rules/16-data-audit-methodology.md",
+          "sha256": "06d586c6ed54a09dcf042b9a59033d7c536d0993a727b0352a1b6774449c6052",
+          "lines": 153
+        },
+        {
+          "path": "rules/30-data-minimum.md",
+          "sha256": "93f5ef4b5f0fbcdd344a70d1fecf32ef2368f9569eda60f86b38505e4e715a55",
+          "lines": 34
+        }
+      ]
+    },
+    {
+      "module": "references/modules/manuscript-acceptance.md",
+      "sha256": "95c77f6d6666f516d35b86cb662d22158b00ac3d786d41b50e15595dc37e0899",
+      "lines": 789,
+      "sources": [
+        {
+          "path": "rules/20-execution-gates.md",
+          "sha256": "641eb162db90f1446fb287e6f5feabc5986152f4ea4f04ae347ab2de23165512",
+          "lines": 104
+        },
+        {
+          "path": "rules/21-global-manuscript-acceptance.md",
+          "sha256": "c4f7fd5c88eb331dd267cbbe629637eded88ee50428d4401b7b94a2b775dad66",
+          "lines": 180
+        },
+        {
+          "path": "rules/22-front-matter-acceptance.md",
+          "sha256": "ac767eab84e7c97a65797eac9c4c7af57ba49ce58338403fbf963964dbf89a0b",
+          "lines": 76
+        },
+        {
+          "path": "rules/23-background-analysis-acceptance.md",
+          "sha256": "1461a6ec1850aa6ae2beb410cde2597d8b42e34e376d4facfc557300bdc9322d",
+          "lines": 59
+        },
+        {
+          "path": "rules/24-assumptions-data-acceptance.md",
+          "sha256": "c6b6f7e222cc2ae70fdcf37028be00e5ead3f0c68f3b86d6a0e1285e2a073552",
+          "lines": 43
+        },
+        {
+          "path": "rules/25-model-results-acceptance.md",
+          "sha256": "7c69c60cebd545c28149b61fdf84ded0193b3ff9663bd6518d8863b55d5768c2",
+          "lines": 181
+        },
+        {
+          "path": "rules/26-conclusion-references-acceptance.md",
+          "sha256": "03311d9fa601447c798cad12401c5fc9b7990c332ea752ea9f5cb707d49b0332",
+          "lines": 38
+        },
+        {
+          "path": "rules/33-manuscript-minimum.md",
+          "sha256": "03e1d4dfcb975c2a699f0bdff8ff30a1e1fc2e9f9932af74812c90bf1475b99e",
+          "lines": 60
+        }
+      ]
+    }
+  ]
+}

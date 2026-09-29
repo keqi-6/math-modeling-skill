@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "status": "q4_s10_independent_verification_passed",
+  "independent_of_s9_import": true,
+  "verification_count": 12,
+  "passed_count": 12,
+  "all_passed": true,
+  "checks": [
+    {
+      "id": 1,
+      "name": "five_unique_experiments",
+      "passed": true
+    },
+    {
+      "id": 2,
+      "name": "existing_21_combination_domain",
+      "passed": true
+    },
+    {
+      "id": 3,
+      "name": "full_recipe_matches_clean_input",
+      "passed": true
+    },
+    {
+      "id": 4,
+      "name": "four_new_cells_and_one_exact_repeat",
+      "passed": true
+    },
+    {
+      "id": 5,
+      "name": "a3_a4_same_temperature_pair",
+      "passed": true
+    },
+    {
+      "id": 6,
+      "name": "strict_below_350_boundary",
+      "passed": true
+    },
+    {
+      "id": 7,
+      "name": "new_temperatures_bracketed_by_observations",
+      "passed": true
+    },
+    {
+      "id": 8,
+      "name": "responsibilities_and_evidence_mapping",
+      "passed": true
+    },
+    {
+      "id": 9,
+      "name": "upstream_anchors_independently_recomputed",
+      "passed": true
+    },
+    {
+      "id": 10,
+      "name": "no_future_response_or_unapproved_inference",
+      "passed": true
+    },
+    {
+      "id": 11,
+      "name": "conditional_sequential_budget_and_boundary",
+      "passed": true
+    },
+    {
+      "id": 12,
+      "name": "structured_artifacts_and_manifest_hashes",
+      "passed": true
+    }
+  ],
+  "max_numeric_tolerance": 1e-09,
+  "run": {
+    "started_at": "2026-07-31T09:57:50.278505+08:00",
+    "finished_at": "2026-07-31T09:57:50.340862+08:00",
+    "python": "3.12.3",
+    "random_seed": null
+  }
+}

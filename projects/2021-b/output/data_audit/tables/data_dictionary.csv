@@ -1,0 +1,15 @@
+﻿field,meaning,unit_or_type,source_or_rule
+source_excel_row,原工作簿行号,整数,来源定位
+catalyst_id,催化剂组合编号,类别,题面A1—A14、B1—B7
+loading_method,装料方式,类别,A组为I，B组为II
+temperature_c,反应温度；7水平有序离散标签,°C,原始字段；不连续插值
+ethanol_conversion_pct,乙醇转化率,%,原始字段
+c4_selectivity_pct,C4烯烃选择性,%,原始字段
+c4_yield_pct,C4烯烃收率,%,转化率×选择性÷100
+cosio2_mass_mg,Co/SiO2装料质量,mg,配方文本解析
+co_loading_wt_pct,Co负载量,wt%,配方文本解析
+hap_mass_mg,HAP装料质量,mg,配方文本解析；A11为0
+quartz_mass_mg,石英砂质量,mg,配方文本解析；仅A11非零
+ethanol_condition_ml_min,附件所列乙醇条件,ml/min,保留附件单位，不自行判定为浓度或流量
+selectivity_sum_pct,六类产物选择性合计,%,完整性审计派生
+time_min,单次实验反应时间,min,附件2原始字段

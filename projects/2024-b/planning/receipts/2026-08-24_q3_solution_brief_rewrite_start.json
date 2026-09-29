@@ -1,0 +1,24 @@
+{
+  "receipt_kind":"start",
+  "task":"回顾已确认的Q1/Q2讲解稿并全文重写Q3讲解稿",
+  "scope":"docs/q3/solution_brief.md及其表达审计、S6人工门导航；不改变Q3模型、代码、数值或S7论文",
+  "components":["q3_multistage_assembly"],
+  "state_before":"S6_VERIFY/in_progress，旧Q3讲解稿第6级但用户要求按Q1/Q2标准重写",
+  "earliest_open_state":"S6_VERIFY",
+  "required_inputs":["docs/q1/solution_brief.md","docs/q2/solution_brief.md","docs/q3/solution_brief.md","planning/audits/2026-08-23_q1_solution_brief_reader_rewrite.md","planning/audits/2026-08-23_q2_solution_brief_reader_rewrite.md","planning/analysis/2026-08-24_q3_s4_specification.md","output/q3/s5_results.json","output/q3/s6_independent_verification.json"],
+  "routed_rules":["skills/SKILL.md","skills/rules/01-contest-project-pattern.md","skills/rules/13-excellent-paper-expression.md","skills/rules/15-pipeline-methodology.md","skills/rules/17-reader-first-manuscript-audit.md","skills/rules/18-execution-receipt.md","skills/rules/25-model-results-acceptance.md","skills/rules/31-modeling-minimum.md","skills/rules/32-verification-minimum.md","skills/rules/36-uncertainty-error-analysis.md"],
+  "allowed_actions":["完整回读已确认Q1/Q2讲解稿","诊断Q3表达结构差距","重写Q3讲解稿但保持数学含义和冻结结果不变","更新表达审计与人工门状态"],
+  "prohibited_actions":["修改批准模型或参数","重跑或手改冻结数值","把讲解稿伪装成论文正文","未经实际审阅关闭S6"],
+  "full_read_gate":"not_triggered",
+  "recovery_level":"R0_INCREMENTAL_CHECKPOINT",
+  "recovery_evidence":{"checkpoint_identity":"project_state.json checkpoint_updated_at=2026-08-24T11:55:00+08:00","changed_paths":["docs/q3/solution_brief.md","planning/audits/2026-08-24_q3_solution_brief_audit.md","planning/analysis/2026-08-24_q3_s6_independent_verification.md","planning/q3_claim_test_paper_map.md","project_state.json","HANDOFF.md"],"unresolved_count":0,"reason":"同一连续会话；Q3 S6产物和上一轮结束回执已机械核验"},
+  "decisions_required":[],
+  "human_gate":"awaiting",
+  "implementation_allowed":true,
+  "substantive_analysis":true,
+  "artifact_plan":[
+    {"content":"重写后的Q3讲解稿","disposition":"current_authority","artifact_class":"solution_brief","path":"docs/q3/solution_brief.md","promotion_requires":"表达与证据复审后提交用户实读","reason":"用户明确要求按Q1/Q2标准重写"},
+    {"content":"Q3讲解稿重写与审计记录","disposition":"current_authority","artifact_class":"navigation","path":"planning/audits/2026-08-24_q3_solution_brief_audit.md","promotion_requires":"全文回读和数字证据核对","reason":"记录旧稿回退、参考骨架和新稿质量门"},
+    {"content":"项目状态与本轮结束回执","disposition":"current_authority","artifact_class":"navigation","path":"project_state.json","promotion_requires":"重写及审计完成","reason":"保持S6人工门和消费者一致"}
+  ]
+}

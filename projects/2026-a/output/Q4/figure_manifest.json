@@ -1,0 +1,386 @@
+{
+  "schema_version": "1.0",
+  "question": "Q4",
+  "visual_id": "Q4_MOVING_DOMAIN_MOISTURE",
+  "created_at": "2026-09-10T21:20:35.200355+00:00",
+  "data_driven_visual": true,
+  "purpose": "Show fixed-location moisture histories only while those locations remain inside the material, alongside profiles on the actual shrinking physical radius.",
+  "supported_claim": "The recorded geometric domain shrinks; fixed locations cease to represent material after they leave it, whereas the actual surface is tracked continuously.",
+  "source_identities": {
+    "specification": {
+      "path": "planning/Q4/model_spec.md",
+      "sha256": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+      "size": 20665
+    },
+    "geometry": {
+      "path": "output/GEOMETRY/q4_radius.json",
+      "sha256": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+      "size": 14147
+    },
+    "boundary": {
+      "path": "output/ENV/q2_boundary.json",
+      "sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+      "size": 10560
+    },
+    "result": {
+      "path": "output/Q4/run_n10240-v1-20260911.npz",
+      "sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92",
+      "size": 1771968
+    },
+    "metadata": {
+      "path": "output/Q4/run_n10240-v1-20260911.json",
+      "sha256": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8",
+      "size": 4760
+    },
+    "verification_1": {
+      "path": "output/Q4/check_e1-v1-20260911.json",
+      "sha256": "f0be0538a3d5c62a1a745f55962eef095de59c4c999eb89522d8f550e9336e50",
+      "size": 16026
+    },
+    "verification_2": {
+      "path": "output/Q4/check_mms-v1-20260911.json",
+      "sha256": "abdff0482cde42f11c7256e3d0182211e14ae5dca0659990515216417e3d0ee2",
+      "size": 4036
+    },
+    "verification_3": {
+      "path": "output/Q4/check_structure-v1-20260911.json",
+      "sha256": "3d33d7bc917c57a7da5ba723b5480ba358432e958a7f517765f056614e41e534",
+      "size": 7045
+    },
+    "verification_4": {
+      "path": "output/Q4/check_space10240-v1-20260911.json",
+      "sha256": "ad0a2e791564e7be5b3d46f83f4924e4315efe2c72be07396c602229fb48dd5d",
+      "size": 17308
+    },
+    "verification_5": {
+      "path": "output/Q4/check_time10240-v1-20260911.json",
+      "sha256": "317fc8b59d25ec3bcab4330850595996479ff37d84fb029dfd3ef1b86e768127",
+      "size": 6675
+    },
+    "verification_6": {
+      "path": "output/Q4/check_sensitivity10240-v1-20260911.json",
+      "sha256": "b05930a30ec9d64deec4f913bdb28e55fc3837a5dc66b6bd2af121e218a707f9",
+      "size": 21928
+    },
+    "summary": {
+      "path": "output/Q4/summary_values.json",
+      "sha256": "bd7d592f1a7a8d709fe18c036f63ec170e09890cb706bb1e7783df7443a78556",
+      "size": 124737
+    },
+    "workbook_audit": {
+      "path": "output/Q4/workbook_audit.json",
+      "sha256": "26e2cdaddfa3c50e7faa2db0e71f258c817dfbed87293d0f3915bedd19e3a71b",
+      "size": 39116
+    },
+    "workbook": {
+      "path": "output/Q4/result4.xlsx",
+      "sha256": "4aa7fe3845e2bfe3fa1a7a9c05cce0b69d960f7e54c4b5b82c29e994b1bbe7f2",
+      "size": 308101
+    },
+    "generator": {
+      "path": "src/Q4/plot_results.py",
+      "sha256": "4f6ad59c8ca106f10a82fd08c83943abca01e4d0e95f8a79a1ff9599295e7bbf",
+      "size": 23632
+    }
+  },
+  "generation_argv": [
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\plot_results.py",
+    "--project-root",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题",
+    "--input",
+    "output/Q4/run_n10240-v1-20260911.npz",
+    "--metadata",
+    "output/Q4/run_n10240-v1-20260911.json",
+    "--output-dir",
+    "output/Q4"
+  ],
+  "consumers": [
+    "docs/Q4/solution_brief.md:7"
+  ],
+  "terminal_time_s": 183949,
+  "grid_intervals": 10240,
+  "panels": [
+    {
+      "id": "a",
+      "interval_s": [
+        0,
+        183949
+      ],
+      "field": "moisture_kg_kg",
+      "stored_times": 3067,
+      "fixed_locations": [
+        {
+          "column_index": 0,
+          "radius_m": 0.0,
+          "inside_samples_drawn": 3067,
+          "outside_samples_masked": 0,
+          "first_valid_time_s": 0,
+          "last_valid_sample_time_s": 183949,
+          "first_outside_sample_time_s": null,
+          "marker_sample_indices": [
+            0,
+            360,
+            720,
+            1080,
+            1440,
+            1800,
+            2160,
+            2520,
+            2880,
+            3066
+          ]
+        },
+        {
+          "column_index": 5,
+          "radius_m": 0.005,
+          "inside_samples_drawn": 3067,
+          "outside_samples_masked": 0,
+          "first_valid_time_s": 0,
+          "last_valid_sample_time_s": 183949,
+          "first_outside_sample_time_s": null,
+          "marker_sample_indices": [
+            0,
+            360,
+            720,
+            1080,
+            1440,
+            1800,
+            2160,
+            2520,
+            2880,
+            3066
+          ]
+        },
+        {
+          "column_index": 10,
+          "radius_m": 0.01,
+          "inside_samples_drawn": 3067,
+          "outside_samples_masked": 0,
+          "first_valid_time_s": 0,
+          "last_valid_sample_time_s": 183949,
+          "first_outside_sample_time_s": null,
+          "marker_sample_indices": [
+            0,
+            360,
+            720,
+            1080,
+            1440,
+            1800,
+            2160,
+            2520,
+            2880,
+            3066
+          ]
+        },
+        {
+          "column_index": 15,
+          "radius_m": 0.015,
+          "inside_samples_drawn": 220,
+          "outside_samples_masked": 2847,
+          "first_valid_time_s": 0,
+          "last_valid_sample_time_s": 13140,
+          "first_outside_sample_time_s": 13200,
+          "marker_sample_indices": [
+            0,
+            219
+          ]
+        }
+      ],
+      "moving_surface": {
+        "field": "surface_moisture_kg_kg",
+        "radius_field": "surface_radius_m",
+        "samples_drawn": 3067,
+        "marker_sample_indices": [
+          0,
+          360,
+          720,
+          1080,
+          1440,
+          1800,
+          2160,
+          2520,
+          2880,
+          3066
+        ]
+      },
+      "omitted_2cm": "Every positive-time sample at 2 cm was independently checked outside; no empty or fabricated curve is drawn."
+    },
+    {
+      "id": "b",
+      "field": "moisture_snapshots",
+      "coordinate": "actual r(t)=snapshot_radius_m*mesh_xi, converted m to cm once",
+      "available_table6_time_s": [
+        21600,
+        43200,
+        64800,
+        86400,
+        108000,
+        129600,
+        151200,
+        172800,
+        183949
+      ],
+      "selected_table6_row_indices": [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      "selected_time_s": [
+        21600,
+        64800,
+        108000,
+        151200,
+        183949
+      ],
+      "selection_rule": "All Table6 times if at most five; otherwise five evenly spaced integer row indices including the first and actual endpoint. Table6 itself remains complete.",
+      "profiles": [
+        {
+          "time_s": 21600,
+          "snapshot_role": "summary_21600s",
+          "snapshot_index": 2,
+          "surface_radius_m": 0.013740000000000002,
+          "material_nodes_drawn": 10241
+        },
+        {
+          "time_s": 64800,
+          "snapshot_role": "summary_64800s",
+          "snapshot_index": 4,
+          "surface_radius_m": 0.01214,
+          "material_nodes_drawn": 10241
+        },
+        {
+          "time_s": 108000,
+          "snapshot_role": "summary_108000s",
+          "snapshot_index": 6,
+          "surface_radius_m": 0.012010000000000002,
+          "material_nodes_drawn": 10241
+        },
+        {
+          "time_s": 151200,
+          "snapshot_role": "summary_151200s",
+          "snapshot_index": 8,
+          "surface_radius_m": 0.012,
+          "material_nodes_drawn": 10241
+        },
+        {
+          "time_s": 183949,
+          "snapshot_role": "n_end",
+          "snapshot_index": 12,
+          "surface_radius_m": 0.012,
+          "material_nodes_drawn": 10241
+        }
+      ]
+    }
+  ],
+  "transformations": [
+    "Seconds converted to hours for histories; every stored minute and actual endpoint retained.",
+    "Outside fixed-location values are masked NaNs, so no segment is connected through material-free positions.",
+    "Full material-node profiles use their current physical radius; only the moving-surface endpoint receives a marker.",
+    "No smoothing, result alteration, fabricated data or new model computation."
+  ],
+  "visual_encoding": {
+    "base_colors": [
+      "#0072B2",
+      "#D55E00",
+      "#009E73",
+      "#CC79A7",
+      "#343434"
+    ],
+    "line_styles": [
+      "-",
+      "--",
+      "-.",
+      ":",
+      "(0, (5, 1, 1, 1))"
+    ],
+    "markers": [
+      "o",
+      "s",
+      "^",
+      "D",
+      "v"
+    ],
+    "panel_a": "Existing Q2/Q3 fixed-radius color/style pairs for 0,.5,1,1.5 cm; separate thicker dark dash pattern and open triangle for actual surface.",
+    "panel_b": "Color and line style identify selected actual times; each end marker denotes that time-dependent surface. This local time encoding is stated in its separate legend.",
+    "threshold": "Neutral grey dashed line at C=.15 on both panels"
+  },
+  "font": {
+    "family": "Microsoft YaHei",
+    "file": "C:\\Windows\\Fonts\\msyh.ttc",
+    "sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f",
+    "glyph_coverage": "All planned Chinese labels checked"
+  },
+  "matplotlib_version": "3.11.1",
+  "target": {
+    "width_mm": 190.5,
+    "height_mm": 114.3,
+    "dpi": 240,
+    "pixels": [
+      1800,
+      1080
+    ],
+    "smallest_font_pt": 8.1,
+    "minimum_data_linewidth_pt": 1.35
+  },
+  "outputs": [
+    {
+      "path": "output/Q4/field_evolution.png",
+      "sha256": "acfbf3591eefb8bba93b820bb4b401f69acdac5272c59c55341df420f5bcc142",
+      "size": 189903
+    }
+  ],
+  "caption_draft": "问题4主情景的干基含水率演化。左图给出四个固定物理位置仍在药材内部时的轨迹，并以独立线型跟踪实际药材表面；固定位置越出当前药材范围后曲线停止。右图选取表6中的实际时刻，在当前真实半径上绘制完整节点剖面，曲线末端标记对应当时的表面。灰线为0.15阈值；表6保留所有规定时刻。",
+  "claim_boundary": [
+    "The figure describes the accepted Appendix4 moving-domain run; a difference from Q3 alone does not isolate shrinkage because properties also change.",
+    "Line endings show the last valid stored sample, not an independently estimated continuous exit time.",
+    "Only the actual plotted time range and source results are represented; no uncomputed Q4 endpoint is assumed."
+  ],
+  "acceptance": {
+    "numerical_source_binding": "Exact current main-run, summary and passing workbook data audit identities checked; model/spec and shared inputs remain frozen prerequisites.",
+    "phase_boundary": "New numerical results and consumer products need not be frozen before the same S5 batch is completed; existing registered NPZ/meta identities must match.",
+    "independent_png_visual_review": "pass",
+    "grayscale_review": "pass",
+    "final_manuscript_size_review": "not_performed",
+    "formal_visual_acceptance": "agent review of this standalone PNG only; not human E4 or final manuscript-page acceptance"
+  },
+  "actual_visual_review": {
+    "reviewers": [
+      "/root/q1_data_audit",
+      "/root"
+    ],
+    "reviewed_at": "2026-09-10T21:22:26.191276+00:00",
+    "status": "pass",
+    "image_sha256": "acfbf3591eefb8bba93b820bb4b401f69acdac5272c59c55341df420f5bcc142",
+    "pixels": [
+      1800,
+      1080
+    ],
+    "grayscale": {
+      "path": "~\\AppData\\Local\\Temp\\cumcm-q4-workbook\\field_evolution_grayscale-final.png",
+      "sha256": "319c8bb7fc5aa0a7d86635dd3be8bf507ee06355a8062681509d2851fc1a649a",
+      "reviewer": "/root/q1_data_audit",
+      "status": "pass",
+      "scope": "Diagnostic grayscale conversion of the exact final scientific figure; colors removed, data and geometry unchanged."
+    },
+    "checks": [
+      "Axes and units, dry-basis meaning, legends, all selected time profiles and surface markers are legible.",
+      "Fixed location 1.5 cm ends at its last retained inside sample; no outside curve is fabricated.",
+      "Actual physical radius defines each profile extent; surface is independently marked.",
+      "Color and grayscale versions retain distinct line styles and markers.",
+      "After the one display-margin correction, final-second markers are fully visible."
+    ],
+    "iteration": {
+      "first_png_sha256": "91e38a1a83fb822f222535915f186c8f1b8a4149c69c16219a7b9b6a781c1efe",
+      "first_png_preserved": "~\\AppData\\Local\\Temp\\cumcm-q4-output-runtime\\first-field_evolution.png",
+      "first_manifest_preserved": "~\\AppData\\Local\\Temp\\cumcm-q4-output-runtime\\first-figure_manifest.json",
+      "observed_issue": "Root first actual visual review found endpoint markers clipped at right edge.",
+      "change": "Only panel-a x display upper bound multiplied by 1.02; data still stop at183949s.",
+      "data_changed": false,
+      "model_rerun": false
+    },
+    "scope_boundary": "This is actual agent visual QA of a standalone 1800x1080 PNG and its grayscale diagnostic, not a rendered final-paper page or human reader acceptance."
+  }
+}

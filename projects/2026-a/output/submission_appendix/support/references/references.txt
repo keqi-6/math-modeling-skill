@@ -1,0 +1,11 @@
+[1] National Institute of Standards and Technology. NIST Digital Library of Mathematical Functions[EB/OL]. Sections 10.6, 10.22[2026-09-12]. https://dlmf.nist.gov/.
+
+[2] Shampine L F, Reichelt M W. The MATLAB ODE Suite[J]. SIAM Journal on Scientific Computing, 1997, 18(1): 1–22. DOI: https://doi.org/10.1137/S1064827594276424.
+
+[3] Virtanen P, Gommers R, Oliphant T E, et al. SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python[J]. Nature Methods, 2020, 17(3): 261–272. DOI: https://doi.org/10.1038/s41592-019-0686-2.
+
+[4] Teleken J T, Amorim S M, Rodrigues S S S, et al. Heat and Mass Transfer in Shrimp Hot-Air Drying: Experimental Evaluation and Numerical Simulation[J]. Foods, 2025, 14(3): 428. DOI: https://doi.org/10.3390/foods14030428.
+
+[5] Brasiello A, Venditti C, Adrover A. Non-Isothermal Moving-Boundary Model for Food Drying[J]. Chemical Engineering Transactions, 2021, 87: 193–198. DOI: https://doi.org/10.3303/CET2187033.
+
+[6] Adrover A, Venditti C, Brasiello A. A Non-Isothermal Moving-Boundary Model for Continuous and Intermittent Drying of Pears[J]. Foods, 2020, 9(11): 1577. DOI: https://doi.org/10.3390/foods9111577.

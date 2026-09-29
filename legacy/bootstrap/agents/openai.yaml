@@ -1,0 +1,6 @@
+interface:
+  display_name: "数学建模全流程方法"
+  short_description: "理解、求解、验证并写作完整数学建模项目"
+  default_prompt: "Use $math-modeling-project-bootstrap to inspect this modeling project, identify the earliest incomplete reasoning layer, and guide the next evidence-backed step."
+policy:
+  allow_implicit_invocation: true

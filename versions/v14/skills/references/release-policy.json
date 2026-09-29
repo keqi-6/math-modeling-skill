@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v14/release-policy.json",
+  "schema_version": "14.0",
+  "owner": "references/release-policy.json",
+  "principle": "a_release_gate_must_detect_capability_loss_through_independent_observable_outcomes",
+  "active_drivers": [
+    {
+      "id": "package",
+      "purpose": "prove the shipped package is parseable and its declared active files exist",
+      "script": "scripts/validate_v14_package.py"
+    },
+    {
+      "id": "contracts",
+      "purpose": "prove normative ownership and cross-contract mappings agree",
+      "script": "scripts/validate_v14_contracts.py"
+    },
+    {
+      "id": "scenarios",
+      "purpose": "exercise state transitions, R1 new-window receipts, platform admission, identity preflight, void recovery, and Skill authorization in disposable projects",
+      "script": "scripts/run_v14_scenarios.py"
+    }
+  ],
+  "gate_rules": [
+    "each active driver runs once in a fresh subprocess",
+    "a driver reports stable check or outcome identifiers and evidence, not assertion totals",
+    "a behavior claim needs at least one positive and one negative observable case",
+    "the scenarios driver must report every required_case_id as pass",
+    "package and contract validators may not count their own declarations as behavioral proof",
+    "legacy suites are diagnostic tools and are never silently added to the active release chain",
+    "freezing requires a separately supplied explicit user authorization string"
+  ],
+  "required_case_ids": [
+    "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
+    "SCENARIO.STATE.D0_D1_ROUNDTRIP",
+    "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
+    "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
+    "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
+    "SCENARIO.STATE.ALL_EDGES_RESOLVE"
+  ],
+  "inactive_legacy_test_stack": {
+    "status": "retained_for_targeted_diagnosis_only",
+    "patterns": [
+      "scripts/quick_validate.py",
+      "scripts/validate_contracts.py",
+      "scripts/run_*tests.py",
+      "scripts/run_*evals.py",
+      "scripts/run_forward_acceptance.py",
+      "scripts/validate_migration.py",
+      "scripts/validate_v10_corpus.py"
+    ],
+    "not_release_evidence_by_default": [
+      "keyword_presence",
+      "heading_presence",
+      "raw_assertion_count",
+      "mutation_count",
+      "a_validator_accepting_an_artifact_written_only_for_that_validator"
+    ]
+  },
+  "budget": {
+    "active_driver_count": 3,
+    "default_timeout_seconds_per_driver": 30,
+    "full_legacy_suite_on_every_release": false
+  }
+}

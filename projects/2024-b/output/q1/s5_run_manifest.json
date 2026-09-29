@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s5_run_identity",
+  "producer": "src/q1/02_solve.py",
+  "consumers": [
+    "future S6 independent verifier",
+    "project audit"
+  ],
+  "started_at": "2026-08-25T15:19:40.942713+08:00",
+  "finished_at": "2026-08-25T15:19:57.315694+08:00",
+  "command": [
+    "/usr/bin/python3",
+    "src/q1/02_solve.py"
+  ],
+  "environment": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "random_seed": null
+  },
+  "parameters": {
+    "bisection_iterations": 48,
+    "n_values": [
+      1,
+      2,
+      3,
+      9,
+      10,
+      20,
+      23,
+      50
+    ]
+  },
+  "inputs": {
+    "planning/analysis/2026-08-25_q1_s4_complete_action_specification.md": "f156e3c423ce0cedcfef23dea027afbd842a07892cdd0cb2229cdaa25584a8f6",
+    "output/q1/baselines.json": "703d4035e9d816ab01c4c8ba205b4bf64723424d14685de22ff2374831b1ca51"
+  },
+  "sources": {
+    "src/q1/core.py": "8ba6be5e2fbae44c3acb37aceb64f83046bb2e724c8d14bbe80304f48d03e20b",
+    "src/q1/02_solve.py": "d303025068bdbbda561335fee3ef07c4dc1ceca36df1757d5dc777f30b93ef76",
+    "src/q1/01_generate_baselines.py": "c291b5385e86b4043e0f85a361cface222bf90d4b851fe1c9428efb59889a174"
+  },
+  "outputs": {
+    "output/q1/s5_results.json": "fb674e2b4f3cb425fff1de79ee461b8c24112fc6e499e9a8fd54ab61db87374f"
+  },
+  "claim_boundary": "This manifest identifies an S5 run; it does not provide S6 independent verification."
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "cases": [
+    {"id":"RC-001","input":{"mode":"advisory_readonly","object":"project","action":"advise","state":"UNINITIALIZED"},"expected_route":"RT-ADVISORY-PROJECT","expected_write":false,"expected_recovery":"not_applicable","eval_ids":["ROUTE-001","BEH-READONLY-001"]},
+    {"id":"RC-002","input":{"mode":"mutate","object":"project","action":"initialize","state":"UNINITIALIZED"},"expected_route":"RT-PROJECT-INIT","expected_write":true,"expected_recovery":"not_applicable","eval_ids":["ROUTE-002","BEH-INIT-001"]},
+    {"id":"RC-003","input":{"mode":"advisory_readonly","object":"project","action":"plan","state":"P0"},"expected_route":"RT-PROJECT-PLAN","expected_write":false,"eval_ids":["ROUTE-003"]},
+    {"id":"RC-004","input":{"mode":"mutate","object":"project","action":"resume","state":"P0"},"expected_route":"RT-PROJECT-RESUME","expected_write":true,"expected_recovery":"required","eval_ids":["ROUTE-004","BEH-REC-R0","BEH-REC-R1","BEH-REC-R2"]},
+    {"id":"RC-005","input":{"mode":"advisory_readonly","object":"literature","action":"search","state":"S1"},"expected_route":"RT-LITERATURE","expected_write":false,"eval_ids":["ROUTE-005"]},
+    {"id":"RC-006","input":{"mode":"project_readonly","object":"data","action":"audit","state":"D0"},"expected_route":"RT-DATA-AUDIT","expected_write":false,"eval_ids":["ROUTE-006","BEH-DATA-001"]},
+    {"id":"RC-007","input":{"mode":"mutate","object":"data","action":"clean","state":"D1"},"expected_route":"RT-DATA-TREAT","expected_write":true,"eval_ids":["ROUTE-007"]},
+    {"id":"RC-008","input":{"mode":"promote","object":"data","action":"freeze","state":"D2"},"expected_route":"RT-DATA-FREEZE","expected_write":true,"eval_ids":["ROUTE-008"]},
+    {"id":"RC-009","input":{"mode":"advisory_readonly","object":"model","action":"compare","state":"S2"},"expected_route":"RT-MODEL-COMPARE","expected_write":false,"eval_ids":["ROUTE-009","BEH-MODEL-001"]},
+    {"id":"RC-010","input":{"mode":"promote","object":"model","action":"freeze_spec","state":"S3"},"expected_route":"RT-MODEL-SPEC","expected_write":true,"eval_ids":["ROUTE-010"]},
+    {"id":"RC-011","input":{"mode":"mutate","object":"model","action":"implement","state":"S4"},"expected_route":"RT-MODEL-IMPLEMENT","expected_write":true,"eval_ids":["ROUTE-011"]},
+    {"id":"RC-012","input":{"mode":"project_readonly","object":"verification","action":"verify_implementation","state":"S5"},"expected_route":"RT-VERIFY-IMPLEMENTATION","expected_write":false,"eval_ids":["ROUTE-012","BEH-S6-AXIS1"]},
+    {"id":"RC-013","input":{"mode":"advisory_readonly","object":"verification","action":"examine_model","state":"S5"},"expected_route":"RT-VERIFY-MODEL","expected_write":false,"eval_ids":["ROUTE-013","BEH-S6-AXIS2"]},
+    {"id":"RC-014A","input":{"mode":"project_readonly","object":"verification","action":"audit_s6","state":"S6"},"expected_route":"RT-VERIFY-S6-AUDIT","expected_write":false,"eval_ids":["ROUTE-014A","BEH-S6-READINESS"]},
+    {"id":"RC-014","input":{"mode":"promote","object":"verification","action":"close_s6","state":"S6"},"expected_route":"RT-VERIFY-S6","expected_write":true,"eval_ids":["ROUTE-014","BEH-S6-DUAL"]},
+    {"id":"RC-015","input":{"mode":"mutate","object":"manuscript","action":"draft","state":"A0"},"expected_route":"RT-MANUSCRIPT-DRAFT","expected_write":true,"eval_ids":["ROUTE-015"]},
+    {"id":"RC-016","input":{"mode":"mutate","object":"manuscript","action":"fix_typo","state":"A2"},"expected_route":"RT-MANUSCRIPT-LOCAL","expected_write":true,"eval_ids":["ROUTE-016","BEH-MAN-LOCAL"]},
+    {"id":"RC-017","input":{"mode":"project_readonly","object":"manuscript","action":"audit","state":"A2"},"expected_route":"RT-MANUSCRIPT-AUDIT","expected_write":false,"eval_ids":["ROUTE-017","BEH-MAN-AUDIT"]},
+    {"id":"RC-018","input":{"mode":"mutate","object":"visual","action":"create","state":"A0"},"expected_route":"RT-VISUAL-CREATE","expected_write":true,"eval_ids":["ROUTE-018"]},
+    {"id":"RC-019","input":{"mode":"project_readonly","object":"visual","action":"audit","state":"A2"},"expected_route":"RT-VISUAL-AUDIT","expected_write":false,"eval_ids":["ROUTE-019"]},
+    {"id":"RC-020","input":{"mode":"promote","object":"delivery","action":"finalize","state":"P1"},"expected_route":"RT-DELIVERY","expected_write":true,"eval_ids":["ROUTE-020"]},
+    {"id":"RC-021","input":{"mode":"advisory_readonly","object":"skill","action":"audit","state":"V9"},"expected_route":"RT-SKILL-AUDIT","expected_write":false,"expected_recovery":"not_applicable","eval_ids":["ROUTE-021","BEH-MNT-READONLY"]},
+    {"id":"RC-022","input":{"mode":"skill_maintenance","object":"skill","action":"modify_rule","state":"V9"},"expected_route":"RT-SKILL-CHANGE","expected_write":true,"expected_recovery":"not_applicable","eval_ids":["ROUTE-022","BEH-MNT-CHANGE"]},
+
+    {"id":"RN-001","input":{"mode":"advisory_readonly","object":"project","action":"initialize","state":"UNINITIALIZED"},"expected_route":null,"reason":"read-only request cannot initialize"},
+    {"id":"RN-002","input":{"mode":"project_readonly","object":"data","action":"clean","state":"D1"},"expected_route":null,"reason":"cleaning requires mutate"},
+    {"id":"RN-003","input":{"mode":"mutate","object":"skill","action":"modify_rule","state":"V9"},"expected_route":null,"reason":"skill writes require explicit maintenance mode"},
+    {"id":"RN-004","input":{"mode":"skill_maintenance","object":"project","action":"plan","state":"P0"},"expected_route":null,"reason":"maintenance mode cannot mutate project"},
+    {"id":"RN-005","input":{"mode":"mutate","object":"manuscript","action":"fix_typo","state":"A0"},"expected_route":null,"reason":"an uncreated artifact cannot receive a local edit"},
+    {"id":"RN-006","input":{"mode":"mutate","object":"verification","action":"close_s6","state":"S6"},"expected_route":null,"reason":"state promotion requires promote mode"},
+    {"id":"RN-007","input":{"mode":"project_readonly","object":"data","action":"audit","state":"D3"},"expected_route":null,"reason":"frozen data requires a scoped re-audit decision rather than an ordinary D0 audit"}
+  ]
+}

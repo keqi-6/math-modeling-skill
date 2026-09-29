@@ -1,0 +1,727 @@
+{
+  "schema_version": "1.0",
+  "question": "Q4",
+  "axes": [
+    "E3"
+  ],
+  "mode": "compare",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T20:33:31.287644+00:00",
+  "passed": true,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\verify.py": "6a87551fe3aec7a199c4203211cdb17ce981da33035464e7cee662ca854466f0",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\solve.py": "8a075fa2890c0f6265c33df8b75664f62b05e6ba4b765b8fa32cce69041dc0ef",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q4\\model_spec.md": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\GEOMETRY\\q4_radius.json": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件2.xlsx": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\runs_sensitivity10240-v1-20260911.json": "2e9958e944a9af7e55dc6aec5d8e0d0eff2173b33bc975758d96dbd43dab7322",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-v1-20260911.npz": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-v1-20260911.json": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-pchip-v1-20260911.npz": "56e7c0644ef81d611e23c2c65ef3163b5dcf9df3bddf6e0b84a6dcc5ca84360d",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-pchip-v1-20260911.json": "1a28006d9734791441b186d892a8a51a2209ac8c54d32fd519e05095493c6f0d",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-last-v1-20260911.npz": "5e7f9d9c2d8f9269395be7c2f5f3c9fc0fbd997a3746013c87eb8aadaf0f7533",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-last-v1-20260911.json": "619be66bc654c78ded0fc2752592724f545259f6fcdab08e9d3eeb6e1aa85c75"
+  },
+  "checks": [
+    {
+      "axis": "E3",
+      "id": "main_complete_drying_case",
+      "passed": true,
+      "observed": {
+        "status": "computed_pending_independent_verification",
+        "n_end": 183949
+      },
+      "target": "success=true and drying_complete=true; a 72h partial case is not a completed drying answer",
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_physical_radius_columns",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_surface_radius_sequence",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-17,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_moving_domain_mask",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_official_output_mask",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_initial_state",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_strict_integer_endpoint",
+      "passed": true,
+      "observed": {
+        "before_s": 183948.0,
+        "before_max": 0.15000038159088078,
+        "before_node": 0,
+        "before_r_m": 0.0,
+        "end_s": 183949.0,
+        "end_max": 0.1499998681598867,
+        "after_node": 0,
+        "after_r_m": 0.0
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_stored_maximum_threshold_trace",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Minute trace plus complete endpoint states; not an independent recomputation of every unsaved node/time."
+    },
+    {
+      "axis": "E3",
+      "id": "main_late_maximum_nonincrease",
+      "passed": true,
+      "observed": 0.0,
+      "target": 1e-08,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_complete_snapshot_invariant_ranges",
+      "passed": true,
+      "observed": {
+        "tlo": 28.0,
+        "thi": 50.246,
+        "clo": 0.01963,
+        "chi": 2.55
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_physical_projection_against_complete_snapshots",
+      "passed": true,
+      "observed": 7.105427357601002e-15,
+      "target": 5e-12,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_normalized_means_against_complete_snapshots",
+      "passed": true,
+      "observed": 7.105427357601002e-15,
+      "target": 5e-12,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_all_snapshot_effective_heat_balance",
+      "passed": true,
+      "observed": 1.708413826375392e-14,
+      "target": 2e-08,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_all_snapshot_normalized_water_balance",
+      "passed": true,
+      "observed": 1.3552527156068805e-20,
+      "target": 3e-13,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_all_tail_snapshot_dissipation",
+      "passed": true,
+      "observed": {
+        "identity_abs_error": 8.809142651444724e-20,
+        "largest_E_prime": -4.665956114539235e-09
+      },
+      "target": 3e-13,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_tail_snapshot_energy_order",
+      "passed": true,
+      "observed": {
+        "samples": 16,
+        "maximum_rise": 0.0
+      },
+      "target": 1e-09,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "main_surface_and_maximum_against_complete_snapshots",
+      "passed": true,
+      "observed": {
+        "surface_T_error": 0.0,
+        "surface_C_error": 0.0,
+        "max_C_error": 0.0,
+        "max_r_error": 0.0
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_complete_drying_case",
+      "passed": true,
+      "observed": {
+        "status": "computed_pending_independent_verification",
+        "n_end": 183937
+      },
+      "target": "success=true and drying_complete=true; a 72h partial case is not a completed drying answer",
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_physical_radius_columns",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_surface_radius_sequence",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-17,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_moving_domain_mask",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_official_output_mask",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_initial_state",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_strict_integer_endpoint",
+      "passed": true,
+      "observed": {
+        "before_s": 183936.0,
+        "before_max": 0.15000006960710854,
+        "before_node": 0,
+        "before_r_m": 0.0,
+        "end_s": 183937.0,
+        "end_max": 0.1499995561817414,
+        "after_node": 0,
+        "after_r_m": 0.0
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_stored_maximum_threshold_trace",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Minute trace plus complete endpoint states; not an independent recomputation of every unsaved node/time."
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_late_maximum_nonincrease",
+      "passed": true,
+      "observed": 0.0,
+      "target": 1e-08,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_complete_snapshot_invariant_ranges",
+      "passed": true,
+      "observed": {
+        "tlo": 28.0,
+        "thi": 50.246,
+        "clo": 0.01963,
+        "chi": 2.55
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_physical_projection_against_complete_snapshots",
+      "passed": true,
+      "observed": 7.105427357601002e-15,
+      "target": 5e-12,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_normalized_means_against_complete_snapshots",
+      "passed": true,
+      "observed": 3.552713678800501e-15,
+      "target": 5e-12,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_all_snapshot_effective_heat_balance",
+      "passed": true,
+      "observed": 1.9054918361895105e-14,
+      "target": 2e-08,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_all_snapshot_normalized_water_balance",
+      "passed": true,
+      "observed": 1.3552527156068805e-20,
+      "target": 3e-13,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_all_tail_snapshot_dissipation",
+      "passed": true,
+      "observed": {
+        "identity_abs_error": 8.131516293641283e-20,
+        "largest_E_prime": -4.6652976542031765e-09
+      },
+      "target": 3e-13,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_tail_snapshot_energy_order",
+      "passed": true,
+      "observed": {
+        "samples": 16,
+        "maximum_rise": 0.0
+      },
+      "target": 1e-09,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_surface_and_maximum_against_complete_snapshots",
+      "passed": true,
+      "observed": {
+        "surface_T_error": 0.0,
+        "surface_C_error": 0.0,
+        "max_C_error": 0.0,
+        "max_r_error": 0.0
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "pchip_sensitivity_computed_and_reported",
+      "passed": true,
+      "observed": {
+        "signed_crossing_shift_s": -12.607642747520003,
+        "n_end_pair": [
+          183949,
+          183937
+        ]
+      },
+      "target": null,
+      "note": "No invented smallness threshold; an input sensitivity is a quantified limitation."
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_complete_drying_case",
+      "passed": true,
+      "observed": {
+        "status": "computed_pending_independent_verification",
+        "n_end": 182968
+      },
+      "target": "success=true and drying_complete=true; a 72h partial case is not a completed drying answer",
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_physical_radius_columns",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_surface_radius_sequence",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-17,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_moving_domain_mask",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_official_output_mask",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_initial_state",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_strict_integer_endpoint",
+      "passed": true,
+      "observed": {
+        "before_s": 182967.0,
+        "before_max": 0.1500000161855536,
+        "before_node": 0,
+        "before_r_m": 0.0,
+        "end_s": 182968.0,
+        "end_max": 0.1499994995243895,
+        "after_node": 0,
+        "after_r_m": 0.0
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_stored_maximum_threshold_trace",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Minute trace plus complete endpoint states; not an independent recomputation of every unsaved node/time."
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_late_maximum_nonincrease",
+      "passed": true,
+      "observed": 0.0,
+      "target": 1e-08,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_complete_snapshot_invariant_ranges",
+      "passed": true,
+      "observed": {
+        "tlo": 28.0,
+        "thi": 50.246,
+        "clo": 0.01963,
+        "chi": 2.55
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_physical_projection_against_complete_snapshots",
+      "passed": true,
+      "observed": 7.105427357601002e-15,
+      "target": 5e-12,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_normalized_means_against_complete_snapshots",
+      "passed": true,
+      "observed": 7.105427357601002e-15,
+      "target": 5e-12,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_all_snapshot_effective_heat_balance",
+      "passed": true,
+      "observed": 6.18319897958707e-16,
+      "target": 2e-08,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_all_snapshot_normalized_water_balance",
+      "passed": true,
+      "observed": 1.3552527156068805e-20,
+      "target": 3e-13,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_all_tail_snapshot_dissipation",
+      "passed": true,
+      "observed": {
+        "identity_abs_error": 6.776263578034403e-20,
+        "largest_E_prime": -4.63047660283152e-09
+      },
+      "target": 3e-13,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_tail_snapshot_energy_order",
+      "passed": true,
+      "observed": {
+        "samples": 16,
+        "maximum_rise": 0.0
+      },
+      "target": 1e-09,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_surface_and_maximum_against_complete_snapshots",
+      "passed": true,
+      "observed": {
+        "surface_T_error": 0.0,
+        "surface_C_error": 0.0,
+        "max_C_error": 0.0,
+        "max_r_error": 0.0
+      },
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_identical_observed_interval",
+      "passed": true,
+      "observed": {
+        "temperature": {
+          "fixed_physical_columns": 0.0,
+          "moving_surface": 0.0,
+          "common_full_material_snapshots": null,
+          "maximum": 0.0
+        },
+        "moisture": {
+          "fixed_physical_columns": 0.0,
+          "moving_surface": 0.0,
+          "common_full_material_snapshots": null,
+          "maximum": 0.0
+        },
+        "maximum_moisture_trace": 0.0,
+        "crossing_difference_s": 981.7118884169322,
+        "n_end_pair": [
+          183949,
+          182968
+        ],
+        "integer_endpoint_equal": false,
+        "shared_minute_and_endpoint_times": 241,
+        "common_end_s": 14400
+      },
+      "target": 1e-10,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "last_value_sensitivity_computed_and_reported",
+      "passed": true,
+      "observed": {
+        "signed_crossing_shift_s": -981.7118884169322,
+        "n_end_pair": [
+          183949,
+          182968
+        ]
+      },
+      "target": null,
+      "note": "No invented smallness threshold; an input sensitivity is a quantified limitation."
+    },
+    {
+      "axis": "E3",
+      "id": "both_prespecified_input_sensitivities_present",
+      "passed": true,
+      "observed": [
+        "last_value",
+        "pchip"
+      ],
+      "target": [
+        "last_value",
+        "pchip"
+      ],
+      "note": null
+    }
+  ],
+  "details": {
+    "run_identities": [
+      {
+        "label": "main",
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-v1-20260911.npz",
+        "result_sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-v1-20260911.json",
+        "metadata_sha256": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8"
+      },
+      {
+        "label": "pchip",
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-pchip-v1-20260911.npz",
+        "result_sha256": "56e7c0644ef81d611e23c2c65ef3163b5dcf9df3bddf6e0b84a6dcc5ca84360d",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-pchip-v1-20260911.json",
+        "metadata_sha256": "1a28006d9734791441b186d892a8a51a2209ac8c54d32fd519e05095493c6f0d"
+      },
+      {
+        "label": "last_value",
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-last-v1-20260911.npz",
+        "result_sha256": "5e7f9d9c2d8f9269395be7c2f5f3c9fc0fbd997a3746013c87eb8aadaf0f7533",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-last-v1-20260911.json",
+        "metadata_sha256": "619be66bc654c78ded0fc2752592724f545259f6fcdab08e9d3eeb6e1aa85c75"
+      }
+    ],
+    "selected_main": {
+      "label": "main",
+      "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-v1-20260911.npz",
+      "result_sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n10240-v1-20260911.json",
+      "metadata_sha256": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8",
+      "grid_n": 10240,
+      "tight": false,
+      "method": "material_coordinate_nodal_finite_volume_segmented_BDF",
+      "scenario": "mean_tail",
+      "properties": "appendix4",
+      "radius_method": "linear"
+    },
+    "input_sensitivities": {
+      "pchip": {
+        "temperature": {
+          "fixed_physical_columns": 0.034689576525707366,
+          "moving_surface": 0.006708110787926103,
+          "common_full_material_snapshots": null,
+          "maximum": 0.034689576525707366
+        },
+        "moisture": {
+          "fixed_physical_columns": 0.054857364284587096,
+          "moving_surface": 0.0006029265686410268,
+          "common_full_material_snapshots": null,
+          "maximum": 0.054857364284587096
+        },
+        "maximum_moisture_trace": 0.0008587537411508528,
+        "crossing_difference_s": 12.607642747520003,
+        "n_end_pair": [
+          183949,
+          183937
+        ],
+        "integer_endpoint_equal": false,
+        "shared_minute_and_endpoint_times": 4321,
+        "common_end_s": 259200,
+        "signed_crossing_shift_s": -12.607642747520003
+      },
+      "last_value": {
+        "temperature": {
+          "fixed_physical_columns": 0.16908333333334724,
+          "moving_surface": 0.16908333333334014,
+          "common_full_material_snapshots": null,
+          "maximum": 0.16908333333334724
+        },
+        "moisture": {
+          "fixed_physical_columns": 0.00376491109291055,
+          "moving_surface": 0.001222725930554669,
+          "common_full_material_snapshots": null,
+          "maximum": 0.00376491109291055
+        },
+        "maximum_moisture_trace": 0.00376491109291055,
+        "crossing_difference_s": 981.7118884169322,
+        "n_end_pair": [
+          183949,
+          182968
+        ],
+        "integer_endpoint_equal": false,
+        "shared_minute_and_endpoint_times": 4321,
+        "common_end_s": 259200,
+        "signed_crossing_shift_s": -981.7118884169322
+      }
+    }
+  },
+  "claim_boundary": "Only the actually executed axes/checks are reported. No E4 observation is supplied; no continuum strong-solution theorem, arbitrary-step BDF positivity, per-cell correct rounding proof, or cross-grid integer certainty is inferred."
+}

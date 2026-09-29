@@ -1,0 +1,2936 @@
+{
+  "schema_version": "2.0",
+  "spec_id": "SPEC-Q4-VERIFY-2.0",
+  "result_id": "Q4-FIXED-POLICY-WINDOW-SENSITIVITY-20260828",
+  "status": "pass",
+  "method_role": "diagnostic_fixed_policy_sensitivity",
+  "generated_at": "2026-08-28T12:44:24.666423+00:00",
+  "input_identity": {
+    "planning/27_q4_e1e2_and_sensitivity_spec.md": "ff7f9dc29a02ae233a8dcfa2073c1a1de83cbd99908c3fe9fd112c704139872a",
+    "src/q4/solve.py": "cd0409bc13621d7172ebc32d879a0258270056214016d75d85b6911453607fd7",
+    "docs/q4_result.json": "5afccb206b24533ddc6c2a09fae0522b4cfde97800892d69c41b53428ecf91f8"
+  },
+  "settings": {
+    "name": "q4_fixed_policy_window_sensitivity",
+    "scan_step_s": 0.02,
+    "n_theta": 128,
+    "n_levels": 9,
+    "root_time_tolerance_s": 2e-06,
+    "margin_tolerance_m": 2e-06,
+    "surface_refinement": false
+  },
+  "grids": {
+    "heading_deg": [
+      -0.2,
+      -0.1,
+      0.1,
+      0.2
+    ],
+    "speed_mps": [
+      -1.0,
+      -0.5,
+      0.5,
+      1.0
+    ],
+    "release_time_s": [
+      -0.1,
+      -0.05,
+      0.05,
+      0.1
+    ],
+    "fuse_delay_s": [
+      -0.1,
+      -0.05,
+      0.05,
+      0.1
+    ]
+  },
+  "nominal": {
+    "joint_duration_s": 11.610109055638993,
+    "joint_intervals_s": [
+      [
+        0.9854445642121445,
+        5.571338653898624
+      ],
+      [
+        12.529898632350811,
+        16.514269405911847
+      ],
+      [
+        28.493633439817447,
+        31.533477632208925
+      ]
+    ],
+    "platform_windows": [
+      {
+        "platform": "FY1",
+        "duration_s": 4.585893859863281,
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ]
+      },
+      {
+        "platform": "FY2",
+        "duration_s": 3.984370117187499,
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ]
+      },
+      {
+        "platform": "FY3",
+        "duration_s": 3.039843750000003,
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ]
+      }
+    ],
+    "formal_densified_duration_s": 11.610102348586391
+  },
+  "scenario_count": 49,
+  "perturbed_scenario_count": 48,
+  "feasible_count": 49,
+  "infeasible_count": 0,
+  "scenarios": [
+    {
+      "scenario_id": 1,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "heading_deg",
+      "offset": -0.2,
+      "joint_duration_s": 11.609160738517135,
+      "joint_intervals_s": [
+        [
+          1.055647187028759,
+          5.640592959593381
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.0009483171218587216,
+      "joint_retention_ratio": 0.9999183197059291,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.0556475558930853,
+            5.640592929428243
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.584945373535158,
+        "retention_ratio": 0.9997931730744088,
+        "entry_shift_s": 0.07020294189453113,
+        "exit_shift_s": 0.06925445556640764,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 2,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "heading_deg",
+      "offset": -0.1,
+      "joint_duration_s": 11.610135906316831,
+      "joint_intervals_s": [
+        [
+          1.020280877737462,
+          5.606201818101779
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": 2.6850677837586545e-05,
+      "joint_retention_ratio": 1.000002312698159,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.0202813449555852,
+            5.606201755111835
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.58592041015625,
+        "retention_ratio": 1.0000057895567975,
+        "entry_shift_s": 0.03483673095703099,
+        "exit_shift_s": 0.03486328124999982,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 3,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "heading_deg",
+      "offset": 0.1,
+      "joint_duration_s": 11.583603470034546,
+      "joint_intervals_s": [
+        [
+          0.9766137424165229,
+          5.5360022464985565
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.026505585604446935,
+      "joint_retention_ratio": 0.9977170252684601,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            0.9766137424165229,
+            5.536002780502461
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.559389038085937,
+        "retention_ratio": 0.9942203586503999,
+        "entry_shift_s": -0.00883087158203133,
+        "exit_shift_s": -0.035335693359374254,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 4,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "heading_deg",
+      "offset": 0.2,
+      "joint_duration_s": 11.547793209194888,
+      "joint_intervals_s": [
+        [
+          0.9766137424165229,
+          5.500191985658898
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.062315846444105816,
+      "joint_retention_ratio": 0.9946326217828385,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            0.9766137424165229,
+            5.500192233627461
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.523578491210937,
+        "retention_ratio": 0.9864115109166087,
+        "entry_shift_s": -0.00883087158203133,
+        "exit_shift_s": -0.07114624023437432,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 5,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "speed_mps",
+      "offset": -1.0,
+      "joint_duration_s": 11.609676698701518,
+      "joint_intervals_s": [
+        [
+          1.02046364541957,
+          5.605925378168575
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.00043235693747512016,
+      "joint_retention_ratio": 0.9999627603035076,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.0204632297212104,
+            5.6059258762055855
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.585462646484375,
+        "retention_ratio": 0.9999059696120141,
+        "entry_shift_s": 0.03501861572265619,
+        "exit_shift_s": 0.03458740234375046,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 6,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "speed_mps",
+      "offset": -0.5,
+      "joint_duration_s": 11.609893639973603,
+      "joint_intervals_s": [
+        [
+          1.0029557829832225,
+          5.5886344570043125
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.0002154156653908501,
+      "joint_retention_ratio": 0.999981445853406,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.0029559055024602,
+            5.588634616439959
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.585678710937499,
+        "retention_ratio": 0.9999530846259516,
+        "entry_shift_s": 0.017511291503905957,
+        "exit_shift_s": 0.017296142578124396,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 7,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "speed_mps",
+      "offset": 0.5,
+      "joint_duration_s": 11.60163949750884,
+      "joint_intervals_s": [
+        [
+          0.9766137424165229,
+          5.554038273972849
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.008469558130153487,
+      "joint_retention_ratio": 0.9992705014147959,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            0.9766137424165229,
+            5.554037753646993
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.57742401123047,
+        "retention_ratio": 0.9981530648349843,
+        "entry_shift_s": -0.00883087158203133,
+        "exit_shift_s": -0.01730072021484208,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 8,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "speed_mps",
+      "offset": 1.0,
+      "joint_duration_s": 11.58433454076298,
+      "joint_intervals_s": [
+        [
+          0.9766137424165229,
+          5.5367333172269895
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.02577451487601401,
+      "joint_retention_ratio": 0.9977799937319715,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            0.9766137424165229,
+            5.536732760971211
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.560119018554689,
+        "retention_ratio": 0.994379538189015,
+        "entry_shift_s": -0.00883087158203133,
+        "exit_shift_s": -0.03460571289062386,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 9,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "release_time_s",
+      "offset": -0.1,
+      "joint_duration_s": 11.604548694391468,
+      "joint_intervals_s": [
+        [
+          1.3652425256164276,
+          5.945576172821914
+        ],
+        [
+          12.52989908829264,
+          16.514269943087143
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.005560361247525236,
+      "joint_retention_ratio": 0.9995210758812964,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.3652425876313665,
+            5.945576449936054
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.580333862304688,
+        "retention_ratio": 0.9987875869506586,
+        "entry_shift_s": 0.3797979736328123,
+        "exit_shift_s": 0.3742379760742187,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 10,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "release_time_s",
+      "offset": -0.05,
+      "joint_duration_s": 11.60786727458197,
+      "joint_intervals_s": [
+        [
+          1.1752372854383255,
+          5.758889563917174
+        ],
+        [
+          12.529898603207258,
+          16.514269406918903
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.0022417810570232177,
+      "joint_retention_ratio": 0.99980691128341,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.1752373996430854,
+            5.758889743393086
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.58365234375,
+        "retention_ratio": 0.9995112150037098,
+        "entry_shift_s": 0.18979278564453117,
+        "exit_shift_s": 0.18755126953125068,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 11,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "release_time_s",
+      "offset": 0.05,
+      "joint_duration_s": 11.380502006432156,
+      "joint_intervals_s": [
+        [
+          1.026613742416523,
+          5.38290058041218
+        ],
+        [
+          12.529899054301811,
+          16.514270030346832
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.2296070492068374,
+      "joint_retention_ratio": 0.9802235234736819,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.026613742416523,
+            5.382899753158711
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.3562860107421875,
+        "retention_ratio": 0.9499317131757736,
+        "entry_shift_s": 0.041169128417968714,
+        "exit_shift_s": -0.1884387207031244,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 12,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "release_time_s",
+      "offset": 0.1,
+      "joint_duration_s": 11.141153135131761,
+      "joint_intervals_s": [
+        [
+          1.076613742416523,
+          5.193551496864677
+        ],
+        [
+          12.529898697968164,
+          16.514269886260294
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.46895592050723245,
+      "joint_retention_ratio": 0.9596079659321148,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.076613742416523,
+            5.193551608627461
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.116937866210938,
+        "retention_ratio": 0.8977394575664418,
+        "entry_shift_s": 0.09116912841796876,
+        "exit_shift_s": -0.3777868652343743,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 13,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "fuse_delay_s",
+      "offset": -0.1,
+      "joint_duration_s": 11.603710219650749,
+      "joint_intervals_s": [
+        [
+          1.4384790835373091,
+          6.017974256002077
+        ],
+        [
+          12.52989908829264,
+          16.514269943087143
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.006398835988244755,
+      "joint_retention_ratio": 0.9994488565130973,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.4384792819673042,
+            6.0179742160493355
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.579494934082032,
+        "retention_ratio": 0.9986046502651852,
+        "entry_shift_s": 0.45303466796875,
+        "exit_shift_s": 0.44663574218750046,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 14,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "fuse_delay_s",
+      "offset": -0.05,
+      "joint_duration_s": 11.606881677307765,
+      "joint_intervals_s": [
+        [
+          1.2143785755178529,
+          5.797045256722496
+        ],
+        [
+          12.529898603207258,
+          16.514269406918903
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.0032273783312284365,
+      "joint_retention_ratio": 0.9997220199814005,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.2143792453462103,
+            5.797045260971211
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.5826660156250005,
+        "retention_ratio": 0.9992961362960162,
+        "entry_shift_s": 0.22893463134765613,
+        "exit_shift_s": 0.22570678710937564,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 15,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "fuse_delay_s",
+      "offset": 0.05,
+      "joint_duration_s": 11.338360415312017,
+      "joint_intervals_s": [
+        [
+          1.026613742416523,
+          5.340758989292043
+        ],
+        [
+          12.529899054301811,
+          16.514270030346832
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.271748640326976,
+      "joint_retention_ratio": 0.976593790891655,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.026613742416523,
+            5.3407586398774605
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.314144897460937,
+        "retention_ratio": 0.9407424221522552,
+        "entry_shift_s": 0.041169128417968714,
+        "exit_shift_s": -0.23057983398437454,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 16,
+      "status": "feasible",
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "fuse_delay_s",
+      "offset": 0.1,
+      "joint_duration_s": 11.052796542398642,
+      "joint_intervals_s": [
+        [
+          1.076613742416523,
+          5.105194904131557
+        ],
+        [
+          12.529898697968164,
+          16.514269886260294
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.5573125132403511,
+      "joint_retention_ratio": 0.9519976504467315,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            0.9854446139985542,
+            5.571338473861835
+          ]
+        ],
+        "duration_s": 4.585893859863281
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            1.076613742416523,
+            5.105194675033711
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 4.028580932617188,
+        "retention_ratio": 0.8784723449175712,
+        "entry_shift_s": 0.09116912841796876,
+        "exit_shift_s": -0.4661437988281243,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 17,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "heading_deg",
+      "offset": -0.2,
+      "joint_duration_s": 11.508849599776585,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          13.282905668084842,
+          17.16601698578347
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.10125945586240803,
+      "joint_retention_ratio": 0.9912783372337725,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            13.282905832469496,
+            17.16601648920777
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.8831106567382747,
+        "retention_ratio": 0.9745858297620449,
+        "entry_shift_s": 0.7530065917968791,
+        "exit_shift_s": 0.6517471313476548,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 18,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "heading_deg",
+      "offset": -0.1,
+      "joint_duration_s": 11.58449513367141,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.894042558078135,
+          16.85279940967159
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.025613921967583053,
+      "joint_retention_ratio": 0.997793825893897,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            12.894042307078866,
+            16.85279963129762
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.9587573242187553,
+        "retention_ratio": 0.9935716832986331,
+        "entry_shift_s": 0.3641430664062497,
+        "exit_shift_s": 0.33853027343750597,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 19,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "heading_deg",
+      "offset": 0.1,
+      "joint_duration_s": 11.40069719196234,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.37458002680543,
+          16.149538936689815
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.2094118636766531,
+      "joint_retention_ratio": 0.9819629718658893,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            12.37458002680543,
+            16.14953913325074
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.7749591064453103,
+        "retention_ratio": 0.9474418779924972,
+        "entry_shift_s": -0.15531921386718572,
+        "exit_shift_s": -0.36473022460937443,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 20,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "heading_deg",
+      "offset": 0.2,
+      "joint_duration_s": 11.007723100317477,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.37458002680543,
+          15.756564845044952
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.6023859553215161,
+      "joint_retention_ratio": 0.9481153921608566,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            12.37458002680543,
+            15.756564584910898
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.381984558105467,
+        "retention_ratio": 0.8488128508735915,
+        "entry_shift_s": -0.15531921386718572,
+        "exit_shift_s": -0.7577047729492179,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 21,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "speed_mps",
+      "offset": -1.0,
+      "joint_duration_s": 9.258278860638473,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.37458002680543,
+          14.007120605365946
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -2.3518301950005203,
+      "joint_retention_ratio": 0.797432549192271,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            12.37458002680543,
+            14.00712092036012
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 1.6325408935546886,
+        "retention_ratio": 0.40973625580423545,
+        "entry_shift_s": -0.15531921386718572,
+        "exit_shift_s": -2.507148437499996,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 22,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "speed_mps",
+      "offset": -0.5,
+      "joint_duration_s": 10.806735414289143,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.37458002680543,
+          15.555577159016618
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.8033736413498502,
+      "joint_retention_ratio": 0.9308039539077668,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            12.37458002680543,
+            15.555576730906996
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.180996704101565,
+        "retention_ratio": 0.79836877863821,
+        "entry_shift_s": -0.15531921386718572,
+        "exit_shift_s": -0.9586926269531197,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 23,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "speed_mps",
+      "offset": 0.5,
+      "joint_duration_s": 11.313436513265739,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          13.482047843428887,
+          17.16974607461667
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.2966725423732548,
+      "joint_retention_ratio": 0.9744470494677083,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            13.482047678172616,
+            17.169746347606214
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.6876986694335976,
+        "retention_ratio": 0.9255411924524429,
+        "entry_shift_s": 0.9521484375,
+        "exit_shift_s": 0.6554769897460986,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 24,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "speed_mps",
+      "offset": 1.0,
+      "joint_duration_s": 10.162003515875266,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          14.92329788962594,
+          17.45956312342325
+        ],
+        [
+          28.493633439817447,
+          31.533477632208925
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -1.448105539763727,
+      "joint_retention_ratio": 0.8752720122761993,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            14.923297678172617,
+            17.45956232661012
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 2.536264648437502,
+        "retention_ratio": 0.6365534761684764,
+        "entry_shift_s": 2.3933984375,
+        "exit_shift_s": 0.9452929687500031,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 25,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "release_time_s",
+      "offset": -0.1,
+      "joint_duration_s": 8.761547363398648,
+      "joint_intervals_s": [
+        [
+          0.9854445502682038,
+          5.571338111448744
+        ],
+        [
+          12.274580026805431,
+          13.410389932341413
+        ],
+        [
+          28.493633406609394,
+          31.53347730329152
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -2.848561692240345,
+      "joint_retention_ratio": 0.7546481537262729,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            12.274580026805431,
+            13.410388742625745
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 1.135808715820314,
+        "retention_ratio": 0.2850660662574346,
+        "entry_shift_s": -0.25531921386718537,
+        "exit_shift_s": -3.1038806152343703,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 26,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "release_time_s",
+      "offset": -0.05,
+      "joint_duration_s": 10.713983191433801,
+      "joint_intervals_s": [
+        [
+          0.9854441001264237,
+          5.571337920024895
+        ],
+        [
+          12.32458002680543,
+          15.412826028842225
+        ],
+        [
+          28.493633842541726,
+          31.53347721204026
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.8961258642051924,
+      "joint_retention_ratio": 0.9228150347330332,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            12.32458002680543,
+            15.412826486766367
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.0882464599609367,
+        "retention_ratio": 0.7750902574635508,
+        "entry_shift_s": -0.20531921386718643,
+        "exit_shift_s": -1.1014428710937487,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 27,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "release_time_s",
+      "offset": 0.05,
+      "joint_duration_s": 11.260341819382205,
+      "joint_intervals_s": [
+        [
+          0.9854441818364568,
+          5.571338671249976
+        ],
+        [
+          13.622685783946636,
+          17.25728931991261
+        ],
+        [
+          28.493633829151264,
+          31.533477623153978
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.3497672362567883,
+      "joint_retention_ratio": 0.9698739060433798,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            13.622686105906993,
+            17.257289377391366
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.634603271484373,
+        "retention_ratio": 0.9122152723226373,
+        "entry_shift_s": 1.0927868652343768,
+        "exit_shift_s": 0.7430200195312509,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 28,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "release_time_s",
+      "offset": 0.1,
+      "joint_duration_s": 9.775104752335558,
+      "joint_intervals_s": [
+        [
+          0.9854445779135821,
+          5.57133876502987
+        ],
+        [
+          15.359743547599226,
+          17.509110251200596
+        ],
+        [
+          28.493633948154702,
+          31.533477809772602
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -1.8350043033034353,
+      "joint_retention_ratio": 0.8419477117303924,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            15.359744211375741,
+            17.509109445750745
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 2.1493652343750043,
+        "retention_ratio": 0.5394491905014601,
+        "entry_shift_s": 2.8298449707031246,
+        "exit_shift_s": 0.9948400878906298,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 29,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "fuse_delay_s",
+      "offset": -0.1,
+      "joint_duration_s": 7.625737457862666,
+      "joint_intervals_s": [
+        [
+          0.9854445502682038,
+          5.571338111448744
+        ],
+        [
+          28.493633406609394,
+          31.53347730329152
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.9843715977763274,
+      "joint_retention_ratio": 0.6568187621079122,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    },
+    {
+      "scenario_id": 30,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "fuse_delay_s",
+      "offset": -0.05,
+      "joint_duration_s": 10.831745246449819,
+      "joint_intervals_s": [
+        [
+          0.9854441001264237,
+          5.571337920024895
+        ],
+        [
+          12.33557393258313,
+          15.541581989635937
+        ],
+        [
+          28.493633842541726,
+          31.533477212040268
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.7783638091891749,
+      "joint_retention_ratio": 0.9329580966501666,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            12.3355742815741,
+            15.541582140902271
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.206007859328171,
+        "retention_ratio": 0.8046460958780703,
+        "entry_shift_s": -0.1943249590985161,
+        "exit_shift_s": -0.9726872169578442,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 31,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "fuse_delay_s",
+      "offset": 0.05,
+      "joint_duration_s": 10.884426423465063,
+      "joint_intervals_s": [
+        [
+          0.9854441818364568,
+          5.571338671249975
+        ],
+        [
+          13.491537197897944,
+          16.750225337946777
+        ],
+        [
+          28.493633829151264,
+          31.533477623153978
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.72568263217393,
+      "joint_retention_ratio": 0.9374956231077375,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            13.491537424266365,
+            16.750225168406992
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.2586877441406266,
+        "retention_ratio": 0.8178677302300622,
+        "entry_shift_s": 0.9616381835937489,
+        "exit_shift_s": 0.23595581054687642,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 32,
+      "status": "feasible",
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "fuse_delay_s",
+      "offset": 0.1,
+      "joint_duration_s": 7.6257380487341875,
+      "joint_intervals_s": [
+        [
+          0.9854445779135821,
+          5.57133876502987
+        ],
+        [
+          28.493633948154702,
+          31.533477809772602
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.984371006904806,
+      "joint_retention_ratio": 0.6568188130007608,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            12.529899240672616,
+            16.514269357860115
+          ]
+        ],
+        "duration_s": 3.984370117187499
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    },
+    {
+      "scenario_id": 33,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "heading_deg",
+      "offset": -0.2,
+      "joint_duration_s": 11.468606849320736,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.876152064114265,
+          31.774494050187485
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.1415022063182576,
+      "joint_retention_ratio": 0.9878121552829402,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            28.876152138797046,
+            31.7744944239533
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 2.8983422851562537,
+        "retention_ratio": 0.9534510729889492,
+        "entry_shift_s": 0.382518310546871,
+        "exit_shift_s": 0.24101684570312187,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 34,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "heading_deg",
+      "offset": -0.1,
+      "joint_duration_s": 11.57686465665823,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.66451738805858,
+          31.671117181469295
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.033244398980762924,
+      "joint_retention_ratio": 0.9971365989051915,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            28.664517312136894,
+            31.671116738406425
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.0065994262695312,
+        "retention_ratio": 0.9890638050950903,
+        "entry_shift_s": 0.17088348388671903,
+        "exit_shift_s": 0.13763916015624744,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 35,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "heading_deg",
+      "offset": 0.1,
+      "joint_duration_s": 11.570886358459017,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.361944207303583,
+          31.362565702515084
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.03922269717997651,
+      "joint_retention_ratio": 0.9966216771098351,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            28.361944375125177,
+            31.362565713015798
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 3.000621337890621,
+        "retention_ratio": 0.9870972275764562,
+        "entry_shift_s": -0.13168945312499858,
+        "exit_shift_s": -0.1709118652343804,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 36,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "heading_deg",
+      "offset": 0.2,
+      "joint_duration_s": 11.45677160726611,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          28.270179945603296,
+          31.15668668962189
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.1533374483728842,
+      "joint_retention_ratio": 0.9867927641645702,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            28.270180459109554,
+            31.156686806765798
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 2.886506347656244,
+        "retention_ratio": 0.949557472372138,
+        "entry_shift_s": -0.2234533691406213,
+        "exit_shift_s": -0.3767907714843801,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 37,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "speed_mps",
+      "offset": -1.0,
+      "joint_duration_s": 8.570264863247516,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.0398441923914774,
+      "joint_retention_ratio": 0.738172640943882,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    },
+    {
+      "scenario_id": 38,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "speed_mps",
+      "offset": -0.5,
+      "joint_duration_s": 8.570264863247516,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.0398441923914774,
+      "joint_retention_ratio": 0.738172640943882,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    },
+    {
+      "scenario_id": 39,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "speed_mps",
+      "offset": 0.5,
+      "joint_duration_s": 8.570264863247516,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.0398441923914774,
+      "joint_retention_ratio": 0.738172640943882,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    },
+    {
+      "scenario_id": 40,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "speed_mps",
+      "offset": 1.0,
+      "joint_duration_s": 8.570264863247516,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.0398441923914774,
+      "joint_retention_ratio": 0.738172640943882,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    },
+    {
+      "scenario_id": 41,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "release_time_s",
+      "offset": -0.1,
+      "joint_duration_s": 8.570264863247516,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.0398441923914774,
+      "joint_retention_ratio": 0.738172640943882,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    },
+    {
+      "scenario_id": 42,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "release_time_s",
+      "offset": -0.05,
+      "joint_duration_s": 11.293375726569714,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          29.638626773581052,
+          32.36173763690325
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.31673332906927953,
+      "joint_retention_ratio": 0.9727191770937377,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            29.638627419558766,
+            32.361738076297044
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 2.723110656738278,
+        "retention_ratio": 0.8958061271202757,
+        "entry_shift_s": 1.144993591308591,
+        "exit_shift_s": 0.8282604980468662,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 43,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "release_time_s",
+      "offset": 0.05,
+      "joint_duration_s": 11.276073533198776,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          27.675059143845385,
+          30.380867813796645
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.3340355224402174,
+      "joint_retention_ratio": 0.9712289074254666,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            27.67505960950018,
+            30.38086771496893
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 2.7058081054687477,
+        "retention_ratio": 0.8901142058596746,
+        "entry_shift_s": -0.818574218749994,
+        "exit_shift_s": -1.1526098632812491,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 44,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "release_time_s",
+      "offset": 0.1,
+      "joint_duration_s": 8.570264863247516,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.0398441923914774,
+      "joint_retention_ratio": 0.738172640943882,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    },
+    {
+      "scenario_id": 45,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "fuse_delay_s",
+      "offset": -0.1,
+      "joint_duration_s": 10.37612723869676,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          31.405714686949175,
+          33.21157706239842
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -1.233981816942233,
+      "joint_retention_ratio": 0.8937148814857263,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            31.405713794792423,
+            33.211577608712886
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 1.805863813920464,
+        "retention_ratio": 0.5940646830681552,
+        "entry_shift_s": 2.9120799665422474,
+        "exit_shift_s": 1.6781000304627085,
+        "topology": "weakened_below_90_percent"
+      }
+    },
+    {
+      "scenario_id": 46,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "fuse_delay_s",
+      "offset": -0.05,
+      "joint_duration_s": 11.373210147572259,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          29.691867619771962,
+          32.494812904096705
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.23689890806673475,
+      "joint_retention_ratio": 0.9795954622879556,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            29.691867470828306,
+            32.49481272229314
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 2.802945251464834,
+        "retention_ratio": 0.9220688568170096,
+        "entry_shift_s": 1.1982336425781313,
+        "exit_shift_s": 0.9613351440429625,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 47,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "fuse_delay_s",
+      "offset": 0.05,
+      "joint_duration_s": 11.371374876132037,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ],
+        [
+          27.522376096405534,
+          30.323486109290055
+        ]
+      ],
+      "joint_interval_count": 3,
+      "joint_change_s": -0.23873417950695597,
+      "joint_retention_ratio": 0.9794373869906929,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [
+          [
+            27.522376504031428,
+            30.323486123172053
+          ]
+        ],
+        "interval_count": 1,
+        "duration_s": 2.8011096191406253,
+        "retention_ratio": 0.9214649993574909,
+        "entry_shift_s": -0.9712573242187474,
+        "exit_shift_s": -1.209991455078125,
+        "topology": "retained"
+      }
+    },
+    {
+      "scenario_id": 48,
+      "status": "feasible",
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "fuse_delay_s",
+      "offset": 0.1,
+      "joint_duration_s": 8.570264863247516,
+      "joint_intervals_s": [
+        [
+          0.9854445642121445,
+          5.571338653898624
+        ],
+        [
+          12.529898632350811,
+          16.514269405911847
+        ]
+      ],
+      "joint_interval_count": 2,
+      "joint_change_s": -3.0398441923914774,
+      "joint_retention_ratio": 0.738172640943882,
+      "nominal_platform_window": {
+        "intervals_s": [
+          [
+            28.493633828250175,
+            31.533477578250178
+          ]
+        ],
+        "duration_s": 3.039843750000003
+      },
+      "platform_window": {
+        "intervals_s": [],
+        "interval_count": 0,
+        "duration_s": 0.0,
+        "retention_ratio": 0.0,
+        "entry_shift_s": null,
+        "exit_shift_s": null,
+        "topology": "window_lost"
+      }
+    }
+  ],
+  "worst_scenario": {
+    "scenario_id": 29,
+    "status": "feasible",
+    "platform": "FY2",
+    "platform_index": 1,
+    "factor": "fuse_delay_s",
+    "offset": -0.1,
+    "joint_duration_s": 7.625737457862666,
+    "joint_intervals_s": [
+      [
+        0.9854445502682038,
+        5.571338111448744
+      ],
+      [
+        28.493633406609394,
+        31.53347730329152
+      ]
+    ],
+    "joint_interval_count": 2,
+    "joint_change_s": -3.9843715977763274,
+    "joint_retention_ratio": 0.6568187621079122,
+    "nominal_platform_window": {
+      "intervals_s": [
+        [
+          12.529899240672616,
+          16.514269357860115
+        ]
+      ],
+      "duration_s": 3.984370117187499
+    },
+    "platform_window": {
+      "intervals_s": [],
+      "interval_count": 0,
+      "duration_s": 0.0,
+      "retention_ratio": 0.0,
+      "entry_shift_s": null,
+      "exit_shift_s": null,
+      "topology": "window_lost"
+    }
+  },
+  "risk_ranking": [
+    {
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "fuse_delay_s",
+      "worst_offset": -0.1,
+      "minimum_window_retention_ratio": 0.0,
+      "worst_topology": "window_lost",
+      "maximum_absolute_entry_shift_s": 0.9616381835937489,
+      "maximum_absolute_exit_shift_s": 0.9726872169578442
+    },
+    {
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "speed_mps",
+      "worst_offset": -1.0,
+      "minimum_window_retention_ratio": 0.0,
+      "worst_topology": "window_lost",
+      "maximum_absolute_entry_shift_s": 0.0,
+      "maximum_absolute_exit_shift_s": 0.0
+    },
+    {
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "release_time_s",
+      "worst_offset": -0.1,
+      "minimum_window_retention_ratio": 0.0,
+      "worst_topology": "window_lost",
+      "maximum_absolute_entry_shift_s": 1.144993591308591,
+      "maximum_absolute_exit_shift_s": 1.1526098632812491
+    },
+    {
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "fuse_delay_s",
+      "worst_offset": 0.1,
+      "minimum_window_retention_ratio": 0.0,
+      "worst_topology": "window_lost",
+      "maximum_absolute_entry_shift_s": 2.9120799665422474,
+      "maximum_absolute_exit_shift_s": 1.6781000304627085
+    },
+    {
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "release_time_s",
+      "worst_offset": -0.1,
+      "minimum_window_retention_ratio": 0.2850660662574346,
+      "worst_topology": "weakened_below_90_percent",
+      "maximum_absolute_entry_shift_s": 2.8298449707031246,
+      "maximum_absolute_exit_shift_s": 3.1038806152343703
+    },
+    {
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "speed_mps",
+      "worst_offset": -1.0,
+      "minimum_window_retention_ratio": 0.40973625580423545,
+      "worst_topology": "weakened_below_90_percent",
+      "maximum_absolute_entry_shift_s": 2.3933984375,
+      "maximum_absolute_exit_shift_s": 2.507148437499996
+    },
+    {
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "heading_deg",
+      "worst_offset": 0.2,
+      "minimum_window_retention_ratio": 0.8488128508735915,
+      "worst_topology": "weakened_below_90_percent",
+      "maximum_absolute_entry_shift_s": 0.7530065917968791,
+      "maximum_absolute_exit_shift_s": 0.7577047729492179
+    },
+    {
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "fuse_delay_s",
+      "worst_offset": 0.1,
+      "minimum_window_retention_ratio": 0.8784723449175712,
+      "worst_topology": "weakened_below_90_percent",
+      "maximum_absolute_entry_shift_s": 0.45303466796875,
+      "maximum_absolute_exit_shift_s": 0.4661437988281243
+    },
+    {
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "release_time_s",
+      "worst_offset": 0.1,
+      "minimum_window_retention_ratio": 0.8977394575664418,
+      "worst_topology": "weakened_below_90_percent",
+      "maximum_absolute_entry_shift_s": 0.3797979736328123,
+      "maximum_absolute_exit_shift_s": 0.3777868652343743
+    },
+    {
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "heading_deg",
+      "worst_offset": 0.2,
+      "minimum_window_retention_ratio": 0.949557472372138,
+      "worst_topology": "retained",
+      "maximum_absolute_entry_shift_s": 0.382518310546871,
+      "maximum_absolute_exit_shift_s": 0.3767907714843801
+    },
+    {
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "heading_deg",
+      "worst_offset": 0.2,
+      "minimum_window_retention_ratio": 0.9864115109166087,
+      "worst_topology": "retained",
+      "maximum_absolute_entry_shift_s": 0.07020294189453113,
+      "maximum_absolute_exit_shift_s": 0.07114624023437432
+    },
+    {
+      "platform": "FY1",
+      "platform_index": 0,
+      "factor": "speed_mps",
+      "worst_offset": 1.0,
+      "minimum_window_retention_ratio": 0.994379538189015,
+      "worst_topology": "retained",
+      "maximum_absolute_entry_shift_s": 0.03501861572265619,
+      "maximum_absolute_exit_shift_s": 0.03460571289062386
+    }
+  ],
+  "critical_offsets": [
+    {
+      "platform": "FY2",
+      "platform_index": 1,
+      "factor": "fuse_delay_s",
+      "directions": [
+        {
+          "direction": "negative",
+          "maximum_registered_offset": -0.1,
+          "monotone_nonincreasing_on_samples": true,
+          "samples": [
+            {
+              "fraction": 0.0,
+              "offset": -0.0,
+              "retention_ratio": 1.0,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.25,
+              "offset": -0.025,
+              "retention_ratio": 0.948367660377034,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.5,
+              "offset": -0.05,
+              "retention_ratio": 0.8046460958780703,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.75,
+              "offset": -0.07500000000000001,
+              "retention_ratio": 0.2768113073667979,
+              "window_lost": false
+            },
+            {
+              "fraction": 1.0,
+              "offset": -0.1,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            }
+          ],
+          "retention_90_boundary_offset": -0.03515625,
+          "window_loss_boundary_offset": -0.07773437500000002
+        },
+        {
+          "direction": "positive",
+          "maximum_registered_offset": 0.1,
+          "monotone_nonincreasing_on_samples": true,
+          "samples": [
+            {
+              "fraction": 0.0,
+              "offset": 0.0,
+              "retention_ratio": 1.0,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.25,
+              "offset": 0.025,
+              "retention_ratio": 0.9589040550294802,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.5,
+              "offset": 0.05,
+              "retention_ratio": 0.8178677302300622,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.75,
+              "offset": 0.07500000000000001,
+              "retention_ratio": 0.38480806594492967,
+              "window_lost": false
+            },
+            {
+              "fraction": 1.0,
+              "offset": 0.1,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            }
+          ],
+          "retention_90_boundary_offset": 0.03828125,
+          "window_loss_boundary_offset": 0.08046875000000002
+        }
+      ],
+      "dense_confirmation_settings": {
+        "name": "q4_sensitivity_critical_confirmation",
+        "scan_step_s": 0.01,
+        "n_theta": 256,
+        "n_levels": 17,
+        "root_time_tolerance_s": 5e-07,
+        "margin_tolerance_m": 5e-07,
+        "surface_refinement": true
+      },
+      "dense_confirmation": [
+        {
+          "direction": "negative",
+          "boundary_kind": "retention_90_boundary_offset",
+          "offset": -0.03515625,
+          "duration_s": 3.578488006591799,
+          "retention_ratio": 0.8981312346996686,
+          "window_lost": false
+        },
+        {
+          "direction": "negative",
+          "boundary_kind": "window_loss_boundary_offset",
+          "offset": -0.07773437500000002,
+          "duration_s": 0.0,
+          "retention_ratio": 0.0,
+          "window_lost": true
+        },
+        {
+          "direction": "positive",
+          "boundary_kind": "retention_90_boundary_offset",
+          "offset": 0.03828125,
+          "duration_s": 3.579415588378911,
+          "retention_ratio": 0.8983640397766198,
+          "window_lost": false
+        },
+        {
+          "direction": "positive",
+          "boundary_kind": "window_loss_boundary_offset",
+          "offset": 0.08046875000000002,
+          "duration_s": 0.0,
+          "retention_ratio": 0.0,
+          "window_lost": true
+        }
+      ]
+    },
+    {
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "speed_mps",
+      "directions": [
+        {
+          "direction": "negative",
+          "maximum_registered_offset": -1.0,
+          "monotone_nonincreasing_on_samples": true,
+          "samples": [
+            {
+              "fraction": 0.0,
+              "offset": -0.0,
+              "retention_ratio": 1.0,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.25,
+              "offset": -0.25,
+              "retention_ratio": 0.8622269339501413,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.5,
+              "offset": -0.5,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            },
+            {
+              "fraction": 0.75,
+              "offset": -0.75,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            },
+            {
+              "fraction": 1.0,
+              "offset": -1.0,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            }
+          ],
+          "retention_90_boundary_offset": -0.21484375,
+          "window_loss_boundary_offset": -0.4375
+        },
+        {
+          "direction": "positive",
+          "maximum_registered_offset": 1.0,
+          "monotone_nonincreasing_on_samples": true,
+          "samples": [
+            {
+              "fraction": 0.0,
+              "offset": 0.0,
+              "retention_ratio": 1.0,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.25,
+              "offset": 0.25,
+              "retention_ratio": 0.8504862985093807,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.5,
+              "offset": 0.5,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            },
+            {
+              "fraction": 0.75,
+              "offset": 0.75,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            },
+            {
+              "fraction": 1.0,
+              "offset": 1.0,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            }
+          ],
+          "retention_90_boundary_offset": 0.2109375,
+          "window_loss_boundary_offset": 0.375
+        }
+      ],
+      "dense_confirmation_settings": {
+        "name": "q4_sensitivity_critical_confirmation",
+        "scan_step_s": 0.01,
+        "n_theta": 256,
+        "n_levels": 17,
+        "root_time_tolerance_s": 5e-07,
+        "margin_tolerance_m": 5e-07,
+        "surface_refinement": true
+      },
+      "dense_confirmation": [
+        {
+          "direction": "negative",
+          "boundary_kind": "retention_90_boundary_offset",
+          "offset": -0.21484375,
+          "duration_s": 2.730171737670897,
+          "retention_ratio": 0.8981289705008361,
+          "window_lost": false
+        },
+        {
+          "direction": "negative",
+          "boundary_kind": "window_loss_boundary_offset",
+          "offset": -0.4375,
+          "duration_s": 0.0,
+          "retention_ratio": 0.0,
+          "window_lost": true
+        },
+        {
+          "direction": "positive",
+          "boundary_kind": "retention_90_boundary_offset",
+          "offset": 0.2109375,
+          "duration_s": 2.7264160156249915,
+          "retention_ratio": 0.8968934721151359,
+          "window_lost": false
+        },
+        {
+          "direction": "positive",
+          "boundary_kind": "window_loss_boundary_offset",
+          "offset": 0.375,
+          "duration_s": 0.0,
+          "retention_ratio": 0.0,
+          "window_lost": true
+        }
+      ]
+    },
+    {
+      "platform": "FY3",
+      "platform_index": 2,
+      "factor": "release_time_s",
+      "directions": [
+        {
+          "direction": "negative",
+          "maximum_registered_offset": -0.1,
+          "monotone_nonincreasing_on_samples": true,
+          "samples": [
+            {
+              "fraction": 0.0,
+              "offset": -0.0,
+              "retention_ratio": 1.0,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.25,
+              "offset": -0.025,
+              "retention_ratio": 0.9733435897179137,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.5,
+              "offset": -0.05,
+              "retention_ratio": 0.8958061271202757,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.75,
+              "offset": -0.07500000000000001,
+              "retention_ratio": 0.7140106977640686,
+              "window_lost": false
+            },
+            {
+              "fraction": 1.0,
+              "offset": -0.1,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            }
+          ],
+          "retention_90_boundary_offset": -0.049218750000000006,
+          "window_loss_boundary_offset": -0.099609375
+        },
+        {
+          "direction": "positive",
+          "maximum_registered_offset": 0.1,
+          "monotone_nonincreasing_on_samples": true,
+          "samples": [
+            {
+              "fraction": 0.0,
+              "offset": 0.0,
+              "retention_ratio": 1.0,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.25,
+              "offset": 0.025,
+              "retention_ratio": 0.9747524866549535,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.5,
+              "offset": 0.05,
+              "retention_ratio": 0.8901142058596746,
+              "window_lost": false
+            },
+            {
+              "fraction": 0.75,
+              "offset": 0.07500000000000001,
+              "retention_ratio": 0.6193164112695969,
+              "window_lost": false
+            },
+            {
+              "fraction": 1.0,
+              "offset": 0.1,
+              "retention_ratio": 0.0,
+              "window_lost": true
+            }
+          ],
+          "retention_90_boundary_offset": 0.048046875,
+          "window_loss_boundary_offset": 0.086328125
+        }
+      ],
+      "dense_confirmation_settings": {
+        "name": "q4_sensitivity_critical_confirmation",
+        "scan_step_s": 0.01,
+        "n_theta": 256,
+        "n_levels": 17,
+        "root_time_tolerance_s": 5e-07,
+        "margin_tolerance_m": 5e-07,
+        "surface_refinement": true
+      },
+      "dense_confirmation": [
+        {
+          "direction": "negative",
+          "boundary_kind": "retention_90_boundary_offset",
+          "offset": -0.049218750000000006,
+          "duration_s": 2.7328764206763765,
+          "retention_ratio": 0.8990187145889917,
+          "window_lost": false
+        },
+        {
+          "direction": "negative",
+          "boundary_kind": "window_loss_boundary_offset",
+          "offset": -0.099609375,
+          "duration_s": 0.0,
+          "retention_ratio": 0.0,
+          "window_lost": true
+        },
+        {
+          "direction": "positive",
+          "boundary_kind": "retention_90_boundary_offset",
+          "offset": 0.048046875,
+          "duration_s": 2.7333117675781224,
+          "retention_ratio": 0.8991619281675666,
+          "window_lost": false
+        },
+        {
+          "direction": "positive",
+          "boundary_kind": "window_loss_boundary_offset",
+          "offset": 0.086328125,
+          "duration_s": 0.0,
+          "retention_ratio": 0.0,
+          "window_lost": true
+        }
+      ]
+    }
+  ],
+  "all_scenarios_retain_at_least_90_percent_of_platform_window": false,
+  "interpretation": {
+    "fixed_policy": true,
+    "reoptimized_under_perturbation": false,
+    "probabilistic_robustness": false,
+    "empirical_reality_validation": false,
+    "q5_solved": false
+  },
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.4.6"
+  },
+  "elapsed_s": 29.225858505997167
+}

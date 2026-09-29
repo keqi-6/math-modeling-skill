@@ -1,0 +1,148 @@
+{
+  "title": "问题2中心与表面局部物性的相对变化",
+  "caption": "(a)导热系数；(b)体积热容量；(c)水分扩散系数。各量除以题给均匀初态下的对应初值，横向细虚线表示初值比1；蓝色实线为中心，深灰虚线为表面。逐秒温度与含水率来自问题2同一主方案，物性按附录3逐点计算，未另作拟合。三面板纵轴范围不同。",
+  "sources": [
+    {
+      "path": "output/Q2/run_n10240_startsafe.npz",
+      "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+      "bytes": 38314283
+    },
+    {
+      "path": "output/diagnostics/q1_q2_parameterization_review.json",
+      "sha256": "ed773f84434c2b25fece2d82fbe28cfa4c4c0e1392c2172552ec7852ab0b3ba6",
+      "bytes": 10900
+    },
+    {
+      "path": "A题.pdf",
+      "sha256": "052d8014bff5727c019b72e44fdffaf5c145ce04050dd938baaf3527db331736",
+      "bytes": 553320
+    }
+  ],
+  "formulas": {
+    "k": ".21+.38*C/(1+C)",
+    "s": "(650+128*C)*(1450+2736*C/(1+C))",
+    "D": "2.4e-3*exp(-.45/C-3850/(temperature_C+273.15))"
+  },
+  "data": {
+    "time_s": [
+      0,
+      10800
+    ],
+    "time_count": 10801,
+    "radius_m": [
+      0,
+      0.02
+    ],
+    "normalization": "property/local uniform initial value",
+    "shown_curves": "center and surface only; not full-domain bounds"
+  },
+  "checks": {
+    "independent_half_hour_rows": 14,
+    "maximum_property_relative_difference": 0.0,
+    "comparison_rtol": 2e-14,
+    "all_rows_match": true
+  },
+  "summary": {
+    "k_W_mK": {
+      "center": {
+        "initial": 0.48295774647887324,
+        "at_3h_ratio": 0.9371964681121007,
+        "minimum_ratio": 0.9371964681121007,
+        "minimum_time_s": 10800,
+        "maximum_ratio": 1.0,
+        "maximum_time_s": 0
+      },
+      "surface": {
+        "initial": 0.48295774647887324,
+        "at_3h_ratio": 0.829821197176587,
+        "minimum_ratio": 0.829821197176587,
+        "minimum_time_s": 10800,
+        "maximum_ratio": 1.0,
+        "maximum_time_s": 0
+      }
+    },
+    "s_J_m3K": {
+      "center": {
+        "initial": 3334694.7943661967,
+        "at_3h_ratio": 0.839872510236184,
+        "minimum_ratio": 0.839872510236184,
+        "minimum_time_s": 10800,
+        "maximum_ratio": 1.0,
+        "maximum_time_s": 0
+      },
+      "surface": {
+        "initial": 3334694.7943661967,
+        "at_3h_ratio": 0.6596240991437091,
+        "minimum_ratio": 0.6596240991437091,
+        "minimum_time_s": 10800,
+        "maximum_ratio": 1.0,
+        "maximum_time_s": 0
+      }
+    },
+    "D_m2_s": {
+      "center": {
+        "initial": 5.641680373025668e-09,
+        "at_3h_ratio": 2.1956683595682134,
+        "minimum_ratio": 1.0,
+        "minimum_time_s": 0,
+        "maximum_ratio": 2.219526614965237,
+        "maximum_time_s": 8856
+      },
+      "surface": {
+        "initial": 5.641680373025668e-09,
+        "at_3h_ratio": 1.8206853946924015,
+        "minimum_ratio": 0.9832815849845234,
+        "minimum_time_s": 144,
+        "maximum_ratio": 1.9056003304028803,
+        "maximum_time_s": 7262
+      }
+    }
+  },
+  "claim_boundary": "Actual local-property trajectories over Q2 0–3 h only. No frozen-coefficient control, stage partition, global monotonicity proof, sensitivity experiment, or new solver run is implied.",
+  "schema_version": "1.0",
+  "data_driven_visual": true,
+  "generator": {
+    "path": "scripts/build_brief_data_figures.py",
+    "sha256": "ec0b1be3a3e38287cb18b8e27eed77d289af743d4b4871da823c642fbc28b52a",
+    "bytes": 13948
+  },
+  "outputs": {
+    "png": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig09_q2_coefficients.png",
+      "sha256": "487cb78afd9bb4dddf56a15cf2df06fd32092c4f22a0cd7c82fb27ecc7cc4637",
+      "bytes": 98609
+    },
+    "pdf": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig09_q2_coefficients.pdf",
+      "sha256": "a4599a3cf8b63e594bd4851d57d9aeb4979ca03013ff6dc81220a9cb0f4f1173",
+      "bytes": 576554
+    },
+    "svg": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig09_q2_coefficients.svg",
+      "sha256": "7553cf3bf02f570dfc5b458d217ecead75c584c8dd1db46aa84b233536bd99f6",
+      "bytes": 1634286
+    },
+    "no_text_png": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig09_q2_coefficients_no_text.png",
+      "sha256": "f9734e932b7f176bb3fb6fb4fca00b81b0c556e04d13269103a1d2a3b0bfef94",
+      "bytes": 57665
+    },
+    "gray_png": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig09_q2_coefficients_gray.png",
+      "sha256": "1926757d100cce3f0f59435caec50676f23c088d4224937cb684b9e9fac0e43f",
+      "bytes": 92734
+    }
+  },
+  "display": {
+    "width_cm": 15.8,
+    "height_cm": 6.799999999999999,
+    "dpi": 300,
+    "font": "Microsoft YaHei",
+    "font_size_pt": 8.5,
+    "main_linewidth_pt": 1.8,
+    "textfree": "same artist positions, all Text hidden",
+    "grayscale": "same artists with luminance-mapped line colors",
+    "extra_fit": false,
+    "solver_executed": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "11.0",
+  "artifact_kind": "official_frozen_v10_lineage_seal",
+  "release_id": "V10.0.0",
+  "release_status": "stable",
+  "frozen_manifest_path": "evals/release/frozen-manifest.json",
+  "frozen_manifest_file_sha256": "42bfdbe301b068e773d7f463e3acdd01e1e3578dace08ef840d01f51ff9f0258",
+  "frozen_manifest_self_sha256": "381aeecf62e13a5c1a8496fad9f04a659dc641693423f9aacefe9f03e0289ce3",
+  "release_tree_sha256": "a0839f3feced0780d03e3f8931abdf2527001e3601c4c8674b38bf86603cd9b5",
+  "release_tree_file_count": 60,
+  "release_state_path": "evals/release/release-state.json",
+  "release_state_file_sha256": "de5561a0756cb674b73f1e4031b86ac88a22065034adb42b9b73b5f236f7efca",
+  "rule_inventory_sha256": "be87e1a47dc4ec591f00322c495801670b456dc65ce2825e9fae0431665f394f",
+  "rule_file_count": 9,
+  "active_rule_count": 206,
+  "trust_boundary": "This reviewed seal identifies the already frozen V10 release. V11 validators must also recompute the V10 manifest self-hash, every listed release-tree entry, and candidate/V10 rule equality."
+}

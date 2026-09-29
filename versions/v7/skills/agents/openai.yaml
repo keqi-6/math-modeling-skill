@@ -1,0 +1,6 @@
+interface:
+  display_name: "数学建模项目控制器 V6"
+  short_description: "全证据恢复、决策、建模、验证与论文交付控制器"
+  default_prompt: "Use $math-modeling-project-controller to recover or advance this project with component states, proportional recovery, explicit decisions, and V6's integrated detailed rules."
+policy:
+  allow_implicit_invocation: true

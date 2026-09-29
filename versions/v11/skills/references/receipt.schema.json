@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v11/receipt.schema.json",
+  "title": "V11 G2/G3 execution receipt",
+  "description": "Receipts apply only to checkpoint or release steps. They may be held in memory or authoritative state and do not require per-step receipt files.",
+  "oneOf": [
+    {"$ref": "#/$defs/start"},
+    {"$ref": "#/$defs/end"}
+  ],
+  "$defs": {
+    "tier": {"enum": ["G2_CHECKPOINT", "G3_RELEASE"]},
+    "mode": {"enum": ["project_readonly", "mutate", "promote", "skill_maintenance"]},
+    "change_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paths", "facets", "claim_refs"],
+      "properties": {
+        "paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "facets": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "claim_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id", "identity", "facet"],
+      "properties": {
+        "kind": {"const": "artifact"},
+        "id": {"type": "string", "minLength": 1},
+        "identity": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "facet": {"enum": ["content", "interface", "frozen_input", "result", "claim", "render", "format", "metadata", "decision", "run", "specification", "source"]}
+      }
+    },
+    "start": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_type", "schema_version", "request", "request_hash", "semantic_plan", "plan_hash", "step_id", "execution_id", "pair_hash",
+        "project_root", "tier", "mode", "route_ids", "rule_ids", "component_ids",
+        "state_revision", "recovery", "change_set", "required_identities", "blocked"
+      ],
+      "properties": {
+        "receipt_type": {"const": "start"},
+        "schema_version": {"const": "11.0"},
+        "request": {"type": "string", "minLength": 1},
+        "request_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "semantic_plan": {"type": "object"},
+        "plan_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "step_id": {"type": "string", "minLength": 1},
+        "execution_id": {"type": "string", "minLength": 1},
+        "pair_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "project_root": {"type": ["string", "null"]},
+        "tier": {"$ref": "#/$defs/tier"},
+        "mode": {"$ref": "#/$defs/mode"},
+        "route_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "rule_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "component_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "state_revision": {"type": "integer", "minimum": 0},
+        "recovery": {"enum": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL"]},
+        "change_set": {"$ref": "#/$defs/change_set"},
+        "required_identities": {"type": "array", "items": {"$ref": "#/$defs/identity"}},
+        "blocked": {"type": "boolean"}
+      }
+    },
+    "end": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_type", "schema_version", "request", "request_hash", "semantic_plan", "plan_hash", "step_id", "execution_id", "pair_hash",
+        "project_root", "tier", "mode", "route_ids", "rule_ids", "component_ids",
+        "before_revision", "after_revision", "change_set", "changed_identities",
+        "validations", "state_transitions", "open_issues"
+      ],
+      "properties": {
+        "receipt_type": {"const": "end"},
+        "schema_version": {"const": "11.0"},
+        "request": {"type": "string", "minLength": 1},
+        "request_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "semantic_plan": {"type": "object"},
+        "plan_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "step_id": {"type": "string", "minLength": 1},
+        "execution_id": {"type": "string", "minLength": 1},
+        "pair_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "project_root": {"type": ["string", "null"]},
+        "tier": {"$ref": "#/$defs/tier"},
+        "mode": {"$ref": "#/$defs/mode"},
+        "route_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "rule_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "component_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "before_revision": {"type": "integer", "minimum": 0},
+        "after_revision": {"type": "integer", "minimum": 0},
+        "change_set": {"$ref": "#/$defs/change_set"},
+        "changed_identities": {"type": "array", "items": {"$ref": "#/$defs/identity"}},
+        "validations": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+                "required": ["id", "component_id", "level", "status", "evidence_ref", "input_refs", "claim_refs", "binding_hash"],
+            "properties": {
+                  "id": {"type": "string", "minLength": 1},
+                  "component_id": {"type": "string", "minLength": 1},
+                  "level": {"type": "string", "minLength": 1},
+              "status": {"const": "pass"},
+              "evidence_ref": {"type": "string", "minLength": 1},
+              "input_refs": {"type": "array", "items": {"$ref": "#/$defs/identity"}},
+              "claim_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+              "binding_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "state_transitions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["component_id", "from", "to"],
+            "properties": {
+              "component_id": {"type": "string"},
+              "from": {"type": "string"},
+              "to": {"type": "string"}
+            }
+          }
+        },
+        "open_issues": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

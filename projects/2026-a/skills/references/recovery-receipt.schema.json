@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v16/recovery-receipt.schema.json",
+  "title": "V16 single-episode R1 targeted or R2 full recovery receipt",
+  "oneOf": [
+    {"$ref": "#/$defs/r1_receipt"},
+    {"$ref": "#/$defs/r2_receipt"}
+  ],
+  "$defs": {
+    "canonical_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\u0000)(?!.*\\\\)(?!.*//)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+    },
+    "read_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path", "semantic_role", "read_mode", "sha256", "size",
+        "review_result", "note"
+      ],
+      "properties": {
+        "path": {"$ref": "#/$defs/canonical_path"},
+        "semantic_role": {
+          "enum": [
+            "authoritative_state", "official_input",
+            "unregistered_official_input", "frozen_process",
+            "formal_identity", "workspace_delta", "evidence_source"
+          ]
+        },
+        "read_mode": {
+          "enum": [
+            "content", "structured_extract", "visual_review",
+            "identity_plus_validation_summary", "missing_review"
+          ]
+        },
+        "sha256": {
+          "oneOf": [
+            {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            {"type": "null"}
+          ]
+        },
+        "size": {"type": ["integer", "null"], "minimum": 0},
+        "review_result": {
+          "enum": ["consistent", "changed", "missing", "unreadable"]
+        },
+        "note": {"type": "string", "minLength": 8}
+      }
+    },
+    "conclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "inconsistencies", "next_legal_action"],
+      "properties": {
+        "status": {"enum": ["ready", "blocked"]},
+        "inconsistencies": {
+          "type": "array", "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "next_legal_action": {"type": "string", "minLength": 4}
+      }
+    },
+    "full_manifest_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inventory_file_count", "canonical_item_count",
+        "completed_canonical_count", "classified_canonical_count",
+        "unresolved_count"
+      ],
+      "properties": {
+        "inventory_file_count": {"type": "integer", "minimum": 0},
+        "canonical_item_count": {"type": "integer", "minimum": 0},
+        "completed_canonical_count": {"type": "integer", "minimum": 0},
+        "classified_canonical_count": {"type": "integer", "minimum": 0},
+        "unresolved_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "r1_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "receipt_type", "recovery_id", "project_root",
+        "read_receipts", "changed_paths", "affected_components", "conclusion"
+      ],
+      "properties": {
+        "schema_version": {"enum": ["14.0", "16.0"]},
+        "receipt_type": {"const": "r1_targeted_recovery"},
+        "recovery_id": {"type": "string", "minLength": 1},
+        "project_root": {"type": "string", "minLength": 1},
+        "read_receipts": {
+          "type": "array", "minItems": 1,
+          "items": {"$ref": "#/$defs/read_receipt"}
+        },
+        "changed_paths": {
+          "type": "array", "uniqueItems": true,
+          "items": {"$ref": "#/$defs/canonical_path"}
+        },
+        "affected_components": {
+          "type": "array", "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "conclusion": {"$ref": "#/$defs/conclusion"}
+      }
+    },
+    "r2_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "receipt_type", "recovery_id", "project_root",
+        "full_manifest_path", "changed_paths", "affected_components", "conclusion"
+      ],
+      "properties": {
+        "schema_version": {"const": "16.0"},
+        "receipt_type": {"const": "r2_full_recovery"},
+        "recovery_id": {"type": "string", "minLength": 1},
+        "project_root": {"type": "string", "minLength": 1},
+        "full_manifest_path": {
+          "type": "string", "minLength": 1,
+          "description": "Absolute path outside project_root; the manifest must not mutate the inventory it proves."
+        },
+        "full_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "full_manifest_counts": {"$ref": "#/$defs/full_manifest_counts"},
+        "read_receipts": {
+          "type": "array",
+          "description": "Optional top-level summaries; complete per-object receipts live in the external full manifest.",
+          "items": {"$ref": "#/$defs/read_receipt"}
+        },
+        "changed_paths": {
+          "type": "array", "uniqueItems": true,
+          "items": {"$ref": "#/$defs/canonical_path"}
+        },
+        "affected_components": {
+          "type": "array", "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "conclusion": {"$ref": "#/$defs/conclusion"}
+      }
+    }
+  }
+}

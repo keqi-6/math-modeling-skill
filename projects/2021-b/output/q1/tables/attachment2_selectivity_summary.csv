@@ -1,0 +1,7 @@
+﻿product_category,column,first_pct,last_pct,change_pct_point,minimum_pct,maximum_pct,up_interval_count,down_interval_count
+乙烯,ethylene_selectivity_pct,4.23,4.68,0.4499999999999993,4.23,4.76,4,2
+C4烯烃,c4_selectivity_pct,39.9,39.04,-0.8599999999999994,36.72,40.32,2,4
+乙醛,acetaldehyde_selectivity_pct,5.17,8.79,3.619999999999999,5.17,8.79,6,0
+C4—C12脂肪醇,c4_12_alcohol_selectivity_pct,39.7,30.86,-8.840000000000003,30.86,39.7,2,4
+甲基苯甲醛和甲基苯甲醇,methylbenzaldehyde_methylbenzyl_alcohol_selectivity_pct,2.58,3.95,1.37,2.58,4.8,4,2
+其他,other_selectivity_pct,8.42,12.68,4.26,8.42,15.43,4,2

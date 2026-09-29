@@ -1,0 +1,6 @@
+interface:
+  display_name: "数学建模全流程 V3"
+  short_description: "以强制阶段门和执行回执完成数模项目"
+  default_prompt: "Use $math-modeling-project-bootstrap to classify this task, produce the required execution receipt, identify the earliest incomplete evidence layer, and complete only the evidence-backed next step."
+policy:
+  allow_implicit_invocation: true

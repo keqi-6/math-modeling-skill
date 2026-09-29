@@ -1,0 +1,27 @@
+{
+  "status": "internal visual trial reviewed, not formally admitted",
+  "checked_views": [
+    "property_editorial_page_width.png",
+    "property_editorial_no_text.png",
+    "property_editorial_grayscale.png",
+    "property_editorial_pdf_check.png"
+  ],
+  "revision": "Changed the net-effect marker from a diamond to a short vertical tick after first viewing. Then harmonized centre as filled lake-blue circle, surface as open lake-blue circle, initial state as filled deep-ink circle across the response surface, floor projections, k panel, and legend to match the companion drying-process figure. Changed the preferred font to Microsoft YaHei. Re-exported all formats and inspected updated page-width, no-text, grayscale, and PDF renders.",
+  "content": "Source SHA matches the supplied Q2 identity. Algebraic log decomposition closes to <5e-15. k has no artificial temperature dependence. Paths are actual minute-sampled states through 3 h.",
+  "readability": "Colour and PDF renders inspected at the 170 mm master aspect ratio; no clipping or collisions observed. Centre/surface use fill state and line-style redundancy. Positive/negative contributions use position and hatching as well as colour. Font hierarchy remains 8–9 pt at 170 mm width.",
+  "limitations": "The state rectangle illustrates constitutive variation; it is not a sensitivity experiment or proof of solution accuracy. This figure remains an internal trial and is not added to briefs or submission packages.",
+  "artifacts": {
+    "property_editorial.svg": {
+      "sha256": "5607d4cbde018899e0555daa94458b3ab9e66144c75bcd0c46f9466dd989279f",
+      "bytes": 2018072
+    },
+    "property_editorial.png": {
+      "sha256": "3f47b2ea2de93345579ec88f34f10a7e79df5963365760aeeb1f24448bae2c7e",
+      "bytes": 548591
+    },
+    "property_editorial.pdf": {
+      "sha256": "f5fccb34edb033fcb984b9cd3aa8abf06fced2d9ccb3b4582c287c25213c9175",
+      "bytes": 364573
+    }
+  }
+}

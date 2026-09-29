@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/math-modeling-v9-receipt.schema.json",
+  "title": "Mathematical Modeling Controller V9 Receipt",
+  "release": "9.0.0",
+  "oneOf": [
+    {"$ref": "#/$defs/start"},
+    {"$ref": "#/$defs/end"},
+    {"$ref": "#/$defs/change"}
+  ],
+  "$defs": {
+    "mode": {"enum": ["advisory_readonly", "project_readonly", "mutate", "promote", "skill_maintenance"]},
+    "start": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_kind", "task", "mode", "object", "action", "route_state", "components", "recovery_level", "route_id", "routed_modules", "artifact_plan"],
+      "properties": {
+        "receipt_kind": {"const": "start"},
+        "task": {"type": "string", "minLength": 1},
+        "mode": {"$ref": "#/$defs/mode"},
+        "object": {"type": "string", "minLength": 1},
+        "action": {"type": "string", "minLength": 1},
+        "route_state": {"type": "string", "minLength": 1},
+        "components": {"type": "array", "items": {"type": "object", "required": ["id", "type", "state"], "properties": {"id": {"type": "string"}, "type": {"type": "string"}, "state": {"type": "string"}}}},
+        "recovery_level": {"enum": ["R0_CONTINUE", "R1_TARGETED", "R2_FULL", "not_applicable"]},
+        "route_id": {"type": "string", "minLength": 1},
+        "routed_modules": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "artifact_plan": {"type": "array", "items": {"type": "object", "required": ["path", "artifact_class", "consumer", "purpose", "authorization_basis"]}}
+      }
+    },
+    "end": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_kind", "task", "mode", "route_id", "changed_artifacts", "validation", "state_changes", "open_items", "next_action"],
+      "properties": {
+        "receipt_kind": {"const": "end"},
+        "task": {"type": "string", "minLength": 1},
+        "mode": {"$ref": "#/$defs/mode"},
+        "route_id": {"type": "string", "minLength": 1},
+        "changed_artifacts": {"type": "array", "items": {"type": "object", "required": ["path", "artifact_class", "change"]}},
+        "validation": {"type": "array", "items": {"type": "object", "required": ["check", "result"]}},
+        "state_changes": {"type": "array", "items": {"type": "object", "required": ["component_id", "before", "after"]}},
+        "open_items": {"type": "array"},
+        "next_action": {"type": ["string", "null"]}
+      }
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_kind", "change_id", "risk_level", "change_type", "old_behavior", "new_behavior", "affected_capabilities", "canonical_owner", "affected_routes", "tests", "compatibility"],
+      "properties": {
+        "receipt_kind": {"const": "skill_change"},
+        "change_id": {"type": "string", "pattern": "^CHG-[0-9]{4}-[0-9]{3,}$"},
+        "risk_level": {"enum": ["L0", "L1", "L2", "L3", "L4"]},
+        "change_type": {"enum": ["wording", "bug_fix", "new_capability", "behavior_change", "deprecation", "routing", "state", "schema", "maintenance_kernel"]},
+        "old_behavior": {"type": ["object", "null"]},
+        "new_behavior": {"type": "object"},
+        "affected_capabilities": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "canonical_owner": {"type": "string", "minLength": 1},
+        "affected_routes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "tests": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "compatibility": {"enum": ["backward_compatible", "behavior_change", "breaking"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "schema_version": "11.0",
+  "cases": [
+    {
+      "id": "V11.G1.INIT.MINIMAL",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "g1_init_minimal"
+    },
+    {
+      "id": "V11.STATE.SCHEMA.STRICT",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "schema_strict"
+    },
+    {
+      "id": "V11.EVIDENCE.EXACT.BINDING",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "typed_exact_evidence"
+    },
+    {
+      "id": "V11.S6.G2.EVIDENCE.HARD",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "s6_g2_evidence_hard"
+    },
+    {
+      "id": "V11.S7.E1E4.ONLY",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "s7_e1_e4_only"
+    },
+    {
+      "id": "V11.ARTIFACT.REGISTER.LOCAL",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "artifact_register_no_invalidate"
+    },
+    {
+      "id": "V11.ARTIFACT.GUARD",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "artifact_guard"
+    },
+    {
+      "id": "V11.ARTIFACT.WORKING.EXACT",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "working_refresh_exact"
+    },
+    {
+      "id": "V11.ARTIFACT.PROTECTED.DOWNSTREAM",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "protected_refresh_downstream"
+    },
+    {
+      "id": "V11.CLAIM.IDENTITY.EXACT",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "claim_identity_exact"
+    },
+    {
+      "id": "V11.REVALIDATE.DELTA.ONLY",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "revalidate_delta_only"
+    },
+    {
+      "id": "V11.RECOVERY.UNREGISTERED.IGNORE",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "unregistered_dirty_ignored"
+    },
+    {
+      "id": "V11.RECOVERY.R0.CLEAN",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "recovery_r0"
+    },
+    {
+      "id": "V11.RECOVERY.R1.PROTECTED",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "recovery_r1_protected"
+    },
+    {
+      "id": "V11.RECOVERY.R2.EXPLICIT",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "recovery_r2_explicit"
+    },
+    {
+      "id": "V11.RECOVERY.R2.MISSING",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "recovery_r2_missing"
+    },
+    {
+      "id": "V11.RECOVERY.R2.CORRUPT",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "recovery_r2_corrupt"
+    },
+    {
+      "id": "V11.RECOVERY.LEGACY.V9.ROUTE",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "legacy_v9_recovery_route"
+    },
+    {
+      "id": "V11.RECOVERY.R2.BLOCKS.EXECUTION",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "r2_blocks_same_plan_execution"
+    },
+    {
+      "id": "V11.RECOVERY.R2.WRITE.SCOPE",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "r2_recovery_write_scope"
+    },
+    {
+      "id": "V11.RECOVERY.R2.FRESH.RESOLUTION",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "r2_fresh_resolution_closes_barrier"
+    },
+    {
+      "id": "V11.RECOVERY.LEGACY.SCOPE.TOTAL",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "scope_paths_legacy_total"
+    },
+    {
+      "id": "V11.PAUSE.G1.CEILING.SCOPE",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "pause_tier_and_scope"
+    },
+    {
+      "id": "V11.PAUSE.CLOSE.THEN.NO.REPLAY",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "close_then_pause_no_replay"
+    },
+    {
+      "id": "V11.RUNTIME.ACTION.WRAPPER",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "runtime_action_wrapper"
+    },
+    {
+      "id": "V11.SKILL.QUICK.CONTEXT.GUARD",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "quick_validate_context_guard"
+    },
+    {
+      "id": "V11.RECOVERY.G3.SCOPED.R0",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "recovery_g3_scoped_r0"
+    },
+    {
+      "id": "V11.S6.NO.FULL.RECOVERY",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "s6_no_full_recovery"
+    },
+    {
+      "id": "V11.CHECKPOINT.NO.MANIFEST",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "checkpoint_no_manifest"
+    },
+    {
+      "id": "V11.CHECKPOINT.SCOPED.RECOVERY",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "checkpoint_scoped_recovery"
+    },
+    {
+      "id": "V11.ROUTE.PLAN.NO.MANIFEST",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "semantic_plan_route_no_manifest"
+    },
+    {
+      "id": "V11.RECEIPT.START.AUTHENTIC",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "receipt_start_authenticity"
+    },
+    {
+      "id": "V11.RECEIPT.END.AUTHENTIC",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "receipt_end_authenticity"
+    },
+    {
+      "id": "V11.RECEIPT.END.START.BINDING",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "receipt_end_start_binding"
+    },
+    {
+      "id": "V11.PROJECT.GATE.SCOPED.INVALIDATION",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "project_gate_scoped_invalidation"
+    },
+    {
+      "id": "V11.OPEN_DECISION.LIFECYCLE",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "open_decision_lifecycle"
+    },
+    {
+      "id": "V11.CHECKPOINT.BEFORE_INTERRUPT.SINGLE_FILE",
+      "kind": "scenario",
+      "driver": "scenario_tests",
+      "scenario": "checkpoint_before_interrupt_single_file"
+    }
+  ]
+}

@@ -1,0 +1,2761 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s6_independent_verification",
+  "claim_status": "all_independent_checks_passed",
+  "producer": "src/q1/06_verify_independent.py",
+  "consumers": [
+    "planning/analysis/2026-08-25_q1_s6_independent_verification.md",
+    "planning/audits/2026-08-25_q1_s6_closure.md",
+    "docs/q1/solution_brief.md"
+  ],
+  "generated_at": "2026-08-25T15:27:38.336312+08:00",
+  "input_identity": {
+    "specification_path": "planning/analysis/2026-08-25_q1_s4_complete_action_specification.md",
+    "specification_sha256": "f156e3c423ce0cedcfef23dea027afbd842a07892cdd0cb2229cdaa25584a8f6",
+    "s5_results_path": "output/q1/s5_results.json",
+    "s5_results_sha256": "fb674e2b4f3cb425fff1de79ee461b8c24112fc6e499e9a8fd54ab61db87374f",
+    "s5_closure_path": "output/q1/s5_finite_closure.json",
+    "s5_closure_sha256": "28bac9784cc8ab21d4e5455d2ee66909d901b18d85905699deb22f3265e6c2bc"
+  },
+  "independence": "no import of src/q1/core.py or any main implementation module",
+  "records": [
+    {
+      "N": 1,
+      "D0": 0,
+      "D1": 1,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "thresholds": [],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": "1"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": "1"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": "1"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        },
+        "A": {
+          "scenario": "A",
+          "thresholds": [],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": "1"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": "1"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 1,
+            "denominator": 1,
+            "decimal": "1"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        }
+      }
+    },
+    {
+      "N": 2,
+      "D0": 0,
+      "D1": 1,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "thresholds": [
+            2
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 3,
+            "denominator": 2,
+            "decimal": "1.5"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 59,
+            "denominator": 40,
+            "decimal": "1.475"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 59,
+            "denominator": 40,
+            "decimal": "1.475"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        },
+        "A": {
+          "scenario": "A",
+          "thresholds": [
+            -1
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": "2"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 9,
+            "denominator": 5,
+            "decimal": "1.8"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 9,
+            "denominator": 5,
+            "decimal": "1.8"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        }
+      }
+    },
+    {
+      "N": 3,
+      "D0": 0,
+      "D1": 1,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "thresholds": [
+            2,
+            3
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 2,
+            "denominator": 1,
+            "decimal": "2"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 39,
+            "denominator": 20,
+            "decimal": "1.95"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 39,
+            "denominator": 20,
+            "decimal": "1.95"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        },
+        "A": {
+          "scenario": "A",
+          "thresholds": [
+            -1,
+            -1
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 3,
+            "denominator": 1,
+            "decimal": "3"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 27,
+            "denominator": 10,
+            "decimal": "2.7"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 27,
+            "denominator": 10,
+            "decimal": "2.7"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        }
+      }
+    },
+    {
+      "N": 9,
+      "D0": 0,
+      "D1": 1,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "thresholds": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 5,
+            "denominator": 1,
+            "decimal": "5"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 24,
+            "denominator": 5,
+            "decimal": "4.8"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 24,
+            "denominator": 5,
+            "decimal": "4.8"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        },
+        "A": {
+          "scenario": "A",
+          "thresholds": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 9,
+            "denominator": 1,
+            "decimal": "9"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 81,
+            "denominator": 10,
+            "decimal": "8.1"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 81,
+            "denominator": 10,
+            "decimal": "8.1"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        }
+      }
+    },
+    {
+      "N": 10,
+      "D0": 1,
+      "D1": 2,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "thresholds": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 22,
+            "denominator": 3,
+            "decimal": "7.33333333333333333333333"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 41,
+            "denominator": 6,
+            "decimal": "6.83333333333333333333333"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 41,
+            "denominator": 6,
+            "decimal": "6.83333333333333333333333"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        },
+        "A": {
+          "scenario": "A",
+          "thresholds": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 1,
+            "denominator": 15,
+            "decimal": "0.0666666666666666666666667"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 91,
+            "denominator": 10,
+            "decimal": "9.1"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 35,
+            "denominator": 4,
+            "decimal": "8.75"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 35,
+            "denominator": 4,
+            "decimal": "8.75"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        }
+      }
+    },
+    {
+      "N": 20,
+      "D0": 2,
+      "D1": 3,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "thresholds": [
+            2,
+            2,
+            2,
+            2,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 3,
+            "denominator": 95,
+            "decimal": "0.0315789473684210526315789"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 569,
+            "denominator": 38,
+            "decimal": "14.9736842105263157894737"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 555,
+            "denominator": 38,
+            "decimal": "14.6052631578947368421053"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 555,
+            "denominator": 38,
+            "decimal": "14.6052631578947368421053"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        },
+        "A": {
+          "scenario": "A",
+          "thresholds": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 1,
+            "denominator": 12,
+            "decimal": "0.0833333333333333333333333"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 1716,
+            "denominator": 95,
+            "decimal": "18.0631578947368421052632"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 59124405264274773,
+            "denominator": 3342515348439040,
+            "decimal": "17.6885964912280700757133"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 59124405264274773,
+            "denominator": 3342515348439040,
+            "decimal": "17.6885964912280700757133"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        }
+      }
+    },
+    {
+      "N": 23,
+      "D0": 2,
+      "D1": 3,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "thresholds": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 10,
+            "denominator": 253,
+            "decimal": "0.0395256916996047430830040"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 29973,
+            "denominator": 1771,
+            "decimal": "16.9243365330321852060982"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 2080631361910289175,
+            "denominator": 124623045938642944,
+            "decimal": "16.6953980801806886500587"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 2080631361910289175,
+            "denominator": 124623045938642944,
+            "decimal": "16.6953980801806886500587"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        },
+        "A": {
+          "scenario": "A",
+          "thresholds": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 177,
+            "denominator": 1771,
+            "decimal": "0.0999435347261434217955957"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 5166,
+            "denominator": 253,
+            "decimal": "20.4189723320158102766798"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 6355627568508017021,
+            "denominator": 311557614846607360,
+            "decimal": "20.3995256916996046512862"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 6355627568508017021,
+            "denominator": 311557614846607360,
+            "decimal": "20.3995256916996046512862"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        }
+      }
+    },
+    {
+      "N": 50,
+      "D0": 5,
+      "D1": 6,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "thresholds": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            12,
+            13,
+            14,
+            15,
+            5,
+            5,
+            5,
+            5,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 13191,
+            "denominator": 264845,
+            "decimal": "0.0498064905888349789499519"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 6180801,
+            "denominator": 151340,
+            "decimal": "40.8404982159376238932206"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 3705009228223418713,
+            "denominator": 91000049080729600,
+            "decimal": "40.7143651640952885536210"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 3705009228223418713,
+            "denominator": 91000049080729600,
+            "decimal": "40.7143651640952885536210"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        },
+        "A": {
+          "scenario": "A",
+          "thresholds": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            2,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            3,
+            -1,
+            -1
+          ],
+          "independently_recomputed_risk": {
+            "numerator": 131996,
+            "denominator": 1324225,
+            "decimal": "0.0996779248239536332571882"
+          },
+          "independently_recomputed_target_asn": {
+            "numerator": 23706383,
+            "denominator": 529690,
+            "decimal": "44.7552020993411240536918"
+          },
+          "independent_dual_lower_bound": {
+            "numerator": 52019284404553996477,
+            "denominator": 1164800628233338880,
+            "decimal": "44.6593890350591609211212"
+          },
+          "frozen_dual_lower_bound": {
+            "numerator": 52019284404553996477,
+            "denominator": 1164800628233338880,
+            "decimal": "44.6593890350591609211212"
+          },
+          "dual_cross_validation": true,
+          "boundary_attacks": []
+        }
+      }
+    }
+  ],
+  "exhaustive_enumeration": {
+    "N10_R": {
+      "policies_enummerated": 19683,
+      "feasible_policies": 1,
+      "independent_optimum_asn": {
+        "numerator": 22,
+        "denominator": 3,
+        "decimal": "7.33333333333333333333333"
+      },
+      "independent_optimum_risk": {
+        "numerator": 0,
+        "denominator": 1,
+        "decimal": "0"
+      },
+      "independent_optimum_thresholds": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "matches_frozen_selection": true
+    },
+    "N10_A": {
+      "policies_enummerated": 13122,
+      "feasible_policies": 4,
+      "independent_optimum_asn": {
+        "numerator": 91,
+        "denominator": 10,
+        "decimal": "9.1"
+      },
+      "independent_optimum_risk": {
+        "numerator": 1,
+        "denominator": 15,
+        "decimal": "0.0666666666666666666666667"
+      },
+      "independent_optimum_thresholds": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        -1,
+        -1
+      ],
+      "matches_frozen_selection": true
+    }
+  },
+  "check_count": 394,
+  "passed_count": 394,
+  "checks": [
+    {
+      "check": "N=1:R:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=1:R:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=1:R:no_accept_above_D0",
+      "pass": true,
+      "detail": "D>=D1 无任何接收（R 无统计接收且事实接收不可达）"
+    },
+    {
+      "check": "N=1:R:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/20"
+    },
+    {
+      "check": "N=1:R:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=1 boundary=1"
+    },
+    {
+      "check": "N=1:R:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=1:R:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=1:R:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=1:R:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=1 <= frozen_asn=1"
+    },
+    {
+      "check": "N=1:R:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=1 frozen_dual=1"
+    },
+    {
+      "check": "N=1:A:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=1:A:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=1:A:no_reject_below_D1",
+      "pass": true,
+      "detail": "D<=D0 无任何拒收（A 无统计拒收且事实拒收不可达）"
+    },
+    {
+      "check": "N=1:A:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/10"
+    },
+    {
+      "check": "N=1:A:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=1 boundary=1"
+    },
+    {
+      "check": "N=1:A:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=1:A:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=1:A:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=1:A:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=1 <= frozen_asn=1"
+    },
+    {
+      "check": "N=1:A:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=1 frozen_dual=1"
+    },
+    {
+      "check": "N=2:R:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=2:R:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=2:R:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=2:R:no_accept_above_D0",
+      "pass": true,
+      "detail": "D>=D1 无任何接收（R 无统计接收且事实接收不可达）"
+    },
+    {
+      "check": "N=2:R:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/20"
+    },
+    {
+      "check": "N=2:R:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=3/2 boundary=3/2"
+    },
+    {
+      "check": "N=2:R:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=2:R:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=2:R:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=2:R:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=59/40 <= frozen_asn=3/2"
+    },
+    {
+      "check": "N=2:R:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=59/40 frozen_dual=59/40"
+    },
+    {
+      "check": "N=2:A:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=2:A:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=2:A:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=2:A:no_reject_below_D1",
+      "pass": true,
+      "detail": "D<=D0 无任何拒收（A 无统计拒收且事实拒收不可达）"
+    },
+    {
+      "check": "N=2:A:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/10"
+    },
+    {
+      "check": "N=2:A:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=2 boundary=2"
+    },
+    {
+      "check": "N=2:A:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=2:A:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=2:A:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=2:A:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=9/5 <= frozen_asn=2"
+    },
+    {
+      "check": "N=2:A:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=9/5 frozen_dual=9/5"
+    },
+    {
+      "check": "N=3:R:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=3:R:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=3:R:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=3:R:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=3:R:no_accept_above_D0",
+      "pass": true,
+      "detail": "D>=D1 无任何接收（R 无统计接收且事实接收不可达）"
+    },
+    {
+      "check": "N=3:R:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/20"
+    },
+    {
+      "check": "N=3:R:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=2 boundary=2"
+    },
+    {
+      "check": "N=3:R:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=3:R:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=3:R:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=3:R:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=39/20 <= frozen_asn=2"
+    },
+    {
+      "check": "N=3:R:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=39/20 frozen_dual=39/20"
+    },
+    {
+      "check": "N=3:A:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=3:A:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=3:A:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=3:A:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=3:A:no_reject_below_D1",
+      "pass": true,
+      "detail": "D<=D0 无任何拒收（A 无统计拒收且事实拒收不可达）"
+    },
+    {
+      "check": "N=3:A:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/10"
+    },
+    {
+      "check": "N=3:A:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=3 boundary=3"
+    },
+    {
+      "check": "N=3:A:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=3:A:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=3:A:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=3:A:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=27/10 <= frozen_asn=3"
+    },
+    {
+      "check": "N=3:A:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=27/10 frozen_dual=27/10"
+    },
+    {
+      "check": "N=9:R:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:R:no_accept_above_D0",
+      "pass": true,
+      "detail": "D>=D1 无任何接收（R 无统计接收且事实接收不可达）"
+    },
+    {
+      "check": "N=9:R:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/20"
+    },
+    {
+      "check": "N=9:R:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=5 boundary=5"
+    },
+    {
+      "check": "N=9:R:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=9:R:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=9:R:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=9:R:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=24/5 <= frozen_asn=5"
+    },
+    {
+      "check": "N=9:R:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=24/5 frozen_dual=24/5"
+    },
+    {
+      "check": "N=9:A:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=9:A:no_reject_below_D1",
+      "pass": true,
+      "detail": "D<=D0 无任何拒收（A 无统计拒收且事实拒收不可达）"
+    },
+    {
+      "check": "N=9:A:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/10"
+    },
+    {
+      "check": "N=9:A:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=9 boundary=9"
+    },
+    {
+      "check": "N=9:A:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=9:A:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=9:A:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=9:A:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=81/10 <= frozen_asn=9"
+    },
+    {
+      "check": "N=9:A:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=81/10 frozen_dual=81/10"
+    },
+    {
+      "check": "N=10:R:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:D=10:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:R:no_accept_above_D0",
+      "pass": true,
+      "detail": "D>=D1 无任何接收（R 无统计接收且事实接收不可达）"
+    },
+    {
+      "check": "N=10:R:risk_limit",
+      "pass": true,
+      "detail": "risk=0 limit=1/20"
+    },
+    {
+      "check": "N=10:R:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=22/3 boundary=22/3"
+    },
+    {
+      "check": "N=10:R:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=10:R:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=10:R:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=10:scenario_agnostic:(9,9)_reject",
+      "pass": true,
+      "detail": "(9,9) 必须为拒收"
+    },
+    {
+      "check": "N=10:scenario_agnostic:(9,0)_accept",
+      "pass": true,
+      "detail": "(9,0) 必须为接收"
+    },
+    {
+      "check": "N=10:scenario_agnostic:second_defective_reject",
+      "pass": true,
+      "detail": "发现第2件次品立即拒收（事实拒收 x>=D1=2）"
+    },
+    {
+      "check": "N=10:R:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=41/6 <= frozen_asn=22/3"
+    },
+    {
+      "check": "N=10:R:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=41/6 frozen_dual=41/6"
+    },
+    {
+      "check": "N=10:A:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:D=10:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=10:A:no_reject_below_D1",
+      "pass": true,
+      "detail": "D<=D0 无任何拒收（A 无统计拒收且事实拒收不可达）"
+    },
+    {
+      "check": "N=10:A:risk_limit",
+      "pass": true,
+      "detail": "risk=1/15 limit=1/10"
+    },
+    {
+      "check": "N=10:A:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=91/10 boundary=91/10"
+    },
+    {
+      "check": "N=10:A:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=10:A:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=10:A:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=10:scenario_agnostic:(9,9)_reject",
+      "pass": true,
+      "detail": "(9,9) 必须为拒收"
+    },
+    {
+      "check": "N=10:scenario_agnostic:(9,0)_accept",
+      "pass": true,
+      "detail": "(9,0) 必须为接收"
+    },
+    {
+      "check": "N=10:scenario_agnostic:second_defective_reject",
+      "pass": true,
+      "detail": "发现第2件次品立即拒收（事实拒收 x>=D1=2）"
+    },
+    {
+      "check": "N=10:A:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=35/4 <= frozen_asn=91/10"
+    },
+    {
+      "check": "N=10:A:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=35/4 frozen_dual=35/4"
+    },
+    {
+      "check": "N=20:R:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=10:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=11:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=12:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=13:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=14:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=15:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=16:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=17:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=18:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=19:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:D=20:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:R:no_accept_above_D0",
+      "pass": true,
+      "detail": "D>=D1 无任何接收（R 无统计接收且事实接收不可达）"
+    },
+    {
+      "check": "N=20:R:risk_limit",
+      "pass": true,
+      "detail": "risk=3/95 limit=1/20"
+    },
+    {
+      "check": "N=20:R:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=569/38 boundary=569/38"
+    },
+    {
+      "check": "N=20:R:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=20:R:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=20:R:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=20:R:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=555/38 <= frozen_asn=569/38"
+    },
+    {
+      "check": "N=20:R:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=555/38 frozen_dual=555/38"
+    },
+    {
+      "check": "N=20:A:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=10:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=11:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=12:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=13:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=14:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=15:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=16:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=17:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=18:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=19:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:D=20:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=20:A:no_reject_below_D1",
+      "pass": true,
+      "detail": "D<=D0 无任何拒收（A 无统计拒收且事实拒收不可达）"
+    },
+    {
+      "check": "N=20:A:risk_limit",
+      "pass": true,
+      "detail": "risk=1/12 limit=1/10"
+    },
+    {
+      "check": "N=20:A:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=1716/95 boundary=1716/95"
+    },
+    {
+      "check": "N=20:A:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=20:A:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=20:A:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=20:A:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=59124405264274773/3342515348439040 <= frozen_asn=1716/95"
+    },
+    {
+      "check": "N=20:A:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=59124405264274773/3342515348439040 frozen_dual=59124405264274773/3342515348439040"
+    },
+    {
+      "check": "N=23:R:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=10:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=11:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=12:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=13:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=14:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=15:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=16:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=17:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=18:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=19:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=20:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=21:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=22:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:D=23:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:R:no_accept_above_D0",
+      "pass": true,
+      "detail": "D>=D1 无任何接收（R 无统计接收且事实接收不可达）"
+    },
+    {
+      "check": "N=23:R:risk_limit",
+      "pass": true,
+      "detail": "risk=10/253 limit=1/20"
+    },
+    {
+      "check": "N=23:R:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=29973/1771 boundary=29973/1771"
+    },
+    {
+      "check": "N=23:R:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=23:R:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=23:R:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=23:R:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=2080631361910289175/124623045938642944 <= frozen_asn=29973/1771"
+    },
+    {
+      "check": "N=23:R:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=2080631361910289175/124623045938642944 frozen_dual=2080631361910289175/124623045938642944"
+    },
+    {
+      "check": "N=23:A:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=10:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=11:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=12:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=13:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=14:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=15:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=16:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=17:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=18:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=19:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=20:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=21:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=22:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:D=23:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=23:A:no_reject_below_D1",
+      "pass": true,
+      "detail": "D<=D0 无任何拒收（A 无统计拒收且事实拒收不可达）"
+    },
+    {
+      "check": "N=23:A:risk_limit",
+      "pass": true,
+      "detail": "risk=177/1771 limit=1/10"
+    },
+    {
+      "check": "N=23:A:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=5166/253 boundary=5166/253"
+    },
+    {
+      "check": "N=23:A:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=23:A:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=23:A:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=23:A:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=6355627568508017021/311557614846607360 <= frozen_asn=5166/253"
+    },
+    {
+      "check": "N=23:A:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=6355627568508017021/311557614846607360 frozen_dual=6355627568508017021/311557614846607360"
+    },
+    {
+      "check": "N=50:R:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=10:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=11:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=12:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=13:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=14:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=15:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=16:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=17:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=18:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=19:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=20:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=21:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=22:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=23:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=24:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=25:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=26:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=27:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=28:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=29:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=30:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=31:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=32:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=33:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=34:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=35:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=36:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=37:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=38:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=39:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=40:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=41:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=42:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=43:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=44:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=45:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=46:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=47:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=48:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=49:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:D=50:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:R:no_accept_above_D0",
+      "pass": true,
+      "detail": "D>=D1 无任何接收（R 无统计接收且事实接收不可达）"
+    },
+    {
+      "check": "N=50:R:risk_limit",
+      "pass": true,
+      "detail": "risk=13191/264845 limit=1/20"
+    },
+    {
+      "check": "N=50:R:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=6180801/151340 boundary=6180801/151340"
+    },
+    {
+      "check": "N=50:R:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=50:R:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=50:R:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=50:R:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=3705009228223418713/91000049080729600 <= frozen_asn=6180801/151340"
+    },
+    {
+      "check": "N=50:R:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=3705009228223418713/91000049080729600 frozen_dual=3705009228223418713/91000049080729600"
+    },
+    {
+      "check": "N=50:A:D=0:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=1:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=2:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=3:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=4:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=5:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=6:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=7:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=8:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=9:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=10:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=11:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=12:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=13:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=14:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=15:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=16:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=17:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=18:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=19:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=20:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=21:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=22:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=23:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=24:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=25:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=26:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=27:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=28:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=29:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=30:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=31:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=32:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=33:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=34:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=35:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=36:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=37:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=38:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=39:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=40:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=41:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=42:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=43:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=44:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=45:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=46:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=47:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=48:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=49:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:D=50:mass_conservation",
+      "pass": true,
+      "detail": "stopped+terminal=1 且 accepted+rejected=stopped"
+    },
+    {
+      "check": "N=50:A:no_reject_below_D1",
+      "pass": true,
+      "detail": "D<=D0 无任何拒收（A 无统计拒收且事实拒收不可达）"
+    },
+    {
+      "check": "N=50:A:risk_limit",
+      "pass": true,
+      "detail": "risk=131996/1324225 limit=1/10"
+    },
+    {
+      "check": "N=50:A:target_worst_point_at_boundary",
+      "pass": true,
+      "detail": "target_asn=23706383/529690 boundary=23706383/529690"
+    },
+    {
+      "check": "N=50:A:risk_matches_claim",
+      "pass": true,
+      "detail": "独立风险与冻结声称一致"
+    },
+    {
+      "check": "N=50:A:asn_matches_claim",
+      "pass": true,
+      "detail": "独立目标侧ASN与冻结声称一致"
+    },
+    {
+      "check": "N=50:A:factual_state_attack",
+      "pass": true,
+      "detail": "全部事实状态动作正确"
+    },
+    {
+      "check": "N=50:A:dual_is_valid_lower_bound",
+      "pass": true,
+      "detail": "independent_dual=52019284404553996477/1164800628233338880 <= frozen_asn=23706383/529690"
+    },
+    {
+      "check": "N=50:A:dual_cross_validation",
+      "pass": true,
+      "detail": "independent_dual=52019284404553996477/1164800628233338880 frozen_dual=52019284404553996477/1164800628233338880"
+    },
+    {
+      "check": "N=10:R:exhaustive_class_optimum_matches",
+      "pass": true,
+      "detail": "独立最优 asn=22/3 阈值=(2, 3, 4, 5, 6, 7, 8, 9, 10)；冻结 asn=22/3 阈值=(2, 3, 4, 5, 6, 7, 8, 9, 10)"
+    },
+    {
+      "check": "N=10:A:exhaustive_class_optimum_matches",
+      "pass": true,
+      "detail": "独立最优 asn=91/10 阈值=(-1, -1, -1, -1, -1, -1, 0, -1, -1)；冻结 asn=91/10 阈值=(-1, -1, -1, -1, -1, -1, 0, -1, -1)"
+    },
+    {
+      "check": "closure:N=10:R:numeric_consistency",
+      "pass": true,
+      "detail": "independent_risk=0 claimed=0 asn=22/3"
+    },
+    {
+      "check": "closure:N=10:A:numeric_consistency",
+      "pass": true,
+      "detail": "independent_risk=1/15 claimed=1/15 asn=91/10"
+    },
+    {
+      "check": "closure:N=23:R:numeric_consistency",
+      "pass": true,
+      "detail": "independent_risk=10/253 claimed=10/253 asn=29973/1771"
+    },
+    {
+      "check": "closure:N=23:A:numeric_consistency",
+      "pass": true,
+      "detail": "independent_risk=177/1771 claimed=177/1771 asn=5166/253"
+    },
+    {
+      "check": "closure:N=50:R:numeric_consistency",
+      "pass": true,
+      "detail": "independent_risk=102999/2118760 claimed=102999/2118760 asn=4321833/105938"
+    },
+    {
+      "check": "closure:N=50:A:numeric_consistency",
+      "pass": true,
+      "detail": "independent_risk=131996/1324225 claimed=131996/1324225 asn=23706383/529690"
+    }
+  ],
+  "unresolved": [
+    "reality validity under inspection error or non-random sampling remains unconfirmed (V4 not triggered)",
+    "fixture N values are not an official or user-selected business batch size"
+  ]
+}

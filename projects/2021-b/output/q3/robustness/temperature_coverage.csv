@@ -1,0 +1,8 @@
+temperature_c,observed_cell_count,observed_combination_count,total_combination_count,observed_coverage_fraction,missing_combination_count,is_strict_below_350,coverage_interpretation
+250.0,21,21,21,1.0,0,True,complete_coverage
+275.0,21,21,21,1.0,0,True,complete_coverage
+300.0,21,21,21,1.0,0,True,complete_coverage
+325.0,10,10,21,0.47619047619047616,11,True,partial_coverage
+350.0,21,21,21,1.0,0,False,complete_coverage
+400.0,19,19,21,0.9047619047619048,2,False,partial_coverage
+450.0,1,1,21,0.047619047619047616,20,False,single_combination_case

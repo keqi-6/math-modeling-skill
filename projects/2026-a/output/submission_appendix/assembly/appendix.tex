@@ -1,0 +1,311 @@
+\section*{附录 A\quad 文件清单}
+
+支撑材料中的程序、数据、图件与说明文件分别列于下表。除已注明的公共目录外，路径均相对于支撑材料根目录。
+
+\Needspace{6\baselineskip}
+
+{\linespread{1}\fontsize{10.5}{15}\selectfont\renewcommand{\arraystretch}{1.05}
+
+\begin{longtable}{@{}p{0.52\linewidth}p{0.44\linewidth}@{}}
+
+\caption{程序文件（公共目录：code/）}\label{tab:appendix-files}\\
+
+\toprule[0.9pt]
+
+\heiti 文件名 & \heiti 功能说明 \\
+
+\midrule[0.55pt]\endfirsthead
+
+\multicolumn{2}{c}{表\thetable\quad 程序文件（公共目录：code/）（续）}\\[4pt]
+
+\toprule[0.9pt]
+
+\heiti 文件名 & \heiti 功能说明 \\
+
+\midrule[0.55pt]\endhead
+
+\bottomrule[0.9pt]\endfoot
+
+\path{common.py} & 原始观测读取、环境与半径插值 \\
+
+\path{export_results.py} & 四份结果工作簿导出 \\
+
+\path{extract_figure_data.py} & 绘图数值样本提取 \\
+
+\path{figure_coordinates.py} & 实测收缩与材料坐标图 \\
+
+\path{figure_core.py} & 问题一径向剖面图 \\
+
+\path{figure_fields.py} & 问题二时空分布图 \\
+
+\path{figure_restructured.py} & 空间离散、扩散系数分解与达标进程图 \\
+
+\path{figure_sections.py} & 问题四含水率截面图 \\
+
+\path{q1_model.py} & 问题一径向有限体积计算 \\
+
+\path{q23_model.py} & 问题二、三的局部变物性耦合计算 \\
+
+\path{q4_model.py} & 问题四收缩域耦合计算 \\
+
+\path{redraw_figures.py} & 数据图绘制入口 \\
+
+\path{requirements.txt} & 公开软件依赖及版本 \\
+
+\path{requirements_figures.txt} & 绘图软件依赖及版本 \\
+
+\path{run_models.py} & 问题选择、参数设置与限时运行入口 \\
+
+\end{longtable}}
+
+\Needspace{6\baselineskip}
+
+{\linespread{1}\fontsize{10.5}{15}\selectfont\renewcommand{\arraystretch}{1.05}
+
+\begin{longtable}{@{}p{0.58\linewidth}p{0.38\linewidth}@{}}
+
+\caption{输入数据、绘图数据与计算结果}\label{tab:appendix-data}\\
+
+\toprule[0.9pt]
+
+\heiti 文件名 & \heiti 内容 \\
+
+\midrule[0.55pt]\endfirsthead
+
+\multicolumn{2}{c}{表\thetable\quad 输入数据、绘图数据与计算结果（续）}\\[4pt]
+
+\toprule[0.9pt]
+
+\heiti 文件名 & \heiti 内容 \\
+
+\midrule[0.55pt]\endhead
+
+\bottomrule[0.9pt]\endfoot
+
+\path{data/templates/result1.xlsx} & 题给result1输出模板 \\
+
+\path{data/templates/result2.xlsx} & 题给result2输出模板 \\
+
+\path{data/templates/result3.xlsx} & 题给result3输出模板 \\
+
+\path{data/templates/result4.xlsx} & 题给result4输出模板 \\
+
+data/附件1.xlsx & 题给环境温度与水分浓度观测 \\
+
+data/附件2.xlsx & 题给半径收缩观测 \\
+
+\path{figure_data/data_manifest.json} & 绘图数值样本及其来源、单位说明 \\
+
+\path{figure_data/q1_profiles.npz} & 绘图数值样本及其来源、单位说明 \\
+
+\path{figure_data/q2_fields.npz} & 绘图数值样本及其来源、单位说明 \\
+
+\path{figure_data/q4_sections.npz} & 绘图数值样本及其来源、单位说明 \\
+
+\path{figure_data/radius_observations.json} & 绘图数值样本及其来源、单位说明 \\
+
+\path{figure_data/restructured_figure_data.json} & 绘图数值样本及其来源、单位说明 \\
+
+\path{results/result1.xlsx} & 问题一：1秒间隔、前30分钟 \\
+
+\path{results/result2.xlsx} & 问题二：1秒间隔、前三小时 \\
+
+\path{results/result3.xlsx} & 问题三：1分钟间隔与完整干燥终点 \\
+
+\path{results/result4.xlsx} & 问题四：收缩过程、固定位置与实际表面 \\
+
+\end{longtable}}
+
+图件均位于\texttt{figures/}，完整文件名由表中基名加对应扩展名构成。
+
+\Needspace{6\baselineskip}
+
+{\linespread{1}\fontsize{10.5}{15}\selectfont\renewcommand{\arraystretch}{1.05}
+
+\begin{longtable}{@{}p{0.57\linewidth}p{0.20\linewidth}p{0.15\linewidth}@{}}
+
+\caption{论文图件文件}\label{tab:appendix-figures}\\
+
+\toprule[0.9pt]
+
+\heiti 文件基名 & \heiti 扩展名 & \heiti 对应图号 \\
+
+\midrule[0.55pt]\endfirsthead
+
+\multicolumn{3}{c}{表\thetable\quad 论文图件文件（续）}\\[4pt]
+
+\toprule[0.9pt]
+
+\heiti 文件基名 & \heiti 扩展名 & \heiti 对应图号 \\
+
+\midrule[0.55pt]\endhead
+
+\bottomrule[0.9pt]\endfoot
+
+\path{fig1_1_fig01_annular_control_volumes} & pdf / svg / png & 图1-1 \\
+
+\path{fig1_2_fig01_spacetime_grid} & pdf / svg / png & 图1-2 \\
+
+\path{fig1_3_fig03_q1_profiles} & pdf / svg & 图1-3 \\
+
+\path{fig1_3_fig03_q1_profiles_d98d193909de} & png & 图1-3 \\
+
+\path{fig2_1_fig04_q2_fields_sample} & pdf / svg / png & 图2-1 \\
+
+\path{fig2_2_fig09_q2_diffusivity_decomposition} & pdf / svg / png & 图2-2 \\
+
+\path{fig3_1_fig05_q3_completion_progress} & pdf / svg / png & 图3-1 \\
+
+\path{fig4_1_fig06_q4_coordinates} & pdf / svg / png & 图4-1 \\
+
+\path{fig4_2_fig07_q4_sections_sample} & pdf / svg / png & 图4-2 \\
+
+\end{longtable}}
+
+\Needspace{6\baselineskip}
+
+{\linespread{1}\fontsize{10.5}{15}\selectfont\renewcommand{\arraystretch}{1.05}
+
+\begin{longtable}{@{}p{0.58\linewidth}p{0.38\linewidth}@{}}
+
+\caption{参考文献与说明文件}\label{tab:appendix-other}\\
+
+\toprule[0.9pt]
+
+\heiti 文件名 & \heiti 用途 \\
+
+\midrule[0.55pt]\endfirsthead
+
+\multicolumn{2}{c}{表\thetable\quad 参考文献与说明文件（续）}\\[4pt]
+
+\toprule[0.9pt]
+
+\heiti 文件名 & \heiti 用途 \\
+
+\midrule[0.55pt]\endhead
+
+\bottomrule[0.9pt]\endfoot
+
+<未收录-AI工具使用详情>. & AI使用范围与人工修订说明 \\
+
+\path{figures/figure_manifest.json} & 图号、题注、文件对应关系 \\
+
+\path{figures/README.md} & 图件编辑与重绘说明 \\
+
+\path{README.md} & 环境配置、运行方法与文件说明 \\
+
+\path{references/references.bib} & 参考文献题录与检索标识 \\
+
+\path{references/references.txt} & 参考文献题录与检索标识 \\
+
+\end{longtable}}
+
+\clearpage
+
+\section*{附录 B\quad 完整程序}
+
+以下按逐问模型、公共模块和绘图程序列出源代码。题给附录3、4分别指原题提供的物性关系。版面中的长行自动续排，行号仍按原始源程序计数。
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.1\quad 问题一：预热阶段的径向传热传质}
+
+给出节点控制体、通量、解析Jacobian及分段隐式积分的完整实现。
+
+\AppendixListing{1}{code/q1\_model.py}{../support/code/q1_model.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.2\quad 问题二、三：局部变物性耦合计算}
+
+给出题给附录3物性、热质耦合方程及全域含水率达标判据。
+
+\AppendixListing{2}{code/q23\_model.py}{../support/code/q23_model.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.3\quad 问题四：收缩域的热质耦合计算}
+
+在材料坐标上处理实测半径收缩，按题给附录4计算物性，并区分固定物理位置与实际表面。
+
+\AppendixListing{3}{code/q4\_model.py}{../support/code/q4_model.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.4\quad 数据接口与公共参数}
+
+读取题给环境与半径观测，构造分段插值和长期环境延续接口。
+
+\AppendixListing{4}{code/common.py}{../support/code/common.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.5\quad 运行入口}
+
+选择问题、设置网格与容差，并限制单次计算时间。问题二与问题三复用同一条耦合计算轨迹，分别导出前三小时与完整干燥过程。
+
+\AppendixListing{5}{code/run\_models.py}{../support/code/run_models.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.6\quad 结果工作簿导出}
+
+按题给模板写入规定时空点的四位小数结果；域外位置保留空白。
+
+\AppendixListing{6}{code/export\_results.py}{../support/code/export_results.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.7\quad 绘图数值样本提取}
+
+读取已有计算结果，提取图件所需的数值数组及元数据。
+
+\AppendixListing{7}{code/extract\_figure\_data.py}{../support/code/extract_figure_data.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.8\quad 实测收缩与材料坐标图}
+
+结合半径观测说明固定物理位置与材料坐标之间的关系。
+
+\AppendixListing{8}{code/figure\_coordinates.py}{../support/code/figure_coordinates.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.9\quad 问题一径向剖面图}
+
+绘制五个时刻的温度与含水率径向分布。
+
+\AppendixListing{9}{code/figure\_core.py}{../support/code/figure_core.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.10\quad 问题二时空分布图}
+
+读取前三小时的温度与含水率场，绘制对应时空分布。
+
+\AppendixListing{10}{code/figure\_fields.py}{../support/code/figure_fields.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.11\quad 空间离散、扩散系数分解与达标进程图}
+
+构造圆环控制体示意；从主解状态分解扩散系数变化，并提取各规定半径的达标进程。
+
+\AppendixListing{11}{code/figure\_restructured.py}{../support/code/figure_restructured.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.12\quad 问题四含水率截面图}
+
+将六个时刻的完整径向含水率快照映射到同一厘米尺度下的圆截面。
+
+\AppendixListing{12}{code/figure\_sections.py}{../support/code/figure_sections.py}{Python}
+
+\Needspace{10\baselineskip}
+
+\subsection*{B.13\quad 数据图绘制入口}
+
+统一选择绘图对象、输入数据、字体与输出目录。
+
+\AppendixListing{13}{code/redraw\_figures.py}{../support/code/redraw_figures.py}{Python}

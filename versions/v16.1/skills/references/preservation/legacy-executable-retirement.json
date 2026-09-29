@@ -1,0 +1,118 @@
+{
+  "schema_version": "15.0",
+  "decision_id": "RETIRE.V15.LEGACY_EXECUTABLES",
+  "effective_release": "V15.0.0",
+  "authorization_quote": "退役旧测试链、补齐关键覆盖、最后迁移发布身份",
+  "risk": "L3",
+  "principle": "Migrate still-useful observable behavior into current owners and focused release drivers; do not ship obsolete executable compatibility surfaces or same-source self-oracles.",
+  "rollback": {
+    "kind": "external_pre_release_candidate_checkpoint",
+    "tree_sha256": "d6d254266e4dc294f4f04073fd54bad8dbee28683b620d0899228e1a394003ed",
+    "location_shipped": false
+  },
+  "retired_groups": [
+    {
+      "id": "v10_single_operation_change_stack",
+      "disposition": "retired_without_runtime_compatibility",
+      "paths": [
+        "references/change-envelope.schema.json",
+        "scripts/analyze_rule_change.py",
+        "scripts/apply_rule_change.py",
+        "scripts/run_change_evals.py",
+        "scripts/run_transaction_tests.py",
+        "evals/change-cases.json"
+      ],
+      "replacement": [
+        "references/semantic-plan.schema.json",
+        "references/capability-packets/governance/skill-maintenance.md",
+        "evals/release/release-plan.json",
+        "scripts/validate_release.py"
+      ]
+    },
+    {
+      "id": "same_source_atomic_oracle_stack",
+      "disposition": "retired_after_direct_inventory_and_reachability_migration",
+      "paths": [
+        "scripts/build_atomic_rule_cases.py",
+        "scripts/run_atomic_rule_evals.py",
+        "evals/atomic-rule-cases.json"
+      ],
+      "replacement_checks": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ]
+    },
+    {
+      "id": "fixed_version_oracle_and_byte_freeze_stack",
+      "disposition": "retired_after_lineage_disposition_migration",
+      "paths": [
+        "references/v10-lineage-seal.json",
+        "scripts/validate_v10_corpus.py",
+        "evals/v10-behavior-oracles.json",
+        "evals/v10-contract-oracles.json"
+      ],
+      "replacement": [
+        "references/migration/v15-preservation-ledger.json",
+        "scripts/validate_migration.py"
+      ]
+    },
+    {
+      "id": "superseded_behavior_harnesses",
+      "disposition": "retired_after_curated_behavior_migration",
+      "paths": [
+        "scripts/quick_validate.py",
+        "scripts/validate_contracts.py",
+        "scripts/run_maintenance_tests.py",
+        "scripts/run_behavior_evals.py",
+        "scripts/run_manuscript_behavior_evals.py",
+        "scripts/run_scenario_tests.py",
+        "scripts/run_forward_acceptance.py",
+        "scripts/run_v12_outcome_tests.py",
+        "scripts/run_v15_behavior_scenarios.py",
+        "evals/runtime-policy-cases.json",
+        "evals/behavior-cases.json",
+        "evals/manuscript-behavior-cases.json",
+        "evals/contract-cases.json",
+        "evals/forward-acceptance-cases.json",
+        "evals/platform-outcomes.json"
+      ],
+      "replacement": [
+        "scripts/validate_v15_package.py",
+        "scripts/validate_v15_contracts.py",
+        "scripts/run_v15_scenarios.py"
+      ]
+    },
+    {
+      "id": "superseded_versioned_release_drivers",
+      "disposition": "retired_after_v15_identity_migration",
+      "paths": [
+        "scripts/validate_v12_package.py",
+        "scripts/validate_v12_contracts.py",
+        "scripts/validate_v12_migration.py",
+        "scripts/validate_v14_package.py",
+        "scripts/validate_v14_contracts.py",
+        "scripts/run_v14_scenarios.py"
+      ],
+      "replacement": [
+        "scripts/validate_v15_package.py",
+        "scripts/validate_v15_contracts.py",
+        "scripts/run_v15_scenarios.py"
+      ]
+    }
+  ],
+  "preserved_sources": [
+    "references/preservation/audit-v1-v5.md",
+    "references/preservation/audit-v6-v10.md",
+    "references/preservation/audit-v11-v14.md",
+    "references/preservation/v1-v14-audit.md",
+    "references/migration/v1-v9-capability-ledger.json"
+  ],
+  "forbidden_revival": [
+    "single_operation_or_one_file_maintenance_gate",
+    "same_source_generated_oracle_as_behavior_proof",
+    "fixed_old_release_identity_as_current_acceptance",
+    "full_legacy_suite_as_default_release_gate"
+  ]
+}

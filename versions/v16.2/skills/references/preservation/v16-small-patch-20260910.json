@@ -1,0 +1,59 @@
+{
+  "kind": "non_normative_method_patch",
+  "patch_id": "20260910-methods",
+  "status": "reviewed_for_v16_1_release",
+  "authorization": "允许小补，不过根据你刚才的汇报，我观察到我们的skill似乎还有一点点问题，搜索参考文献的相关内容skill里是不是没有详细提及，我记得搜索文献找灵感在不少项目里都反复提及，但skill好像没有专门针对这个完善",
+  "base": {
+    "version": "16.0.0",
+    "root": "<WORKSPACE>\\总skill\\skills_v16\\skills",
+    "tree_sha256": "d373e9f8b0abf792576256c10c3f5ab5d69a14b658ed21dd5d5cfca30b30388e"
+  },
+  "rollback": {
+    "tree_sha256": "d373e9f8b0abf792576256c10c3f5ab5d69a14b658ed21dd5d5cfca30b30388e",
+    "strategy": "Use the unchanged skills_v16/skills stable package; V16.1 is stored separately and does not overwrite V16 or existing projects."
+  },
+  "changes": [
+    "Interpret only proposed next_actions against current component state, decisions and evidence; preserve existing recovery classification.",
+    "Include implementation, verification, teammate reading/revision and delivery within a known real deadline; no automatic quality reduction.",
+    "Connect project planning and per-question candidate work to conditional literature orientation using existing semantic routes.",
+    "Explain exploratory literature search, adjacent-problem methods, original-source reading, idea adaptation and minimum distinguishing checks.",
+    "Separate inspiration from authority; do not assume same-year post-contest commentary or papers exist at contest startup."
+  ],
+  "preserved": [
+    "All rules/*.json, route contracts, capability registry, state machine and project runtime protocols are byte-identical to stable V16.",
+    "All project execution, recovery, evidence and state scripts are byte-identical to stable V16.",
+    "Only release identity literals and release-report schema bindings change in three release driver scripts; underlying case logic is unchanged.",
+    "Existing tiers, human gates, evidence requirements, three release drivers and all 73 required case IDs are retained.",
+    "Inherited path-preflight tests retain every assertion; only temporary directory-alias fixture creation gains a Windows permission-compatible fallback."
+  ],
+  "historical_evidence": [
+    {
+      "project": "2021 B",
+      "path": "planning/audits/2026-07-28_literature_routing_skill_gap.md"
+    },
+    {
+      "project": "2022 A",
+      "path": "planning/inspiration.md"
+    },
+    {
+      "project": "集训第六题 B",
+      "path": "planning/analysis/2026-08-20_q4_s3_literature_orientation.md"
+    },
+    {
+      "project": "2024 B",
+      "path": "planning/analysis/2026-08-23_q1_2024_excellent_papers_audit.md"
+    },
+    {
+      "project": "2025 A",
+      "path": "planning/47_q5_a196_structural_audit_spec.md"
+    }
+  ],
+  "release_id": "V16.1.0",
+  "release_authorization": "把这次小补迭代算作v16.1版本跟以前一样放入到总skill吧，它应该保有了绝大部分v16的能力，接下来的比赛我将会使用小补后的版本",
+  "release_identity_changes": [
+    "SKILL metadata and display name: 16.1.0.",
+    "Release-only policy/plan/state/manifest schema and driver report identity: 16.1; project runtime schema remains 16.0.",
+    "Historical preservation reviews retain their original V16.0.0-candidate review identity."
+  ],
+  "windows_test_fixture_adaptation": "The inherited scenario fixture uses a real Windows directory junction only when directory symlink creation fails with WinError 1314; target resolution is checked, original assertions and required case IDs are unchanged, and the actual alias kind is reported."
+}

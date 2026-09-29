@@ -1,0 +1,48 @@
+{
+  "figure_id": "fig01_spacetime_grid",
+  "data_driven_visual": false,
+  "size_cm": [
+    15.8,
+    9.6
+  ],
+  "sources": {
+    "docs/Q1/solution_brief.md": "61e34a077283431f889d2d664e6322dc8828b9aff200916789169ea8ef22bc54",
+    "src/Q1/solve.py": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+  },
+  "generator": {
+    "path": "scripts/build_spacetime_grid.py",
+    "sha256": "33d81317f3c2f268b2453ee469c61c778c714cb4081c6c9d18e740b0632cc563"
+  },
+  "mapping": {
+    "axes": "horizontal radial coordinate; vertical internal integration time, not a second spatial coordinate",
+    "intersections": "nodal field values u_i^n for scalar Q1 field; FVM faces remain between spatial nodes",
+    "new_layer": "all new time nodes unknown; highlighted nearest neighbours coupled implicitly",
+    "history": "accepted values on same spatial column enter BDF; omitted history depends on adaptive order",
+    "diagonal": "illustrative historical influence after the implicit system is solved, not additional old-layer terms of a classical BDF local residual; not an exhaustive influence graph",
+    "spacing": "spatially uniform, schematic nonuniform time intervals; not actual sampled run times or 1-second output grid",
+    "scope": "one scalar Q1 field; no Q4 moving geometry or new time integration algorithm"
+  },
+  "outputs": {
+    "png": {
+      "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid.png",
+      "sha256": "277a191cc63d60542b01e64d16e1ae12f851d62d8d6e5c3e533d2f51e5ddfa0e"
+    },
+    "pdf": {
+      "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid.pdf",
+      "sha256": "bd27a79a725d2e3a9fe66adb47ba6bb23a5821a28b7f2f7cc06f67bbcab18230"
+    },
+    "svg": {
+      "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid.svg",
+      "sha256": "11e893d2ed5ed67cd901094c135bf27139b638249fcef4ab664bc573f48e6a9d"
+    },
+    "no_text": {
+      "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid_no_text.png",
+      "sha256": "9b2003e6e35dce82705f6ad04f40dd43a004a5f8400250270a056f63b0815ccf"
+    },
+    "gray": {
+      "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid_gray.png",
+      "sha256": "41756617159fa3a3c39bb5c68723b4b22663cdcf934817b4cb2db39acac4532a"
+    }
+  },
+  "status": "working diagram replacing rejected four-panel composition"
+}

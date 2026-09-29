@@ -1,0 +1,1362 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "Q5-FULL-CONDITION-HANDOFF-1.0",
+  "status": "pilot_complete",
+  "generated_at": "2026-08-28T21:53:16.227261+00:00",
+  "objective": "longest connected interval satisfying forall missile, forall visible target point, exists active cloud",
+  "baseline_seed_record": {
+    "longest_continuous_s": 7.785616869360563,
+    "longest_interval_s": [
+      15.88759915659558,
+      23.673216025956144
+    ],
+    "total_intersection_s": 7.785616869360563
+  },
+  "baseline_strict_probe": {
+    "settings": "refine_probe",
+    "longest_continuous_s": 7.785618561156735,
+    "longest_interval_s": [
+      15.887597635898342,
+      23.673216197055076
+    ],
+    "total_intersection_s": 7.785618561156735,
+    "intersection_intervals_s": [
+      [
+        15.887597635898342,
+        23.673216197055076
+      ]
+    ],
+    "durations_s": [
+      14.57974037687559,
+      11.62491463433008,
+      10.0854022940643
+    ]
+  },
+  "best_strict_probe": {
+    "settings": "refine_probe",
+    "longest_continuous_s": 8.134531617667093,
+    "longest_interval_s": [
+      15.887597635898342,
+      24.022129253565435
+    ],
+    "total_intersection_s": 8.134531617667093,
+    "intersection_intervals_s": [
+      [
+        15.887597635898342,
+        24.022129253565435
+      ]
+    ],
+    "durations_s": [
+      14.056313988930253,
+      10.792763273933645,
+      8.466422682524946
+    ]
+  },
+  "screen_verification": {
+    "baseline": {
+      "settings": "screen_strict",
+      "longest_continuous_s": 7.785616869360563,
+      "longest_interval_s": [
+        15.88759915659558,
+        23.673216025956144
+      ],
+      "total_intersection_s": 7.785616869360563,
+      "intersection_intervals_s": [
+        [
+          15.88759915659558,
+          23.673216025956144
+        ]
+      ],
+      "durations_s": [
+        14.579078517978784,
+        11.624838000610358,
+        10.085402122965368
+      ]
+    },
+    "candidate": {
+      "settings": "screen_strict",
+      "longest_continuous_s": 8.134011505745754,
+      "longest_interval_s": [
+        15.88759915659558,
+        24.021610662341335
+      ],
+      "total_intersection_s": 8.134011505745754,
+      "intersection_intervals_s": [
+        [
+          15.88759915659558,
+          24.021610662341335
+        ]
+      ],
+      "durations_s": [
+        14.056207170631241,
+        10.792686965638158,
+        8.46468651246867
+      ]
+    },
+    "improvement_s": 0.34839463638519064,
+    "candidate_retains_improvement": true
+  },
+  "improvement_over_baseline_s": 0.34891305651035864,
+  "best_decision": {
+    "source": "full_condition_strict_audit",
+    "active_bomb_count": 15,
+    "platforms": [
+      {
+        "platform": "FY1",
+        "heading_rad": 0.0643902074044416,
+        "heading_deg": 3.6892871262465263,
+        "speed_mps": 139.55234670566875,
+        "bombs": [
+          {
+            "platform": 0,
+            "label": "M1",
+            "release_s": 0.7388948056749916,
+            "fuse_s": 0.381497400697505,
+            "bomb_number": 1,
+            "explosion_time_s": 1.1203922063724965,
+            "release_point_m": [
+              17902.900816485362,
+              6.6349772081961405,
+              1800.0
+            ],
+            "explosion_point_m": [
+              17956.02934536026,
+              10.060669930858742,
+              1799.2868526929792
+            ]
+          },
+          {
+            "platform": 0,
+            "label": "M1",
+            "release_s": 2.555246076687102,
+            "fuse_s": 0.0,
+            "bomb_number": 2,
+            "explosion_time_s": 2.555246076687102,
+            "release_point_m": [
+              18155.851611883943,
+              22.94507871748238,
+              1800.0
+            ],
+            "explosion_point_m": [
+              18155.851611883943,
+              22.94507871748238,
+              1800.0
+            ]
+          },
+          {
+            "platform": 0,
+            "label": "M1",
+            "release_s": 3.711581244831144,
+            "fuse_s": 9.153887478917668e-06,
+            "bomb_number": 3,
+            "explosion_time_s": 3.711590398718623,
+            "release_point_m": [
+              18316.886487239528,
+              33.32850194193264,
+              1800.0
+            ],
+            "explosion_point_m": [
+              18316.88776203871,
+              33.328584140148585,
+              1799.9999999995894
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY2",
+        "heading_rad": 4.287008023812072,
+        "heading_deg": 245.62746650315123,
+        "speed_mps": 116.7749664710228,
+        "bombs": [
+          {
+            "platform": 1,
+            "label": "M1",
+            "release_s": 4.669232920364355,
+            "fuse_s": 4.702136852482555,
+            "bomb_number": 1,
+            "explosion_time_s": 9.371369772846911,
+            "release_point_m": [
+              11774.99307125184,
+              903.3422520585816,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11548.400526014648,
+              403.1845731642718,
+              1291.6605542005748
+            ]
+          },
+          {
+            "platform": 1,
+            "label": "M1",
+            "release_s": 5.672103525786559,
+            "fuse_s": 7.041286008645829,
+            "bomb_number": 2,
+            "explosion_time_s": 12.713389534432388,
+            "release_point_m": [
+              11726.665468258701,
+              796.6687438270043,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11387.351031334196,
+              47.70005639802821,
+              1157.0594275877975
+            ]
+          },
+          {
+            "platform": 1,
+            "label": "M1",
+            "release_s": 9.872766702636778,
+            "fuse_s": 6.588834226174666,
+            "bomb_number": 3,
+            "explosion_time_s": 16.461600928811443,
+            "release_point_m": [
+              11524.238573681165,
+              349.85190070578483,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11206.727458140876,
+              -350.99031987803914,
+              1187.2775913459475
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY3",
+        "heading_rad": 1.730818888623544,
+        "heading_deg": 99.16861741965278,
+        "speed_mps": 139.41629139614776,
+        "bombs": [
+          {
+            "platform": 2,
+            "label": "M1",
+            "release_s": 0.0,
+            "fuse_s": 0.1256371143280987,
+            "bomb_number": 1,
+            "explosion_time_s": 0.1256371143280987,
+            "release_point_m": [
+              6000.0,
+              -3000.0,
+              700.0
+            ],
+            "explosion_point_m": [
+              5997.209014369763,
+              -2982.7079275471274,
+              699.9226550459662
+            ]
+          },
+          {
+            "platform": 2,
+            "label": "M1",
+            "release_s": 2.8683901887069756,
+            "fuse_s": 0.0,
+            "bomb_number": 2,
+            "explosion_time_s": 2.8683901887069756,
+            "release_point_m": [
+              5936.279690588184,
+              -2605.2089286554374,
+              700.0
+            ],
+            "explosion_point_m": [
+              5936.279690588184,
+              -2605.2089286554374,
+              700.0
+            ]
+          },
+          {
+            "platform": 2,
+            "label": "M1",
+            "release_s": 16.403409576112224,
+            "fuse_s": 4.775290957958661,
+            "bomb_number": 3,
+            "explosion_time_s": 21.178700534070884,
+            "release_point_m": [
+              5635.6038527416,
+              -742.3156494701857,
+              700.0
+            ],
+            "explosion_point_m": [
+              5529.522393332572,
+              -85.06816595249256,
+              588.2633217075074
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY4",
+        "heading_rad": 4.745469394950402,
+        "heading_deg": 271.8953681391584,
+        "speed_mps": 129.2675849601,
+        "bombs": [
+          {
+            "platform": 3,
+            "label": "M1",
+            "release_s": 1.8208704544187657,
+            "fuse_s": 10.67912954558123,
+            "bomb_number": 1,
+            "explosion_time_s": 12.499999999999995,
+            "release_point_m": [
+              11007.785032246546,
+              1764.7492516229718,
+              1800.0
+            ],
+            "explosion_point_m": [
+              11053.443067762273,
+              385.03922803694377,
+              1241.185341528601
+            ]
+          },
+          {
+            "platform": 3,
+            "label": "M1",
+            "release_s": 3.398124999845491,
+            "fuse_s": 11.747958459281808,
+            "bomb_number": 2,
+            "explosion_time_s": 15.146083459127299,
+            "release_point_m": [
+              11014.528497970514,
+              1560.972914161805,
+              1800.0
+            ],
+            "explosion_point_m": [
+              11064.756253171136,
+              43.17354917047123,
+              1123.7288129910462
+            ]
+          },
+          {
+            "platform": 3,
+            "label": "M1",
+            "release_s": 6.990613292571973,
+            "fuse_s": 11.289500291265194,
+            "bomb_number": 3,
+            "explosion_time_s": 18.280113583837167,
+            "release_point_m": [
+              11029.887985591582,
+              1096.8347008426208,
+              1800.0
+            ],
+            "explosion_point_m": [
+              11078.155627917045,
+              -361.73330759408236,
+              1175.4811975502632
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY5",
+        "heading_rad": 2.105207078339758,
+        "heading_deg": 120.619480589935,
+        "speed_mps": 138.5268955873774,
+        "bombs": [
+          {
+            "platform": 4,
+            "label": "M1",
+            "release_s": 11.456346482904353,
+            "fuse_s": 2.0396668448585524,
+            "bomb_number": 1,
+            "explosion_time_s": 13.496013327762906,
+            "release_point_m": [
+              12191.68071054156,
+              -634.2667268982661,
+              1300.0
+            ],
+            "explosion_point_m": [
+              12047.76903178531,
+              -391.114088295496,
+              1279.6148198937253
+            ]
+          },
+          {
+            "platform": 4,
+            "label": "M1",
+            "release_s": 12.45842906406513,
+            "fuse_s": 4.452454083418179,
+            "bomb_number": 2,
+            "explosion_time_s": 16.91088314748331,
+            "release_point_m": [
+              12120.977307742833,
+              -514.8065197956621,
+              1300.0
+            ],
+            "explosion_point_m": [
+              11806.82789488896,
+              15.979162861196983,
+              1202.8606979117585
+            ]
+          },
+          {
+            "platform": 4,
+            "label": "M1",
+            "release_s": 18.2935611601275,
+            "fuse_s": 1.6413268042005313,
+            "bomb_number": 3,
+            "explosion_time_s": 19.93488796432803,
+            "release_point_m": [
+              11709.27102452037,
+              180.81088916,
+              1300.0
+            ],
+            "explosion_point_m": [
+              11593.46481019888,
+              376.47663930778344,
+              1286.799626976883
+            ]
+          }
+        ]
+      }
+    ],
+    "constraint_margins": {
+      "speed_low_mps": 46.77496647102279,
+      "speed_high_mps": 0.44765329433124634,
+      "release_time_s": 0.0,
+      "fuse_delay_s": 0.0,
+      "explosion_height_m": 588.2633217075074,
+      "one_second_gap_s": 0.0020825811607778633,
+      "latest_arrival_s": 45.820470273401725,
+      "capacity_bombs": 0.0
+    }
+  },
+  "best_proxy": {
+    "longest_continuous_node_s": 9.0,
+    "longest_interval_nodes_s": [
+      15.0,
+      24.0
+    ],
+    "threshold_runs": [
+      {
+        "threshold_m": 0.0,
+        "duration_s": 9.0,
+        "interval_s": [
+          15.0,
+          24.0
+        ],
+        "node_count": 19
+      },
+      {
+        "threshold_m": 2.5,
+        "duration_s": 10.0,
+        "interval_s": [
+          14.5,
+          24.5
+        ],
+        "node_count": 21
+      },
+      {
+        "threshold_m": 5.0,
+        "duration_s": 10.5,
+        "interval_s": [
+          14.0,
+          24.5
+        ],
+        "node_count": 22
+      },
+      {
+        "threshold_m": 10.0,
+        "duration_s": 10.5,
+        "interval_s": [
+          14.0,
+          24.5
+        ],
+        "node_count": 22
+      },
+      {
+        "threshold_m": 20.0,
+        "duration_s": 10.5,
+        "interval_s": [
+          14.0,
+          24.5
+        ],
+        "node_count": 22
+      },
+      {
+        "threshold_m": 40.0,
+        "duration_s": 12.5,
+        "interval_s": [
+          14.0,
+          26.5
+        ],
+        "node_count": 26
+      },
+      {
+        "threshold_m": 80.0,
+        "duration_s": 12.5,
+        "interval_s": [
+          14.0,
+          26.5
+        ],
+        "node_count": 26
+      },
+      {
+        "threshold_m": 160.0,
+        "duration_s": 13.0,
+        "interval_s": [
+          14.0,
+          27.0
+        ],
+        "node_count": 27
+      }
+    ],
+    "strict_extension_margin_m": 1.886080168131981,
+    "minimum_global_margin_m": -4.784981369779203,
+    "minimum_per_missile_margin_m": [
+      -6.753334773672499,
+      -7.31323960134936,
+      -7.049875853226309
+    ]
+  },
+  "best_proxy_score": [
+    9.0,
+    -1.886080168131981,
+    10.0,
+    10.5,
+    10.5,
+    10.5,
+    12.5,
+    12.5,
+    13.0,
+    4.784981369779203,
+    2.686355132666435
+  ],
+  "strict_audits": [
+    {
+      "source": "historical_seed",
+      "settings": "refine_probe",
+      "longest_continuous_s": 7.785618561156735,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.673216197055076
+      ],
+      "total_intersection_s": 7.785618561156735,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.673216197055076
+        ]
+      ],
+      "durations_s": [
+        14.57974037687559,
+        11.62491463433008,
+        10.0854022940643
+      ]
+    },
+    {
+      "source": "generation_1",
+      "settings": "refine_probe",
+      "longest_continuous_s": 7.78561832516991,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.67321596106825
+      ],
+      "total_intersection_s": 7.78561832516991,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.67321596106825
+        ]
+      ],
+      "durations_s": [
+        14.579739599437431,
+        11.624913492366998,
+        10.085402058077475
+      ]
+    },
+    {
+      "source": "generation_4",
+      "settings": "refine_probe",
+      "longest_continuous_s": 7.785619203449077,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.67321683934742
+      ],
+      "total_intersection_s": 7.785619203449077,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.67321683934742
+        ]
+      ],
+      "durations_s": [
+        14.579739223328511,
+        10.537100055373374,
+        10.085402936356642
+      ]
+    },
+    {
+      "source": "generation_8",
+      "settings": "refine_probe",
+      "longest_continuous_s": 7.785619203449077,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.67321683934742
+      ],
+      "total_intersection_s": 7.785619203449077,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.67321683934742
+        ]
+      ],
+      "durations_s": [
+        9.991438332881462,
+        10.537100055373374,
+        10.085402936356642
+      ]
+    },
+    {
+      "source": "generation_12",
+      "settings": "refine_probe",
+      "longest_continuous_s": 7.785619161289869,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.67321679718821
+      ],
+      "total_intersection_s": 7.785619161289869,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.67321679718821
+        ]
+      ],
+      "durations_s": [
+        14.540378155303804,
+        10.79165491787557,
+        8.983589924573733
+      ]
+    },
+    {
+      "source": "generation_16",
+      "settings": "refine_probe",
+      "longest_continuous_s": 7.785619416995143,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.673217052893484
+      ],
+      "total_intersection_s": 7.785619416995143,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.673217052893484
+        ]
+      ],
+      "durations_s": [
+        13.409029977459513,
+        10.787381211090254,
+        8.034240381310537
+      ]
+    },
+    {
+      "source": "generation_20",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.115220168094911,
+      "longest_interval_s": [
+        15.887597635898342,
+        24.002817803993253
+      ],
+      "total_intersection_s": 8.115220168094911,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          24.002817803993253
+        ]
+      ],
+      "durations_s": [
+        12.89609084672831,
+        10.809009833575494,
+        10.164608243018208
+      ]
+    },
+    {
+      "source": "generation_24",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.134531617667093,
+      "longest_interval_s": [
+        15.887597635898342,
+        24.022129253565435
+      ],
+      "total_intersection_s": 8.134531617667093,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          24.022129253565435
+        ]
+      ],
+      "durations_s": [
+        14.056313988930253,
+        10.792763273933645,
+        8.466422682524946
+      ]
+    },
+    {
+      "source": "generation_28",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.11751204371011,
+      "longest_interval_s": [
+        15.887597635898342,
+        24.005109679608452
+      ],
+      "total_intersection_s": 8.11751204371011,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          24.005109679608452
+        ]
+      ],
+      "durations_s": [
+        10.977640592696229,
+        10.755524334704713,
+        8.366133008025505
+      ]
+    },
+    {
+      "source": "generation_32",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.117512066463672,
+      "longest_interval_s": [
+        15.887597635898342,
+        24.005109702362013
+      ],
+      "total_intersection_s": 8.117512066463672,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          24.005109702362013
+        ]
+      ],
+      "durations_s": [
+        8.250728439999602,
+        10.766034020770139,
+        8.389526915748904
+      ]
+    },
+    {
+      "source": "generation_36",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.112920717829706,
+      "longest_interval_s": [
+        15.887597635898342,
+        24.000518353728047
+      ],
+      "total_intersection_s": 8.112920717829706,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          24.000518353728047
+        ]
+      ],
+      "durations_s": [
+        8.25072861947719,
+        10.765226716678033,
+        8.384935567114939
+      ]
+    },
+    {
+      "source": "generation_40",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.111323760299545,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.998921396197886
+      ],
+      "total_intersection_s": 8.111323760299545,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.998921396197886
+        ]
+      ],
+      "durations_s": [
+        8.207946255394962,
+        10.788766747640707,
+        8.38673098098945
+      ]
+    },
+    {
+      "source": "generation_44",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.109916846048495,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.997514481946837
+      ],
+      "total_intersection_s": 8.109916846048495,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.997514481946837
+        ]
+      ],
+      "durations_s": [
+        8.194287297099965,
+        10.788767941151963,
+        8.394225098724958
+      ]
+    },
+    {
+      "source": "generation_48",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.108252215279943,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.995849851178285
+      ],
+      "total_intersection_s": 8.108252215279943,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.995849851178285
+        ]
+      ],
+      "durations_s": [
+        12.005934306800789,
+        10.805013684395025,
+        8.393578466137862
+      ]
+    },
+    {
+      "source": "generation_52",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.107722330544402,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.995319966442743
+      ],
+      "total_intersection_s": 8.107722330544402,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.995319966442743
+        ]
+      ],
+      "durations_s": [
+        8.196226068549603,
+        10.799914396332861,
+        8.402637837511554
+      ]
+    },
+    {
+      "source": "generation_56",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.10772169447063,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.99531933036897
+      ],
+      "total_intersection_s": 8.10772169447063,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.99531933036897
+        ]
+      ],
+      "durations_s": [
+        8.194677671228707,
+        10.805013137282035,
+        8.400704438693277
+      ]
+    },
+    {
+      "source": "generation_60",
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.107720497811872,
+      "longest_interval_s": [
+        15.887597635898342,
+        23.995318133710214
+      ],
+      "total_intersection_s": 8.107720497811872,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          23.995318133710214
+        ]
+      ],
+      "durations_s": [
+        10.21143041737131,
+        10.805015285544119,
+        8.413899939586763
+      ]
+    },
+    {
+      "source": "final_top_proxy",
+      "settings": "refine_probe",
+      "longest_continuous_s": 3.2598438368601634,
+      "longest_interval_s": [
+        20.96945399236335,
+        24.229297829223512
+      ],
+      "total_intersection_s": 8.59654916218847,
+      "intersection_intervals_s": [
+        [
+          14.975146134728124,
+          16.508022730589794
+        ],
+        [
+          16.627108355057345,
+          18.64395429112809
+        ],
+        [
+          18.747052380340065,
+          20.53403517373596
+        ],
+        [
+          20.96945399236335,
+          24.229297829223512
+        ]
+      ],
+      "durations_s": [
+        9.44077423435498,
+        10.947786217376184,
+        9.507053330728315
+      ]
+    },
+    {
+      "source": "final_top_proxy",
+      "settings": "refine_probe",
+      "longest_continuous_s": 3.2598438368601634,
+      "longest_interval_s": [
+        20.96945399236335,
+        24.229297829223512
+      ],
+      "total_intersection_s": 8.59654916218847,
+      "intersection_intervals_s": [
+        [
+          14.975146134728124,
+          16.508022730589794
+        ],
+        [
+          16.627108355057345,
+          18.64395429112809
+        ],
+        [
+          18.747052380340065,
+          20.53403517373596
+        ],
+        [
+          20.96945399236335,
+          24.229297829223512
+        ]
+      ],
+      "durations_s": [
+        9.44077423435498,
+        10.947786217376184,
+        9.507053330728315
+      ]
+    },
+    {
+      "source": "final_top_proxy",
+      "settings": "refine_probe",
+      "longest_continuous_s": 3.2598441646858163,
+      "longest_interval_s": [
+        20.969453664537696,
+        24.229297829223512
+      ],
+      "total_intersection_s": 8.596550665166166,
+      "intersection_intervals_s": [
+        [
+          14.975146134728124,
+          16.508022730589794
+        ],
+        [
+          16.627108355057345,
+          18.64395429112809
+        ],
+        [
+          18.747052380340065,
+          20.534036348888
+        ],
+        [
+          20.969453664537696,
+          24.229297829223512
+        ]
+      ],
+      "durations_s": [
+        9.44077423435498,
+        10.94778772035388,
+        9.507053330728315
+      ]
+    },
+    {
+      "source": "final_top_proxy",
+      "settings": "refine_probe",
+      "longest_continuous_s": 3.259844924055045,
+      "longest_interval_s": [
+        20.96945399236335,
+        24.229298916418394
+      ],
+      "total_intersection_s": 8.596550249383352,
+      "intersection_intervals_s": [
+        [
+          14.975146134728124,
+          16.508022730589794
+        ],
+        [
+          16.627108355057345,
+          18.64395429112809
+        ],
+        [
+          18.747052380340065,
+          20.53403517373596
+        ],
+        [
+          20.96945399236335,
+          24.229298916418394
+        ]
+      ],
+      "durations_s": [
+        9.440774060849687,
+        10.947786252024216,
+        9.507054417923197
+      ]
+    },
+    {
+      "source": "final_top_proxy",
+      "settings": "refine_probe",
+      "longest_continuous_s": 3.259843784382081,
+      "longest_interval_s": [
+        20.96945399236335,
+        24.22929777674543
+      ],
+      "total_intersection_s": 8.596549109710388,
+      "intersection_intervals_s": [
+        [
+          14.975146134728124,
+          16.508022730589794
+        ],
+        [
+          16.627108355057345,
+          18.64395429112809
+        ],
+        [
+          18.747052380340065,
+          20.53403517373596
+        ],
+        [
+          20.96945399236335,
+          24.22929777674543
+        ]
+      ],
+      "durations_s": [
+        9.440772969787435,
+        10.94778752991705,
+        9.507053278250233
+      ]
+    },
+    {
+      "source": "final_top_proxy",
+      "settings": "refine_probe",
+      "longest_continuous_s": 3.2598438368601634,
+      "longest_interval_s": [
+        20.96945399236335,
+        24.229297829223512
+      ],
+      "total_intersection_s": 8.316521015114118,
+      "intersection_intervals_s": [
+        [
+          14.975146584235995,
+          16.508022703231674
+        ],
+        [
+          16.627108355057345,
+          18.611211752107693
+        ],
+        [
+          18.99433751152803,
+          20.53403517373596
+        ],
+        [
+          20.96945399236335,
+          24.229297829223512
+        ]
+      ],
+      "durations_s": [
+        9.160746114638746,
+        10.947786190018064,
+        9.507054400827679
+      ]
+    },
+    {
+      "source": "final_top_proxy",
+      "settings": "refine_probe",
+      "longest_continuous_s": 3.2598438368601634,
+      "longest_interval_s": [
+        20.96945399236335,
+        24.229297829223512
+      ],
+      "total_intersection_s": 8.596550970017024,
+      "intersection_intervals_s": [
+        [
+          14.975146134728124,
+          16.508022730589794
+        ],
+        [
+          16.627108355057345,
+          18.64395636559751
+        ],
+        [
+          18.747052646980933,
+          20.53403517373596
+        ],
+        [
+          20.96945399236335,
+          24.229297829223512
+        ]
+      ],
+      "durations_s": [
+        9.440776042183533,
+        10.947786217376184,
+        9.507053330728315
+      ]
+    },
+    {
+      "source": "final_top_proxy",
+      "settings": "refine_probe",
+      "longest_continuous_s": 3.3232871252772007,
+      "longest_interval_s": [
+        20.979962959948143,
+        24.303250085225343
+      ],
+      "total_intersection_s": 8.342756015978214,
+      "intersection_intervals_s": [
+        [
+          14.975146464346928,
+          16.50720974989057
+        ],
+        [
+          16.693380191642937,
+          18.611206053735888
+        ],
+        [
+          18.961441585021692,
+          20.531021328086112
+        ],
+        [
+          20.979962959948143,
+          24.303250085225343
+        ]
+      ],
+      "durations_s": [
+        9.333268816360679,
+        10.869803920746223,
+        9.868123430974169
+      ]
+    }
+  ],
+  "handoff_audit": {
+    "available": true,
+    "sample_step_s": 0.25,
+    "per_missile": [
+      {
+        "missile": "M1",
+        "sample_count": 34,
+        "union_full_sample_count": 34,
+        "single_cloud_full_sample_count": 33,
+        "joint_only_full_sample_count": 1,
+        "contributor_set_switch_count": 4,
+        "maximum_contributing_cloud_count": 2,
+        "examples": [
+          {
+            "time_s": 18.38759915659558,
+            "contributing_bomb_indices": [
+              4,
+              10
+            ],
+            "single_full_cloud_count": 2
+          },
+          {
+            "time_s": 18.63759915659558,
+            "contributing_bomb_indices": [
+              4,
+              10
+            ],
+            "single_full_cloud_count": 2
+          },
+          {
+            "time_s": 18.88759915659558,
+            "contributing_bomb_indices": [
+              4,
+              10
+            ],
+            "single_full_cloud_count": 2
+          },
+          {
+            "time_s": 19.13759915659558,
+            "contributing_bomb_indices": [
+              4,
+              10
+            ],
+            "single_full_cloud_count": 2
+          },
+          {
+            "time_s": 21.88759915659558,
+            "contributing_bomb_indices": [
+              10,
+              13
+            ],
+            "single_full_cloud_count": 1
+          }
+        ]
+      },
+      {
+        "missile": "M2",
+        "sample_count": 34,
+        "union_full_sample_count": 34,
+        "single_cloud_full_sample_count": 33,
+        "joint_only_full_sample_count": 1,
+        "contributor_set_switch_count": 4,
+        "maximum_contributing_cloud_count": 2,
+        "examples": [
+          {
+            "time_s": 16.38759915659558,
+            "contributing_bomb_indices": [
+              3,
+              9
+            ],
+            "single_full_cloud_count": 1
+          },
+          {
+            "time_s": 16.63759915659558,
+            "contributing_bomb_indices": [
+              3,
+              9
+            ],
+            "single_full_cloud_count": 1
+          },
+          {
+            "time_s": 16.88759915659558,
+            "contributing_bomb_indices": [
+              3,
+              9
+            ],
+            "single_full_cloud_count": 1
+          },
+          {
+            "time_s": 20.63759915659558,
+            "contributing_bomb_indices": [
+              9,
+              14
+            ],
+            "single_full_cloud_count": 0
+          }
+        ]
+      },
+      {
+        "missile": "M3",
+        "sample_count": 34,
+        "union_full_sample_count": 34,
+        "single_cloud_full_sample_count": 34,
+        "joint_only_full_sample_count": 0,
+        "contributor_set_switch_count": 6,
+        "maximum_contributing_cloud_count": 2,
+        "examples": [
+          {
+            "time_s": 16.88759915659558,
+            "contributing_bomb_indices": [
+              5,
+              12
+            ],
+            "single_full_cloud_count": 2
+          },
+          {
+            "time_s": 17.13759915659558,
+            "contributing_bomb_indices": [
+              5,
+              12
+            ],
+            "single_full_cloud_count": 2
+          },
+          {
+            "time_s": 19.63759915659558,
+            "contributing_bomb_indices": [
+              5,
+              11
+            ],
+            "single_full_cloud_count": 1
+          },
+          {
+            "time_s": 21.38759915659558,
+            "contributing_bomb_indices": [
+              8,
+              11
+            ],
+            "single_full_cloud_count": 1
+          },
+          {
+            "time_s": 21.63759915659558,
+            "contributing_bomb_indices": [
+              8,
+              11
+            ],
+            "single_full_cloud_count": 2
+          }
+        ]
+      }
+    ]
+  },
+  "label_invariance_audit": {
+    "maximum_margin_change_m": 0.0,
+    "pass": true
+  },
+  "search": {
+    "algorithm": "bounded differential evolution with global-domain injection",
+    "decision_dimension": 40,
+    "population_size": 36,
+    "generation_count": 300,
+    "maximum_generations": 300,
+    "evaluation_count": 13236,
+    "global_sample_count": 924,
+    "local_probe_count": 1500,
+    "failure_count": 0,
+    "random_seed": 20260829,
+    "repetition_policy": "one fixed-seed 60-second working pilot; no distributional or global-optimality claim",
+    "variability_summary": "not estimated in this single-budget run",
+    "proxy_step_s": 0.5,
+    "proxy_surface_theta": 16,
+    "proxy_surface_levels": 3,
+    "thresholds_m": [
+      0.0,
+      2.5,
+      5.0,
+      10.0,
+      20.0,
+      40.0,
+      80.0,
+      160.0
+    ],
+    "search_time_interval_s": [
+      0.0,
+      60.36647340296691
+    ],
+    "heuristic_candidate_deletion": false,
+    "geometric_candidate_pruning_applied": false,
+    "all_five_platforms_in_vector": true,
+    "three_bombs_per_platform_in_vector": true,
+    "missile_labels_used_by_search": false
+  },
+  "claims": {
+    "all_three_missiles_simultaneous": true,
+    "cloud_identity_dynamic_in_time_missile_surface": true,
+    "single_joint_single_handoff_allowed": true,
+    "strict_probe_verified": true,
+    "screen_verified": true,
+    "formal_q5_result": false,
+    "continuous_domain_exhausted": false,
+    "global_optimality": false
+  },
+  "input_hashes": {
+    "data/A题.pdf": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "docs/q5_longest_pilot.json": "55576ff0549ec259fec1a59b17f9f28036313d0f03c64c879c80841c0197b0af",
+    "planning/45_q5_full_condition_search_spec.md": "255b9375576335b7cf0889a0e88fa44d25d0c68fb4c281ff16816c5dc2ddfa57",
+    "src/q5/full_condition_search.py": "cbb1d2236ca27bf4b8ed09d320841c5cf7cce06fc1092011bb21b73071942394"
+  },
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.4.6"
+  },
+  "elapsed_s": 55.37712656099757
+}

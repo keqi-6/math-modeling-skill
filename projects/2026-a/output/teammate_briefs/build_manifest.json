@@ -1,0 +1,194 @@
+{
+  "editable_source": "docs/Q1..Q4/solution_brief.md",
+  "external_runtime_dependencies": false,
+  "files": [
+    {
+      "source": "docs/Q1/solution_brief.md",
+      "source_sha256": "116e880cd7b382d712b430384737e8f3a4ae9503a52243d32a2cf80e4ef89e2e",
+      "images": [
+        {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig01_annular_control_volumes.png",
+          "sha256": "20054dd022adde3249df22c0973a1853938a654b2445a4fab381abe2554ecb06",
+          "alt": "图1-1 圆柱截面与径向控制体划分"
+        },
+        {
+          "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid.png",
+          "sha256": "277a191cc63d60542b01e64d16e1ae12f851d62d8d6e5c3e533d2f51e5ddfa0e",
+          "alt": "图1-2 径向—时间计算网格与隐式耦合"
+        },
+        {
+          "path": "output/paper_figures/reading/fig03_q1_profiles_d98d193909de.png",
+          "sha256": "d98d193909dee551d4763e85471fe84f93fbcd4438fe8c772971bcfb317517a3",
+          "alt": "图1-3 预热阶段温度与含水率的径向响应"
+        }
+      ],
+      "heading_count": 21,
+      "main_section_count": 10,
+      "equation_block_count": 19,
+      "tables": [
+        {
+          "columns": 4,
+          "body_rows": 12
+        },
+        {
+          "columns": 2,
+          "body_rows": 8
+        },
+        {
+          "columns": 6,
+          "body_rows": 7
+        },
+        {
+          "columns": 6,
+          "body_rows": 7
+        },
+        {
+          "columns": 4,
+          "body_rows": 2
+        }
+      ],
+      "output": "output/teammate_briefs/问题1_队友讲解稿.html",
+      "output_sha256": "76467582144939c16b9c50c1bdeef8f344e7570de2a736d1da02ddac87950f05",
+      "bytes": 514545
+    },
+    {
+      "source": "docs/Q2/solution_brief.md",
+      "source_sha256": "e26e194f0d86b1a3a098e18ed84b0a17e1d0d6075f25316c3c5c87e9aecd9d88",
+      "images": [
+        {
+          "path": "output/paper_figures/redesign_v3/fig04_q2_fields_sample.png",
+          "sha256": "0cc87331bb2e0f2e264e03938bb75572fc166ca4fe9ab82e8019b5e8d0577a4b",
+          "alt": "图2-1 前三小时温度与含水率的时空分布"
+        },
+        {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig09_q2_diffusivity_decomposition.png",
+          "sha256": "768b60e59e97b9ed94b1a1f9a51b6bfa0b49fece792fb3bc6ac46bfe87534fcc",
+          "alt": "图2-2 升温与变干对局部扩散系数变化的分解"
+        }
+      ],
+      "heading_count": 23,
+      "main_section_count": 10,
+      "equation_block_count": 16,
+      "tables": [
+        {
+          "columns": 4,
+          "body_rows": 12
+        },
+        {
+          "columns": 2,
+          "body_rows": 6
+        },
+        {
+          "columns": 6,
+          "body_rows": 6
+        },
+        {
+          "columns": 6,
+          "body_rows": 6
+        },
+        {
+          "columns": 4,
+          "body_rows": 2
+        },
+        {
+          "columns": 4,
+          "body_rows": 2
+        }
+      ],
+      "output": "output/teammate_briefs/问题2_队友讲解稿.html",
+      "output_sha256": "7da96586dc1b85876c88271f6b94c6401a41a6717976eb544045031f9e95249f",
+      "bytes": 377782
+    },
+    {
+      "source": "docs/Q3/solution_brief.md",
+      "source_sha256": "44d0d1ac179c1d4fcb31a0181a0b5ebdc532961a00d18fb323c6cb2eb762abd5",
+      "images": [
+        {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig05_q3_completion_progress.png",
+          "sha256": "2d0455d7866cd53bf1de4e0f3077138dbed0cf5c9a1f224ae0036d4a589bd556",
+          "alt": "问题3规定半径位置的达标进程"
+        }
+      ],
+      "heading_count": 18,
+      "main_section_count": 10,
+      "equation_block_count": 6,
+      "tables": [
+        {
+          "columns": 3,
+          "body_rows": 9
+        },
+        {
+          "columns": 2,
+          "body_rows": 6
+        },
+        {
+          "columns": 4,
+          "body_rows": 3
+        },
+        {
+          "columns": 6,
+          "body_rows": 10
+        },
+        {
+          "columns": 3,
+          "body_rows": 3
+        },
+        {
+          "columns": 5,
+          "body_rows": 2
+        }
+      ],
+      "output": "output/teammate_briefs/问题3_队友讲解稿.html",
+      "output_sha256": "866d9108650f6a9115237323bb10f5984dd0acdb61845079d1e70ccfa552a930",
+      "bytes": 103487
+    },
+    {
+      "source": "docs/Q4/solution_brief.md",
+      "source_sha256": "22f7a0c6e21044b0a604c304786090b931a244b9995ca178fe22208a83adddad",
+      "images": [
+        {
+          "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates.png",
+          "sha256": "c8de9834c0cbacad2fe0cfe161141cb827409a1d385954f0e03b6e5608cf1f12",
+          "alt": "问题4外半径观测与收缩坐标对应"
+        },
+        {
+          "path": "output/paper_figures/redesign_v3/fig07_q4_sections_sample.png",
+          "sha256": "89fabe845c729c5099b0ec6382037d131d96f53ef7ede08d95de658132a18478",
+          "alt": "问题4同尺度的含水率截面序列"
+        }
+      ],
+      "heading_count": 21,
+      "main_section_count": 10,
+      "equation_block_count": 13,
+      "tables": [
+        {
+          "columns": 3,
+          "body_rows": 11
+        },
+        {
+          "columns": 3,
+          "body_rows": 2
+        },
+        {
+          "columns": 5,
+          "body_rows": 9
+        },
+        {
+          "columns": 4,
+          "body_rows": 2
+        },
+        {
+          "columns": 4,
+          "body_rows": 4
+        },
+        {
+          "columns": 2,
+          "body_rows": 3
+        }
+      ],
+      "output": "output/teammate_briefs/问题4_队友讲解稿.html",
+      "output_sha256": "429030db7c5078578e298ce4637221bf07d4978affabbc9f6bda59f80e4f5458",
+      "bytes": 550061
+    }
+  ]
+}

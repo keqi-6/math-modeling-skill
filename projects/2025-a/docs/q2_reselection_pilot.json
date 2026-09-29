@@ -1,0 +1,5050 @@
+{
+  "schema_version": "1.0",
+  "result_id": "Q2-SPEC-Q2-2.1-RESELECTION-PILOT",
+  "claim_id": "A.Q2.RESELECTION_PILOT.001",
+  "status": "ok",
+  "purpose": "internal_seed_family_comparison_not_formal_q2_solution",
+  "identities": {
+    "official_input_sha256": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "geometry_sha256": "210f5fc5ccb99dc8bba7877265f0da7762efca0614bc5ffe540d08bbdb397eaf",
+    "spec_sha256": "dfe33fbda5cbc4203730e2f6bc26aa972e42711fd571c42b2cf2904553f331c3"
+  },
+  "geometry_witness": {
+    "input": {
+      "t_obs_s": 5.0,
+      "smoke_age_s": 1.0,
+      "q": 0.06
+    },
+    "q_intervals": [
+      [
+        0.05334290795925978,
+        0.06847389203512949
+      ]
+    ],
+    "interval_total_length": 0.015130984075869713,
+    "decision": {
+      "heading_rad": 3.111824954464575,
+      "speed_mps": 100.79526439520474,
+      "release_time_s": 0.5893251664328596,
+      "fuse_delay_s": 3.4106748335671404,
+      "source_domain": "C3I_witness",
+      "heading_unit": [
+        -0.9995569747601543,
+        0.02976330304802211,
+        0.0
+      ],
+      "release_point_m": [
+        17740.625130259312,
+        1.7679754992985737,
+        1800.0
+      ],
+      "explosion_time_s": 4.0,
+      "explosion_point_m": [
+        17396.997561803917,
+        11.999999999999966,
+        1742.9997561803916
+      ],
+      "active_window_s": [
+        4.0,
+        24.0
+      ],
+      "constraint_margins": {
+        "release_time_lower_s": 0.5893251664328596,
+        "fuse_delay_lower_s": 3.4106748335671404,
+        "speed_lower_mps": 30.79526439520474,
+        "speed_upper_mps": 39.20473560479526,
+        "explosion_height_lower_m": 1742.9997561803916,
+        "explosion_height_upper_m": 57.000243819608386,
+        "missile_arrival_margin_s": 62.99917080747261
+      }
+    },
+    "construction": {
+      "t_obs_s": 5.0,
+      "smoke_age_s": 1.0,
+      "q": 0.06,
+      "cloud_center_m": [
+        17396.997561803917,
+        12.0,
+        1739.9997561803916
+      ],
+      "constructed_explosion_m": [
+        17396.997561803917,
+        12.0,
+        1742.9997561803916
+      ],
+      "forward_inverse_mismatch_m": 3.375077994860476e-14
+    },
+    "status": "strict_interior_pass"
+  },
+  "budget": {
+    "seeds": [
+      250827,
+      250828,
+      250829
+    ],
+    "proxy_candidates_per_method_seed": 128,
+    "screen_calls_per_method_seed": 8,
+    "precise_calls_per_method_seed": 2,
+    "c3_outer_bank_per_stratum": 2048,
+    "half_width_rad": 0.18,
+    "proxy": {
+      "time_count": 41,
+      "n_theta": 64,
+      "n_levels": 9,
+      "logistic_scale_m": 2.0
+    },
+    "screen": {
+      "scan_step_s": 0.02,
+      "n_theta": 128,
+      "n_levels": 17
+    },
+    "precise": {
+      "scan_step_s": 0.005,
+      "n_theta": 512,
+      "n_levels": 33
+    },
+    "paired_actual_proxy_calls": {
+      "250827": 128,
+      "250828": 128,
+      "250829": 128
+    }
+  },
+  "records": [
+    {
+      "method": "C2-seed",
+      "seed": 250827,
+      "status": "completed",
+      "generation": {
+        "candidate_count": 128,
+        "domain_counts": {
+          "target": 57,
+          "missile": 58,
+          "guard": 13
+        },
+        "outer_attempts": 128,
+        "status": "pass"
+      },
+      "paired_proxy_calls": 128,
+      "proxy_seconds": 0.8406684019996646,
+      "screen_calls": 8,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 84,
+          "proxy_score_s": 0.21084500029051223,
+          "decision": {
+            "heading_rad": 3.2729713442086843,
+            "speed_mps": 100.63329022533163,
+            "release_time_s": 0.1412519141108386,
+            "fuse_delay_s": 0.552100708485409,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9913822260208529,
+              -0.1310010760640481,
+              0.0
+            ],
+            "release_point_m": [
+              17785.907853729062,
+              -1.8621337735238508,
+              1800.0
+            ],
+            "explosion_time_s": 0.6933526225962476,
+            "explosion_point_m": [
+              17730.826943928725,
+              -9.140515678142862,
+              1798.5064055576806
+            ],
+            "active_window_s": [
+              0.6933526225962476,
+              20.693352622596247
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.1412519141108386,
+              "fuse_delay_lower_s": 0.552100708485409,
+              "speed_lower_mps": 30.633290225331635,
+              "speed_upper_mps": 39.366709774668365,
+              "explosion_height_lower_m": 1798.5064055576806,
+              "explosion_height_upper_m": 1.4935944423193632,
+              "missile_arrival_margin_s": 66.30581818487636
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 0.2984767816941716,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 107,
+          "proxy_score_s": 1.5369903029909297e-05,
+          "decision": {
+            "heading_rad": 3.1529065372250376,
+            "speed_mps": 138.93532792003148,
+            "release_time_s": 5.083142452907258,
+            "fuse_delay_s": 4.806848090859847,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.99993599870125,
+              -0.011313642266465588,
+              0.0
+            ],
+            "release_point_m": [
+              17093.817135954378,
+              -7.990011669644151,
+              1800.0
+            ],
+            "explosion_time_s": 9.889990543767105,
+            "explosion_point_m": [
+              16426.018862881356,
+              -15.54572601288678,
+              1686.7816360138454
+            ],
+            "active_window_s": [
+              9.889990543767105,
+              29.889990543767105
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 5.083142452907258,
+              "fuse_delay_lower_s": 4.806848090859847,
+              "speed_lower_mps": 68.93532792003148,
+              "speed_upper_mps": 1.064672079968517,
+              "explosion_height_lower_m": 1686.7816360138454,
+              "explosion_height_upper_m": 113.2183639861546,
+              "missile_arrival_margin_s": 57.109180263705504
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 30.89619019321023,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 41,
+          "proxy_score_s": 1.0748355571509214e-05,
+          "decision": {
+            "heading_rad": 2.767577690545553,
+            "speed_mps": 128.26705831743732,
+            "release_time_s": 2.2265417605207416,
+            "fuse_delay_s": 0.9029062184208607,
+            "source_domain": "C2_guard",
+            "heading_unit": [
+              -0.930867962396283,
+              0.3653557671423735,
+              0.0
+            ],
+            "release_point_m": [
+              17534.151592402523,
+              104.34267030881678,
+              1800.0
+            ],
+            "explosion_time_s": 3.1294479789416023,
+            "explosion_point_m": [
+              17426.344865112165,
+              146.65566328247394,
+              1796.005325767611
+            ],
+            "active_window_s": [
+              3.1294479789416023,
+              23.129447978941602
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 2.2265417605207416,
+              "fuse_delay_lower_s": 0.9029062184208607,
+              "speed_lower_mps": 58.26705831743732,
+              "speed_upper_mps": 11.732941682562682,
+              "explosion_height_lower_m": 1796.005325767611,
+              "explosion_height_upper_m": 3.9946742323888884,
+              "missile_arrival_margin_s": 63.86972282853101
+            }
+          },
+          "generation": {
+            "domain": "guard"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 130.52744283686482,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 47,
+          "proxy_score_s": 5.219399018496913e-06,
+          "decision": {
+            "heading_rad": 2.979014459153517,
+            "speed_mps": 130.14402637426352,
+            "release_time_s": 6.006128413801364,
+            "fuse_delay_s": 2.5994766766745263,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9868132494260069,
+              0.16186293818316036,
+              0.0
+            ],
+            "release_point_m": [
+              17028.64584363565,
+              126.52206504275144,
+              1800.0
+            ],
+            "explosion_time_s": 8.60560509047589,
+            "explosion_point_m": [
+              16694.800644069564,
+              181.28132666752413,
+              1766.8893329363832
+            ],
+            "active_window_s": [
+              8.60560509047589,
+              28.60560509047589
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 6.006128413801364,
+              "fuse_delay_lower_s": 2.5994766766745263,
+              "speed_lower_mps": 60.14402637426352,
+              "speed_upper_mps": 9.855973625736482,
+              "explosion_height_lower_m": 1766.8893329363832,
+              "explosion_height_upper_m": 33.1106670636168,
+              "missile_arrival_margin_s": 58.39356571699672
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 188.49827828545563,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 105,
+          "proxy_score_s": 2.355945493645105e-06,
+          "decision": {
+            "heading_rad": 3.000264450887986,
+            "speed_mps": 125.27094260078248,
+            "release_time_s": 0.9471066759275999,
+            "fuse_delay_s": 11.056304956339869,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9900297812942523,
+              0.14085819873353067,
+              0.0
+            ],
+            "release_point_m": [
+              17682.537970023375,
+              16.712113387600915,
+              1800.0
+            ],
+            "explosion_time_s": 12.003411632267468,
+            "explosion_point_m": [
+              16311.313315799134,
+              211.8054716909592,
+              1201.0147914908307
+            ],
+            "active_window_s": [
+              12.003411632267468,
+              32.00341163226747
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.9471066759275999,
+              "fuse_delay_lower_s": 11.056304956339869,
+              "speed_lower_mps": 55.270942600782476,
+              "speed_upper_mps": 14.729057399217524,
+              "explosion_height_lower_m": 1201.0147914908307,
+              "explosion_height_upper_m": 598.9852085091693,
+              "missile_arrival_margin_s": 54.99575917520514
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 466.83128633508403,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 76,
+          "proxy_score_s": 2.130566507064787e-06,
+          "decision": {
+            "heading_rad": 3.091937958028964,
+            "speed_mps": 101.67822540953546,
+            "release_time_s": 10.495495849274983,
+            "fuse_delay_s": 1.8780758268779434,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9987674588805677,
+              0.049634293399357626,
+              0.0
+            ],
+            "release_point_m": [
+              16734.151930015287,
+              52.96790094067963,
+              1800.0
+            ],
+            "explosion_time_s": 12.373571676152926,
+            "explosion_point_m": [
+              16543.42787808771,
+              62.44603668440704,
+              1782.716872823634
+            ],
+            "active_window_s": [
+              12.373571676152926,
+              32.37357167615293
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 10.495495849274983,
+              "fuse_delay_lower_s": 1.8780758268779434,
+              "speed_lower_mps": 31.678225409535457,
+              "speed_upper_mps": 38.32177459046454,
+              "explosion_height_lower_m": 1782.716872823634,
+              "explosion_height_upper_m": 17.28312717636595,
+              "missile_arrival_margin_s": 54.62559913131968
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 278.50289283974865,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 7,
+          "proposal_index": 97,
+          "proxy_score_s": 1.8050323735069836e-06,
+          "decision": {
+            "heading_rad": 3.2300007289487023,
+            "speed_mps": 108.5503936803688,
+            "release_time_s": 7.171719709978345,
+            "fuse_delay_s": 6.652927689094962,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9960945508453111,
+              -0.08829295428446125,
+              0.0
+            ],
+            "release_point_m": [
+              17024.547366937106,
+              -68.73544667289308,
+              1800.0
+            ],
+            "explosion_time_s": 13.824647399073307,
+            "explosion_point_m": [
+              16305.189876305154,
+              -132.49866872912446,
+              1583.1189105020005
+            ],
+            "active_window_s": [
+              13.824647399073307,
+              33.82464739907331
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 7.171719709978345,
+              "fuse_delay_lower_s": 6.652927689094962,
+              "speed_lower_mps": 38.5503936803688,
+              "speed_upper_mps": 31.4496063196312,
+              "explosion_height_lower_m": 1583.1189105020005,
+              "explosion_height_upper_m": 216.88108949799948,
+              "missile_arrival_margin_s": 53.1745234083993
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 441.8835227594676,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 8,
+          "proposal_index": 25,
+          "proxy_score_s": 1.6313839003462558e-06,
+          "decision": {
+            "heading_rad": 3.227766941153535,
+            "speed_mps": 86.1464212736547,
+            "release_time_s": 10.745586221461126,
+            "fuse_delay_s": 2.222224408461844,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9962892932457666,
+              -0.08606767200204071,
+              0.0
+            ],
+            "release_point_m": [
+              16877.74118076024,
+              -79.672310134659,
+              1800.0
+            ],
+            "explosion_time_s": 12.96781062992297,
+            "explosion_point_m": [
+              16687.01486608598,
+              -96.14881952287429,
+              1775.8024215243383
+            ],
+            "active_window_s": [
+              12.96781062992297,
+              32.96781062992297
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 10.745586221461126,
+              "fuse_delay_lower_s": 2.222224408461844,
+              "speed_lower_mps": 16.146421273654695,
+              "speed_upper_mps": 53.853578726345305,
+              "explosion_height_lower_m": 1775.8024215243383,
+              "explosion_height_upper_m": 24.197578475661658,
+              "missile_arrival_margin_s": 54.03136017754964
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 579.2401168859265,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        }
+      ],
+      "precise_calls": 2,
+      "precise_records": [
+        {
+          "rank": 1,
+          "proposal_index": 84,
+          "decision": {
+            "heading_rad": 3.2729713442086843,
+            "speed_mps": 100.63329022533163,
+            "release_time_s": 0.1412519141108386,
+            "fuse_delay_s": 0.552100708485409,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9913822260208529,
+              -0.1310010760640481,
+              0.0
+            ],
+            "release_point_m": [
+              17785.907853729062,
+              -1.8621337735238508,
+              1800.0
+            ],
+            "explosion_time_s": 0.6933526225962476,
+            "explosion_point_m": [
+              17730.826943928725,
+              -9.140515678142862,
+              1798.5064055576806
+            ],
+            "active_window_s": [
+              0.6933526225962476,
+              20.693352622596247
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.1412519141108386,
+              "fuse_delay_lower_s": 0.552100708485409,
+              "speed_lower_mps": 30.633290225331635,
+              "speed_upper_mps": 39.366709774668365,
+              "explosion_height_lower_m": 1798.5064055576806,
+              "explosion_height_upper_m": 1.4935944423193632,
+              "missile_arrival_margin_s": 66.30581818487636
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "proxy_score_s": 0.21084500029051223,
+          "screen_duration_s": 0.0,
+          "precise": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 0.2761798468426875,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "proposal_index": 107,
+          "decision": {
+            "heading_rad": 3.1529065372250376,
+            "speed_mps": 138.93532792003148,
+            "release_time_s": 5.083142452907258,
+            "fuse_delay_s": 4.806848090859847,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.99993599870125,
+              -0.011313642266465588,
+              0.0
+            ],
+            "release_point_m": [
+              17093.817135954378,
+              -7.990011669644151,
+              1800.0
+            ],
+            "explosion_time_s": 9.889990543767105,
+            "explosion_point_m": [
+              16426.018862881356,
+              -15.54572601288678,
+              1686.7816360138454
+            ],
+            "active_window_s": [
+              9.889990543767105,
+              29.889990543767105
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 5.083142452907258,
+              "fuse_delay_lower_s": 4.806848090859847,
+              "speed_lower_mps": 68.93532792003148,
+              "speed_upper_mps": 1.064672079968517,
+              "explosion_height_lower_m": 1686.7816360138454,
+              "explosion_height_upper_m": 113.2183639861546,
+              "missile_arrival_margin_s": 57.109180263705504
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "proxy_score_s": 1.5369903029909297e-05,
+          "screen_duration_s": 0.0,
+          "precise": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 30.85459820796384,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        }
+      ],
+      "seed_best_precise_duration_s": 0.0,
+      "elapsed_seconds": 34.26230544000009
+    },
+    {
+      "method": "C3-I-seed",
+      "seed": 250827,
+      "status": "completed",
+      "generation": {
+        "outer_attempts": 233,
+        "nonempty_outer": 128,
+        "empty_outer": 105,
+        "accepted_by_stratum": {
+          "broad": 13,
+          "witness_neighborhood": 115
+        },
+        "interval_total_length_sum": 1.66103097830659,
+        "interval_component_count": 128,
+        "candidate_count": 128,
+        "nonempty_outer_rate": 0.5493562231759657,
+        "mean_interval_total_length": 0.012976804518020234,
+        "status": "pass"
+      },
+      "paired_proxy_calls": 128,
+      "proxy_seconds": 0.8230815800002347,
+      "screen_calls": 8,
+      "first_positive_screen_call": 1,
+      "positive_screen_count": 8,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 32,
+          "proxy_score_s": 3.9246268128587665,
+          "decision": {
+            "heading_rad": 3.1178038340363696,
+            "speed_mps": 77.99813700572774,
+            "release_time_s": 0.7465565450841223,
+            "fuse_delay_s": 2.850986702278709,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              -0.9997170593757003,
+              0.02378657590328164,
+              0.0
+            ],
+            "release_point_m": [
+              17741.78645595213,
+              1.3850927831104836,
+              1800.0
+            ],
+            "explosion_time_s": 3.5975432473628315,
+            "explosion_point_m": [
+              17519.47772252016,
+              6.6745529480136465,
+              1760.1721866348068
+            ],
+            "active_window_s": [
+              3.5975432473628315,
+              23.597543247362832
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.7465565450841223,
+              "fuse_delay_lower_s": 2.850986702278709,
+              "speed_lower_mps": 7.998137005727742,
+              "speed_upper_mps": 62.00186299427226,
+              "explosion_height_lower_m": 1760.1721866348068,
+              "explosion_height_upper_m": 39.82781336519315,
+              "missile_arrival_margin_s": 63.40162756010978
+            }
+          },
+          "generation": {
+            "t_obs_s": 6.2833934337262285,
+            "smoke_age_s": 2.685850186363397,
+            "q": 0.033372764740068284,
+            "cloud_center_m": [
+              17519.47772252016,
+              6.674552948013657,
+              1752.1146360757166
+            ],
+            "constructed_explosion_m": [
+              17519.47772252016,
+              6.674552948013657,
+              1760.1721866348068
+            ],
+            "forward_inverse_mismatch_m": 1.0658141036401503e-14,
+            "q_intervals": [
+              [
+                0.03178514804707159,
+                0.0456794721348115
+              ]
+            ],
+            "q_interval_total_length": 0.013894324087739912,
+            "stratum": "broad",
+            "outer_index": 30
+          },
+          "continuous_screen": {
+            "effective_duration_s": 4.272193250656125,
+            "intervals_s": [
+              [
+                4.054430200180272,
+                8.326623450836397
+              ]
+            ],
+            "minimum_scan_margin_m": -9.68708493595614,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 4.054430200180272,
+                "margin_m": 3.14955173053022e-10,
+                "iterations": 26
+              },
+              {
+                "kind": "exit",
+                "time_s": 8.326623450836397,
+                "margin_m": 1.2404765215023872e-08,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 105,
+          "proxy_score_s": 3.7881664453874384,
+          "decision": {
+            "heading_rad": 0.10506127153328115,
+            "speed_mps": 84.1351445669471,
+            "release_time_s": 0.609411167814573,
+            "fuse_delay_s": 0.8007801543851618,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              0.9944861391858061,
+              0.10486810271626709,
+              0.0
+            ],
+            "release_point_m": [
+              17850.99018508882,
+              5.376891398198593,
+              1800.0
+            ],
+            "explosion_time_s": 1.4101913221997349,
+            "explosion_point_m": [
+              17917.992449641966,
+              12.44224915887525,
+              1796.85788060728
+            ],
+            "active_window_s": [
+              1.4101913221997349,
+              21.410191322199736
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.609411167814573,
+              "fuse_delay_lower_s": 0.8007801543851618,
+              "speed_lower_mps": 14.135144566947105,
+              "speed_upper_mps": 55.864855433052895,
+              "explosion_height_lower_m": 1796.85788060728,
+              "explosion_height_upper_m": 3.1421193927199056,
+              "missile_arrival_margin_s": 65.58897948527287
+            }
+          },
+          "generation": {
+            "t_obs_s": 2.9927177935701956,
+            "smoke_age_s": 1.5825264713704608,
+            "q": 0.06221124579437623,
+            "cloud_center_m": [
+              17917.992449641966,
+              12.442249158875246,
+              1792.1103011931687
+            ],
+            "constructed_explosion_m": [
+              17917.992449641966,
+              12.442249158875246,
+              1796.85788060728
+            ],
+            "forward_inverse_mismatch_m": 3.552713678800501e-15,
+            "q_intervals": [
+              [
+                0.06056241403010474,
+                0.06326288470205374
+              ]
+            ],
+            "q_interval_total_length": 0.002700470671949,
+            "stratum": "broad",
+            "outer_index": 96
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.905475778281689,
+            "intervals_s": [
+              [
+                1.4101913221997349,
+                5.3156671004814235
+              ]
+            ],
+            "minimum_scan_margin_m": -9.454257420966526,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 1.4101913221997349,
+                "margin_m": -2.822161206255026,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 5.3156671004814235,
+                "margin_m": 5.346780795889572e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 11,
+          "proxy_score_s": 3.7614686912092923,
+          "decision": {
+            "heading_rad": 0.06716906394335725,
+            "speed_mps": 70.81059738667437,
+            "release_time_s": 1.982246710151195,
+            "fuse_delay_s": 0.10999989065295929,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              0.997745006433815,
+              0.06711856774683474,
+              0.0
+            ],
+            "release_point_m": [
+              17940.04755363043,
+              9.421035590766362,
+              1800.0
+            ],
+            "explosion_time_s": 2.0922466008041543,
+            "explosion_point_m": [
+              17947.819147098926,
+              9.943832717640086,
+              1799.940710117876
+            ],
+            "active_window_s": [
+              2.0922466008041543,
+              22.092246600804152
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 1.982246710151195,
+              "fuse_delay_lower_s": 0.10999989065295929,
+              "speed_lower_mps": 0.8105973866743739,
+              "speed_upper_mps": 69.18940261332563,
+              "explosion_height_lower_m": 1799.940710117876,
+              "explosion_height_upper_m": 0.0592898821239487,
+              "missile_arrival_margin_s": 64.90692420666845
+            }
+          },
+          "generation": {
+            "t_obs_s": 3.7289797974849224,
+            "smoke_age_s": 1.6367331966807679,
+            "q": 0.049719163588200437,
+            "cloud_center_m": [
+              17947.819147098926,
+              9.943832717640086,
+              1795.0305105278337
+            ],
+            "constructed_explosion_m": [
+              17947.819147098926,
+              9.943832717640086,
+              1799.940710117876
+            ],
+            "forward_inverse_mismatch_m": 0.0,
+            "q_intervals": [
+              [
+                0.049687688125383364,
+                0.04980923014079585
+              ]
+            ],
+            "q_interval_total_length": 0.00012154201541248605,
+            "stratum": "broad",
+            "outer_index": 10
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.9563407227396983,
+            "intervals_s": [
+              [
+                2.0922466008041543,
+                6.0485873235438525
+              ]
+            ],
+            "minimum_scan_margin_m": -9.559240431416438,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.0922466008041543,
+                "margin_m": -2.6177139299853307,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.0485873235438525,
+                "margin_m": -9.778649001646045e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 94,
+          "proxy_score_s": 3.6716264613260527,
+          "decision": {
+            "heading_rad": 3.1121362068857388,
+            "speed_mps": 107.4192071159385,
+            "release_time_s": 0.3023689304475239,
+            "fuse_delay_s": 3.32487383395595,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9995661902425654,
+              0.029452187082854426,
+              0.0
+            ],
+            "release_point_m": [
+              17767.53385947586,
+              0.9566138329899934,
+              1800.0
+            ],
+            "explosion_time_s": 3.6272427644034737,
+            "explosion_point_m": [
+              17410.533485930617,
+              11.475618870317176,
+              1745.8315485425478
+            ],
+            "active_window_s": [
+              3.6272427644034737,
+              23.627242764403473
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.3023689304475239,
+              "fuse_delay_lower_s": 3.32487383395595,
+              "speed_lower_mps": 37.419207115938505,
+              "speed_upper_mps": 32.580792884061495,
+              "explosion_height_lower_m": 1745.8315485425478,
+              "explosion_height_upper_m": 54.16845145745219,
+              "missile_arrival_margin_s": 63.37192804306913
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.124345923646198,
+            "smoke_age_s": 1.497103159242724,
+            "q": 0.05737809435158622,
+            "cloud_center_m": [
+              17410.533485930617,
+              11.475618870317245,
+              1741.3402390648196
+            ],
+            "constructed_explosion_m": [
+              17410.533485930617,
+              11.475618870317245,
+              1745.8315485425478
+            ],
+            "forward_inverse_mismatch_m": 6.927791673660977e-14,
+            "q_intervals": [
+              [
+                0.050028102573074114,
+                0.06296991185572329
+              ]
+            ],
+            "q_interval_total_length": 0.012941809282649173,
+            "stratum": "witness_neighborhood",
+            "outer_index": 85
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.783842602074148,
+            "intervals_s": [
+              [
+                3.6272427644034737,
+                7.4110853664776215
+              ]
+            ],
+            "minimum_scan_margin_m": -9.494751759993257,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.6272427644034737,
+                "margin_m": -3.0939424686310115,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.4110853664776215,
+                "margin_m": -9.93653159753194e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 58,
+          "proxy_score_s": 3.662983891803148,
+          "decision": {
+            "heading_rad": 3.0945235482309905,
+            "speed_mps": 85.30813071031679,
+            "release_time_s": 0.10858801806211904,
+            "fuse_delay_s": 2.8852374980292184,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9988924541637271,
+              0.047051727011518864,
+              0.0
+            ],
+            "release_point_m": [
+              17790.746818846914,
+              0.4358608895165752,
+              1800.0
+            ],
+            "explosion_time_s": 2.9938255160913374,
+            "explosion_point_m": [
+              17544.88520616261,
+              12.016900904798833,
+              1759.2094824418339
+            ],
+            "active_window_s": [
+              2.9938255160913374,
+              22.993825516091338
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.10858801806211904,
+              "fuse_delay_lower_s": 2.8852374980292184,
+              "speed_lower_mps": 15.308130710316789,
+              "speed_upper_mps": 54.69186928968321,
+              "explosion_height_lower_m": 1759.2094824418339,
+              "explosion_height_upper_m": 40.79051755816613,
+              "missile_arrival_margin_s": 64.00534529138127
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.467338617075643,
+            "smoke_age_s": 1.4735131009843054,
+            "q": 0.06008450452399441,
+            "cloud_center_m": [
+              17544.88520616261,
+              12.01690090479888,
+              1754.788943138881
+            ],
+            "constructed_explosion_m": [
+              17544.88520616261,
+              12.01690090479888,
+              1759.2094824418339
+            ],
+            "forward_inverse_mismatch_m": 4.796163466380676e-14,
+            "q_intervals": [
+              [
+                0.0576274663829233,
+                0.06176481387097157
+              ]
+            ],
+            "q_interval_total_length": 0.004137347488048268,
+            "stratum": "witness_neighborhood",
+            "outer_index": 50
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.770708582103252,
+            "intervals_s": [
+              [
+                2.9938255160913374,
+                6.76453409819459
+              ]
+            ],
+            "minimum_scan_margin_m": -9.457153481004472,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.9938255160913374,
+                "margin_m": -3.2137347169641304,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.76453409819459,
+                "margin_m": 1.1358434193198264e-09,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 66,
+          "proxy_score_s": 3.6619242584065157,
+          "decision": {
+            "heading_rad": 0.06931602970404445,
+            "speed_mps": 71.5641885480863,
+            "release_time_s": 1.830363765203204,
+            "fuse_delay_s": 0.26264476416082155,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              0.9975986057447092,
+              0.06926053577768809,
+              0.0
+            ],
+            "release_point_m": [
+              17930.67394257893,
+              9.072333524808128,
+              1800.0
+            ],
+            "explosion_time_s": 2.0930085293640257,
+            "explosion_point_m": [
+              17949.42476549352,
+              10.374151744940459,
+              1799.6619868665086
+            ],
+            "active_window_s": [
+              2.0930085293640257,
+              22.093008529364027
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 1.830363765203204,
+              "fuse_delay_lower_s": 0.26264476416082155,
+              "speed_lower_mps": 1.5641885480863067,
+              "speed_upper_mps": 68.4358114519137,
+              "explosion_height_lower_m": 1799.6619868665086,
+              "explosion_height_upper_m": 0.33801313349135853,
+              "missile_arrival_margin_s": 64.90616227810858
+            }
+          },
+          "generation": {
+            "t_obs_s": 3.579727370541685,
+            "smoke_age_s": 1.486718841177659,
+            "q": 0.05187075872470229,
+            "cloud_center_m": [
+              17949.42476549352,
+              10.374151744940457,
+              1795.2018303429757
+            ],
+            "constructed_explosion_m": [
+              17949.42476549352,
+              10.374151744940457,
+              1799.6619868665086
+            ],
+            "forward_inverse_mismatch_m": 1.7763568394002505e-15,
+            "q_intervals": [
+              [
+                0.0516917397278684,
+                0.05204424735746682
+              ]
+            ],
+            "q_interval_total_length": 0.0003525076295984239,
+            "stratum": "broad",
+            "outer_index": 57
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.8073889198899273,
+            "intervals_s": [
+              [
+                2.0930085293640257,
+                5.900397449253953
+              ]
+            ],
+            "minimum_scan_margin_m": -9.525224700111586,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.0930085293640257,
+                "margin_m": -3.244510311116888,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 5.900397449253953,
+                "margin_m": 7.025917625469447e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 7,
+          "proposal_index": 72,
+          "proxy_score_s": 3.6462731606726866,
+          "decision": {
+            "heading_rad": 3.079045610513405,
+            "speed_mps": 72.94606408168207,
+            "release_time_s": 0.031345837144652666,
+            "fuse_delay_s": 2.6745107893205917,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9980445713172748,
+              0.06250626899853504,
+              0.0
+            ],
+            "release_point_m": [
+              17797.717915751055,
+              0.142924049728223,
+              1800.0
+            ],
+            "explosion_time_s": 2.7058566264652444,
+            "explosion_point_m": [
+              17603.00437475425,
+              12.337586814277618,
+              1764.950260985258
+            ],
+            "active_window_s": [
+              2.7058566264652444,
+              22.705856626465245
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.031345837144652666,
+              "fuse_delay_lower_s": 2.6745107893205917,
+              "speed_lower_mps": 2.946064081682067,
+              "speed_upper_mps": 67.05393591831793,
+              "explosion_height_lower_m": 1764.950260985258,
+              "explosion_height_upper_m": 35.049739014742045,
+              "missile_arrival_margin_s": 64.29331418100736
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.152984572957268,
+            "smoke_age_s": 1.447127946492024,
+            "q": 0.06168793407138814,
+            "cloud_center_m": [
+              17603.00437475425,
+              12.337586814277628,
+              1760.608877145782
+            ],
+            "constructed_explosion_m": [
+              17603.00437475425,
+              12.337586814277628,
+              1764.950260985258
+            ],
+            "forward_inverse_mismatch_m": 1.0658141036401503e-14,
+            "q_intervals": [
+              [
+                0.061262441170802144,
+                0.06212961375160124
+              ]
+            ],
+            "q_interval_total_length": 0.0008671725807990957,
+            "stratum": "witness_neighborhood",
+            "outer_index": 62
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.748969218432905,
+            "intervals_s": [
+              [
+                2.7058566264652444,
+                6.454825844898149
+              ]
+            ],
+            "minimum_scan_margin_m": -9.439064679126108,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.7058566264652444,
+                "margin_m": -3.33198579274808,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.454825844898149,
+                "margin_m": -1.1084821949225443e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 8,
+          "proposal_index": 107,
+          "proxy_score_s": 3.6388856290927905,
+          "decision": {
+            "heading_rad": 3.1078926574010395,
+            "speed_mps": 78.35266616605007,
+            "release_time_s": 0.7581952723734147,
+            "fuse_delay_s": 3.0277192443877867,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9994322088677042,
+              0.03369361776095781,
+              0.0
+            ],
+            "release_point_m": [
+              17740.62710948769,
+              2.0016239826325424,
+              1800.0
+            ],
+            "explosion_time_s": 3.7859145167612014,
+            "explosion_point_m": [
+              17503.5319313071,
+              9.99475671910247,
+              1755.0812892681029
+            ],
+            "active_window_s": [
+              3.7859145167612014,
+              23.785914516761203
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.7581952723734147,
+              "fuse_delay_lower_s": 3.0277192443877867,
+              "speed_lower_mps": 8.35266616605007,
+              "speed_upper_mps": 61.64733383394993,
+              "explosion_height_lower_m": 1755.0812892681029,
+              "explosion_height_upper_m": 44.918710731897136,
+              "missile_arrival_margin_s": 63.213256290711406
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.278656923233026,
+            "smoke_age_s": 1.4927424064718244,
+            "q": 0.04997378359551262,
+            "cloud_center_m": [
+              17503.5319313071,
+              9.994756719102524,
+              1750.6030620486874
+            ],
+            "constructed_explosion_m": [
+              17503.5319313071,
+              9.994756719102524,
+              1755.0812892681029
+            ],
+            "forward_inverse_mismatch_m": 5.3290705182007514e-14,
+            "q_intervals": [
+              [
+                0.04825703339027987,
+                0.06264250660815104
+              ]
+            ],
+            "q_interval_total_length": 0.014385473217871175,
+            "stratum": "witness_neighborhood",
+            "outer_index": 97
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.782253509461879,
+            "intervals_s": [
+              [
+                3.7859145167612014,
+                7.568168026223081
+              ]
+            ],
+            "minimum_scan_margin_m": -9.540631582433981,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.7859145167612014,
+                "margin_m": -3.1411313372006315,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.568168026223081,
+                "margin_m": 8.651355187794252e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        }
+      ],
+      "precise_calls": 2,
+      "precise_records": [
+        {
+          "rank": 1,
+          "proposal_index": 32,
+          "decision": {
+            "heading_rad": 3.1178038340363696,
+            "speed_mps": 77.99813700572774,
+            "release_time_s": 0.7465565450841223,
+            "fuse_delay_s": 2.850986702278709,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              -0.9997170593757003,
+              0.02378657590328164,
+              0.0
+            ],
+            "release_point_m": [
+              17741.78645595213,
+              1.3850927831104836,
+              1800.0
+            ],
+            "explosion_time_s": 3.5975432473628315,
+            "explosion_point_m": [
+              17519.47772252016,
+              6.6745529480136465,
+              1760.1721866348068
+            ],
+            "active_window_s": [
+              3.5975432473628315,
+              23.597543247362832
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.7465565450841223,
+              "fuse_delay_lower_s": 2.850986702278709,
+              "speed_lower_mps": 7.998137005727742,
+              "speed_upper_mps": 62.00186299427226,
+              "explosion_height_lower_m": 1760.1721866348068,
+              "explosion_height_upper_m": 39.82781336519315,
+              "missile_arrival_margin_s": 63.40162756010978
+            }
+          },
+          "generation": {
+            "t_obs_s": 6.2833934337262285,
+            "smoke_age_s": 2.685850186363397,
+            "q": 0.033372764740068284,
+            "cloud_center_m": [
+              17519.47772252016,
+              6.674552948013657,
+              1752.1146360757166
+            ],
+            "constructed_explosion_m": [
+              17519.47772252016,
+              6.674552948013657,
+              1760.1721866348068
+            ],
+            "forward_inverse_mismatch_m": 1.0658141036401503e-14,
+            "q_intervals": [
+              [
+                0.03178514804707159,
+                0.0456794721348115
+              ]
+            ],
+            "q_interval_total_length": 0.013894324087739912,
+            "stratum": "broad",
+            "outer_index": 30
+          },
+          "proxy_score_s": 3.9246268128587665,
+          "screen_duration_s": 4.272193250656125,
+          "precise": {
+            "effective_duration_s": 4.272193250656128,
+            "intervals_s": [
+              [
+                4.054430200180272,
+                8.3266234508364
+              ]
+            ],
+            "minimum_scan_margin_m": -9.709162205069362,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 4.054430200180272,
+                "margin_m": 3.14955173053022e-10,
+                "iterations": 24
+              },
+              {
+                "kind": "exit",
+                "time_s": 8.3266234508364,
+                "margin_m": 1.240660907342317e-08,
+                "iterations": 24
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "proposal_index": 11,
+          "decision": {
+            "heading_rad": 0.06716906394335725,
+            "speed_mps": 70.81059738667437,
+            "release_time_s": 1.982246710151195,
+            "fuse_delay_s": 0.10999989065295929,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              0.997745006433815,
+              0.06711856774683474,
+              0.0
+            ],
+            "release_point_m": [
+              17940.04755363043,
+              9.421035590766362,
+              1800.0
+            ],
+            "explosion_time_s": 2.0922466008041543,
+            "explosion_point_m": [
+              17947.819147098926,
+              9.943832717640086,
+              1799.940710117876
+            ],
+            "active_window_s": [
+              2.0922466008041543,
+              22.092246600804152
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 1.982246710151195,
+              "fuse_delay_lower_s": 0.10999989065295929,
+              "speed_lower_mps": 0.8105973866743739,
+              "speed_upper_mps": 69.18940261332563,
+              "explosion_height_lower_m": 1799.940710117876,
+              "explosion_height_upper_m": 0.0592898821239487,
+              "missile_arrival_margin_s": 64.90692420666845
+            }
+          },
+          "generation": {
+            "t_obs_s": 3.7289797974849224,
+            "smoke_age_s": 1.6367331966807679,
+            "q": 0.049719163588200437,
+            "cloud_center_m": [
+              17947.819147098926,
+              9.943832717640086,
+              1795.0305105278337
+            ],
+            "constructed_explosion_m": [
+              17947.819147098926,
+              9.943832717640086,
+              1799.940710117876
+            ],
+            "forward_inverse_mismatch_m": 0.0,
+            "q_intervals": [
+              [
+                0.049687688125383364,
+                0.04980923014079585
+              ]
+            ],
+            "q_interval_total_length": 0.00012154201541248605,
+            "stratum": "broad",
+            "outer_index": 10
+          },
+          "proxy_score_s": 3.7614686912092923,
+          "screen_duration_s": 3.9563407227396983,
+          "precise": {
+            "effective_duration_s": 3.9563407227396983,
+            "intervals_s": [
+              [
+                2.0922466008041543,
+                6.0485873235438525
+              ]
+            ],
+            "minimum_scan_margin_m": -9.564907104801375,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.0922466008041543,
+                "margin_m": -2.6177032648417358,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.0485873235438525,
+                "margin_m": -9.778649001646045e-10,
+                "iterations": 24
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        }
+      ],
+      "seed_best_precise_duration_s": 4.272193250656128,
+      "elapsed_seconds": 34.572124806000375
+    },
+    {
+      "method": "C2-seed",
+      "seed": 250828,
+      "status": "completed",
+      "generation": {
+        "candidate_count": 128,
+        "domain_counts": {
+          "target": 57,
+          "missile": 58,
+          "guard": 13
+        },
+        "outer_attempts": 128,
+        "status": "pass"
+      },
+      "paired_proxy_calls": 128,
+      "proxy_seconds": 0.8308854409997366,
+      "screen_calls": 8,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 123,
+          "proxy_score_s": 1.4662271360896172e-05,
+          "decision": {
+            "heading_rad": 3.2107004422643177,
+            "speed_mps": 95.40833977433185,
+            "release_time_s": 4.123574456226548,
+            "fuse_delay_s": 1.5656350434793438,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9976130069997846,
+              -0.06905279331676333,
+              0.0
+            ],
+            "release_point_m": [
+              17407.51570608033,
+              -27.166984229303278,
+              1800.0
+            ],
+            "explosion_time_s": 5.689209499705892,
+            "explosion_point_m": [
+              17258.497622109993,
+              -37.48172038516987,
+              1787.9890558620841
+            ],
+            "active_window_s": [
+              5.689209499705892,
+              25.689209499705893
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 4.123574456226548,
+              "fuse_delay_lower_s": 1.5656350434793438,
+              "speed_lower_mps": 25.40833977433185,
+              "speed_upper_mps": 44.59166022566815,
+              "explosion_height_lower_m": 1787.9890558620841,
+              "explosion_height_upper_m": 12.010944137915885,
+              "missile_arrival_margin_s": 61.30996130776672
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 53.65349666147655,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 19,
+          "proxy_score_s": 6.003078114559657e-06,
+          "decision": {
+            "heading_rad": 3.306220506012037,
+            "speed_mps": 70.13659739773442,
+            "release_time_s": 1.049525444704062,
+            "fuse_delay_s": 6.001958264890624,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9864794131456336,
+              -0.16388522642339154,
+              0.0
+            ],
+            "release_point_m": [
+              17727.385108765666,
+              -12.063615046664825,
+              1800.0
+            ],
+            "explosion_time_s": 7.051483709594686,
+            "explosion_point_m": [
+              17312.119763082756,
+              -81.05223690347479,
+              1623.4848352339045
+            ],
+            "active_window_s": [
+              7.051483709594686,
+              27.051483709594685
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 1.049525444704062,
+              "fuse_delay_lower_s": 6.001958264890624,
+              "speed_lower_mps": 0.1365973977344197,
+              "speed_upper_mps": 69.86340260226558,
+              "explosion_height_lower_m": 1623.4848352339045,
+              "explosion_height_upper_m": 176.5151647660955,
+              "missile_arrival_margin_s": 59.947687097877925
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 128.88830388410977,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 22,
+          "proxy_score_s": 5.838432774992547e-06,
+          "decision": {
+            "heading_rad": 3.0220612837792533,
+            "speed_mps": 70.58494258912552,
+            "release_time_s": 6.947688461969894,
+            "fuse_delay_s": 1.1819622264181902,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9928646275887332,
+              0.11924693406157785,
+              0.0
+            ],
+            "release_point_m": [
+              17313.097011050348,
+              58.478957759501164,
+              1800.0
+            ],
+            "explosion_time_s": 8.129650688388084,
+            "explosion_point_m": [
+              17230.26357025651,
+              68.42757872752274,
+              1793.1545299470706
+            ],
+            "active_window_s": [
+              8.129650688388084,
+              28.129650688388082
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 6.947688461969894,
+              "fuse_delay_lower_s": 1.1819622264181902,
+              "speed_lower_mps": 0.584942589125518,
+              "speed_upper_mps": 69.41505741087448,
+              "explosion_height_lower_m": 1793.1545299470706,
+              "explosion_height_upper_m": 6.845470052929386,
+              "missile_arrival_margin_s": 58.86952011908453
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 85.18283932138782,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 89,
+          "proxy_score_s": 4.193304522984285e-06,
+          "decision": {
+            "heading_rad": 3.052331572163874,
+            "speed_mps": 126.33337415766294,
+            "release_time_s": 5.6760364677568855,
+            "fuse_delay_s": 5.874273263114754,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9960188740399526,
+              0.0891425967547789,
+              0.0
+            ],
+            "release_point_m": [
+              17085.781918480177,
+              63.921734914171566,
+              1800.0
+            ],
+            "explosion_time_s": 11.55030973087164,
+            "explosion_point_m": [
+              16346.619616733542,
+              130.07595017886283,
+              1630.9152767882501
+            ],
+            "active_window_s": [
+              11.55030973087164,
+              31.55030973087164
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 5.6760364677568855,
+              "fuse_delay_lower_s": 5.874273263114754,
+              "speed_lower_mps": 56.333374157662945,
+              "speed_upper_mps": 13.666625842337055,
+              "explosion_height_lower_m": 1630.9152767882501,
+              "explosion_height_upper_m": 169.08472321174986,
+              "missile_arrival_margin_s": 55.44886107660097
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 117.72503348703721,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 57,
+          "proxy_score_s": 2.452569809252555e-06,
+          "decision": {
+            "heading_rad": 0.007198304686221126,
+            "speed_mps": 91.79167261566799,
+            "release_time_s": 5.287457073255054,
+            "fuse_delay_s": 0.796305344508056,
+            "source_domain": "C2_missile",
+            "heading_unit": [
+              0.999974092316691,
+              0.007198242522314367,
+              0.0
+            ],
+            "release_point_m": [
+              18285.331954485282,
+              3.4936276240119826,
+              1800.0
+            ],
+            "explosion_time_s": 6.08376241776311,
+            "explosion_point_m": [
+              18358.4242602691,
+              4.019777398880807,
+              1796.8928992117087
+            ],
+            "active_window_s": [
+              6.08376241776311,
+              26.08376241776311
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 5.287457073255054,
+              "fuse_delay_lower_s": 0.796305344508056,
+              "speed_lower_mps": 21.79167261566799,
+              "speed_upper_mps": 48.20832738433201,
+              "explosion_height_lower_m": 1796.8928992117087,
+              "explosion_height_upper_m": 3.107100788291291,
+              "missile_arrival_margin_s": 60.9154083897095
+            }
+          },
+          "generation": {
+            "domain": "missile"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 165.86071260603222,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 99,
+          "proxy_score_s": 1.4986896339515313e-06,
+          "decision": {
+            "heading_rad": 3.0480175785634644,
+            "speed_mps": 108.89372978468413,
+            "release_time_s": 4.073119879759021,
+            "fuse_delay_s": 11.073659644055335,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.995625046430276,
+              0.09343857298091945,
+              0.0
+            ],
+            "release_point_m": [
+              17358.403239157447,
+              41.443484486520646,
+              1800.0
+            ],
+            "explosion_time_s": 15.146779523814356,
+            "explosion_point_m": [
+              16157.826685103984,
+              154.11658403068844,
+              1199.1329042293394
+            ],
+            "active_window_s": [
+              15.146779523814356,
+              35.14677952381436
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 4.073119879759021,
+              "fuse_delay_lower_s": 11.073659644055335,
+              "speed_lower_mps": 38.893729784684126,
+              "speed_upper_mps": 31.106270215315874,
+              "explosion_height_lower_m": 1199.1329042293394,
+              "explosion_height_upper_m": 600.8670957706606,
+              "missile_arrival_margin_s": 51.85239128365825
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 768.9852101796225,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 7,
+          "proposal_index": 60,
+          "proxy_score_s": 1.4277508386461325e-06,
+          "decision": {
+            "heading_rad": 6.186274222939734,
+            "speed_mps": 82.72761739913672,
+            "release_time_s": 2.128839720765707,
+            "fuse_delay_s": 5.773438832037649,
+            "source_domain": "C2_missile",
+            "heading_unit": [
+              0.9953077949388222,
+              -0.09675946121191217,
+              0.0
+            ],
+            "release_point_m": [
+              17975.28747568194,
+              -17.040680069448637,
+              1800.0
+            ],
+            "explosion_time_s": 7.902278552803356,
+            "explosion_point_m": [
+              18450.66921015464,
+              -63.255208611737395,
+              1636.6702798583267
+            ],
+            "active_window_s": [
+              7.902278552803356,
+              27.902278552803356
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 2.128839720765707,
+              "fuse_delay_lower_s": 5.773438832037649,
+              "speed_lower_mps": 12.727617399136719,
+              "speed_upper_mps": 57.27238260086328,
+              "explosion_height_lower_m": 1636.6702798583267,
+              "explosion_height_upper_m": 163.3297201416733,
+              "missile_arrival_margin_s": 59.09689225466926
+            }
+          },
+          "generation": {
+            "domain": "missile"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 811.9936718364196,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 8,
+          "proposal_index": 101,
+          "proxy_score_s": 1.2730278055101903e-06,
+          "decision": {
+            "heading_rad": 2.4384813497664886,
+            "speed_mps": 132.9312674757975,
+            "release_time_s": 3.130194792413894,
+            "fuse_delay_s": 11.08293560426224,
+            "source_domain": "C2_guard",
+            "heading_unit": [
+              -0.7628341316508354,
+              0.6465942217407421,
+              0.0
+            ],
+            "release_point_m": [
+              17482.584137149435,
+              269.0483478549564,
+              1800.0
+            ],
+            "explosion_time_s": 14.213130396676133,
+            "explosion_point_m": [
+              16358.72450506843,
+              1221.6553616217054,
+              1198.1258381197044
+            ],
+            "active_window_s": [
+              14.213130396676133,
+              34.213130396676135
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 3.130194792413894,
+              "fuse_delay_lower_s": 11.08293560426224,
+              "speed_lower_mps": 62.93126747579751,
+              "speed_upper_mps": 7.068732524202488,
+              "explosion_height_lower_m": 1198.1258381197044,
+              "explosion_height_upper_m": 601.8741618802956,
+              "missile_arrival_margin_s": 52.786040410796474
+            }
+          },
+          "generation": {
+            "domain": "guard"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 1403.0909733319756,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        }
+      ],
+      "precise_calls": 2,
+      "precise_records": [
+        {
+          "rank": 1,
+          "proposal_index": 123,
+          "decision": {
+            "heading_rad": 3.2107004422643177,
+            "speed_mps": 95.40833977433185,
+            "release_time_s": 4.123574456226548,
+            "fuse_delay_s": 1.5656350434793438,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9976130069997846,
+              -0.06905279331676333,
+              0.0
+            ],
+            "release_point_m": [
+              17407.51570608033,
+              -27.166984229303278,
+              1800.0
+            ],
+            "explosion_time_s": 5.689209499705892,
+            "explosion_point_m": [
+              17258.497622109993,
+              -37.48172038516987,
+              1787.9890558620841
+            ],
+            "active_window_s": [
+              5.689209499705892,
+              25.689209499705893
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 4.123574456226548,
+              "fuse_delay_lower_s": 1.5656350434793438,
+              "speed_lower_mps": 25.40833977433185,
+              "speed_upper_mps": 44.59166022566815,
+              "explosion_height_lower_m": 1787.9890558620841,
+              "explosion_height_upper_m": 12.010944137915885,
+              "missile_arrival_margin_s": 61.30996130776672
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "proxy_score_s": 1.4662271360896172e-05,
+          "screen_duration_s": 0.0,
+          "precise": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 53.65349666147655,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "proposal_index": 19,
+          "decision": {
+            "heading_rad": 3.306220506012037,
+            "speed_mps": 70.13659739773442,
+            "release_time_s": 1.049525444704062,
+            "fuse_delay_s": 6.001958264890624,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9864794131456336,
+              -0.16388522642339154,
+              0.0
+            ],
+            "release_point_m": [
+              17727.385108765666,
+              -12.063615046664825,
+              1800.0
+            ],
+            "explosion_time_s": 7.051483709594686,
+            "explosion_point_m": [
+              17312.119763082756,
+              -81.05223690347479,
+              1623.4848352339045
+            ],
+            "active_window_s": [
+              7.051483709594686,
+              27.051483709594685
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 1.049525444704062,
+              "fuse_delay_lower_s": 6.001958264890624,
+              "speed_lower_mps": 0.1365973977344197,
+              "speed_upper_mps": 69.86340260226558,
+              "explosion_height_lower_m": 1623.4848352339045,
+              "explosion_height_upper_m": 176.5151647660955,
+              "missile_arrival_margin_s": 59.947687097877925
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "proxy_score_s": 6.003078114559657e-06,
+          "screen_duration_s": 0.0,
+          "precise": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 128.88831264250345,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        }
+      ],
+      "seed_best_precise_duration_s": 0.0,
+      "elapsed_seconds": 33.869025921999764
+    },
+    {
+      "method": "C3-I-seed",
+      "seed": 250828,
+      "status": "completed",
+      "generation": {
+        "outer_attempts": 228,
+        "nonempty_outer": 128,
+        "empty_outer": 100,
+        "accepted_by_stratum": {
+          "broad": 14,
+          "witness_neighborhood": 114
+        },
+        "interval_total_length_sum": 1.5320907320955701,
+        "interval_component_count": 128,
+        "candidate_count": 128,
+        "nonempty_outer_rate": 0.5614035087719298,
+        "mean_interval_total_length": 0.011969458844496642,
+        "status": "pass"
+      },
+      "paired_proxy_calls": 128,
+      "proxy_seconds": 0.806820868000159,
+      "screen_calls": 8,
+      "first_positive_screen_call": 1,
+      "positive_screen_count": 8,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 38,
+          "proxy_score_s": 4.260907426747744,
+          "decision": {
+            "heading_rad": 0.10700711450221932,
+            "speed_mps": 88.08702874013804,
+            "release_time_s": 0.4683560670671222,
+            "fuse_delay_s": 0.6909391553755698,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              0.9942801997409831,
+              0.10680301682551248,
+              0.0
+            ],
+            "release_point_m": [
+              17841.020117721266,
+              4.406275337988357,
+              1800.0
+            ],
+            "explosion_time_s": 1.159295222442692,
+            "explosion_point_m": [
+              17901.534772029514,
+              10.90660355930627,
+              1797.6607551094876
+            ],
+            "active_window_s": [
+              1.159295222442692,
+              21.159295222442694
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.4683560670671222,
+              "fuse_delay_lower_s": 0.6909391553755698,
+              "speed_lower_mps": 18.087028740138038,
+              "speed_upper_mps": 51.91297125986196,
+              "explosion_height_lower_m": 1797.6607551094876,
+              "explosion_height_upper_m": 2.3392448905124184,
+              "missile_arrival_margin_s": 65.83987558502992
+            }
+          },
+          "generation": {
+            "t_obs_s": 3.5708328282938675,
+            "smoke_age_s": 2.4115376058511755,
+            "q": 0.05453301779653136,
+            "cloud_center_m": [
+              17901.534772029514,
+              10.906603559306271,
+              1790.426142291934
+            ],
+            "constructed_explosion_m": [
+              17901.534772029514,
+              10.906603559306271,
+              1797.6607551094876
+            ],
+            "forward_inverse_mismatch_m": 1.7763568394002505e-15,
+            "q_intervals": [
+              [
+                0.05329427778098053,
+                0.05565010404377981
+              ]
+            ],
+            "q_interval_total_length": 0.0023558262627992807,
+            "stratum": "broad",
+            "outer_index": 34
+          },
+          "continuous_screen": {
+            "effective_duration_s": 4.5809043270349505,
+            "intervals_s": [
+              [
+                1.308579955082482,
+                5.889484282117433
+              ]
+            ],
+            "minimum_scan_margin_m": -9.497128897748468,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 1.308579955082482,
+                "margin_m": -3.319851060723522e-10,
+                "iterations": 26
+              },
+              {
+                "kind": "exit",
+                "time_s": 5.889484282117433,
+                "margin_m": 8.28356050419643e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 22,
+          "proxy_score_s": 4.2457536836957885,
+          "decision": {
+            "heading_rad": 3.092175723928942,
+            "speed_mps": 75.70859183185074,
+            "release_time_s": 0.004602157442918475,
+            "fuse_delay_s": 2.5244509246408686,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              -0.9987792319914243,
+              0.04939681915488732,
+              0.0
+            ],
+            "release_point_m": [
+              17799.65200248409,
+              0.0172109809748069,
+              1800.0
+            ],
+            "explosion_time_s": 2.529053082083787,
+            "explosion_point_m": [
+              17608.762694216806,
+              9.458060707375038,
+              1768.7730228924913
+            ],
+            "active_window_s": [
+              2.529053082083787,
+              22.529053082083788
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.004602157442918475,
+              "fuse_delay_lower_s": 2.5244509246408686,
+              "speed_lower_mps": 5.70859183185074,
+              "speed_upper_mps": 64.29140816814926,
+              "explosion_height_lower_m": 1768.7730228924913,
+              "explosion_height_upper_m": 31.226977107508674,
+              "missile_arrival_margin_s": 64.47011772538882
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.0824870664592074,
+            "smoke_age_s": 2.5534339843754204,
+            "q": 0.04729030353687519,
+            "cloud_center_m": [
+              17608.762694216806,
+              9.458060707375038,
+              1761.112720939365
+            ],
+            "constructed_explosion_m": [
+              17608.762694216806,
+              9.458060707375038,
+              1768.7730228924913
+            ],
+            "forward_inverse_mismatch_m": 0.0,
+            "q_intervals": [
+              [
+                0.04650859792799633,
+                0.04735212771661749
+              ]
+            ],
+            "q_interval_total_length": 0.0008435297886211571,
+            "stratum": "broad",
+            "outer_index": 20
+          },
+          "continuous_screen": {
+            "effective_duration_s": 4.536346789002419,
+            "intervals_s": [
+              [
+                2.841582209979619,
+                7.377928998982037
+              ]
+            ],
+            "minimum_scan_margin_m": -9.566532532673937,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.841582209979619,
+                "margin_m": 7.059668405418051e-10,
+                "iterations": 26
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.377928998982037,
+                "margin_m": -2.0200374706291768e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 94,
+          "proxy_score_s": 3.678628203538043,
+          "decision": {
+            "heading_rad": 3.099010127593441,
+            "speed_mps": 93.31066764182385,
+            "release_time_s": 0.0631828528842262,
+            "fuse_delay_s": 2.9833554927025996,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9990935012296717,
+              0.04256965821610521,
+              0.0
+            ],
+            "release_point_m": [
+              17794.109710198998,
+              0.2509751322712626,
+              1800.0
+            ],
+            "explosion_time_s": 3.046538345586826,
+            "explosion_point_m": [
+              17515.983167486058,
+              12.101469454919364,
+              1756.38799102039
+            ],
+            "active_window_s": [
+              3.046538345586826,
+              23.046538345586825
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.0631828528842262,
+              "fuse_delay_lower_s": 2.9833554927025996,
+              "speed_lower_mps": 23.310667641823855,
+              "speed_upper_mps": 46.689332358176145,
+              "explosion_height_lower_m": 1756.38799102039,
+              "explosion_height_upper_m": 43.61200897960998,
+              "missile_arrival_margin_s": 63.952632461885784
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.542250857390653,
+            "smoke_age_s": 1.4957125118038268,
+            "q": 0.060507347274596626,
+            "cloud_center_m": [
+              17515.983167486058,
+              12.101469454919325,
+              1751.9008534849786
+            ],
+            "constructed_explosion_m": [
+              17515.983167486058,
+              12.101469454919325,
+              1756.38799102039
+            ],
+            "forward_inverse_mismatch_m": 3.907985046680551e-14,
+            "q_intervals": [
+              [
+                0.05669590725387862,
+                0.061511338942843836
+              ]
+            ],
+            "q_interval_total_length": 0.004815431688965213,
+            "stratum": "witness_neighborhood",
+            "outer_index": 85
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.791141091287135,
+            "intervals_s": [
+              [
+                3.046538345586826,
+                6.837679436873961
+              ]
+            ],
+            "minimum_scan_margin_m": -9.462337106112347,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.046538345586826,
+                "margin_m": -3.1143813366747954,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.837679436873961,
+                "margin_m": 1.2281571315497786e-09,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 101,
+          "proxy_score_s": 3.6673625422396823,
+          "decision": {
+            "heading_rad": 3.1017919447266746,
+            "speed_mps": 97.58948113630925,
+            "release_time_s": 0.06932253560314772,
+            "fuse_delay_s": 3.054080885607514,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9992080563382045,
+              0.0397902016685965,
+              0.0
+            ],
+            "release_point_m": [
+              17793.24020733732,
+              0.2691866939820241,
+              1800.0
+            ],
+            "explosion_time_s": 3.1234034212106616,
+            "explosion_point_m": [
+              17495.430074137006,
+              12.1285038640402,
+              1754.2956907264174
+            ],
+            "active_window_s": [
+              3.1234034212106616,
+              23.12340342121066
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.06932253560314772,
+              "fuse_delay_lower_s": 3.054080885607514,
+              "speed_lower_mps": 27.589481136309246,
+              "speed_upper_mps": 42.410518863690754,
+              "explosion_height_lower_m": 1754.2956907264174,
+              "explosion_height_upper_m": 45.70430927358257,
+              "missile_arrival_margin_s": 63.87576738626195
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.606560326582522,
+            "smoke_age_s": 1.4831569053718603,
+            "q": 0.06064251932020118,
+            "cloud_center_m": [
+              17495.430074137006,
+              12.128503864040235,
+              1749.8462200103017
+            ],
+            "constructed_explosion_m": [
+              17495.430074137006,
+              12.128503864040235,
+              1754.2956907264174
+            ],
+            "forward_inverse_mismatch_m": 3.552713678800501e-14,
+            "q_intervals": [
+              [
+                0.05601329057656536,
+                0.06177220054696792
+              ]
+            ],
+            "q_interval_total_length": 0.005758909970402563,
+            "stratum": "witness_neighborhood",
+            "outer_index": 91
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.777251189649106,
+            "intervals_s": [
+              [
+                3.1234034212106616,
+                6.9006546108597675
+              ]
+            ],
+            "minimum_scan_margin_m": -9.464884368358238,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.1234034212106616,
+                "margin_m": -3.1632619400429602,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.9006546108597675,
+                "margin_m": 5.802558433742888e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 33,
+          "proxy_score_s": 3.635620899894204,
+          "decision": {
+            "heading_rad": 3.0949708546887083,
+            "speed_mps": 89.12028696802794,
+            "release_time_s": 0.04370256838268194,
+            "fuse_delay_s": 2.918896988934167,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9989134007736329,
+              0.046604911273978956,
+              0.0
+            ],
+            "release_point_m": [
+              17796.109446635335,
+              0.18151612965287175,
+              1800.0
+            ],
+            "explosion_time_s": 2.962599557316849,
+            "explosion_point_m": [
+              17536.259169599816,
+              12.304988591209758,
+              1758.2521978031562
+            ],
+            "active_window_s": [
+              2.962599557316849,
+              22.96259955731685
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.04370256838268194,
+              "fuse_delay_lower_s": 2.918896988934167,
+              "speed_lower_mps": 19.12028696802794,
+              "speed_upper_mps": 50.87971303197206,
+              "explosion_height_lower_m": 1758.2521978031562,
+              "explosion_height_upper_m": 41.74780219684385,
+              "missile_arrival_margin_s": 64.03657125015576
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.402151600114953,
+            "smoke_age_s": 1.4395520427981041,
+            "q": 0.061524942956048746,
+            "cloud_center_m": [
+              17536.259169599816,
+              12.30498859120975,
+              1753.9335416747617
+            ],
+            "constructed_explosion_m": [
+              17536.259169599816,
+              12.30498859120975,
+              1758.2521978031562
+            ],
+            "forward_inverse_mismatch_m": 8.881784197001252e-15,
+            "q_intervals": [
+              [
+                0.05849115590485348,
+                0.06220077738911898
+              ]
+            ],
+            "q_interval_total_length": 0.003709621484265499,
+            "stratum": "witness_neighborhood",
+            "outer_index": 29
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.7368185982108124,
+            "intervals_s": [
+              [
+                2.962599557316849,
+                6.6994181555276615
+              ]
+            ],
+            "minimum_scan_margin_m": -9.468997036328654,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.962599557316849,
+                "margin_m": -3.3524446048985226,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.6994181555276615,
+                "margin_m": -1.0080114520860661e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 12,
+          "proxy_score_s": 3.630955479334633,
+          "decision": {
+            "heading_rad": 3.1136082624885533,
+            "speed_mps": 122.73848644604547,
+            "release_time_s": 0.1032822503114752,
+            "fuse_delay_s": 3.4785582607305945,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.999608462480286,
+              0.02798073869286908,
+              0.0
+            ],
+            "release_point_m": [
+              17787.328256326477,
+              0.35470362829074203,
+              1800.0
+            ],
+            "explosion_time_s": 3.5818405110420697,
+            "explosion_point_m": [
+              17360.542448499247,
+              12.301163282111693,
+              1740.7081988908444
+            ],
+            "active_window_s": [
+              3.5818405110420697,
+              23.58184051104207
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.1032822503114752,
+              "fuse_delay_lower_s": 3.4785582607305945,
+              "speed_lower_mps": 52.73848644604547,
+              "speed_upper_mps": 17.26151355395453,
+              "explosion_height_lower_m": 1740.7081988908444,
+              "explosion_height_upper_m": 59.291801109155585,
+              "missile_arrival_margin_s": 63.41733029643054
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.030648830664383,
+            "smoke_age_s": 1.448808319622313,
+            "q": 0.0615058164105587,
+            "cloud_center_m": [
+              17360.542448499247,
+              12.301163282111741,
+              1736.3617739319775
+            ],
+            "constructed_explosion_m": [
+              17360.542448499247,
+              12.301163282111741,
+              1740.7081988908444
+            ],
+            "forward_inverse_mismatch_m": 4.796163466380676e-14,
+            "q_intervals": [
+              [
+                0.05129197458666618,
+                0.06344266094865145
+              ]
+            ],
+            "q_interval_total_length": 0.012150686361985269,
+            "stratum": "witness_neighborhood",
+            "outer_index": 11
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.7340887889266012,
+            "intervals_s": [
+              [
+                3.5818405110420697,
+                7.315929299968671
+              ]
+            ],
+            "minimum_scan_margin_m": -9.433164892647394,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.5818405110420697,
+                "margin_m": -3.282208779233544,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.315929299968671,
+                "margin_m": 6.090150606041789e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 7,
+          "proposal_index": 95,
+          "proxy_score_s": 3.6183146928791246,
+          "decision": {
+            "heading_rad": 3.122331738725277,
+            "speed_mps": 136.7908653950086,
+            "release_time_s": 0.46925145146396785,
+            "fuse_delay_s": 3.923765301104704,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9998145143137313,
+              0.019259723975119054,
+              0.0
+            ],
+            "release_point_m": [
+              17735.822594064994,
+              1.2362684338462822,
+              1800.0
+            ],
+            "explosion_time_s": 4.393016752568672,
+            "explosion_point_m": [
+              17199.186899626377,
+              11.57364121861555,
+              1724.5599227230489
+            ],
+            "active_window_s": [
+              4.393016752568672,
+              24.39301675256867
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.46925145146396785,
+              "fuse_delay_lower_s": 3.923765301104704,
+              "speed_lower_mps": 66.79086539500861,
+              "speed_upper_mps": 3.209134604991391,
+              "explosion_height_lower_m": 1724.5599227230489,
+              "explosion_height_upper_m": 75.44007727695111,
+              "missile_arrival_margin_s": 62.60615405490394
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.843647329217221,
+            "smoke_age_s": 1.45063057664855,
+            "q": 0.0578682060930778,
+            "cloud_center_m": [
+              17199.186899626377,
+              11.57364121861556,
+              1720.2080309931032
+            ],
+            "constructed_explosion_m": [
+              17199.186899626377,
+              11.57364121861556,
+              1724.5599227230489
+            ],
+            "forward_inverse_mismatch_m": 8.881784197001252e-15,
+            "q_intervals": [
+              [
+                0.04179557826839668,
+                0.05864042976954579
+              ]
+            ],
+            "q_interval_total_length": 0.01684485150114911,
+            "stratum": "witness_neighborhood",
+            "outer_index": 86
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.7229269018769298,
+            "intervals_s": [
+              [
+                4.393016752568672,
+                8.115943654445601
+              ]
+            ],
+            "minimum_scan_margin_m": -9.464116776619056,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 4.393016752568672,
+                "margin_m": -3.2510061520238054,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 8.115943654445601,
+                "margin_m": -4.842348744205083e-11,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 8,
+          "proposal_index": 36,
+          "proxy_score_s": 3.6079281138854595,
+          "decision": {
+            "heading_rad": 3.113513190571234,
+            "speed_mps": 113.53201223697728,
+            "release_time_s": 0.2797845546727875,
+            "fuse_delay_s": 3.4254934376195494,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9996057977802493,
+              0.028075773259368057,
+              0.0
+            ],
+            "release_point_m": [
+              17768.248018152954,
+              0.8918129975364416,
+              1800.0
+            ],
+            "explosion_time_s": 3.705277992292337,
+            "explosion_point_m": [
+              17379.49816176552,
+              11.810570018336442,
+              1742.5033740732445
+            ],
+            "active_window_s": [
+              3.705277992292337,
+              23.705277992292338
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.2797845546727875,
+              "fuse_delay_lower_s": 3.4254934376195494,
+              "speed_lower_mps": 43.53201223697728,
+              "speed_upper_mps": 26.46798776302272,
+              "explosion_height_lower_m": 1742.5033740732445,
+              "explosion_height_upper_m": 57.49662592675554,
+              "missile_arrival_margin_s": 63.29389281518027
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.124709207703715,
+            "smoke_age_s": 1.4194312154113777,
+            "q": 0.05905285009168187,
+            "cloud_center_m": [
+              17379.49816176552,
+              11.810570018336373,
+              1738.2450804270104
+            ],
+            "constructed_explosion_m": [
+              17379.49816176552,
+              11.810570018336373,
+              1742.5033740732445
+            ],
+            "forward_inverse_mismatch_m": 6.927791673660977e-14,
+            "q_intervals": [
+              [
+                0.05031837289440112,
+                0.06436000282925591
+              ]
+            ],
+            "q_interval_total_length": 0.01404162993485479,
+            "stratum": "witness_neighborhood",
+            "outer_index": 32
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.704842169582842,
+            "intervals_s": [
+              [
+                3.705277992292337,
+                7.410120161875179
+              ]
+            ],
+            "minimum_scan_margin_m": -9.489757965850929,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.705277992292337,
+                "margin_m": -3.4143181857509237,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.410120161875179,
+                "margin_m": 1.0885425894002765e-09,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        }
+      ],
+      "precise_calls": 2,
+      "precise_records": [
+        {
+          "rank": 1,
+          "proposal_index": 38,
+          "decision": {
+            "heading_rad": 0.10700711450221932,
+            "speed_mps": 88.08702874013804,
+            "release_time_s": 0.4683560670671222,
+            "fuse_delay_s": 0.6909391553755698,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              0.9942801997409831,
+              0.10680301682551248,
+              0.0
+            ],
+            "release_point_m": [
+              17841.020117721266,
+              4.406275337988357,
+              1800.0
+            ],
+            "explosion_time_s": 1.159295222442692,
+            "explosion_point_m": [
+              17901.534772029514,
+              10.90660355930627,
+              1797.6607551094876
+            ],
+            "active_window_s": [
+              1.159295222442692,
+              21.159295222442694
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.4683560670671222,
+              "fuse_delay_lower_s": 0.6909391553755698,
+              "speed_lower_mps": 18.087028740138038,
+              "speed_upper_mps": 51.91297125986196,
+              "explosion_height_lower_m": 1797.6607551094876,
+              "explosion_height_upper_m": 2.3392448905124184,
+              "missile_arrival_margin_s": 65.83987558502992
+            }
+          },
+          "generation": {
+            "t_obs_s": 3.5708328282938675,
+            "smoke_age_s": 2.4115376058511755,
+            "q": 0.05453301779653136,
+            "cloud_center_m": [
+              17901.534772029514,
+              10.906603559306271,
+              1790.426142291934
+            ],
+            "constructed_explosion_m": [
+              17901.534772029514,
+              10.906603559306271,
+              1797.6607551094876
+            ],
+            "forward_inverse_mismatch_m": 1.7763568394002505e-15,
+            "q_intervals": [
+              [
+                0.05329427778098053,
+                0.05565010404377981
+              ]
+            ],
+            "q_interval_total_length": 0.0023558262627992807,
+            "stratum": "broad",
+            "outer_index": 34
+          },
+          "proxy_score_s": 4.260907426747744,
+          "screen_duration_s": 4.5809043270349505,
+          "precise": {
+            "effective_duration_s": 4.5808990341424956,
+            "intervals_s": [
+              [
+                1.3085852479749376,
+                5.889484282117433
+              ]
+            ],
+            "minimum_scan_margin_m": -9.524360779602032,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 1.3085852479749376,
+                "margin_m": -1.1807763655724557e-09,
+                "iterations": 24
+              },
+              {
+                "kind": "exit",
+                "time_s": 5.889484282117433,
+                "margin_m": 8.28356050419643e-10,
+                "iterations": 24
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "proposal_index": 22,
+          "decision": {
+            "heading_rad": 3.092175723928942,
+            "speed_mps": 75.70859183185074,
+            "release_time_s": 0.004602157442918475,
+            "fuse_delay_s": 2.5244509246408686,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              -0.9987792319914243,
+              0.04939681915488732,
+              0.0
+            ],
+            "release_point_m": [
+              17799.65200248409,
+              0.0172109809748069,
+              1800.0
+            ],
+            "explosion_time_s": 2.529053082083787,
+            "explosion_point_m": [
+              17608.762694216806,
+              9.458060707375038,
+              1768.7730228924913
+            ],
+            "active_window_s": [
+              2.529053082083787,
+              22.529053082083788
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.004602157442918475,
+              "fuse_delay_lower_s": 2.5244509246408686,
+              "speed_lower_mps": 5.70859183185074,
+              "speed_upper_mps": 64.29140816814926,
+              "explosion_height_lower_m": 1768.7730228924913,
+              "explosion_height_upper_m": 31.226977107508674,
+              "missile_arrival_margin_s": 64.47011772538882
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.0824870664592074,
+            "smoke_age_s": 2.5534339843754204,
+            "q": 0.04729030353687519,
+            "cloud_center_m": [
+              17608.762694216806,
+              9.458060707375038,
+              1761.112720939365
+            ],
+            "constructed_explosion_m": [
+              17608.762694216806,
+              9.458060707375038,
+              1768.7730228924913
+            ],
+            "forward_inverse_mismatch_m": 0.0,
+            "q_intervals": [
+              [
+                0.04650859792799633,
+                0.04735212771661749
+              ]
+            ],
+            "q_interval_total_length": 0.0008435297886211571,
+            "stratum": "broad",
+            "outer_index": 20
+          },
+          "proxy_score_s": 4.2457536836957885,
+          "screen_duration_s": 4.536346789002419,
+          "precise": {
+            "effective_duration_s": 4.5363448095321655,
+            "intervals_s": [
+              [
+                2.841584189449872,
+                7.377928998982037
+              ]
+            ],
+            "minimum_scan_margin_m": -9.586832625999781,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.841584189449872,
+                "margin_m": 5.656737300796522e-10,
+                "iterations": 24
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.377928998982037,
+                "margin_m": -2.0200374706291768e-10,
+                "iterations": 24
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        }
+      ],
+      "seed_best_precise_duration_s": 4.5808990341424956,
+      "elapsed_seconds": 34.55352473699986
+    },
+    {
+      "method": "C2-seed",
+      "seed": 250829,
+      "status": "completed",
+      "generation": {
+        "candidate_count": 128,
+        "domain_counts": {
+          "target": 57,
+          "missile": 58,
+          "guard": 13
+        },
+        "outer_attempts": 128,
+        "status": "pass"
+      },
+      "paired_proxy_calls": 128,
+      "proxy_seconds": 0.8945446039997478,
+      "screen_calls": 8,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 125,
+          "proxy_score_s": 1.2899296764278751e-05,
+          "decision": {
+            "heading_rad": 2.9699820090489397,
+            "speed_mps": 85.47130704656604,
+            "release_time_s": 1.3784728689292187,
+            "fuse_delay_s": 4.167355701797306,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9853109960106253,
+              0.1707695556606898,
+              0.0
+            ],
+            "release_point_m": [
+              17683.910778819944,
+              20.120048185983883,
+              1800.0
+            ],
+            "explosion_time_s": 5.545828570726525,
+            "explosion_point_m": [
+              17332.953506677397,
+              80.94634329720223,
+              1714.9024176280177
+            ],
+            "active_window_s": [
+              5.545828570726525,
+              25.545828570726524
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 1.3784728689292187,
+              "fuse_delay_lower_s": 4.167355701797306,
+              "speed_lower_mps": 15.47130704656604,
+              "speed_upper_mps": 54.52869295343396,
+              "explosion_height_lower_m": 1714.9024176280177,
+              "explosion_height_upper_m": 85.0975823719823,
+              "missile_arrival_margin_s": 61.45334223674608
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 62.76500866995907,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 3,
+          "proxy_score_s": 7.271168001089063e-06,
+          "decision": {
+            "heading_rad": 2.954066971743387,
+            "speed_mps": 135.67698468139605,
+            "release_time_s": 4.332925588673492,
+            "fuse_delay_s": 2.0874906637878587,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9824685255964201,
+              0.18642852842952043,
+              0.0
+            ],
+            "release_point_m": [
+              17222.428094275718,
+              109.59728239746441,
+              1800.0
+            ],
+            "explosion_time_s": 6.420416252461351,
+            "explosion_point_m": [
+              16944.16899746194,
+              162.39839774070518,
+              1778.6476753701327
+            ],
+            "active_window_s": [
+              6.420416252461351,
+              26.42041625246135
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 4.332925588673492,
+              "fuse_delay_lower_s": 2.0874906637878587,
+              "speed_lower_mps": 65.67698468139605,
+              "speed_upper_mps": 4.32301531860395,
+              "explosion_height_lower_m": 1778.6476753701327,
+              "explosion_height_upper_m": 21.352324629867326,
+              "missile_arrival_margin_s": 60.57875455501126
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 162.1068341330437,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 48,
+          "proxy_score_s": 7.170894198392039e-06,
+          "decision": {
+            "heading_rad": 6.178591389022553,
+            "speed_mps": 88.609231922312,
+            "release_time_s": 2.649913903223183,
+            "fuse_delay_s": 2.2184798598968154,
+            "source_domain": "C2_missile",
+            "heading_unit": [
+              0.9945350410384663,
+              -0.10440331482580445,
+              0.0
+            ],
+            "release_point_m": [
+              18033.523625904283,
+              -24.514611982993394,
+              1800.0
+            ],
+            "explosion_time_s": 4.8683937631199985,
+            "explosion_point_m": [
+              18229.02713273467,
+              -45.03798555045359,
+              1775.8839008450377
+            ],
+            "active_window_s": [
+              4.8683937631199985,
+              24.868393763119997
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 2.649913903223183,
+              "fuse_delay_lower_s": 2.2184798598968154,
+              "speed_lower_mps": 18.609231922312006,
+              "speed_upper_mps": 51.390768077687994,
+              "explosion_height_lower_m": 1775.8839008450377,
+              "explosion_height_upper_m": 24.116099154962285,
+              "missile_arrival_margin_s": 62.13077704435261
+            }
+          },
+          "generation": {
+            "domain": "missile"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 57.3011309061761,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 94,
+          "proxy_score_s": 5.138025345298841e-06,
+          "decision": {
+            "heading_rad": 3.0929116740761606,
+            "speed_mps": 120.90126019304985,
+            "release_time_s": 9.548555842899347,
+            "fuse_delay_s": 0.23712012877459376,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9988153151037722,
+              0.04866175412120088,
+              0.0
+            ],
+            "release_point_m": [
+              16646.935204238544,
+              56.17670727378371,
+              1800.0
+            ],
+            "explosion_time_s": 9.78567597167394,
+            "explosion_point_m": [
+              16618.30104454415,
+              57.57174839644709,
+              1799.7244928181965
+            ],
+            "active_window_s": [
+              9.78567597167394,
+              29.78567597167394
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 9.548555842899347,
+              "fuse_delay_lower_s": 0.23712012877459376,
+              "speed_lower_mps": 50.90126019304985,
+              "speed_upper_mps": 19.09873980695015,
+              "explosion_height_lower_m": 1799.7244928181965,
+              "explosion_height_upper_m": 0.27550718180350486,
+              "missile_arrival_margin_s": 57.21349483579867
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 134.68066403959406,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 1,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 95,
+          "proxy_score_s": 2.873337376732335e-06,
+          "decision": {
+            "heading_rad": 2.9902115083997933,
+            "speed_mps": 77.58303573929052,
+            "release_time_s": 1.5755563014557143,
+            "fuse_delay_s": 8.01328262866113,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9885637391728573,
+              0.15080362592649751,
+              0.0
+            ],
+            "release_point_m": [
+              17679.161486974983,
+              18.433698499791365,
+              1800.0
+            ],
+            "explosion_time_s": 9.588838930116845,
+            "explosion_point_m": [
+              17064.57655820922,
+              112.18752743873573,
+              1485.357777414669
+            ],
+            "active_window_s": [
+              9.588838930116845,
+              29.588838930116843
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 1.5755563014557143,
+              "fuse_delay_lower_s": 8.01328262866113,
+              "speed_lower_mps": 7.583035739290523,
+              "speed_upper_mps": 62.41696426070948,
+              "explosion_height_lower_m": 1485.357777414669,
+              "explosion_height_upper_m": 314.64222258533096,
+              "missile_arrival_margin_s": 57.410331877355766
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 236.51898755479084,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 119,
+          "proxy_score_s": 1.7760859422130253e-06,
+          "decision": {
+            "heading_rad": 3.006515650036753,
+            "speed_mps": 107.66547542346905,
+            "release_time_s": 4.247875225507254,
+            "fuse_delay_s": 9.404755727811349,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9908909643346078,
+              0.134666613531458,
+              0.0
+            ],
+            "release_point_m": [
+              17346.8165072651,
+              61.589709132072244,
+              1800.0
+            ],
+            "explosion_time_s": 13.652630953318603,
+            "explosion_point_m": [
+              16343.47252402954,
+              197.9487448815092,
+              1366.5977915309782
+            ],
+            "active_window_s": [
+              13.652630953318603,
+              33.65263095331861
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 4.247875225507254,
+              "fuse_delay_lower_s": 9.404755727811349,
+              "speed_lower_mps": 37.66547542346905,
+              "speed_upper_mps": 32.33452457653095,
+              "explosion_height_lower_m": 1366.5977915309782,
+              "explosion_height_upper_m": 433.40220846902184,
+              "missile_arrival_margin_s": 53.346539854154
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 505.4622226791405,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 7,
+          "proposal_index": 31,
+          "proxy_score_s": 1.2906921306353681e-06,
+          "decision": {
+            "heading_rad": 3.0871903967472836,
+            "speed_mps": 80.34150650434803,
+            "release_time_s": 10.455322404783985,
+            "fuse_delay_s": 4.256137926636563,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9985205621585925,
+              0.05437542594305146,
+              0.0
+            ],
+            "release_point_m": [
+              16961.246369402248,
+              45.67515948438713,
+              1800.0
+            ],
+            "explosion_time_s": 14.711460331420547,
+            "explosion_point_m": [
+              16619.807722167632,
+              64.26853911060729,
+              1711.2379207522845
+            ],
+            "active_window_s": [
+              14.711460331420547,
+              34.71146033142055
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 10.455322404783985,
+              "fuse_delay_lower_s": 4.256137926636563,
+              "speed_lower_mps": 10.341506504348033,
+              "speed_upper_mps": 59.65849349565197,
+              "explosion_height_lower_m": 1711.2379207522845,
+              "explosion_height_upper_m": 88.76207924771552,
+              "missile_arrival_margin_s": 52.28771047605206
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 1014.4814395005913,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 8,
+          "proposal_index": 93,
+          "proxy_score_s": 1.2736415024640768e-06,
+          "decision": {
+            "heading_rad": 3.0948712229114816,
+            "speed_mps": 122.3062590116983,
+            "release_time_s": 0.4540969381768001,
+            "fuse_delay_s": 16.549460392623065,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9989087524856504,
+              0.046704434559917234,
+              0.0
+            ],
+            "release_point_m": [
+              17744.521708947035,
+              2.5939128148909614,
+              1800.0
+            ],
+            "explosion_time_s": 17.003557330799865,
+            "explosion_point_m": [
+              15722.62791658238,
+              97.12847973866451,
+              457.96526749370196
+            ],
+            "active_window_s": [
+              17.003557330799865,
+              37.003557330799865
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.4540969381768001,
+              "fuse_delay_lower_s": 16.549460392623065,
+              "speed_lower_mps": 52.3062590116983,
+              "speed_upper_mps": 17.6937409883017,
+              "explosion_height_lower_m": 457.96526749370196,
+              "explosion_height_upper_m": 1342.034732506298,
+              "missile_arrival_margin_s": 49.995613476672744
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 1300.324526101765,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        }
+      ],
+      "precise_calls": 2,
+      "precise_records": [
+        {
+          "rank": 1,
+          "proposal_index": 125,
+          "decision": {
+            "heading_rad": 2.9699820090489397,
+            "speed_mps": 85.47130704656604,
+            "release_time_s": 1.3784728689292187,
+            "fuse_delay_s": 4.167355701797306,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9853109960106253,
+              0.1707695556606898,
+              0.0
+            ],
+            "release_point_m": [
+              17683.910778819944,
+              20.120048185983883,
+              1800.0
+            ],
+            "explosion_time_s": 5.545828570726525,
+            "explosion_point_m": [
+              17332.953506677397,
+              80.94634329720223,
+              1714.9024176280177
+            ],
+            "active_window_s": [
+              5.545828570726525,
+              25.545828570726524
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 1.3784728689292187,
+              "fuse_delay_lower_s": 4.167355701797306,
+              "speed_lower_mps": 15.47130704656604,
+              "speed_upper_mps": 54.52869295343396,
+              "explosion_height_lower_m": 1714.9024176280177,
+              "explosion_height_upper_m": 85.0975823719823,
+              "missile_arrival_margin_s": 61.45334223674608
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "proxy_score_s": 1.2899296764278751e-05,
+          "screen_duration_s": 0.0,
+          "precise": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 62.76503621229614,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "proposal_index": 3,
+          "decision": {
+            "heading_rad": 2.954066971743387,
+            "speed_mps": 135.67698468139605,
+            "release_time_s": 4.332925588673492,
+            "fuse_delay_s": 2.0874906637878587,
+            "source_domain": "C2_target",
+            "heading_unit": [
+              -0.9824685255964201,
+              0.18642852842952043,
+              0.0
+            ],
+            "release_point_m": [
+              17222.428094275718,
+              109.59728239746441,
+              1800.0
+            ],
+            "explosion_time_s": 6.420416252461351,
+            "explosion_point_m": [
+              16944.16899746194,
+              162.39839774070518,
+              1778.6476753701327
+            ],
+            "active_window_s": [
+              6.420416252461351,
+              26.42041625246135
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 4.332925588673492,
+              "fuse_delay_lower_s": 2.0874906637878587,
+              "speed_lower_mps": 65.67698468139605,
+              "speed_upper_mps": 4.32301531860395,
+              "explosion_height_lower_m": 1778.6476753701327,
+              "explosion_height_upper_m": 21.352324629867326,
+              "missile_arrival_margin_s": 60.57875455501126
+            }
+          },
+          "generation": {
+            "domain": "target"
+          },
+          "proxy_score_s": 7.271168001089063e-06,
+          "screen_duration_s": 0.0,
+          "precise": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 162.1068341330437,
+            "root_residuals": [],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        }
+      ],
+      "seed_best_precise_duration_s": 0.0,
+      "elapsed_seconds": 34.34720652199985
+    },
+    {
+      "method": "C3-I-seed",
+      "seed": 250829,
+      "status": "completed",
+      "generation": {
+        "outer_attempts": 236,
+        "nonempty_outer": 128,
+        "empty_outer": 108,
+        "accepted_by_stratum": {
+          "broad": 10,
+          "witness_neighborhood": 118
+        },
+        "interval_total_length_sum": 1.6523674033020044,
+        "interval_component_count": 128,
+        "candidate_count": 128,
+        "nonempty_outer_rate": 0.5423728813559322,
+        "mean_interval_total_length": 0.01290912033829691,
+        "status": "pass"
+      },
+      "paired_proxy_calls": 128,
+      "proxy_seconds": 0.862434077999751,
+      "screen_calls": 8,
+      "first_positive_screen_call": 1,
+      "positive_screen_count": 8,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 38,
+          "proxy_score_s": 4.065175987914566,
+          "decision": {
+            "heading_rad": 3.1194394930145246,
+            "speed_mps": 96.54126643760208,
+            "release_time_s": 0.3116271917555524,
+            "fuse_delay_s": 2.918645451543089,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              -0.9997546287734262,
+              0.022151348629566477,
+              0.0
+            ],
+            "release_point_m": [
+              17769.92249821635,
+              0.6664207483924374,
+              1800.0
+            ],
+            "explosion_time_s": 3.2302726432986413,
+            "explosion_point_m": [
+              17488.22190822585,
+              6.9080002304399075,
+              1758.2593927681155
+            ],
+            "active_window_s": [
+              3.2302726432986413,
+              23.23027264329864
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.3116271917555524,
+              "fuse_delay_lower_s": 2.918645451543089,
+              "speed_lower_mps": 26.541266437602076,
+              "speed_upper_mps": 43.458733562397924,
+              "explosion_height_lower_m": 1758.2593927681155,
+              "explosion_height_upper_m": 41.740607231884496,
+              "missile_arrival_margin_s": 63.76889816417397
+            }
+          },
+          "generation": {
+            "t_obs_s": 6.318439956555209,
+            "smoke_age_s": 3.0881673132565677,
+            "q": 0.034540001152199414,
+            "cloud_center_m": [
+              17488.22190822585,
+              6.908000230439883,
+              1748.994890828346
+            ],
+            "constructed_explosion_m": [
+              17488.22190822585,
+              6.908000230439883,
+              1758.2593927681155
+            ],
+            "forward_inverse_mismatch_m": 2.4868995751603507e-14,
+            "q_intervals": [
+              [
+                0.029806745493363544,
+                0.0397377969135993
+              ]
+            ],
+            "q_interval_total_length": 0.009931051420235756,
+            "stratum": "broad",
+            "outer_index": 37
+          },
+          "continuous_screen": {
+            "effective_duration_s": 4.338164855241777,
+            "intervals_s": [
+              [
+                4.091017486483588,
+                8.429182341725365
+              ]
+            ],
+            "minimum_scan_margin_m": -9.666813531418507,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 4.091017486483588,
+                "margin_m": -9.025100666804065e-10,
+                "iterations": 26
+              },
+              {
+                "kind": "exit",
+                "time_s": 8.429182341725365,
+                "margin_m": 7.699313187004009e-09,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 24,
+          "proxy_score_s": 3.6503629853310606,
+          "decision": {
+            "heading_rad": 3.088202312139907,
+            "speed_mps": 79.25191584870983,
+            "release_time_s": 0.08429679905692744,
+            "fuse_delay_s": 2.786702755300825,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9985750742508092,
+              0.05336497994931701,
+              0.0
+            ],
+            "release_point_m": [
+              17793.328836651806,
+              0.35651450501322185,
+              1800.0
+            ],
+            "explosion_time_s": 2.8709995543577524,
+            "explosion_point_m": [
+              17572.7920014284,
+              12.142252095762348,
+              1761.948009992634
+            ],
+            "active_window_s": [
+              2.8709995543577524,
+              22.870999554357752
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.08429679905692744,
+              "fuse_delay_lower_s": 2.786702755300825,
+              "speed_lower_mps": 9.251915848709828,
+              "speed_upper_mps": 60.74808415129017,
+              "explosion_height_lower_m": 1761.948009992634,
+              "explosion_height_upper_m": 38.05199000736593,
+              "missile_arrival_margin_s": 64.12817125311486
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.326084070157855,
+            "smoke_age_s": 1.455084515800103,
+            "q": 0.06071126047881163,
+            "cloud_center_m": [
+              17572.7920014284,
+              12.142252095762327,
+              1757.5827564452338
+            ],
+            "constructed_explosion_m": [
+              17572.7920014284,
+              12.142252095762327,
+              1761.948009992634
+            ],
+            "forward_inverse_mismatch_m": 2.1316282072803006e-14,
+            "q_intervals": [
+              [
+                0.05929008800379626,
+                0.06196373193724677
+              ]
+            ],
+            "q_interval_total_length": 0.0026736439334505077,
+            "stratum": "witness_neighborhood",
+            "outer_index": 24
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.7544528284668934,
+            "intervals_s": [
+              [
+                2.8709995543577524,
+                6.625452382824646
+              ]
+            ],
+            "minimum_scan_margin_m": -9.45810257938273,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.8709995543577524,
+                "margin_m": -3.295088189621394,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.625452382824646,
+                "margin_m": 8.22986123694136e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 65,
+          "proxy_score_s": 3.634015203614692,
+          "decision": {
+            "heading_rad": 3.1175240217619935,
+            "speed_mps": 117.66007083935011,
+            "release_time_s": 0.42084898328960607,
+            "fuse_delay_s": 3.558564280661162,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9997103644635063,
+              0.024066308072563998,
+              0.0
+            ],
+            "release_point_m": [
+              17750.49722073144,
+              1.1916942933413608,
+              1800.0
+            ],
+            "explosion_time_s": 3.979413263950768,
+            "explosion_point_m": [
+              17331.917566049608,
+              11.268279753057373,
+              1737.9494392759723
+            ],
+            "active_window_s": [
+              3.979413263950768,
+              23.979413263950768
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.42084898328960607,
+              "fuse_delay_lower_s": 3.558564280661162,
+              "speed_lower_mps": 47.66007083935011,
+              "speed_upper_mps": 22.339929160649888,
+              "explosion_height_lower_m": 1737.9494392759723,
+              "explosion_height_upper_m": 62.05056072402772,
+              "missile_arrival_margin_s": 63.01975754352184
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.471405156345728,
+            "smoke_age_s": 1.4919918923949604,
+            "q": 0.056341398765286585,
+            "cloud_center_m": [
+              17331.917566049608,
+              11.268279753057318,
+              1733.4734635987875
+            ],
+            "constructed_explosion_m": [
+              17331.917566049608,
+              11.268279753057318,
+              1737.9494392759723
+            ],
+            "forward_inverse_mismatch_m": 5.5067062021407764e-14,
+            "q_intervals": [
+              [
+                0.046014267989264196,
+                0.061181729944479256
+              ]
+            ],
+            "q_interval_total_length": 0.01516746195521506,
+            "stratum": "witness_neighborhood",
+            "outer_index": 60
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.772781940996648,
+            "intervals_s": [
+              [
+                3.979413263950768,
+                7.752195204947416
+              ]
+            ],
+            "minimum_scan_margin_m": -9.482874110064285,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.979413263950768,
+                "margin_m": -3.1023954619060916,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.752195204947416,
+                "margin_m": 1.0258958127451479e-09,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 86,
+          "proxy_score_s": 3.63036614214535,
+          "decision": {
+            "heading_rad": 3.102877407780998,
+            "speed_mps": 73.09898612409408,
+            "release_time_s": 0.6951660000544275,
+            "fuse_delay_s": 2.9170938741811776,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9992506584751409,
+              0.03870557501184111,
+              0.0
+            ],
+            "release_point_m": [
+              17749.222148694396,
+              1.9668597823576335,
+              1800.0
+            ],
+            "explosion_time_s": 3.612259874235605,
+            "explosion_point_m": [
+              17536.145331105417,
+              10.220305178190518,
+              1758.3037603131518
+            ],
+            "active_window_s": [
+              3.612259874235605,
+              23.612259874235605
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.6951660000544275,
+              "fuse_delay_lower_s": 2.9170938741811776,
+              "speed_lower_mps": 3.0989861240940826,
+              "speed_upper_mps": 66.90101387590592,
+              "explosion_height_lower_m": 1758.3037603131518,
+              "explosion_height_upper_m": 41.69623968684823,
+              "missile_arrival_margin_s": 63.386910933237004
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.090166398620798,
+            "smoke_age_s": 1.4779065243851925,
+            "q": 0.05110152589095287,
+            "cloud_center_m": [
+              17536.145331105417,
+              10.220305178190573,
+              1753.8700407399963
+            ],
+            "constructed_explosion_m": [
+              17536.145331105417,
+              10.220305178190573,
+              1758.3037603131518
+            ],
+            "forward_inverse_mismatch_m": 5.5067062021407764e-14,
+            "q_intervals": [
+              [
+                0.050495578030930556,
+                0.0631690176731918
+              ]
+            ],
+            "q_interval_total_length": 0.012673439642261246,
+            "stratum": "witness_neighborhood",
+            "outer_index": 80
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.7702329871058473,
+            "intervals_s": [
+              [
+                3.612259874235605,
+                7.382492861341452
+              ]
+            ],
+            "minimum_scan_margin_m": -9.551958025409029,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.612259874235605,
+                "margin_m": -3.208542678290379,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.382492861341452,
+                "margin_m": 5.387388313238262e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 116,
+          "proxy_score_s": 3.6233602965845555,
+          "decision": {
+            "heading_rad": 3.099276872759506,
+            "speed_mps": 76.11475978747045,
+            "release_time_s": 0.48708850302041196,
+            "fuse_delay_s": 2.894004009372032,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9991048209358456,
+              0.042303153342886396,
+              0.0
+            ],
+            "release_point_m": [
+              17762.95856402494,
+              1.5683735212346805,
+              1800.0
+            ],
+            "explosion_time_s": 3.381092512392444,
+            "explosion_point_m": [
+              17542.87933086712,
+              10.88676069420372,
+              1758.9612298893192
+            ],
+            "active_window_s": [
+              3.381092512392444,
+              23.381092512392442
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.48708850302041196,
+              "fuse_delay_lower_s": 2.894004009372032,
+              "speed_lower_mps": 6.114759787470447,
+              "speed_upper_mps": 63.88524021252955,
+              "explosion_height_lower_m": 1758.9612298893192,
+              "explosion_height_upper_m": 41.038770110680844,
+              "missile_arrival_margin_s": 63.61807829508017
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.848135107476399,
+            "smoke_age_s": 1.4670425950839556,
+            "q": 0.05443380347101862,
+            "cloud_center_m": [
+              17542.87933086712,
+              10.886760694203724,
+              1754.5601021040673
+            ],
+            "constructed_explosion_m": [
+              17542.87933086712,
+              10.886760694203724,
+              1758.9612298893192
+            ],
+            "forward_inverse_mismatch_m": 5.329070518200751e-15,
+            "q_intervals": [
+              [
+                0.05331890028353642,
+                0.06252825526564165
+              ]
+            ],
+            "q_interval_total_length": 0.009209354982105233,
+            "stratum": "witness_neighborhood",
+            "outer_index": 108
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.761453870236874,
+            "intervals_s": [
+              [
+                3.381092512392444,
+                7.142546382629318
+              ]
+            ],
+            "minimum_scan_margin_m": -9.50148990971093,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.381092512392444,
+                "margin_m": -3.2503525969922027,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.142546382629318,
+                "margin_m": -4.3928949367000314e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 5,
+          "proxy_score_s": 3.615670042321432,
+          "decision": {
+            "heading_rad": 3.0751826756508045,
+            "speed_mps": 71.36131694614274,
+            "release_time_s": 0.0012064197345504901,
+            "fuse_delay_s": 2.6462416032210965,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9977956677382415,
+              0.06636117421201045,
+              0.0
+            ],
+            "release_point_m": [
+              17799.914098073667,
+              0.00571314637141078,
+              1800.0
+            ],
+            "explosion_time_s": 2.647448022955647,
+            "explosion_point_m": [
+              17611.491076840033,
+              12.537309886996619,
+              1765.687286349171
+            ],
+            "active_window_s": [
+              2.647448022955647,
+              22.647448022955647
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.0012064197345504901,
+              "fuse_delay_lower_s": 2.6462416032210965,
+              "speed_lower_mps": 1.3613169461427361,
+              "speed_upper_mps": 68.63868305385726,
+              "explosion_height_lower_m": 1765.687286349171,
+              "explosion_height_upper_m": 34.31271365082898,
+              "missile_arrival_margin_s": 64.35172278451697
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.055696662286552,
+            "smoke_age_s": 1.4082486393309048,
+            "q": 0.0626865494349833,
+            "cloud_center_m": [
+              17611.491076840033,
+              12.537309886996658,
+              1761.4625404311782
+            ],
+            "constructed_explosion_m": [
+              17611.491076840033,
+              12.537309886996658,
+              1765.687286349171
+            ],
+            "forward_inverse_mismatch_m": 3.907985046680551e-14,
+            "q_intervals": [
+              [
+                0.06249444401408267,
+                0.06270324876104208
+              ]
+            ],
+            "q_interval_total_length": 0.00020880474695941093,
+            "stratum": "witness_neighborhood",
+            "outer_index": 5
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.7111001786589615,
+            "intervals_s": [
+              [
+                2.647448022955647,
+                6.358548201614608
+              ]
+            ],
+            "minimum_scan_margin_m": -9.425759592519315,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.647448022955647,
+                "margin_m": -3.494543391448004,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.358548201614608,
+                "margin_m": -2.76596523463013e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 7,
+          "proposal_index": 107,
+          "proxy_score_s": 3.6148318561009307,
+          "decision": {
+            "heading_rad": 3.1212163797077284,
+            "speed_mps": 121.92106435014617,
+            "release_time_s": 0.62229305137665,
+            "fuse_delay_s": 3.737019769906167,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9997924109139439,
+              0.020374863898526902,
+              0.0
+            ],
+            "release_point_m": [
+              17724.14511875344,
+              1.5458537838117394,
+              1800.0
+            ],
+            "explosion_time_s": 4.359312821282817,
+            "explosion_point_m": [
+              17268.618272944736,
+              10.829078365395885,
+              1731.5699478727192
+            ],
+            "active_window_s": [
+              4.359312821282817,
+              24.359312821282817
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.62229305137665,
+              "fuse_delay_lower_s": 3.737019769906167,
+              "speed_lower_mps": 51.92106435014617,
+              "speed_upper_mps": 18.078935649853833,
+              "explosion_height_lower_m": 1731.5699478727192,
+              "explosion_height_upper_m": 68.43005212728076,
+              "missile_arrival_margin_s": 62.639857986189796
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.838444027653123,
+            "smoke_age_s": 1.479131206370306,
+            "q": 0.05414539182697901,
+            "cloud_center_m": [
+              17268.618272944736,
+              10.829078365395802,
+              1727.1325542536083
+            ],
+            "constructed_explosion_m": [
+              17268.618272944736,
+              10.829078365395802,
+              1731.5699478727192
+            ],
+            "forward_inverse_mismatch_m": 8.348877145181177e-14,
+            "q_intervals": [
+              [
+                0.04174783985973603,
+                0.05846205756001324
+              ]
+            ],
+            "q_interval_total_length": 0.016714217700277215,
+            "stratum": "witness_neighborhood",
+            "outer_index": 99
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.7543895104527465,
+            "intervals_s": [
+              [
+                4.359312821282817,
+                8.113702331735563
+              ]
+            ],
+            "minimum_scan_margin_m": -9.530724344169945,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 4.359312821282817,
+                "margin_m": -3.1484117244171896,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 8.113702331735563,
+                "margin_m": -8.50937098562099e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        },
+        {
+          "call_index": 8,
+          "proposal_index": 115,
+          "proxy_score_s": 3.609822979932929,
+          "decision": {
+            "heading_rad": 3.075431153625151,
+            "speed_mps": 70.13280249527621,
+            "release_time_s": 0.039202257465498214,
+            "fuse_delay_s": 2.644408632138968,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9978121262256128,
+              0.06611324191961784,
+              0.0
+            ],
+            "release_point_m": [
+              17797.25665108159,
+              0.18176937917047975,
+              1800.0
+            ],
+            "explosion_time_s": 2.6836108896044664,
+            "explosion_point_m": [
+              17612.20262537404,
+              12.443117230375126,
+              1765.7348046327177
+            ],
+            "active_window_s": [
+              2.6836108896044664,
+              22.683610889604466
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.039202257465498214,
+              "fuse_delay_lower_s": 2.644408632138968,
+              "speed_lower_mps": 0.13280249527620924,
+              "speed_upper_mps": 69.86719750472379,
+              "explosion_height_lower_m": 1765.7348046327177,
+              "explosion_height_upper_m": 34.26519536728233,
+              "missile_arrival_margin_s": 64.31555991786814
+            }
+          },
+          "generation": {
+            "t_obs_s": 4.08476561112243,
+            "smoke_age_s": 1.4011547215179636,
+            "q": 0.062215586151875515,
+            "cloud_center_m": [
+              17612.20262537404,
+              12.443117230375103,
+              1761.5313404681638
+            ],
+            "constructed_explosion_m": [
+              17612.20262537404,
+              12.443117230375103,
+              1765.7348046327177
+            ],
+            "forward_inverse_mismatch_m": 2.3092638912203256e-14,
+            "q_intervals": [
+              [
+                0.062196581440339786,
+                0.06276199795430851
+              ]
+            ],
+            "q_interval_total_length": 0.0005654165139687209,
+            "stratum": "witness_neighborhood",
+            "outer_index": 107
+          },
+          "continuous_screen": {
+            "effective_duration_s": 3.703847105801106,
+            "intervals_s": [
+              [
+                2.6836108896044664,
+                6.387457995405573
+              ]
+            ],
+            "minimum_scan_margin_m": -9.459939332556855,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 2.6836108896044664,
+                "margin_m": -3.5254013068886225,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 6.387457995405573,
+                "margin_m": -7.88306309118525e-10,
+                "iterations": 26
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128,
+              "n_levels": 17
+            }
+          }
+        }
+      ],
+      "precise_calls": 2,
+      "precise_records": [
+        {
+          "rank": 1,
+          "proposal_index": 38,
+          "decision": {
+            "heading_rad": 3.1194394930145246,
+            "speed_mps": 96.54126643760208,
+            "release_time_s": 0.3116271917555524,
+            "fuse_delay_s": 2.918645451543089,
+            "source_domain": "C3I_broad",
+            "heading_unit": [
+              -0.9997546287734262,
+              0.022151348629566477,
+              0.0
+            ],
+            "release_point_m": [
+              17769.92249821635,
+              0.6664207483924374,
+              1800.0
+            ],
+            "explosion_time_s": 3.2302726432986413,
+            "explosion_point_m": [
+              17488.22190822585,
+              6.9080002304399075,
+              1758.2593927681155
+            ],
+            "active_window_s": [
+              3.2302726432986413,
+              23.23027264329864
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.3116271917555524,
+              "fuse_delay_lower_s": 2.918645451543089,
+              "speed_lower_mps": 26.541266437602076,
+              "speed_upper_mps": 43.458733562397924,
+              "explosion_height_lower_m": 1758.2593927681155,
+              "explosion_height_upper_m": 41.740607231884496,
+              "missile_arrival_margin_s": 63.76889816417397
+            }
+          },
+          "generation": {
+            "t_obs_s": 6.318439956555209,
+            "smoke_age_s": 3.0881673132565677,
+            "q": 0.034540001152199414,
+            "cloud_center_m": [
+              17488.22190822585,
+              6.908000230439883,
+              1748.994890828346
+            ],
+            "constructed_explosion_m": [
+              17488.22190822585,
+              6.908000230439883,
+              1758.2593927681155
+            ],
+            "forward_inverse_mismatch_m": 2.4868995751603507e-14,
+            "q_intervals": [
+              [
+                0.029806745493363544,
+                0.0397377969135993
+              ]
+            ],
+            "q_interval_total_length": 0.009931051420235756,
+            "stratum": "broad",
+            "outer_index": 37
+          },
+          "proxy_score_s": 4.065175987914566,
+          "screen_duration_s": 4.338164855241777,
+          "precise": {
+            "effective_duration_s": 4.338164855241777,
+            "intervals_s": [
+              [
+                4.091017486483588,
+                8.429182341725365
+              ]
+            ],
+            "minimum_scan_margin_m": -9.695285703522083,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 4.091017486483588,
+                "margin_m": -9.025100666804065e-10,
+                "iterations": 24
+              },
+              {
+                "kind": "exit",
+                "time_s": 8.429182341725365,
+                "margin_m": 7.699313187004009e-09,
+                "iterations": 24
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "proposal_index": 65,
+          "decision": {
+            "heading_rad": 3.1175240217619935,
+            "speed_mps": 117.66007083935011,
+            "release_time_s": 0.42084898328960607,
+            "fuse_delay_s": 3.558564280661162,
+            "source_domain": "C3I_witness_neighborhood",
+            "heading_unit": [
+              -0.9997103644635063,
+              0.024066308072563998,
+              0.0
+            ],
+            "release_point_m": [
+              17750.49722073144,
+              1.1916942933413608,
+              1800.0
+            ],
+            "explosion_time_s": 3.979413263950768,
+            "explosion_point_m": [
+              17331.917566049608,
+              11.268279753057373,
+              1737.9494392759723
+            ],
+            "active_window_s": [
+              3.979413263950768,
+              23.979413263950768
+            ],
+            "constraint_margins": {
+              "release_time_lower_s": 0.42084898328960607,
+              "fuse_delay_lower_s": 3.558564280661162,
+              "speed_lower_mps": 47.66007083935011,
+              "speed_upper_mps": 22.339929160649888,
+              "explosion_height_lower_m": 1737.9494392759723,
+              "explosion_height_upper_m": 62.05056072402772,
+              "missile_arrival_margin_s": 63.01975754352184
+            }
+          },
+          "generation": {
+            "t_obs_s": 5.471405156345728,
+            "smoke_age_s": 1.4919918923949604,
+            "q": 0.056341398765286585,
+            "cloud_center_m": [
+              17331.917566049608,
+              11.268279753057318,
+              1733.4734635987875
+            ],
+            "constructed_explosion_m": [
+              17331.917566049608,
+              11.268279753057318,
+              1737.9494392759723
+            ],
+            "forward_inverse_mismatch_m": 5.5067062021407764e-14,
+            "q_intervals": [
+              [
+                0.046014267989264196,
+                0.061181729944479256
+              ]
+            ],
+            "q_interval_total_length": 0.01516746195521506,
+            "stratum": "witness_neighborhood",
+            "outer_index": 60
+          },
+          "proxy_score_s": 3.634015203614692,
+          "screen_duration_s": 3.772781940996648,
+          "precise": {
+            "effective_duration_s": 3.772781940996648,
+            "intervals_s": [
+              [
+                3.979413263950768,
+                7.752195204947416
+              ]
+            ],
+            "minimum_scan_margin_m": -9.506730867376108,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 3.979413263950768,
+                "margin_m": -3.1023938653182794,
+                "iterations": 0
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.752195204947416,
+                "margin_m": 1.0258958127451479e-09,
+                "iterations": 24
+              }
+            ],
+            "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+            "local_minimum_checks": 0,
+            "recovered_unsampled_interval_count": 0,
+            "settings": {
+              "scan_step_s": 0.005,
+              "n_theta": 512,
+              "n_levels": 33
+            }
+          }
+        }
+      ],
+      "seed_best_precise_duration_s": 4.338164855241777,
+      "elapsed_seconds": 34.710136522000084
+    }
+  ],
+  "aggregate": {
+    "C2-seed": {
+      "positive_seed_count": 0,
+      "seed_best_durations_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_best_median_s": 0.0,
+      "seed_best_best_s": 0.0,
+      "seed_best_std_s": 0.0,
+      "positive_screen_count": 0,
+      "screen_call_count": 24,
+      "screen_positive_rate": 0.0,
+      "median_first_positive_call": null,
+      "proxy_call_count": 384,
+      "precise_call_count": 6,
+      "elapsed_seconds": 102.4785378839997
+    },
+    "C3-I-seed": {
+      "positive_seed_count": 3,
+      "seed_best_durations_s": [
+        4.272193250656128,
+        4.5808990341424956,
+        4.338164855241777
+      ],
+      "seed_best_median_s": 4.338164855241777,
+      "seed_best_best_s": 4.5808990341424956,
+      "seed_best_std_s": 0.1327367465558732,
+      "positive_screen_count": 24,
+      "screen_call_count": 24,
+      "screen_positive_rate": 1.0,
+      "median_first_positive_call": 1.0,
+      "proxy_call_count": 384,
+      "precise_call_count": 6,
+      "elapsed_seconds": 103.83578606500032
+    }
+  },
+  "role_decision": {
+    "role": "C3_PRIMARY_SEED_C2_GUARD",
+    "duration_tolerance_s": 0.0001,
+    "c2_seed_wins": 0,
+    "c3_seed_wins": 3
+  },
+  "limitations": [
+    "The pilot compares seed generators, not complete model families or strict global optima.",
+    "C3-I is a three-dimensional centerline seed manifold and does not cover the full four-dimensional domain.",
+    "External numerical results were neither loaded nor compared."
+  ],
+  "run_identity": {
+    "executed_at": "2026-08-28T02:06:06.585439+00:00",
+    "execution_kind": "declared_stochastic_repeated_fixed_seeds",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "seeds": [
+      250827,
+      250828,
+      250829
+    ],
+    "script_sha256": "a65c0153d5a9260eef4678e912be878c0a5937acad9c2c49d89958e6061331b1",
+    "q1_model_sha256": "a7dd496204e30e90000fc8554919309da36fde3a6c45e3a3f4fdca46a55c8669",
+    "official_input_sha256": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "geometry_sha256": "210f5fc5ccb99dc8bba7877265f0da7762efca0614bc5ffe540d08bbdb397eaf",
+    "spec_sha256": "dfe33fbda5cbc4203730e2f6bc26aa972e42711fd571c42b2cf2904553f331c3"
+  },
+  "output_path": "docs/q2_reselection_pilot.json"
+}

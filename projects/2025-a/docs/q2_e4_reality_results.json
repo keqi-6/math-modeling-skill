@@ -1,0 +1,993 @@
+{
+  "schema_version": "1.0",
+  "result_id": "Q2-S6-E4-REALITY-20260827",
+  "question_id": "Q2",
+  "level": "E4_REALITY",
+  "status": "pass",
+  "external_numeric_results_used": false,
+  "stress_policy": {
+    "declared_before_observation": true,
+    "physical_parameter_grids": {
+      "smoke_radius_m": [
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0
+      ],
+      "smoke_sink_speed_mps": [
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6
+      ],
+      "missile_speed_mps": [
+        285.0,
+        292.5,
+        300.0,
+        307.5,
+        315.0
+      ],
+      "target_radius_m": [
+        6.3,
+        6.65,
+        7.0,
+        7.35,
+        7.7
+      ],
+      "target_height_m": [
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0
+      ]
+    },
+    "control_perturbation_grids": {
+      "heading_offset_deg": [
+        -1.0,
+        -0.5,
+        -0.25,
+        0.0,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "speed_offset_mps": [
+        -5.0,
+        -2.0,
+        -1.0,
+        0.0,
+        1.0,
+        2.0,
+        5.0
+      ],
+      "release_offset_s": [
+        -0.1,
+        -0.05,
+        -0.02,
+        0.0,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "fuse_offset_s": [
+        -0.1,
+        -0.05,
+        -0.02,
+        0.0,
+        0.02,
+        0.05,
+        0.1
+      ]
+    },
+    "diagnostic_thresholds": {
+      "near_optimal_ratio": 0.95,
+      "substantial_retention_ratio": 0.8,
+      "meaningful_duration_s": 1.0
+    },
+    "interpretation": "Designed stress bands around official values; not empirical confidence intervals or probability claims."
+  },
+  "identities": {
+    "data/A题.pdf": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "planning/12_q2_c3_geometry_and_candidate_reselection.md": "210f5fc5ccb99dc8bba7877265f0da7762efca0614bc5ffe540d08bbdb397eaf",
+    "planning/13_q2_reselection_pilot_spec.md": "dfe33fbda5cbc4203730e2f6bc26aa972e42711fd571c42b2cf2904553f331c3",
+    "planning/14_q2_formal_solver_spec.md": "39b2b9f842d25e7111198a7c3dd5a277c2286ca0cabe15104ac95c56d91031df",
+    "src/q1/model.py": "cb36870ca55ed3b1e3c3adfe02cd91667c89249fa1aeb730cb42f0a1bbd4f7f1",
+    "src/q2/reselection_pilot.py": "061ef27a29eb2afe62f28a13843ff2bd28d5133e22801c44b2804ecf2d621244",
+    "src/q2/solve.py": "7a9ca6e7dbe425620d22d714acb6f174531d368ac950f866da3818685b4e9d8f",
+    "docs/q2_result.json": "0dd12455e0898bdb5e087888da848ea66bfa8caf325b1180b0412f23557eab7f",
+    "docs/q2_validation_results.json": "16971468e98106e916405d7da4fda0d0c23f5e96fd23a0739f15d56fb083a436"
+  },
+  "nominal": {
+    "scan_step_s": 0.02,
+    "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+    "scan_count": 296,
+    "intervals_s": [
+      [
+        1.159295222442692,
+        5.741356219459961
+      ]
+    ],
+    "effective_duration_s": 4.582060997017269,
+    "root_residuals": [
+      {
+        "kind": "entry",
+        "time_s": 1.159295222442692,
+        "margin_m": -0.002369839016866493,
+        "iterations": 0
+      },
+      {
+        "kind": "exit",
+        "time_s": 5.741356219459961,
+        "margin_m": -2.276578925375361e-11,
+        "iterations": 26
+      }
+    ],
+    "minimum_scan_margin_m": -9.470199514255485,
+    "local_minimum_checks": 0,
+    "recovered_unsampled_interval_count": 0,
+    "local_minimum_records": [],
+    "geometry_pruning": {
+      "role": "safe_necessary_precheck_only",
+      "active_window_s": [
+        1.159295222442692,
+        21.159295222442694
+      ],
+      "possible_window_s": [
+        1.159295222442692,
+        7.049756278040042
+      ],
+      "upper_bounds_s": {
+        "active_stop_s": 21.159295222442694,
+        "candidate_x_cap_s": 7.049756276040042,
+        "candidate_z_upper_cap_s": 7.778498350263425,
+        "candidate_z_lower_cap_s": 603.7128802592719
+      },
+      "length_expansion_m": 1e-09,
+      "time_expansion_s": 2e-09,
+      "active_span_s": 20.0,
+      "possible_span_s": 5.89046105559735,
+      "pruned_fraction": 0.7054769472201325,
+      "pruned": false,
+      "reasons": [],
+      "enabled": true
+    }
+  },
+  "parameter_sensitivity_and_three_finalist_response": {
+    "smoke_radius_m": {
+      "stress_values": [
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0
+      ],
+      "records": [
+        {
+          "value": 9.0,
+          "formal_best_fixed_duration_s": 4.101528155747331,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.101528155747331
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.095691106137243
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.064257107918811
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.101528155747331
+        },
+        {
+          "value": 9.5,
+          "formal_best_fixed_duration_s": 4.342093584337395,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.342093584337395
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.334329983640841
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.300491747461598
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.342093584337395
+        },
+        {
+          "value": 10.0,
+          "formal_best_fixed_duration_s": 4.582060997017269,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.582060997017269
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.572944434270589
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.536701766675544
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.582060997017269
+        },
+        {
+          "value": 10.5,
+          "formal_best_fixed_duration_s": 4.701531308179191,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.701531308179191
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.811533904967656
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.772886662695312
+            }
+          ],
+          "selected_start_id": "C3I-250827-2",
+          "selected_duration_s": 4.811533904967656
+        },
+        {
+          "value": 11.0,
+          "formal_best_fixed_duration_s": 4.820761379387475,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.820761379387475
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 5.050097828516479
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 5.0090459224234225
+            }
+          ],
+          "selected_start_id": "C3I-250827-2",
+          "selected_duration_s": 5.050097828516479
+        }
+      ],
+      "expected_direction": "nondecreasing",
+      "direction_status": "pass",
+      "selected_decision_switch_count": 1,
+      "stress_band_is_empirical_confidence_interval": false
+    },
+    "smoke_sink_speed_mps": {
+      "stress_values": [
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6
+      ],
+      "records": [
+        {
+          "value": 2.4,
+          "formal_best_fixed_duration_s": 5.008427859761717,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 5.008427859761717
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.952882196726097
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.933152484292413
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 5.008427859761717
+        },
+        {
+          "value": 2.7,
+          "formal_best_fixed_duration_s": 4.801706611391335,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.801706611391335
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.779192036787151
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.7446385626001435
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.801706611391335
+        },
+        {
+          "value": 3.0,
+          "formal_best_fixed_duration_s": 4.582060997017269,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.582060997017269
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.572944434270589
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.536701766675544
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.582060997017269
+        },
+        {
+          "value": 3.3,
+          "formal_best_fixed_duration_s": 4.358667475734389,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.358667475734389
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.349381931038343
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.319948068030827
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.358667475734389
+        },
+        {
+          "value": 3.6,
+          "formal_best_fixed_duration_s": 4.13809161784598,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.13809161784598
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.1197356186853
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.102231971179258
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.13809161784598
+        }
+      ],
+      "expected_direction": "context_dependent",
+      "direction_status": "pass",
+      "selected_decision_switch_count": 0,
+      "stress_band_is_empirical_confidence_interval": false
+    },
+    "missile_speed_mps": {
+      "stress_values": [
+        285.0,
+        292.5,
+        300.0,
+        307.5,
+        315.0
+      ],
+      "records": [
+        {
+          "value": 285.0,
+          "formal_best_fixed_duration_s": 4.699387646109127,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.699387646109127
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.690324677511406
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.6519785225656785
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.699387646109127
+        },
+        {
+          "value": 292.5,
+          "formal_best_fixed_duration_s": 4.641640739924033,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.641640739924033
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.632596454399816
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.596109654346632
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.641640739924033
+        },
+        {
+          "value": 300.0,
+          "formal_best_fixed_duration_s": 4.582060997017269,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.582060997017269
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.572944434270589
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.536701766675544
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.582060997017269
+        },
+        {
+          "value": 307.5,
+          "formal_best_fixed_duration_s": 4.508071804614992,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.508071804614992
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.511697627380439
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.474276635820397
+            }
+          ],
+          "selected_start_id": "C3I-250827-2",
+          "selected_duration_s": 4.511697627380439
+        },
+        {
+          "value": 315.0,
+          "formal_best_fixed_duration_s": 4.433707490015687,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.433707490015687
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.449156106767306
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.409307268342424
+            }
+          ],
+          "selected_start_id": "C3I-250827-2",
+          "selected_duration_s": 4.449156106767306
+        }
+      ],
+      "expected_direction": "context_dependent",
+      "direction_status": "pass",
+      "selected_decision_switch_count": 1,
+      "stress_band_is_empirical_confidence_interval": false
+    },
+    "target_radius_m": {
+      "stress_values": [
+        6.3,
+        6.65,
+        7.0,
+        7.35,
+        7.7
+      ],
+      "records": [
+        {
+          "value": 6.3,
+          "formal_best_fixed_duration_s": 4.584621953603143,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.584621953603143
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.5845823450199354
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.547768620276422
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.584621953603143
+        },
+        {
+          "value": 6.65,
+          "formal_best_fixed_duration_s": 4.58334302490576,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.58334302490576
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.578765012440442
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.542236174289165
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.58334302490576
+        },
+        {
+          "value": 7.0,
+          "formal_best_fixed_duration_s": 4.582060997017269,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.582060997017269
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.572944434270589
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.536701766675544
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.582060997017269
+        },
+        {
+          "value": 7.35,
+          "formal_best_fixed_duration_s": 4.575996887200967,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.575996887200967
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.567120661706413
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.53116544272219
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.575996887200967
+        },
+        {
+          "value": 7.7,
+          "formal_best_fixed_duration_s": 4.569353925192287,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.569353925192287
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.561293744158034
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.525627251886881
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.569353925192287
+        }
+      ],
+      "expected_direction": "nonincreasing",
+      "direction_status": "pass",
+      "selected_decision_switch_count": 0,
+      "stress_band_is_empirical_confidence_interval": false
+    },
+    "target_height_m": {
+      "stress_values": [
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0
+      ],
+      "records": [
+        {
+          "value": 9.0,
+          "formal_best_fixed_duration_s": 4.585429477361844,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.585429477361844
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.5751248477092865
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.538385298539048
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.585429477361844
+        },
+        {
+          "value": 9.5,
+          "formal_best_fixed_duration_s": 4.583748136432851,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.583748136432851
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.574036367665439
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.537544824468158
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.583748136432851
+        },
+        {
+          "value": 10.0,
+          "formal_best_fixed_duration_s": 4.582060997017269,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.582060997017269
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.572944434270589
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.536701766675544
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.582060997017269
+        },
+        {
+          "value": 10.5,
+          "formal_best_fixed_duration_s": 4.580368025195387,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.580368025195387
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.57184903026096
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.535856110860162
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.580368025195387
+        },
+        {
+          "value": 11.0,
+          "formal_best_fixed_duration_s": 4.578669187642566,
+          "three_finalist_durations_s": [
+            {
+              "start_id": "C3I-250828-1",
+              "duration_s": 4.578669187642566
+            },
+            {
+              "start_id": "C3I-250827-2",
+              "duration_s": 4.570750137182163
+            },
+            {
+              "start_id": "C3I-250828-2",
+              "duration_s": 4.535007845104473
+            }
+          ],
+          "selected_start_id": "C3I-250828-1",
+          "selected_duration_s": 4.578669187642566
+        }
+      ],
+      "expected_direction": "nonincreasing",
+      "direction_status": "pass",
+      "selected_decision_switch_count": 0,
+      "stress_band_is_empirical_confidence_interval": false
+    }
+  },
+  "control_perturbation_response": {
+    "heading_offset_deg": {
+      "records": [
+        {
+          "offset": -1.0,
+          "duration_s": 4.549558698379897,
+          "retention_ratio": 0.9929066202613781,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": -0.5,
+          "duration_s": 4.576270397446262,
+          "retention_ratio": 0.9987362456382015,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": -0.25,
+          "duration_s": 4.581996455575505,
+          "retention_ratio": 0.9999859143206941,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.0,
+          "duration_s": 4.582060997017269,
+          "retention_ratio": 1.0,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.25,
+          "duration_s": 4.501157948704538,
+          "retention_ratio": 0.9823435243735525,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.5,
+          "duration_s": 4.417835598864026,
+          "retention_ratio": 0.9641590545695164,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 1.0,
+          "duration_s": 4.24380927193599,
+          "retention_ratio": 0.9261791308973262,
+          "minimum_constraint_margin": 0.4683560670671222
+        }
+      ],
+      "minimum_inner_band_retention_ratio": 0.9823435243735525,
+      "inner_band_substantial_retention": true,
+      "diagnostic_only": true
+    },
+    "speed_offset_mps": {
+      "records": [
+        {
+          "offset": -5.0,
+          "duration_s": 4.580117977139245,
+          "retention_ratio": 0.9995759506738804,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": -2.0,
+          "duration_s": 4.581664021104487,
+          "retention_ratio": 0.9999133630230936,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": -1.0,
+          "duration_s": 4.5821553094829035,
+          "retention_ratio": 1.0000205829790778,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.0,
+          "duration_s": 4.582060997017269,
+          "retention_ratio": 1.0,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 1.0,
+          "duration_s": 4.5396741752284715,
+          "retention_ratio": 0.9907493981820867,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 2.0,
+          "duration_s": 4.497258557796487,
+          "retention_ratio": 0.9814925119338251,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 5.0,
+          "duration_s": 4.3698382393624335,
+          "retention_ratio": 0.9536839955223242,
+          "minimum_constraint_margin": 0.4683560670671222
+        }
+      ],
+      "minimum_inner_band_retention_ratio": 0.9907493981820867,
+      "inner_band_substantial_retention": true,
+      "diagnostic_only": true
+    },
+    "release_offset_s": {
+      "records": [
+        {
+          "offset": -0.1,
+          "duration_s": 4.578819834970927,
+          "retention_ratio": 0.9992926410083909,
+          "minimum_constraint_margin": 0.3683560670671222
+        },
+        {
+          "offset": -0.05,
+          "duration_s": 4.581344161825358,
+          "retention_ratio": 0.999843556165582,
+          "minimum_constraint_margin": 0.4183560670671222
+        },
+        {
+          "offset": -0.02,
+          "duration_s": 4.582268465720394,
+          "retention_ratio": 1.000045278468196,
+          "minimum_constraint_margin": 0.44835606706712217
+        },
+        {
+          "offset": 0.0,
+          "duration_s": 4.582060997017269,
+          "retention_ratio": 1.0,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.02,
+          "duration_s": 4.504773907603102,
+          "retention_ratio": 0.9831326799306082,
+          "minimum_constraint_margin": 0.4883560670671222
+        },
+        {
+          "offset": 0.05,
+          "duration_s": 4.388607404423946,
+          "retention_ratio": 0.9577802231966679,
+          "minimum_constraint_margin": 0.5183560670671222
+        },
+        {
+          "offset": 0.1,
+          "duration_s": 4.194358605985498,
+          "retention_ratio": 0.9153868987592811,
+          "minimum_constraint_margin": 0.5683560670671222
+        }
+      ],
+      "minimum_inner_band_retention_ratio": 0.9831326799306082,
+      "inner_band_substantial_retention": true,
+      "diagnostic_only": true
+    },
+    "fuse_offset_s": {
+      "records": [
+        {
+          "offset": -0.1,
+          "duration_s": 4.575672625268914,
+          "retention_ratio": 0.9986057864021204,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": -0.05,
+          "duration_s": 4.5791761618408255,
+          "retention_ratio": 0.9993704066405223,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": -0.02,
+          "duration_s": 4.581266454893089,
+          "retention_ratio": 0.9998265972179992,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.0,
+          "duration_s": 4.582060997017269,
+          "retention_ratio": 1.0,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.02,
+          "duration_s": 4.482494350955706,
+          "retention_ratio": 0.9782703359631448,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.05,
+          "duration_s": 4.3316645268674145,
+          "retention_ratio": 0.945352872798321,
+          "minimum_constraint_margin": 0.4683560670671222
+        },
+        {
+          "offset": 0.1,
+          "duration_s": 4.0762418831946,
+          "retention_ratio": 0.8896088214120378,
+          "minimum_constraint_margin": 0.4683560670671222
+        }
+      ],
+      "minimum_inner_band_retention_ratio": 0.9782703359631448,
+      "inner_band_substantial_retention": true,
+      "diagnostic_only": true
+    }
+  },
+  "quantity_scale": {
+    "heading_rad": 0.10700711450221934,
+    "uav_speed_mps": 91.58702874013804,
+    "official_uav_speed_range_mps": [
+      70.0,
+      140.0
+    ],
+    "release_time_s": 0.4683560670671222,
+    "fuse_delay_s": 0.6909391553755698,
+    "explosion_time_s": 1.159295222442692,
+    "explosion_height_m": 1797.6607551094876,
+    "smoke_effective_duration_s": 20.0,
+    "formal_effective_duration_s": 4.582060997017269,
+    "formal_duration_fraction_of_cloud_life": 0.22910304985086344,
+    "missile_arrival_time_s": 66.99917080747261
+  },
+  "assumption_applicability": [
+    {
+      "assumption": "Missile M1 travels at constant 300 m/s on the straight line to the decoy origin.",
+      "support": "Official problem statement.",
+      "violation_impact": "Maneuver or speed changes move the sight-line geometry and can change the optimal timing."
+    },
+    {
+      "assumption": "FY1 changes heading instantaneously once, then flies horizontally at constant speed in [70,140] m/s.",
+      "support": "Official problem statement.",
+      "violation_impact": "Turn-rate, acceleration, or wind constraints can make the nominal release/explosion point unreachable."
+    },
+    {
+      "assumption": "The bomb inherits horizontal UAV motion and follows vertical ballistic motion with g=9.8 m/s^2 and no drag.",
+      "support": "Official gravity-motion wording plus the project's stated standard-gravity convention.",
+      "violation_impact": "Aerodynamic drift changes the explosion point; fuse timing would require recalibration."
+    },
+    {
+      "assumption": "The cloud is a radius-10 m sphere, sinks at 3 m/s, and remains effective for at most 20 s with a hard concentration threshold.",
+      "support": "Official experimental-data abstraction.",
+      "violation_impact": "Wind, diffusion, concentration gradients, or gradual decay require a stochastic/advection-diffusion cloud model."
+    },
+    {
+      "assumption": "The protected object is the stated radius-7 m, height-10 m fixed cylinder and complete finite sight-line blockage defines effectiveness.",
+      "support": "Official target geometry and the project's conservative full-cylinder interpretation.",
+      "violation_impact": "A different visible surface or partial-coverage criterion changes the objective duration."
+    },
+    {
+      "assumption": "Positions, command time, heading, speed, and fuse delay are deterministic and exactly executed.",
+      "support": "No error distribution is supplied by the official problem.",
+      "violation_impact": "Operational use needs uncertainty propagation or robust re-optimization; the present stress bands only diagnose sensitivity."
+    }
+  ],
+  "checks": {
+    "official_parameter_mapping_complete": true,
+    "nominal_matches_formal_result": true,
+    "required_mechanism_directions": true,
+    "all_stress_evaluations_finite": true,
+    "all_control_perturbations_remain_hard_feasible": true,
+    "uncertainty_boundary_explicit": true,
+    "real_world_extension_boundary_explicit": true
+  },
+  "claim_boundary": "Valid for the official deterministic idealization. Operational extrapolation needs wind, dispersion, control-error, and trajectory uncertainty models.",
+  "observed_at": "2026-08-28T06:31:55.755735+00:00",
+  "verification_code_sha256": "c40630fbb6c75a8e3a7e9fbe45df747d7dc44f6118e14329fc721b014af6d825"
+}

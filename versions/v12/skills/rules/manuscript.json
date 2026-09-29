@@ -1,0 +1,1715 @@
+{
+  "schema_version": "10.0",
+  "domain": "manuscript",
+  "rules": [
+    {
+      "id": "MAN.STRUCTURE.REQUIREMENTS",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-STRUCTURE-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.STRUCTURE.REQUIREMENTS",
+      "strength": "MUST",
+      "semantic_key": "manuscript.structure.requirements",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "manuscript_structure"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "select",
+        "target": "manuscript_structure",
+        "value": "current_project_requirements"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "requirements",
+          "selected_structure"
+        ]
+      },
+      "outcomes": {
+        "pass": "结构有当前项目依据。",
+        "fail": "结构来自陈旧全局偏好。",
+        "not_applicable": "局部内容不改变结构。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "manuscript.structure.requirements.exception.1",
+          "when": "用户指定模板",
+          "disposition": "采用用户指定模板"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [
+        "V8.MANUSCRIPT.MANDATORY.LATEX"
+      ],
+      "legacy_refs": [
+        "MAN-STRUCTURE-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.DRAFT",
+        "ATOM.MAN.STRUCTURE.REQUIREMENTS"
+      ],
+      "instruction_gloss": "按当前项目和现行提交要求选择稿件结构。",
+      "failure_example": "把某一竞赛模板或 LaTeX 设为全局强制。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.STRUCTURE.TRACE",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-STRUCTURE-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.STRUCTURE.TRACE",
+      "strength": "MUST",
+      "semantic_key": "manuscript.structure.trace",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "manuscript_structure"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "section_trace",
+        "value": "problem_method_result_conclusion"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "question_id",
+          "section_links"
+        ]
+      },
+      "outcomes": {
+        "pass": "问题链可顺序阅读。",
+        "fail": "章节无法对应问题。",
+        "not_applicable": "稿件不按问题组织。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "manuscript.structure.trace.exception.1",
+          "when": "主题式结构更符合项目要求",
+          "disposition": "保留显式问题映射"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-STRUCTURE-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.DRAFT",
+        "ATOM.MAN.STRUCTURE.TRACE"
+      ],
+      "instruction_gloss": "让每个问题沿题意、方法、结果和结论形成可追踪链。",
+      "failure_example": "按代码文件顺序组织论文。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.CONTENT.CLAIM_EVIDENCE",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-CONTENT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.CLAIM_EVIDENCE",
+      "strength": "MUST",
+      "semantic_key": "manuscript.content.claim_evidence",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "manuscript_write",
+          "manuscript_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "manuscript_claim",
+        "value": "exact_evidence_link"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command",
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "claim",
+          "evidence_ref"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键主张可追溯。",
+        "fail": "存在孤立关键主张。",
+        "not_applicable": "纯格式修改。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-CONTENT-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.LOCAL",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.DRAFT",
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.CONTENT.CLAIM_EVIDENCE"
+      ],
+      "instruction_gloss": "把每个关键主张链接到数据、运行、推导或外部来源。",
+      "failure_example": "用流畅表达掩盖无证据主张。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [
+        "EVD.PROV.CLAIM_MAP"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.CONTENT.NOTATION",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-CONTENT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.NOTATION",
+      "strength": "MUST",
+      "semantic_key": "manuscript.content.notation",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "manuscript_write",
+          "manuscript_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "notation_consistency",
+        "value": "one_symbol_one_meaning"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "symbol_index",
+          "conflicts"
+        ]
+      },
+      "outcomes": {
+        "pass": "符号身份一致。",
+        "fail": "符号冲突未解决。",
+        "not_applicable": "文本无数学符号。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-CONTENT-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.LOCAL",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.CONTENT.NOTATION"
+      ],
+      "instruction_gloss": "保持符号、下标、单位和索引含义一致。",
+      "failure_example": "同一符号跨章节改变含义。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.CONTENT.METHOD",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-CONTENT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.METHOD",
+      "strength": "MUST",
+      "semantic_key": "manuscript.content.method_reproducibility",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "method_section_write"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "method_description",
+        "value": "specification_level_reproducibility"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "variables",
+          "equations",
+          "parameters",
+          "algorithm"
+        ]
+      },
+      "outcomes": {
+        "pass": "方法段可复现。",
+        "fail": "实现所需信息缺失。",
+        "not_applicable": "非方法段。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "manuscript.content.method_reproducibility.exception.1",
+          "when": "篇幅限制",
+          "disposition": "正文保留关键规格并指向已交付附录"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-CONTENT-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.DRAFT",
+        "ATOM.MAN.CONTENT.METHOD"
+      ],
+      "instruction_gloss": "把方法写到读者可重建规格的程度。",
+      "failure_example": "用算法名或软件名替代模型定义。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.CONTENT.RESULT",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-CONTENT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.RESULT",
+      "strength": "MUST",
+      "semantic_key": "manuscript.content.result_identity",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "result_section_write"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "reported_result_identity",
+        "value": "registered_run_output"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command"
+        ],
+        "fields": [
+          "reported_value",
+          "result_ref",
+          "run_id"
+        ]
+      },
+      "outcomes": {
+        "pass": "正文结果可复算。",
+        "fail": "正文与输出不一致。",
+        "not_applicable": "段落不含结果。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "manuscript.content.result_identity.exception.1",
+          "when": "四舍五入",
+          "disposition": "记录舍入规则"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-CONTENT-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.CONTENT.RESULT"
+      ],
+      "instruction_gloss": "让正文数值与登记运行输出逐项一致。",
+      "failure_example": "手工调整数值却不更新运行身份。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.CONTENT.LIMITATION",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-CONTENT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.LIMITATION",
+      "strength": "MUST",
+      "semantic_key": "manuscript.content.limitations",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "conclusion_write",
+          "manuscript_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "material_limitations",
+        "value": "evidence_based_boundary"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "command"
+        ],
+        "fields": [
+          "limitation",
+          "evidence",
+          "impact"
+        ]
+      },
+      "outcomes": {
+        "pass": "局限与验证发现一致。",
+        "fail": "关键边界被省略。",
+        "not_applicable": "没有材料性局限。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-CONTENT-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.CONTENT.LIMITATION"
+      ],
+      "instruction_gloss": "报告会改变结论解释的真实局限。",
+      "failure_example": "用通用套话代替已发现失败边界。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.READER.SCOPE",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-READER-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.READER.SCOPE",
+      "strength": "MUST",
+      "semantic_key": "manuscript.reader.audit_scope",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "manuscript_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "audit_read_scope",
+        "value": "actually_read_sections"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "sections_read",
+          "artifacts_checked"
+        ]
+      },
+      "outcomes": {
+        "pass": "审计结论不超过阅读范围。",
+        "fail": "审计声称越界。",
+        "not_applicable": "不是审计。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-READER-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.READER.SCOPE"
+      ],
+      "instruction_gloss": "声明本次真正阅读和验证的稿件范围。",
+      "failure_example": "从局部抽查声称全文通过。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.READER.FRONT",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-READER-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.READER.FRONT",
+      "strength": "MUST",
+      "semantic_key": "manuscript.reader.front_matter",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "full_manuscript_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "front_matter",
+        "value": "problem_method_result_conclusion_alignment"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "front_claim",
+          "body_support"
+        ]
+      },
+      "outcomes": {
+        "pass": "前置内容准确代表正文。",
+        "fail": "摘要或标题夸大。",
+        "not_applicable": "局部审计不含前置内容。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-READER-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.READER.FRONT"
+      ],
+      "instruction_gloss": "核对题目、摘要和关键词与正文真实内容的一致性。",
+      "failure_example": "在摘要中增加正文未证明的亮点。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.READER.FLOW",
+      "revision": 2,
+      "status": "active",
+      "capability": "MAN-READER-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.READER.FLOW",
+      "strength": "MUST",
+      "semantic_key": "manuscript.reader.flow",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "full_manuscript_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "reader_flow",
+        "value": "terms_before_use_transitions_no_gaps"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "finding",
+          "location",
+          "reader_impact"
+        ]
+      },
+      "outcomes": {
+        "pass": "读者无需猜测关键跳步。",
+        "fail": "存在阻断理解的缺口。",
+        "not_applicable": "局部格式审计。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-READER-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.READER.FLOW"
+      ],
+      "instruction_gloss": "按首次阅读顺序检查定义、转折和推理跳步。",
+      "failure_example": "只按文件列表或章节标题检查。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.ACCEPT.NO_PLACEHOLDER",
+      "revision": 2,
+      "status": "active",
+      "capability": "MAN-ACCEPT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.ACCEPT.NO_PLACEHOLDER",
+      "strength": "MUST",
+      "semantic_key": "manuscript.acceptance.no_placeholder",
+      "scope": {
+        "objects": [
+          "manuscript",
+          "delivery"
+        ],
+        "component_types": [
+          "artifact",
+          "project"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "P0",
+          "P1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "manuscript_promotion"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "published_placeholders",
+        "value": true
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "scan_scope",
+          "findings"
+        ]
+      },
+      "outcomes": {
+        "pass": "无未处置占位。",
+        "fail": "存在占位或内部指令。",
+        "not_applicable": "未提升稿件。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-ACCEPT-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.ACCEPT.NO_PLACEHOLDER"
+      ],
+      "instruction_gloss": "在稿件提升前消除占位符和内部元语言。",
+      "failure_example": "发布含 TODO、待补、示例数据或 Agent 指令的稿件。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.ACCEPT.CROSSREF",
+      "revision": 2,
+      "status": "active",
+      "capability": "MAN-ACCEPT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.ACCEPT.CROSSREF",
+      "strength": "MUST",
+      "semantic_key": "manuscript.acceptance.cross_references",
+      "scope": {
+        "objects": [
+          "manuscript",
+          "delivery"
+        ],
+        "component_types": [
+          "artifact",
+          "project"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "P0",
+          "P1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "manuscript_audit",
+          "manuscript_promotion"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "cross_references",
+        "value": "figures_tables_equations_citations_resolve"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "reference",
+          "target",
+          "semantic_match"
+        ]
+      },
+      "outcomes": {
+        "pass": "交叉引用存在且语义正确。",
+        "fail": "引用断裂或错指。",
+        "not_applicable": "稿件无交叉引用。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-ACCEPT-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.ACCEPT.CROSSREF"
+      ],
+      "instruction_gloss": "核验图、表、公式和文献引用均可解析。",
+      "failure_example": "仅凭编译成功忽略语义错引。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.ACCEPT.RENDER",
+      "revision": 2,
+      "status": "active",
+      "capability": "MAN-ACCEPT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.ACCEPT.RENDER",
+      "strength": "MUST",
+      "semantic_key": "manuscript.acceptance.render",
+      "scope": {
+        "objects": [
+          "manuscript",
+          "delivery"
+        ],
+        "component_types": [
+          "artifact",
+          "project"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "P0",
+          "P1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "manuscript_promotion"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "rendered_manuscript",
+        "value": "visual_and_content_inspection"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "render_path",
+          "render_hash",
+          "pages_inspected"
+        ]
+      },
+      "outcomes": {
+        "pass": "渲染稿已实际检查。",
+        "fail": "渲染错误或未检查。",
+        "not_applicable": "只做草稿内容。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-ACCEPT-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.AUDIT",
+        "ATOM.MAN.ACCEPT.RENDER"
+      ],
+      "instruction_gloss": "检查最终渲染稿的内容和版面。",
+      "failure_example": "只检查源文件或编译退出码。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.LOCAL.SCOPE",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-LOCAL-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.LOCAL.SCOPE",
+      "strength": "MUST",
+      "semantic_key": "manuscript.local.scope",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "local_manuscript_edit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "edit_scope",
+        "value": "requested_span"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "file"
+        ],
+        "fields": [
+          "requested_span",
+          "changed_spans"
+        ]
+      },
+      "outcomes": {
+        "pass": "改动范围可解释。",
+        "fail": "出现无关改写。",
+        "not_applicable": "全文重写。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "manuscript.local.scope.exception.1",
+          "when": "直接依赖必须同步",
+          "disposition": "仅扩展到可证明的直接依赖"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-LOCAL-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.LOCAL"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.LOCAL",
+        "ATOM.MAN.LOCAL.SCOPE"
+      ],
+      "instruction_gloss": "把局部修改限制在用户指定文本及必要直接依赖。",
+      "failure_example": "借局部润色重写全稿结构。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.LOCAL.DEPENDENCIES",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-LOCAL-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.LOCAL.DEPENDENCIES",
+      "strength": "MUST",
+      "semantic_key": "manuscript.local.dependencies",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "local_manuscript_edit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "local_edit_dependencies",
+        "value": "symbols_refs_claims_direct_consumers"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "changed_item",
+          "direct_dependencies",
+          "findings"
+        ]
+      },
+      "outcomes": {
+        "pass": "直接依赖保持一致。",
+        "fail": "局部改动造成悬空依赖。",
+        "not_applicable": "纯错别字且无依赖。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-LOCAL-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.LOCAL"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.LOCAL",
+        "ATOM.MAN.LOCAL.DEPENDENCIES"
+      ],
+      "instruction_gloss": "检查局部改动涉及的符号、引用和主张直接依赖。",
+      "failure_example": "只看修改段落的语法。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.LOCAL.REOPEN_A3",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-LOCAL-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.LOCAL.REOPEN_A3",
+      "strength": "MUST",
+      "semantic_key": "manuscript.local.reopen_a3",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact"
+        ],
+        "states": [
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "published_manuscript_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "transition",
+        "target": "artifact_state",
+        "value": "A3_to_A1"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "change_reason",
+          "from",
+          "to"
+        ]
+      },
+      "outcomes": {
+        "pass": "变更经过重开。",
+        "fail": "A3 内容被直接修改。",
+        "not_applicable": "产物未发布。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.MAN.LOCAL.A3.WRITE"
+      ],
+      "legacy_refs": [
+        "MAN-LOCAL-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.REOPEN"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.REOPEN",
+        "ATOM.MAN.LOCAL.REOPEN_A3"
+      ],
+      "instruction_gloss": "在修改已发布稿前把产物重开为 A1。",
+      "failure_example": "在 A3 上静默原地编辑。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.PROFILE.OPT_IN",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-PROFILE-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.PROFILE.OPT_IN",
+      "strength": "MUST",
+      "semantic_key": "manuscript.profile.opt_in",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "writing_profile_apply"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "writing_profile_source",
+        "value": "current_user_or_project_preference"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "profile",
+          "authorization_basis"
+        ]
+      },
+      "outcomes": {
+        "pass": "风格偏好有当前依据。",
+        "fail": "风格来自全局泄漏。",
+        "not_applicable": "未选择写作画像。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V8.WRITING.USER.GLOBAL"
+      ],
+      "legacy_refs": [
+        "MAN-PROFILE-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.LOCAL"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.PROFILE",
+        "ATOM.MAN.PROFILE.OPT_IN"
+      ],
+      "instruction_gloss": "仅应用当前用户或项目明确选择的写作偏好。",
+      "failure_example": "把历史用户偏好当作所有项目规则。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.PROFILE.TRUTH",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-PROFILE-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.PROFILE.TRUTH",
+      "strength": "MUST",
+      "semantic_key": "manuscript.profile.truth_preservation",
+      "scope": {
+        "objects": [
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "writing_profile_apply"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "style_transformation",
+        "value": "no_claim_or_precision_change"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "before_claim",
+          "after_claim",
+          "semantic_diff"
+        ]
+      },
+      "outcomes": {
+        "pass": "风格变化不改变事实。",
+        "fail": "改写改变证据强度。",
+        "not_applicable": "未做风格调整。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MAN-PROFILE-001"
+      ],
+      "routes": [
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.LOCAL"
+      ],
+      "tests": [
+        "BEH.MANUSCRIPT.PROFILE",
+        "ATOM.MAN.PROFILE.TRUTH"
+      ],
+      "instruction_gloss": "让风格调整保持主张、数值和不确定性含义不变。",
+      "failure_example": "为流畅性增加确定性或因果语气。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MAN.STRUCTURE.RESPONSIBILITY",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-STRUCTURE-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.STRUCTURE.RESPONSIBILITY",
+      "strength": "MUST",
+      "semantic_key": "manuscript.structure.section_responsibility",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A0", "A1", "A2", "A3", "S4", "S5", "S6", "S7"]},
+      "trigger": {"events": ["manuscript_structure"], "predicates": []},
+      "effect": {"verb": "record", "target": "section_responsibility", "value": "question_facing_claim"},
+      "instruction_gloss": "为每一节记录它回答的读者问题或承担的论证责任。",
+      "failure_example": "章节只有通用标题，却没有可核对的论证责任。",
+      "evidence": {"required": true, "kinds": ["observation", "decision"], "fields": ["section", "reader_question", "responsibility"]},
+      "outcomes": {"pass": "每节责任明确。", "fail": "存在无责任章节。", "not_applicable": "不改变稿件结构。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": [], "supersedes": [],
+      "legacy_refs": ["MAN-STRUCTURE-001"], "routes": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.MANUSCRIPT.DRAFT", "BEH.MANUSCRIPT.AUDIT", "ATOM.MAN.STRUCTURE.RESPONSIBILITY"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.STRUCTURE.DEPENDENCY",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-STRUCTURE-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.STRUCTURE.DEPENDENCY",
+      "strength": "MUST",
+      "semantic_key": "manuscript.structure.section_dependency",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A0", "A1", "A2", "A3", "S4", "S5", "S6", "S7"]},
+      "trigger": {"events": ["manuscript_structure"], "predicates": []},
+      "effect": {"verb": "record", "target": "section_dependency_order", "value": "definitions_evidence_derivation_claims"},
+      "instruction_gloss": "记录章节间定义、证据、推导与结论的先后依赖。",
+      "failure_example": "结论先于定义或支撑证据出现。",
+      "evidence": {"required": true, "kinds": ["observation"], "fields": ["section", "depends_on", "order_check"]},
+      "outcomes": {"pass": "章节依赖有序。", "fail": "章节顺序违反依赖。", "not_applicable": "单节局部措辞。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["MAN.STRUCTURE.RESPONSIBILITY"], "supersedes": [],
+      "legacy_refs": ["MAN-STRUCTURE-001"], "routes": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.MANUSCRIPT.DRAFT", "BEH.MANUSCRIPT.AUDIT", "ATOM.MAN.STRUCTURE.DEPENDENCY"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.STRUCTURE.NO_WORKLOG",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-STRUCTURE-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.STRUCTURE.NO_WORKLOG",
+      "strength": "MUST",
+      "semantic_key": "manuscript.structure.no_worklog",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A0", "A1", "A2", "A3", "S4", "S5", "S6", "S7"]},
+      "trigger": {"events": ["manuscript_structure", "manuscript_audit"], "predicates": []},
+      "effect": {"verb": "forbid", "target": "manuscript_organization_source", "value": "worklog_or_internal_project_state"},
+      "instruction_gloss": "按读者论证组织正文，不照搬工作日志或内部状态。",
+      "failure_example": "用执行阶段、Agent 分工或文件修改顺序充当论文结构。",
+      "evidence": {"required": true, "kinds": ["observation"], "fields": ["section_outline", "organization_basis"]},
+      "outcomes": {"pass": "结构面向读者。", "fail": "结构泄露内部工作流。", "not_applicable": "非论文可见内容。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": [], "supersedes": [],
+      "legacy_refs": ["MAN-STRUCTURE-001"], "routes": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.LOCAL", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.MANUSCRIPT.DRAFT", "BEH.MANUSCRIPT.AUDIT", "ATOM.MAN.STRUCTURE.NO_WORKLOG"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.CONTENT.EXPLANATION_TRACE",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-CONTENT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.EXPLANATION_TRACE",
+      "strength": "MUST",
+      "semantic_key": "manuscript.content.reader_explanation_trace",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A0", "A1", "A2", "A3", "S4", "S5", "S6", "S7"]},
+      "trigger": {"events": ["manuscript_write", "manuscript_audit"], "predicates": []},
+      "effect": {"verb": "require", "target": "reader_explanation_chain", "value": ["objects", "data", "derivation", "results", "meaning"]},
+      "instruction_gloss": "让读者能沿对象、数据、推导、结果和含义追踪论证。",
+      "failure_example": "只给公式和数字，不解释它们回答什么问题。",
+      "evidence": {"required": true, "kinds": ["observation", "file"], "fields": ["claim", "objects", "data", "derivation", "result", "meaning"]},
+      "outcomes": {"pass": "解释链闭合。", "fail": "解释链存在断点。", "not_applicable": "纯格式改动。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": [], "supersedes": [],
+      "legacy_refs": ["MAN-CONTENT-001"], "routes": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.LOCAL", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.MANUSCRIPT.DRAFT", "BEH.MANUSCRIPT.AUDIT", "ATOM.MAN.CONTENT.EXPLANATION_TRACE"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.CONTENT.NO_DUMP",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-CONTENT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.CONTENT.NO_DUMP",
+      "strength": "MUST",
+      "semantic_key": "manuscript.content.no_formula_dump",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A0", "A1", "A2", "A3", "S4", "S5", "S6", "S7"]},
+      "trigger": {"events": ["manuscript_write", "manuscript_audit"], "predicates": []},
+      "effect": {"verb": "forbid", "target": "explanation_substitute", "value": "formula_or_number_dump"},
+      "instruction_gloss": "公式和数值必须嵌入解释链，不能代替解释。",
+      "failure_example": "连续堆放公式或结果表，却不说明对象、依据和含义。",
+      "evidence": {"required": true, "kinds": ["observation"], "fields": ["location", "formula_or_number", "explanatory_context"]},
+      "outcomes": {"pass": "公式与数字有解释。", "fail": "存在公式或数字堆积。", "not_applicable": "内容不含公式或数值。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["MAN.CONTENT.EXPLANATION_TRACE"], "supersedes": [],
+      "legacy_refs": ["MAN-CONTENT-001"], "routes": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.LOCAL", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.MANUSCRIPT.DRAFT", "BEH.MANUSCRIPT.AUDIT", "ATOM.MAN.CONTENT.NO_DUMP"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.READER.STANDALONE",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-READER-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.READER.STANDALONE",
+      "strength": "MUST",
+      "semantic_key": "manuscript.reader.standalone_comprehension",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A1", "A2", "A3", "S6", "S7"]},
+      "trigger": {"events": ["full_manuscript_audit"], "predicates": []},
+      "effect": {"verb": "verify", "target": "standalone_comprehension", "value": "without_code_or_internal_notes"},
+      "instruction_gloss": "仅凭评审者可见稿件检查关键论证是否可理解。",
+      "failure_example": "必须阅读代码、聊天记录或内部说明才能补齐正文。",
+      "evidence": {"required": true, "kinds": ["observation"], "fields": ["reader_path", "missing_context", "comprehension_result"]},
+      "outcomes": {"pass": "稿件可独立理解。", "fail": "理解依赖内部材料。", "not_applicable": "不是完整阅读审计。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["MAN.READER.FLOW"], "supersedes": [],
+      "legacy_refs": ["MAN-READER-001"], "routes": ["RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.MANUSCRIPT.AUDIT", "ATOM.MAN.READER.STANDALONE"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.READER.NO_META",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-READER-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.READER.NO_META",
+      "strength": "MUST",
+      "semantic_key": "manuscript.reader.no_meta_language",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A1", "A2", "A3", "S6", "S7"]},
+      "trigger": {"events": ["manuscript_audit", "full_manuscript_audit"], "predicates": []},
+      "effect": {"verb": "forbid", "target": "evaluator_visible_meta_language", "value": "audit_or_internal_process"},
+      "instruction_gloss": "把审计指令、Agent 话语和内部流程留在评审可见正文之外。",
+      "failure_example": "正文出现“已通过审计”“待 Agent 检查”等内部元语言。",
+      "evidence": {"required": true, "kinds": ["observation", "command"], "fields": ["scan_scope", "findings"]},
+      "outcomes": {"pass": "正文无内部元语言。", "fail": "正文泄露审计或内部过程。", "not_applicable": "非评审可见材料。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": [], "supersedes": [],
+      "legacy_refs": ["MAN-READER-001"], "routes": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.LOCAL", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.MANUSCRIPT.AUDIT", "ATOM.MAN.READER.NO_META"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.ACCEPT.SECTION",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-ACCEPT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.ACCEPT.SECTION",
+      "strength": "MUST",
+      "semantic_key": "manuscript.acceptance.section_specific",
+      "scope": {"objects": ["manuscript", "delivery"], "component_types": ["artifact", "question", "project"], "states": ["A1", "A2", "A3", "S6", "S7", "P0", "P1"]},
+      "trigger": {"events": ["manuscript_audit", "manuscript_promotion"], "predicates": []},
+      "effect": {"verb": "verify", "target": "section_acceptance", "value": "section_specific_criteria"},
+      "instruction_gloss": "按每一节承担的责任验证对应验收条件。",
+      "failure_example": "用统一标题清单代替各节内容验收。",
+      "evidence": {"required": true, "kinds": ["observation", "file"], "fields": ["section", "criteria", "evidence", "status"]},
+      "outcomes": {"pass": "各节满足专属条件。", "fail": "至少一节未满足条件。", "not_applicable": "未声称稿件完成。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["MAN.STRUCTURE.RESPONSIBILITY"], "supersedes": [],
+      "legacy_refs": ["MAN-ACCEPT-001"], "routes": ["RT.MANUSCRIPT.AUDIT", "RT.DELIVERY.FINAL"],
+      "tests": ["BEH.MANUSCRIPT.AUDIT", "BEH.DELIVERY.FINAL", "ATOM.MAN.ACCEPT.SECTION"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.ACCEPT.GLOBAL",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-ACCEPT-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.ACCEPT.GLOBAL",
+      "strength": "MUST",
+      "semantic_key": "manuscript.acceptance.global",
+      "scope": {"objects": ["manuscript", "delivery"], "component_types": ["artifact", "question", "project"], "states": ["A1", "A2", "A3", "S6", "S7", "P0", "P1"]},
+      "trigger": {"events": ["manuscript_audit", "manuscript_promotion"], "predicates": []},
+      "effect": {"verb": "verify", "target": "global_manuscript_acceptance", "value": "cross_section_claim_evidence_consistency"},
+      "instruction_gloss": "验证跨章节主张、证据、符号、结果和结论的一致性。",
+      "failure_example": "各节局部看似通过，但全文结论与上游证据冲突。",
+      "evidence": {"required": true, "kinds": ["observation", "file", "command"], "fields": ["scope", "cross_section_checks", "status"]},
+      "outcomes": {"pass": "全文全局条件满足。", "fail": "存在跨章节冲突。", "not_applicable": "只做不声称完成的局部修改。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["MAN.ACCEPT.SECTION"], "supersedes": [],
+      "legacy_refs": ["MAN-ACCEPT-001"], "routes": ["RT.MANUSCRIPT.AUDIT", "RT.DELIVERY.FINAL"],
+      "tests": ["BEH.MANUSCRIPT.AUDIT", "BEH.DELIVERY.FINAL", "ATOM.MAN.ACCEPT.GLOBAL"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.LOCAL.NO_FULL_AUDIT",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-LOCAL-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.LOCAL.NO_FULL_AUDIT",
+      "strength": "MUST",
+      "semantic_key": "manuscript.local.no_unneeded_full_audit",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A0", "A1", "A2", "S5", "S6", "S7"]},
+      "trigger": {"events": ["local_manuscript_edit"], "predicates": []},
+      "effect": {"verb": "forbid", "target": "audit_scope_escalation", "value": "full_manuscript_audit_without_dependency_trigger"},
+      "instruction_gloss": "局部改动只复核其依赖面；没有依赖扩散时禁止升级为全文审计。",
+      "failure_example": "修正一个错别字却强制重读并重验整篇论文。",
+      "evidence": {"required": true, "kinds": ["decision", "observation"], "fields": ["edit_span", "dependency_surface", "escalation_trigger"]},
+      "outcomes": {"pass": "审计范围与依赖面相称。", "fail": "无依据升级为全文审计。", "not_applicable": "改动影响跨章节依赖。"},
+      "exceptions": [{"kind": "decision_required", "condition_key": "manuscript.local.no_full_audit.exception.1", "when": "局部改动触发跨章节依赖或全文完成声称", "disposition": "记录依赖证据后升级相应审计范围"}],
+      "conflicts_with": [], "refines": [], "depends_on": ["MAN.LOCAL.DEPENDENCIES"], "supersedes": [],
+      "legacy_refs": ["MAN-LOCAL-001"], "routes": ["RT.MANUSCRIPT.LOCAL"],
+      "tests": ["BEH.MANUSCRIPT.LOCAL", "ATOM.MAN.LOCAL.NO_FULL_AUDIT"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "MAN.PROFILE.FORMAT",
+      "revision": 1,
+      "status": "active",
+      "capability": "MAN-PROFILE-001",
+      "domain": "manuscript",
+      "owner": "rules/manuscript.json#MAN.PROFILE.FORMAT",
+      "strength": "MUST",
+      "semantic_key": "manuscript.profile.official_format",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact", "question"], "states": ["A0", "A1", "A2", "S4", "S5", "S6", "S7"]},
+      "trigger": {"events": ["writing_profile_apply"], "predicates": []},
+      "effect": {"verb": "limit", "target": "writing_profile_transformation", "value": "cannot_override_current_official_format"},
+      "instruction_gloss": "已选择的写作偏好不得覆盖当前官方格式与提交要求。",
+      "failure_example": "为符合个人风格而违反题目规定的结构或格式。",
+      "evidence": {"required": true, "kinds": ["decision", "citation"], "fields": ["profile_source", "format_requirement", "conflict_check"]},
+      "outcomes": {"pass": "偏好与官方格式兼容。", "fail": "偏好覆盖官方要求。", "not_applicable": "未启用写作偏好。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["MAN.PROFILE.OPT_IN"], "supersedes": [],
+      "legacy_refs": ["MAN-PROFILE-001"], "routes": ["RT.MANUSCRIPT.DRAFT", "RT.MANUSCRIPT.LOCAL"],
+      "tests": ["BEH.MANUSCRIPT.DRAFT", "ATOM.MAN.PROFILE.FORMAT"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    }
+  ]
+}

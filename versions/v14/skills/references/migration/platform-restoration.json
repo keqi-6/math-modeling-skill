@@ -1,0 +1,57 @@
+{
+  "schema_version": "12.0",
+  "change_id": "V12-RESTORE-UNIFIED-PROJECT-PLATFORM",
+  "status": "candidate",
+  "defect": "V10 classified the V9 project-platform owner family as context_only, while V11 retained only lazy structure creation; this preserved the timing constraint but lost the canonical role and path contract.",
+  "historical_evidence": [
+    {
+      "release": "V7",
+      "path": "rules/01-contest-project-pattern.md",
+      "sha256": "5d83796cd1258673e808719eef7007be24f961a320438607257301d066cc4e1e"
+    },
+    {
+      "release": "V9",
+      "path": "references/modules/project-platform.md",
+      "sha256": "82e94c69a1108c356555360d7788b2ff7e4be9c81d9ffeabe9196f051bd8e14c"
+    },
+    {
+      "release": "V10",
+      "path": "references/migration/legacy-coverage.json",
+      "owner_family": "references/modules/project-platform.md",
+      "observed_disposition": "context_only",
+      "confirmed_capability_count": 32,
+      "semantic_equivalence_claimed": false
+    },
+    {
+      "release": "V11",
+      "capability": "PRJ-STRUCTURE-001",
+      "preserved_fragment": "materialize only immediately consumed structure"
+    }
+  ],
+  "restored_owner": "references/project-platform-contract.json",
+  "restored_invariants": [
+    "canonical logical roles are mandatory for new project artifacts",
+    "role, class, and path must agree before artifact admission",
+    "physical directories remain lazy and are created only for admitted artifacts",
+    "existing user layouts are inspected and grandfathered rather than silently moved",
+    "new noncanonical paths require a separate user-approved platform migration"
+  ],
+  "changed_v11_rule_files": ["rules/project.json"],
+  "unchanged_v11_rule_sha256": {
+    "rules/data.json": "bb674cf64bcf5cd877a6bc2ba03cd2f2a5e87790648911d25a3f620e607410a4",
+    "rules/evidence_delivery.json": "480cec0da739e40eae3ba5312ddf724ba9733a9140139ab1eea3c3a411a41c76",
+    "rules/governance.json": "77e07570b03c23a1d32a6c22cdb28f9f403b15747010759e8b43eaf64adb0ace",
+    "rules/maintenance.json": "66063323200cb867ebf5daea83b2ef1e0dd7895282fc69cd7ac48690b22ebf8d",
+    "rules/manuscript.json": "f07b14bd8c6a378249c71a69826f161d62a0aad1a9fb9ff1b639e4165d0724af",
+    "rules/modeling.json": "c27361d10d193b6e8fd3a7ac50324c272ab2fa0eb7466ab1d23af784c3643193",
+    "rules/verification.json": "ecbfa5151ec9b68358bb3bca1fb47652323db12a195271cd1730514b7a1213d2",
+    "rules/visuals.json": "57b47fe76eb6524a8876412628bdcffa6ed2b8393489c938d8b95309f8f48c5b"
+  },
+  "required_outcomes": [
+    "OUTCOME.PLATFORM.INIT_CONTROL_ONLY",
+    "OUTCOME.PLATFORM.LAZY_CANONICAL",
+    "OUTCOME.PLATFORM.REJECT_ARBITRARY_PATH",
+    "OUTCOME.PLATFORM.REJECT_ROLE_CLASS_MISMATCH",
+    "OUTCOME.PLATFORM.EXISTING_NO_AUTOMOVE"
+  ]
+}

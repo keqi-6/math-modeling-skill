@@ -1,0 +1,174 @@
+{
+  "status": "candidate_comparison_only_not_adopted",
+  "input": "output/data_audit/tables/cleaned_attachment1.csv",
+  "relationship_count": 42,
+  "leave_one_out_refit_count": 228,
+  "teammate_specification": {
+    "temperature_scale": "x=(T-350)/25",
+    "slope": "median of all pairwise slopes",
+    "intercept": "median of y-slope*x"
+  },
+  "current_output_reproduction": {
+    "max_slope_absolute_error": 1.7763568394002505e-15,
+    "max_mae_absolute_error": 8.881784197001252e-16,
+    "max_maxae_absolute_error": 1.7763568394002505e-15
+  },
+  "overall": {
+    "direction_same_count": 42,
+    "theilsen_positive_slope_count": 42,
+    "theilsen_lower_mae_count": 42,
+    "theilsen_lower_maxae_count": 0,
+    "theilsen_lower_rmse_count": 0,
+    "theilsen_loo_direction_change_relationship_count": 0
+  },
+  "by_response": {
+    "c4_selectivity_pct": {
+      "relationship_count": 21,
+      "direction_same_count": 21,
+      "theilsen_positive_slope_count": 21,
+      "median_absolute_slope_difference": 0.2529885057471253,
+      "max_absolute_slope_difference": 2.198275862068966,
+      "median_absolute_relative_slope_difference": 0.061385573676952424,
+      "theilsen_lower_mae_count": 21,
+      "theilsen_lower_maxae_count": 0,
+      "theilsen_lower_rmse_count": 0,
+      "theilsen_loo_direction_change_relationship_count": 0,
+      "slope_rank_correlation": 0.9116883116883117
+    },
+    "ethanol_conversion_pct": {
+      "relationship_count": 21,
+      "direction_same_count": 21,
+      "theilsen_positive_slope_count": 21,
+      "median_absolute_slope_difference": 1.4178999493833748,
+      "max_absolute_slope_difference": 3.0859551733502206,
+      "median_absolute_relative_slope_difference": 0.21572845813810798,
+      "theilsen_lower_mae_count": 21,
+      "theilsen_lower_maxae_count": 0,
+      "theilsen_lower_rmse_count": 0,
+      "theilsen_loo_direction_change_relationship_count": 0,
+      "slope_rank_correlation": 0.9506493506493506
+    }
+  },
+  "largest_relative_slope_differences": [
+    {
+      "catalyst_id": "A10",
+      "response": "c4_selectivity_pct",
+      "ols_slope_per_25c": 1.2918103448275855,
+      "theilsen_slope_per_25c": 0.5574999999999999,
+      "slope_difference_theilsen_minus_ols": -0.7343103448275856,
+      "slope_relative_difference_abs": 0.5684351017684349,
+      "ols_mae": 1.442620689655175,
+      "theilsen_mae": 1.4019999999999997,
+      "ols_maxae": 2.4285344827586313,
+      "theilsen_maxae": 5.852499999999999
+    },
+    {
+      "catalyst_id": "A6",
+      "response": "c4_selectivity_pct",
+      "ols_slope_per_25c": 5.068275862068966,
+      "theilsen_slope_per_25c": 2.87,
+      "slope_difference_theilsen_minus_ols": -2.198275862068966,
+      "slope_relative_difference_abs": 0.43373248060960684,
+      "ols_mae": 4.979448275862055,
+      "theilsen_mae": 4.7459999999999996,
+      "ols_maxae": 9.557586206896628,
+      "theilsen_maxae": 16.809999999999995
+    },
+    {
+      "catalyst_id": "A11",
+      "response": "ethanol_conversion_pct",
+      "ols_slope_per_25c": 5.16921888791145,
+      "theilsen_slope_per_25c": 2.931885268403681,
+      "slope_difference_theilsen_minus_ols": -2.237333619507769,
+      "slope_relative_difference_abs": 0.43281851049873654,
+      "ols_mae": 4.632518181426086,
+      "theilsen_mae": 4.601211153527575,
+      "ols_maxae": 7.6598524394755305,
+      "theilsen_maxae": 17.417759732477705
+    },
+    {
+      "catalyst_id": "B4",
+      "response": "ethanol_conversion_pct",
+      "ols_slope_per_25c": 5.193956503394919,
+      "theilsen_slope_per_25c": 3.0401927126725106,
+      "slope_difference_theilsen_minus_ols": -2.153763790722408,
+      "slope_relative_difference_abs": 0.41466727519081964,
+      "ols_mae": 4.47018749056391,
+      "theilsen_mae": 3.7522662269897746,
+      "ols_maxae": 7.199697216334066,
+      "theilsen_maxae": 17.47066208606272
+    },
+    {
+      "catalyst_id": "B5",
+      "response": "ethanol_conversion_pct",
+      "ols_slope_per_25c": 6.789915387437677,
+      "theilsen_slope_per_25c": 4.009896921382627,
+      "slope_difference_theilsen_minus_ols": -2.7800184660550498,
+      "slope_relative_difference_abs": 0.4094334476094481,
+      "ols_mae": 5.509477187034989,
+      "theilsen_mae": 4.5828043650166395,
+      "ols_maxae": 8.616102661422772,
+      "theilsen_maxae": 21.098826422123146
+    },
+    {
+      "catalyst_id": "A9",
+      "response": "ethanol_conversion_pct",
+      "ols_slope_per_25c": 6.227600921593092,
+      "theilsen_slope_per_25c": 3.897581559239036,
+      "slope_difference_theilsen_minus_ols": -2.330019362354056,
+      "slope_relative_difference_abs": 0.3741439748130184,
+      "ols_mae": 4.9800287799778635,
+      "theilsen_mae": 4.945675822150336,
+      "ols_maxae": 8.120864827475987,
+      "theilsen_maxae": 18.306683483583186
+    },
+    {
+      "catalyst_id": "B3",
+      "response": "ethanol_conversion_pct",
+      "ols_slope_per_25c": 3.2827947673025495,
+      "theilsen_slope_per_25c": 2.13626439013164,
+      "slope_difference_theilsen_minus_ols": -1.1465303771709094,
+      "slope_relative_difference_abs": 0.3492543574732836,
+      "ols_mae": 3.0385385212786673,
+      "theilsen_mae": 2.6563617288883634,
+      "ols_maxae": 4.731720538301342,
+      "theilsen_maxae": 10.310456253230054
+    },
+    {
+      "catalyst_id": "B2",
+      "response": "ethanol_conversion_pct",
+      "ols_slope_per_25c": 6.817215502294978,
+      "theilsen_slope_per_25c": 4.454929177443455,
+      "slope_difference_theilsen_minus_ols": -2.3622863248515227,
+      "slope_relative_difference_abs": 0.3465177716703062,
+      "ols_mae": 5.171114085427828,
+      "theilsen_mae": 5.097533677006064,
+      "ols_maxae": 8.299373431838731,
+      "theilsen_maxae": 18.45793212360001
+    },
+    {
+      "catalyst_id": "B6",
+      "response": "ethanol_conversion_pct",
+      "ols_slope_per_25c": 9.592858633418244,
+      "theilsen_slope_per_25c": 6.506903460068023,
+      "slope_difference_theilsen_minus_ols": -3.0859551733502206,
+      "slope_relative_difference_abs": 0.3216929688299384,
+      "ols_mae": 6.20003549118627,
+      "theilsen_mae": 5.171383766736196,
+      "ols_maxae": 9.763571892206606,
+      "theilsen_maxae": 23.200468109797654
+    },
+    {
+      "catalyst_id": "A10",
+      "response": "ethanol_conversion_pct",
+      "ols_slope_per_25c": 4.585339165489839,
+      "theilsen_slope_per_25c": 3.167439216106464,
+      "slope_difference_theilsen_minus_ols": -1.4178999493833748,
+      "slope_relative_difference_abs": 0.30922466107954844,
+      "ols_mae": 3.6872338381995085,
+      "theilsen_mae": 3.6421676121648496,
+      "ols_maxae": 5.527298864843827,
+      "theilsen_maxae": 11.74174124849549
+    }
+  ]
+}

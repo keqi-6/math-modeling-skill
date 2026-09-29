@@ -1,0 +1,65 @@
+{
+  "reason": "Replaced protected temporary-export ACL with ordinary parent-directory inheritance by byte-identical atomic rewrite.",
+  "files": [
+    {
+      "name": "drying_process.pdf",
+      "sha256": "d8b75998cbfcf3f51eb78e87bceef36c9a79fa17cb1d387f4df1723ef7df5e09",
+      "contents_unchanged": true
+    },
+    {
+      "name": "drying_process.png",
+      "sha256": "7a6fa5577a1537436c74ff45a70e10dcf452faa58cabea607d8ea4540a5917b5",
+      "contents_unchanged": true
+    },
+    {
+      "name": "drying_process_grayscale.png",
+      "sha256": "65b3a1c77819e7ce0b505841586363591b54664469cebe7ade709f7b9b525178",
+      "contents_unchanged": true
+    },
+    {
+      "name": "drying_process_no_text.png",
+      "sha256": "fc06447d860ba97b0a031a1c0b47d4a181a79b1858534a939fae3def3a3c5b63",
+      "contents_unchanged": true
+    },
+    {
+      "name": "drying_process_page_width.png",
+      "sha256": "355e3d6c4a74ef36642c56027c733de1a40a01d959b3a08d5afca95fbb84b688",
+      "contents_unchanged": true
+    },
+    {
+      "name": "drying_process_pdf_check.png",
+      "sha256": "8708f89d13cd8f901eb768ff8c190db643395b077a627ddd3d5aae7bbca7e572",
+      "contents_unchanged": true
+    },
+    {
+      "name": "property_editorial.pdf",
+      "sha256": "f5fccb34edb033fcb984b9cd3aa8abf06fced2d9ccb3b4582c287c25213c9175",
+      "contents_unchanged": true
+    },
+    {
+      "name": "property_editorial.png",
+      "sha256": "3f47b2ea2de93345579ec88f34f10a7e79df5963365760aeeb1f24448bae2c7e",
+      "contents_unchanged": true
+    },
+    {
+      "name": "property_editorial_grayscale.png",
+      "sha256": "35b85e48c8e263ddbfa7c921d992e5980e914883c1f5a89c1ffbc598f6a46e90",
+      "contents_unchanged": true
+    },
+    {
+      "name": "property_editorial_no_text.png",
+      "sha256": "d8a13404f1274fdba4e6de3e73d45a75123ee355806b2003ab92069470cb9c54",
+      "contents_unchanged": true
+    },
+    {
+      "name": "property_editorial_page_width.png",
+      "sha256": "38b23de1de2752863f0b9924a895a6c10dba6eb31c722051352dc4a1589a5ae8",
+      "contents_unchanged": true
+    },
+    {
+      "name": "property_editorial_pdf_check.png",
+      "sha256": "7e0b16657c785a663b4cd00d05f876081e3e4bf95e6a6b2469bd48af5354bc66",
+      "contents_unchanged": true
+    }
+  ]
+}

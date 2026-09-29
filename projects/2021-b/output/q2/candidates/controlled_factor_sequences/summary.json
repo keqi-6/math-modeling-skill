@@ -1,0 +1,118 @@
+{
+  "status": "candidate_evidence_not_formal_question2_model",
+  "input": "output/data_audit/tables/cleaned_attachment1.csv",
+  "input_sha256": "b99a4d3c23ebc1dbc366a49235924860cc9e982b11eb859bfb6893086d627834",
+  "common_temperatures_c": [
+    250.0,
+    275.0,
+    300.0,
+    350.0
+  ],
+  "sequence_contracts": [
+    {
+      "sequence": "co_loading",
+      "ids": [
+        "A4",
+        "A1",
+        "A2",
+        "A6"
+      ],
+      "level_field": "co_loading_wt_pct",
+      "levels": {
+        "A4": 0.5,
+        "A1": 1.0,
+        "A2": 2.0,
+        "A6": 5.0
+      },
+      "constant_fields": [
+        "loading_method",
+        "cosio2_mass_mg",
+        "hap_mass_mg",
+        "active_catalyst_mass_mg",
+        "ethanol_condition_ml_min"
+      ],
+      "violations": {},
+      "passed": true
+    },
+    {
+      "sequence": "ethanol_condition",
+      "ids": [
+        "A7",
+        "A8",
+        "A12",
+        "A9"
+      ],
+      "level_field": "ethanol_condition_ml_min",
+      "levels": {
+        "A7": 0.3,
+        "A8": 0.9,
+        "A12": 1.68,
+        "A9": 2.1
+      },
+      "constant_fields": [
+        "loading_method",
+        "cosio2_mass_mg",
+        "co_loading_wt_pct",
+        "hap_mass_mg",
+        "active_catalyst_mass_mg"
+      ],
+      "violations": {},
+      "passed": true
+    },
+    {
+      "sequence": "active_mass",
+      "ids": [
+        "B3",
+        "B4",
+        "B1",
+        "B6",
+        "B2"
+      ],
+      "level_field": "active_catalyst_mass_mg",
+      "levels": {
+        "B3": 20.0,
+        "B4": 50.0,
+        "B1": 100.0,
+        "B6": 150.0,
+        "B2": 200.0
+      },
+      "constant_fields": [
+        "loading_method",
+        "co_loading_wt_pct",
+        "cosio2_to_hap_ratio",
+        "ethanol_condition_ml_min"
+      ],
+      "violations": {},
+      "passed": true
+    },
+    {
+      "sequence": "hap_fraction",
+      "ids": [
+        "A14",
+        "A12",
+        "A13"
+      ],
+      "level_field": "hap_mass_fraction",
+      "levels": {
+        "A14": 0.67,
+        "A12": 0.5,
+        "A13": 0.33
+      },
+      "constant_fields": [
+        "loading_method",
+        "co_loading_wt_pct",
+        "active_catalyst_mass_mg",
+        "ethanol_condition_ml_min"
+      ],
+      "violations": {},
+      "passed": true
+    }
+  ],
+  "boundaries": [
+    "每个因素水平主要由一个完整组合代表，不能识别独立因果效应",
+    "只使用21种组合共有的四个温度，避免覆盖不平衡改变比较",
+    "Spearman系数只概括水平顺序，不作小样本显著性裁决",
+    "装料方式只由两组完全匹配配方支持，不能推广到全部组合",
+    "本候选不得在负责人决定前替换已冻结的第二问"
+  ]
+}

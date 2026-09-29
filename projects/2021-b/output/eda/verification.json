@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-31T09:57:07.449465+08:00",
+  "verifier": "src/eda/02_verify_eda.py",
+  "independence": "未导入主EDA脚本",
+  "checks": [
+    {
+      "check": "正式接口记录与组合数",
+      "passed": true,
+      "observed": {
+        "records": 114,
+        "combinations": 21
+      },
+      "expected": {
+        "records": 114,
+        "combinations": 21
+      }
+    },
+    {
+      "check": "温度域",
+      "passed": true,
+      "observed": [
+        250.0,
+        275.0,
+        300.0,
+        325.0,
+        350.0,
+        400.0,
+        450.0
+      ],
+      "expected": [
+        250,
+        275,
+        300,
+        325,
+        350,
+        400,
+        450
+      ]
+    },
+    {
+      "check": "全覆盖配对均为21组",
+      "passed": true,
+      "observed": [
+        21
+      ],
+      "expected": [
+        21
+      ]
+    },
+    {
+      "check": "三组相邻温度条件中较高温度对应较高收率的数量",
+      "passed": true,
+      "observed": {
+        "direct": [
+          21,
+          21,
+          21
+        ],
+        "recorded": [
+          21,
+          21,
+          21
+        ]
+      },
+      "expected": [
+        21,
+        21,
+        21
+      ]
+    },
+    {
+      "check": "250与350℃收率排名相关",
+      "passed": true,
+      "observed": 0.92987012987013,
+      "expected": 0.92987012987013
+    },
+    {
+      "check": "Pareto标记无被支配点",
+      "passed": true,
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "check": "附件2首末变化独立复算",
+      "passed": true,
+      "observed": 0.0,
+      "expected": "< 1e-12"
+    },
+    {
+      "check": "产物路径完整",
+      "passed": true,
+      "observed": [],
+      "expected": []
+    },
+    {
+      "check": "产物哈希一致",
+      "passed": true,
+      "observed": [],
+      "expected": []
+    },
+    {
+      "check": "当前图形12个",
+      "passed": true,
+      "observed": 12,
+      "expected": 12
+    }
+  ],
+  "passed_count": 10,
+  "check_count": 10,
+  "all_passed": true
+}

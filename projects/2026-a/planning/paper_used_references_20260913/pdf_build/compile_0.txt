@@ -1,0 +1,88 @@
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+
+(<AI_ROOT>/数模国赛2026/CUMCM2026Problems/A题/docs/paper_references/论文参考文献表_附
+关键词.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-05-15>
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/ctexart.cls
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
+Document Class: ctexart 2022/07/14 v2.5.10 Chinese adapter for class article (C
+TEX)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/ctexhook.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/ctexpatch.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/base/fix-cm.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/base/ts1enc.def))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/config/ctexopts.cfg)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(d:/latex/texlive/2026/texmf-dist/tex/latex/base/size11.clo))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
+(d:/latex/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(d:/latex/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg)))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/zhnumber/zhnumber.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-art
+icle.def
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows.d
+ef)) (d:/latex/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex.cfg)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
+(d:/latex/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty)))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/tools/array.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/tools/tabularx.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/graphics-def/xetex.def)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(d:/latex/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(d:/latex/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(d:/latex/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(d:/latex/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)
+(d:/latex/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(d:/latex/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+(d:/latex/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(d:/latex/texlive/2026/texmf-dist/tex/latex/hyperref/hxetex.def
+(d:/latex/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(d:/latex/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))
+)
+(<AI_ROOT>\数模国赛2026\CUMCM2026Problems\A题\planning\paper_used_references_
+20260913\pdf_build/论文参考文献表_附关键词.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+
+(<AI_ROOT>\数模国赛2026\CUMCM2026Problems\A题\planning\paper_used_references_
+20260913\pdf_build/论文参考文献表_附关键词.out)
+(<AI_ROOT>\数模国赛2026\CUMCM2026Problems\A题\planning\paper_used_references_
+20260913\pdf_build/论文参考文献表_附关键词.out) [1]
+(<AI_ROOT>\数模国赛2026\CUMCM2026Problems\A题\planning\paper_used_references_
+20260913\pdf_build/论文参考文献表_附关键词.aux) )
+Output written on <AI_ROOT>\数模国赛2026\CUMCM2026Problems\A题\planning\paper
+_used_references_20260913\pdf_build/论文参考文献表_附关键词.pdf (1 page).
+Transcript written on <AI_ROOT>\数模国赛2026\CUMCM2026Problems\A题\planning\p
+aper_used_references_20260913\pdf_build/论文参考文献表_附关键词.log.

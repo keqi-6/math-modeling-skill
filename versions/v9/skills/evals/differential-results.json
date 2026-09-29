@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "release": "9.0.0",
+  "status": "PASS",
+  "scenario": "在空的隔离项目目录中执行首次项目平台创建",
+  "measurement": {
+    "v8_bootstrap": {
+      "files_created": 15,
+      "paths_created_including_directories": 30
+    },
+    "v9_explicit_initialization": {
+      "files_created": 1,
+      "paths_created_including_directories": 2,
+      "created_file": ".modeling/state.json"
+    }
+  },
+  "assertions": {
+    "v9_creates_fewer_files": true,
+    "v9_creates_fewer_paths": true,
+    "v9_matches_artifact_contract": true,
+    "v1_to_v8_sources_unchanged": true
+  }
+}

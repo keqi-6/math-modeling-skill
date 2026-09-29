@@ -1,0 +1,130 @@
+{
+  "inputs": {
+    "q1": {
+      "filename": "run_n5120.npz",
+      "sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e"
+    },
+    "q2": {
+      "filename": "run_n10240_startsafe.npz",
+      "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b"
+    },
+    "q4": {
+      "filename": "run_n10240-v1-20260911.npz",
+      "sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92"
+    }
+  },
+  "files": {
+    "q1_profiles.npz": {
+      "sha256": "6a296f10f66e11a8a2018bd6d9dda66cf6b9a80dc44e070acfbb93734281683f",
+      "bytes": 2416,
+      "arrays": {
+        "time_s": {
+          "shape": [
+            5
+          ],
+          "dtype": "int64"
+        },
+        "radius_m": {
+          "shape": [
+            21
+          ],
+          "dtype": "float64"
+        },
+        "temperature_C": {
+          "shape": [
+            5,
+            21
+          ],
+          "dtype": "float64"
+        },
+        "moisture_kg_kg": {
+          "shape": [
+            5,
+            21
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    "q2_fields.npz": {
+      "sha256": "e00448c6c3efe0c69926883fff3159ca798d40548569659c75cedfb8c14528ee",
+      "bytes": 3052605,
+      "arrays": {
+        "time_s": {
+          "shape": [
+            10801
+          ],
+          "dtype": "int64"
+        },
+        "radius_m": {
+          "shape": [
+            21
+          ],
+          "dtype": "float64"
+        },
+        "temperature_C": {
+          "shape": [
+            10801,
+            21
+          ],
+          "dtype": "float64"
+        },
+        "moisture_kg_kg": {
+          "shape": [
+            10801,
+            21
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    "q4_sections.npz": {
+      "sha256": "fab6705a7aaeeb4aed1751cef15dcdb978e167433a4de3de1ed86f46580274e4",
+      "bytes": 352984,
+      "arrays": {
+        "mesh_xi": {
+          "shape": [
+            10241
+          ],
+          "dtype": "float64"
+        },
+        "snapshot_time_s": {
+          "shape": [
+            6
+          ],
+          "dtype": "int64"
+        },
+        "snapshot_radius_m": {
+          "shape": [
+            6
+          ],
+          "dtype": "float64"
+        },
+        "moisture_snapshots": {
+          "shape": [
+            6,
+            10241
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    "restructured_figure_data.json": {
+      "sha256": "7f61b4c1b9103163e1ab291ff65c0b97382aa370f5d2b6082888c6575c0ddd05",
+      "bytes": 6873,
+      "contents": "Main-state diffusivity decomposition and radial completion times"
+    }
+  },
+  "q3_end_s": 206927,
+  "q4_end_s": 183949,
+  "units": {
+    "time_s": "s",
+    "radius_m": "m",
+    "temperature_C": "degC",
+    "moisture_kg_kg": "kg/kg dry basis",
+    "mesh_xi": "dimensionless"
+  },
+  "operation": "Exact array selection; no rounding, fitting, filtering, or solver execution.",
+  "q3_maximum": "Saved maximum over all numerical nodes. Completion bands display the 21 prescribed radii.",
+  "additional_data": "restructured_figure_data.json contains exact diffusivity decomposition and integer-second radial threshold crossings."
+}

@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0",
+  "question": "Q4",
+  "axes": [
+    "E3"
+  ],
+  "mode": "structure",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T20:17:10.096657+00:00",
+  "passed": true,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\verify.py": "6a87551fe3aec7a199c4203211cdb17ce981da33035464e7cee662ca854466f0",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\solve.py": "8a075fa2890c0f6265c33df8b75664f62b05e6ba4b765b8fa32cce69041dc0ef",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q4\\model_spec.md": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\GEOMETRY\\q4_radius.json": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件2.xlsx": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af"
+  },
+  "checks": [
+    {
+      "axis": "E3",
+      "id": "dimensionless_cell_weights",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.3877787807814457e-16
+      },
+      "target": {
+        "atol": 3e-17,
+        "rtol": 3e-14
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "axis_surface_and_total_weight",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 6.938893903907228e-17
+      },
+      "target": {
+        "atol": 3e-17,
+        "rtol": 3e-14
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "uniform_material_field_under_shrinkage_0s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": "A dry-basis ratio is invariant under pure geometric shrinkage with no relative exchange."
+    },
+    {
+      "axis": "E3",
+      "id": "uniform_material_field_under_shrinkage_60s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": "A dry-basis ratio is invariant under pure geometric shrinkage with no relative exchange."
+    },
+    {
+      "axis": "E3",
+      "id": "uniform_material_field_under_shrinkage_120s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": "A dry-basis ratio is invariant under pure geometric shrinkage with no relative exchange."
+    },
+    {
+      "axis": "E3",
+      "id": "normalized_heat_balance_900s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-08,
+        "rtol": 3e-10
+      },
+      "note": "Instantaneous effective balance, not a claim about true total material mass or enthalpy."
+    },
+    {
+      "axis": "E3",
+      "id": "normalized_water_balance_900s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-15,
+        "rtol": 3e-10
+      },
+      "note": "Instantaneous effective balance, not a claim about true total material mass or enthalpy."
+    },
+    {
+      "axis": "E3",
+      "id": "normalized_heat_balance_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-08,
+        "rtol": 3e-10
+      },
+      "note": "Instantaneous effective balance, not a claim about true total material mass or enthalpy."
+    },
+    {
+      "axis": "E3",
+      "id": "normalized_water_balance_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-15,
+        "rtol": 3e-10
+      },
+      "note": "Instantaneous effective balance, not a claim about true total material mass or enthalpy."
+    },
+    {
+      "axis": "E3",
+      "id": "constant_tail_energy_identity_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.3552527156068805e-20
+      },
+      "target": {
+        "atol": 3e-15,
+        "rtol": 3e-10
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "constant_tail_energy_nonincrease_21600s",
+      "passed": true,
+      "observed": -5.764907546277899e-05,
+      "target": 0.0,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "normalized_heat_balance_259200s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-08,
+        "rtol": 3e-10
+      },
+      "note": "Instantaneous effective balance, not a claim about true total material mass or enthalpy."
+    },
+    {
+      "axis": "E3",
+      "id": "normalized_water_balance_259200s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.3552527156068805e-20
+      },
+      "target": {
+        "atol": 2e-15,
+        "rtol": 3e-10
+      },
+      "note": "Instantaneous effective balance, not a claim about true total material mass or enthalpy."
+    },
+    {
+      "axis": "E3",
+      "id": "constant_tail_energy_identity_259200s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 3e-15,
+        "rtol": 3e-10
+      },
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "constant_tail_energy_nonincrease_259200s",
+      "passed": true,
+      "observed": -6.697783006021649e-05,
+      "target": 0.0,
+      "note": null
+    },
+    {
+      "axis": "E3",
+      "id": "invariant_rectangle_component_face_directions",
+      "passed": true,
+      "observed": 0.0,
+      "target": 1e-12,
+      "note": "Tests selected faces; the full rectangle theorem remains a mathematical argument."
+    },
+    {
+      "axis": "E3",
+      "id": "closed_threshold_rectangle_face_direction",
+      "passed": true,
+      "observed": {
+        "max_derivative": 0.0,
+        "surface_derivative": -0.0001310846304006862
+      },
+      "target": "<=0 at all current maxima; strictly negative forcing at the surface",
+      "note": null
+    }
+  ],
+  "details": {},
+  "claim_boundary": "Only the actually executed axes/checks are reported. No E4 observation is supplied; no continuum strong-solution theorem, arbitrary-step BDF positivity, per-cell correct rounding proof, or cross-grid integer certainty is inferred."
+}

@@ -1,0 +1,3 @@
+response,response_cn,median_cv_mae_pct_point,median_cv_rmse_pct_point,median_nrmse_pct,combination_count
+ethanol_conversion_pct,乙醇转化率,7.8028783179347645,9.410392358079955,22.77366526924303,21
+c4_selectivity_pct,C4烯烃选择性,3.8194301212831463,4.39853728727664,14.43452037020943,21

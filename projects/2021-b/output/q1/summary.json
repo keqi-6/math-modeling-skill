@@ -1,0 +1,94 @@
+{
+  "input_sha256": {
+    "output/data_audit/tables/modeling_dataset.csv": "3bcd0544218d0b68e75812619b1462bcf8188e668770eacbe0dff0f25ce49f9f",
+    "output/data_audit/tables/cleaned_attachment2.csv": "996ebdb9783cd9bab4572b5bafba75909843511f9278fea1ddbc632914b61a2a"
+  },
+  "record_counts": {
+    "attachment1": 114,
+    "attachment2": 7,
+    "catalyst_combinations": 21
+  },
+  "shape_type_counts": [
+    {
+      "response_cn": "C4烯烃选择性",
+      "change_type": "275℃低于250℃，其余较高温度对应较高值",
+      "combination_count": 3
+    },
+    {
+      "response_cn": "C4烯烃选择性",
+      "change_type": "各相邻温度条件中，较高温度对应较高值",
+      "combination_count": 15
+    },
+    {
+      "response_cn": "C4烯烃选择性",
+      "change_type": "存在其他相邻温度条件反向差异",
+      "combination_count": 1
+    },
+    {
+      "response_cn": "C4烯烃选择性",
+      "change_type": "最高温度条件低于前一温度，其余较高温度对应较高值",
+      "combination_count": 2
+    },
+    {
+      "response_cn": "乙醇转化率",
+      "change_type": "275℃低于250℃，其余较高温度对应较高值",
+      "combination_count": 2
+    },
+    {
+      "response_cn": "乙醇转化率",
+      "change_type": "各相邻温度条件中，较高温度对应较高值",
+      "combination_count": 19
+    }
+  ],
+  "attachment2_ratio_change": {
+    "acetaldehyde_to_c4_first": 0.12957393483709273,
+    "acetaldehyde_to_c4_last": 0.22515368852459014,
+    "alcohol_to_c4_first": 0.9949874686716793,
+    "alcohol_to_c4_last": 0.7904713114754098
+  },
+  "limited_linear_summary": {
+    "attachment1_relation_count": 42,
+    "attachment1_direction_sensitive_count": 0,
+    "attachment1_with_local_exception_count": 8,
+    "attachment2": [
+      {
+        "response": "ethanol_conversion_pct",
+        "response_cn": "乙醇转化率",
+        "observed_time_count": 7,
+        "slope_per_min_pct_point": -0.052760894901121284,
+        "slope_per_10min_pct_point": -0.5276089490112128,
+        "intercept_pct": 42.67093266506198,
+        "r_squared": 0.9329232088741889,
+        "mean_absolute_residual_pct_point": 1.020135435012342,
+        "max_absolute_residual_pct_point": 1.9316738034433456,
+        "first_pct": 43.5473885704829,
+        "last_pct": 29.9060085761557,
+        "change_pct_point": -13.641379994327202,
+        "interpretation_scope": "仅概括本次实验已观测时段，不作外推"
+      },
+      {
+        "response": "c4_yield_pct",
+        "response_cn": "C4烯烃收率",
+        "observed_time_count": 7,
+        "slope_per_min_pct_point": -0.019887961097774232,
+        "slope_per_10min_pct_point": -0.19887961097774232,
+        "intercept_pct": 16.529678802750084,
+        "r_squared": 0.857479905784327,
+        "mean_absolute_residual_pct_point": 0.5997675130952808,
+        "max_absolute_residual_pct_point": 1.2434884588280788,
+        "first_pct": 17.375408039622677,
+        "last_pct": 11.675305748131183,
+        "change_pct_point": -5.700102291491493,
+        "interpretation_scope": "仅概括本次实验已观测时段，不作外推"
+      }
+    ]
+  },
+  "claim_boundaries": [
+    "只描述已测离散温度，不生成标签外温度",
+    "相对比例不表示两类产物互相转化",
+    "可能反应路线来自文献，不是本题数据直接证明",
+    "趋势辅助数字不单独裁决温度是否有影响",
+    "简单直线和Spearman只概括方向，不进行显著性推断",
+    "拟合残差不是同条件重复实验误差"
+  ]
+}

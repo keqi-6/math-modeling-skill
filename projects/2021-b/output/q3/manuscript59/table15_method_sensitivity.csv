@@ -1,0 +1,4 @@
+method,highest_missing_prediction_pct,catalyst_id,a2_observed_lead_pct_point
+分量PCHIP后重构,6.456217098391277,A7,10.808092224991505
+直接收率PCHIP,6.551703373656117,A7,10.712605949726665
+局部直线插值,7.229294685464113,A7,10.03501463791867

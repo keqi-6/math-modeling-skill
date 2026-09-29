@@ -1,0 +1,9 @@
+{
+  "command": "python3 src/q4/03_build_analysis.py",
+  "inputs_sha256": {
+    "output/q4/s5_q3_representatives.jsonl.gz": "8e2dc8184a01e4c596412f10f8105d2d126c3d04a61a69791f669ebf2b212746",
+    "output/q4/s5_q3_summary.json": "3a6a06df0a57294283cff08a3172a942517be3605d84b6f9704d9cdc5fd6fdc7"
+  },
+  "source_sha256": "7299624c287a35a90b76429b0f85b03c2e8a77c3239540aecaf507b7764d1aa0",
+  "output_sha256": "bc8b59669e83f5ad72a395b370eefecbc07ab88e610d56f6a14b3583737584a7"
+}

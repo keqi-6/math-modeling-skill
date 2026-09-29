@@ -1,0 +1,1929 @@
+{
+  "schema_version": "10.0",
+  "domain": "evidence_delivery",
+  "rules": [
+    {
+      "id": "EVD.SEARCH.CLAIM_FIRST",
+      "revision": 2,
+      "status": "active",
+      "capability": "EVD-LITERATURE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.SEARCH.CLAIM_FIRST",
+      "strength": "MUST",
+      "semantic_key": "evidence.search.claim_first",
+      "scope": {
+        "objects": [
+          "literature"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "literature_search"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "search_input",
+        "value": "explicit_claim_or_decision"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "claim",
+          "required_source_type"
+        ]
+      },
+      "outcomes": {
+        "pass": "每次搜索对应明确主张。",
+        "fail": "搜索没有决策或主张消费者。",
+        "not_applicable": "探索性咨询且不作结论。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "evidence.search.claim_first.exception.1",
+          "when": "领域探索",
+          "disposition": "把输出标记为候选背景而非主张证据"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-LITERATURE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "先定义需要支持或反驳的具体主张。",
+      "failure_example": "先堆积文献再猜测用途。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "EVD.SEARCH.PRIMARY",
+      "revision": 3,
+      "status": "active",
+      "capability": "EVD-LITERATURE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.SEARCH.PRIMARY",
+      "strength": "MUST",
+      "semantic_key": "evidence.search.primary_source",
+      "scope": {
+        "objects": [
+          "literature"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "source_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "select",
+        "target": "source_preference",
+        "value": "primary_authoritative"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation"
+        ],
+        "fields": [
+          "uri",
+          "source_type"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键主张使用合适的一手来源。",
+        "fail": "来源层级无法支持主张。",
+        "not_applicable": "不存在可访问的一手来源。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "evidence.search.primary_source.exception.1",
+          "when": "一手来源不可得",
+          "disposition": "声明限制并交叉核对可靠二手来源"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-LITERATURE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "优先使用原始论文、官方规则或权威数据发布者。",
+      "failure_example": "用搜索摘要替代原始来源内容。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "EVD.SEARCH.FULLTEXT_SCOPE",
+      "revision": 2,
+      "status": "active",
+      "capability": "EVD-LITERATURE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.SEARCH.FULLTEXT_SCOPE",
+      "strength": "MUST",
+      "semantic_key": "evidence.search.fulltext_scope",
+      "scope": {
+        "objects": [
+          "literature"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "source_claim"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "source_claim_scope",
+        "value": "actually_accessed_content"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation"
+        ],
+        "fields": [
+          "uri",
+          "accessed_at",
+          "access_scope"
+        ]
+      },
+      "outcomes": {
+        "pass": "访问范围足以支持主张。",
+        "fail": "主张超过访问范围。",
+        "not_applicable": "只报告检索候选。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-LITERATURE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把来源声称限制在实际访问的页面或全文。",
+      "failure_example": "从标题、摘要或搜索片段推断全文结论。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "EVD.SEARCH.PRIMARY"
+      ]
+    },
+    {
+      "id": "EVD.SEARCH.COUNTEREVIDENCE",
+      "revision": 3,
+      "status": "active",
+      "capability": "EVD-LITERATURE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.SEARCH.COUNTEREVIDENCE",
+      "strength": "MUST",
+      "semantic_key": "evidence.search.counterevidence",
+      "scope": {
+        "objects": [
+          "literature"
+        ],
+        "component_types": [
+          "question",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "A0",
+          "A1",
+          "A2",
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "high_impact_claim_review"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "search_direction",
+        "value": "support_and_counterevidence"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "counter_query",
+          "finding"
+        ]
+      },
+      "outcomes": {
+        "pass": "反证检索已记录。",
+        "fail": "存在明显确认偏误。",
+        "not_applicable": "低影响背景主张。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-LITERATURE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH",
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为高影响主张检索反例或相反证据。",
+      "failure_example": "只收集支持既定方案的来源。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "EVD.POLICY.CURRENT",
+      "revision": 2,
+      "status": "active",
+      "capability": "EVD-LITERATURE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.POLICY.CURRENT",
+      "strength": "MUST",
+      "semantic_key": "evidence.policy.current_official",
+      "scope": {
+        "objects": [
+          "literature",
+          "delivery",
+          "manuscript",
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "time_sensitive_policy_use"
+        ],
+        "predicates": [
+          {
+            "field": "policy_may_change",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "external_policy",
+        "value": "current_official_source"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation"
+        ],
+        "fields": [
+          "official_uri",
+          "accessed_at",
+          "effective_period"
+        ]
+      },
+      "outcomes": {
+        "pass": "政策来源和日期可核验。",
+        "fail": "政策陈旧或来源非官方。",
+        "not_applicable": "规则不随时间变化。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "evidence.policy.current_official.exception.1",
+          "when": "官方来源暂不可访问",
+          "disposition": "停止依赖该政策的最终结论"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.CUMCM.2025.HARDCODE",
+        "V8.NATURE.GLOBAL"
+      ],
+      "legacy_refs": [
+        "EVD-LITERATURE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH",
+        "RT.DELIVERY.FINAL",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在执行当日从官方来源核验时效性规则。",
+      "failure_example": "把 Skill 内的旧年份政策当成现行要求。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "EVD.PROV.CLAIM_MAP",
+      "revision": 3,
+      "status": "active",
+      "capability": "EVD-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.PROV.CLAIM_MAP",
+      "strength": "MUST",
+      "semantic_key": "evidence.provenance.claim_map",
+      "scope": {
+        "objects": [
+          "literature",
+          "manuscript",
+          "delivery",
+          "data"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "external_claim_record"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "claim_source_link",
+        "value": "claim_to_exact_source_role_and_permitted_use"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation"
+        ],
+        "fields": [
+          "claim_id",
+          "uri",
+          "support_scope",
+          "source_authority",
+          "use_role",
+          "permitted_consumers"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键主张可逐项追溯。",
+        "fail": "存在孤立主张。",
+        "not_applicable": "没有外部主张。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH",
+        "RT.DATA.AUDIT",
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把每个关键外部主张或数值绑定到精确来源、来源权威性、用途角色和允许消费者。",
+      "failure_example": "用一组参考文献笼统覆盖多个无映射主张，或没有区分外部参数、现实基准与内部回归参照。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "EVD.PROV.CONSUMER_BOUNDARY",
+      "revision": 2,
+      "status": "active",
+      "capability": "EVD-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.PROV.CONSUMER_BOUNDARY",
+      "strength": "MUST",
+      "semantic_key": "evidence.provenance.consumer_boundary",
+      "scope": {
+        "objects": [
+          "literature",
+          "model",
+          "manuscript",
+          "delivery",
+          "data"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "external_claim_record",
+          "result_interpretation",
+          "manuscript_audit",
+          "final_delivery"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "external_claim_consumers",
+        "value": "registered_permitted_consumers"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "claim_id",
+          "source_authority",
+          "use_role",
+          "permitted_consumers",
+          "actual_consumer"
+        ]
+      },
+      "outcomes": {
+        "pass": "外部事实、参数、基准或回归参照只进入登记允许的消费者。",
+        "fail": "登记为 internal_regression 或 candidate_hint 的外部数值进入论文、队友讲解稿、正式答案主张或验收证据。",
+        "not_applicable": "当前内容不消费外部事实或数值。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "evidence.provenance.consumer_boundary.exception.1",
+          "when": "外部参数、官方输入或现实基准被当前项目明确登记为公开方法或比较证据",
+          "disposition": "保留引用和用途身份后允许对应消费者使用"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH",
+        "RT.DATA.AUDIT",
+        "RT.MODEL.RESULTS",
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "外部数值按来源、用途角色和允许消费者管理，不按字面是否相同一刀切禁用或放行。",
+      "failure_example": "外部公开答案只获准做内部回归告警，却被复制到讲解稿并当作本项目结果。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "EVD.PROV.CLAIM_MAP"
+      ]
+    },
+    {
+      "id": "EVD.PROV.METADATA",
+      "revision": 2,
+      "status": "active",
+      "capability": "EVD-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.PROV.METADATA",
+      "strength": "MUST",
+      "semantic_key": "evidence.provenance.metadata",
+      "scope": {
+        "objects": [
+          "literature",
+          "data",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "source_register"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "source_identity",
+        "value": "creator_title_uri_date_license"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation"
+        ],
+        "fields": [
+          "creator",
+          "title",
+          "uri",
+          "accessed_at",
+          "license_or_terms"
+        ]
+      },
+      "outcomes": {
+        "pass": "来源可重定位且许可可判断。",
+        "fail": "来源身份不完整。",
+        "not_applicable": "项目自产材料。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "evidence.provenance.metadata.exception.1",
+          "when": "来源无公开许可声明",
+          "disposition": "记录缺失并限制再分发"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH",
+        "RT.DATA.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "记录足以重新定位来源的身份元数据。",
+      "failure_example": "只记录不可复现的搜索标题或本地昵称。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "EVD.PROV.NO_FORCED_FILES",
+      "revision": 2,
+      "status": "active",
+      "capability": "EVD-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.PROV.NO_FORCED_FILES",
+      "strength": "MUST",
+      "semantic_key": "evidence.provenance.no_forced_files",
+      "scope": {
+        "objects": [
+          "literature",
+          "data"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "provenance_record"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "default_provenance_bundle",
+        "value": [
+          "README",
+          "json",
+          "bib",
+          "note",
+          "refs"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "consumer_ids",
+          "selected_carrier"
+        ]
+      },
+      "outcomes": {
+        "pass": "来源记录无重复载体。",
+        "fail": "固定模板产生冗余文件。",
+        "not_applicable": "只在回复中提供来源。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "evidence.provenance.no_forced_files.exception.1",
+          "when": "项目已有明确来源管理工作流",
+          "disposition": "复用现有载体"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [
+        "V8.LITERATURE.FILE.BUNDLE"
+      ],
+      "legacy_refs": [
+        "EVD-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.LITERATURE.SEARCH",
+        "RT.DATA.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "按现有消费者选择最小来源记录载体。",
+      "failure_example": "每次检索都创建固定五件套来源文件。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DEL.FINAL.COVERAGE",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-FINAL-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.FINAL.COVERAGE",
+      "strength": "MUST",
+      "semantic_key": "delivery.final.request_coverage",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "artifact"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S7",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "final_delivery"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "request_coverage",
+        "value": "all_declared_deliverables"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "file"
+        ],
+        "fields": [
+          "deliverable",
+          "path",
+          "status"
+        ]
+      },
+      "outcomes": {
+        "pass": "所有声明交付项有证据。",
+        "fail": "至少一项缺失或未验证。",
+        "not_applicable": "不是交付。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-FINAL-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "逐项核对用户要求的交付物。",
+      "failure_example": "用项目总体完成感代替逐项覆盖。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DEL.FINAL.REPRODUCE",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-FINAL-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.FINAL.REPRODUCE",
+      "strength": "MUST",
+      "semantic_key": "delivery.final.reproducibility",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "artifact"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S7",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "final_delivery"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "reproducibility",
+        "value": "declared_entrypoints_and_inputs"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "file"
+        ],
+        "fields": [
+          "entrypoint",
+          "input_identity",
+          "output_identity"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键结果可复现。",
+        "fail": "入口、输入或输出身份不闭合。",
+        "not_applicable": "交付不含计算结果。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "delivery.final.reproducibility.exception.1",
+          "when": "外部环境不可得",
+          "disposition": "明确记录未复现边界"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-FINAL-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "从声明入口复现关键结果或记录不能复现的边界。",
+      "failure_example": "仅凭已有输出宣称可复现。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DEL.PROV.LICENSE",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.PROV.LICENSE",
+      "strength": "MUST",
+      "semantic_key": "delivery.provenance.license",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "artifact"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "package_external_material"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "redistribution_permission",
+        "value": "source_terms_allow_package"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "decision"
+        ],
+        "fields": [
+          "source",
+          "license_or_terms",
+          "disposition"
+        ]
+      },
+      "outcomes": {
+        "pass": "每个外部材料有许可处置。",
+        "fail": "包内存在许可未知材料。",
+        "not_applicable": "没有外部材料。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "delivery.provenance.license.exception.1",
+          "when": "许可不允许再分发",
+          "disposition": "仅交付引用和获取说明"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在打包外部材料前核验来源许可。",
+      "failure_example": "把可访问等同于可再分发。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DEL.PROV.WHITELIST",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.PROV.WHITELIST",
+      "strength": "MUST",
+      "semantic_key": "delivery.provenance.whitelist",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "artifact"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "delivery_package_build"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "package_members",
+        "value": "validated_declared_whitelist"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "package_manifest",
+          "artifact_hashes"
+        ]
+      },
+      "outcomes": {
+        "pass": "包成员均有登记身份。",
+        "fail": "包中有未声明文件。",
+        "not_applicable": "没有文件包。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "只打包已声明且已验证的白名单文件。",
+      "failure_example": "递归打包整个工作区。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DEL.PROV.SECRETS",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.PROV.SECRETS",
+      "strength": "MUST",
+      "semantic_key": "delivery.provenance.secrets",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "artifact"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "delivery_package_build"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "package_sensitive_content",
+        "value": "credentials_or_private_data"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "scan_scope",
+          "findings"
+        ]
+      },
+      "outcomes": {
+        "pass": "敏感扫描无未处置发现。",
+        "fail": "包中存在敏感材料。",
+        "not_applicable": "交付不含文件。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在交付包中排除凭据和未经授权的私密数据。",
+      "failure_example": "把环境文件、令牌或个人原始数据带入交付。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DEL.HANDOFF.STATE",
+      "revision": 3,
+      "status": "active",
+      "capability": "DEL-HANDOFF-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.HANDOFF.STATE",
+      "strength": "MUST",
+      "semantic_key": "delivery.handoff.state",
+      "scope": {
+        "objects": [
+          "project",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "P2",
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "handoff"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "handoff_authority",
+        "value": "state_next_actions_open_decisions"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state"
+        ],
+        "fields": [
+          "revision",
+          "next_actions",
+          "open_decisions"
+        ]
+      },
+      "outcomes": {
+        "pass": "接手者可从状态继续。",
+        "fail": "交接依赖不可验证叙述。",
+        "not_applicable": "没有交接。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-HANDOFF-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROJECT.RESUME",
+        "RT.PROJECT.RECOVER.MISSING",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用权威状态表达交接位置和下一动作。",
+      "failure_example": "让自然语言交接覆盖机器状态。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "EVD.EXTERNAL.AUTHORITATIVE",
+      "revision": 2,
+      "status": "active",
+      "capability": "EVD-LITERATURE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.EXTERNAL.AUTHORITATIVE",
+      "strength": "MUST",
+      "semantic_key": "evidence.external.authoritative_source",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "skill",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_load"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "external_fact_source",
+        "value": "authoritative_accessed_source"
+      },
+      "instruction_gloss": "凡执行依赖外部事实，都使用实际访问的权威来源。",
+      "failure_example": "模型或论文任务隐含使用外部事实，却因未单独请求检索而省略来源。",
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation"
+        ],
+        "fields": [
+          "claim",
+          "uri",
+          "source_type",
+          "accessed_at"
+        ]
+      },
+      "outcomes": {
+        "pass": "外部事实有权威来源。",
+        "fail": "外部事实来源不足。",
+        "not_applicable": "执行不依赖外部事实。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "evidence.external.authoritative_source.exception.1",
+          "when": "当前执行不依赖任何外部事实",
+          "disposition": "记录不适用并不产生虚假引用"
+        }
+      ],
+      "conflicts_with": [],
+      "refines": [
+        "EVD.SEARCH.PRIMARY"
+      ],
+      "depends_on": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-LITERATURE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "EVD.EXTERNAL.NO_SNIPPET_AI",
+      "revision": 2,
+      "status": "active",
+      "capability": "EVD-LITERATURE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#EVD.EXTERNAL.NO_SNIPPET_AI",
+      "strength": "MUST",
+      "semantic_key": "evidence.external.no_snippet_ai_primary",
+      "scope": {
+        "objects": [
+          "*"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "skill",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "rule_load"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "primary_evidence_substitute",
+        "value": "search_snippet_or_ai_answer"
+      },
+      "instruction_gloss": "搜索摘要和 AI 回答只能用于定位线索，不能充当关键外部事实的一手证据。",
+      "failure_example": "引用搜索结果片段或模型回答，却未访问其原始来源。",
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "claim",
+          "access_scope",
+          "primary_source"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键外部事实未由摘要或 AI 自证。",
+        "fail": "摘要或 AI 回答被当成主要证据。",
+        "not_applicable": "执行不依赖外部事实。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "evidence.external.no_snippet_ai_primary.exception.1",
+          "when": "当前执行不依赖任何外部事实",
+          "disposition": "记录不适用"
+        }
+      ],
+      "conflicts_with": [],
+      "refines": [],
+      "depends_on": [
+        "EVD.EXTERNAL.AUTHORITATIVE"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "EVD-LITERATURE-001"
+      ],
+      "routes": [
+        "*"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "DEL.FINAL.RENDER",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-FINAL-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.FINAL.RENDER",
+      "strength": "MUST",
+      "semantic_key": "delivery.final.render",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S7",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "final_delivery"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "delivery_rendering",
+        "value": "all_rendered_deliverables_opened_and_inspected"
+      },
+      "instruction_gloss": "在最终交付前实际打开并检查所有需要渲染的交付件。",
+      "failure_example": "只看源文件或编译退出码就宣称最终文档可交付。",
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "deliverable_id",
+          "render_path",
+          "render_hash",
+          "inspection"
+        ]
+      },
+      "outcomes": {
+        "pass": "交付渲染件均已检查。",
+        "fail": "存在未检查或失败的渲染件。",
+        "not_applicable": "交付物无需渲染。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "refines": [],
+      "depends_on": [
+        "DEL.FINAL.COVERAGE"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-FINAL-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "DEL.FINAL.BOUNDARY",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-FINAL-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.FINAL.BOUNDARY",
+      "strength": "MUST",
+      "semantic_key": "delivery.final.submission_boundary",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S7",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "final_delivery"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "submission_boundary",
+        "value": "required_allowed_and_excluded_material"
+      },
+      "instruction_gloss": "记录本次提交必须包含、允许包含和明确排除的材料边界。",
+      "failure_example": "把工作缓存、内部记录或范围外文件混入正式提交。",
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "file"
+        ],
+        "fields": [
+          "requirement_source",
+          "required",
+          "allowed",
+          "excluded"
+        ]
+      },
+      "outcomes": {
+        "pass": "提交边界明确。",
+        "fail": "提交范围未声明或不一致。",
+        "not_applicable": "没有正式提交。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "refines": [],
+      "depends_on": [
+        "DEL.FINAL.COVERAGE"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-FINAL-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "DEL.FINAL.NO_TEMP",
+      "revision": 3,
+      "status": "active",
+      "capability": "DEL-FINAL-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.FINAL.NO_TEMP",
+      "strength": "MUST",
+      "semantic_key": "delivery.final.no_temporary",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S7",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "final_delivery"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "delivered_artifact_status",
+        "value": [
+          "temporary",
+          "working"
+        ]
+      },
+      "instruction_gloss": "禁止把临时或工作中的产物作为正式交付件；未验证状态由工件提升门唯一负责。",
+      "failure_example": "把尚在草拟或缓存阶段的输出直接装入交付包。",
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "file"
+        ],
+        "fields": [
+          "deliverable_id",
+          "artifact_status",
+          "validation_evidence_id"
+        ]
+      },
+      "outcomes": {
+        "pass": "正式交付不含临时或工作中产物。",
+        "fail": "交付含临时或工作中产物。",
+        "not_applicable": "没有正式交付。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "refines": [],
+      "depends_on": [
+        "ART.PROMOTE.VALIDATE"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-FINAL-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "DEL.PROV.CITATIONS",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.PROV.CITATIONS",
+      "strength": "MUST",
+      "semantic_key": "delivery.provenance.citations",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S7",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "package_external_material"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "external_material_citations",
+        "value": "every_external_claim_or_asset_has_resolving_citation"
+      },
+      "instruction_gloss": "核对交付中的每项外部论断或素材都有可解析引用。",
+      "failure_example": "交付包含外部图片或结论却没有对应引用。",
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "file"
+        ],
+        "fields": [
+          "material_id",
+          "citation_id",
+          "resolution_status"
+        ]
+      },
+      "outcomes": {
+        "pass": "外部材料引用闭合。",
+        "fail": "存在缺失或失效引用。",
+        "not_applicable": "交付不含外部材料。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "refines": [],
+      "depends_on": [
+        "EVD.PROV.CLAIM_MAP"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    },
+    {
+      "id": "DEL.PROV.LINEAGE",
+      "revision": 2,
+      "status": "active",
+      "capability": "DEL-PROVENANCE-001",
+      "domain": "evidence_delivery",
+      "owner": "rules/evidence_delivery.json#DEL.PROV.LINEAGE",
+      "strength": "MUST",
+      "semantic_key": "delivery.provenance.source_lineage",
+      "scope": {
+        "objects": [
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S7",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "package_external_material"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "external_material_lineage",
+        "value": "source_identity_to_packaged_identity"
+      },
+      "instruction_gloss": "核对外部材料从原始来源到包内文件的身份与变换链。",
+      "failure_example": "包内外部素材无法追溯到下载来源或处理过程。",
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "citation"
+        ],
+        "fields": [
+          "material_id",
+          "source_identity",
+          "transform",
+          "packaged_hash"
+        ]
+      },
+      "outcomes": {
+        "pass": "外部材料来源链闭合。",
+        "fail": "来源链断裂或身份不一致。",
+        "not_applicable": "交付不含外部材料。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "refines": [],
+      "depends_on": [
+        "EVD.PROV.METADATA"
+      ],
+      "supersedes": [],
+      "legacy_refs": [
+        "DEL-PROVENANCE-001"
+      ],
+      "routes": [
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      }
+    }
+  ]
+}

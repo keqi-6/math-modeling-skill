@@ -1,0 +1,156 @@
+{
+  "schema_version": "11.0",
+  "release_id": "V11.0.0",
+  "compatibility_boundary": {
+    "v11_active_skill_maintenance_entry": [
+      "references/semantic-plan.schema.json",
+      "references/route-contract.json",
+      "scripts/resolve_route.py",
+      "scripts/run_authorized_action.py"
+    ],
+    "v11_active_maintenance_gates": [
+      "scripts/run_maintenance_tests.py",
+      "scripts/run_forward_acceptance.py",
+      "scripts/validate_release.py"
+    ],
+    "legacy_v10_only": [
+      "references/change-envelope.schema.json",
+      "scripts/analyze_rule_change.py",
+      "scripts/apply_rule_change.py",
+      "scripts/run_change_evals.py",
+      "scripts/run_transaction_tests.py"
+    ],
+    "legacy_change_stack_is_v11_runtime": false
+  },
+  "required_drivers": [
+    "quick_package",
+    "contracts",
+    "v10_corpus",
+    "behavior",
+    "atomic",
+    "scenario",
+    "maintenance",
+    "migration",
+    "forward"
+  ],
+  "drivers": [
+    {
+      "id": "quick_package",
+      "script": "scripts/quick_validate.py",
+      "args": ["--invocation-context", "skill-release"],
+      "registry": {
+        "kind": "declared_ids",
+        "ids": [
+          "PKG.REQUIRED",
+          "PKG.CLEAN_TREE",
+          "PKG.NO_SYMLINKS",
+          "PKG.JSON_PARSE",
+          "PKG.JSON_SCHEMA_META",
+          "PKG.SCHEMA_INSTANCES",
+          "PKG.PYTHON_COMPILE",
+          "PKG.REFERENCES",
+          "PKG.EVAL_REGISTRY",
+          "PKG.RELEASE_METADATA"
+        ]
+      }
+    },
+    {
+      "id": "contracts",
+      "script": "scripts/validate_contracts.py",
+      "registry": {
+        "kind": "metrics",
+        "paths": [
+          "metrics.active_rules",
+          "metrics.reachable_active_rules",
+          "metrics.routes",
+          "metrics.test_ids"
+        ]
+      }
+    },
+    {
+      "id": "v10_corpus",
+      "script": "scripts/validate_v10_corpus.py",
+      "requires_v10_root": true,
+      "registry": {
+        "kind": "metrics",
+        "paths": [
+          "metrics.rule_files",
+          "metrics.exact_files",
+          "metrics.active_rules"
+        ]
+      }
+    },
+    {
+      "id": "behavior",
+      "script": "scripts/run_behavior_evals.py",
+      "registry": {
+        "kind": "cases",
+        "files": [
+          "evals/behavior-cases.json",
+          "evals/manuscript-behavior-cases.json"
+        ],
+        "filters": {"kind": "semantic_plan"}
+      }
+    },
+    {
+      "id": "atomic",
+      "script": "scripts/run_atomic_rule_evals.py",
+      "args": ["--mutation-check"],
+      "registry": {
+        "kind": "cases",
+        "files": ["evals/atomic-rule-cases.json"],
+        "filters": {}
+      }
+    },
+    {
+      "id": "scenario",
+      "script": "scripts/run_scenario_tests.py",
+      "registry": {
+        "kind": "cases",
+        "files": ["evals/contract-cases.json"],
+        "filters": {"kind": "scenario", "driver": "scenario_tests"}
+      }
+    },
+    {
+      "id": "maintenance",
+      "script": "scripts/run_maintenance_tests.py",
+      "registry": {
+        "kind": "cases",
+        "files": ["evals/runtime-policy-cases.json"],
+        "filters": {"kind": "policy_mutation", "driver": "maintenance_tests"}
+      }
+    },
+    {
+      "id": "migration",
+      "script": "scripts/validate_migration.py",
+      "requires_v9_root": true,
+      "registry": {
+        "kind": "metrics",
+        "paths": [
+          "metrics.v9_capabilities",
+          "metrics.v10_active_rules",
+          "metrics.reviewed_source_clauses",
+          "metrics.reviewed_active_atoms",
+          "metrics.legacy_entries",
+          "metrics.native_entries"
+        ]
+      }
+    },
+    {
+      "id": "forward",
+      "script": "scripts/run_forward_acceptance.py",
+      "registry": {
+        "kind": "cases",
+        "files": ["evals/forward-acceptance-cases.json"],
+        "filters": {"kind": "forward_acceptance"}
+      }
+    }
+  ],
+  "unverified_boundaries": [
+    "The Agent, not a keyword parser, interprets natural language into a semantic plan; exact request excerpts anchor dangerous-action grants but do not independently prove the Agent's semantic interpretation, so executable tests cover representative equivalent, negative, and mixed plans rather than every possible utterance.",
+    "No external signing key or third-party transparency log is available; a frozen manifest is tamper-evident and freshly re-gated on an exact mirror, not identity-signed or independently implemented.",
+    "External services, future dependency versions, and operating systems other than the release host remain outside this local gate.",
+    "V9-to-V10 lineage remains bounded by the reviewed V10 preservation seal; V11 additionally proves the inherited V10 rule files are byte-identical.",
+    "JSON Schema, compilation, and local scenarios establish structure and executed behavior, not arbitrary domain truth beyond the tested closure."
+  ]
+}

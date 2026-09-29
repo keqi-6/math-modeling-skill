@@ -1,0 +1,414 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "semantic-plan.schema.json",
+  "title": "V11 semantic execution plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "request", "steps"],
+  "properties": {
+    "schema_version": {"const": "11.0"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "request": {"type": "string", "minLength": 1},
+    "window_context": {
+      "description": "Declares whether this semantic plan runs in the same uninterrupted session or across a new window/context. R0 is only allowed for same_window; missing or unknown is treated as new_window.",
+      "enum": ["same_window", "new_window", "unknown"]
+    },
+    "skill_authorization": {"$ref": "#/$defs/skill_authorization"},
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/step"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "steps": {
+            "contains": {
+              "properties": {
+                "events": {
+                  "contains": {"const": "recovery_assessment"}
+                }
+              },
+              "required": ["events"]
+            }
+          }
+        }
+      },
+      "then": {
+        "required": ["window_context"]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "steps": {
+            "contains": {
+              "properties": {"mode": {"const": "skill_maintenance"}},
+              "required": ["mode"]
+            }
+          }
+        }
+      },
+      "then": {"required": ["skill_authorization"]}
+    }
+  ],
+  "$defs": {
+    "canonical_relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*//)(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+    },
+    "canonical_top_level_namespace": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?!\\.{1,2}$)(?!.*\\\\)[^/]+$"
+    },
+    "platform_extension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approval_quote", "top_level_namespaces", "purpose", "rollback"],
+      "properties": {
+        "approval_quote": {"type": "string", "minLength": 2, "pattern": "\\S"},
+        "top_level_namespaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/canonical_top_level_namespace"}
+        },
+        "purpose": {"type": "string", "minLength": 8, "pattern": "\\S"},
+        "rollback": {"type": "string", "minLength": 8, "pattern": "\\S"}
+      }
+    },
+    "skill_authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "quote", "target"],
+      "properties": {
+        "source": {"enum": ["current_request", "prior_explicit_user_request"]},
+        "quote": {"type": "string", "minLength": 2},
+        "target": {"const": "skill"}
+      }
+    },
+    "change_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paths", "facets", "claim_refs"],
+      "properties": {
+        "paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/canonical_relative_path"}
+        },
+        "facets": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "claim_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "state_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_id", "from", "to"],
+      "properties": {
+        "component_id": {"type": "string", "minLength": 1},
+        "from": {"enum": ["P0", "P1", "P2", "S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "D0", "D1", "D2", "D3", "A0", "A1", "A2", "A3"]},
+        "to": {"enum": ["P0", "P1", "P2", "S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "D0", "D1", "D2", "D3", "A0", "A1", "A2", "A3"]}
+      }
+    },
+    "compatible_change_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_id", "role", "changed_facets", "affected_levels"],
+      "properties": {
+        "component_id": {"type": "string", "minLength": 1},
+        "role": {"enum": ["implementation_target", "direct_consumer"]},
+        "changed_facets": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "implementation", "performance", "run_binding",
+              "result_identity", "consumer_binding", "metadata", "format"
+            ]
+          }
+        },
+        "affected_levels": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "implementation_ref", "result_claims",
+              "E1_IMPLEMENTATION", "E2_NUMERICAL",
+              "E3_STRUCTURAL", "E4_REALITY", "uncertainty", "robustness"
+            ]
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"role": {"const": "implementation_target"}}},
+          "then": {
+            "properties": {
+              "affected_levels": {
+                "allOf": [
+                  {"contains": {"const": "implementation_ref"}},
+                  {"contains": {"const": "E1_IMPLEMENTATION"}},
+                  {"contains": {"const": "E2_NUMERICAL"}}
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "compatible_change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "classification", "source_component_id", "effects", "fallback"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+        "classification": {"const": "compatible_implementation_change"},
+        "source_component_id": {"type": "string", "minLength": 1},
+        "effects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/compatible_change_effect"}
+        },
+        "fallback": {"const": "reopen_at_earliest_changed_layer"}
+      }
+    },
+    "runtime_action_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "component_ids", "input_paths", "output_paths"],
+      "properties": {
+        "kind": {
+          "enum": ["component", "change_closure", "skill_candidate", "full_project"]
+        },
+        "component_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "input_paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/canonical_relative_path"}
+        },
+        "output_paths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/canonical_relative_path"}
+        }
+      }
+    },
+    "runtime_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "kind", "event", "repetition", "scope", "command", "authorization"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+        "kind": {
+          "enum": [
+            "project_model_execution", "project_verification_execution",
+            "recompute_existing_result", "skill_targeted_validation",
+            "skill_package_validation", "full_project_audit"
+          ]
+        },
+        "event": {"type": "string", "minLength": 1},
+        "repetition": {"enum": ["first_run", "rerun_existing", "repair_stale"]},
+        "scope": {"$ref": "#/$defs/runtime_action_scope"},
+        "command": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["argv", "cwd"],
+          "properties": {
+            "argv": {
+              "type": "array", "minItems": 1,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "cwd": {
+              "anyOf": [
+                {"const": "."},
+                {"$ref": "#/$defs/canonical_relative_path"}
+              ]
+            }
+          }
+        },
+        "authorization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source"],
+          "properties": {
+            "source": {
+              "enum": ["direct_user_request", "derived_from_authorized_change"]
+            },
+            "request_excerpt": {"type": "string", "minLength": 1},
+            "source_step_id": {"type": "string", "minLength": 1}
+          },
+          "allOf": [
+            {
+              "if": {"properties": {"source": {"const": "direct_user_request"}}},
+              "then": {"required": ["request_excerpt"]}
+            },
+            {
+              "if": {"properties": {"source": {"const": "derived_from_authorized_change"}}},
+              "then": {"required": ["source_step_id"]}
+            }
+          ]
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "tier", "mode", "object", "action", "component_id",
+        "events", "facts", "depends_on"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+        "tier": {
+          "enum": ["G0_ADVISORY", "G1_WORKING", "G2_CHECKPOINT", "G3_RELEASE"]
+        },
+        "mode": {
+          "enum": [
+            "advisory_readonly", "project_readonly", "mutate", "promote",
+            "skill_maintenance"
+          ]
+        },
+        "object": {
+          "enum": [
+            "project", "literature", "data", "model", "verification",
+            "manuscript", "visual", "delivery", "state", "skill"
+          ]
+        },
+        "action": {"type": "string", "minLength": 1},
+        "component_id": {"type": ["string", "null"], "minLength": 1},
+        "events": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "facts": {
+          "type": "object",
+          "properties": {
+            "platform_extension": {"$ref": "#/$defs/platform_extension"},
+            "compatible_change": {"$ref": "#/$defs/compatible_change"}
+          }
+        },
+        "working_context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["component_type", "state"],
+          "properties": {
+            "component_type": {
+              "enum": ["project", "question", "shared_data", "artifact", "none"]
+            },
+            "state": {
+              "enum": [
+                "UNINITIALIZED", "P0", "P1", "P2",
+                "S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7",
+                "D0", "D1", "D2", "D3", "A0", "A1", "A2", "A3"
+              ]
+            }
+          }
+        },
+        "depends_on": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "runtime_actions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/runtime_action"}
+        },
+        "change_set": {"$ref": "#/$defs/change_set"},
+        "state_effect": {"$ref": "#/$defs/state_effect"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["mode"],
+            "properties": {"mode": {"enum": ["mutate", "promote", "skill_maintenance"]}}
+          },
+          "then": {
+            "required": ["change_set"],
+            "properties": {
+              "change_set": {
+                "anyOf": [
+                  {"properties": {"paths": {"minItems": 1}}},
+                  {"properties": {"facets": {"minItems": 1}}},
+                  {"properties": {"claim_refs": {"minItems": 1}}}
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {"required": ["state_effect"]},
+          "then": {
+            "properties": {
+              "mode": {"const": "promote"},
+              "tier": {"enum": ["G2_CHECKPOINT", "G3_RELEASE"]}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "facts": {"required": ["compatible_change"]}
+            },
+            "required": ["facts"]
+          },
+          "then": {
+            "properties": {
+              "object": {"const": "project"},
+              "action": {"enum": ["propagate_compatible", "reconcile_compatible"]},
+              "component_id": {"type": "null"}
+            },
+            "not": {"required": ["state_effect"]}
+          }
+        },
+        {
+          "if": {
+            "required": ["object"],
+            "properties": {"object": {"const": "manuscript"}}
+          },
+          "then": {
+            "properties": {
+              "facts": {
+                "required": [
+                  "change_class", "completion_scope", "profile_selected",
+                  "published_revision", "existing_paths_only"
+                ],
+                "properties": {
+                  "change_class": {"type": "string", "minLength": 1},
+                  "completion_scope": {"type": "string", "minLength": 1},
+                  "profile_selected": {"type": "boolean"},
+                  "published_revision": {"type": "boolean"},
+                  "existing_paths_only": {"type": "boolean"}
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

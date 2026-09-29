@@ -1,0 +1,167 @@
+{
+  "status": "internal_reference_only_not_selected_for_briefs_or_submission",
+  "data_driven_visual": true,
+  "information_task": "Compare thermal equalization with persistent radial moisture gradients over the first 3 h.",
+  "source": {
+    "path": "output/Q2/run_n10240_startsafe.npz",
+    "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b"
+  },
+  "generator": {
+    "path": "scripts/build_reference_section_sample.py",
+    "sha256": "f92bc1746e3f0c717fe48ffad77e7f91f1febb9e91f1c62d9b77a6e96ca9e502"
+  },
+  "external_reference_use": "Small-multiple circular-section layout only; no traced values, boundary features, or conclusions.",
+  "time_s": [
+    0.0,
+    1800.0,
+    5400.0,
+    10800.0
+  ],
+  "snapshot_selection": "Exact stored snapshots; no time interpolation.",
+  "radius_m": 0.02,
+  "nodes_per_snapshot": 10241,
+  "retained_input_precision": "All 10,241 radial nodes in float64 for each selected snapshot.",
+  "spatial_display_mapping": {
+    "grid_pixels": [
+      801,
+      801
+    ],
+    "method": "np.interp(sqrt(x*x+y*y), mesh_radius_m, full_profile)",
+    "outside_radius": "masked and clipped at the circular boundary",
+    "shading": "Continuous fixed-range color scale shared across time within each row.",
+    "svg_note": "Dense numerical color fields are embedded rasters; outlines, isolines, rulers and labels remain vector paths."
+  },
+  "row_units": [
+    "degree_Celsius",
+    "kg_water/kg_dry_matter"
+  ],
+  "color_ranges": {
+    "temperature_C": [
+      28,
+      50
+    ],
+    "moisture_kg_kg": [
+      0,
+      2.55
+    ]
+  },
+  "isoline_levels": {
+    "temperature_C": [
+      35,
+      40,
+      45
+    ],
+    "moisture_kg_kg": [
+      1.5,
+      2,
+      2.4
+    ]
+  },
+  "isoline_meaning": "Fixed-value contour lines, not a separately modeled physical drying front.",
+  "isoline_counts_per_time": {
+    "temperature": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "moisture": [
+      0,
+      2,
+      2,
+      1
+    ]
+  },
+  "physical_geometry": "Fixed-radius cross section only; no axial variation, 3D thickness or shrinkage is implied.",
+  "checks": {
+    "initial_temperature_uniform": true,
+    "initial_moisture_uniform": true,
+    "no_source_clipping_by_color_limits": true,
+    "same_geometric_scale_all_eight_sections": true,
+    "temperature_center_surface_C": [
+      [
+        28.0,
+        28.0
+      ],
+      [
+        32.18924476096322,
+        35.41302025049541
+      ],
+      [
+        45.846754892043116,
+        47.140049889985484
+      ],
+      [
+        49.8494955728103,
+        49.96641284498236
+      ]
+    ],
+    "moisture_center_surface_kg_kg": [
+      [
+        2.55,
+        2.55
+      ],
+      [
+        2.54993409992138,
+        1.6486177766658752
+      ],
+      [
+        2.3860642508797416,
+        1.347567290457406
+      ],
+      [
+        1.7661771073155368,
+        1.0081231261700119
+      ]
+    ],
+    "temperature_radial_range_C": [
+      0.0,
+      3.223775489532187,
+      1.2932949979423682,
+      0.11691727217205994
+    ],
+    "moisture_radial_range_kg_kg": [
+      0.0,
+      0.9013163232555048,
+      1.0384969604223355,
+      0.7580539811455249
+    ]
+  },
+  "review": {
+    "rendered_outputs": [
+      "section_sample.png",
+      "section_sample_no_text.png",
+      "section_sample_grayscale.png",
+      "section_sample_page_width.png"
+    ],
+    "embedding": "Not embedded in any brief or formal package.",
+    "human_review": "Pending user review as an internal visual sample.",
+    "actual_visual_review": "Opened full color, no-text, grayscale and 1130 px width renderings. Circles retain equal radius; field variation remains legible without text and in grayscale; no labels or isolines overlap other panels. The thermal row becomes nearly uniform by 3 h while moisture retains a visible radial gradient."
+  },
+  "outputs": {
+    "section_sample.png": {
+      "sha256": "081de8fcbdca41a79f6798692adcf234fbda63c28f1605cbaaf4733ce486a3bd",
+      "bytes": 431584
+    },
+    "section_sample.svg": {
+      "sha256": "7b153ff0bc4a40034779606b14b44f13f0dc9c6d8c1f1f433195b75d3c47511a",
+      "bytes": 500924
+    },
+    "section_sample_grayscale.png": {
+      "sha256": "152c9379c572a946ee84ba43efb90c97a998186accb48f64574518b04d47551d",
+      "bytes": 179341
+    },
+    "section_sample_no_text.png": {
+      "sha256": "16580f81ed30efde36432f10001b05b887b83dfd45d22f2456435874d56304e1",
+      "bytes": 225270
+    },
+    "section_sample_page_width.png": {
+      "sha256": "be59915bc82be521ebf6ac376819819e243b55d03072a3b4def87a95279d4a52",
+      "bytes": 190993
+    },
+    "section_sample_profiles.npz": {
+      "sha256": "9bb7c9f52c2b7124078afc94f1a142fd9372bd43f5dd9a39b3170526d21de5aa",
+      "bytes": 392786
+    }
+  }
+}

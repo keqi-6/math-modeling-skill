@@ -1,0 +1,1808 @@
+{
+  "schema_version": "q5-v2-working-result-1.0",
+  "status": "working_feasible_restricted_master",
+  "generated_at": "2026-08-29T07:13:24+08:00",
+  "elapsed_s": 7.470173790003173,
+  "objective_hierarchy": [
+    "J_sum",
+    "J_fair",
+    "J_all",
+    "L_all"
+  ],
+  "units": {
+    "J_sum": "missile*s",
+    "J_fair": "s",
+    "J_all": "s",
+    "L_all": "s"
+  },
+  "seed_library": {
+    "decision_count": 27,
+    "input_identities": {
+      "docs/q5_a196_structural_audit.json": "ee09e5364ed4fc9f8f9c739065a1ef1ef7c9e575060a3cec3aaca1bbb098d869",
+      "docs/q5_full_condition_search.json": "7d3cf60c26135173eab0a937c43c377c5b1639864fba4a23161932899c570363",
+      "docs/q5_full_horizon_window_search.json": "381ddfcbacf746c40a1d2a85b442ad61845c47c5b016ab96991dc93c676f436c",
+      "docs/q5_geometry_audit.json": "c1d25064ca4a645ba058b64fbdb3cea02bb965804d8eda9028ecef7dbba939c1",
+      "docs/q5_geometry_pilot.json": "71263ea89a303cb6fdad943e225055e4d832762be6d8b0c7b8f5c2aeaa1c8782",
+      "docs/q5_global_window_pilot.json": "332a7fe504de074461bdfb8e42030a83708950a7d16c635550e46349aeb3b613",
+      "docs/q5_intersection_seed.json": "70e25a837f41c92057aa19cfd8090b9d0ed57527370a5f861d82a875a3157324",
+      "docs/q5_longest_pilot.json": "55576ff0549ec259fec1a59b17f9f28036313d0f03c64c879c80841c0197b0af",
+      "docs/q5_multi_event_continuous.json": "300cf0fe90c0e89650e902d18584a03e7996030d4ed933d111ad652f50b3c21d",
+      "docs/q5_result.json": "08827605e195f557302be6b67f94103a0c414e017b1d06e13b25172d04875fdb",
+      "docs/q5_selection_pilot.json": "046653a03ed6ff013640033303d7243a1c91ce6a81520aa51d97e1b5fb94f75a",
+      "docs/q5_service_corridors.json": "de1d2578688afdabf08e3b7e47462512b90ff8c8ad86425cd8d92d15518dfbf9",
+      "docs/q5_service_dwell_candidates.json": "c13fb95741e632441e428d8651ca5ec8f1a1116e3494742d6e4bfbbddf027d6b",
+      "docs/q5_v2_result.json": "fe0dcf66d1af9fd7ef87bc892ed2d8309ca51c24e43d937aef57da1650704758",
+      "docs/q5_v2_precise.json": "e1125429603e046b62ab6c89acdb6a219bcb4601bceb46bfde1bfe1b85ad8adc"
+    }
+  },
+  "column_library": {
+    "generated_count": 1069,
+    "selected_count": 120,
+    "by_platform": [
+      {
+        "platform": 0,
+        "raw_count": 111,
+        "selected_count": 24,
+        "best_potential": 4.7094868970076345,
+        "base_column_count": 6
+      },
+      {
+        "platform": 1,
+        "raw_count": 220,
+        "selected_count": 24,
+        "best_potential": 12.053805492336512,
+        "base_column_count": 5
+      },
+      {
+        "platform": 2,
+        "raw_count": 251,
+        "selected_count": 24,
+        "best_potential": 10.362804120076042,
+        "base_column_count": 5
+      },
+      {
+        "platform": 3,
+        "raw_count": 256,
+        "selected_count": 24,
+        "best_potential": 11.359720530817894,
+        "base_column_count": 8
+      },
+      {
+        "platform": 4,
+        "raw_count": 231,
+        "selected_count": 24,
+        "best_potential": 11.07990292349658,
+        "base_column_count": 6
+      }
+    ],
+    "chosen": [
+      {
+        "platform": 0,
+        "heading_rad": 0.09789999999999999,
+        "speed_mps": 140.0,
+        "bombs": [
+          {
+            "platform": 0,
+            "label": 0,
+            "release_s": 0.46302634217840494,
+            "fuse_s": 0.4060711513214376
+          }
+        ],
+        "source": "docs/q5_global_window_pilot.json.best_decision",
+        "variant": "base"
+      },
+      {
+        "platform": 1,
+        "heading_rad": 4.287008023812072,
+        "speed_mps": 116.7749664710228,
+        "bombs": [
+          {
+            "platform": 1,
+            "label": 1,
+            "release_s": 4.395003123150486,
+            "fuse_s": 4.8612157428172456
+          },
+          {
+            "platform": 1,
+            "label": 0,
+            "release_s": 5.454287066544548,
+            "fuse_s": 7.182222519416525
+          },
+          {
+            "platform": 1,
+            "label": 2,
+            "release_s": 9.996450377055005,
+            "fuse_s": 6.503549622945005
+          }
+        ],
+        "source": "docs/q5_result.json.single_chain.refinements[1].start",
+        "variant": "base"
+      },
+      {
+        "platform": 2,
+        "heading_rad": 1.6240004483011845,
+        "speed_mps": 110.7564131685066,
+        "bombs": [
+          {
+            "platform": 2,
+            "label": 2,
+            "release_s": 22.27659126070578,
+            "fuse_s": 3.6898582356794094
+          },
+          {
+            "platform": 2,
+            "label": 0,
+            "release_s": 23.312836071190215,
+            "fuse_s": 4.64507105774765
+          },
+          {
+            "platform": 2,
+            "label": 1,
+            "release_s": 26.30442084764938,
+            "fuse_s": 3.2106479587611254
+          }
+        ],
+        "source": "docs/q5_global_window_pilot.json.best_decision",
+        "variant": "base"
+      },
+      {
+        "platform": 3,
+        "heading_rad": 4.654392649691131,
+        "speed_mps": 119.20857604735,
+        "bombs": [
+          {
+            "platform": 3,
+            "label": 1,
+            "release_s": 2.576760614782653,
+            "fuse_s": 10.951097867630509
+          },
+          {
+            "platform": 3,
+            "label": 0,
+            "release_s": 4.432290169482324,
+            "fuse_s": 11.972706409127948
+          },
+          {
+            "platform": 3,
+            "label": 2,
+            "release_s": 8.285109796957393,
+            "fuse_s": 11.49885414135558
+          }
+        ],
+        "source": "docs/q5_result.json.single_chain.refinements[1].start",
+        "variant": "base"
+      },
+      {
+        "platform": 4,
+        "heading_rad": 2.1061070783397584,
+        "speed_mps": 138.5268955873774,
+        "bombs": [
+          {
+            "platform": 4,
+            "label": 2,
+            "release_s": 11.456346482904364,
+            "fuse_s": 2.1314674200863966
+          },
+          {
+            "platform": 4,
+            "label": 0,
+            "release_s": 12.462429064065105,
+            "fuse_s": 4.49745408341818
+          },
+          {
+            "platform": 4,
+            "label": 1,
+            "release_s": 18.305561160127517,
+            "fuse_s": 1.6663268042005406
+          }
+        ],
+        "source": "docs/q5_result.json.single_chain.refinements[1].start",
+        "variant": "base"
+      }
+    ]
+  },
+  "master_discretization": {
+    "time_step_s": 0.2,
+    "time_node_count": 339,
+    "surface_theta": 24,
+    "surface_levels": 5,
+    "surface_point_count": 217,
+    "conservative_column_margin_m": 0.1
+  },
+  "restricted_master": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "success": true,
+    "elapsed_s": 0.5166168029973051,
+    "column_count": 120,
+    "binary_y_count": 1017,
+    "constraint_count": 150377,
+    "nonzero_count": 969569,
+    "proxy_objective_missile_s": 46.999999999999986,
+    "mip_gap": 0.0,
+    "mip_node_count": 1,
+    "chosen_column_indices": [
+      1,
+      25,
+      51,
+      72,
+      96
+    ]
+  },
+  "deterministic_refinement": {
+    "evaluation_count": 149,
+    "accepted_count": 1,
+    "stages": [
+      {
+        "scale": 0,
+        "start": {
+          "per_missile_s": [
+            19.599999999999998,
+            14.400000000000007,
+            13.199999999999998
+          ],
+          "j_sum_missile_s": 47.2,
+          "j_fair_s": 13.199999999999998,
+          "j_all_node_integral_s": 7.400000000000004,
+          "complete_node_count": 236
+        },
+        "end": {
+          "per_missile_s": [
+            19.599999999999998,
+            14.400000000000007,
+            13.199999999999998
+          ],
+          "j_sum_missile_s": 47.2,
+          "j_fair_s": 13.199999999999998,
+          "j_all_node_integral_s": 7.400000000000004,
+          "complete_node_count": 236
+        },
+        "accepted_moves": 0
+      },
+      {
+        "scale": 1,
+        "start": {
+          "per_missile_s": [
+            19.599999999999998,
+            14.400000000000007,
+            13.199999999999998
+          ],
+          "j_sum_missile_s": 47.2,
+          "j_fair_s": 13.199999999999998,
+          "j_all_node_integral_s": 7.400000000000004,
+          "complete_node_count": 236
+        },
+        "end": {
+          "per_missile_s": [
+            19.599999999999998,
+            14.600000000000003,
+            13.199999999999998
+          ],
+          "j_sum_missile_s": 47.4,
+          "j_fair_s": 13.199999999999998,
+          "j_all_node_integral_s": 7.400000000000004,
+          "complete_node_count": 237
+        },
+        "accepted_moves": 1
+      }
+    ],
+    "best_proxy": {
+      "per_missile_s": [
+        19.599999999999998,
+        14.600000000000003,
+        13.199999999999998
+      ],
+      "j_sum_missile_s": 47.4,
+      "j_fair_s": 13.199999999999998,
+      "j_all_node_integral_s": 7.400000000000004,
+      "complete_node_count": 237
+    },
+    "terminated_by": "completed_scales"
+  },
+  "baseline": {
+    "source": "docs/q5_result.json.single_chain.refinements[1].start",
+    "strict_probe": {
+      "by_missile": [
+        {
+          "missile": "M1",
+          "settings": {
+            "name": "refine_probe",
+            "scan_step_s": 0.1,
+            "n_theta": 32,
+            "n_levels": 5,
+            "root_time_tolerance_s": 5e-06,
+            "margin_tolerance_m": 5e-06
+          },
+          "surface_point_count": 289,
+          "scan_count": 475,
+          "intervals_s": [
+            [
+              0.9806137424164909,
+              5.567347763228766
+            ],
+            [
+              12.636509585961074,
+              24.958761910045432
+            ],
+            [
+              28.161143712282385,
+              31.142178374481148
+            ]
+          ],
+          "duration_s": 19.890021007095395,
+          "minimum_scan_margin_m": -9.389682087109218,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 0.9806137424164909,
+              "margin_m": -0.0003112982517414764,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 5.567347763228766,
+              "margin_m": 4.586248945059879e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 12.636509585961074,
+              "margin_m": -0.026991936859769083,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 24.958761910045432,
+              "margin_m": 3.2111939010093238e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 28.161143712282385,
+              "margin_m": -3.6191195817991684e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 31.142178374481148,
+              "margin_m": -2.9850755609572843e-06,
+              "iterations": 16,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 1,
+          "recovered_unsampled_interval_count": 0
+        },
+        {
+          "missile": "M2",
+          "settings": {
+            "name": "refine_probe",
+            "scan_step_s": 0.1,
+            "n_theta": 32,
+            "n_levels": 5,
+            "root_time_tolerance_s": 5e-06,
+            "margin_tolerance_m": 5e-06
+          },
+          "surface_point_count": 289,
+          "scan_count": 475,
+          "intervals_s": [
+            [
+              9.667961511763465,
+              17.76316805272988
+            ],
+            [
+              20.16125492672768,
+              23.70404804967714
+            ],
+            [
+              28.22399442226353,
+              31.10980791110618
+            ]
+          ],
+          "duration_s": 14.523813152758528,
+          "minimum_scan_margin_m": -8.657529632004614,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 9.667961511763465,
+              "margin_m": -9.63918910912298e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 17.76316805272988,
+              "margin_m": -2.7678910754502795e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 20.16125492672768,
+              "margin_m": 4.050134792876747e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 23.70404804967714,
+              "margin_m": 5.642672320504971e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 28.22399442226353,
+              "margin_m": -3.0457978112963247e-06,
+              "iterations": 17,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 31.10980791110618,
+              "margin_m": 4.2282043999364305e-07,
+              "iterations": 16,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 1,
+          "recovered_unsampled_interval_count": 0
+        },
+        {
+          "missile": "M3",
+          "settings": {
+            "name": "refine_probe",
+            "scan_step_s": 0.1,
+            "n_theta": 32,
+            "n_levels": 5,
+            "root_time_tolerance_s": 5e-06,
+            "margin_tolerance_m": 5e-06
+          },
+          "surface_point_count": 289,
+          "scan_count": 475,
+          "intervals_s": [
+            [
+              13.694055769793643,
+              23.875915742730175
+            ],
+            [
+              24.185933547555493,
+              27.10025043439107
+            ]
+          ],
+          "duration_s": 13.096176859772111,
+          "minimum_scan_margin_m": -8.484920667913881,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 13.694055769793643,
+              "margin_m": 1.7844837429947802e-06,
+              "iterations": 17,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 23.875915742730175,
+              "margin_m": 2.0436885179719866e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 24.185933547555493,
+              "margin_m": -2.3666772062114205e-06,
+              "iterations": 17,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 27.10025043439107,
+              "margin_m": 1.3899988466903324e-06,
+              "iterations": 16,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 2,
+          "recovered_unsampled_interval_count": 0
+        }
+      ],
+      "durations_s": [
+        19.890021007095395,
+        14.523813152758528,
+        13.096176859772111
+      ],
+      "intersection_intervals_s": [
+        [
+          13.694055769793643,
+          17.76316805272988
+        ],
+        [
+          20.16125492672768,
+          23.70404804967714
+        ]
+      ],
+      "longest_interval_s": [
+        13.694055769793643,
+        17.76316805272988
+      ],
+      "longest_continuous_s": 4.0691122829362385,
+      "total_intersection_s": 7.6119054058857,
+      "objective_s": 4.0691122829362385,
+      "sum_duration_missile_s": 47.510011019626035,
+      "minimum_missile_duration_s": 13.096176859772111
+    },
+    "strict_screen": {
+      "by_missile": [
+        {
+          "missile": "M1",
+          "settings": {
+            "name": "screen_strict",
+            "scan_step_s": 0.02,
+            "n_theta": 128,
+            "n_levels": 9,
+            "root_time_tolerance_s": 2e-06,
+            "margin_tolerance_m": 2e-06
+          },
+          "surface_point_count": 2177,
+          "scan_count": 2337,
+          "intervals_s": [
+            [
+              0.9809620681753871,
+              5.567228859295117
+            ],
+            [
+              12.636509585961074,
+              16.371676019009968
+            ],
+            [
+              16.404996578610273,
+              24.958642449104538
+            ],
+            [
+              28.163370685950277,
+              31.13966768384071
+            ]
+          ],
+          "duration_s": 19.851376092553323,
+          "minimum_scan_margin_m": -9.44638617423571,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 0.9809620681753871,
+              "margin_m": -1.6301406020602371e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 5.567228859295117,
+              "margin_m": -1.6579856954024308e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 12.636509585961074,
+              "margin_m": -0.025761994596864568,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 16.371676019009968,
+              "margin_m": 1.3752839507219505e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 16.404996578610273,
+              "margin_m": -0.44272163247601526,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 24.958642449104538,
+              "margin_m": 1.6577191210842557e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 28.163370685950277,
+              "margin_m": -1.221895292502495e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 31.13966768384071,
+              "margin_m": 2.0712613846285421e-07,
+              "iterations": 15,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 2,
+          "recovered_unsampled_interval_count": 0
+        },
+        {
+          "missile": "M2",
+          "settings": {
+            "name": "screen_strict",
+            "scan_step_s": 0.02,
+            "n_theta": 128,
+            "n_levels": 9,
+            "root_time_tolerance_s": 2e-06,
+            "margin_tolerance_m": 2e-06
+          },
+          "surface_point_count": 2177,
+          "scan_count": 2337,
+          "intervals_s": [
+            [
+              9.668703341203447,
+              13.467780565765697
+            ],
+            [
+              13.527858482413162,
+              17.76259129102766
+            ],
+            [
+              20.161395566750883,
+              23.7039881771121
+            ],
+            [
+              28.225334246251368,
+              31.108802724629836
+            ]
+          ],
+          "duration_s": 14.459871121916436,
+          "minimum_scan_margin_m": -8.657529632004614,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 9.668703341203447,
+              "margin_m": 9.950249886259144e-07,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 13.467780565765697,
+              "margin_m": -1.0480173475713173e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 13.527858482413162,
+              "margin_m": -0.5520539725931428,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 17.76259129102766,
+              "margin_m": 8.271075451204979e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 20.161395566750883,
+              "margin_m": 1.0262825007600895e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 23.7039881771121,
+              "margin_m": 1.3467541979395037e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 28.225334246251368,
+              "margin_m": 1.050345543873732e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 31.108802724629836,
+              "margin_m": -4.013069059283225e-07,
+              "iterations": 15,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 1,
+          "recovered_unsampled_interval_count": 0
+        },
+        {
+          "missile": "M3",
+          "settings": {
+            "name": "screen_strict",
+            "scan_step_s": 0.02,
+            "n_theta": 128,
+            "n_levels": 9,
+            "root_time_tolerance_s": 2e-06,
+            "margin_tolerance_m": 2e-06
+          },
+          "surface_point_count": 2177,
+          "scan_count": 2337,
+          "intervals_s": [
+            [
+              13.69430744071748,
+              23.87591331135698
+            ],
+            [
+              24.186726072607676,
+              27.0993122426678
+            ]
+          ],
+          "duration_s": 13.094192040699625,
+          "minimum_scan_margin_m": -8.503002567830377,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 13.69430744071748,
+              "margin_m": 6.875721503263321e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 23.87591331135698,
+              "margin_m": -1.0903042060306234e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 24.186726072607676,
+              "margin_m": -1.0117888962213328e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 27.0993122426678,
+              "margin_m": -7.055700077529536e-07,
+              "iterations": 15,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 2,
+          "recovered_unsampled_interval_count": 0
+        }
+      ],
+      "durations_s": [
+        19.851376092553323,
+        14.459871121916436,
+        13.094192040699625
+      ],
+      "intersection_intervals_s": [
+        [
+          13.69430744071748,
+          16.371676019009968
+        ],
+        [
+          16.404996578610273,
+          17.76259129102766
+        ],
+        [
+          20.161395566750883,
+          23.7039881771121
+        ]
+      ],
+      "longest_interval_s": [
+        20.161395566750883,
+        23.7039881771121
+      ],
+      "longest_continuous_s": 3.5425926103612184,
+      "total_intersection_s": 7.577555901071094,
+      "objective_s": 3.5425926103612184,
+      "sum_duration_missile_s": 47.405439255169384,
+      "minimum_missile_duration_s": 13.094192040699625
+    },
+    "metrics": {
+      "per_missile_intervals_s": [
+        [
+          [
+            0.9809620681753871,
+            5.567228859295117
+          ],
+          [
+            12.636509585961074,
+            16.371676019009968
+          ],
+          [
+            16.404996578610273,
+            24.958642449104538
+          ],
+          [
+            28.163370685950277,
+            31.13966768384071
+          ]
+        ],
+        [
+          [
+            9.668703341203447,
+            13.467780565765697
+          ],
+          [
+            13.527858482413162,
+            17.76259129102766
+          ],
+          [
+            20.161395566750883,
+            23.7039881771121
+          ],
+          [
+            28.225334246251368,
+            31.108802724629836
+          ]
+        ],
+        [
+          [
+            13.69430744071748,
+            23.87591331135698
+          ],
+          [
+            24.186726072607676,
+            27.0993122426678
+          ]
+        ]
+      ],
+      "per_missile_duration_s": [
+        19.851376092553323,
+        14.459871121916436,
+        13.094192040699625
+      ],
+      "intersection_intervals_s": [
+        [
+          13.69430744071748,
+          16.371676019009968
+        ],
+        [
+          16.404996578610273,
+          17.76259129102766
+        ],
+        [
+          20.161395566750883,
+          23.7039881771121
+        ]
+      ],
+      "longest_all_interval_s": [
+        20.161395566750883,
+        23.7039881771121
+      ],
+      "j_sum_missile_s": 47.405439255169384,
+      "j_fair_s": 13.094192040699625,
+      "j_all_s": 7.577555901071094,
+      "l_all_s": 3.5425926103612184,
+      "units": {
+        "j_sum_missile_s": "missile*s",
+        "j_fair_s": "s",
+        "j_all_s": "s",
+        "l_all_s": "s"
+      }
+    }
+  },
+  "working_best": {
+    "source": "docs/q5_v2_result.json.working_best.decision",
+    "decision": {
+      "source": "docs/q5_v2_result.json.working_best.decision",
+      "active_bomb_count": 13,
+      "platforms": [
+        {
+          "platform": "FY1",
+          "heading_rad": 0.09919999999999998,
+          "heading_deg": 5.683741327697765,
+          "speed_mps": 140.0,
+          "bombs": [
+            {
+              "platform": 0,
+              "label": "M1",
+              "release_s": 0.45802634217840493,
+              "fuse_s": 0.4060711513214376,
+              "bomb_number": 1,
+              "explosion_time_s": 0.8640974934998426,
+              "release_point_m": [
+                17863.80843749031,
+                6.350642139206828,
+                1800.0
+              ],
+              "explosion_point_m": [
+                17920.37890798438,
+                11.980913430663872,
+                1799.192020478316
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY2",
+          "heading_rad": 4.287008023812072,
+          "heading_deg": 245.62746650315123,
+          "speed_mps": 116.7749664710228,
+          "bombs": [
+            {
+              "platform": 1,
+              "label": "M2",
+              "release_s": 4.395003123150486,
+              "fuse_s": 4.8612157428172456,
+              "bomb_number": 1,
+              "explosion_time_s": 9.256218865967732,
+              "release_point_m": [
+                11788.20800515955,
+                932.5115729782251,
+                1400.0
+              ],
+              "explosion_point_m": [
+                11553.949564227423,
+                415.43296407974617,
+                1284.2060493587503
+              ]
+            },
+            {
+              "platform": 1,
+              "label": "M1",
+              "release_s": 5.454287066544548,
+              "fuse_s": 7.182222519416525,
+              "bomb_number": 2,
+              "explosion_time_s": 12.636509585961074,
+              "release_point_m": [
+                11737.161884556781,
+                819.837481381281,
+                1400.0
+              ],
+              "explosion_point_m": [
+                11391.055819975689,
+                55.87763561089719,
+                1147.2368304397721
+              ]
+            },
+            {
+              "platform": 1,
+              "label": "M3",
+              "release_s": 9.996450377055005,
+              "fuse_s": 6.503549622945005,
+              "bomb_number": 3,
+              "explosion_time_s": 16.50000000000001,
+              "release_point_m": [
+                11518.278347624384,
+                336.69589494608863,
+                1400.0
+              ],
+              "explosion_point_m": [
+                11204.877034908135,
+                -355.074758702322,
+                1192.7488272792702
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY3",
+          "heading_rad": 1.5284152420002775,
+          "heading_deg": 87.57174271008226,
+          "speed_mps": 119.18394355511182,
+          "bombs": [
+            {
+              "platform": 2,
+              "label": "M3",
+              "release_s": 21.066622413774102,
+              "fuse_s": 3.09684080893906,
+              "bomb_number": 1,
+              "explosion_time_s": 24.163463222713162,
+              "release_point_m": [
+                6106.378708497423,
+                -491.45142334443744,
+                700.0
+              ],
+              "explosion_point_m": [
+                6122.016617565449,
+                -122.68914855692492,
+                653.0069273200394
+              ]
+            },
+            {
+              "platform": 2,
+              "label": "M1",
+              "release_s": 22.080989336345567,
+              "fuse_s": 3.8662948990663666,
+              "bomb_number": 2,
+              "explosion_time_s": 25.947284235411935,
+              "release_point_m": [
+                6111.500889027659,
+                -370.6637313336205,
+                700.0
+              ],
+              "explosion_point_m": [
+                6131.024258742775,
+                89.72276895520599,
+                626.7536423919216
+              ]
+            },
+            {
+              "platform": 2,
+              "label": "M2",
+              "release_s": 25.794762698007126,
+              "fuse_s": 1.703878434215645,
+              "bomb_number": 3,
+              "explosion_time_s": 27.498641132222772,
+              "release_point_m": [
+                6130.254080977754,
+                71.56097357807948,
+                700.0
+              ],
+              "explosion_point_m": [
+                6138.858041484967,
+                274.453574821604,
+                685.7743115789327
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY4",
+          "heading_rad": 4.654392649691131,
+          "heading_deg": 266.67705502401407,
+          "speed_mps": 119.20857604735,
+          "bombs": [
+            {
+              "platform": 3,
+              "label": "M2",
+              "release_s": 2.576760614782653,
+              "fuse_s": 10.951097867630509,
+              "bomb_number": 1,
+              "explosion_time_s": 13.527858482413162,
+              "release_point_m": [
+                10982.195138460851,
+                1693.344489384568,
+                1800.0
+              ],
+              "explosion_point_m": [
+                10906.52540797978,
+                390.07460504528717,
+                1212.3599319185346
+              ]
+            },
+            {
+              "platform": 3,
+              "label": "M1",
+              "release_s": 4.432290169482324,
+              "fuse_s": 11.972706409127948,
+              "bomb_number": 2,
+              "explosion_time_s": 16.404996578610273,
+              "release_point_m": [
+                10969.373828396696,
+                1472.5213520725101,
+                1800.0
+              ],
+              "explosion_point_m": [
+                10886.645002660824,
+                47.67172643141316,
+                1097.6060760800501
+              ]
+            },
+            {
+              "platform": 3,
+              "label": "M3",
+              "release_s": 8.285109796957393,
+              "fuse_s": 11.49885414135558,
+              "bomb_number": 3,
+              "explosion_time_s": 19.783963938312972,
+              "release_point_m": [
+                10942.751673583802,
+                1014.0044206220567,
+                1800.0
+              ],
+              "explosion_point_m": [
+                10863.297065083825,
+                -354.4529238360742,
+                1152.104131835565
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY5",
+          "heading_rad": 2.105807078339758,
+          "heading_deg": 120.65385805764286,
+          "speed_mps": 138.5268955873774,
+          "bombs": [
+            {
+              "platform": 4,
+              "label": "M3",
+              "release_s": 11.456346482904364,
+              "fuse_s": 2.1314674200863966,
+              "bomb_number": 1,
+              "explosion_time_s": 13.58781390299076,
+              "release_point_m": [
+                12190.861416124331,
+                -634.7519642748225,
+                1300.0
+              ],
+              "explosion_point_m": [
+                12040.320182718076,
+                -380.7458801512705,
+                1277.7385485218401
+              ]
+            },
+            {
+              "platform": 4,
+              "label": "M1",
+              "release_s": 12.457429064065105,
+              "fuse_s": 4.49745408341818,
+              "bomb_number": 2,
+              "explosion_time_s": 16.954883147483287,
+              "release_point_m": [
+                12120.156977909955,
+                -515.4533702974252,
+                1300.0
+              ],
+              "explosion_point_m": [
+                11802.510891216156,
+                20.506358427035366,
+                1200.8872431609711
+              ]
+            },
+            {
+              "platform": 4,
+              "label": "M2",
+              "release_s": 18.310561160127516,
+              "fuse_s": 1.6663268042005406,
+              "bomb_number": 3,
+              "explosion_time_s": 19.976887964328057,
+              "release_point_m": [
+                11706.762094775753,
+                182.06194219017016,
+                1300.0
+              ],
+              "explosion_point_m": [
+                11589.072802413928,
+                380.63741297448814,
+                1286.3944394098537
+              ]
+            }
+          ]
+        }
+      ],
+      "constraint_margins": {
+        "speed_low_mps": 46.77496647102279,
+        "speed_high_mps": 0.0,
+        "release_time_s": 0.45802634217840493,
+        "fuse_delay_s": 0.4060711513214376,
+        "explosion_height_m": 626.7536423919216,
+        "one_second_gap_s": 0.001082581160741114,
+        "latest_arrival_s": 39.50052967524984,
+        "capacity_bombs": 0.0
+      }
+    },
+    "strict_probe": {
+      "by_missile": [
+        {
+          "missile": "M1",
+          "settings": {
+            "name": "refine_probe",
+            "scan_step_s": 0.1,
+            "n_theta": 32,
+            "n_levels": 5,
+            "root_time_tolerance_s": 5e-06,
+            "margin_tolerance_m": 5e-06
+          },
+          "surface_point_count": 289,
+          "scan_count": 475,
+          "intervals_s": [
+            [
+              0.879541673511496,
+              5.467351890002538
+            ],
+            [
+              12.636509585961074,
+              24.99053668143352
+            ],
+            [
+              28.274686805412628,
+              31.253866182139944
+            ]
+          ],
+          "duration_s": 19.921016688690806,
+          "minimum_scan_margin_m": -9.417226635047076,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 0.879541673511496,
+              "margin_m": -3.889017563096786e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 5.467351890002538,
+              "margin_m": -3.3215727004431983e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 12.636509585961074,
+              "margin_m": -0.026991936859769083,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 24.99053668143352,
+              "margin_m": -3.6722405098998934e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 28.274686805412628,
+              "margin_m": -3.980100947487131e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 31.253866182139944,
+              "margin_m": -3.1530862063533505e-06,
+              "iterations": 17,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 1,
+          "recovered_unsampled_interval_count": 0
+        },
+        {
+          "missile": "M2",
+          "settings": {
+            "name": "refine_probe",
+            "scan_step_s": 0.1,
+            "n_theta": 32,
+            "n_levels": 5,
+            "root_time_tolerance_s": 5e-06,
+            "margin_tolerance_m": 5e-06
+          },
+          "surface_point_count": 289,
+          "scan_count": 475,
+          "intervals_s": [
+            [
+              9.667961511763465,
+              17.763168765800017
+            ],
+            [
+              19.990755125802384,
+              23.54729902044507
+            ],
+            [
+              27.8120146520776,
+              30.711431848532722
+            ]
+          ],
+          "duration_s": 14.55116834513436,
+          "minimum_scan_margin_m": -9.132558610841004,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 9.667961511763465,
+              "margin_m": -9.63918910912298e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 17.763168765800017,
+              "margin_m": 2.840999471231953e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 19.990755125802384,
+              "margin_m": -2.683140376547044e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 23.54729902044507,
+              "margin_m": -4.980504821006093e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 27.8120146520776,
+              "margin_m": 2.5294717929114086e-06,
+              "iterations": 17,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 30.711431848532722,
+              "margin_m": -3.5980722827844147e-06,
+              "iterations": 16,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 1,
+          "recovered_unsampled_interval_count": 0
+        },
+        {
+          "missile": "M3",
+          "settings": {
+            "name": "refine_probe",
+            "scan_step_s": 0.1,
+            "n_theta": 32,
+            "n_levels": 5,
+            "root_time_tolerance_s": 5e-06,
+            "margin_tolerance_m": 5e-06
+          },
+          "surface_point_count": 289,
+          "scan_count": 475,
+          "intervals_s": [
+            [
+              13.638756221091796,
+              23.87591550412307
+            ],
+            [
+              24.306384629018027,
+              27.21798054616901
+            ]
+          ],
+          "duration_s": 13.148755200182258,
+          "minimum_scan_margin_m": -8.353978844765248,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 13.638756221091796,
+              "margin_m": 4.558985944314031e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 23.87591550412307,
+              "margin_m": 6.856774543706479e-07,
+              "iterations": 17,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 24.306384629018027,
+              "margin_m": -2.7118254397606734e-06,
+              "iterations": 17,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 27.21798054616901,
+              "margin_m": -3.766082937062265e-06,
+              "iterations": 16,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 2,
+          "recovered_unsampled_interval_count": 0
+        }
+      ],
+      "durations_s": [
+        19.921016688690806,
+        14.55116834513436,
+        13.148755200182258
+      ],
+      "intersection_intervals_s": [
+        [
+          13.638756221091796,
+          17.763168765800017
+        ],
+        [
+          19.990755125802384,
+          23.54729902044507
+        ]
+      ],
+      "longest_interval_s": [
+        13.638756221091796,
+        17.763168765800017
+      ],
+      "longest_continuous_s": 4.124412544708221,
+      "total_intersection_s": 7.680956439350908,
+      "objective_s": 4.124412544708221,
+      "sum_duration_missile_s": 47.62094023400742,
+      "minimum_missile_duration_s": 13.148755200182258
+    },
+    "strict_screen": {
+      "by_missile": [
+        {
+          "missile": "M1",
+          "settings": {
+            "name": "screen_strict",
+            "scan_step_s": 0.02,
+            "n_theta": 128,
+            "n_levels": 9,
+            "root_time_tolerance_s": 2e-06,
+            "margin_tolerance_m": 2e-06
+          },
+          "surface_point_count": 2177,
+          "scan_count": 2343,
+          "intervals_s": [
+            [
+              0.8799499206151502,
+              5.467224141282275
+            ],
+            [
+              12.636509585961074,
+              16.371676019009968
+            ],
+            [
+              16.404996578610273,
+              24.990412079135684
+            ],
+            [
+              28.277074533021306,
+              31.25149490688915
+            ]
+          ],
+          "duration_s": 19.882276528109273,
+          "minimum_scan_margin_m": -9.470666093115865,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 0.8799499206151502,
+              "margin_m": -9.854557472266379e-07,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 5.467224141282275,
+              "margin_m": 2.427725096509903e-07,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 12.636509585961074,
+              "margin_m": -0.025761994596864568,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 16.371676019009968,
+              "margin_m": 1.3752839507219505e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 16.404996578610273,
+              "margin_m": -0.44272163247601526,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 24.990412079135684,
+              "margin_m": -8.861534688264783e-07,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 28.277074533021306,
+              "margin_m": 1.8818302169876233e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 31.25149490688915,
+              "margin_m": 5.045905577816256e-07,
+              "iterations": 15,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 2,
+          "recovered_unsampled_interval_count": 0
+        },
+        {
+          "missile": "M2",
+          "settings": {
+            "name": "screen_strict",
+            "scan_step_s": 0.02,
+            "n_theta": 128,
+            "n_levels": 9,
+            "root_time_tolerance_s": 2e-06,
+            "margin_tolerance_m": 2e-06
+          },
+          "surface_point_count": 2177,
+          "scan_count": 2343,
+          "intervals_s": [
+            [
+              9.668703341203447,
+              13.467780565765697
+            ],
+            [
+              13.527858482413162,
+              17.762591496607655
+            ],
+            [
+              19.99094736175384,
+              23.547243489128235
+            ],
+            [
+              27.813447139651103,
+              30.71037265565952
+            ]
+          ],
+          "duration_s": 14.487031882139554,
+          "minimum_scan_margin_m": -9.15198991344426,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 9.668703341203447,
+              "margin_m": 9.950249886259144e-07,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 13.467780565765697,
+              "margin_m": -1.0480173475713173e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 13.527858482413162,
+              "margin_m": -0.5520539725931428,
+              "iterations": 0,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 17.762591496607655,
+              "margin_m": 1.7073469642525652e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 19.99094736175384,
+              "margin_m": 1.1253170040248506e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 23.547243489128235,
+              "margin_m": -1.5954939414086766e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 27.813447139651103,
+              "margin_m": -1.3552607018851859e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 30.71037265565952,
+              "margin_m": -1.7601996837868228e-07,
+              "iterations": 15,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 1,
+          "recovered_unsampled_interval_count": 0
+        },
+        {
+          "missile": "M3",
+          "settings": {
+            "name": "screen_strict",
+            "scan_step_s": 0.02,
+            "n_theta": 128,
+            "n_levels": 9,
+            "root_time_tolerance_s": 2e-06,
+            "margin_tolerance_m": 2e-06
+          },
+          "surface_point_count": 2177,
+          "scan_count": 2343,
+          "intervals_s": [
+            [
+              13.638987702203433,
+              23.875913215744625
+            ],
+            [
+              24.30725729875207,
+              27.217109658112378
+            ]
+          ],
+          "duration_s": 13.146777872901499,
+          "minimum_scan_margin_m": -8.352939421170106,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 13.638987702203433,
+              "margin_m": 3.907130956548599e-07,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 23.875913215744625,
+              "margin_m": -1.6344581243998846e-06,
+              "iterations": 16,
+              "fallback": false
+            },
+            {
+              "kind": "entry",
+              "time_s": 24.30725729875207,
+              "margin_m": 1.5053896955663504e-06,
+              "iterations": 15,
+              "fallback": false
+            },
+            {
+              "kind": "exit",
+              "time_s": 27.217109658112378,
+              "margin_m": -2.908520446709417e-07,
+              "iterations": 15,
+              "fallback": false
+            }
+          ],
+          "root_fallback_count": 0,
+          "local_minimum_checks": 2,
+          "recovered_unsampled_interval_count": 0
+        }
+      ],
+      "durations_s": [
+        19.882276528109273,
+        14.487031882139554,
+        13.146777872901499
+      ],
+      "intersection_intervals_s": [
+        [
+          13.638987702203433,
+          16.371676019009968
+        ],
+        [
+          16.404996578610273,
+          17.762591496607655
+        ],
+        [
+          19.99094736175384,
+          23.547243489128235
+        ]
+      ],
+      "longest_interval_s": [
+        19.99094736175384,
+        23.547243489128235
+      ],
+      "longest_continuous_s": 3.556296127374395,
+      "total_intersection_s": 7.646579362178311,
+      "objective_s": 3.556296127374395,
+      "sum_duration_missile_s": 47.51608628315033,
+      "minimum_missile_duration_s": 13.146777872901499
+    },
+    "metrics": {
+      "per_missile_intervals_s": [
+        [
+          [
+            0.8799499206151502,
+            5.467224141282275
+          ],
+          [
+            12.636509585961074,
+            16.371676019009968
+          ],
+          [
+            16.404996578610273,
+            24.990412079135684
+          ],
+          [
+            28.277074533021306,
+            31.25149490688915
+          ]
+        ],
+        [
+          [
+            9.668703341203447,
+            13.467780565765697
+          ],
+          [
+            13.527858482413162,
+            17.762591496607655
+          ],
+          [
+            19.99094736175384,
+            23.547243489128235
+          ],
+          [
+            27.813447139651103,
+            30.71037265565952
+          ]
+        ],
+        [
+          [
+            13.638987702203433,
+            23.875913215744625
+          ],
+          [
+            24.30725729875207,
+            27.217109658112378
+          ]
+        ]
+      ],
+      "per_missile_duration_s": [
+        19.882276528109273,
+        14.487031882139554,
+        13.146777872901499
+      ],
+      "intersection_intervals_s": [
+        [
+          13.638987702203433,
+          16.371676019009968
+        ],
+        [
+          16.404996578610273,
+          17.762591496607655
+        ],
+        [
+          19.99094736175384,
+          23.547243489128235
+        ]
+      ],
+      "longest_all_interval_s": [
+        19.99094736175384,
+        23.547243489128235
+      ],
+      "j_sum_missile_s": 47.51608628315033,
+      "j_fair_s": 13.146777872901499,
+      "j_all_s": 7.646579362178311,
+      "l_all_s": 3.556296127374395,
+      "units": {
+        "j_sum_missile_s": "missile*s",
+        "j_fair_s": "s",
+        "j_all_s": "s",
+        "l_all_s": "s"
+      }
+    }
+  },
+  "proof_boundary": {
+    "restricted_master_only": true,
+    "pricing_certified": false,
+    "continuous_global_optimality": false,
+    "strict_continuous_rescore": true,
+    "strict_level": "screen_strict",
+    "failure_signals": [
+      "RESTRICTED_MASTER_ONLY",
+      "PRICING_NOT_CERTIFIED",
+      "REFINEMENT_UNSTABLE"
+    ]
+  }
+}

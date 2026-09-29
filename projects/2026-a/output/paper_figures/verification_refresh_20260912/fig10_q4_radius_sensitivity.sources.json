@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "figure_id": "fig10_q4_radius_sensitivity",
+  "data_driven_visual": true,
+  "role": "Q4 auxiliary radius-reconstruction comparison, for section 8.3 only",
+  "caption": "问题4启动阶段的半径重建与局部含水率差异。（a）前30 min的两种半径重建，灰色圆点为附件2的原始半径观测；线性与PCHIP曲线连接各自已保存的每分钟半径值。（b）三个固定物理位置的含水率差ΔC=C_PCHIP−C_线性，每分钟取样，其余输入与N=10240网格相同；仅画双方均在材料内的共同位置。r=1.9 cm曲线止于22 min，此后该位置在至少一种几何中已处于材料外，未补线或填零。线型及标记共同区分曲线。",
+  "original_sources": [
+    {
+      "path": "output/Q4/run_n10240-v1-20260911.npz",
+      "sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92",
+      "bytes": 1771968
+    },
+    {
+      "path": "output/Q4/run_n10240-pchip-v1-20260911.npz",
+      "sha256": "56e7c0644ef81d611e23c2c65ef3163b5dcf9df3bddf6e0b84a6dcc5ca84360d",
+      "bytes": 1771973
+    },
+    {
+      "path": "output/Q4/run_n10240-v1-20260911.json",
+      "sha256": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8",
+      "bytes": 4760
+    },
+    {
+      "path": "output/Q4/run_n10240-pchip-v1-20260911.json",
+      "sha256": "1a28006d9734791441b186d892a8a51a2209ac8c54d32fd519e05095493c6f0d",
+      "bytes": 4773
+    },
+    {
+      "path": "output/GEOMETRY/q4_radius.json",
+      "sha256": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+      "bytes": 14147
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+      "bytes": 11485
+    }
+  ],
+  "compact_data": {
+    "file": "fig10_q4_radius_sensitivity.data.json",
+    "sha256": "99264856fcbf8b753e1f795365c82d8d4d0b2173bcb3b401f8cbb95aad590ff8",
+    "bytes": 11758
+  },
+  "generator": {
+    "file": "build_q4_radius_sensitivity_figure.py",
+    "sha256": "51601df7318a2c2a6f8c90c800cab07f41d40c3d3a1850694a33b29bb96abe5b"
+  },
+  "transformations": {
+    "alignment": "Intersection of saved time_s arrays; 0..1800 s at every 60 s.",
+    "radius": "Saved surface_radius_m multiplied by 100; independently checked against all attachment nodes using linear/PCHIP interpolation.",
+    "moisture_difference": "PCHIP minus linear, at the same saved time and fixed physical radius.",
+    "domain": "Intersection of both inside_mask arrays. Outside values are null; no extension, zero fill, or surface substitution.",
+    "line_rendering": "Straight connections between actual saved minute samples; no further fit or smoothing.",
+    "selection": "First 30 minutes and three near-surface fixed positions illustrate the reported maximum at 960 s, 1.9 cm; not a new global error scan."
+  },
+  "verified_values": {
+    "maximum_sampled_local_difference_kg_kg": -0.054857364284587096,
+    "maximum_time_s": 960.0,
+    "maximum_radius_cm": 1.9,
+    "last_common_interior_time_s_by_radius": [
+      1800.0,
+      1800.0,
+      1320.0
+    ]
+  },
+  "visual_contract": {
+    "width_cm": 15.8,
+    "height_cm": 7.8,
+    "dpi": 360,
+    "font": "Microsoft YaHei",
+    "line_width_pt": 1.9,
+    "series_encoding": "Colors plus line styles; fixed positions also have markers.",
+    "no_text_plot_relationship": "Two radius histories share measured endpoints but differ between them; three local responses differ in depth and one stops at the joint-domain boundary.",
+    "uncertainty": "No confidence intervals or probability interpretation."
+  },
+  "outputs": {
+    "png": {
+      "file": "fig10_q4_radius_sensitivity.png",
+      "sha256": "b5423c98f8dd94de3da87be1a7376a3b2f71eff82df1876a62d4dfb976bf330c",
+      "bytes": 160113
+    },
+    "pdf": {
+      "file": "fig10_q4_radius_sensitivity.pdf",
+      "sha256": "804b47eca109dd15abbf7e047d7ebd6f024f9f530d89257684566f41af61e387",
+      "bytes": 28268
+    },
+    "svg": {
+      "file": "fig10_q4_radius_sensitivity.svg",
+      "sha256": "86bbb1b0af85fc574a42bda469d4c5b7b60202e2a16b344a9aab3288970819bf",
+      "bytes": 28816
+    }
+  }
+}

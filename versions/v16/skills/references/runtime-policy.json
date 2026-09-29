@@ -1,0 +1,334 @@
+{
+  "schema_version": "11.0",
+  "owner": "references/runtime-policy.json",
+  "principle": "strong_rules_with_proportional_activation",
+  "rule_semantics": {
+    "source": "rules/*.json",
+    "strength_meaning": "A MUST rule blocks acceptance only when it is applicable to the actual action or claim.",
+    "evidence_required_meaning": "The rule needs adequate evidence before its effect is accepted; this does not by itself require persistent project-state evidence.",
+    "separate_dimensions": [
+      "semantic_strength",
+      "applicability",
+      "enforcement_timing",
+      "evidence_persistence",
+      "invalidation_scope"
+    ]
+  },
+  "activation": {
+    "authority": "agent_semantic_plan_then_contract_validation",
+    "request_text_role": "audit_input_only",
+    "selected_when_all": [
+      "the plan step resolves to the rule route selector",
+      "the actual component object type and state satisfy scope",
+      "an event that actually occurs in the step intersects the rule trigger",
+      "all available predicates pass and no applicable exception removes the rule"
+    ],
+    "forbidden_synthetic_events": [
+      "global_events_for_every_request",
+      "all_writable_events_for_every_write",
+      "all_possible_route_events_before_action"
+    ],
+    "legacy_event_normalization": "A declared facet may normalize to a frozen event token only when that facet is actually written or audited in the step; the mapping records provenance and never selects a rule directly.",
+    "missing_fact_policy": "block_only_the_affected_step_when_the_fact_is_needed_to_accept_a_MUST_effect",
+    "independent_step_policy": "unaffected ordered steps may continue",
+    "standard_vocabulary_role": "internal_only"
+  },
+  "decomposed_request_semantics": {
+    "raw_request": "The unchanged user request is the Agent's semantic source and is hash-preserved; deterministic scripts validate the resulting plan and do not keyword-classify the prose.",
+    "mode_uniqueness": "One execution mode is selected and held stable per plan step; a decomposed request may contain multiple step-local modes.",
+    "write_route_uniqueness": "Each writing step must have a conflict-free executable route; this does not limit the whole request to one writing step, one route, or one file.",
+    "authorization": "The union of step-local writes must remain inside the complete user request boundary.",
+    "multi_step_continuation": "A natural-language request may close one checkpoint and continue into later authorized steps without a second user command or standard phrase.",
+    "no_one_step_gate": "Step decomposition is an internal dependency model, not a requirement to stop after each step."
+  },
+  "window_recovery_policy": {
+    "owner": "references/runtime-policy.json",
+    "purpose": "Recovery level determines the amount of project material that must be read to regain trustworthy context. ChangeSet propagation and project invalidation are separate concerns.",
+    "classification_precedence": [
+      "not_applicable_when_the_action_does_not_depend_on_existing_project_facts",
+      "R2_FULL_when_the_user_explicitly_requests_full_recovery",
+      "R2_FULL_when_authoritative_state_or_project_identity_is_missing_damaged_or_conflicting",
+      "R0_CONTINUE_only_when_every_same_window_continuity_condition_passes",
+      "R1_TARGETED_only_when_every_targeted_recovery_eligibility_condition_passes",
+      "R2_FULL_for_every_remaining_case"
+    ],
+    "same_window_requires": [
+      "same_uninterrupted_session",
+      "current_context_has_direct_continuity",
+      "current_checkpoint_identity_is_valid",
+      "every_relevant_change_since_the_checkpoint_is_recorded_in_the_current_ChangeSet",
+      "invalidation_propagation_is_complete",
+      "no_unexplained_external_change_exists"
+    ],
+    "new_window_minimum_level": "R1_TARGETED",
+    "new_window_effect": "disqualifies_R0_but_does_not_by_itself_qualify_R1",
+    "unknown_default": "new_window",
+    "r0_allowed_only_when": "window_context=same_window and all same_window_requires conditions are proven",
+    "new_window_does_not_imply_r2": true,
+    "r0_protocol": {
+      "allows_recorded_workspace_delta": true,
+      "unexplained_delta_must_be_empty": true,
+      "read_scope": "authoritative_state_current_objective_next_action_and_direct_inputs",
+      "recovery_episode": "none",
+      "receipt": "none"
+    },
+    "r1_eligibility": {
+      "all_required": [
+        "workspace_baseline_is_trusted_current_and_complete_for_the_live_project",
+        "every_relevant_added_changed_or_deleted_object_is_localizable_to_a_semantic_owner",
+        "the_dependency_identity_is_current_and_the_complete_transitive_consumer_closure_is_provable"
+      ],
+      "unknown_or_false_disposition": "R2_FULL",
+      "scope_escape_during_reading": "upgrade_the_same_recovery_episode_to_R2_FULL"
+    },
+    "baseline_contract": {
+      "meaning": "A trusted full-project snapshot index, not a project copy, handoff summary, partial watch-root manifest, or field-presence flag.",
+      "required_bindings": [
+        "root_fingerprint", "coverage_roots", "coverage_complete",
+        "manifest_sha256", "inventory_policy_sha256", "captured_revision",
+        "component_graph_sha256", "artifact_registry_sha256", "established_by",
+        "file_count", "unresolved", "continuity_change_set"
+      ],
+      "state_shape": "workspace_baseline remains the path-to-sha256-and-size map; workspace_baseline_meta carries qualification and provenance. The meta object is optional for legacy load but all listed bindings are required whenever it exists.",
+      "r1_machine_qualification": "coverage_roots_exactly_dot_and_coverage_complete_and_unresolved_empty_and_all_identity_and_provenance_bindings_current",
+      "watch_roots_role": "performance_hint_only",
+      "legacy_or_partial_baseline": "readable_as_navigation_but_ineligible_for_R1",
+      "merge_policy": "merge_only_receipt_covered_paths_at_the_exact_reviewed_revision_and_never_turn_known_project_gaps_into_PASS"
+    },
+    "episode_protocol": {
+      "unit": "one_actual_recovery_bearing_plan_step_and_its_complete_cross_component_scope",
+      "recovery_ids": 1,
+      "consolidated_receipts": 1,
+      "forbid_nested_episode_per_component_file_consumer_or_gate": true,
+      "r1_to_r2_escalation": "retain_the_same_recovery_id_and_reuse_fully_read_entries_whose_identity_is_unchanged",
+      "state_record_fields": [
+        "initial_recovery_level", "recovery_level", "escalated_from",
+        "escalation_history", "decision_id", "full_manifest_path",
+        "full_manifest_sha256", "full_manifest_counts"
+      ],
+      "closure_states": ["closed_ready", "closed_blocked"],
+      "closed_ready": "required_read_coverage_is_complete_and_no_recovery_discovered_gap_blocks_the_bound_action",
+      "closed_blocked": "required_read_coverage_is_complete_but_explicit_known_stale_missing_or_authorization_gaps_block_the_bound_action",
+      "formal_execution_requires": "same_plan_step_scope_revision_and_closed_ready_episode"
+    },
+    "r1_protocol": {
+      "lifecycle": "open_then_closed_ready_or_closed_blocked_or_void",
+      "required_read_roles": [
+        "authoritative_state", "official_input", "frozen_process",
+        "evidence_source", "formal_identity", "workspace_delta"
+      ],
+      "semantic_read_required_for": ["official_input", "frozen_process", "evidence_source", "workspace_delta"],
+      "receipt": "references/recovery-receipt.schema.json",
+      "formal_execution_requires": "same_plan_step_scope_and_closed_ready_recovery_run",
+      "baseline_policy": "merge_only_paths_reviewed_by_the_bound_recovery_receipt"
+    },
+    "r2_protocol": {
+      "scope": "the_entire_live_project",
+      "required_coverage": [
+        "enumerate_and_classify_every_live_object",
+        "read_every_unique_text_code_and_configuration_object_to_EOF",
+        "inspect_Office_PDF_image_dataset_and_other_binary_objects_with_their_native_structured_or_visual_carrier",
+        "represent_duplicates_by_hash_and_a_fully_read_canonical_object",
+        "leave_no_missing_truncated_or_unclassified_live_object"
+      ],
+      "receipt": "references/recovery-receipt.schema.json",
+      "does_not_authorize": [
+        "solver_execution", "verification_execution", "result_recomputation",
+        "substantive_manuscript_edit", "delivery_build", "state_promotion"
+      ]
+    },
+    "source": "V8 R0_INCREMENTAL_CHECKPOINT requires same uninterrupted session; new window or context recovery must not use R0. V7/V8 R2 supplies the full-project read contract; V16 restores it only after an R2 trigger."
+  },
+  "natural_pause": {
+    "tier": "G1_WORKING",
+    "route": "RT.PROJECT.RESUME",
+    "action": "pause",
+    "events": ["handoff"],
+    "synchronizes_only": [
+      "actual_control_state_changes", "open_decisions", "next_legal_actions",
+      "registered_identity_changes_already_observed"
+    ],
+    "does_not_imply": [
+      "checkpoint", "final_delivery", "full_project_audit", "recovery_assessment",
+      "model_execution", "verification_execution", "skill_package_validation"
+    ],
+    "mixed_request": "An explicit checkpoint close followed by pause is one ordered G2 then G1 plan and needs no extra user confirmation."
+  },
+  "compatible_cross_component_change": {
+    "classification": "compatible_implementation_change",
+    "g1": {
+      "unit": "one_cross_component_ChangeSet",
+      "state_mutation": "none",
+      "persistent_evidence": "none",
+      "allowed_continuation": "implement and validate every declared target in one uninterrupted working flow"
+    },
+    "g2": {
+      "unit": "one_atomic_change_closure_reconciliation",
+      "execution_envelopes": 1,
+      "identity_checkpoints": 1,
+      "lifecycle_replay": "forbidden_when_the_model_contract_is_preserved",
+      "evidence": "fresh replacements only for explicitly affected post-specification levels",
+      "unaffected_prefix": "reuse current scope through selection_rationale without copying or rerecording it",
+      "consumer_policy": "exact declared effects and file/command/artifact identity bindings; optional claim_updates bind SHA-256 identities of old/new producer evidence claim text and close only their exact producers and typed consumers, with no coarse transitive invalidation",
+      "prefix_identity_guard": "live-validate every reused target prefix record before reconciliation",
+      "source_anchor": "live-validate the source question lifecycle evidence and semantically recover its implementation plus E1/E2 in a new window",
+      "identity_closed_world": "every actual protected registered identity delta must be declared in the ChangeSet and artifact_updates; all changed file/command locators and artifact input refs are scanned globally and fresh replacement locators must lie in the ChangeSet",
+      "working_identity_scope": "an unrelated unprotected working artifact with no exact evidence binding does not block the batch",
+      "component_snapshot": "preserve state, status, and invalidated_at_revision for targets and source",
+      "control_events": ["identity_checkpoint", "execution_started", "compatible_change_reconciled", "execution_closed"]
+    },
+    "escalate_when": [
+      "the model contract, candidate set, selection rationale, objective, constraints, feasible domain, assumptions, or claim boundaries changed",
+    "an exact affected consumer lies outside the declared closure",
+    "a reused prefix or source evidence locator no longer matches its live identity",
+    "an actual protected registered identity delta is omitted or lies outside the sealed ChangeSet",
+    "a changed exact evidence binding or fresh replacement locator lies outside the sealed ChangeSet",
+    "an explicitly changed claim has a producer or typed consumer outside the declared effect closure, conflicts with producer claim-text identity, or an in-closure replacement does not bind its new identity",
+    "a target or source state, status, invalidation marker, or execution revision drifts before reconciliation",
+    "fresh equivalence or implementation evidence fails or is missing"
+    ],
+    "fallback": "reopen_at_the_earliest_actually_changed_layer"
+  },
+  "recovery_execution_barrier": {
+    "open_when": "the effective recovery level is R2_FULL and its single recovery episode is not closed_ready or closed_blocked",
+    "safe_readonly_routes": [
+      "RT.PROJECT.ADVISE", "RT.PROJECT.AUDIT", "RT.PROJECT.PLAN",
+      "RT.PROJECT.RECOVER.MISSING", "RT.SKILL.AUDIT", "RT.SKILL.CHANGE"
+    ],
+    "recovery_write_route": "RT.PROJECT.RECOVER.MISSING",
+    "allowed_write_paths": [".modeling/state.json"],
+    "allowed_write_prefixes": [".modeling/recovery/"],
+    "blocked_events": [
+      "data_treatment", "dataset_freeze", "frozen_dataset_change",
+      "model_execution", "model_implementation", "result_record", "result_interpretation",
+      "implementation_verification", "numerical_verification", "numerical_comparison",
+      "structural_verification", "reality_verification", "robustness_analysis",
+      "uncertainty_analysis", "s6_readiness", "s6_close", "state_transition",
+      "manuscript_write", "local_manuscript_edit", "manuscript_promotion",
+      "visual_generate", "visual_render", "delivery_package_build", "final_delivery"
+    ],
+    "identity_reconstruction": {
+      "allowed_actions": [
+        "read", "enumerate", "hash", "compare", "parse",
+        "reconstruct_control_metadata", "reuse_current_identity", "record_known_gap"
+      ],
+      "rebuild_command_meaning": "Commands that enumerate, hash, parse, or compare existing evidence; never an implicit solver or verifier run.",
+      "recomputation_authorized": false,
+      "missing_evidence_policy": "Record the exact gap and blocked or invalidated status; do not manufacture a pass by rerunning business computation."
+    },
+    "full_read_is_not_a_second_runtime_grant": "An R2_FULL assessment, including an explicit user full-recovery request, authorizes only the safe read/enumerate/hash/parse/compare work defined by r2_protocol; it does not need a second full_project_audit grant and does not authorize project execution.",
+    "closure": {
+      "requires": [
+        "the_same_R2_episode_has_complete_full_project_read_coverage",
+        "the_single_consolidated_receipt_is_sealed",
+        "the_episode_is_closed_ready_or_closed_blocked"
+      ],
+      "structurally_valid_state_alone_is_insufficient": true,
+      "closed_blocked_effect": "close_the_global_recovery_isolation_but_keep_the_bound_business_action_blocked_by_its_known_gaps",
+      "second_user_confirmation_required": false
+    }
+  },
+  "dangerous_runtime_actions": {
+    "ordinary_g1_affected": false,
+    "guarded_only": [
+      "project_model_execution", "project_verification_execution",
+      "recompute_existing_result", "skill_targeted_validation",
+      "skill_package_validation", "full_project_audit"
+    ],
+    "plan_field": "semantic_plan.steps[].runtime_actions",
+    "execution_entry": "scripts/run_authorized_action.py",
+    "grant_persistence_at_g1": "none",
+    "direct_request_anchor": "Exact user-request excerpt is retained without keyword classification.",
+    "non_authorizing_actions": [
+      "resume", "recover", "handoff", "pause", "s6_readiness", "s6_close", "final_delivery"
+    ],
+    "purpose": "Prevent the Agent from turning control actions into undeclared solver, verifier, recomputation, full-audit, or Skill-package commands."
+  },
+  "tiers": {
+    "G0_ADVISORY": {
+      "purpose": "answer, explain, plan, or perform a non-state-dependent read-only review",
+      "project_state": "not_required",
+      "recovery": "not_applicable",
+      "receipt": "none",
+      "artifact_policy": "none",
+      "evidence_persistence": "none",
+      "identity_check_scope": "none"
+    },
+    "G1_WORKING": {
+      "purpose": "ordinary scoped project work, including a multi-file change set",
+      "project_state": "optional_current_facts_only",
+      "recovery": "only_if_the_action_depends_on_registered_existing_identity",
+      "receipt": "automatic_change_summary",
+      "artifact_policy": "batch_changeset_no_per_file_admission",
+      "evidence_persistence": "ephemeral_validation_results",
+      "identity_check_scope": "none",
+      "multi_file_changes": true
+    },
+    "G2_CHECKPOINT": {
+      "purpose": "state transition, frozen decision, milestone identity, or scoped acceptance claim",
+      "project_state": "required",
+      "recovery": "targeted_registered_identity_check",
+      "receipt": "checkpoint_receipt",
+      "artifact_policy": "register_milestone_and_final_artifacts",
+      "evidence_persistence": "typed_exact_bindings_for_required_checkpoint_claims",
+      "identity_check_scope": "registered_checkpoint_identities_only"
+    },
+    "G3_RELEASE": {
+      "purpose": "final delivery or Skill release",
+      "project_state": "required",
+      "recovery": "assess_registered_identities_in_declared_release_scope_without_promoting_the_tier_itself_to_R2",
+      "receipt": "sealed_release_receipt",
+      "artifact_policy": "formal_release_admission",
+      "evidence_persistence": "typed_exact_bindings_for_all_release_claims",
+      "identity_check_scope": "registered_identities_in_declared_release_scope"
+    }
+  },
+  "minimum_tiers": {
+    "advisory_readonly": "G0_ADVISORY",
+    "project_readonly": "G0_ADVISORY",
+    "mutate": "G1_WORKING",
+    "promote": "G2_CHECKPOINT",
+    "skill_maintenance": "G1_WORKING",
+    "final_delivery": "G3_RELEASE",
+    "skill_release": "G3_RELEASE"
+  },
+  "closure": {
+    "local": "changed semantic facets plus their direct claim, reference, terminology, figure, and layout consumers",
+    "component": "the affected component and evidence that explicitly binds changed identities",
+    "checkpoint": "the exact required evidence set for the requested transition or acceptance claim",
+    "release": "all declared deliverables and their registered reproducibility and provenance dependencies",
+    "full_project_scope_only_when": [
+      "the user explicitly requests a full-project audit",
+      "the declared G3 delivery scope is the whole project",
+      "an R2_FULL recovery episode is active"
+    ],
+    "R2_full_recovery_only_when": [
+      "the user explicitly requests full recovery",
+      "authoritative project state is missing or corrupt and the requested action depends on it",
+      "the project-root identity conflicts with the authoritative state",
+      "the workspace baseline is missing stale incomplete or ineligible",
+      "a relevant change cannot be localized or attributed",
+      "the complete transitive consumer closure cannot be proven",
+      "an R1_TARGETED episode discovers a relevant object outside its proven scope"
+    ],
+    "G3_scope_audit": "G3 audits the exact declared release scope. G3 by itself neither expands that scope to the whole workspace nor classifies recovery as R2_FULL."
+  },
+  "hard_blocks": [
+    "the user has not authorized the affected mutation or promotion",
+    "an actual requested state transition is illegal",
+    "a frozen identity or decision would change without the required decision",
+    "an applicable MUST acceptance condition fails within the affected closure",
+    "a real same-dimension conflict cannot be resolved by scope, evidence, refinement, or supersession",
+    "a G2 or G3 claim lacks required current exact-bound evidence"
+  ],
+  "not_hard_blocks": [
+    "the user did not use internal standard vocabulary",
+    "one clause in a mixed request needs clarification while independent clauses are executable",
+    "an unrelated working file is unregistered or dirty",
+    "a G1 edit has no persistent execution ledger or start/end receipt",
+    "an atom evidence schema is not materialized during ordinary G1 work",
+    "a local change does not satisfy rules that are outside its actual semantic closure",
+    "an internal multi-step plan has completed one step and later already-authorized steps remain",
+    "ordinary reading, editing, compiling, rendering, or scoped checks have no dangerous runtime-action grant"
+  ]
+}

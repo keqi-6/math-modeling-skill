@@ -1,0 +1,89 @@
+{
+  "status": "s5_d0_observed_baseline_not_final_recommendation",
+  "input": "output/data_audit/tables/cleaned_attachment1.csv",
+  "input_sha256": "b99a4d3c23ebc1dbc366a49235924860cc9e982b11eb859bfb6893086d627834",
+  "target": "c4_yield_pct",
+  "formula": "ethanol_conversion_pct * c4_selectivity_pct / 100",
+  "formula_max_abs_error": 3.552713678800501e-15,
+  "top_n_saved_per_scenario": 10,
+  "scenarios": [
+    {
+      "scenario": "general",
+      "constraint": "附件1全部D0实测单元",
+      "feasible_cell_count": 114,
+      "combination_count": 21,
+      "temperature_labels_c": [
+        250.0,
+        275.0,
+        300.0,
+        325.0,
+        350.0,
+        400.0,
+        450.0
+      ],
+      "best": {
+        "source_excel_row": 17,
+        "catalyst_id": "A3",
+        "temperature_c": 400.0,
+        "ethanol_conversion_pct": 83.7133815760754,
+        "c4_selectivity_pct": 53.43,
+        "c4_yield_pct": 44.72805977609709
+      },
+      "runner_up": {
+        "source_excel_row": 18,
+        "catalyst_id": "A3",
+        "temperature_c": 450.0,
+        "c4_yield_pct": 43.118441667406906
+      },
+      "lead_over_runner_up_pct_point": 1.609618108690185,
+      "best_distinct_combination": {
+        "source_excel_row": 24,
+        "catalyst_id": "A4",
+        "temperature_c": 400.0,
+        "c4_yield_pct": 36.27781909092121
+      },
+      "lead_over_best_distinct_combination_pct_point": 8.450240685175878
+    },
+    {
+      "scenario": "strict_below_350",
+      "constraint": "附件1中temperature_c严格小于350的D0实测单元",
+      "feasible_cell_count": 73,
+      "combination_count": 21,
+      "temperature_labels_c": [
+        250.0,
+        275.0,
+        300.0,
+        325.0
+      ],
+      "best": {
+        "source_excel_row": 10,
+        "catalyst_id": "A2",
+        "temperature_c": 325.0,
+        "ethanol_conversion_pct": 56.3824602331247,
+        "c4_selectivity_pct": 30.62,
+        "c4_yield_pct": 17.264309323382783
+      },
+      "runner_up": {
+        "source_excel_row": 15,
+        "catalyst_id": "A3",
+        "temperature_c": 325.0,
+        "c4_yield_pct": 10.7927419705323
+      },
+      "lead_over_runner_up_pct_point": 6.471567352850483,
+      "best_distinct_combination": {
+        "source_excel_row": 15,
+        "catalyst_id": "A3",
+        "temperature_c": 325.0,
+        "c4_yield_pct": 10.7927419705323
+      },
+      "lead_over_best_distinct_combination_pct_point": 6.471567352850483
+    }
+  ],
+  "claim_boundaries": [
+    "结果只表示附件1D0实测单元内的最高观测收率",
+    "严格低温情景排除350摄氏度",
+    "未测单元不填零、不插补且不参与本基线",
+    "单次观测排名不表示未来实验中必然仍为第一",
+    "本基线不批准D1插值或D2新配方"
+  ]
+}

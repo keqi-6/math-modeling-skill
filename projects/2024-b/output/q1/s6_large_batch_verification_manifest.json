@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s6_verification_run_identity",
+  "producer": "src/q1/08_verify_large_batch_extension.py",
+  "started_at": "2026-08-25T17:26:32.115588+08:00",
+  "finished_at": "2026-08-25T17:26:34.310465+08:00",
+  "command": [
+    "/usr/bin/python3",
+    "src/q1/08_verify_large_batch_extension.py"
+  ],
+  "environment": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "random_seed": null
+  },
+  "inputs": {
+    "output/q1/s5_large_batch_extension.json": "28a794aa079c2f22036ecba1f1e483f3eba90b05995d6b89173ab4c7a1e9991b",
+    "src/q1/08_verify_large_batch_extension.py": "59777dc32e9b6e91a76bdce995543c8433e13b43ff09371402761290bd461cf0"
+  },
+  "outputs": {
+    "output/q1/s6_large_batch_verification.json": "ce914398f097dbab70e32bc69c83d1819a30fee7844ac7daa634b4bd3d0adcf6"
+  }
+}

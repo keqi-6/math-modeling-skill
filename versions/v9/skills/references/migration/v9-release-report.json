@@ -1,0 +1,38 @@
+{
+  "release": "9.0.0",
+  "status": "accepted",
+  "phases": {
+    "V9-design": "complete",
+    "V9-alpha": "complete",
+    "V9-beta": "complete",
+    "V9-rc": "complete",
+    "V9.0.0": "complete"
+  },
+  "capability_coverage": {
+    "v1_v6_atomic_entries": 1859,
+    "v7_native_entries": 9,
+    "v8_native_entries": 5,
+    "v9_operational_entries": 51,
+    "total_entries": 1924,
+    "unmapped_entries": 0
+  },
+  "v8_active_detail_sources": 34,
+  "v8_active_detail_lines": 7038,
+  "routes": 23,
+  "eval_definitions": 42,
+  "deterministic_tests": 24,
+  "fresh_forward_scenarios": 6,
+  "fresh_forward_invocations": 10,
+  "forward_issues_found_and_fixed": 2,
+  "unresolved_conflicts": 0,
+  "readonly_file_creation": 0,
+  "minimal_initialization": [
+    ".modeling/state.json"
+  ],
+  "v8_bootstrap_files": 15,
+  "v9_initialization_files": 1,
+  "deterministic_validation": "PASS",
+  "fresh_runtime_validation": "PASS",
+  "future_behavior_change_gate": "fresh invocation required for every L2-L4 change",
+  "rollback": "skills_v8 remains immutable beside skills_v9"
+}

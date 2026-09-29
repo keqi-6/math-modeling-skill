@@ -1,0 +1,16 @@
+{
+  "schema_version": "q5-v2-structural-audit-checkpoint-1.0",
+  "stage": "complete",
+  "elapsed_s": 36.786556774997734,
+  "updated_at": "2026-08-29T07:37:26+08:00",
+  "output_json": "docs/q5_v2_structural_audit.json",
+  "report_md": "docs/q5_v2_structural_audit.md",
+  "conclusion": {
+    "all_13_bombs_positive_primary_marginal_at_screen": true,
+    "all_5_platforms_positive_primary_marginal_at_screen": true,
+    "fy1_existing_library_improvement_counterexample": false,
+    "summary": "在固定其余参数和统一 SCREEN 严格口径下，13 枚烟幕弹及 5 个平台均具有可分辨的题意主目标删除边际；现有 FY1 多弹计划族未发现简单改善。",
+    "claim_boundary": "逐项删除只支持其余参数固定时的局部必要性；有限 FY1 计划库没有穷尽连续加弹域，且只有明确列出的删除对象取得 PRECISE 确认。"
+  },
+  "precise_confirmation_status": "PRECISE_CONFIRMATION_COMPLETE"
+}

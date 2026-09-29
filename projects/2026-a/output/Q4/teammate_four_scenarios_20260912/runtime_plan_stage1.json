@@ -1,0 +1,576 @@
+{
+  "schema_version": "11.0",
+  "plan_id": "teammate-four-scenarios-20260912-stage1",
+  "request": "队友另行计算的，你看看能不能复现",
+  "window_context": "same_window",
+  "steps": [
+    {
+      "id": "reproduce_four_cases",
+      "tier": "G1_WORKING",
+      "mode": "mutate",
+      "object": "verification",
+      "action": "verify_solution",
+      "component_id": "Q4",
+      "events": [
+        "numerical_verification",
+        "numerical_comparison"
+      ],
+      "facts": {
+        "verification_scope": "Numerical reproduction of teammate four-scenario comparison using unchanged validated Q4 solver. No model-contract or official-output change.",
+        "target_precision_h": 0.005,
+        "exact_two_decimal_rounding_stability_required": true,
+        "max_program_wall_s": 3540,
+        "source_input_review_completed": true
+      },
+      "working_context": {
+        "component_type": "question",
+        "state": "S6"
+      },
+      "depends_on": [],
+      "change_set": {
+        "paths": [
+          "output/Q4/teammate_four_scenarios_20260912/runtime_plan_stage1.json",
+          "output/Q4/teammate_four_scenarios_20260912/reproduction_design.md",
+          "output/Q4/teammate_four_scenarios_20260912/reproduction_summary.json",
+          "output/Q4/teammate_four_scenarios_20260912/reproduction_review.md",
+          "output/Q4/teammate_four_scenarios_20260912/A_n320.npz",
+          "output/Q4/teammate_four_scenarios_20260912/A_n320.json",
+          "output/Q4/teammate_four_scenarios_20260912/B_n320.npz",
+          "output/Q4/teammate_four_scenarios_20260912/B_n320.json",
+          "output/Q4/teammate_four_scenarios_20260912/C_n320.npz",
+          "output/Q4/teammate_four_scenarios_20260912/C_n320.json",
+          "output/Q4/teammate_four_scenarios_20260912/D_n320.npz",
+          "output/Q4/teammate_four_scenarios_20260912/D_n320.json",
+          "output/Q4/teammate_four_scenarios_20260912/A_n1280.npz",
+          "output/Q4/teammate_four_scenarios_20260912/A_n1280.json",
+          "output/Q4/teammate_four_scenarios_20260912/B_n1280.npz",
+          "output/Q4/teammate_four_scenarios_20260912/B_n1280.json",
+          "output/Q4/teammate_four_scenarios_20260912/C_n1280.npz",
+          "output/Q4/teammate_four_scenarios_20260912/C_n1280.json",
+          "output/Q4/teammate_four_scenarios_20260912/D_n1280.npz",
+          "output/Q4/teammate_four_scenarios_20260912/D_n1280.json"
+        ],
+        "facets": [
+          "numerical_verification",
+          "numerical_comparison",
+          "result_interpretation"
+        ],
+        "claim_refs": []
+      },
+      "runtime_actions": [
+        {
+          "id": "a_n320",
+          "kind": "project_verification_execution",
+          "event": "numerical_verification",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "component",
+            "component_ids": [
+              "Q4"
+            ],
+            "input_paths": [
+              "A题.pdf",
+              "附件/附件1.xlsx",
+              "附件/附件2.xlsx",
+              "output/ENV/q2_boundary.json",
+              "output/GEOMETRY/q4_radius.json",
+              "planning/Q4/model_spec.md",
+              "src/Q4/solve.py",
+              "src/_utils/run_bounded.py"
+            ],
+            "output_paths": [
+              "output/Q4/teammate_four_scenarios_20260912/A_n320.npz",
+              "output/Q4/teammate_four_scenarios_20260912/A_n320.json"
+            ]
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/_utils/run_bounded.py",
+              "--limit-s",
+              "3540",
+              "--",
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/Q4/solve.py",
+              "--n",
+              "320",
+              "--output",
+              "output/Q4/teammate_four_scenarios_20260912/A_n320.npz",
+              "--spec-sha256",
+              "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+              "--radius-sha256",
+              "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+              "--scenario",
+              "mean_tail",
+              "--radius-method",
+              "constant",
+              "--radius-tail",
+              "error",
+              "--properties",
+              "appendix3",
+              "--constant-radius-m",
+              "0.02",
+              "--max-time-s",
+              "604800"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "队友另行计算的，你看看能不能复现"
+          }
+        },
+        {
+          "id": "b_n320",
+          "kind": "project_verification_execution",
+          "event": "numerical_verification",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "component",
+            "component_ids": [
+              "Q4"
+            ],
+            "input_paths": [
+              "A题.pdf",
+              "附件/附件1.xlsx",
+              "附件/附件2.xlsx",
+              "output/ENV/q2_boundary.json",
+              "output/GEOMETRY/q4_radius.json",
+              "planning/Q4/model_spec.md",
+              "src/Q4/solve.py",
+              "src/_utils/run_bounded.py"
+            ],
+            "output_paths": [
+              "output/Q4/teammate_four_scenarios_20260912/B_n320.npz",
+              "output/Q4/teammate_four_scenarios_20260912/B_n320.json"
+            ]
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/_utils/run_bounded.py",
+              "--limit-s",
+              "3540",
+              "--",
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/Q4/solve.py",
+              "--n",
+              "320",
+              "--output",
+              "output/Q4/teammate_four_scenarios_20260912/B_n320.npz",
+              "--spec-sha256",
+              "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+              "--radius-sha256",
+              "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+              "--scenario",
+              "mean_tail",
+              "--radius-method",
+              "linear",
+              "--radius-tail",
+              "error",
+              "--properties",
+              "appendix3",
+              "--constant-radius-m",
+              "0.02",
+              "--max-time-s",
+              "259200"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "队友另行计算的，你看看能不能复现"
+          }
+        },
+        {
+          "id": "c_n320",
+          "kind": "project_verification_execution",
+          "event": "numerical_verification",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "component",
+            "component_ids": [
+              "Q4"
+            ],
+            "input_paths": [
+              "A题.pdf",
+              "附件/附件1.xlsx",
+              "附件/附件2.xlsx",
+              "output/ENV/q2_boundary.json",
+              "output/GEOMETRY/q4_radius.json",
+              "planning/Q4/model_spec.md",
+              "src/Q4/solve.py",
+              "src/_utils/run_bounded.py"
+            ],
+            "output_paths": [
+              "output/Q4/teammate_four_scenarios_20260912/C_n320.npz",
+              "output/Q4/teammate_four_scenarios_20260912/C_n320.json"
+            ]
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/_utils/run_bounded.py",
+              "--limit-s",
+              "3540",
+              "--",
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/Q4/solve.py",
+              "--n",
+              "320",
+              "--output",
+              "output/Q4/teammate_four_scenarios_20260912/C_n320.npz",
+              "--spec-sha256",
+              "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+              "--radius-sha256",
+              "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+              "--scenario",
+              "mean_tail",
+              "--radius-method",
+              "constant",
+              "--radius-tail",
+              "error",
+              "--properties",
+              "appendix4",
+              "--constant-radius-m",
+              "0.02",
+              "--max-time-s",
+              "604800"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "队友另行计算的，你看看能不能复现"
+          }
+        },
+        {
+          "id": "d_n320",
+          "kind": "project_verification_execution",
+          "event": "numerical_verification",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "component",
+            "component_ids": [
+              "Q4"
+            ],
+            "input_paths": [
+              "A题.pdf",
+              "附件/附件1.xlsx",
+              "附件/附件2.xlsx",
+              "output/ENV/q2_boundary.json",
+              "output/GEOMETRY/q4_radius.json",
+              "planning/Q4/model_spec.md",
+              "src/Q4/solve.py",
+              "src/_utils/run_bounded.py"
+            ],
+            "output_paths": [
+              "output/Q4/teammate_four_scenarios_20260912/D_n320.npz",
+              "output/Q4/teammate_four_scenarios_20260912/D_n320.json"
+            ]
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/_utils/run_bounded.py",
+              "--limit-s",
+              "3540",
+              "--",
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/Q4/solve.py",
+              "--n",
+              "320",
+              "--output",
+              "output/Q4/teammate_four_scenarios_20260912/D_n320.npz",
+              "--spec-sha256",
+              "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+              "--radius-sha256",
+              "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+              "--scenario",
+              "mean_tail",
+              "--radius-method",
+              "linear",
+              "--radius-tail",
+              "error",
+              "--properties",
+              "appendix4",
+              "--constant-radius-m",
+              "0.02",
+              "--max-time-s",
+              "259200"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "队友另行计算的，你看看能不能复现"
+          }
+        },
+        {
+          "id": "a_n1280",
+          "kind": "project_verification_execution",
+          "event": "numerical_verification",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "component",
+            "component_ids": [
+              "Q4"
+            ],
+            "input_paths": [
+              "A题.pdf",
+              "附件/附件1.xlsx",
+              "附件/附件2.xlsx",
+              "output/ENV/q2_boundary.json",
+              "output/GEOMETRY/q4_radius.json",
+              "planning/Q4/model_spec.md",
+              "src/Q4/solve.py",
+              "src/_utils/run_bounded.py"
+            ],
+            "output_paths": [
+              "output/Q4/teammate_four_scenarios_20260912/A_n1280.npz",
+              "output/Q4/teammate_four_scenarios_20260912/A_n1280.json"
+            ]
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/_utils/run_bounded.py",
+              "--limit-s",
+              "3540",
+              "--",
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/Q4/solve.py",
+              "--n",
+              "1280",
+              "--output",
+              "output/Q4/teammate_four_scenarios_20260912/A_n1280.npz",
+              "--spec-sha256",
+              "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+              "--radius-sha256",
+              "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+              "--scenario",
+              "mean_tail",
+              "--radius-method",
+              "constant",
+              "--radius-tail",
+              "error",
+              "--properties",
+              "appendix3",
+              "--constant-radius-m",
+              "0.02",
+              "--max-time-s",
+              "604800"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "队友另行计算的，你看看能不能复现"
+          }
+        },
+        {
+          "id": "b_n1280",
+          "kind": "project_verification_execution",
+          "event": "numerical_verification",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "component",
+            "component_ids": [
+              "Q4"
+            ],
+            "input_paths": [
+              "A题.pdf",
+              "附件/附件1.xlsx",
+              "附件/附件2.xlsx",
+              "output/ENV/q2_boundary.json",
+              "output/GEOMETRY/q4_radius.json",
+              "planning/Q4/model_spec.md",
+              "src/Q4/solve.py",
+              "src/_utils/run_bounded.py"
+            ],
+            "output_paths": [
+              "output/Q4/teammate_four_scenarios_20260912/B_n1280.npz",
+              "output/Q4/teammate_four_scenarios_20260912/B_n1280.json"
+            ]
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/_utils/run_bounded.py",
+              "--limit-s",
+              "3540",
+              "--",
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/Q4/solve.py",
+              "--n",
+              "1280",
+              "--output",
+              "output/Q4/teammate_four_scenarios_20260912/B_n1280.npz",
+              "--spec-sha256",
+              "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+              "--radius-sha256",
+              "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+              "--scenario",
+              "mean_tail",
+              "--radius-method",
+              "linear",
+              "--radius-tail",
+              "error",
+              "--properties",
+              "appendix3",
+              "--constant-radius-m",
+              "0.02",
+              "--max-time-s",
+              "259200"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "队友另行计算的，你看看能不能复现"
+          }
+        },
+        {
+          "id": "c_n1280",
+          "kind": "project_verification_execution",
+          "event": "numerical_verification",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "component",
+            "component_ids": [
+              "Q4"
+            ],
+            "input_paths": [
+              "A题.pdf",
+              "附件/附件1.xlsx",
+              "附件/附件2.xlsx",
+              "output/ENV/q2_boundary.json",
+              "output/GEOMETRY/q4_radius.json",
+              "planning/Q4/model_spec.md",
+              "src/Q4/solve.py",
+              "src/_utils/run_bounded.py"
+            ],
+            "output_paths": [
+              "output/Q4/teammate_four_scenarios_20260912/C_n1280.npz",
+              "output/Q4/teammate_four_scenarios_20260912/C_n1280.json"
+            ]
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/_utils/run_bounded.py",
+              "--limit-s",
+              "3540",
+              "--",
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/Q4/solve.py",
+              "--n",
+              "1280",
+              "--output",
+              "output/Q4/teammate_four_scenarios_20260912/C_n1280.npz",
+              "--spec-sha256",
+              "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+              "--radius-sha256",
+              "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+              "--scenario",
+              "mean_tail",
+              "--radius-method",
+              "constant",
+              "--radius-tail",
+              "error",
+              "--properties",
+              "appendix4",
+              "--constant-radius-m",
+              "0.02",
+              "--max-time-s",
+              "604800"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "队友另行计算的，你看看能不能复现"
+          }
+        },
+        {
+          "id": "d_n1280",
+          "kind": "project_verification_execution",
+          "event": "numerical_verification",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "component",
+            "component_ids": [
+              "Q4"
+            ],
+            "input_paths": [
+              "A题.pdf",
+              "附件/附件1.xlsx",
+              "附件/附件2.xlsx",
+              "output/ENV/q2_boundary.json",
+              "output/GEOMETRY/q4_radius.json",
+              "planning/Q4/model_spec.md",
+              "src/Q4/solve.py",
+              "src/_utils/run_bounded.py"
+            ],
+            "output_paths": [
+              "output/Q4/teammate_four_scenarios_20260912/D_n1280.npz",
+              "output/Q4/teammate_four_scenarios_20260912/D_n1280.json"
+            ]
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/_utils/run_bounded.py",
+              "--limit-s",
+              "3540",
+              "--",
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "src/Q4/solve.py",
+              "--n",
+              "1280",
+              "--output",
+              "output/Q4/teammate_four_scenarios_20260912/D_n1280.npz",
+              "--spec-sha256",
+              "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+              "--radius-sha256",
+              "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+              "--scenario",
+              "mean_tail",
+              "--radius-method",
+              "linear",
+              "--radius-tail",
+              "error",
+              "--properties",
+              "appendix4",
+              "--constant-radius-m",
+              "0.02",
+              "--max-time-s",
+              "259200"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "队友另行计算的，你看看能不能复现"
+          }
+        }
+      ]
+    }
+  ]
+}

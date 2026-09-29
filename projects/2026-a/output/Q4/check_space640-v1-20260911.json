@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "question": "Q4",
+  "axes": [
+    "E2"
+  ],
+  "mode": "compare",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T20:20:26.282225+00:00",
+  "passed": false,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\verify.py": "6a87551fe3aec7a199c4203211cdb17ce981da33035464e7cee662ca854466f0",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\solve.py": "8a075fa2890c0f6265c33df8b75664f62b05e6ba4b765b8fa32cce69041dc0ef",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q4\\model_spec.md": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\GEOMETRY\\q4_radius.json": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件2.xlsx": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\runs_space640-v1-20260911.json": "0d8f7e88ac44c49173cf6a5772796754a08bfcc21f94c19fe793e460d56fcc37",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n640-v1-20260911.npz": "2fed7f994fd5468dbe19929d21572a2ae4c189ebad9d74396dd440cd7aa5e718",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n640-v1-20260911.json": "2eedf10e7f70f2b5480e0db8a630b0f6d346325d0f9c9d63e59314780d62cc7f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n160-v1-20260911.npz": "0841818e0bd8b176b8a6aeaaf377e64d19a21c6c7be3617dbcbf4bc490290918",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n160-v1-20260911.json": "eaf94d23c403adf8bc81884304e707f124614ffaa9548949d63a1d9974197a0d",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n320-v1-20260911.npz": "93ae0b33d9859d9112e2466b71ea2238db966a05d04957272da2cb789e6956f9",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n320-v1-20260911.json": "d46742001a43b2361ed656c461f5c9a84c9b99a6da75ae616975bb7d2b25b935"
+  },
+  "checks": [
+    {
+      "axis": "E2",
+      "id": "main_complete_drying_case",
+      "passed": true,
+      "observed": {
+        "status": "computed_pending_independent_verification",
+        "n_end": 183944
+      },
+      "target": "success=true and drying_complete=true; a 72h partial case is not a completed drying answer",
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "coarse0_complete_drying_case",
+      "passed": true,
+      "observed": {
+        "status": "computed_pending_independent_verification",
+        "n_end": 183887
+      },
+      "target": "success=true and drying_complete=true; a 72h partial case is not a completed drying answer",
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "coarse1_complete_drying_case",
+      "passed": true,
+      "observed": {
+        "status": "computed_pending_independent_verification",
+        "n_end": 183931
+      },
+      "target": "success=true and drying_complete=true; a 72h partial case is not a completed drying answer",
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "selected_spatial_temperature",
+      "passed": false,
+      "observed": 5.8402091987375115e-05,
+      "target": 2.5e-05,
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "selected_spatial_moisture",
+      "passed": false,
+      "observed": 0.0009721205001883004,
+      "target": 2.5e-05,
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "selected_spatial_crossing",
+      "passed": false,
+      "observed": 13.610494139691582,
+      "target": 1.0,
+      "note": null
+    }
+  ],
+  "details": {
+    "run_identities": [
+      {
+        "label": "main",
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n640-v1-20260911.npz",
+        "result_sha256": "2fed7f994fd5468dbe19929d21572a2ae4c189ebad9d74396dd440cd7aa5e718",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n640-v1-20260911.json",
+        "metadata_sha256": "2eedf10e7f70f2b5480e0db8a630b0f6d346325d0f9c9d63e59314780d62cc7f"
+      },
+      {
+        "label": "coarse0",
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n160-v1-20260911.npz",
+        "result_sha256": "0841818e0bd8b176b8a6aeaaf377e64d19a21c6c7be3617dbcbf4bc490290918",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n160-v1-20260911.json",
+        "metadata_sha256": "eaf94d23c403adf8bc81884304e707f124614ffaa9548949d63a1d9974197a0d"
+      },
+      {
+        "label": "coarse1",
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n320-v1-20260911.npz",
+        "result_sha256": "93ae0b33d9859d9112e2466b71ea2238db966a05d04957272da2cb789e6956f9",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n320-v1-20260911.json",
+        "metadata_sha256": "d46742001a43b2361ed656c461f5c9a84c9b99a6da75ae616975bb7d2b25b935"
+      }
+    ],
+    "selected_main": {
+      "label": "main",
+      "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n640-v1-20260911.npz",
+      "result_sha256": "2fed7f994fd5468dbe19929d21572a2ae4c189ebad9d74396dd440cd7aa5e718",
+      "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q4\\run_n640-v1-20260911.json",
+      "metadata_sha256": "2eedf10e7f70f2b5480e0db8a630b0f6d346325d0f9c9d63e59314780d62cc7f",
+      "grid_n": 640,
+      "tight": false,
+      "method": "material_coordinate_nodal_finite_volume_segmented_BDF",
+      "scenario": "mean_tail",
+      "properties": "appendix4",
+      "radius_method": "linear"
+    },
+    "comparison_part": "spatial",
+    "spatial_comparisons": [
+      {
+        "low": "coarse0",
+        "high": "coarse1",
+        "temperature": {
+          "fixed_physical_columns": 0.0002213691601511414,
+          "moving_surface": 8.050571896944803e-05,
+          "common_full_material_snapshots": 8.598626784817043e-06,
+          "maximum": 0.0002213691601511414
+        },
+        "moisture": {
+          "fixed_physical_columns": 0.0021368534242720144,
+          "moving_surface": 0.003443884762308169,
+          "common_full_material_snapshots": 0.0021495283693737516,
+          "maximum": 0.003443884762308169
+        },
+        "maximum_moisture_trace": 2.2539105065055853e-05,
+        "crossing_difference_s": 43.73335282562766,
+        "n_end_pair": [
+          183887,
+          183931
+        ],
+        "integer_endpoint_equal": false,
+        "shared_minute_and_endpoint_times": 4321,
+        "common_end_s": 259200
+      },
+      {
+        "low": "coarse1",
+        "high": "main",
+        "temperature": {
+          "fixed_physical_columns": 5.8402091987375115e-05,
+          "moving_surface": 2.0066144067243386e-05,
+          "common_full_material_snapshots": 2.1337998461490315e-06,
+          "maximum": 5.8402091987375115e-05
+        },
+        "moisture": {
+          "fixed_physical_columns": 0.0009721205001883004,
+          "moving_surface": 0.0008282172058193815,
+          "common_full_material_snapshots": 0.0009688842684329596,
+          "maximum": 0.0009721205001883004
+        },
+        "maximum_moisture_trace": 7.023556720942015e-06,
+        "crossing_difference_s": 13.610494139691582,
+        "n_end_pair": [
+          183931,
+          183944
+        ],
+        "integer_endpoint_equal": false,
+        "shared_minute_and_endpoint_times": 4321,
+        "common_end_s": 259200
+      }
+    ],
+    "integer_stability": {
+      "selected_space": [
+        183931,
+        183944
+      ],
+      "selected_space_equal": false,
+      "role": "reported separately; numerical field/crossing acceptance is not exact integer certification"
+    }
+  },
+  "claim_boundary": "Only the actually executed axes/checks are reported. No E4 observation is supplied; no continuum strong-solution theorem, arbitrary-step BDF positivity, per-cell correct rounding proof, or cross-grid integer certainty is inferred."
+}

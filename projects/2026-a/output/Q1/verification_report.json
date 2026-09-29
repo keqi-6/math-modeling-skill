@@ -1,0 +1,1872 @@
+{
+  "schema_version": "1.0",
+  "question": "Q1",
+  "role": "auxiliary_validator",
+  "created_at": "2026-09-10T12:20:20.957386+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "frozen_spec_identity",
+      "passed": true
+    },
+    {
+      "name": "frozen_boundary_identity",
+      "passed": true
+    },
+    {
+      "name": "raw_workbook_identity",
+      "passed": true
+    },
+    {
+      "name": "frozen_nodes_equal_raw_worksheet",
+      "passed": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "name": "boundary_temperature_interpolation",
+      "passed": true,
+      "value": 7.105427357601002e-15,
+      "limit": 1e-12
+    },
+    {
+      "name": "boundary_moisture_interpolation",
+      "passed": true,
+      "value": 6.938893903907228e-18,
+      "limit": 1e-14
+    },
+    {
+      "name": "boundary_rejects_negative",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Environment query outside [0,1800] seconds"
+    },
+    {
+      "name": "boundary_rejects_above_end",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Environment query outside [0,1800] seconds"
+    },
+    {
+      "name": "boundary_rejects_nan",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Environment query outside [0,1800] seconds"
+    },
+    {
+      "name": "boundary_rejects_infinity",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Environment query outside [0,1800] seconds"
+    },
+    {
+      "name": "boundary_rejects_wrong_identity",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Environment identity differs from the frozen Q1 interface"
+    },
+    {
+      "name": "grid_rejects_0",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "N must be a positive multiple of 20"
+    },
+    {
+      "name": "grid_rejects_10",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "N must be a positive multiple of 20"
+    },
+    {
+      "name": "grid_rejects_21",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "N must be a positive multiple of 20"
+    },
+    {
+      "name": "grid_rejects_20.0",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "N must be a positive multiple of 20"
+    },
+    {
+      "name": "field_rejects_unknown_name",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Unknown field"
+    },
+    {
+      "name": "temperature_geometry_volume",
+      "passed": true,
+      "value": 4.573977915173222e-20,
+      "limit": 1e-18
+    },
+    {
+      "name": "temperature_geometry_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "temperature_coefficients_contract",
+      "passed": true
+    },
+    {
+      "name": "temperature_rhs_independent_formula",
+      "passed": true,
+      "value": 4.946709649159331e-16,
+      "limit": 1e-11
+    },
+    {
+      "name": "temperature_algebraic_conservation",
+      "passed": true,
+      "value": 9.429215572834696e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "temperature_integral_rhs",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "name": "temperature_jacobian_direction_0",
+      "passed": true,
+      "value": 1.1817809863494658e-11,
+      "limit": 1e-05,
+      "step": 0.00032700000000000003,
+      "worst_component": 39,
+      "direction_norm": "infinity norm 1"
+    },
+    {
+      "name": "temperature_jacobian_direction_1",
+      "passed": true,
+      "value": 4.177747037203972e-12,
+      "limit": 1e-05,
+      "step": 0.00032700000000000003,
+      "worst_component": 0,
+      "direction_norm": "infinity norm 1"
+    },
+    {
+      "name": "temperature_rejects_nonfinite",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Nonfinite field state"
+    },
+    {
+      "name": "temperature_constant_equilibrium",
+      "passed": true,
+      "maximum_rhs": 0.0
+    },
+    {
+      "name": "temperature_constant_environment_dissipation_identity",
+      "passed": true,
+      "value": 3.9259410937853946e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "temperature_constant_environment_dissipation_sign",
+      "passed": true
+    },
+    {
+      "name": "temperature_zero_exchange_conservation",
+      "passed": true,
+      "value": 9.523239529153965e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "temperature_zero_exchange_accumulator",
+      "passed": true
+    },
+    {
+      "name": "temperature_zero_exchange_constant_rhs",
+      "passed": true
+    },
+    {
+      "name": "moisture_geometry_volume",
+      "passed": true,
+      "value": 4.573977915173222e-20,
+      "limit": 1e-18
+    },
+    {
+      "name": "moisture_geometry_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "moisture_coefficients_contract",
+      "passed": true
+    },
+    {
+      "name": "moisture_rhs_independent_formula",
+      "passed": true,
+      "value": 2.096963106995094e-15,
+      "limit": 1e-11
+    },
+    {
+      "name": "moisture_algebraic_conservation",
+      "passed": true,
+      "value": 2.905234685556895e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "moisture_integral_rhs",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "name": "moisture_jacobian_direction_0",
+      "passed": true,
+      "value": 5.1925559898106365e-11,
+      "limit": 1e-05,
+      "step": 2.57e-05,
+      "worst_component": 37,
+      "direction_norm": "infinity norm 1"
+    },
+    {
+      "name": "moisture_jacobian_direction_1",
+      "passed": true,
+      "value": 2.1352094456351046e-11,
+      "limit": 1e-05,
+      "step": 2.57e-05,
+      "worst_component": 40,
+      "direction_norm": "infinity norm 1"
+    },
+    {
+      "name": "moisture_rejects_nonfinite",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Nonfinite field state"
+    },
+    {
+      "name": "moisture_rejects_0.0",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Nonpositive moisture state; clipping is forbidden"
+    },
+    {
+      "name": "moisture_rejects_-0.01",
+      "passed": true,
+      "exception": "ValueError",
+      "message": "Nonpositive moisture state; clipping is forbidden"
+    },
+    {
+      "name": "moisture_constant_equilibrium",
+      "passed": true,
+      "maximum_rhs": 0.0
+    },
+    {
+      "name": "moisture_constant_environment_dissipation_identity",
+      "passed": true,
+      "value": 5.845344831300444e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "moisture_constant_environment_dissipation_sign",
+      "passed": true
+    },
+    {
+      "name": "moisture_zero_exchange_conservation",
+      "passed": true,
+      "value": 4.780232453744181e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "moisture_zero_exchange_accumulator",
+      "passed": true
+    },
+    {
+      "name": "moisture_zero_exchange_constant_rhs",
+      "passed": true
+    },
+    {
+      "name": "run_0_time_axis",
+      "passed": true
+    },
+    {
+      "name": "run_0_snapshot_times",
+      "passed": true
+    },
+    {
+      "name": "run_0_output_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_0_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_0_result_sha256",
+      "passed": true,
+      "recorded": "ea0c1deef82f7086d5ae123201229840072863378fbb63f0454ea6321028bde8",
+      "expected": "ea0c1deef82f7086d5ae123201229840072863378fbb63f0454ea6321028bde8"
+    },
+    {
+      "name": "run_0_spec_sha256",
+      "passed": true,
+      "recorded": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+      "expected": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+    },
+    {
+      "name": "run_0_boundary_sha256",
+      "passed": true,
+      "recorded": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+      "expected": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+    },
+    {
+      "name": "run_0_solver_sha256",
+      "passed": true,
+      "recorded": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+      "expected": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+    },
+    {
+      "name": "run_0_method",
+      "passed": true
+    },
+    {
+      "name": "run_0_max_step",
+      "passed": true
+    },
+    {
+      "name": "run_1_time_axis",
+      "passed": true
+    },
+    {
+      "name": "run_1_snapshot_times",
+      "passed": true
+    },
+    {
+      "name": "run_1_output_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_1_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_1_result_sha256",
+      "passed": true,
+      "recorded": "36499e98e9f53064e30cc15064139c653eac2b957e8d5cd8cca3847d6c14c959",
+      "expected": "36499e98e9f53064e30cc15064139c653eac2b957e8d5cd8cca3847d6c14c959"
+    },
+    {
+      "name": "run_1_spec_sha256",
+      "passed": true,
+      "recorded": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+      "expected": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+    },
+    {
+      "name": "run_1_boundary_sha256",
+      "passed": true,
+      "recorded": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+      "expected": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+    },
+    {
+      "name": "run_1_solver_sha256",
+      "passed": true,
+      "recorded": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+      "expected": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+    },
+    {
+      "name": "run_1_method",
+      "passed": true
+    },
+    {
+      "name": "run_1_max_step",
+      "passed": true
+    },
+    {
+      "name": "run_2_time_axis",
+      "passed": true
+    },
+    {
+      "name": "run_2_snapshot_times",
+      "passed": true
+    },
+    {
+      "name": "run_2_output_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_2_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_2_result_sha256",
+      "passed": true,
+      "recorded": "92ef34832c53a683ea5aeee4c11b5ac742c8a6e5f3e77c709a6c5ee154e17543",
+      "expected": "92ef34832c53a683ea5aeee4c11b5ac742c8a6e5f3e77c709a6c5ee154e17543"
+    },
+    {
+      "name": "run_2_spec_sha256",
+      "passed": true,
+      "recorded": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+      "expected": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+    },
+    {
+      "name": "run_2_boundary_sha256",
+      "passed": true,
+      "recorded": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+      "expected": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+    },
+    {
+      "name": "run_2_solver_sha256",
+      "passed": true,
+      "recorded": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+      "expected": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+    },
+    {
+      "name": "run_2_method",
+      "passed": true
+    },
+    {
+      "name": "run_2_max_step",
+      "passed": true
+    },
+    {
+      "name": "run_3_time_axis",
+      "passed": true
+    },
+    {
+      "name": "run_3_snapshot_times",
+      "passed": true
+    },
+    {
+      "name": "run_3_output_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_3_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_3_result_sha256",
+      "passed": true,
+      "recorded": "602577aa83ca2e5ee49c44e6ac6cdd6e3092e16b207c047042595adedab4d12a",
+      "expected": "602577aa83ca2e5ee49c44e6ac6cdd6e3092e16b207c047042595adedab4d12a"
+    },
+    {
+      "name": "run_3_spec_sha256",
+      "passed": true,
+      "recorded": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+      "expected": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+    },
+    {
+      "name": "run_3_boundary_sha256",
+      "passed": true,
+      "recorded": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+      "expected": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+    },
+    {
+      "name": "run_3_solver_sha256",
+      "passed": true,
+      "recorded": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+      "expected": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+    },
+    {
+      "name": "run_3_method",
+      "passed": true
+    },
+    {
+      "name": "run_3_max_step",
+      "passed": true
+    },
+    {
+      "name": "run_4_time_axis",
+      "passed": true
+    },
+    {
+      "name": "run_4_snapshot_times",
+      "passed": true
+    },
+    {
+      "name": "run_4_output_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_4_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_4_result_sha256",
+      "passed": true,
+      "recorded": "9df064144ef03a977d04355a742f80cdff2a3b852f70a165aac160bd2e4e035f",
+      "expected": "9df064144ef03a977d04355a742f80cdff2a3b852f70a165aac160bd2e4e035f"
+    },
+    {
+      "name": "run_4_spec_sha256",
+      "passed": true,
+      "recorded": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+      "expected": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+    },
+    {
+      "name": "run_4_boundary_sha256",
+      "passed": true,
+      "recorded": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+      "expected": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+    },
+    {
+      "name": "run_4_solver_sha256",
+      "passed": true,
+      "recorded": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+      "expected": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+    },
+    {
+      "name": "run_4_method",
+      "passed": true
+    },
+    {
+      "name": "run_4_max_step",
+      "passed": true
+    },
+    {
+      "name": "run_5_time_axis",
+      "passed": true
+    },
+    {
+      "name": "run_5_snapshot_times",
+      "passed": true
+    },
+    {
+      "name": "run_5_output_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_5_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "run_5_result_sha256",
+      "passed": true,
+      "recorded": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e",
+      "expected": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e"
+    },
+    {
+      "name": "run_5_spec_sha256",
+      "passed": true,
+      "recorded": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+      "expected": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+    },
+    {
+      "name": "run_5_boundary_sha256",
+      "passed": true,
+      "recorded": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+      "expected": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+    },
+    {
+      "name": "run_5_solver_sha256",
+      "passed": true,
+      "recorded": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+      "expected": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+    },
+    {
+      "name": "run_5_method",
+      "passed": true
+    },
+    {
+      "name": "run_5_max_step",
+      "passed": true
+    },
+    {
+      "name": "spatial_refinement_ratio",
+      "passed": true,
+      "mesh_sizes": [
+        160,
+        320,
+        640,
+        1280,
+        2560,
+        5120
+      ]
+    },
+    {
+      "name": "run_0_baseline_tolerances",
+      "passed": true
+    },
+    {
+      "name": "run_0_temperature_bounds",
+      "passed": true,
+      "observed_min": 28.0,
+      "observed_max": 36.78555618966547,
+      "allowed_min": 27.9999999,
+      "allowed_max": 41.5130001
+    },
+    {
+      "name": "run_0_temperature_initial",
+      "passed": true
+    },
+    {
+      "name": "run_0_temperature_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_0_temperature_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_0_temperature_independent_snapshot_mean",
+      "passed": true,
+      "value": 1.0658141036401503e-14,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_0_temperature_snapshot_integral_balance",
+      "passed": true,
+      "value": 1.9044297393730908e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_0_temperature_all_time_internal_balance",
+      "passed": true,
+      "value": 7.617718957492363e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1200,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_0_moisture_bounds",
+      "passed": true,
+      "observed_min": 1.510261604405314,
+      "observed_max": 2.55,
+      "allowed_min": 0.01962999,
+      "allowed_max": 2.5500000099999998
+    },
+    {
+      "name": "run_0_moisture_initial",
+      "passed": true
+    },
+    {
+      "name": "run_0_moisture_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_0_moisture_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_0_moisture_independent_snapshot_mean",
+      "passed": true,
+      "value": 4.440892098500626e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_0_moisture_snapshot_integral_balance",
+      "passed": true,
+      "value": 1.8601507861270908e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_0_moisture_all_time_internal_balance",
+      "passed": true,
+      "value": 7.174867317918779e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1687,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_1_baseline_tolerances",
+      "passed": true
+    },
+    {
+      "name": "run_1_temperature_bounds",
+      "passed": true,
+      "observed_min": 28.0,
+      "observed_max": 36.78555937264238,
+      "allowed_min": 27.9999999,
+      "allowed_max": 41.5130001
+    },
+    {
+      "name": "run_1_temperature_initial",
+      "passed": true
+    },
+    {
+      "name": "run_1_temperature_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_1_temperature_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_1_temperature_independent_snapshot_mean",
+      "passed": true,
+      "value": 1.0658141036401503e-14,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_1_temperature_snapshot_integral_balance",
+      "passed": true,
+      "value": 3.8088594787461816e-17,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_1_temperature_all_time_internal_balance",
+      "passed": true,
+      "value": 8.379490853241599e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1575,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_1_moisture_bounds",
+      "passed": true,
+      "observed_min": 1.5102412993526722,
+      "observed_max": 2.55,
+      "allowed_min": 0.01962999,
+      "allowed_max": 2.5500000099999998
+    },
+    {
+      "name": "run_1_moisture_initial",
+      "passed": true
+    },
+    {
+      "name": "run_1_moisture_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_1_moisture_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_1_moisture_independent_snapshot_mean",
+      "passed": true,
+      "value": 8.881784197001252e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_1_moisture_snapshot_integral_balance",
+      "passed": true,
+      "value": 1.0629433063583377e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_1_moisture_all_time_internal_balance",
+      "passed": true,
+      "value": 5.979056098265649e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1282,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_2_baseline_tolerances",
+      "passed": true
+    },
+    {
+      "name": "run_2_temperature_bounds",
+      "passed": true,
+      "observed_min": 28.0,
+      "observed_max": 36.78556019939937,
+      "allowed_min": 27.9999999,
+      "allowed_max": 41.5130001
+    },
+    {
+      "name": "run_2_temperature_initial",
+      "passed": true
+    },
+    {
+      "name": "run_2_temperature_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_2_temperature_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_2_temperature_independent_snapshot_mean",
+      "passed": true,
+      "value": 1.0658141036401503e-14,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_2_temperature_snapshot_integral_balance",
+      "passed": true,
+      "value": 2.285315687247709e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_2_temperature_all_time_internal_balance",
+      "passed": true,
+      "value": 1.1045692488363926e-15,
+      "limit": 1e-07,
+      "worst_time_s": 1315,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_2_moisture_bounds",
+      "passed": true,
+      "observed_min": 1.5102362615971747,
+      "observed_max": 2.5500000000000003,
+      "allowed_min": 0.01962999,
+      "allowed_max": 2.5500000099999998
+    },
+    {
+      "name": "run_2_moisture_initial",
+      "passed": true
+    },
+    {
+      "name": "run_2_moisture_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_2_moisture_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_2_moisture_independent_snapshot_mean",
+      "passed": true,
+      "value": 1.3322676295501878e-15,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_2_moisture_snapshot_integral_balance",
+      "passed": true,
+      "value": 7.972074797687532e-17,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_2_moisture_all_time_internal_balance",
+      "passed": true,
+      "value": 1.0762300976878169e-15,
+      "limit": 1e-07,
+      "worst_time_s": 1612,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_3_baseline_tolerances",
+      "passed": true
+    },
+    {
+      "name": "run_3_temperature_bounds",
+      "passed": true,
+      "observed_min": 28.0,
+      "observed_max": 36.78556040638127,
+      "allowed_min": 27.9999999,
+      "allowed_max": 41.5130001
+    },
+    {
+      "name": "run_3_temperature_initial",
+      "passed": true
+    },
+    {
+      "name": "run_3_temperature_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_3_temperature_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_3_temperature_independent_snapshot_mean",
+      "passed": true,
+      "value": 2.1316282072803006e-14,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_3_temperature_snapshot_integral_balance",
+      "passed": true,
+      "value": 1.9044297393730908e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_3_temperature_all_time_internal_balance",
+      "passed": true,
+      "value": 1.5235437914984727e-15,
+      "limit": 1e-07,
+      "worst_time_s": 1482,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_3_moisture_bounds",
+      "passed": true,
+      "observed_min": 1.5102349898155902,
+      "observed_max": 2.55,
+      "allowed_min": 0.01962999,
+      "allowed_max": 2.5500000099999998
+    },
+    {
+      "name": "run_3_moisture_initial",
+      "passed": true
+    },
+    {
+      "name": "run_3_moisture_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_3_moisture_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_3_moisture_independent_snapshot_mean",
+      "passed": true,
+      "value": 8.881784197001252e-16,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_3_moisture_snapshot_integral_balance",
+      "passed": true,
+      "value": 1.993018699421883e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_3_moisture_all_time_internal_balance",
+      "passed": true,
+      "value": 1.1493074499999525e-15,
+      "limit": 1e-07,
+      "worst_time_s": 172,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_4_baseline_tolerances",
+      "passed": true
+    },
+    {
+      "name": "run_4_temperature_bounds",
+      "passed": true,
+      "observed_min": 28.0,
+      "observed_max": 36.785560460442944,
+      "allowed_min": 27.9999999,
+      "allowed_max": 41.5130001
+    },
+    {
+      "name": "run_4_temperature_initial",
+      "passed": true
+    },
+    {
+      "name": "run_4_temperature_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_4_temperature_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_4_temperature_independent_snapshot_mean",
+      "passed": true,
+      "value": 3.907985046680551e-14,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_4_temperature_snapshot_integral_balance",
+      "passed": true,
+      "value": 2.285315687247709e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_4_temperature_all_time_internal_balance",
+      "passed": true,
+      "value": 2.0186955237354763e-15,
+      "limit": 1e-07,
+      "worst_time_s": 1723,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_4_moisture_bounds",
+      "passed": true,
+      "observed_min": 1.5102346769617092,
+      "observed_max": 2.5500000000000003,
+      "allowed_min": 0.01962999,
+      "allowed_max": 2.5500000099999998
+    },
+    {
+      "name": "run_4_moisture_initial",
+      "passed": true
+    },
+    {
+      "name": "run_4_moisture_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_4_moisture_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_4_moisture_independent_snapshot_mean",
+      "passed": true,
+      "value": 2.220446049250313e-15,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_4_moisture_snapshot_integral_balance",
+      "passed": true,
+      "value": 1.0795517955201866e-17,
+      "limit": 1e-07,
+      "worst_time_s": 60,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_4_moisture_all_time_internal_balance",
+      "passed": true,
+      "value": 1.8136470164739136e-15,
+      "limit": 1e-07,
+      "worst_time_s": 884,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_5_baseline_tolerances",
+      "passed": true
+    },
+    {
+      "name": "run_5_temperature_bounds",
+      "passed": true,
+      "observed_min": 28.0,
+      "observed_max": 36.785560475221004,
+      "allowed_min": 27.9999999,
+      "allowed_max": 41.5130001
+    },
+    {
+      "name": "run_5_temperature_initial",
+      "passed": true
+    },
+    {
+      "name": "run_5_temperature_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_5_temperature_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_5_temperature_independent_snapshot_mean",
+      "passed": true,
+      "value": 3.197442310920451e-14,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_5_temperature_snapshot_integral_balance",
+      "passed": true,
+      "value": 1.1426578436238545e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_5_temperature_all_time_internal_balance",
+      "passed": true,
+      "value": 2.9328217986345597e-15,
+      "limit": 1e-07,
+      "worst_time_s": 1704,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "run_5_moisture_bounds",
+      "passed": true,
+      "observed_min": 1.5102345980487442,
+      "observed_max": 2.5500000000000003,
+      "allowed_min": 0.01962999,
+      "allowed_max": 2.5500000099999998
+    },
+    {
+      "name": "run_5_moisture_initial",
+      "passed": true
+    },
+    {
+      "name": "run_5_moisture_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "run_5_moisture_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "run_5_moisture_independent_snapshot_mean",
+      "passed": true,
+      "value": 3.552713678800501e-15,
+      "limit": 1e-10
+    },
+    {
+      "name": "run_5_moisture_snapshot_integral_balance",
+      "passed": true,
+      "value": 3.986037398843766e-17,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "run_5_moisture_all_time_internal_balance",
+      "passed": true,
+      "value": 2.368370554479671e-15,
+      "limit": 1e-07,
+      "worst_time_s": 305,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "tight_time_axis",
+      "passed": true
+    },
+    {
+      "name": "tight_snapshot_times",
+      "passed": true
+    },
+    {
+      "name": "tight_output_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "tight_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-16
+    },
+    {
+      "name": "tight_result_sha256",
+      "passed": true,
+      "recorded": "595f85430daf73b3012fa6c6900d829d91aba30996615f49a95c68e297e5cc91",
+      "expected": "595f85430daf73b3012fa6c6900d829d91aba30996615f49a95c68e297e5cc91"
+    },
+    {
+      "name": "tight_spec_sha256",
+      "passed": true,
+      "recorded": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+      "expected": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+    },
+    {
+      "name": "tight_boundary_sha256",
+      "passed": true,
+      "recorded": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+      "expected": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+    },
+    {
+      "name": "tight_solver_sha256",
+      "passed": true,
+      "recorded": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+      "expected": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+    },
+    {
+      "name": "tight_method",
+      "passed": true
+    },
+    {
+      "name": "tight_max_step",
+      "passed": true
+    },
+    {
+      "name": "tight_temperature_bounds",
+      "passed": true,
+      "observed_min": 28.0,
+      "observed_max": 36.78556035652975,
+      "allowed_min": 27.9999999,
+      "allowed_max": 41.5130001
+    },
+    {
+      "name": "tight_temperature_initial",
+      "passed": true
+    },
+    {
+      "name": "tight_temperature_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "tight_temperature_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "tight_temperature_independent_snapshot_mean",
+      "passed": true,
+      "value": 3.552713678800501e-14,
+      "limit": 1e-10
+    },
+    {
+      "name": "tight_temperature_snapshot_integral_balance",
+      "passed": true,
+      "value": 1.9044297393730908e-16,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "tight_temperature_all_time_internal_balance",
+      "passed": true,
+      "value": 2.856644609059636e-15,
+      "limit": 1e-07,
+      "worst_time_s": 1351,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "tight_moisture_bounds",
+      "passed": true,
+      "observed_min": 1.5102346248785963,
+      "observed_max": 2.5500000000000003,
+      "allowed_min": 0.01962999,
+      "allowed_max": 2.5500000099999998
+    },
+    {
+      "name": "tight_moisture_initial",
+      "passed": true
+    },
+    {
+      "name": "tight_moisture_snapshot_samples",
+      "passed": true
+    },
+    {
+      "name": "tight_moisture_snapshot_accumulator",
+      "passed": true
+    },
+    {
+      "name": "tight_moisture_independent_snapshot_mean",
+      "passed": true,
+      "value": 2.6645352591003757e-15,
+      "limit": 1e-10
+    },
+    {
+      "name": "tight_moisture_snapshot_integral_balance",
+      "passed": true,
+      "value": 5.3147165317916883e-17,
+      "limit": 1e-07,
+      "worst_time_s": 1800,
+      "interpretation": "Independent full-grid storage; same-integrator accumulated flux"
+    },
+    {
+      "name": "tight_moisture_all_time_internal_balance",
+      "passed": true,
+      "value": 2.21889415202303e-15,
+      "limit": 1e-07,
+      "worst_time_s": 455,
+      "interpretation": "Internal consistency of stored mean and accumulated flux"
+    },
+    {
+      "name": "tight_mesh_matches",
+      "passed": true
+    },
+    {
+      "name": "tight_tolerances",
+      "passed": true
+    },
+    {
+      "name": "temperature_spatial_differences_decrease",
+      "passed": true,
+      "comparisons": [
+        {
+          "coarse_n": 160,
+          "fine_n": 320,
+          "max_abs": 2.3018236976923845e-05,
+          "time_s": 300,
+          "radius_m": 0.02,
+          "first": 28.84882324893601,
+          "second": 28.848846267172988,
+          "differing_four_decimal_cells": 1310
+        },
+        {
+          "coarse_n": 320,
+          "fine_n": 640,
+          "max_abs": 5.8128863642537e-06,
+          "time_s": 300,
+          "radius_m": 0.02,
+          "first": 28.848846267172988,
+          "second": 28.848852080059352,
+          "differing_four_decimal_cells": 349
+        },
+        {
+          "coarse_n": 640,
+          "fine_n": 1280,
+          "max_abs": 1.4474341334391738e-06,
+          "time_s": 294,
+          "radius_m": 0.02,
+          "first": 28.821000720752746,
+          "second": 28.82100216818688,
+          "differing_four_decimal_cells": 87
+        },
+        {
+          "coarse_n": 1280,
+          "fine_n": 2560,
+          "max_abs": 3.665877628122871e-07,
+          "time_s": 296,
+          "radius_m": 0.02,
+          "first": 28.83022826650947,
+          "second": 28.83022863309723,
+          "differing_four_decimal_cells": 29
+        },
+        {
+          "coarse_n": 2560,
+          "fine_n": 5120,
+          "max_abs": 2.1915562342655903e-07,
+          "time_s": 307,
+          "radius_m": 0.02,
+          "first": 28.87981300489933,
+          "second": 28.879813224054953,
+          "differing_four_decimal_cells": 5
+        }
+      ],
+      "observed_orders": [
+        1.9854507273550208,
+        2.0057570068884534,
+        1.9812671660907957,
+        0.7422029294102513
+      ]
+    },
+    {
+      "name": "temperature_spatial_final_difference",
+      "passed": true,
+      "value": 2.1915562342655903e-07,
+      "limit": 2e-05,
+      "coarse_n": 2560,
+      "fine_n": 5120,
+      "time_s": 307,
+      "radius_m": 0.02,
+      "first": 28.87981300489933,
+      "second": 28.879813224054953,
+      "differing_four_decimal_cells": 5
+    },
+    {
+      "name": "temperature_time_tolerance_difference",
+      "passed": true,
+      "value": 3.31721043522748e-07,
+      "limit": 5e-06,
+      "time_s": 243,
+      "radius_m": 0.02,
+      "first": 28.611333250435575,
+      "second": 28.61133291871453,
+      "differing_four_decimal_cells": 42
+    },
+    {
+      "name": "moisture_spatial_differences_decrease",
+      "passed": true,
+      "comparisons": [
+        {
+          "coarse_n": 160,
+          "fine_n": 320,
+          "max_abs": 0.005931937301716594,
+          "time_s": 1,
+          "radius_m": 0.02,
+          "first": 2.525389226278909,
+          "second": 2.5194572889771925,
+          "differing_four_decimal_cells": 4532
+        },
+        {
+          "coarse_n": 320,
+          "fine_n": 640,
+          "max_abs": 0.0013341686643744133,
+          "time_s": 1,
+          "radius_m": 0.02,
+          "first": 2.5194572889771925,
+          "second": 2.518123120312818,
+          "differing_four_decimal_cells": 1338
+        },
+        {
+          "coarse_n": 640,
+          "fine_n": 1280,
+          "max_abs": 0.00029959032774451444,
+          "time_s": 1,
+          "radius_m": 0.02,
+          "first": 2.518123120312818,
+          "second": 2.5178235299850735,
+          "differing_four_decimal_cells": 343
+        },
+        {
+          "coarse_n": 1280,
+          "fine_n": 2560,
+          "max_abs": 7.344555309973799e-05,
+          "time_s": 1,
+          "radius_m": 0.02,
+          "first": 2.5178235299850735,
+          "second": 2.517750084431974,
+          "differing_four_decimal_cells": 84
+        },
+        {
+          "coarse_n": 2560,
+          "fine_n": 5120,
+          "max_abs": 1.827241892016218e-05,
+          "time_s": 1,
+          "radius_m": 0.02,
+          "first": 2.517750084431974,
+          "second": 2.5177318120130536,
+          "differing_four_decimal_cells": 26
+        }
+      ],
+      "observed_orders": [
+        2.1525622869135153,
+        2.1548781098912944,
+        2.0282439993950336,
+        2.0070075107723646
+      ]
+    },
+    {
+      "name": "moisture_spatial_final_difference",
+      "passed": true,
+      "value": 1.827241892016218e-05,
+      "limit": 2e-05,
+      "coarse_n": 2560,
+      "fine_n": 5120,
+      "time_s": 1,
+      "radius_m": 0.02,
+      "first": 2.517750084431974,
+      "second": 2.5177318120130536,
+      "differing_four_decimal_cells": 26
+    },
+    {
+      "name": "moisture_time_tolerance_difference",
+      "passed": true,
+      "value": 5.762876664761052e-08,
+      "limit": 5e-06,
+      "time_s": 2,
+      "radius_m": 0.02,
+      "first": 2.5044964627504434,
+      "second": 2.50449652037921,
+      "differing_four_decimal_cells": 2
+    },
+    {
+      "name": "temperature_reference_modal_truncation",
+      "passed": true,
+      "value": 1.5648552675884275e-08,
+      "limit": 1e-07,
+      "modes": 512,
+      "prior_modes": 256,
+      "history": [
+        {
+          "modes": 512,
+          "max_abs": 1.5648552675884275e-08,
+          "time_s": 241,
+          "radius_m": 0.02,
+          "first": 28.604770586437503,
+          "second": 28.60477057078895,
+          "differing_four_decimal_cells": 0,
+          "maximum_root_residual": 3.6058343810818627e-12
+        }
+      ]
+    },
+    {
+      "name": "actual_temperature_bessel_reference",
+      "passed": true,
+      "value": 3.2531355032006104e-07,
+      "limit": 5e-05,
+      "modes": 512,
+      "time_s": 241,
+      "radius_m": 0.02,
+      "first": 28.6047708961025,
+      "second": 28.60477057078895,
+      "differing_four_decimal_cells": 46
+    },
+    {
+      "name": "moisture_reference_modal_truncation",
+      "passed": true,
+      "value": 1.329483190204428e-10,
+      "limit": 1e-07,
+      "modes": 1024,
+      "prior_modes": 512,
+      "history": [
+        {
+          "modes": 512,
+          "max_abs": 1.5593751800935252e-07,
+          "time_s": 1,
+          "radius_m": 0.0,
+          "first": 2.5499998440753937,
+          "second": 2.5500000000129117,
+          "differing_four_decimal_cells": 0,
+          "maximum_root_residual": 3.511357871133214e-12
+        },
+        {
+          "modes": 1024,
+          "max_abs": 1.329483190204428e-10,
+          "time_s": 1349,
+          "radius_m": 0.02,
+          "first": 1.6513809639082688,
+          "second": 1.6513809637753205,
+          "differing_four_decimal_cells": 0,
+          "maximum_root_residual": 9.885314788959931e-12
+        }
+      ]
+    },
+    {
+      "name": "constant_D_moisture_bessel_reference",
+      "passed": true,
+      "value": 5.988352942409847e-06,
+      "limit": 5e-05,
+      "modes": 1024,
+      "n": 5120,
+      "D_star": 4.937655094173937e-09,
+      "time_s": 1,
+      "radius_m": 0.02,
+      "first": 2.5177749969490906,
+      "second": 2.517769008596148,
+      "differing_four_decimal_cells": 4
+    },
+    {
+      "name": "constant_D_snapshot_integral_balance",
+      "passed": true,
+      "value": 6.64339566473961e-17,
+      "limit": 1e-07
+    }
+  ],
+  "details": {
+    "identities": {
+      "specification": {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q1\\model_spec.md",
+        "sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+      },
+      "boundary": {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q1_boundary.json",
+        "sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+      },
+      "raw_environment": {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx",
+        "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7"
+      },
+      "verifier": {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q1\\verify.py",
+        "sha256": "3b5c4e31f795d257e924cd5144d8785cc2ba07cc6d52dbf20369086bc0bea5f1"
+      },
+      "solver": {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q1\\solve.py",
+        "sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+      }
+    },
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    },
+    "runs": [
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n160.npz",
+        "sha256": "ea0c1deef82f7086d5ae123201229840072863378fbb63f0454ea6321028bde8",
+        "metadata_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n160.json",
+        "metadata_sha256": "4ca78be4f864dda68c4278466f13d0ec16e1a96d3908bc3b04f6159dfb0ec002",
+        "n": 160,
+        "meta": {
+          "schema_version": "1.0",
+          "question": "Q1",
+          "specification": "Q1-v1",
+          "spec_sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+          "boundary_sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+          "solver_sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+          "n": 160,
+          "rtol": 2e-09,
+          "atol_scale": 1.0,
+          "atol_temperature": 2e-09,
+          "atol_moisture": 2e-11,
+          "max_step_s": 5.0,
+          "method": "nodal_finite_volume_segmented_BDF",
+          "python": "3.12.14",
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "status": "computed_pending_independent_verification",
+          "fields": {
+            "temperature": {
+              "nfev": 2740,
+              "njev": 30,
+              "nlu": 392,
+              "elapsed_s": 0.22010279999813065
+            },
+            "moisture": {
+              "nfev": 1714,
+              "njev": 30,
+              "nlu": 288,
+              "elapsed_s": 0.15449830000579823
+            }
+          },
+          "result_sha256": "ea0c1deef82f7086d5ae123201229840072863378fbb63f0454ea6321028bde8"
+        }
+      },
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n320.npz",
+        "sha256": "36499e98e9f53064e30cc15064139c653eac2b957e8d5cd8cca3847d6c14c959",
+        "metadata_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n320.json",
+        "metadata_sha256": "21d8bde071cb74e4ef23b336b2532ef8f8481db718e342b7e831b002bf648bbc",
+        "n": 320,
+        "meta": {
+          "schema_version": "1.0",
+          "question": "Q1",
+          "specification": "Q1-v1",
+          "spec_sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+          "boundary_sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+          "solver_sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+          "n": 320,
+          "rtol": 2e-09,
+          "atol_scale": 1.0,
+          "atol_temperature": 2e-09,
+          "atol_moisture": 2e-11,
+          "max_step_s": 5.0,
+          "method": "nodal_finite_volume_segmented_BDF",
+          "python": "3.12.14",
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "status": "computed_pending_independent_verification",
+          "fields": {
+            "temperature": {
+              "nfev": 2718,
+              "njev": 30,
+              "nlu": 391,
+              "elapsed_s": 0.2528779999993276
+            },
+            "moisture": {
+              "nfev": 1748,
+              "njev": 30,
+              "nlu": 290,
+              "elapsed_s": 0.18348139998852275
+            }
+          },
+          "result_sha256": "36499e98e9f53064e30cc15064139c653eac2b957e8d5cd8cca3847d6c14c959"
+        }
+      },
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n640.npz",
+        "sha256": "92ef34832c53a683ea5aeee4c11b5ac742c8a6e5f3e77c709a6c5ee154e17543",
+        "metadata_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n640.json",
+        "metadata_sha256": "728ffc2519aaeee008a595c4321f5ba661ed9a5536c9bb4a4efd1fa64ef93671",
+        "n": 640,
+        "meta": {
+          "schema_version": "1.0",
+          "question": "Q1",
+          "specification": "Q1-v1",
+          "spec_sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+          "boundary_sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+          "solver_sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+          "n": 640,
+          "rtol": 2e-09,
+          "atol_scale": 1.0,
+          "atol_temperature": 2e-09,
+          "atol_moisture": 2e-11,
+          "max_step_s": 5.0,
+          "method": "nodal_finite_volume_segmented_BDF",
+          "python": "3.12.14",
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "status": "computed_pending_independent_verification",
+          "fields": {
+            "temperature": {
+              "nfev": 2682,
+              "njev": 30,
+              "nlu": 389,
+              "elapsed_s": 0.28686480000033043
+            },
+            "moisture": {
+              "nfev": 1778,
+              "njev": 30,
+              "nlu": 292,
+              "elapsed_s": 0.21651209999981802
+            }
+          },
+          "result_sha256": "92ef34832c53a683ea5aeee4c11b5ac742c8a6e5f3e77c709a6c5ee154e17543"
+        }
+      },
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n1280.npz",
+        "sha256": "602577aa83ca2e5ee49c44e6ac6cdd6e3092e16b207c047042595adedab4d12a",
+        "metadata_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n1280.json",
+        "metadata_sha256": "4b5b0cd261b4cac0d5a94ffdb7d43cacc315cd7d69173be7a3789e352aca2c0d",
+        "n": 1280,
+        "meta": {
+          "schema_version": "1.0",
+          "question": "Q1",
+          "specification": "Q1-v1",
+          "spec_sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+          "boundary_sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+          "solver_sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+          "n": 1280,
+          "rtol": 2e-09,
+          "atol_scale": 1.0,
+          "atol_temperature": 2e-09,
+          "atol_moisture": 2e-11,
+          "max_step_s": 5.0,
+          "method": "nodal_finite_volume_segmented_BDF",
+          "python": "3.12.14",
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "status": "computed_pending_independent_verification",
+          "fields": {
+            "temperature": {
+              "nfev": 2676,
+              "njev": 30,
+              "nlu": 388,
+              "elapsed_s": 0.399891299995943
+            },
+            "moisture": {
+              "nfev": 1822,
+              "njev": 30,
+              "nlu": 297,
+              "elapsed_s": 0.2920182000088971
+            }
+          },
+          "result_sha256": "602577aa83ca2e5ee49c44e6ac6cdd6e3092e16b207c047042595adedab4d12a"
+        }
+      },
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n2560.npz",
+        "sha256": "9df064144ef03a977d04355a742f80cdff2a3b852f70a165aac160bd2e4e035f",
+        "metadata_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n2560.json",
+        "metadata_sha256": "e2cca42acc799d377a5f6295e1ce876f7a66c4888535441468958756cdd89279",
+        "n": 2560,
+        "meta": {
+          "schema_version": "1.0",
+          "question": "Q1",
+          "specification": "Q1-v1",
+          "spec_sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+          "boundary_sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+          "solver_sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+          "n": 2560,
+          "rtol": 2e-09,
+          "atol_scale": 1.0,
+          "atol_temperature": 2e-09,
+          "atol_moisture": 2e-11,
+          "max_step_s": 5.0,
+          "method": "nodal_finite_volume_segmented_BDF",
+          "python": "3.12.14",
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "status": "computed_pending_independent_verification",
+          "fields": {
+            "temperature": {
+              "nfev": 2672,
+              "njev": 30,
+              "nlu": 388,
+              "elapsed_s": 0.6520300999982283
+            },
+            "moisture": {
+              "nfev": 1837,
+              "njev": 30,
+              "nlu": 299,
+              "elapsed_s": 0.47803790000034496
+            }
+          },
+          "result_sha256": "9df064144ef03a977d04355a742f80cdff2a3b852f70a165aac160bd2e4e035f"
+        }
+      },
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n5120.npz",
+        "sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e",
+        "metadata_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n5120.json",
+        "metadata_sha256": "114b4ef5b56a23d4c839ae16bee208f83c11cc6437f516f50ebdca972bcaf133",
+        "n": 5120,
+        "meta": {
+          "schema_version": "1.0",
+          "question": "Q1",
+          "specification": "Q1-v1",
+          "spec_sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+          "boundary_sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+          "solver_sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+          "n": 5120,
+          "rtol": 2e-09,
+          "atol_scale": 1.0,
+          "atol_temperature": 2e-09,
+          "atol_moisture": 2e-11,
+          "max_step_s": 5.0,
+          "method": "nodal_finite_volume_segmented_BDF",
+          "python": "3.12.14",
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "status": "computed_pending_independent_verification",
+          "fields": {
+            "temperature": {
+              "nfev": 2670,
+              "njev": 30,
+              "nlu": 387,
+              "elapsed_s": 1.129549400007818
+            },
+            "moisture": {
+              "nfev": 1848,
+              "njev": 30,
+              "nlu": 301,
+              "elapsed_s": 0.8762949999945704
+            }
+          },
+          "result_sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e"
+        }
+      },
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n5120_tight.npz",
+        "sha256": "595f85430daf73b3012fa6c6900d829d91aba30996615f49a95c68e297e5cc91",
+        "metadata_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n5120_tight.json",
+        "metadata_sha256": "62f917174b7bcdb77875ffdfb3a234d670410e80b087620e45a66cff348a2d41",
+        "n": 5120,
+        "meta": {
+          "schema_version": "1.0",
+          "question": "Q1",
+          "specification": "Q1-v1",
+          "spec_sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+          "boundary_sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+          "solver_sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+          "n": 5120,
+          "rtol": 2e-10,
+          "atol_scale": 0.1,
+          "atol_temperature": 2.0000000000000003e-10,
+          "atol_moisture": 2e-12,
+          "max_step_s": 5.0,
+          "method": "nodal_finite_volume_segmented_BDF",
+          "python": "3.12.14",
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "status": "computed_pending_independent_verification",
+          "fields": {
+            "temperature": {
+              "nfev": 3856,
+              "njev": 30,
+              "nlu": 502,
+              "elapsed_s": 1.5555257000087295
+            },
+            "moisture": {
+              "nfev": 2282,
+              "njev": 30,
+              "nlu": 356,
+              "elapsed_s": 1.0915227999939816
+            }
+          },
+          "result_sha256": "595f85430daf73b3012fa6c6900d829d91aba30996615f49a95c68e297e5cc91"
+        }
+      }
+    ],
+    "constant_D_run": {
+      "n": 5120,
+      "nfev": 1850,
+      "njev": 30,
+      "nlu": 301,
+      "elapsed_s": 0.7889255999907618
+    },
+    "reference_method": {
+      "geometry": "Continuous cylindrical radius; independent of finite-volume mesh",
+      "root_equation": "mu*J1(mu)=Bi*J0(mu)",
+      "coefficient": "2*J1(mu)/(mu*(J0(mu)^2+J1(mu)^2))",
+      "modal_update": "z'=-(diffusivity*mu^2/R^2)*z-g'(t); exact within each linear input segment",
+      "source_urls": [
+        "https://dlmf.nist.gov/10.6#E3",
+        "https://dlmf.nist.gov/10.22#E38"
+      ],
+      "source_scope": "NIST derivative identity and weighted Robin-root orthogonality",
+      "initial_time": "t=0 returned exactly; reference errors measured at 1..1800 seconds"
+    }
+  },
+  "claim_boundary": "Implementation, numerical consistency and selected structural checks for Q1-v1; no experimental validation or per-cell correct-rounding claim. Accumulated flux from the same integrator is an internal balance check."
+}

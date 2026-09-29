@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "generator_file": "build_restructured_figures.py",
+  "generator_sha256": "9ea89eedfb16bf7aed6d748629c6da50a747bb7083c1b321300627c670d9144f",
+  "compact_file": "restructured_figure_data.json",
+  "compact_sha256": "7f61b4c1b9103163e1ab291ff65c0b97382aa370f5d2b6082888c6575c0ddd05",
+  "figures": [
+    {
+      "data_driven_visual": false,
+      "scope": "Conceptual Q1 radial node-centred control-volume geometry, not a simulation result.",
+      "mapping": "Solid dots are radial nodes; dashed circles/lines are midpoint faces. Surface node is exactly at R, on the outer edge of its half-width volume. Uniform initial moisture makes all internal face fluxes zero; the arrow is the initial outward moisture exchange. Circle area is geometric, with displayed node count schematic.",
+      "id": "1-1",
+      "name": "fig01_annular_control_volumes",
+      "outputs": {
+        "png": {
+          "file": "fig01_annular_control_volumes.png",
+          "sha256": "20054dd022adde3249df22c0973a1853938a654b2445a4fab381abe2554ecb06"
+        },
+        "pdf": {
+          "file": "fig01_annular_control_volumes.pdf",
+          "sha256": "43c5121292909a053139cb6f63bbcc8db62394d77ddc5ffea1aba97018c3ad57"
+        },
+        "svg": {
+          "file": "fig01_annular_control_volumes.svg",
+          "sha256": "76ab78f71da2574e381eda4a1b82c580979a76d5125bf42291e2e2ab087c9656"
+        }
+      },
+      "width_cm": 15.8,
+      "height_cm": 7.9,
+      "font": "Microsoft YaHei",
+      "font_size_pt": 9,
+      "solver_executed": false
+    },
+    {
+      "data_driven_visual": true,
+      "source_file": "run_n10240_startsafe.npz",
+      "quantity": "Natural logarithm of local diffusivity relative to its uniform initial value; dimensionless.",
+      "sampling": "0.5, 1.5 and 3 h, centre and surface.",
+      "interpretation": "Exact algebraic decomposition along one main trajectory; not independent causal effects or alternate simulations.",
+      "identity_residual": 1.6653345369377348e-15,
+      "id": "2-2",
+      "name": "fig09_q2_diffusivity_decomposition",
+      "outputs": {
+        "png": {
+          "file": "fig09_q2_diffusivity_decomposition.png",
+          "sha256": "768b60e59e97b9ed94b1a1f9a51b6bfa0b49fece792fb3bc6ac46bfe87534fcc"
+        },
+        "pdf": {
+          "file": "fig09_q2_diffusivity_decomposition.pdf",
+          "sha256": "e6daad717fe5bce28cd1359ee9f843d9cb0325eea12f47226965b3a911277cb1"
+        },
+        "svg": {
+          "file": "fig09_q2_diffusivity_decomposition.svg",
+          "sha256": "e78c5fa5fcdc81c1a42ab6d1ee4143cb280d302acf6b639ab6a18c23929c5f6b"
+        }
+      },
+      "width_cm": 15.8,
+      "height_cm": 7.3,
+      "font": "Microsoft YaHei",
+      "font_size_pt": 9,
+      "solver_executed": false
+    },
+    {
+      "data_driven_visual": true,
+      "source_file": "run_n10240_startsafe.npz",
+      "interpretation": "Bars classify integer-second samples at 21 requested output radii; the final stopping time separately uses the maximum over all 10241 solver nodes.",
+      "threshold_kg_kg": 0.15,
+      "all_node_first_strict_second": 206927,
+      "no_recrossing_check": {
+        "through_s": 220000,
+        "recrossings": 0
+      },
+      "time_display": "Hours on axis, underlying bar boundaries are integer seconds; the rounded final tick label is not a new stopping time.",
+      "id": "3-1",
+      "name": "fig05_q3_completion_progress",
+      "outputs": {
+        "png": {
+          "file": "fig05_q3_completion_progress.png",
+          "sha256": "2d0455d7866cd53bf1de4e0f3077138dbed0cf5c9a1f224ae0036d4a589bd556"
+        },
+        "pdf": {
+          "file": "fig05_q3_completion_progress.pdf",
+          "sha256": "8bebd598e107c510145803fd75720df94a847f09bb9d2261a962fbc804fdf3f5"
+        },
+        "svg": {
+          "file": "fig05_q3_completion_progress.svg",
+          "sha256": "6f46558b1d8371968c3b7fc903822cc9ed4808775a03fdd1b143822dc12fe86d"
+        }
+      },
+      "width_cm": 15.8,
+      "height_cm": 9.5,
+      "font": "Microsoft YaHei",
+      "font_size_pt": 9,
+      "solver_executed": false
+    }
+  ],
+  "qa_rendered": true
+}

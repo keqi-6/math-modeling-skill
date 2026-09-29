@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "status": "manuscript59_q1_loo_prediction",
+  "prediction_count": 228,
+  "combination_response_count": 42,
+  "table3": [
+    {
+      "response": "ethanol_conversion_pct",
+      "response_cn": "乙醇转化率",
+      "median_cv_mae_pct_point": 7.8028783179347645,
+      "median_cv_rmse_pct_point": 9.410392358079955,
+      "median_nrmse_pct": 22.77366526924303,
+      "combination_count": 21
+    },
+    {
+      "response": "c4_selectivity_pct",
+      "response_cn": "C4烯烃选择性",
+      "median_cv_mae_pct_point": 3.8194301212831463,
+      "median_cv_rmse_pct_point": 4.39853728727664,
+      "median_nrmse_pct": 14.43452037020943,
+      "combination_count": 21
+    }
+  ],
+  "scope": "只评估各组合已测温度点的留一线性预测，不支持标签外温度外推"
+}

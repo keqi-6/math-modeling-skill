@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "question": "Q2",
+  "axes": [
+    "E3"
+  ],
+  "mode": "checks_only",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T15:38:47.616401+00:00",
+  "passed": true,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q2\\model_spec.md": "10d2ce44107c11c835ccf173c820e4100648f7c48fd7955c3890038a20f688a4",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\solve.py": "ad7eaf29c960bd00b1937cebb64507de952a4185b767dfeb50a31d89d72cb5ce",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\verify.py": "8a4cd6c83b614f8eee62fe1f60d29f32c1ba713223ccf4d8c6dcf566ce789ae8"
+  },
+  "checks": [
+    {
+      "axis": "E3",
+      "name": "water_instantaneous_boundary_balance",
+      "passed": true,
+      "value": 2.178457217753523e-16,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "heat_power_instantaneous_boundary_balance",
+      "passed": true,
+      "value": 2.0170468265412762e-16,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "water_variance_dissipation_with_nonuniform_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "water_variance_dissipation_is_strict_here",
+      "passed": true
+    },
+    {
+      "axis": "E3",
+      "name": "zero_surface_flux_instantaneous_water",
+      "passed": true,
+      "value": 1.1882493915019217e-16,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "zero_surface_flux_instantaneous_heat_power",
+      "passed": true,
+      "value": 3.025570239811915e-16,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "constant_equilibrium",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E3",
+      "name": "rectangle_facets_have_inward_rhs",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E3",
+      "name": "maximum_C_Dini_derivative_after_constant_tail",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    }
+  ],
+  "details": {
+    "heat_capacity_boundary": "Only instantaneous sum(v*s(C)*theta_dot) equals heat input. No assertion that d(sum(v*s(C)*theta))/dt equals it, or that a variable-capacity temperature quadratic energy is monotonically decreasing.",
+    "coverage": "E3 instantaneous structure; full-process tail and scenario results remain separate."
+  },
+  "claim_boundary": "E1 implementation, E2 numerical agreement and selected E3 structural properties of the fixed-grid Q2 model. No continuous-PDE global well-posedness, rigorous total error bound, per-cell correct rounding or E4 empirical validation is established by this report."
+}

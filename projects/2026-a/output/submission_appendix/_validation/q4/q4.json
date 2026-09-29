@@ -1,0 +1,101 @@
+{
+  "success": true,
+  "status": "computed",
+  "drying_complete": true,
+  "comparison_complete": true,
+  "horizon_stop_reason": null,
+  "final_max_moisture_kg_kg": 0.14999986815988672,
+  "final_max_moisture_radius_m": 0.0,
+  "grid_n": 10240,
+  "scenario": "mean_tail",
+  "properties": "appendix4",
+  "initial_temperature_C": 28.0,
+  "initial_moisture_kg_kg": 2.55,
+  "initial_radius_m": 0.02,
+  "radius": {
+    "method": "linear",
+    "observed_interval_s": [
+      0,
+      259200
+    ],
+    "continuation": "error",
+    "continuation_used": false,
+    "constant_radius_m": null,
+    "input_units": "cm",
+    "internal_units": "m",
+    "source_node_count": 145
+  },
+  "tight": false,
+  "t_cross_s": 183948.7432153488,
+  "n_end": 183949,
+  "common_end_s": 183949,
+  "requested_common_end_s": null,
+  "crossing_within_radius_observations": true,
+  "strict_endpoint_within_radius_observations": true,
+  "rtol": 2e-09,
+  "atol_temperature": 2e-09,
+  "atol_moisture": 2e-11,
+  "max_step_observed_s": 5.0,
+  "max_step_tail_s": 300.0,
+  "explicit_initial_step_s": 0.001,
+  "output_interval_s": 60,
+  "output_sample_block_size": 64,
+  "tail_segment_max_s": 3600,
+  "work_limit_s": 259200,
+  "threshold_kg_kg": 0.15,
+  "snapshot_roles": {
+    "initial": 0,
+    "environment_observed_end": 1,
+    "summary_21600s": 2,
+    "summary_43200s": 3,
+    "summary_64800s": 4,
+    "summary_86400s": 5,
+    "summary_108000s": 6,
+    "summary_129600s": 7,
+    "summary_151200s": 8,
+    "summary_172800s": 9,
+    "threshold_crossing": 11,
+    "before_n_end": 10,
+    "n_end": 12,
+    "common_end": 12
+  },
+  "endpoint_check": {
+    "before_time_s": 183948,
+    "before_max_moisture_kg_kg": 0.15000038159088078,
+    "before_max_node": 0,
+    "before_max_radius_m": 0.0,
+    "end_time_s": 183949,
+    "end_max_moisture_kg_kg": 0.1499998681598867,
+    "end_max_node": 0,
+    "end_max_radius_m": 0.0,
+    "scope": "unrounded all-node values of this numerical run; cross-grid integer stability is not asserted"
+  },
+  "observed_extrema": {
+    "temperature_min_C": 28.0,
+    "temperature_max_C": 50.05008860804871,
+    "moisture_min_kg_kg": 0.052610068743575475,
+    "moisture_max_kg_kg": 2.5500000000000003
+  },
+  "extrema_scope": "all material nodes at accepted BDF steps, 60-second dense samples, event/neighbor probes, and selected complete snapshots; not a continuum bound",
+  "invariant_bounds": {
+    "temperature_min_C": 28.0,
+    "temperature_max_C": 50.246,
+    "moisture_min_kg_kg": 0.01963,
+    "moisture_max_kg_kg": 2.55
+  },
+  "invariant_allowances": {
+    "temperature_C": 1e-07,
+    "moisture_kg_kg": 1e-08
+  },
+  "output_domain": "fixed physical radii; NaN with inside_mask=false outside the material; moving surface is an independent column",
+  "work": {
+    "nfev": 25495,
+    "njev": 337,
+    "nlu": 3953,
+    "accepted_steps": 12385,
+    "segments": 336
+  },
+  "elapsed_s": 106.49972719998914,
+  "numpy": "2.5.3",
+  "scipy": "1.18.1"
+}

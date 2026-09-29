@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "release": "9.0.0",
+  "status": "PASS",
+  "method": {
+    "independent_fresh_invocations": 10,
+    "expectations_hidden_from_evaluators": true,
+    "candidate_edits_forbidden_except_maintenance_scratch": true,
+    "maintenance_change_isolated_from_release_candidate": true
+  },
+  "scenarios": [
+    {
+      "id": "FE-READONLY-ADVISORY",
+      "purpose": "未初始化目录中的纯建议请求不得被误判为恢复，也不得创建文件",
+      "invocations": 2,
+      "initial_finding": "恢复等级曾被错误应用，且加载了非必要的可选模块",
+      "resolution": "恢复策略改为按路由显式覆盖；建议路由为 not_applicable，并移除可选模块",
+      "final_route": "RT-ADVISORY-PROJECT",
+      "final_recovery": "not_applicable",
+      "files_created": 0,
+      "final_status": "PASS"
+    },
+    {
+      "id": "FE-MINIMAL-INIT",
+      "purpose": "显式初始化只物化一个状态文件，不生成项目脚手架",
+      "invocations": 2,
+      "initial_finding": "不存在项目状态时曾被错误标为 R2",
+      "resolution": "初始化路由显式声明 recovery=not_applicable",
+      "final_route": "RT-PROJECT-INIT",
+      "final_recovery": "not_applicable",
+      "files_created": 1,
+      "created_paths": [
+        ".modeling/state.json"
+      ],
+      "final_status": "PASS"
+    },
+    {
+      "id": "FE-LOCAL-MANUSCRIPT-EDIT",
+      "purpose": "局部文字修改保持局部，不触发全文审计或冗余产物",
+      "invocations": 1,
+      "initial_finding": null,
+      "resolution": "无需修复",
+      "final_route": "RT-MANUSCRIPT-LOCAL",
+      "files_changed": [
+        "paper/main.md"
+      ],
+      "unexpected_files_created": 0,
+      "final_status": "PASS"
+    },
+    {
+      "id": "FE-TARGETED-RECOVERY",
+      "purpose": "单一工件哈希失配只恢复受影响组件及消费者",
+      "invocations": 1,
+      "initial_finding": null,
+      "resolution": "无需修复",
+      "final_route": "RT-PROJECT-RESUME",
+      "final_recovery": "R1_TARGETED",
+      "full_reread_triggered": false,
+      "files_changed": 0,
+      "final_status": "PASS"
+    },
+    {
+      "id": "FE-S6-READINESS",
+      "purpose": "以一条只读路由综合审计 E1-E4，避免用代码测试替代模型与现实验证",
+      "invocations": 2,
+      "initial_finding": "两个分轴路由能给出正确结论，但缺少唯一的综合只读 S6 审计路由",
+      "resolution": "新增 RT-VERIFY-S6-AUDIT，明确 write_allowed=false 并覆盖 E1-E4",
+      "final_route": "RT-VERIFY-S6-AUDIT",
+      "closure_decision": "REJECT",
+      "reason": "E3 未闭合且 E4 unresolved",
+      "files_changed": 0,
+      "final_status": "PASS"
+    },
+    {
+      "id": "FE-SKILL-MAINTENANCE",
+      "purpose": "规则变更先分类、定位唯一所有者、更新契约与评测，并由全新会话验证行为",
+      "invocations": 2,
+      "initial_finding": null,
+      "resolution": "无需修复",
+      "change_class": "L2_BEHAVIOR",
+      "scratch_change": "为随机算法增加预先记录的互异种子与至少三次独立运行要求",
+      "fresh_runtime_checks": {
+        "unseeded_single_monte_carlo": "REJECT_STABILITY_CLAIM",
+        "deterministic_dijkstra": "RULE_NOT_TRIGGERED",
+        "same_seed_three_times": "REPLAY_ONLY_NOT_INDEPENDENT"
+      },
+      "merged_into_release_candidate": false,
+      "final_status": "PASS"
+    }
+  ],
+  "issues_found_and_fixed": [
+    {
+      "id": "ISSUE-RECOVERY-APPLICABILITY",
+      "severity": "behavioral",
+      "resolution": "恢复判定由全局默认改为路由级策略；无状态的建议、初始化与 Skill 维护均为 not_applicable",
+      "verified_by": [
+        "FE-READONLY-ADVISORY",
+        "FE-MINIMAL-INIT"
+      ],
+      "verified": true
+    },
+    {
+      "id": "ISSUE-S6-AGGREGATE-ROUTE",
+      "severity": "routing",
+      "resolution": "增加唯一只读 S6 readiness 路由，直接加载验证模块并同时要求 E1-E4",
+      "verified_by": [
+        "FE-S6-READINESS"
+      ],
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "purpose": "Internal local figure tooling; not a submission artifact or modeling dependency specification.",
+  "inkscape": {
+    "version": "1.4.4 (dcaf3e7, 2026-05-05)",
+    "cli_candidates": [
+      "<未收录-下载缓存>/graphics_tools/inkscape-1.4.4/inkscape/bin/inkscape.com"
+    ],
+    "gui_path": "<未收录-下载缓存>/graphics_tools/inkscape-1.4.4/inkscape/bin/inkscape.exe",
+    "profile_path": "<未收录-下载缓存>/graphics_tools/profile",
+    "archive_source": "https://inkscape.org/gallery/item/59503/inkscape-1.4.4_2026-05-05_dcaf3e7-x64_mHK170m.7z",
+    "archive_resolved_url": "https://media.inkscape.org/dl/resources/file/inkscape-1.4.4_2026-05-05_dcaf3e7-x64_mHK170m.7z",
+    "archive_sha256": "c4dbd64a92628abe7d7316c43f9325396e4d48417866027ee3d993d4f5b54c6a",
+    "archive_bytes": 110359970,
+    "archive_path": "<未收录-下载缓存>/graphics_tools/downloads/inkscape-1.4.4-x64.7z"
+  },
+  "support_paths": {
+    "python": ".venv/Scripts/python.exe",
+    "three_module": "scripts/vendor/three/three.module.js",
+    "three_core": "scripts/vendor/three/three.core.js",
+    "node": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "playwright": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "edge": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "xelatex": "D:/latex/texlive/2026/bin/windows/xelatex.exe",
+    "pdftoppm": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/pdftoppm.exe",
+    "matlab": "D:/Program Files/MATLAB/R2025b/bin/matlab.exe"
+  },
+  "three_runtime_check": {
+    "status": "passed",
+    "three_revision": "180",
+    "node_version": "v24.19.0",
+    "playwright_version": "1.62.1",
+    "edge_version": "152.0.4191.66",
+    "render_backend": "WebGL 2.0 / ANGLE / SwiftShader",
+    "output_pixels": [
+      1600,
+      1200
+    ],
+    "page_errors": [],
+    "console_errors": [],
+    "scope": "Programmatic cylinder only; no model inputs or result recomputation.",
+    "temporary_evidence": "~/AppData/Local/Temp/three-render-probe-3fd64678187d409ba45e45fbf9c491a8/probe_result.json"
+  },
+  "matlab_check": {
+    "status": "executable_found_only",
+    "file_version": "25.2.0.2978516",
+    "license_and_render_not_tested": true
+  },
+  "inkscape_export_check": {
+    "status": "passed",
+    "png_pixels": [
+      1890,
+      827
+    ],
+    "dpi": 300,
+    "unicode_text_preserved": true,
+    "text_to_path_pdf_checked": true,
+    "project_svg_to_pdf_checked": true,
+    "last_export_warnings": [],
+    "temporary_evidence": "~\\AppData\\Local\\Temp\\graphics-toolchain-yy2lyngm",
+    "pdf_checks": {
+      "probe.pdf": {
+        "pages": 1,
+        "size_pt": [
+          453.543307,
+          198.425197
+        ],
+        "text_length": 80,
+        "sha256": "745bf39947ab025e9e1ae3fbb158cbff55703a1a88539585eb34abcd4a6fbf0c"
+      },
+      "probe_paths.pdf": {
+        "pages": 1,
+        "size_pt": [
+          453.543307,
+          198.425197
+        ],
+        "text_length": 0,
+        "sha256": "12dade47f6e301501b5075df7c5eb4207ad94ce78df4b8444a858379c55c4545"
+      },
+      "property_export.pdf": {
+        "pages": 1,
+        "size_pt": [
+          487.559052,
+          257.952759
+        ],
+        "text_length": 176,
+        "sha256": "56aa259a94280c2e3a7462836b85549bbb49eb7a47f8d64e83ddcd0e1db15e75",
+        "text_extraction_note": "pypdf limited form-XObject traversal at 5000 instances; this is not a renderer error. Visual page rendering is checked separately."
+      }
+    },
+    "post_store_removal_cli_check": "passed"
+  },
+  "store_inkscape_removal": {
+    "status": "removed_for_current_user",
+    "package_full_name": "25415Inkscape.Inkscape_1.4.40.0_x64__9waqn51p1ttv2",
+    "remaining_current_user_packages": 0,
+    "desktop_shortcut_exists": false,
+    "start_menu_shortcut_exists": false,
+    "method": "Windows Remove-AppxPackage; no manual WindowsApps deletion",
+    "authorization": "把商店版删了吧，本来下载下来就是为了给你调用的，用不了就清理了"
+  }
+}

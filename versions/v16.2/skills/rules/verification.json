@@ -1,0 +1,2827 @@
+{
+  "schema_version": "10.0",
+  "domain": "verification",
+  "rules": [
+    {
+      "id": "VER.E1.INTERFACE",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E1-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E1.INTERFACE",
+      "strength": "MUST",
+      "semantic_key": "verification.e1.interface",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "implementation_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "implementation_interface",
+        "value": "inputs_outputs_shapes_types"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "cases",
+          "observed_outputs"
+        ]
+      },
+      "outcomes": {
+        "pass": "接口用例全部通过。",
+        "fail": "至少一个接口契约失败。",
+        "not_applicable": "无代码实现。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E1-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "核验实现的输入、输出、形状和类型契约。",
+      "failure_example": "只运行快乐路径样例。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E1.UNITS",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E1-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E1.UNITS",
+      "strength": "MUST",
+      "semantic_key": "verification.e1.units",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "implementation_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "implementation_units",
+        "value": "dimensionally_consistent"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "quantity",
+          "expected_unit",
+          "observed_unit"
+        ]
+      },
+      "outcomes": {
+        "pass": "单位传播一致。",
+        "fail": "存在量纲冲突。",
+        "not_applicable": "模型完全无量纲。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E1-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "检查实现中关键量的单位传播。",
+      "failure_example": "把数值量级相近当成单位一致。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E1.BOUNDARY",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E1-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E1.BOUNDARY",
+      "strength": "MUST",
+      "semantic_key": "verification.e1.boundary",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "implementation_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "implementation_boundaries",
+        "value": "zero_empty_extreme_invalid"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "boundary_cases",
+          "expected",
+          "observed"
+        ]
+      },
+      "outcomes": {
+        "pass": "边界行为符合规格。",
+        "fail": "边界行为错误或未定义。",
+        "not_applicable": "无可执行实现。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E1-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "覆盖零值、空输入、极端值和非法输入边界。",
+      "failure_example": "只用典型输入证明实现正确。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E1.REPRODUCE",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E1-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E1.REPRODUCE",
+      "strength": "MUST",
+      "semantic_key": "verification.e1.reproduce",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "implementation_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "implementation_reproduction",
+        "value": "fresh_entrypoint_run"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "file"
+        ],
+        "fields": [
+          "entrypoint",
+          "exit_code",
+          "new_output_hash"
+        ]
+      },
+      "outcomes": {
+        "pass": "新运行得到预期身份。",
+        "fail": "无法从入口重建结果。",
+        "not_applicable": "无代码实现。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E1-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "从声明入口重新运行实现。",
+      "failure_example": "用旧输出代替复现。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E1.CODE_PATHS",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E1-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E1.CODE_PATHS",
+      "strength": "MUST",
+      "semantic_key": "verification.e1.code_paths",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "implementation_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "implementation_code_paths",
+        "value": "declared_entrypoints_branches_and_state_transitions"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "entrypoint",
+          "path_inventory",
+          "executed_paths",
+          "unexecuted_paths"
+        ]
+      },
+      "outcomes": {
+        "pass": "正式入口及影响结论的分支均有执行或明确的未覆盖处置。",
+        "fail": "只运行主路径便宣称整个实现正确。",
+        "not_applicable": "无分支的闭式手工计算。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E1-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "列出正式入口和影响结果的分支，逐条记录已执行路径及仍未执行的边界。",
+      "failure_example": "测试只触达默认参数主路径，备用求解器和失败回退从未运行。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "VER.E1.INTERFACE"
+      ]
+    },
+    {
+      "id": "VER.E1.ERROR_PATHS",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E1-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E1.ERROR_PATHS",
+      "strength": "MUST",
+      "semantic_key": "verification.e1.error_paths",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "implementation_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "implementation_error_paths",
+        "value": "invalid_input_dependency_solver_and_output_failures"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "failure_case",
+          "expected_signal",
+          "observed_signal",
+          "partial_output_disposition"
+        ]
+      },
+      "outcomes": {
+        "pass": "无效输入、依赖失败、求解失败和输出失败均产生可辨识且安全的结果。",
+        "fail": "错误路径静默返回默认值或留下可误用的部分输出。",
+        "not_applicable": "没有可执行实现。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E1-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "主动触发无效输入、依赖、求解器和输出失败，核验错误信号及部分产物处置。",
+      "failure_example": "求解器失败后程序仍写出上一次结果并以成功码退出。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "VER.E1.BOUNDARY"
+      ]
+    },
+    {
+      "id": "VER.E1.EXIT_ZERO",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E1-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E1.EXIT_ZERO",
+      "strength": "MUST",
+      "semantic_key": "verification.e1.exit_zero_not_correctness",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "implementation_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "exit_zero_as_correctness_proof",
+        "value": true
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "semantic_assertions",
+          "oracle_results"
+        ]
+      },
+      "outcomes": {
+        "pass": "正确性结论由语义 oracle 支持，而非仅由退出码支持。",
+        "fail": "把进程成功退出直接等同于计算正确。",
+        "not_applicable": "没有进程型执行。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E1-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "退出码只证明进程结束；正确性还需接口、边界、路径和结果 oracle 的语义证据。",
+      "failure_example": "命令返回 0，便跳过数值和业务断言。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E2.RECOMPUTE",
+      "revision": 4,
+      "status": "active",
+      "capability": "VER-E2-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E2.RECOMPUTE",
+      "strength": "MUST",
+      "semantic_key": "verification.e2.recompute",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "numerical_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "key_numerical_result",
+        "value": "independent_recomputation"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "primary_method",
+          "independent_method",
+          "difference",
+          "independent_method_role",
+          "separate_contract_required",
+          "reportable_summary",
+          "permitted_consumers"
+        ]
+      },
+      "outcomes": {
+        "pass": "差异在预设容差内。",
+        "fail": "独立重算不一致。",
+        "not_applicable": "没有数值结果。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "verification.e2.recompute.exception.1",
+          "when": "不存在独立算法",
+          "disposition": "使用解析特例或高精度小规模实例"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E2-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用独立计算路径重算至少一个关键结果，并登记验证器角色、完整内部合同与可公开摘要的消费者边界。",
+      "failure_example": "让同一实现自证其输出，或把内部独立重算器未经升格就写成第二套主模型。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E2.TOLERANCE",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E2-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E2.TOLERANCE",
+      "strength": "MUST",
+      "semantic_key": "verification.e2.tolerance",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "numerical_comparison"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "numeric_tolerance",
+        "value": "absolute_relative_scale_basis"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "tolerance",
+          "scale_basis"
+        ]
+      },
+      "outcomes": {
+        "pass": "容差有尺度依据。",
+        "fail": "容差缺失或事后选择。",
+        "not_applicable": "精确离散结果。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E2-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在查看比较结果前定义绝对或相对容差。",
+      "failure_example": "事后放宽容差以制造通过。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E2.STABILITY",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E2-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E2.STABILITY",
+      "strength": "MUST",
+      "semantic_key": "verification.e2.stability",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "numerical_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "numerical_stability",
+        "value": "resolution_step_precision_variation"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command"
+        ],
+        "fields": [
+          "settings",
+          "outputs",
+          "convergence_assessment"
+        ]
+      },
+      "outcomes": {
+        "pass": "数值变化符合收敛预期。",
+        "fail": "结论依赖不稳定设置。",
+        "not_applicable": "非数值近似。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E2-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "检查分辨率、步长或精度变化下的数值稳定性。",
+      "failure_example": "只报告单一离散设置。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E2.CONVERGENCE",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E2-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E2.CONVERGENCE",
+      "strength": "MUST",
+      "semantic_key": "verification.e2.convergence",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "numerical_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "numerical_convergence",
+        "value": "refinement_sequence_residual_or_rate_and_decision_stability"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "refinement_parameter",
+          "sequence",
+          "residual_or_rate",
+          "decision_stability"
+        ]
+      },
+      "outcomes": {
+        "pass": "有序加严分辨率、步长、容差或样本量后，残差或收敛率与决策均可解释。",
+        "fail": "只比较两个任意设置，或结果尚未收敛便停止。",
+        "not_applicable": "精确离散计算且无迭代、近似或采样误差。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E2-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用有序加严序列核验残差、收敛率或决策稳定，而不只做一次参数扰动。",
+      "failure_example": "网格尚未稳定便选取看起来最平滑的一次结果。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "VER.E2.TOLERANCE",
+        "VER.E2.STABILITY"
+      ]
+    },
+    {
+      "id": "VER.E2.NO_FORMAT_MASK",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E2-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E2.NO_FORMAT_MASK",
+      "strength": "MUST",
+      "semantic_key": "verification.e2.no_format_mask",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "numerical_verification",
+          "numerical_comparison"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "formatting_as_numerical_stability",
+        "value": true
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "unrounded_values",
+          "stability_checks"
+        ]
+      },
+      "outcomes": {
+        "pass": "稳定性根据未舍入结果和数值检查判定。",
+        "fail": "通过四舍五入、截断或图形平滑隐藏数值波动。",
+        "not_applicable": "没有数值近似结果。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E2-001"
+      ],
+      "routes": [
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "所有稳定性判断使用未舍入数值；显示格式不能作为误差或收敛证据。",
+      "failure_example": "两个结果在第六位明显漂移，却都显示为两位小数后宣称一致。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E3.RISK_MATCH",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E3-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E3.RISK_MATCH",
+      "strength": "MUST",
+      "semantic_key": "verification.e3.risk_matched_profile",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "structural_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "structural_test_profile",
+        "value": "at_least_one_risk_matched_falsifiable_check"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "primary_model_risks",
+          "applicable_checks",
+          "excluded_checks_and_reasons",
+          "selected_verification_events"
+        ]
+      },
+      "outcomes": {
+        "pass": "至少一个能推翻核心结构错误的检验按当前风险被选中，其余菜单项有明确不适用理由。",
+        "fail": "没有结构检验，或机械全选菜单却未说明各检验对应的模型风险。",
+        "not_applicable": "不执行 E3 结构验证。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E3-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "先声明核心结构风险，再只选择能提供信息增量的约束、不变量、特例、反例或敏感性检验；至少选择一项。",
+      "failure_example": "每次 E3 都机械执行五项菜单，或反过来一项也不做。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/route-contract.json",
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E3.CONSTRAINT",
+      "revision": 4,
+      "status": "active",
+      "capability": "VER-E3-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E3.CONSTRAINT",
+      "strength": "MUST",
+      "semantic_key": "verification.e3.constraint",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "constraint_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "model_constraints",
+        "value": "all_outputs_feasible"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "constraint",
+          "residual",
+          "tolerance"
+        ]
+      },
+      "outcomes": {
+        "pass": "约束残差均通过。",
+        "fail": "存在未处置违反。",
+        "not_applicable": "模型无显式约束。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E3-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "核验所有关键输出满足模型约束。",
+      "failure_example": "只检查目标值而忽略可行性。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E3.INVARIANT",
+      "revision": 4,
+      "status": "active",
+      "capability": "VER-E3-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E3.INVARIANT",
+      "strength": "MUST",
+      "semantic_key": "verification.e3.invariant",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "invariant_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "model_invariants",
+        "value": "conservation_monotonicity_symmetry"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "invariant",
+          "test",
+          "result"
+        ]
+      },
+      "outcomes": {
+        "pass": "适用不变量均通过。",
+        "fail": "结构规律被违反。",
+        "not_applicable": "无已知不变量。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E3-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "检验适用的守恒、单调性或对称性不变量。",
+      "failure_example": "以拟合指标替代结构约束。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E3.LIMIT",
+      "revision": 4,
+      "status": "active",
+      "capability": "VER-E3-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E3.LIMIT",
+      "strength": "MUST",
+      "semantic_key": "verification.e3.limit_case",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "limit_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "limit_case_behavior",
+        "value": "known_or_simplified_result"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "case",
+          "expected",
+          "observed"
+        ]
+      },
+      "outcomes": {
+        "pass": "特例行为符合预期。",
+        "fail": "模型在基本特例中失败。",
+        "not_applicable": "无法构造有意义特例。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "verification.e3.limit_case.exception.1",
+          "when": "无解析特例",
+          "disposition": "构造最小人工实例"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E3-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用至少一个极限或可解析特例检验模型。",
+      "failure_example": "只在校准数据附近检查。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E3.COUNTEREXAMPLE",
+      "revision": 5,
+      "status": "active",
+      "capability": "VER-E3-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E3.COUNTEREXAMPLE",
+      "strength": "MUST",
+      "semantic_key": "verification.e3.counterexample",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "counterexample_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "model_failure_boundary",
+        "value": "adversarial_or_counterexample_case"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "counterexample",
+          "result",
+          "implication"
+        ]
+      },
+      "outcomes": {
+        "pass": "失败边界被识别。",
+        "fail": "高风险结论未做反例检验。",
+        "not_applicable": "低影响描述性模型。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E3-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "主动构造可能推翻关键结论的反例。",
+      "failure_example": "只测试支持性场景。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E3.SENSITIVITY",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E3-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E3.SENSITIVITY",
+      "strength": "MUST",
+      "semantic_key": "verification.e3.sensitivity",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "sensitivity_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "model_sensitivity",
+        "value": "key_input_parameter_to_output_and_decision_response"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "factor",
+          "range",
+          "output_response",
+          "decision_response"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键输入或参数的变化与输出、决策响应已量化。",
+        "fail": "只给名义运行，关键结构变化对结论的影响未知。",
+        "not_applicable": "模型没有可变输入、参数或结构选择。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E3-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "对影响结论的输入、参数或结构选择做系统变化，记录输出和决策响应。",
+      "failure_example": "只展示一个默认参数解，却把结论称为对参数不敏感。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E4.ASSUMPTIONS",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E4-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E4.ASSUMPTIONS",
+      "strength": "MUST",
+      "semantic_key": "verification.e4.assumptions",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "reality_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "assumption_applicability",
+        "value": "evidence_and_violation_impact"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "assumption",
+          "support",
+          "violation_impact"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键假设有依据或限制。",
+        "fail": "结论依赖未审查假设。",
+        "not_applicable": "纯抽象数学模型。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E4-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "逐项检查关键假设的现实依据和违反后果。",
+      "failure_example": "把假设列表当成合理性证明。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E4.SCALE",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E4-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E4.SCALE",
+      "strength": "MUST",
+      "semantic_key": "verification.e4.scale",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "reality_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "result_scale",
+        "value": "realistic_order_of_magnitude"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "quantity",
+          "model_value",
+          "reference_range"
+        ]
+      },
+      "outcomes": {
+        "pass": "数量级可解释。",
+        "fail": "关键量脱离现实范围。",
+        "not_applicable": "无现实映射。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E4-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用现实数量级核对关键参数和结果。",
+      "failure_example": "以数学可行替代现实尺度合理。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E4.PARAMETERS",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-E4-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E4.PARAMETERS",
+      "strength": "MUST",
+      "semantic_key": "verification.e4.parameters",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "reality_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "parameter_plausibility",
+        "value": "source_range_identifiability"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "parameter",
+          "range",
+          "identifiability"
+        ]
+      },
+      "outcomes": {
+        "pass": "参数精度与证据匹配。",
+        "fail": "参数不可识别或范围失真。",
+        "not_applicable": "无估计参数。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E4-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "核验关键参数的来源范围和可识别性。",
+      "failure_example": "报告超出数据识别能力的精确参数。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E4.MECHANISM",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E4-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E4.MECHANISM",
+      "strength": "MUST",
+      "semantic_key": "verification.e4.mechanism",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "reality_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "mechanism_consistency",
+        "value": "represented_process_direction_constraints_and_interactions_match_domain_mechanism"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "modeled_mechanism",
+          "domain_mechanism",
+          "direction_and_constraints",
+          "known_mismatch"
+        ]
+      },
+      "outcomes": {
+        "pass": "模型中的过程方向、约束与相互作用有现实机制依据。",
+        "fail": "数值尺度看似合理，但模型表达了错误或不存在的机制。",
+        "not_applicable": "纯描述性模型不主张任何生成或作用机制。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E4-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把模型表达的过程、方向、约束和相互作用逐项对照领域机制，并记录已知不匹配。",
+      "failure_example": "参数数量级正常，但因果方向与实际过程相反。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E4.REALITY_FIT",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E4-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E4.REALITY_FIT",
+      "strength": "MUST",
+      "semantic_key": "verification.e4.reality_fit",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "reality_verification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "reality_fit",
+        "value": "observed_patterns_ranges_context_and_intended_use"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "observed_reference",
+          "fit_measure",
+          "context_match",
+          "use_boundary"
+        ]
+      },
+      "outcomes": {
+        "pass": "模型与现实观测、范围、上下文及预定用途的匹配已核验。",
+        "fail": "只凭数学可行或样本内拟合宣称现实适用。",
+        "not_applicable": "模型明确仅为抽象演示且不作现实映射。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E4-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "对照现实观测、合理范围、应用上下文和预定用途，界定模型在哪里拟合、在哪里不适用。",
+      "failure_example": "训练集拟合很好便直接外推到不同地区和时期。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.E4.USE_CLAIM_GATE",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-E4-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.E4.USE_CLAIM_GATE",
+      "strength": "MUST",
+      "semantic_key": "verification.e4.before_model_use_or_claim",
+      "scope": {
+        "objects": [
+          "model",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "question",
+          "artifact",
+          "project"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7",
+          "A0",
+          "A1",
+          "A2",
+          "A3",
+          "P0",
+          "P1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_claim"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "model_claim_e4_readiness",
+        "value": "assumptions_parameters_scale_mechanisms_and_reality_fit_before_model_use_or_claim"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "model_claim_id",
+          "E4_evidence_ids",
+          "use_boundary"
+        ]
+      },
+      "outcomes": {
+        "pass": "模型用途或主张在提出前已绑定完整 E4 证据。",
+        "fail": "以代码通过、退出码或数值复算替代模型现实审查。",
+        "not_applicable": "当前陈述不是模型用途或模型主张。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-E4-001"
+      ],
+      "routes": [
+        "RT.MODEL.RESULTS",
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.RENDER",
+        "RT.MANUSCRIPT.LOCAL",
+        "RT.MANUSCRIPT.REOPEN",
+        "RT.MANUSCRIPT.AUDIT",
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "任何模型用途或主张提出前，核销假设、参数、尺度、机制和现实拟合证据；实施轴不能代替该门禁。",
+      "failure_example": "代码测试全过后便在终稿宣称模型适用于现实决策，未做 E4。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "VER.E4.ASSUMPTIONS",
+        "VER.E4.PARAMETERS",
+        "VER.E4.SCALE",
+        "VER.E4.MECHANISM",
+        "VER.E4.REALITY_FIT"
+      ]
+    },
+    {
+      "id": "VER.S6.DUAL_AXIS",
+      "revision": 4,
+      "status": "active",
+      "capability": "VER-S6-DUAL-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.S6.DUAL_AXIS",
+      "strength": "MUST",
+      "semantic_key": "verification.s6.dual_axis",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "s6_readiness",
+          "s6_close"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "s6_evidence",
+        "value": [
+          "E1_IMPLEMENTATION",
+          "E2_NUMERICAL",
+          "E3_STRUCTURAL",
+          "E4_REALITY",
+          "resolved_applicability_decision_for_gate_NA",
+          "current_spec_artifact_identity_for_gate_NA"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state"
+        ],
+        "fields": [
+          "E1_IMPLEMENTATION",
+          "E2_NUMERICAL",
+          "E3_STRUCTURAL",
+          "E4_REALITY"
+        ]
+      },
+      "outcomes": {
+        "pass": "两条验证轴均闭合；E2/E4 未触发时使用绑定当前规格身份和已解决人工适用性决定的结构化 N/A，而不是虚构 PASS。",
+        "fail": "至少一条验证轴缺失、存在 applicable check 失败，或 N/A 缺少当前规格绑定与已解决适用性决定。",
+        "not_applicable": "不做 S6 审计或提升。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V9.STATE.S6.ENTRY_E1_E4"
+      ],
+      "legacy_refs": [
+        "VER-S6-DUAL-001"
+      ],
+      "routes": [
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用 E1–E4 闭合 S6；E1/E3 必须通过，E2/E4 的 justified N/A 必须绑定当前规格 artifact、已解决人工适用性决定和禁止宣称边界。",
+      "failure_example": "用实现正确替代模型合理，或以无当前规格身份、无人确认的自由文本 N/A 省略适用检验。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.UNCERTAINTY.SOURCES",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-UNCERTAINTY-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.UNCERTAINTY.SOURCES",
+      "strength": "MUST",
+      "semantic_key": "verification.uncertainty.sources",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "uncertainty_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "uncertainty_sources",
+        "value": "data_parameter_model_numerical"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "source",
+          "representation"
+        ]
+      },
+      "outcomes": {
+        "pass": "主要来源已分类。",
+        "fail": "不确定性来源混淆。",
+        "not_applicable": "结论不依赖不确定输入。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-UNCERTAINTY-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "区分数据、参数、模型结构和数值不确定性。",
+      "failure_example": "用单一误差条代表全部不确定性。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.UNCERTAINTY.PROPAGATE",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-UNCERTAINTY-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.UNCERTAINTY.PROPAGATE",
+      "strength": "MUST",
+      "semantic_key": "verification.uncertainty.propagate",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "uncertainty_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "uncertainty_propagation",
+        "value": "inputs_to_decision_metric"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "input_distribution",
+          "method",
+          "output_distribution"
+        ]
+      },
+      "outcomes": {
+        "pass": "结论不确定性可量化。",
+        "fail": "传播链断裂。",
+        "not_applicable": "纯确定性边界结论。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "verification.uncertainty.propagate.exception.1",
+          "when": "无概率信息",
+          "disposition": "使用区间或情景传播"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-UNCERTAINTY-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把关键输入不确定性传播到决策指标。",
+      "failure_example": "只报告输入波动而不报告结论影响。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.UNCERTAINTY.BOUND",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-UNCERTAINTY-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.UNCERTAINTY.BOUND",
+      "strength": "MUST",
+      "semantic_key": "verification.uncertainty.quantified_or_bounded",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "uncertainty_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "claim_uncertainty_bound",
+        "value": "quantified_or_bounded_with_method_coverage_and_propagation_to_each_affected_claim"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "method",
+          "quantity_or_bound",
+          "coverage_or_scenario_scope",
+          "affected_claims"
+        ]
+      },
+      "outcomes": {
+        "pass": "不确定性有数值量化或有依据的界，并传播到每项受影响主张。",
+        "fail": "仅说“存在不确定性”，没有量、界或对结论的影响。",
+        "not_applicable": "关键输入和结论均不含不确定性。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-UNCERTAINTY-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "概率证据充分时量化分布或区间；否则给出有依据的界或情景范围，并映射到受影响主张。",
+      "failure_example": "结论后附一句“数据可能有误差”，没有任何范围或传播计算。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "VER.UNCERTAINTY.SOURCES",
+        "VER.UNCERTAINTY.PROPAGATE"
+      ]
+    },
+    {
+      "id": "VER.UNCERTAINTY.CLAIM_GATE",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-UNCERTAINTY-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.UNCERTAINTY.CLAIM_GATE",
+      "strength": "MUST",
+      "semantic_key": "verification.uncertainty.before_affected_claim",
+      "scope": {
+        "objects": [
+          "model",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "question",
+          "artifact",
+          "project"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7",
+          "A0",
+          "A1",
+          "A2",
+          "A3",
+          "P0",
+          "P1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "before_claim"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "uncertainty_claim_readiness",
+        "value": "quantified_or_bounded_uncertainty_propagated_before_each_affected_claim"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "claim_id",
+          "uncertainty_bound_id",
+          "propagation_result_id"
+        ]
+      },
+      "outcomes": {
+        "pass": "每项受不确定性影响的主张在提出前已绑定量或界及传播结果。",
+        "fail": "先发布点结论，之后才用通用限制文字补救。",
+        "not_applicable": "当前主张不受不确定输入或决策敏感参数影响。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-UNCERTAINTY-001"
+      ],
+      "routes": [
+        "RT.MODEL.RESULTS",
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.RENDER",
+        "RT.MANUSCRIPT.LOCAL",
+        "RT.MANUSCRIPT.REOPEN",
+        "RT.MANUSCRIPT.AUDIT",
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "写入、绘制或交付受不确定性影响的主张前，核销量化或界定结果及其到该主张的传播证据。",
+      "failure_example": "图中只画点估计，终稿最后才附一段泛化误差说明。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "VER.UNCERTAINTY.SOURCES",
+        "VER.UNCERTAINTY.PROPAGATE",
+        "VER.UNCERTAINTY.BOUND"
+      ]
+    },
+    {
+      "id": "VER.ROBUST.METRIC",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-ROBUST-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.ROBUST.METRIC",
+      "strength": "MUST",
+      "semantic_key": "verification.robustness.metric_before_perturbation",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "robustness_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "robustness_metric",
+        "value": "name_scale_direction_and_decision_threshold_before_perturbation"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "metric",
+          "scale",
+          "preferred_direction",
+          "decision_threshold"
+        ]
+      },
+      "outcomes": {
+        "pass": "扰动前已冻结稳健性指标、方向、尺度和决策阈值。",
+        "fail": "看到扰动结果后才挑选最有利的指标或阈值。",
+        "not_applicable": "没有稳健性主张。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-ROBUST-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在生成扰动结果前冻结判断稳健性的指标、尺度、优劣方向和改变决策的阈值。",
+      "failure_example": "复算后再挑一个变化最小的指标作为稳健性证据。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.ROBUST.BASELINE",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-ROBUST-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.ROBUST.BASELINE",
+      "strength": "MUST",
+      "semantic_key": "verification.robustness.baseline_before_perturbation",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "robustness_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "robustness_baseline",
+        "value": "nominal_run_identity_metric_value_and_decision_before_perturbation"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "state"
+        ],
+        "fields": [
+          "run_identity",
+          "metric_value",
+          "nominal_decision"
+        ]
+      },
+      "outcomes": {
+        "pass": "扰动前已有不可混淆的名义运行、指标值和决策基线。",
+        "fail": "基线未固定，扰动运行与不同输入或代码版本比较。",
+        "not_applicable": "没有稳健性主张。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-ROBUST-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在扰动前冻结名义运行身份、指标值和决策，使后续变化只归因于声明的扰动。",
+      "failure_example": "扰动运行使用新代码，却与旧版本名义结果比较。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VER.ROBUST.NO_VISUAL_PROXY",
+      "revision": 2,
+      "status": "active",
+      "capability": "VER-ROBUST-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.ROBUST.NO_VISUAL_PROXY",
+      "strength": "MUST",
+      "semantic_key": "verification.robustness.no_visual_proxy",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "robustness_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "visual_similarity_as_robustness_proof",
+        "value": true
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "numeric_metric",
+          "baseline",
+          "decision_impact"
+        ]
+      },
+      "outcomes": {
+        "pass": "稳健性结论由数值指标、基线和决策影响支持。",
+        "fail": "仅凭两张图看起来相似便宣称稳健。",
+        "not_applicable": "没有稳健性主张。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-ROBUST-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "图形相似只能帮助展示；稳健性证明必须回到已冻结指标、基线和决策变化。",
+      "failure_example": "两条曲线肉眼接近，便省略数值差异和决策阈值。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "VER.ROBUST.METRIC",
+        "VER.ROBUST.BASELINE"
+      ]
+    },
+    {
+      "id": "VER.ROBUST.PERTURB",
+      "revision": 3,
+      "status": "active",
+      "capability": "VER-ROBUST-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.ROBUST.PERTURB",
+      "strength": "MUST",
+      "semantic_key": "verification.robustness.perturb",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "robustness_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "decision_robustness",
+        "value": "plausible_perturbations"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "perturbation_basis",
+          "range",
+          "decision_changes"
+        ]
+      },
+      "outcomes": {
+        "pass": "稳定边界已量化。",
+        "fail": "结论对合理扰动脆弱且未说明。",
+        "not_applicable": "没有可扰动输入。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-ROBUST-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在有依据的扰动范围内复算关键决策。",
+      "failure_example": "随意选择微小扰动制造稳定结论。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "VER.ROBUST.METRIC",
+        "VER.ROBUST.BASELINE"
+      ]
+    },
+    {
+      "id": "VER.ROBUST.FAILURE_REGION",
+      "revision": 4,
+      "status": "active",
+      "capability": "VER-ROBUST-001",
+      "domain": "verification",
+      "owner": "rules/verification.json#VER.ROBUST.FAILURE_REGION",
+      "strength": "MUST",
+      "semantic_key": "verification.robustness.failure_region",
+      "scope": {
+        "objects": [
+          "verification"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "robustness_analysis"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "robustness_failure_region",
+        "value": "boundary_and_consequence"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "boundary",
+          "failure",
+          "consequence"
+        ]
+      },
+      "outcomes": {
+        "pass": "适用边界可解释。",
+        "fail": "脆弱区域未知。",
+        "not_applicable": "低风险探索性结果。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VER-ROBUST-001"
+      ],
+      "routes": [
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "记录结论翻转或模型失效的区域。",
+      "failure_example": "只报告平均稳定性。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "12.0",
+  "release_id": "V12.0.0",
+  "policy": "references/release-policy.json",
+  "required_drivers": ["package", "contracts", "outcomes", "migration"],
+  "drivers": [
+    {"id": "package", "script": "scripts/validate_v12_package.py"},
+    {"id": "contracts", "script": "scripts/validate_v12_contracts.py"},
+    {"id": "outcomes", "script": "scripts/run_v12_outcome_tests.py"},
+    {"id": "migration", "script": "scripts/validate_v12_migration.py"}
+  ],
+  "legacy_diagnostic_suites_are_active_drivers": false,
+  "unverified_boundaries": [
+    "The gate proves declared local contracts and representative filesystem outcomes, not arbitrary mathematical correctness.",
+    "Natural-language intent remains an Agent responsibility and is not inferred from keyword counts.",
+    "External services and operating systems other than the release host are outside this local gate."
+  ]
+}

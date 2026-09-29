@@ -1,0 +1,2457 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "SPEC-Q5-WORKING-4.0",
+  "status": "pilot_pass",
+  "generated_at": "2026-08-28T19:20:11.329033+00:00",
+  "baseline": {
+    "source": "historical_intersection_seed_rescored",
+    "by_missile": [
+      {
+        "missile": "M1",
+        "settings": {
+          "name": "screen_strict",
+          "scan_step_s": 0.02,
+          "n_theta": 128,
+          "n_levels": 9,
+          "root_time_tolerance_s": 2e-06,
+          "margin_tolerance_m": 2e-06
+        },
+        "surface_point_count": 2177,
+        "scan_count": 2443,
+        "intervals_s": [
+          [
+            0.8842878037602445,
+            5.4720353361478775
+          ],
+          [
+            15.88759915659558,
+            25.87892965399975
+          ],
+          [
+            29.317064308037086,
+            32.23324302957615
+          ]
+        ],
+        "duration_s": 17.49525675133087,
+        "minimum_scan_margin_m": -9.41469660022532,
+        "root_residuals": [
+          {
+            "kind": "entry",
+            "time_s": 0.8842878037602445,
+            "margin_m": 8.217757230255529e-07,
+            "iterations": 15,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 5.4720353361478775,
+            "margin_m": 7.338516034849363e-07,
+            "iterations": 16,
+            "fallback": false
+          },
+          {
+            "kind": "entry",
+            "time_s": 15.88759915659558,
+            "margin_m": -1.6003848397616594e-06,
+            "iterations": 15,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 25.87892965399975,
+            "margin_m": -8.009941989683966e-07,
+            "iterations": 15,
+            "fallback": false
+          },
+          {
+            "kind": "entry",
+            "time_s": 29.317064308037086,
+            "margin_m": 9.57772089194009e-07,
+            "iterations": 16,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 32.23324302957615,
+            "margin_m": 1.961365150293659e-06,
+            "iterations": 15,
+            "fallback": false
+          }
+        ],
+        "root_fallback_count": 0,
+        "local_minimum_checks": 2,
+        "recovered_unsampled_interval_count": 0
+      },
+      {
+        "missile": "M2",
+        "settings": {
+          "name": "screen_strict",
+          "scan_step_s": 0.02,
+          "n_theta": 128,
+          "n_levels": 9,
+          "root_time_tolerance_s": 2e-06,
+          "margin_tolerance_m": 2e-06
+        },
+        "surface_point_count": 2177,
+        "scan_count": 2443,
+        "intervals_s": [
+          [
+            12.499999999999995,
+            24.1248381313803
+          ],
+          [
+            29.533000134403892,
+            32.331936993264904
+          ]
+        ],
+        "duration_s": 14.423774990241318,
+        "minimum_scan_margin_m": -8.107933191993412,
+        "root_residuals": [
+          {
+            "kind": "entry",
+            "time_s": 12.499999999999995,
+            "margin_m": -0.06610389915345216,
+            "iterations": 0,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 24.1248381313803,
+            "margin_m": 1.0429608128248447e-06,
+            "iterations": 16,
+            "fallback": false
+          },
+          {
+            "kind": "entry",
+            "time_s": 29.533000134403892,
+            "margin_m": -1.0488555393095567e-06,
+            "iterations": 15,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 32.331936993264904,
+            "margin_m": -5.802139799726547e-07,
+            "iterations": 16,
+            "fallback": false
+          }
+        ],
+        "root_fallback_count": 0,
+        "local_minimum_checks": 1,
+        "recovered_unsampled_interval_count": 0
+      },
+      {
+        "missile": "M3",
+        "settings": {
+          "name": "screen_strict",
+          "scan_step_s": 0.02,
+          "n_theta": 128,
+          "n_levels": 9,
+          "root_time_tolerance_s": 2e-06,
+          "margin_tolerance_m": 2e-06
+        },
+        "surface_point_count": 2177,
+        "scan_count": 2443,
+        "intervals_s": [
+          [
+            13.587813902990776,
+            22.94769725785332
+          ],
+          [
+            29.55030170701648,
+            32.22379700250691
+          ]
+        ],
+        "duration_s": 12.033378650352978,
+        "minimum_scan_margin_m": -8.391149633077324,
+        "root_residuals": [
+          {
+            "kind": "entry",
+            "time_s": 13.587813902990776,
+            "margin_m": -0.2798266898205295,
+            "iterations": 0,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 22.94769725785332,
+            "margin_m": -1.2604717429809398e-06,
+            "iterations": 15,
+            "fallback": false
+          },
+          {
+            "kind": "entry",
+            "time_s": 29.55030170701648,
+            "margin_m": 1.588370524885363e-06,
+            "iterations": 15,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 32.22379700250691,
+            "margin_m": 5.245208605231255e-07,
+            "iterations": 16,
+            "fallback": false
+          }
+        ],
+        "root_fallback_count": 0,
+        "local_minimum_checks": 3,
+        "recovered_unsampled_interval_count": 0
+      }
+    ],
+    "durations_s": [
+      17.49525675133087,
+      14.423774990241318,
+      12.033378650352978
+    ],
+    "intersection_intervals_s": [
+      [
+        15.88759915659558,
+        22.94769725785332
+      ],
+      [
+        29.55030170701648,
+        32.22379700250691
+      ]
+    ],
+    "longest_interval_s": [
+      15.88759915659558,
+      22.94769725785332
+    ],
+    "longest_continuous_s": 7.06009810125774,
+    "total_intersection_s": 9.733593396748173,
+    "objective_s": 7.06009810125774,
+    "sum_duration_missile_s": 43.95241039192517,
+    "minimum_missile_duration_s": 12.033378650352978
+  },
+  "best_before_refinement": {
+    "source": "topology_swap_plan_FY3",
+    "decision": {
+      "source": "topology_swap_plan_FY3",
+      "active_bomb_count": 11,
+      "platforms": [
+        {
+          "platform": "FY1",
+          "heading_rad": 0.09789999999999999,
+          "heading_deg": 5.609256814330759,
+          "speed_mps": 140.0,
+          "bombs": [
+            {
+              "platform": 0,
+              "label": "M1",
+              "release_s": 0.46302634217840494,
+              "fuse_s": 0.4060711513214376,
+              "bomb_number": 1,
+              "explosion_time_s": 0.8690974934998426,
+              "release_point_m": [
+                17864.51328753956,
+                6.336106410054147,
+                1800.0
+              ],
+              "explosion_point_m": [
+                17921.09102958221,
+                11.892831353004544,
+                1799.192020478316
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY2",
+          "heading_rad": 4.287008023812072,
+          "heading_deg": 245.62746650315123,
+          "speed_mps": 116.7749664710228,
+          "bombs": [
+            {
+              "platform": 1,
+              "label": "M2",
+              "release_s": 4.669232920364355,
+              "fuse_s": 4.643851925741743,
+              "bomb_number": 1,
+              "explosion_time_s": 9.313084846106099,
+              "release_point_m": [
+                11774.99307125184,
+                903.3422520585816,
+                1400.0
+              ],
+              "explosion_point_m": [
+                11551.20923412194,
+                409.3842339967331,
+                1294.3297325297451
+              ]
+            },
+            {
+              "platform": 1,
+              "label": "M1",
+              "release_s": 5.672103525786559,
+              "fuse_s": 7.041286008645829,
+              "bomb_number": 2,
+              "explosion_time_s": 12.713389534432388,
+              "release_point_m": [
+                11726.665468258701,
+                796.6687438270043,
+                1400.0
+              ],
+              "explosion_point_m": [
+                11387.351031334196,
+                47.70005639802821,
+                1157.0594275877975
+              ]
+            },
+            {
+              "platform": 1,
+              "label": "M3",
+              "release_s": 9.872766702636778,
+              "fuse_s": 6.588834226174665,
+              "bomb_number": 3,
+              "explosion_time_s": 16.461600928811443,
+              "release_point_m": [
+                11524.238573681165,
+                349.85190070578483,
+                1400.0
+              ],
+              "explosion_point_m": [
+                11206.727458140876,
+                -350.99031987803914,
+                1187.2775913459475
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY3",
+          "heading_rad": 1.730818888623544,
+          "heading_deg": 99.16861741965278,
+          "speed_mps": 139.41629139614776,
+          "bombs": [
+            {
+              "platform": 2,
+              "label": "M3",
+              "release_s": 16.42240641427616,
+              "fuse_s": 4.775290957958661,
+              "bomb_number": 1,
+              "explosion_time_s": 21.19769737223482,
+              "release_point_m": [
+                5635.181844463083,
+                -739.7010184062437,
+                700.0
+              ],
+              "explosion_point_m": [
+                5529.100385054055,
+                -82.45353488855017,
+                588.2633217075074
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY4",
+          "heading_rad": 4.745469394950402,
+          "heading_deg": 271.8953681391584,
+          "speed_mps": 129.2675849601,
+          "bombs": [
+            {
+              "platform": 3,
+              "label": "M2",
+              "release_s": 1.8208704544187655,
+              "fuse_s": 10.67912954558123,
+              "bomb_number": 1,
+              "explosion_time_s": 12.499999999999995,
+              "release_point_m": [
+                11007.785032246546,
+                1764.7492516229718,
+                1800.0
+              ],
+              "explosion_point_m": [
+                11053.443067762273,
+                385.03922803694377,
+                1241.185341528601
+              ]
+            },
+            {
+              "platform": 3,
+              "label": "M1",
+              "release_s": 3.398124999845491,
+              "fuse_s": 11.747958459281808,
+              "bomb_number": 2,
+              "explosion_time_s": 15.146083459127299,
+              "release_point_m": [
+                11014.528497970514,
+                1560.972914161805,
+                1800.0
+              ],
+              "explosion_point_m": [
+                11064.756253171136,
+                43.17354917047123,
+                1123.7288129910462
+              ]
+            },
+            {
+              "platform": 3,
+              "label": "M3",
+              "release_s": 6.990613292571973,
+              "fuse_s": 11.289500291265194,
+              "bomb_number": 3,
+              "explosion_time_s": 18.280113583837167,
+              "release_point_m": [
+                11029.887985591582,
+                1096.8347008426208,
+                1800.0
+              ],
+              "explosion_point_m": [
+                11078.155627917045,
+                -361.73330759408236,
+                1175.4811975502632
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY5",
+          "heading_rad": 2.105207078339758,
+          "heading_deg": 120.619480589935,
+          "speed_mps": 138.5268955873774,
+          "bombs": [
+            {
+              "platform": 4,
+              "label": "M3",
+              "release_s": 11.456346482904353,
+              "fuse_s": 2.131467420086423,
+              "bomb_number": 1,
+              "explosion_time_s": 13.587813902990776,
+              "release_point_m": [
+                12191.68071054156,
+                -634.2667268982661,
+                1300.0
+              ],
+              "explosion_point_m": [
+                12041.291907874054,
+                -380.1703637611804,
+                1277.7385485218397
+              ]
+            },
+            {
+              "platform": 4,
+              "label": "M1",
+              "release_s": 12.45842906406513,
+              "fuse_s": 4.452454083418179,
+              "bomb_number": 2,
+              "explosion_time_s": 16.91088314748331,
+              "release_point_m": [
+                12120.977307742833,
+                -514.8065197956621,
+                1300.0
+              ],
+              "explosion_point_m": [
+                11806.82789488896,
+                15.979162861196983,
+                1202.8606979117585
+              ]
+            },
+            {
+              "platform": 4,
+              "label": "M2",
+              "release_s": 18.2935611601275,
+              "fuse_s": 1.6413268042005313,
+              "bomb_number": 3,
+              "explosion_time_s": 19.93488796432803,
+              "release_point_m": [
+                11709.27102452037,
+                180.81088916,
+                1300.0
+              ],
+              "explosion_point_m": [
+                11593.46481019888,
+                376.47663930778344,
+                1286.799626976883
+              ]
+            }
+          ]
+        }
+      ],
+      "constraint_margins": {
+        "speed_low_mps": 46.77496647102279,
+        "speed_high_mps": 0.0,
+        "release_time_s": 0.46302634217840494,
+        "fuse_delay_s": 0.4060711513214376,
+        "explosion_height_m": 588.2633217075074,
+        "one_second_gap_s": 0.0020825811607778633,
+        "latest_arrival_s": 45.80147343523779,
+        "capacity_bombs": 0.0
+      }
+    },
+    "by_missile": [
+      {
+        "missile": "M1",
+        "settings": {
+          "name": "screen_strict",
+          "scan_step_s": 0.02,
+          "n_theta": 128,
+          "n_levels": 9,
+          "root_time_tolerance_s": 2e-06,
+          "margin_tolerance_m": 2e-06
+        },
+        "surface_point_count": 2177,
+        "scan_count": 2026,
+        "intervals_s": [
+          [
+            0.8842878037602445,
+            5.4720353361478775
+          ],
+          [
+            15.88759915659558,
+            25.878930142186732
+          ]
+        ],
+        "duration_s": 14.579078517978784,
+        "minimum_scan_margin_m": -9.41469660022532,
+        "root_residuals": [
+          {
+            "kind": "entry",
+            "time_s": 0.8842878037602445,
+            "margin_m": 8.217757230255529e-07,
+            "iterations": 15,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 5.4720353361478775,
+            "margin_m": 7.338516034849363e-07,
+            "iterations": 16,
+            "fallback": false
+          },
+          {
+            "kind": "entry",
+            "time_s": 15.88759915659558,
+            "margin_m": -1.6003848397616594e-06,
+            "iterations": 15,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 25.878930142186732,
+            "margin_m": 1.7777811311958658e-06,
+            "iterations": 15,
+            "fallback": false
+          }
+        ],
+        "root_fallback_count": 0,
+        "local_minimum_checks": 2,
+        "recovered_unsampled_interval_count": 0
+      },
+      {
+        "missile": "M2",
+        "settings": {
+          "name": "screen_strict",
+          "scan_step_s": 0.02,
+          "n_theta": 128,
+          "n_levels": 9,
+          "root_time_tolerance_s": 2e-06,
+          "margin_tolerance_m": 2e-06
+        },
+        "surface_point_count": 2177,
+        "scan_count": 2026,
+        "intervals_s": [
+          [
+            12.499999999999995,
+            24.124838000610353
+          ]
+        ],
+        "duration_s": 11.624838000610358,
+        "minimum_scan_margin_m": -8.107933191993412,
+        "root_residuals": [
+          {
+            "kind": "entry",
+            "time_s": 12.499999999999995,
+            "margin_m": -0.06610389915345216,
+            "iterations": 0,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 24.124838000610353,
+            "margin_m": 3.5402371700854474e-07,
+            "iterations": 15,
+            "fallback": false
+          }
+        ],
+        "root_fallback_count": 0,
+        "local_minimum_checks": 1,
+        "recovered_unsampled_interval_count": 0
+      },
+      {
+        "missile": "M3",
+        "settings": {
+          "name": "screen_strict",
+          "scan_step_s": 0.02,
+          "n_theta": 128,
+          "n_levels": 9,
+          "root_time_tolerance_s": 2e-06,
+          "margin_tolerance_m": 2e-06
+        },
+        "surface_point_count": 2177,
+        "scan_count": 2026,
+        "intervals_s": [
+          [
+            13.587813902990776,
+            23.673216025956144
+          ]
+        ],
+        "duration_s": 10.085402122965368,
+        "minimum_scan_margin_m": -8.391149633077324,
+        "root_residuals": [
+          {
+            "kind": "entry",
+            "time_s": 13.587813902990776,
+            "margin_m": -0.2798266898205295,
+            "iterations": 0,
+            "fallback": false
+          },
+          {
+            "kind": "exit",
+            "time_s": 23.673216025956144,
+            "margin_m": -6.539747339218138e-07,
+            "iterations": 15,
+            "fallback": false
+          }
+        ],
+        "root_fallback_count": 0,
+        "local_minimum_checks": 3,
+        "recovered_unsampled_interval_count": 0
+      }
+    ],
+    "durations_s": [
+      14.579078517978784,
+      11.624838000610358,
+      10.085402122965368
+    ],
+    "intersection_intervals_s": [
+      [
+        15.88759915659558,
+        23.673216025956144
+      ]
+    ],
+    "longest_interval_s": [
+      15.88759915659558,
+      23.673216025956144
+    ],
+    "longest_continuous_s": 7.785616869360563,
+    "total_intersection_s": 7.785616869360563,
+    "objective_s": 7.785616869360563,
+    "sum_duration_missile_s": 36.28931864155451,
+    "minimum_missile_duration_s": 10.085402122965368
+  },
+  "improvement_over_baseline_s": 0.7255187681028232,
+  "generation": {
+    "anchor_nodes_s": [
+      15.637598936939314,
+      15.887598936939314,
+      17.65262354576319,
+      19.417648154587067,
+      21.18267276341094,
+      22.94769737223482,
+      23.19769737223482
+    ],
+    "seed_longest_continuous_s": 7.060098435295506,
+    "seed_total_intersection_s": 9.733664327760875,
+    "event_pool_sizes": [
+      0,
+      12,
+      12,
+      12,
+      12
+    ],
+    "plan_pool_sizes": [
+      0,
+      4,
+      4,
+      4,
+      4
+    ],
+    "move_counts": {
+      "add": 0,
+      "delete": 13,
+      "replace": 26,
+      "swap_plan": 16,
+      "exchange": 10
+    },
+    "unique_neighbour_count": 65,
+    "proxy_shortlist_count": 64,
+    "probe_shortlist_count": 20,
+    "pool_diagnostics": [
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY1",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY1",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY1",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 368.3127521237944
+        }
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY2",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 13,
+        "selected_events": 13,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY2",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 12,
+        "selected_events": 12,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY2",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 984,
+          "unique_tracks": 47,
+          "selected_tracks": 47
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.2367009399219422
+        }
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY3",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY3",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY3",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 785.0078008923483
+        }
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY4",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 54,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY4",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY4",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 246,
+          "unique_tracks": 10,
+          "selected_tracks": 10
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.2415986273761809
+        }
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY5",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 63,
+        "useful_events": 18,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 13,
+        "selected_events": 13,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 13,
+        "selected_events": 13,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 13,
+        "selected_events": 13,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY5",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 22,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.637598936939314,
+        "platform": "FY5",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 123,
+          "unique_tracks": 3,
+          "selected_tracks": 3
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 3.965781613795724
+        }
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY1",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY1",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY1",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 403.23111980252764
+        }
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY2",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 14,
+        "selected_events": 14,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 16,
+        "selected_events": 16,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY2",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 14,
+        "selected_events": 14,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY2",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 984,
+          "unique_tracks": 37,
+          "selected_tracks": 37
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.08559034635834355
+        }
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY3",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY3",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY3",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 749.9689420724014
+        }
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY4",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY4",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 10,
+        "selected_events": 10,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY4",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 246,
+          "unique_tracks": 8,
+          "selected_tracks": 8
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.059753086582722555
+        }
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY5",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 18,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 15,
+        "selected_events": 15,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 18,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY5",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 15.887598936939314,
+        "platform": "FY5",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 246,
+          "unique_tracks": 6,
+          "selected_tracks": 6
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 4.800186324585456
+        }
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY1",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY1",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY1",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 668.5068849720898
+        }
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY2",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 63,
+        "useful_events": 13,
+        "selected_events": 13,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 126,
+        "useful_events": 24,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 13,
+        "selected_events": 13,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 8,
+        "selected_events": 8,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY2",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 14,
+        "selected_events": 14,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY2",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 1230,
+          "unique_tracks": 43,
+          "selected_tracks": 43
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.18723452191919807
+        }
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY3",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY3",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY3",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 500.774908439378
+        }
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY4",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 10,
+        "selected_events": 10,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 123,
+        "useful_events": 10,
+        "selected_events": 10,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY4",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY4",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 738,
+          "unique_tracks": 28,
+          "selected_tracks": 28
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.4474022440595654
+        }
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY5",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 63,
+        "useful_events": 15,
+        "selected_events": 15,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 15,
+        "selected_events": 15,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 12,
+        "selected_events": 12,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 15,
+        "selected_events": 15,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY5",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 17.65262354576319,
+        "platform": "FY5",
+        "c3_track_stats": {
+          "proposed": 11070,
+          "kinematically_feasible": 369,
+          "unique_tracks": 10,
+          "selected_tracks": 10
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 4.9765820115412245
+        }
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY1",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY1",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY1",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 952.4238926157207
+        }
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY2",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 12,
+        "selected_events": 12,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY2",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY2",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 1681,
+          "unique_tracks": 54,
+          "selected_tracks": 48
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 1.1431359964169727
+        }
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY3",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY3",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY3",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 246.6040581277605
+        }
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY4",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 8,
+        "selected_events": 8,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY4",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY4",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 1476,
+          "unique_tracks": 45,
+          "selected_tracks": 45
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.03085964419779473
+        }
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY5",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY5",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 18,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 19.417648154587067,
+        "platform": "FY5",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 369,
+          "unique_tracks": 9,
+          "selected_tracks": 9
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.08689320630648371
+        }
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY1",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY1",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY1",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 1246.666710169112
+        }
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY2",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 189,
+        "useful_events": 36,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY2",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 126,
+        "useful_events": 25,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY2",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 1722,
+          "unique_tracks": 50,
+          "selected_tracks": 48
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.4025518904833232
+        }
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY3",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY3",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 22,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY3",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.8229084783994391
+        }
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY4",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY4",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY4",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 1722,
+          "unique_tracks": 52,
+          "selected_tracks": 48
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 3.745312710632065
+        }
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY5",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 16,
+        "selected_events": 16,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 8,
+        "selected_events": 8,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY5",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 21.18267276341094,
+        "platform": "FY5",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 656,
+          "unique_tracks": 18,
+          "selected_tracks": 18
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 12.253831695168886
+        }
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY1",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY1",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY1",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 1509.7712924282455
+        }
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY2",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 12,
+        "selected_events": 12,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 84,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY2",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY2",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 1599,
+          "unique_tracks": 52,
+          "selected_tracks": 48
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.1156114692052989
+        }
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY3",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY3",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 24,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY3",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 81,
+        "useful_events": 20,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY3",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 13,
+          "unique_tracks": 1,
+          "selected_tracks": 1
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 3.196366979446282
+        }
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY4",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY4",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 3,
+        "selected_events": 3,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY4",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 2091,
+          "unique_tracks": 59,
+          "selected_tracks": 48
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 1.0266787140049658
+        }
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY5",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 11,
+        "selected_events": 11,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 10,
+        "selected_events": 10,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY5",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 22.94769737223482,
+        "platform": "FY5",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 492,
+          "unique_tracks": 14,
+          "selected_tracks": 14
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 1.5536131446572072
+        }
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY1",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY1",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY1",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 0,
+          "unique_tracks": 0,
+          "selected_tracks": 0
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 1548.3923738379228
+        }
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY2",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 9,
+        "selected_events": 9,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY2",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY2",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 8,
+        "selected_events": 8,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY2",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 1476,
+          "unique_tracks": 49,
+          "selected_tracks": 48
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 1.4172990349835783
+        }
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY3",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY3",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 111,
+        "useful_events": 34,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY3",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 126,
+        "useful_events": 40,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY3",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 81,
+        "useful_events": 26,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY3",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 57,
+        "useful_events": 28,
+        "selected_events": 18,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY3",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 123,
+          "unique_tracks": 5,
+          "selected_tracks": 5
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 6.802479575239385
+        }
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY4",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 8,
+        "selected_events": 8,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY4",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 7,
+        "selected_events": 7,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY4",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY4",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 2091,
+          "unique_tracks": 57,
+          "selected_tracks": 48
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 0.16400258285797628
+        }
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY5",
+        "source": "incumbent_window_track",
+        "proposed_vertical_states": 0,
+        "useful_events": 0,
+        "selected_events": 0,
+        "retained_plans": 0
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 8,
+        "selected_events": 8,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 6,
+        "selected_events": 6,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY5",
+        "source": "C3_surface_tube",
+        "proposed_vertical_states": 63,
+        "useful_events": 8,
+        "selected_events": 8,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY5",
+        "source": "C2_complete_guard",
+        "proposed_vertical_states": 63,
+        "useful_events": 8,
+        "selected_events": 8,
+        "retained_plans": 3
+      },
+      {
+        "time_s": 23.19769737223482,
+        "platform": "FY5",
+        "c3_track_stats": {
+          "proposed": 13284,
+          "kinematically_feasible": 492,
+          "unique_tracks": 15,
+          "selected_tracks": 15
+        },
+        "guard_track_stats": {
+          "sampled_tracks": 192,
+          "selected_tracks": 12,
+          "minimum_horizontal_tube_distance_m": 1.3051739070056376
+        }
+      }
+    ]
+  },
+  "candidate_count": 20,
+  "screen_candidate_count": 6,
+  "historical_seed_sha256": "70e25a837f41c92057aa19cfd8090b9d0ed57527370a5f861d82a875a3157324",
+  "identity": {
+    "data/A题.pdf": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "data/附件/result3.xlsx": "b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a",
+    "planning/35_q5_longest_continuous_candidate_set.md": "c823deb5459793cac41ef6e70795b430f22bcbbd25a1cd51e78562ecb85d6eb7",
+    "planning/36_q5_longest_continuous_model_spec.md": "0fc18833b14a62ad298a84a43a1d9860eb4919603ee19c910ac4a1c6ccaf3962",
+    "docs/q5_intersection_seed.json": "70e25a837f41c92057aa19cfd8090b9d0ed57527370a5f861d82a875a3157324",
+    "src/q1/model.py": "cb36870ca55ed3b1e3c3adfe02cd91667c89249fa1aeb730cb42f0a1bbd4f7f1",
+    "src/q3/selection_pilot.py": "33f67bee3a033ffebc48dd7a6275846c991977f6035554b75cd055de80430f64",
+    "src/q5/geometry_pilot.py": "d6a639bba67b076f6338a6e03539971c88706d67e4458d8bd00b6e255609f878"
+  },
+  "elapsed_s": 15.973765968003136,
+  "claim_boundary": "Early candidate-layer diagnostic only; not a precise or densified formal result."
+}

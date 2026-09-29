@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.0",
+  "question": "Q4",
+  "role": "auxiliary_matched_geometry_comparison",
+  "status": "comparison_data_verified",
+  "script_sha256": "b2b98f88309249aa5553301bec31af19287be4e66287fc71f1b0cecf8a460d04",
+  "design": {
+    "times_s": [
+      172800,
+      183949
+    ],
+    "grids": [
+      2560,
+      5120
+    ],
+    "changed_input": "radius history only",
+    "shrinking": "all original observed R(t), piecewise linear",
+    "fixed": "R(t) = R0 = 0.02 m",
+    "properties": "appendix4",
+    "environment": "mean_tail",
+    "comparison_end_s": 183949,
+    "fixed_drying_time_requested": false,
+    "matching_fields": [
+      "spec_sha256",
+      "boundary_sha256",
+      "raw_environment_sha256",
+      "radius_json_sha256",
+      "raw_radius_sha256",
+      "solver_sha256",
+      "scenario",
+      "properties",
+      "initial_temperature_C",
+      "initial_moisture_kg_kg",
+      "initial_radius_m",
+      "rtol",
+      "atol_temperature",
+      "atol_moisture",
+      "max_step_observed_s",
+      "max_step_tail_s",
+      "explicit_initial_step_s"
+    ],
+    "observable_scope": "all material nodes at the two exact stored snapshots",
+    "mean_definition": "sum_i (xi_face_right^2-xi_face_left^2) C_i = 2 sum_i v_i C_i",
+    "time_discretization_note": "same BDF tolerances and step limits; adaptive steps and geometry-dependent knot segmentation need not coincide"
+  },
+  "sources": [
+    {
+      "grid_n": 2560,
+      "geometry": "shrinking",
+      "result_path": "output/Q4/run_n2560-v1-20260911.npz",
+      "result_sha256": "81a56962e79743c3f936650ca07b870e005c9ea52730b4dd09504a7453dce1ad",
+      "metadata_path": "output/Q4/run_n2560-v1-20260911.json",
+      "metadata_sha256": "8ed8b3f9ef87a439f89bcdb6b996aa1609e35ae95a9bd251b9f8e1583676122c",
+      "solver_status": "computed_pending_independent_verification",
+      "drying_complete": true,
+      "comparison_complete": true,
+      "common_end_s": 259200,
+      "elapsed_s": 25.46223309999914
+    },
+    {
+      "grid_n": 2560,
+      "geometry": "fixed",
+      "result_path": "output/Q4/run_n2560-fixedradius-geometry-20260911.npz",
+      "result_sha256": "5b81e40182d7bfe9db90b5cd414601e885855345cf7cbac5e2f07fcc34e2e9ee",
+      "metadata_path": "output/Q4/run_n2560-fixedradius-geometry-20260911.json",
+      "metadata_sha256": "065c17c76410c0643cd216278d2d9575250252f1290ddb2ca09ba29070a96a39",
+      "solver_status": "threshold_not_reached_within_horizon",
+      "drying_complete": false,
+      "comparison_complete": true,
+      "common_end_s": 183949,
+      "elapsed_s": 21.781938200001605
+    },
+    {
+      "grid_n": 5120,
+      "geometry": "shrinking",
+      "result_path": "output/Q4/run_n5120-v1-20260911.npz",
+      "result_sha256": "9fa59c96c9dc242fcdbec40ad44dc23d8c6da7328b3f91967a4202284d64b393",
+      "metadata_path": "output/Q4/run_n5120-v1-20260911.json",
+      "metadata_sha256": "345256202c5281aec1cbf507dd2a5ea0f17cb8e49d9959e7b5ceac70b9faa456",
+      "solver_status": "computed_pending_independent_verification",
+      "drying_complete": true,
+      "comparison_complete": true,
+      "common_end_s": 259200,
+      "elapsed_s": 54.95296889999008
+    },
+    {
+      "grid_n": 5120,
+      "geometry": "fixed",
+      "result_path": "output/Q4/run_n5120-fixedradius-geometry-20260911.npz",
+      "result_sha256": "3327c7a288a37f07d829e8fc6d2a2341af1812595ec62d74547c919de55293ca",
+      "metadata_path": "output/Q4/run_n5120-fixedradius-geometry-20260911.json",
+      "metadata_sha256": "a02f8c36d1dfa1f3fc0d67eea8e44cda3e67969dc30c2e6a73ff584a25586380",
+      "solver_status": "threshold_not_reached_within_horizon",
+      "drying_complete": false,
+      "comparison_complete": true,
+      "common_end_s": 183949,
+      "elapsed_s": 48.619422699994175
+    }
+  ],
+  "observations": [
+    {
+      "grid_n": 2560,
+      "geometry": "shrinking",
+      "time_s": 172800,
+      "radius_m": 0.012,
+      "max_moisture_kg_kg": 0.15615894151244442,
+      "max_node": 0,
+      "normalized_cross_section_mean_kg_kg": 0.1225813970103469,
+      "strict_all_node_threshold": false,
+      "max_reconstruction_residual": 0.0,
+      "mean_reconstruction_residual": 0.0
+    },
+    {
+      "grid_n": 2560,
+      "geometry": "shrinking",
+      "time_s": 183949,
+      "radius_m": 0.012,
+      "max_moisture_kg_kg": 0.14999970959352144,
+      "max_node": 0,
+      "normalized_cross_section_mean_kg_kg": 0.11840419250219082,
+      "strict_all_node_threshold": true,
+      "max_reconstruction_residual": 0.0,
+      "mean_reconstruction_residual": 1.3877787807814457e-17
+    },
+    {
+      "grid_n": 2560,
+      "geometry": "fixed",
+      "time_s": 172800,
+      "radius_m": 0.02,
+      "max_moisture_kg_kg": 0.32431688082599575,
+      "max_node": 0,
+      "normalized_cross_section_mean_kg_kg": 0.22889623404687517,
+      "strict_all_node_threshold": false,
+      "max_reconstruction_residual": 0.0,
+      "mean_reconstruction_residual": 2.7755575615628914e-17
+    },
+    {
+      "grid_n": 2560,
+      "geometry": "fixed",
+      "time_s": 183949,
+      "radius_m": 0.02,
+      "max_moisture_kg_kg": 0.3049068230327556,
+      "max_node": 0,
+      "normalized_cross_section_mean_kg_kg": 0.21717178055638625,
+      "strict_all_node_threshold": false,
+      "max_reconstruction_residual": 0.0,
+      "mean_reconstruction_residual": 1.1102230246251565e-16
+    },
+    {
+      "grid_n": 5120,
+      "geometry": "shrinking",
+      "time_s": 172800,
+      "radius_m": 0.012,
+      "max_moisture_kg_kg": 0.156159069084154,
+      "max_node": 0,
+      "normalized_cross_section_mean_kg_kg": 0.1225817070098577,
+      "strict_all_node_threshold": false,
+      "max_reconstruction_residual": 0.0,
+      "mean_reconstruction_residual": 4.163336342344337e-17
+    },
+    {
+      "grid_n": 5120,
+      "geometry": "shrinking",
+      "time_s": 183949,
+      "radius_m": 0.012,
+      "max_moisture_kg_kg": 0.14999983638166126,
+      "max_node": 0,
+      "normalized_cross_section_mean_kg_kg": 0.11840447831181528,
+      "strict_all_node_threshold": true,
+      "max_reconstruction_residual": 0.0,
+      "mean_reconstruction_residual": 5.551115123125783e-17
+    },
+    {
+      "grid_n": 5120,
+      "geometry": "fixed",
+      "time_s": 172800,
+      "radius_m": 0.02,
+      "max_moisture_kg_kg": 0.32431696337592736,
+      "max_node": 0,
+      "normalized_cross_section_mean_kg_kg": 0.22889695909120922,
+      "strict_all_node_threshold": false,
+      "max_reconstruction_residual": 0.0,
+      "mean_reconstruction_residual": 1.3877787807814457e-16
+    },
+    {
+      "grid_n": 5120,
+      "geometry": "fixed",
+      "time_s": 183949,
+      "radius_m": 0.02,
+      "max_moisture_kg_kg": 0.3049069350628804,
+      "max_node": 0,
+      "normalized_cross_section_mean_kg_kg": 0.21717255949733116,
+      "strict_all_node_threshold": false,
+      "max_reconstruction_residual": 0.0,
+      "mean_reconstruction_residual": 5.551115123125783e-17
+    }
+  ],
+  "contrasts": [
+    {
+      "time_s": 172800,
+      "grid_n": 2560,
+      "observable": "max_moisture_kg_kg",
+      "shrinking": 0.15615894151244442,
+      "fixed": 0.32431688082599575,
+      "fixed_minus_shrinking": 0.16815793931355133
+    },
+    {
+      "time_s": 172800,
+      "grid_n": 5120,
+      "observable": "max_moisture_kg_kg",
+      "shrinking": 0.156159069084154,
+      "fixed": 0.32431696337592736,
+      "fixed_minus_shrinking": 0.16815789429177336
+    },
+    {
+      "time_s": 172800,
+      "grid_n": 2560,
+      "observable": "normalized_cross_section_mean_kg_kg",
+      "shrinking": 0.1225813970103469,
+      "fixed": 0.22889623404687517,
+      "fixed_minus_shrinking": 0.10631483703652828
+    },
+    {
+      "time_s": 172800,
+      "grid_n": 5120,
+      "observable": "normalized_cross_section_mean_kg_kg",
+      "shrinking": 0.1225817070098577,
+      "fixed": 0.22889695909120922,
+      "fixed_minus_shrinking": 0.10631525208135152
+    },
+    {
+      "time_s": 183949,
+      "grid_n": 2560,
+      "observable": "max_moisture_kg_kg",
+      "shrinking": 0.14999970959352144,
+      "fixed": 0.3049068230327556,
+      "fixed_minus_shrinking": 0.1549071134392342
+    },
+    {
+      "time_s": 183949,
+      "grid_n": 5120,
+      "observable": "max_moisture_kg_kg",
+      "shrinking": 0.14999983638166126,
+      "fixed": 0.3049069350628804,
+      "fixed_minus_shrinking": 0.15490709868121916
+    },
+    {
+      "time_s": 183949,
+      "grid_n": 2560,
+      "observable": "normalized_cross_section_mean_kg_kg",
+      "shrinking": 0.11840419250219082,
+      "fixed": 0.21717178055638625,
+      "fixed_minus_shrinking": 0.09876758805419543
+    },
+    {
+      "time_s": 183949,
+      "grid_n": 5120,
+      "observable": "normalized_cross_section_mean_kg_kg",
+      "shrinking": 0.11840447831181528,
+      "fixed": 0.21717255949733116,
+      "fixed_minus_shrinking": 0.09876808118551589
+    }
+  ],
+  "grid_comparisons": [
+    {
+      "time_s": 172800,
+      "observable": "max_moisture_kg_kg",
+      "within_geometry_grid_changes": {
+        "shrinking": 1.2757170958499486e-07,
+        "fixed": 8.254993161260771e-08
+      },
+      "contrast_change_on_refinement": 4.5021777972387156e-08,
+      "comparison_numerical_change_sum": 2.1012164119760257e-07,
+      "contrast_sign_consistent": true,
+      "effect_to_grid_change_sum": 800288.3155364008,
+      "relative_contrast_change": 2.6773514358040884e-07
+    },
+    {
+      "time_s": 172800,
+      "observable": "normalized_cross_section_mean_kg_kg",
+      "within_geometry_grid_changes": {
+        "shrinking": 3.0999951079746513e-07,
+        "fixed": 7.250443340434121e-07
+      },
+      "contrast_change_on_refinement": 4.1504482324594694e-07,
+      "comparison_numerical_change_sum": 1.0350438448408772e-06,
+      "contrast_sign_consistent": true,
+      "effect_to_grid_change_sum": 102715.69906074455,
+      "relative_contrast_change": 3.903906684323696e-06
+    },
+    {
+      "time_s": 183949,
+      "observable": "max_moisture_kg_kg",
+      "within_geometry_grid_changes": {
+        "shrinking": 1.267881398203663e-07,
+        "fixed": 1.1203012478810948e-07
+      },
+      "contrast_change_on_refinement": 1.4758015032256822e-08,
+      "comparison_numerical_change_sum": 2.3881826460847577e-07,
+      "contrast_sign_consistent": true,
+      "effect_to_grid_change_sum": 648640.0817591463,
+      "relative_contrast_change": 9.527010161507901e-08
+    },
+    {
+      "time_s": 183949,
+      "observable": "normalized_cross_section_mean_kg_kg",
+      "within_geometry_grid_changes": {
+        "shrinking": 2.8580962445345914e-07,
+        "fixed": 7.789409449121543e-07
+      },
+      "contrast_change_on_refinement": 4.931313204586951e-07,
+      "comparison_numerical_change_sum": 1.0647505693656134e-06,
+      "contrast_sign_consistent": true,
+      "effect_to_grid_change_sum": 92761.70779073889,
+      "relative_contrast_change": 4.9928207021906966e-06
+    }
+  ],
+  "limitations": [
+    "Two-grid differences are observed numerical changes, not certified continuum error bounds.",
+    "The normalized cross-section mean is not a measured total water mass or a dry-solid-mass-weighted mean.",
+    "This matched appendix4 contrast isolates geometry within the adopted model; it does not isolate the complete Q3-to-Q4 difference.",
+    "No fixed-radius final drying time, physical accuracy, or shrinkage-parameter sensitivity is inferred."
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0",
+  "status": "provisional",
+  "policy": {
+    "max_reference_depth": 1,
+    "every_rule_must_be_reachable": true,
+    "permission_owner": "SKILL.md",
+    "conflict_order": [
+      "official_and_current_user_requirements",
+      "mathematical_and_empirical_truth",
+      "controller_permissions_and_state",
+      "detailed_procedure",
+      "acceptance_crosscheck",
+      "minimum_crosscheck"
+    ]
+  },
+  "triggers": [
+    {
+      "trigger_id": "TR-SUBSTANTIVE",
+      "when": "every substantive project task",
+      "exclude_when": "pure conversation unrelated to the project",
+      "stages": ["S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7"],
+      "primary_owner": "rules/18-execution-receipt.md",
+      "required_rules": ["rules/18-execution-receipt.md"],
+      "required_approval": "controller-defined",
+      "expected_evidence": ["start receipt", "end receipt or explicit non-completion"],
+      "rollback": "remain at current valid state"
+    },
+    {
+      "trigger_id": "TR-RECOVERY",
+      "when": "project takeover, recovery, or cross-session continuation",
+      "exclude_when": "new isolated task with no prior project state",
+      "stages": ["S0"],
+      "primary_owner": "rules/14-session-handoff.md",
+      "required_rules": [
+        "rules/00-project-orchestration.md", "rules/01-contest-project-pattern.md",
+        "rules/14-session-handoff.md", "rules/15-pipeline-methodology.md",
+        "rules/19-project-lifecycle.md"
+      ],
+      "required_approval": "recovery level R0, R1, or R2 selected",
+      "expected_evidence": ["recovery manifest", "state reconstruction", "unresolved list"],
+      "rollback": "S0"
+    },
+    {
+      "trigger_id": "TR-STRUCTURE",
+      "when": "project initialization, directory design, code or output conventions",
+      "exclude_when": "read-only conceptual discussion",
+      "stages": ["S0", "S1"],
+      "primary_owner": "rules/01-contest-project-pattern.md",
+      "required_rules": ["rules/01-contest-project-pattern.md"],
+      "required_approval": "write permission from controller",
+      "expected_evidence": ["directory contract", "artifact paths"],
+      "rollback": "remove only newly created invalid scaffolding after approval"
+    },
+    {
+      "trigger_id": "TR-DATA",
+      "when": "data identity, audit, cleaning, preprocessing, or structured conversion",
+      "exclude_when": "model discussion using already frozen audited data",
+      "stages": ["S3"],
+      "primary_owner": "rules/16-data-audit-methodology.md",
+      "required_rules": [
+        "rules/16-data-audit-methodology.md", "rules/24-assumptions-data-acceptance.md",
+        "rules/30-data-minimum.md"
+      ],
+      "required_approval": "S3 entry approved",
+      "expected_evidence": ["data identity", "transformation lineage", "quality checks"],
+      "rollback": "invalidate dependent model inputs"
+    },
+    {
+      "trigger_id": "TR-MODELING",
+      "when": "model assessment, algorithm comparison, formulation, solving, or result generation",
+      "exclude_when": "manuscript-only wording change with no mathematical consequence",
+      "stages": ["S4", "S5"],
+      "primary_owner": "rules/25-model-results-acceptance.md",
+      "required_rules": [
+        "rules/07-algorithm-reference.md", "rules/15-pipeline-methodology.md",
+        "rules/25-model-results-acceptance.md", "rules/31-modeling-minimum.md"
+      ],
+      "conditional_rules": [
+        {"when": "credibility depends on uncertainty, approximation, non-exact solving, or model form", "rules": ["rules/36-uncertainty-error-analysis.md"]}
+      ],
+      "required_approval": "S4 design approval before S5 execution",
+      "expected_evidence": ["formulation", "solver specification", "frozen results"],
+      "rollback": "invalidate affected results and downstream prose"
+    },
+    {
+      "trigger_id": "TR-SOLUTION-BRIEF",
+      "when": "a per-question teammate solution explanation is created, reviewed, or synchronized",
+      "exclude_when": "the work is manuscript prose, formal paper structure, typesetting, or delivery rather than a technical teammate handoff",
+      "stages": ["S6", "S7"],
+      "primary_owner": "rules/01-contest-project-pattern.md",
+      "required_rules": [
+        "rules/01-contest-project-pattern.md", "rules/13-excellent-paper-expression.md",
+        "rules/15-pipeline-methodology.md", "rules/17-reader-first-manuscript-audit.md",
+        "rules/25-model-results-acceptance.md", "rules/31-modeling-minimum.md",
+        "rules/32-verification-minimum.md"
+      ],
+      "conditional_rules": [
+        {"when": "result credibility depends on uncertainty, approximation, numerical error, or model form", "rules": ["rules/36-uncertainty-error-analysis.md"]}
+      ],
+      "applicability_limits": "From rules 13 and 17 apply transferable information-order, terminology-first-use, adjacent plain-language explanation, restatement, data-meaning, evidence and claim-strength requirements. Do not inherit manuscript-only abstract, full-paper section, typesetting, length, or promotion requirements.",
+      "required_approval": "the question model, results, and verification have reached the S6 review point; S7 synchronization does not imply manuscript promotion",
+      "expected_evidence": [
+        "docs/<task-id>/solution_brief.md", "code and frozen-output paths",
+        "terminology and plain-language-restatement review", "teammate-facing human review"
+      ],
+      "rollback": "invalidate and revise the solution brief whenever its model, result, terminology, or evidence changes"
+    },
+    {
+      "trigger_id": "TR-LITERATURE",
+      "when": "literature search, external evidence, source interpretation, or citation work",
+      "exclude_when": "internal evidence only with no external claim",
+      "stages": ["S1", "S4", "S7"],
+      "primary_owner": "rules/08-literature-search.md",
+      "required_rules": [
+        "rules/08-literature-search.md", "rules/12-source-audit-and-provenance.md",
+        "rules/26-conclusion-references-acceptance.md", "rules/28-evidence-acceptance.md"
+      ],
+      "required_approval": "external access and citation scope allowed",
+      "expected_evidence": ["query and source record", "claim-source mapping"],
+      "rollback": "remove unsupported claim or restore uncertainty"
+    },
+    {
+      "trigger_id": "TR-VERIFY",
+      "when": "verification, robustness, uncertainty, artifact audit, or manuscript audit",
+      "exclude_when": "unverified exploratory calculation not used as a claim",
+      "stages": ["S5", "S6", "S7"],
+      "primary_owner": "rules/05-audit-protocol.md",
+      "required_rules": [
+        "rules/05-audit-protocol.md", "rules/09-robustness-checker.md",
+        "rules/25-model-results-acceptance.md", "rules/32-verification-minimum.md",
+        "rules/36-uncertainty-error-analysis.md"
+      ],
+      "required_approval": "verification scope established",
+      "expected_evidence": ["independent check", "failure cases", "claim-strength decision"],
+      "rollback": "return affected component to last supported state"
+    },
+    {
+      "trigger_id": "TR-LINEAGE",
+      "when": "structured output, machine-readable handoff, or artifact lineage",
+      "exclude_when": "ephemeral scratch output carrying no conclusion",
+      "stages": ["S3", "S5", "S6", "S7"],
+      "primary_owner": "rules/10-json-handoff.md",
+      "required_rules": ["rules/10-json-handoff.md"],
+      "required_approval": "artifact write allowed",
+      "expected_evidence": ["schema", "input-output lineage", "run identity"],
+      "rollback": "invalidate malformed artifact and dependents"
+    },
+    {
+      "trigger_id": "TR-MANUSCRIPT",
+      "when": "manuscript drafting, revision, or content mutation under paper/",
+      "exclude_when": "reproduction-only documentation with no manuscript prose",
+      "stages": ["S7"],
+      "primary_owner": "rules/03-paper-content-rules.md",
+      "required_rules": [
+        "rules/03-paper-content-rules.md", "rules/06-weiwei-norms.md",
+        "rules/13-excellent-paper-expression.md", "rules/17-reader-first-manuscript-audit.md",
+        "rules/20-execution-gates.md", "rules/21-global-manuscript-acceptance.md",
+        "rules/22-front-matter-acceptance.md", "rules/23-background-analysis-acceptance.md",
+        "rules/24-assumptions-data-acceptance.md", "rules/25-model-results-acceptance.md",
+        "rules/26-conclusion-references-acceptance.md", "rules/33-manuscript-minimum.md"
+      ],
+      "conditional_rules": [
+        {"when": "a result boundary or credibility claim depends on uncertainty evidence", "rules": ["rules/36-uncertainty-error-analysis.md"]}
+      ],
+      "required_approval": "manuscript mutation permission at S7; formal promotion remains a separate human decision",
+      "expected_evidence": ["current-round full-read proof", "paper workspace diff", "section-duty audit"],
+      "rollback": "restore last approved draft or formal manuscript state"
+    },
+    {
+      "trigger_id": "TR-VISUAL",
+      "when": "figure, table, engineering drawing, or visual evidence creation or revision",
+      "exclude_when": "text-only change with no visual dependency",
+      "stages": ["S5", "S6", "S7"],
+      "primary_owner": "rules/37-scientific-figure-design.md",
+      "required_rules": [
+        "rules/04-figure-generator.md", "rules/27-visual-layout-acceptance.md",
+        "rules/34-visuals-minimum.md", "rules/37-scientific-figure-design.md"
+      ],
+      "required_approval": "figure sample gate and applicable write permission",
+      "expected_evidence": ["source-data mapping", "asset validation", "visual inspection"],
+      "rollback": "reject visual and restore last accepted asset"
+    },
+    {
+      "trigger_id": "TR-LATEX",
+      "when": "LaTeX source, fonts, compilation, PDF, pagination, or layout",
+      "exclude_when": "Markdown-only draft with no formal rendering",
+      "stages": ["S7"],
+      "primary_owner": "rules/02-latex-setup.md",
+      "required_rules": [
+        "rules/02-latex-setup.md", "rules/27-visual-layout-acceptance.md",
+        "rules/34-visuals-minimum.md"
+      ],
+      "required_approval": "formal manuscript permission",
+      "expected_evidence": ["compile log", "font check", "page inspection"],
+      "rollback": "restore last compiling formal source"
+    },
+    {
+      "trigger_id": "TR-DELIVERY",
+      "when": "formal assembly, finalization, submission, or packaging",
+      "exclude_when": "provisional docs draft",
+      "stages": ["S7"],
+      "primary_owner": "rules/11-paper-finalizer.md",
+      "required_rules": [
+        "rules/11-paper-finalizer.md", "rules/12-source-audit-and-provenance.md",
+        "rules/28-evidence-acceptance.md", "rules/29-governance-acceptance.md",
+        "rules/35-provenance-delivery-minimum.md"
+      ],
+      "required_approval": "explicit human promotion to formal delivery",
+      "expected_evidence": ["submission compliance", "package manifest", "final audit"],
+      "rollback": "withdraw formal-delivery status"
+    },
+    {
+      "trigger_id": "TR-HANDOFF",
+      "when": "checkpoint, handoff, interruption, or session close",
+      "exclude_when": "no project state has been created or changed",
+      "stages": ["S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7"],
+      "primary_owner": "rules/14-session-handoff.md",
+      "required_rules": [
+        "rules/14-session-handoff.md", "rules/29-governance-acceptance.md",
+        "rules/35-provenance-delivery-minimum.md"
+      ],
+      "required_approval": "checkpoint write allowed",
+      "expected_evidence": ["current state", "changed paths", "next action", "unresolved issues"],
+      "rollback": "retain prior valid checkpoint"
+    },
+    {
+      "trigger_id": "TR-CLOSURE",
+      "when": "milestone or final closure claim",
+      "exclude_when": "partial task completion explicitly labeled partial",
+      "stages": ["S6", "S7"],
+      "primary_owner": "SKILL.md",
+      "required_rule_globs": ["rules/*.md"],
+      "required_rules": [],
+      "required_approval": "applicable milestone or final approval",
+      "expected_evidence": ["all-rule read proof", "closure receipt", "unresolved count zero"],
+      "rollback": "reopen failed component and its dependents"
+    },
+    {
+      "trigger_id": "TR-SKILL-MAINTENANCE",
+      "when": "Skill maintenance, migration, versioning, or capability coverage claim",
+      "exclude_when": "ordinary project execution using an unchanged Skill",
+      "stages": ["S0"],
+      "primary_owner": "SKILL.md",
+      "required_rule_globs": ["rules/*.md"],
+      "required_rules": [],
+      "required_approval": "approved Skill decision package",
+      "expected_evidence": ["source snapshot", "capability ledger", "routing validation", "behavior regressions"],
+      "rollback": "restore last validated V7 candidate without altering historical versions"
+    }
+  ]
+}

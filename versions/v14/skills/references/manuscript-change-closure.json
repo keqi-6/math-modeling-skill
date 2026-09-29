@@ -1,0 +1,693 @@
+{
+  "schema_version": "11.0",
+  "contract_kind": "manuscript_minimum_consistency_closure",
+  "purpose": "Preserve every V10 manuscript rule while declaring only the minimum actual event and evaluation surface justified by a V11 plan step; frozen atoms remain the sole rule selector.",
+  "authority_boundary": {
+    "owns": [
+      "manuscript_change_class_vocabulary",
+      "manuscript_facet_event_normalization",
+      "manuscript_evaluation_closure",
+      "manuscript_change_set_scope",
+      "manuscript_dependency_propagation_boundary"
+    ],
+    "does_not_own": [
+      "manuscript_rule_effects",
+      "route_identity",
+      "project_state_transitions",
+      "recovery_classification"
+    ]
+  },
+  "semantic_inventory": {
+    "source": "rules/manuscript.json",
+    "source_sha256": "f07b14bd8c6a378249c71a69826f161d62a0aad1a9fb9ff1b639e4165d0724af",
+    "active_rule_count": 29,
+    "rule_groups": {
+      "structure": [
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "content": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.LIMITATION",
+        "MAN.CONTENT.METHOD",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.CONTENT.RESULT"
+      ],
+      "reader": [
+        "MAN.READER.FLOW",
+        "MAN.READER.FRONT",
+        "MAN.READER.NO_META",
+        "MAN.READER.SCOPE",
+        "MAN.READER.STANDALONE"
+      ],
+      "acceptance": [
+        "MAN.ACCEPT.CROSSREF",
+        "MAN.ACCEPT.GLOBAL",
+        "MAN.ACCEPT.NO_PLACEHOLDER",
+        "MAN.ACCEPT.RENDER",
+        "MAN.ACCEPT.SECTION"
+      ],
+      "local": [
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.REOPEN_A3",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "profile": [
+        "MAN.PROFILE.FORMAT",
+        "MAN.PROFILE.OPT_IN",
+        "MAN.PROFILE.TRUTH"
+      ]
+    }
+  },
+  "plan_contract": {
+    "selector": "step.facts.change_class",
+    "required_fact_keys": [
+      "change_class",
+      "completion_scope",
+      "profile_selected",
+      "published_revision",
+      "existing_paths_only"
+    ],
+    "unknown_change_class": "block_step:unknown_manuscript_change_class",
+    "missing_contract": "block_step:manuscript_change_closure_contract_missing",
+    "events_are_actual": true,
+    "potential_events_must_not_be_emitted": true,
+    "selection_algorithm": "Select the named change closure and validate its actual events and declared facets. A declared facet means the step actually writes or actually audits that semantic surface. Normalize only those facets through facet_to_legacy_event, then select manuscript atoms without filtering by their unchanged route, scope and trigger contracts. For a fixed closure, derived_expected_manuscript_rule_ids is a test oracle. For a compositional closure, derive the oracle from base_derived_expected_manuscript_rule_ids plus only overlays keyed by normalized legacy events. No derived field is a runtime allowlist. Never broadcast undeclared facets or infer an audit, recovery, artifact or upstream-model event from write mode alone."
+  },
+  "rule_count_telemetry_policy": {
+    "field": "closures.*.rule_count_telemetry.expected_max_total_rule_count",
+    "runtime_effect": "none",
+    "purpose": "Detect accidental event or rule broadcast in evaluations without blocking a semantically valid step whose actual applicable rule set is larger."
+  },
+  "facet_to_legacy_event": {
+    "method": "method_section_write",
+    "result": "result_section_write",
+    "conclusion": "conclusion_write",
+    "structure": "manuscript_structure"
+  },
+  "global_invariants": {
+    "all_29_rule_semantics_retained": true,
+    "normative_strength_does_not_imply_per_turn_evidence": true,
+    "change_set_is_the_write_unit": true,
+    "one_file_at_a_time_forbidden": true,
+    "existing_file_edits_do_not_trigger_artifact_admission": true,
+    "recovery_requires_explicit_recovery_assessment_event": true,
+    "profile_requires_explicit_selection": true,
+    "downstream_edits_never_rebind_or_mutate_upstream_sources": true,
+    "whole_project_invalidation_for_local_manuscript_change_forbidden": true,
+    "batch_change_set_impact_is_computed_once": true
+  },
+  "enforcement_by_tier": {
+    "G1_WORKING": {
+      "agent_obligation": "apply_to_changed_content_without_typed_evidence_or_state_gate",
+      "failure_effect": "revise_or_report_changed_scope",
+      "promotion_blocked": false
+    },
+    "G2_CHECKPOINT": {
+      "agent_obligation": "evaluate_required_scope_as_pass_fail_or_not_applicable",
+      "failure_effect": "block_only_the_checkpoint_step",
+      "promotion_blocked": true
+    },
+    "G3_RELEASE": {
+      "agent_obligation": "evaluate_release_scope_as_pass_fail_or_not_applicable",
+      "failure_effect": "block_only_the_release_step",
+      "promotion_blocked": true
+    }
+  },
+  "profile_overlay": {
+    "activation_any": [
+      "step.facts.profile_selected == true",
+      "writing_profile in step.change_set.facets"
+    ],
+    "required_event": "writing_profile_apply",
+    "rule_ids": [
+      "MAN.PROFILE.FORMAT",
+      "MAN.PROFILE.OPT_IN",
+      "MAN.PROFILE.TRUTH"
+    ],
+    "default_activation_forbidden": true
+  },
+  "closures": {
+    "typo": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["local_edit", "fix_typo"],
+      "required_events": ["local_manuscript_edit"],
+      "allowed_events": ["local_manuscript_edit"],
+      "required_facets": ["orthography"],
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["changed_span", "containing_paragraph", "direct_reference_points"],
+      "completion_claim": "changed_scope_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_for_existing_paths",
+      "upstream_access": "read_only_if_needed",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 12, "runtime_effect": "none"}
+    },
+    "paragraph_polish": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["polish_paragraph"],
+      "required_events": ["local_manuscript_edit"],
+      "allowed_events": ["local_manuscript_edit"],
+      "required_facets": ["wording"],
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["changed_paragraph", "adjacent_sentences", "semantic_invariance", "direct_reference_points"],
+      "completion_claim": "changed_paragraph_wording_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_for_existing_paths",
+      "upstream_access": "read_only_if_needed",
+      "semantic_boundary": "If wording changes a claim, result, limitation, notation, or cross-reference, select a substantive closure instead.",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 12, "runtime_effect": "none"}
+    },
+    "local_substantive": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["local_edit"],
+      "required_events": ["local_manuscript_edit", "manuscript_write"],
+      "allowed_events": ["local_manuscript_edit", "manuscript_write"],
+      "required_facets": ["claim", "explanation"],
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["changed_span", "containing_section", "declared_claim_refs", "direct_duplicate_claims", "direct_cross_references"],
+      "completion_claim": "changed_scope_and_direct_dependencies_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_for_existing_paths",
+      "upstream_access": "identity_read_only_no_rebind",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 16, "runtime_effect": "none"}
+    },
+    "section_substantive": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["draft", "rewrite"],
+      "required_events": ["manuscript_write"],
+      "allowed_events": [
+        "manuscript_write",
+        "method_section_write",
+        "result_section_write",
+        "conclusion_write"
+      ],
+      "required_facets": ["explanation", "notation"],
+      "section_event_overlays": {
+        "method": {
+          "event": "method_section_write",
+          "selected_rule_id": "MAN.CONTENT.METHOD"
+        },
+        "result": {
+          "event": "result_section_write",
+          "selected_rule_id": "MAN.CONTENT.RESULT"
+        },
+        "conclusion": {
+          "event": "conclusion_write",
+          "selected_rule_id": "MAN.CONTENT.LIMITATION"
+        }
+      },
+      "base_derived_expected_manuscript_rule_ids": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP"
+      ],
+      "derived_expected_rule_overlays_by_legacy_event": {
+        "method_section_write": ["MAN.CONTENT.METHOD"],
+        "result_section_write": ["MAN.CONTENT.RESULT"],
+        "conclusion_write": ["MAN.CONTENT.LIMITATION"]
+      },
+      "base_required_evaluation_manuscript_rule_ids": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP"
+      ],
+      "required_evaluation_rule_overlays_by_event": {
+        "method_section_write": ["MAN.CONTENT.METHOD"],
+        "result_section_write": ["MAN.CONTENT.RESULT"],
+        "conclusion_write": ["MAN.CONTENT.LIMITATION"]
+      },
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["target_section", "incoming_definitions", "outgoing_claim_refs", "shared_notation", "direct_cross_references"],
+      "completion_claim": "section_working_change_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_for_existing_paths",
+      "upstream_access": "identity_read_only_no_rebind",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 18, "runtime_effect": "none"}
+    },
+    "structure_only": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["structure"],
+      "required_events": ["manuscript_structure"],
+      "allowed_events": ["manuscript_structure"],
+      "required_facets": ["structure"],
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["changed_structure", "section_responsibilities", "direct_cross_references", "reader_order"],
+      "completion_claim": "structure_working_change_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_for_existing_paths",
+      "upstream_access": "identity_read_only_no_rebind",
+      "semantic_boundary": "Do not infer method, result, conclusion, or full-manuscript writing when only organization changes.",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 14, "runtime_effect": "none"}
+    },
+    "full_draft": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["draft", "rewrite", "structure"],
+      "required_events": [
+        "manuscript_structure",
+        "manuscript_write",
+        "method_section_write",
+        "result_section_write",
+        "conclusion_write"
+      ],
+      "allowed_events": [
+        "manuscript_structure",
+        "manuscript_write",
+        "method_section_write",
+        "result_section_write",
+        "conclusion_write"
+      ],
+      "required_facets": ["conclusion", "method", "result", "structure"],
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.LIMITATION",
+        "MAN.CONTENT.METHOD",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.CONTENT.RESULT",
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.LIMITATION",
+        "MAN.CONTENT.METHOD",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.CONTENT.RESULT",
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["all_changed_manuscript_content", "declared_claim_refs", "cross_section_dependencies"],
+      "completion_claim": "working_draft_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_for_existing_paths",
+      "upstream_access": "identity_read_only_no_rebind",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 24, "runtime_effect": "none"}
+    },
+    "render_output": {
+      "allowed_tiers": ["G0_ADVISORY", "G1_WORKING"],
+      "allowed_actions": ["render", "typeset"],
+      "required_events": ["visual_render"],
+      "allowed_events": ["visual_render"],
+      "required_facets": ["render"],
+      "derived_expected_manuscript_rule_ids": [],
+      "required_evaluation_manuscript_rule_ids": [],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["declared_source_paths", "rendered_output", "render_command_result"],
+      "completion_claim": "render_attempt_and_output_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "working_render_output_unless_promoted_separately",
+      "upstream_access": "read_only_render_inputs",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 14, "runtime_effect": "none"}
+    },
+    "layout_check": {
+      "allowed_tiers": ["G0_ADVISORY", "G1_WORKING"],
+      "allowed_actions": ["layout_check"],
+      "required_events": ["visual_audit"],
+      "allowed_events": ["visual_audit"],
+      "required_facets": ["layout"],
+      "derived_expected_manuscript_rule_ids": [],
+      "required_evaluation_manuscript_rule_ids": [],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["declared_rendered_pages", "labels", "fonts", "pagination", "captions", "placement"],
+      "completion_claim": "declared_layout_scope_checked_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "read_only_unless_a_separate_change_step_is_authorized",
+      "upstream_access": "read_only_render_inputs",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 16, "runtime_effect": "none"}
+    },
+    "section_checkpoint": {
+      "allowed_tiers": ["G2_CHECKPOINT"],
+      "allowed_actions": ["audit", "final_audit"],
+      "required_events": ["manuscript_audit"],
+      "allowed_events": ["manuscript_audit"],
+      "required_facets": ["acceptance", "cross_reference", "explanation", "notation"],
+      "base_derived_expected_manuscript_rule_ids": [
+        "MAN.ACCEPT.CROSSREF",
+        "MAN.ACCEPT.GLOBAL",
+        "MAN.ACCEPT.SECTION",
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.LIMITATION",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.READER.NO_META",
+        "MAN.READER.SCOPE",
+        "MAN.STRUCTURE.NO_WORKLOG"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.ACCEPT.CROSSREF",
+        "MAN.ACCEPT.SECTION",
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.READER.NO_META",
+        "MAN.READER.SCOPE",
+        "MAN.STRUCTURE.NO_WORKLOG"
+      ],
+      "derived_expected_rule_overlays_by_legacy_event": {
+        "method_section_write": ["MAN.CONTENT.METHOD"],
+        "result_section_write": ["MAN.CONTENT.RESULT"],
+        "conclusion_write": []
+      },
+      "base_required_evaluation_manuscript_rule_ids": [
+        "MAN.ACCEPT.CROSSREF",
+        "MAN.ACCEPT.SECTION",
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.READER.NO_META",
+        "MAN.READER.SCOPE",
+        "MAN.STRUCTURE.NO_WORKLOG"
+      ],
+      "required_evaluation_rule_overlays_by_event": {
+        "method_section_write": ["MAN.CONTENT.METHOD"],
+        "result_section_write": ["MAN.CONTENT.RESULT"],
+        "conclusion_write": []
+      },
+      "expected_not_applicable_manuscript_rule_ids": [
+        "MAN.ACCEPT.GLOBAL",
+        "MAN.CONTENT.LIMITATION"
+      ],
+      "check_scope": ["claimed_section", "section_responsibility", "direct_dependencies", "audit_read_scope"],
+      "completion_claim": "section_checkpoint_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_without_identity_change",
+      "upstream_access": "read_only_verification",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 22, "runtime_effect": "none"}
+    },
+    "full_checkpoint": {
+      "allowed_tiers": ["G2_CHECKPOINT"],
+      "allowed_actions": ["audit", "final_audit"],
+      "required_events": [
+        "full_manuscript_audit",
+        "manuscript_audit"
+      ],
+      "allowed_events": [
+        "full_manuscript_audit",
+        "manuscript_audit"
+      ],
+      "required_facets": ["acceptance", "conclusion", "cross_reference", "method", "reader", "result", "structure"],
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.ACCEPT.CROSSREF",
+        "MAN.ACCEPT.GLOBAL",
+        "MAN.ACCEPT.SECTION",
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.LIMITATION",
+        "MAN.CONTENT.METHOD",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.CONTENT.RESULT",
+        "MAN.READER.FLOW",
+        "MAN.READER.FRONT",
+        "MAN.READER.NO_META",
+        "MAN.READER.SCOPE",
+        "MAN.READER.STANDALONE",
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.ACCEPT.CROSSREF",
+        "MAN.ACCEPT.GLOBAL",
+        "MAN.ACCEPT.SECTION",
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.LIMITATION",
+        "MAN.CONTENT.METHOD",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.CONTENT.RESULT",
+        "MAN.READER.FLOW",
+        "MAN.READER.FRONT",
+        "MAN.READER.NO_META",
+        "MAN.READER.SCOPE",
+        "MAN.READER.STANDALONE",
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["entire_manuscript", "cross_section_claims", "reader_path", "declared_upstream_identities"],
+      "completion_claim": "full_manuscript_checkpoint",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_without_identity_change",
+      "upstream_access": "read_only_verification",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 32, "runtime_effect": "none"}
+    },
+    "release": {
+      "allowed_tiers": ["G3_RELEASE"],
+      "allowed_actions": ["final_audit"],
+      "required_events": [
+        "full_manuscript_audit",
+        "manuscript_audit",
+        "manuscript_promotion"
+      ],
+      "allowed_events": [
+        "full_manuscript_audit",
+        "manuscript_audit",
+        "manuscript_promotion"
+      ],
+      "required_facets": ["acceptance", "conclusion", "cross_reference", "method", "reader", "render", "result", "structure"],
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.ACCEPT.CROSSREF",
+        "MAN.ACCEPT.GLOBAL",
+        "MAN.ACCEPT.NO_PLACEHOLDER",
+        "MAN.ACCEPT.RENDER",
+        "MAN.ACCEPT.SECTION",
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.LIMITATION",
+        "MAN.CONTENT.METHOD",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.CONTENT.RESULT",
+        "MAN.READER.FLOW",
+        "MAN.READER.FRONT",
+        "MAN.READER.NO_META",
+        "MAN.READER.SCOPE",
+        "MAN.READER.STANDALONE",
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.ACCEPT.CROSSREF",
+        "MAN.ACCEPT.GLOBAL",
+        "MAN.ACCEPT.NO_PLACEHOLDER",
+        "MAN.ACCEPT.RENDER",
+        "MAN.ACCEPT.SECTION",
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.LIMITATION",
+        "MAN.CONTENT.METHOD",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.CONTENT.RESULT",
+        "MAN.READER.FLOW",
+        "MAN.READER.FRONT",
+        "MAN.READER.NO_META",
+        "MAN.READER.SCOPE",
+        "MAN.READER.STANDALONE",
+        "MAN.STRUCTURE.DEPENDENCY",
+        "MAN.STRUCTURE.NO_WORKLOG",
+        "MAN.STRUCTURE.REQUIREMENTS",
+        "MAN.STRUCTURE.RESPONSIBILITY",
+        "MAN.STRUCTURE.TRACE"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["release_manuscript", "rendered_output", "all_cross_references", "all_evaluator_visible_content"],
+      "completion_claim": "release_candidate",
+      "recovery": "not_applicable",
+      "artifact_protocol": "promotion_only",
+      "upstream_access": "read_only_verification",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 36, "runtime_effect": "none"}
+    },
+    "profile_local": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["local_edit"],
+      "required_events": ["local_manuscript_edit", "writing_profile_apply"],
+      "allowed_events": ["local_manuscript_edit", "writing_profile_apply"],
+      "required_facets": ["writing_profile"],
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE",
+        "MAN.PROFILE.FORMAT",
+        "MAN.PROFILE.OPT_IN",
+        "MAN.PROFILE.TRUTH"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE",
+        "MAN.PROFILE.FORMAT",
+        "MAN.PROFILE.OPT_IN",
+        "MAN.PROFILE.TRUTH"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["changed_span", "containing_paragraph", "profile_semantic_diff", "official_format_conflicts"],
+      "completion_claim": "profiled_local_change_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_for_existing_paths",
+      "upstream_access": "forbidden",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 16, "runtime_effect": "none"}
+    },
+    "multi_file_substantive": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["local_edit"],
+      "required_events": ["local_manuscript_edit", "manuscript_write"],
+      "allowed_events": ["local_manuscript_edit", "manuscript_write"],
+      "required_facets": ["claim", "cross_reference", "explanation"],
+      "change_set_constraints": {
+        "minimum_paths": 2,
+        "coherence": "all paths implement one user-authorized semantic change"
+      },
+      "derived_expected_manuscript_rule_ids": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "required_evaluation_manuscript_rule_ids": [
+        "MAN.CONTENT.CLAIM_EVIDENCE",
+        "MAN.CONTENT.EXPLANATION_TRACE",
+        "MAN.CONTENT.NOTATION",
+        "MAN.CONTENT.NO_DUMP",
+        "MAN.LOCAL.DEPENDENCIES",
+        "MAN.LOCAL.NO_FULL_AUDIT",
+        "MAN.LOCAL.SCOPE"
+      ],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["all_paths_in_one_change_set", "declared_claim_refs", "cross_file_direct_dependencies"],
+      "completion_claim": "one_coherent_multi_file_change_set",
+      "recovery": "not_applicable",
+      "artifact_protocol": "not_applicable_for_existing_paths",
+      "upstream_access": "identity_read_only_no_rebind",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 16, "runtime_effect": "none"}
+    },
+    "published_revision_edit": {
+      "allowed_tiers": ["G1_WORKING"],
+      "allowed_actions": ["reopen_published"],
+      "required_events": ["published_manuscript_change"],
+      "allowed_events": ["published_manuscript_change"],
+      "required_facets": [],
+      "derived_expected_manuscript_rule_ids": ["MAN.LOCAL.REOPEN_A3"],
+      "required_evaluation_manuscript_rule_ids": ["MAN.LOCAL.REOPEN_A3"],
+      "expected_not_applicable_manuscript_rule_ids": [],
+      "check_scope": ["released_snapshot_identity", "new_working_revision"],
+      "completion_claim": "new_revision_opened_only",
+      "recovery": "not_applicable",
+      "artifact_protocol": "create_revision_without_overwriting_release_snapshot",
+      "upstream_access": "forbidden",
+      "rule_count_telemetry": {"expected_max_total_rule_count": 10, "runtime_effect": "none"}
+    }
+  },
+  "change_set_policy": {
+    "shape": {
+      "paths": "array<string>",
+      "facets": "array<string>",
+      "claim_refs": "array<string>"
+    },
+    "path_count_limit": null,
+    "coherence_unit": "one user-authorized semantic change",
+    "per_file_route_or_gate_forbidden": true,
+    "existing_paths_only_behavior": "edit all paths, validate the closure once, and report one atomic change set",
+    "new_identity_behavior": "invoke artifact admission only for genuinely new controlled identities"
+  },
+  "dependency_policy": {
+    "edge_direction": "upstream_identity_to_downstream_claim",
+    "local_invalidation_unit": "changed_claim_or_reference_edge",
+    "allowed_local_targets": ["changed_span", "direct_duplicate_claim", "direct_cross_reference", "downstream_delivery_consumer"],
+    "forbidden_local_targets": ["upstream_data", "upstream_model", "upstream_code", "unrelated_manuscript_section", "whole_project"],
+    "rebind_behavior": "rebind only affected downstream proof edges; never rewrite or re-register an unchanged upstream artifact"
+  },
+  "mixed_workflow_policy": {
+    "one_global_mode_forbidden": true,
+    "step_local_modes_required": true,
+    "example_order": ["promote_close_s6", "mutate_write_manuscript"],
+    "dependency_representation": "the manuscript step depends_on the S6-close step",
+    "recovery_inference_from_promotion_forbidden": true
+  }
+}

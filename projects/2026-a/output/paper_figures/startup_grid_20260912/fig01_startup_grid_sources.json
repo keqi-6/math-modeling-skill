@@ -1,0 +1,57 @@
+{
+  "figure_id": "fig01_startup_grid",
+  "data_driven_visual": false,
+  "size_cm": [
+    15.8,
+    6.8
+  ],
+  "sources": {
+    "docs/Q1/solution_brief.md": "96d66b456924ea2038d3085cd3f51869b9ee5ff41af6a8657c2553a3b40376e5",
+    "src/Q1/solve.py": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141"
+  },
+  "algorithm_source": {
+    "path": ".venv/Lib/site-packages/scipy/integrate/_ivp/bdf.py",
+    "sha256": "72a6db9b5237b901d3bfbbe1485c48983aa4296cb2aaaa945e9d98a4f1d912a4",
+    "selection": "kappa[1]=-0.185, alpha[1]=1.185, D[0]=u^0, D[1]=dt*f(t_s,u^0)"
+  },
+  "generator": {
+    "path": "scripts/build_spacetime_grid.py",
+    "sha256": "b2e260b77ddc2ef12773b51f28a53745760238d9ed3bfc2cc401d5ddef192758"
+  },
+  "mapping": {
+    "axes": "horizontal radial coordinate r; vertical internal integration time t",
+    "levels": "only segment start t_s and its first internal step t_1=t_s+dt",
+    "known_level": "u^0, solid blue at all radial node intersections",
+    "unknown_level": "u^1, open orange at all radial node intersections; solved together",
+    "local_stencil": "interior i-1, i, i+1 at both levels; no boundary stencil is depicted",
+    "upper_link": "f_i(t_1,u^1) depends on the three nearest spatial values implicitly",
+    "three_arrows": "direct known contribution 1.185*u_i^0 + 0.185*dt*f_i(t_s,u^0), not inverse-matrix effects",
+    "residual": "1.185*(u_i^1-u_i^0)-0.185*dt*f_i(t_s,u^0)-dt*f_i(t_1,u^1)=0",
+    "spacing": "schematic uniform radial spacing; one schematic adaptive first time step, not saved output times",
+    "scope": "Q1 scalar field and NDF1 initialization at each numerical integration segment; later adaptive orders omitted",
+    "initial_uniformity": "some old-layer f_i values vanish for the initial physical uniform state; generic segment-start dependencies remain"
+  },
+  "outputs": {
+    "png": {
+      "path": "output/paper_figures/startup_grid_20260912/fig01_startup_grid.png",
+      "sha256": "1c3bdf7b60bf9cab899ea69e53c9c88092596ba4e73c2c8e7a9ab96d945b4255"
+    },
+    "pdf": {
+      "path": "output/paper_figures/startup_grid_20260912/fig01_startup_grid.pdf",
+      "sha256": "30057ab412c5aba96601f97e6d84329f389f43211d913f499bf9981605543322"
+    },
+    "svg": {
+      "path": "output/paper_figures/startup_grid_20260912/fig01_startup_grid.svg",
+      "sha256": "cb81297404e65aab8dc4cc2bdcc18cde531b0176283172644d9df7bd042149d8"
+    },
+    "no_text": {
+      "path": "output/paper_figures/startup_grid_20260912/fig01_startup_grid_no_text.png",
+      "sha256": "1b5be786b38d12604bcfc4c874aba4493d806239c2df35588ff3b5b246c931e3"
+    },
+    "gray": {
+      "path": "output/paper_figures/startup_grid_20260912/fig01_startup_grid_gray.png",
+      "sha256": "a0a914cfd5d7631e35a61ddff62df62214a3bd0eb54adac394726156a635b1a4"
+    }
+  },
+  "status": "working diagram using approved single-grid style; independent image review followed by parent page review"
+}

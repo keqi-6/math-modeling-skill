@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "question": "Q1",
+  "role": "data_visualization",
+  "purpose": "Inspect radial nonuniformity and the difference between temperature and moisture time scales",
+  "source": {
+    "path": "output/Q1/run_n5120.npz",
+    "sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e"
+  },
+  "verification": {
+    "path": "output/Q1/verification_report.json",
+    "sha256": "3818639fc480837542a93ee4a5e4c72cb6b5ac55dcb1d9023fff32af9f838ec7"
+  },
+  "generator": {
+    "path": "src/Q1/plot_results.py",
+    "sha256": "85a8469d5520647a6e15d51f5e84905a3c3cae9bf66261768e57dabdac945ec3"
+  },
+  "consumer": "docs/Q1/solution_brief.md",
+  "transformations": "time seconds to minutes; radius metres to centimetres; no smoothing or field rounding",
+  "curves": {
+    "time_history_radius_cm": [
+      0,
+      0.5,
+      1,
+      1.5,
+      2
+    ],
+    "profile_time_s": [
+      100,
+      300,
+      600,
+      900,
+      1200,
+      1500,
+      1800
+    ]
+  },
+  "claim_boundary": "Predictions under Q1-v1; no experimental agreement is claimed",
+  "outputs": [
+    {
+      "path": "output/Q1/field_evolution.png",
+      "sha256": "39582e45b10531c2488b8b371a50897694c2cff0fa8e4f571d66647ab89c8082"
+    },
+    {
+      "path": "output/Q1/field_evolution.svg",
+      "sha256": "07c1d4078ca9bf310d295283d9e149de8b0f4ff7344e1fbb0a259b8df97641fd"
+    }
+  ]
+}

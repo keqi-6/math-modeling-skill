@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v15/release-policy.json",
+  "schema_version": "15.0",
+  "release_id": "V15.0.0",
+  "owner": "references/release-policy.json",
+  "principle": "a_release_gate_must_detect_capability_loss_through_independent_observable_outcomes",
+  "active_drivers": [
+    {
+      "id": "package",
+      "purpose": "prove the shipped V15 package is parseable, internally linked, identity-consistent, and free of retired executable surfaces",
+      "script": "scripts/validate_v15_package.py"
+    },
+    {
+      "id": "contracts",
+      "purpose": "prove current atom ownership, route and packet reachability, runtime near-negatives, and reviewed capability preservation",
+      "script": "scripts/validate_v15_contracts.py"
+    },
+    {
+      "id": "scenarios",
+      "purpose": "exercise observable project, state, recovery, visual, modeling, manuscript, evidence, and Skill-authorization outcomes in disposable projects",
+      "script": "scripts/run_v15_scenarios.py",
+      "timeout_seconds": 120
+    }
+  ],
+  "gate_rules": [
+    "each active driver runs once in a fresh subprocess only at formal release validation",
+    "a driver reports stable check or outcome identifiers and evidence, not assertion totals",
+    "a behavior claim needs a positive outcome and a relevant near-negative boundary",
+    "the scenarios driver must report every required_case_id as pass and may not silently drop a registered case",
+    "package and contract validators may not count their own declarations as behavioral proof",
+    "retired suites remain historical audit evidence rather than callable compatibility interfaces",
+    "freezing requires a separately supplied explicit user authorization string"
+  ],
+  "required_case_ids": [
+    "SCENARIO.PLATFORM.INIT_CONTROL_ONLY",
+    "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
+    "SCENARIO.STATE.D0_D1_ROUNDTRIP",
+    "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
+    "SCENARIO.IDENTITY.DECLARED_ROUNDTRIP",
+    "SCENARIO.RECEIPT.CLOSED_WORLD_AND_REPLAY",
+    "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
+    "SCENARIO.RECOVERY.R2_BARRIER_ROUNDTRIP",
+    "SCENARIO.IDENTITY.WORKING_REFRESH_EXACT",
+    "SCENARIO.IDENTITY.PROTECTED_DOWNSTREAM_EXACT",
+    "SCENARIO.STATE.DELTA_REVALIDATION",
+    "SCENARIO.STATE.S6_JUSTIFIED_NA",
+    "SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES",
+    "SCENARIO.VISUAL.A0_ACCEPTANCE",
+    "SCENARIO.MODELING.ESTABLISH_SOLVE_VERIFY_HANDOFF",
+    "SCENARIO.MANUSCRIPT.CLOSURE_FACTS",
+    "SCENARIO.PLATFORM.ARTIFACT_ADMISSION_BOUNDARIES",
+    "SCENARIO.PROJECT.PAUSE_NO_VERIFICATION_REPLAY",
+    "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
+    "BEH.V15.DATA.TREATMENT.PROPOSAL",
+    "BEH.V15.MODEL.COMPARE.BASELINE",
+    "BEH.V15.MODEL.COMPARE.BASELINE.S6",
+    "BEH.V15.VISUAL.A0.ACCEPTANCE",
+    "BEH.V15.VISUAL.A0.DATA_IDENTITY",
+    "BEH.V15.VISUAL.CLASSIFICATION.REQUIRED",
+    "BEH.V15.VERIFY.E3.RISK_MATCH",
+    "BEH.V15.VERIFY.E3.UMBRELLA_ONLY.BLOCKED",
+    "BEH.V15.VERIFY.REALITY_ONLY",
+    "BEH.V15.MODEL.TEAMMATE_BRIEF",
+    "BEH.V15.MODEL.TEAMMATE_BRIEF.REQUIRES_QUESTION",
+    "BEH.V15.MODEL.AUXILIARY_VISIBILITY",
+    "BEH.V15.EVIDENCE.CONSUMER_BOUNDARY",
+    "BEH.V15.MANUSCRIPT.CLOSURE.FACTS_REQUIRED",
+    "BEH.V15.MANUSCRIPT.CLOSURE.FACT_TYPES",
+    "SCENARIO.STATE.ALL_EDGES_RESOLVE"
+  ],
+  "retired_legacy_boundary": {
+    "decision": "references/preservation/legacy-executable-retirement.json",
+    "status": "retired_after_useful_behavior_migration",
+    "callable_compatibility_promised": false,
+    "historical_lineage_remains_audit_evidence": true,
+    "maintenance_audits_integrated_by_contracts": [
+      "scripts/validate_capability_packets.py",
+      "scripts/validate_migration.py"
+    ],
+    "not_release_evidence": [
+      "keyword_presence",
+      "heading_presence",
+      "raw_assertion_count",
+      "mutation_count",
+      "a_validator_accepting_an_artifact_written_only_for_that_validator"
+    ]
+  },
+  "budget": {
+    "active_driver_count": 3,
+    "default_timeout_seconds_per_driver": 60,
+    "full_legacy_suite_on_every_release": false,
+    "ordinary_project_steps_invoke_release_gate": false
+  }
+}

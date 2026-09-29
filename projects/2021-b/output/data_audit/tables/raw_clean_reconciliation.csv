@@ -1,0 +1,17 @@
+﻿dataset,field,compared_count,mismatch_count,max_abs_difference,tolerance
+附件1,temperature_c,114,0,0.0,1e-12
+附件1,ethanol_conversion_pct,114,0,0.0,1e-12
+附件1,ethylene_selectivity_pct,114,0,0.0,1e-12
+附件1,c4_selectivity_pct,114,0,0.0,1e-12
+附件1,acetaldehyde_selectivity_pct,114,0,0.0,1e-12
+附件1,c4_12_alcohol_selectivity_pct,114,0,0.0,1e-12
+附件1,methylbenzaldehyde_methylbenzyl_alcohol_selectivity_pct,114,0,0.0,1e-12
+附件1,other_selectivity_pct,114,0,0.0,1e-12
+附件2,time_min,7,0,0.0,1e-12
+附件2,ethanol_conversion_pct,7,0,0.0,1e-12
+附件2,ethylene_selectivity_pct,7,0,0.0,1e-12
+附件2,c4_selectivity_pct,7,0,0.0,1e-12
+附件2,acetaldehyde_selectivity_pct,7,0,0.0,1e-12
+附件2,c4_12_alcohol_selectivity_pct,7,0,0.0,1e-12
+附件2,methylbenzaldehyde_methylbenzyl_alcohol_selectivity_pct,7,0,0.0,1e-12
+附件2,other_selectivity_pct,7,0,0.0,1e-12

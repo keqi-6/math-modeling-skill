@@ -1,0 +1,252 @@
+{
+  "schema_version": "16.2",
+  "release_id": "V16.2.0",
+  "policy": "references/release-policy.json",
+  "required_drivers": [
+    "package",
+    "contracts",
+    "scenarios"
+  ],
+  "drivers": [
+    {
+      "id": "package",
+      "script": "scripts/validate_v16_package.py"
+    },
+    {
+      "id": "contracts",
+      "script": "scripts/validate_v16_contracts.py"
+    },
+    {
+      "id": "scenarios",
+      "script": "scripts/run_v16_scenarios.py"
+    }
+  ],
+  "required_case_ids": [
+    "SCENARIO.PLATFORM.INIT_CONTROL_ONLY",
+    "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
+    "SCENARIO.STATE.D0_D1_ROUNDTRIP",
+    "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
+    "SCENARIO.IDENTITY.DECLARED_ROUNDTRIP",
+    "SCENARIO.RECEIPT.CLOSED_WORLD_AND_REPLAY",
+    "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
+    "SCENARIO.RECOVERY.R2_BARRIER_ROUNDTRIP",
+    "SCENARIO.V16.RECOVERY.R0.SAME_WINDOW",
+    "SCENARIO.V16.RECOVERY.R0.OPEN_EXECUTION_CONTINUITY",
+    "SCENARIO.V16.RECOVERY.R1.CLEAN_NEW_WINDOW",
+    "SCENARIO.V16.RECOVERY.R2.BASELINE_MISSING",
+    "SCENARIO.V16.RECOVERY.R2.BASELINE_COVERAGE_INCOMPLETE",
+    "SCENARIO.V16.RECOVERY.R2.COMPONENT_GRAPH_DRIFT",
+    "SCENARIO.V16.RECOVERY.R2.RELEVANT_UNATTRIBUTED_CHANGE",
+    "SCENARIO.V16.RECOVERY.R2.EXPLICIT_BARRIER",
+    "SCENARIO.V16.RECOVERY.R2.FULL_ROUNDTRIP",
+    "SCENARIO.V16.RECOVERY.R2.INCOMPLETE_FULL_READ.REJECTED",
+    "SCENARIO.V16.RECOVERY.R2.CLOSED_BLOCKED.NO_RUNTIME_GRANT",
+    "SCENARIO.V16.RECOVERY.R1.RUNTIME_GRANT.EXACT_EXECUTION",
+    "SCENARIO.V16.RECOVERY.R1.ESCALATES_TO_R2",
+    "BEH.V16.RECOVERY.TRANSIENT_CACHE_IGNORED",
+    "SCENARIO.V16.RECOVERY.Q3_TO_Q1_Q2.SAME_WINDOW",
+    "SCENARIO.V16.RECOVERY.Q3_TO_Q1_Q2.NEW_WINDOW",
+    "SCENARIO.IDENTITY.WORKING_REFRESH_EXACT",
+    "SCENARIO.IDENTITY.PROTECTED_DOWNSTREAM_EXACT",
+    "SCENARIO.STATE.DELTA_REVALIDATION",
+    "SCENARIO.STATE.S6_JUSTIFIED_NA",
+    "SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES",
+    "SCENARIO.VISUAL.A0_ACCEPTANCE",
+    "SCENARIO.MODELING.ESTABLISH_SOLVE_VERIFY_HANDOFF",
+    "SCENARIO.MANUSCRIPT.CLOSURE_FACTS",
+    "SCENARIO.PLATFORM.ARTIFACT_ADMISSION_BOUNDARIES",
+    "SCENARIO.PROJECT.PAUSE_NO_VERIFICATION_REPLAY",
+    "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
+    "BEH.V15.DATA.TREATMENT.PROPOSAL",
+    "BEH.V15.MODEL.COMPARE.BASELINE",
+    "BEH.V15.MODEL.COMPARE.BASELINE.S6",
+    "BEH.V15.VISUAL.A0.ACCEPTANCE",
+    "BEH.V15.VISUAL.A0.DATA_IDENTITY",
+    "BEH.V15.VISUAL.CLASSIFICATION.REQUIRED",
+    "BEH.V15.VERIFY.E3.RISK_MATCH",
+    "BEH.V15.VERIFY.E3.UMBRELLA_ONLY.BLOCKED",
+    "BEH.V15.VERIFY.REALITY_ONLY",
+    "BEH.V15.MODEL.TEAMMATE_BRIEF",
+    "BEH.V15.MODEL.TEAMMATE_BRIEF.REQUIRES_QUESTION",
+    "BEH.V15.MODEL.AUXILIARY_VISIBILITY",
+    "BEH.V15.EVIDENCE.CONSUMER_BOUNDARY",
+    "BEH.V15.MANUSCRIPT.CLOSURE.FACTS_REQUIRED",
+    "BEH.V15.MANUSCRIPT.CLOSURE.FACT_TYPES",
+    "SCENARIO.STATE.ALL_EDGES_RESOLVE",
+    "BEH.V16.COMPATIBLE.G1.ONE_CHANGESET",
+    "SCENARIO.V16.COMPATIBLE.MISSING_R0_ATTESTATION.R1",
+    "BEH.V16.COMPATIBLE.MIXED.G1_G2",
+    "BEH.V16.COMPATIBLE.MODEL_CONTRACT.REJECTED",
+    "BEH.V16.COMPATIBLE.FACET_SMUGGLE.REJECTED",
+    "SCENARIO.V16.COMPATIBLE.ATOMIC_RECONCILIATION",
+    "SCENARIO.V16.COMPATIBLE.MISSING_EVIDENCE.NO_PARTIAL_COMMIT",
+    "SCENARIO.V16.COMPATIBLE.PREFIX_IDENTITY_CHANGE.REJECTED",
+    "SCENARIO.V16.COMPATIBLE.OMITTED_ARTIFACT_UPDATE.REJECTED",
+    "SCENARIO.V16.COMPATIBLE.UNREGISTERED_CONSUMER.REJECTED",
+    "SCENARIO.V16.COMPATIBLE.CLAIM_CONSUMER.REJECTED",
+    "SCENARIO.V16.COMPATIBLE.COMPONENT_DRIFT.REJECTED",
+    "SCENARIO.V16.COMPATIBLE.UNDECLARED_PATH_DELTA.REJECTED",
+    "BEH.V16.COMPATIBLE.UNRELATED_WORKING_DRIFT.IGNORED",
+    "SCENARIO.V16.COMPATIBLE.UNDECLARED_EXACT_CONSUMER.REJECTED",
+    "BEH.V16.COMPATIBLE.R1.TARGETED_READ_SET",
+    "BEH.V16.TEAMMATE_BRIEF.G1.CANONICAL_PATH",
+    "BEH.V16.TEAMMATE_BRIEF.G1.WRONG_PATH.REJECTED",
+    "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.TEN_SECTION",
+    "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.NINE_ITEM.REJECTED",
+    "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.META_OR_SAFETY_HEADING.REJECTED",
+    "BEH.V16.TEAMMATE_BRIEF.S6.HUMAN_GATE_SELECTED"
+  ],
+  "legacy_diagnostic_suites_are_active_drivers": false,
+  "change_review": {
+    "review_kind": "human_reviewed_release_change",
+    "review_status": "reviewed",
+    "risk": [
+      "L1 method clarification; version identity literals updated without changing project runtime behavior or release strategy."
+    ],
+    "old_behavior": [
+      "V16.1 already requires question-specific reasoning, evidence-matched claims, reader-facing briefs, scoped visuals and human responsibility; several operational distinctions were implicit."
+    ],
+    "new_observable_effects": [
+      "Read whole-question context before separating inherited facts and local overrides; distinguish model choice from conditional uniqueness proofs.",
+      "Explain continuous and state-dependent discretization without inventing omitted physics.",
+      "Use existing manuscript methods in teammate briefs, reuse unchanged reasoning, and organize verification by actual new risks.",
+      "Distinguish constitutive evolution from output sensitivity and joint effects from single-factor attribution.",
+      "Separate display precision, continuous crossing and discrete decision stability.",
+      "Diagnose visual information density and actual consumer accessibility; assemble scoped appendices and respect immutable team disclosures.",
+      "When complete-history maintenance is requested, audit every input and its later correction, distinguish execution failures from skill gaps, and retain unresolved outcomes."
+    ],
+    "preserved": [
+      "All normative rules, project route/schema/registry/state/runtime contracts and project execution scripts unchanged.",
+      "All three active drivers, 73 required cases and their scenario logic retained.",
+      "Stable V16.1 and project-local skills remain untouched."
+    ],
+    "retired_or_merged": [
+      "No capability retired or merged. Only the copied prior frozen manifest is omitted from this unfrozen candidate."
+    ],
+    "unverified": [
+      "User approved freezing the reviewed candidate. Formal gate and frozen identity are bound by freeze_release; installation is outside this release authorization.",
+      "Method examples and independent walkthroughs do not establish future aesthetic quality or prevent every modeling error.",
+      "G0/G1 native manuscript content-audit closure is an observed inherited gap, not repaired in this method update.",
+      "Pure method-maintenance actions still require normative-change events; only this candidate release-identity change justifies that event here.",
+      "A sealed known G1 change with protected identities pending G2 refresh can lose accepted provenance across compaction; the observed recovery episode is recorded, not repaired or retested.",
+      "Some early project notes still carry superseded interpretations; no project-wide cleanup is claimed by this skill-only change."
+    ],
+    "impact_surfaces": [
+      {
+        "surface": "existing_method_packets",
+        "effect": "Add bounded distinctions and failure-repair examples; no new normative gate.",
+        "evidence_ids": [
+          "CONTRACT.V16.BASE_PRESERVATION"
+        ]
+      },
+      {
+        "surface": "release_identity",
+        "effect": "Version labels and driver identity expectations agree on V16.2.0.",
+        "evidence_ids": [
+          "PACKAGE.V16.IDENTITY_AND_LINKS",
+          "CONTRACT.V16.RELEASE_BINDING"
+        ]
+      }
+    ],
+    "rollback_identity": {
+      "kind": "unchanged_stable_v16_1_tree",
+      "tree_sha256": "6f4522ddd5ac5c24e9509e46852d9e07773e04031680d2ba1a70b8a3ef86c64b",
+      "binding_ref": "references/preservation/v16-2-release-lineage.json#base",
+      "strategy": "Retain the unchanged skills_v16.1/skills as the rollback version. V16.2 is an independent release. The digest is a canonical sorted relative-path to SHA256 map, not an old freeze manifest hash."
+    },
+    "authorization": {
+      "quote": "冻结吧",
+      "quote_sha256": "e0a9611bf8b3384660a7674c0a126956cd1ea304635c1896cf045b82f3e05d9d"
+    },
+    "evidence": {
+      "case_ids": [
+        "SCENARIO.PLATFORM.INIT_CONTROL_ONLY",
+        "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
+        "SCENARIO.STATE.D0_D1_ROUNDTRIP",
+        "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
+        "SCENARIO.IDENTITY.DECLARED_ROUNDTRIP",
+        "SCENARIO.RECEIPT.CLOSED_WORLD_AND_REPLAY",
+        "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
+        "SCENARIO.RECOVERY.R2_BARRIER_ROUNDTRIP",
+        "SCENARIO.V16.RECOVERY.R0.SAME_WINDOW",
+        "SCENARIO.V16.RECOVERY.R0.OPEN_EXECUTION_CONTINUITY",
+        "SCENARIO.V16.RECOVERY.R1.CLEAN_NEW_WINDOW",
+        "SCENARIO.V16.RECOVERY.R2.BASELINE_MISSING",
+        "SCENARIO.V16.RECOVERY.R2.BASELINE_COVERAGE_INCOMPLETE",
+        "SCENARIO.V16.RECOVERY.R2.COMPONENT_GRAPH_DRIFT",
+        "SCENARIO.V16.RECOVERY.R2.RELEVANT_UNATTRIBUTED_CHANGE",
+        "SCENARIO.V16.RECOVERY.R2.EXPLICIT_BARRIER",
+        "SCENARIO.V16.RECOVERY.R2.FULL_ROUNDTRIP",
+        "SCENARIO.V16.RECOVERY.R2.INCOMPLETE_FULL_READ.REJECTED",
+        "SCENARIO.V16.RECOVERY.R2.CLOSED_BLOCKED.NO_RUNTIME_GRANT",
+        "SCENARIO.V16.RECOVERY.R1.RUNTIME_GRANT.EXACT_EXECUTION",
+        "SCENARIO.V16.RECOVERY.R1.ESCALATES_TO_R2",
+        "BEH.V16.RECOVERY.TRANSIENT_CACHE_IGNORED",
+        "SCENARIO.V16.RECOVERY.Q3_TO_Q1_Q2.SAME_WINDOW",
+        "SCENARIO.V16.RECOVERY.Q3_TO_Q1_Q2.NEW_WINDOW",
+        "SCENARIO.IDENTITY.WORKING_REFRESH_EXACT",
+        "SCENARIO.IDENTITY.PROTECTED_DOWNSTREAM_EXACT",
+        "SCENARIO.STATE.DELTA_REVALIDATION",
+        "SCENARIO.STATE.S6_JUSTIFIED_NA",
+        "SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES",
+        "SCENARIO.VISUAL.A0_ACCEPTANCE",
+        "SCENARIO.MODELING.ESTABLISH_SOLVE_VERIFY_HANDOFF",
+        "SCENARIO.MANUSCRIPT.CLOSURE_FACTS",
+        "SCENARIO.PLATFORM.ARTIFACT_ADMISSION_BOUNDARIES",
+        "SCENARIO.PROJECT.PAUSE_NO_VERIFICATION_REPLAY",
+        "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
+        "BEH.V15.DATA.TREATMENT.PROPOSAL",
+        "BEH.V15.MODEL.COMPARE.BASELINE",
+        "BEH.V15.MODEL.COMPARE.BASELINE.S6",
+        "BEH.V15.VISUAL.A0.ACCEPTANCE",
+        "BEH.V15.VISUAL.A0.DATA_IDENTITY",
+        "BEH.V15.VISUAL.CLASSIFICATION.REQUIRED",
+        "BEH.V15.VERIFY.E3.RISK_MATCH",
+        "BEH.V15.VERIFY.E3.UMBRELLA_ONLY.BLOCKED",
+        "BEH.V15.VERIFY.REALITY_ONLY",
+        "BEH.V15.MODEL.TEAMMATE_BRIEF",
+        "BEH.V15.MODEL.TEAMMATE_BRIEF.REQUIRES_QUESTION",
+        "BEH.V15.MODEL.AUXILIARY_VISIBILITY",
+        "BEH.V15.EVIDENCE.CONSUMER_BOUNDARY",
+        "BEH.V15.MANUSCRIPT.CLOSURE.FACTS_REQUIRED",
+        "BEH.V15.MANUSCRIPT.CLOSURE.FACT_TYPES",
+        "SCENARIO.STATE.ALL_EDGES_RESOLVE",
+        "BEH.V16.COMPATIBLE.G1.ONE_CHANGESET",
+        "SCENARIO.V16.COMPATIBLE.MISSING_R0_ATTESTATION.R1",
+        "BEH.V16.COMPATIBLE.MIXED.G1_G2",
+        "BEH.V16.COMPATIBLE.MODEL_CONTRACT.REJECTED",
+        "BEH.V16.COMPATIBLE.FACET_SMUGGLE.REJECTED",
+        "SCENARIO.V16.COMPATIBLE.ATOMIC_RECONCILIATION",
+        "SCENARIO.V16.COMPATIBLE.MISSING_EVIDENCE.NO_PARTIAL_COMMIT",
+        "SCENARIO.V16.COMPATIBLE.PREFIX_IDENTITY_CHANGE.REJECTED",
+        "SCENARIO.V16.COMPATIBLE.OMITTED_ARTIFACT_UPDATE.REJECTED",
+        "SCENARIO.V16.COMPATIBLE.UNREGISTERED_CONSUMER.REJECTED",
+        "SCENARIO.V16.COMPATIBLE.CLAIM_CONSUMER.REJECTED",
+        "SCENARIO.V16.COMPATIBLE.COMPONENT_DRIFT.REJECTED",
+        "SCENARIO.V16.COMPATIBLE.UNDECLARED_PATH_DELTA.REJECTED",
+        "BEH.V16.COMPATIBLE.UNRELATED_WORKING_DRIFT.IGNORED",
+        "SCENARIO.V16.COMPATIBLE.UNDECLARED_EXACT_CONSUMER.REJECTED",
+        "BEH.V16.COMPATIBLE.R1.TARGETED_READ_SET",
+        "BEH.V16.TEAMMATE_BRIEF.G1.CANONICAL_PATH",
+        "BEH.V16.TEAMMATE_BRIEF.G1.WRONG_PATH.REJECTED",
+        "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.TEN_SECTION",
+        "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.NINE_ITEM.REJECTED",
+        "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.META_OR_SAFETY_HEADING.REJECTED",
+        "BEH.V16.TEAMMATE_BRIEF.S6.HUMAN_GATE_SELECTED"
+      ],
+      "check_ids": [
+        "PACKAGE.V16.REQUIRED",
+        "PACKAGE.V16.JSON",
+        "PACKAGE.V16.PYTHON",
+        "PACKAGE.V16.IDENTITY_AND_LINKS",
+        "CONTRACT.V16.RELEASE_BINDING",
+        "CONTRACT.V16.BASE_PRESERVATION",
+        "CONTRACT.V16.COMPATIBLE_CHANGE_BINDING",
+        "CONTRACT.V16.ATOMIC_RECONCILIATION",
+        "CONTRACT.V16.TARGETED_RECOVERY",
+        "CONTRACT.V16.RECOVERY_BOUNDARY",
+        "CONTRACT.V16.TEAMMATE_BRIEF_STANDARD"
+      ]
+    }
+  }
+}

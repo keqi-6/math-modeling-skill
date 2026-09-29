@@ -1,0 +1,49 @@
+{
+  "figure_id": "fig01_fvm_cells",
+  "data_driven_visual": false,
+  "width_cm": 15.8,
+  "height_cm": 8.5,
+  "source_files": {
+    "A题.pdf": {
+      "sha256": "052d8014bff5727c019b72e44fdffaf5c145ce04050dd938baaf3527db331736"
+    },
+    "planning/Q1/model_spec.md": {
+      "sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a"
+    }
+  },
+  "generator": {
+    "path": "scripts/build_fvm_schematic.py",
+    "sha256": "9dcc7c6a4aa2aa690abd9843931a9220a14bd6822e666da241b2f57b62753553"
+  },
+  "mapping": {
+    "object": "axisymmetric middle cross-section; no physical shells",
+    "grid": "Illustrative N=6; faces at (i+1/2)R/N, endpoint cells clipped at 0,R",
+    "annular_weight": "vi=(bi^2-ai^2)/2, centre dr^2/8, surface R*dr/2-dr^2/8",
+    "shared_face": "same H contributes +H to left balance and -H to right balance; H is gradient transport, not outward physical flux",
+    "boundary": "nodes stay at actual centre and surface, both keep their clipped storage volumes",
+    "color": "orange interior control volume; blue adjacent or boundary control volume, not T/C values"
+  },
+  "outputs": {
+    "png": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig01_fvm_cells.png",
+      "sha256": "5e67192d80120f90d6c7d750fd296e1ef4fba4e4517dd60b7f11cfe1d6b07666"
+    },
+    "pdf": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig01_fvm_cells.pdf",
+      "sha256": "de8628318aaf4c192a666059f7a472b0c4240718c1ac7cdda2e8b958429d52ea"
+    },
+    "svg": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig01_fvm_cells.svg",
+      "sha256": "04075c1d34deea57189be9ec12d8c5d3a6f83fe3f93177f835d332cf72cf544a"
+    },
+    "no_text": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig01_fvm_cells_no_text.png",
+      "sha256": "5b17cb5d3661c9ce42871d857bf688fd2be141db091effb692830443eb51c4a0"
+    },
+    "gray": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig01_fvm_cells_gray.png",
+      "sha256": "de101b58b5f176c6f342e894fff0432507799ea61ffd29d558517092d13aef9a"
+    }
+  },
+  "acceptance": "working replacement for team review; not final manuscript approval"
+}

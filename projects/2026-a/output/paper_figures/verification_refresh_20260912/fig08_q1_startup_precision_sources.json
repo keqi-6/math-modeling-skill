@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "figure_id": "fig08_q1_startup_precision",
+  "data_driven_visual": true,
+  "caption": "问题1网格加密及启动阶段的数值差异。(a)温度与含水率的相邻网格最大差，分别除以各自2×10⁻⁵的检验目标，所得比值无量纲；最大值遍历1～1800 s的21个规定半径，虚线表示比值1。(b)N=2560与5120的含水率差在每秒21个规定半径上的最大值，虚线为2×10⁻⁵ kg/kg。保留全部逐秒值，未拟合或平滑；两个面板的横纵轴均为对数尺度。",
+  "generator": {
+    "path": "scripts/build_q1_startup_figure.py",
+    "sha256": "896fc0afeed582ddc44a7a831509064ebf8ec3853aa9f22366636dac8d8e167e",
+    "bytes": 15802
+  },
+  "compact_data": {
+    "path": "fig08_q1_startup_precision_data.json",
+    "sha256": "a86c778a4cd7871d3bab2778d6673ab29794e8c30de083aa22e60a7480626bc4",
+    "bytes": 51350
+  },
+  "original_sources": [
+    {
+      "path": "output/Q1/verification_report.json",
+      "sha256": "3818639fc480837542a93ee4a5e4c72cb6b5ac55dcb1d9023fff32af9f838ec7",
+      "bytes": 57391
+    },
+    {
+      "path": "output/Q1/run_n160.npz",
+      "sha256": "ea0c1deef82f7086d5ae123201229840072863378fbb63f0454ea6321028bde8",
+      "bytes": 531361
+    },
+    {
+      "path": "output/Q1/run_n320.npz",
+      "sha256": "36499e98e9f53064e30cc15064139c653eac2b957e8d5cd8cca3847d6c14c959",
+      "bytes": 535035
+    },
+    {
+      "path": "output/Q1/run_n640.npz",
+      "sha256": "92ef34832c53a683ea5aeee4c11b5ac742c8a6e5f3e77c709a6c5ee154e17543",
+      "bytes": 542505
+    },
+    {
+      "path": "output/Q1/run_n1280.npz",
+      "sha256": "602577aa83ca2e5ee49c44e6ac6cdd6e3092e16b207c047042595adedab4d12a",
+      "bytes": 557153
+    },
+    {
+      "path": "output/Q1/run_n2560.npz",
+      "sha256": "9df064144ef03a977d04355a742f80cdff2a3b852f70a165aac160bd2e4e035f",
+      "bytes": 585030
+    },
+    {
+      "path": "output/Q1/run_n5120.npz",
+      "sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e",
+      "bytes": 640170
+    }
+  ],
+  "transformations": [
+    "Recompute absolute fine-minus-coarse differences from unrounded saved arrays.",
+    "Left: maximum over all 1800 times and 21 required radii; divide each field by its own target.",
+    "Right: at every saved second, maximize moisture difference over the 21 required radii.",
+    "Exclude t=0, where both differences are zero, to use a logarithmic time axis.",
+    "Connect consecutive saved values; no fitting, smoothing, decimation or solver execution."
+  ],
+  "checks": {
+    "all_ten_mesh_maxima_and_locations_match_existing_report": true,
+    "maximum_difference_from_report": 0.0
+  },
+  "claim_boundary": "Differences between numerical solutions, not a continuous-solution error bound. The 1 s surface peak concerns moisture. The final temperature mesh difference peaks at 307 s. No information about subsecond error maxima or experimental prediction accuracy is inferred.",
+  "display": {
+    "width_cm": 15.8,
+    "height_cm": 7.5,
+    "dpi": 300,
+    "font_family": "Microsoft YaHei",
+    "main_line_width_pt": 1.9,
+    "minimum_main_font_size_pt": 7.6,
+    "temperature": {
+      "color": "#0072BD",
+      "line": "solid",
+      "marker": "circle"
+    },
+    "moisture": {
+      "color": "#D95319",
+      "line": "dashed in left, solid in right",
+      "marker": "square"
+    },
+    "left_y": "dimensionless ratio, separate field-specific targets",
+    "left_axes": "logarithmic x and y",
+    "right_axes": "logarithmic x and y",
+    "curve_simplification": false,
+    "solver_executed": false
+  },
+  "outputs": {
+    "png": {
+      "path": "fig08_q1_startup_precision.png",
+      "sha256": "c4ed4d8f2f4152f3520f0086efdec4c84c48b9a84fd89270a9bd6c16914fd230",
+      "bytes": 113804
+    },
+    "pdf": {
+      "path": "fig08_q1_startup_precision.pdf",
+      "sha256": "969533c6c44fd079820f178913b70c0f2f51211d9c98896ec88f4d892aa453f9",
+      "bytes": 48668
+    },
+    "svg": {
+      "path": "fig08_q1_startup_precision.svg",
+      "sha256": "b7a6d3b736ea6adc421997f05ff48bfa0b95fe9fefee0ec4419972477d0ed5de",
+      "bytes": 70887
+    }
+  },
+  "qa_method": "Same artist positions; all Text hidden for text-free check; line colors mapped to luminance for grayscale."
+}

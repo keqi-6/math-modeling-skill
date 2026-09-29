@@ -1,0 +1,9 @@
+sequence,factor_cn,response,response_cn,level_count,lowest_level,highest_level,endpoint_contrast_pct_point,spearman_level_response,leave_one_temperature_min_contrast,leave_one_temperature_max_contrast,endpoint_direction_stable,allowed_claim
+co_loading,Co负载量,ethanol_conversion_pct,乙醇转化率,4,0.5,5.0,0.3356223220076515,0.6000000000000001,-2.675838705538201,2.018630133168134,False,本近似对照序列内的局部条件对应关系，不是独立因果效应
+co_loading,Co负载量,c4_selectivity_pct,C4烯烃选择性,4,0.5,5.0,-6.995000000000001,-0.39999999999999997,-8.82,-3.793333333333335,True,本近似对照序列内的局部条件对应关系，不是独立因果效应
+ethanol_condition,附件所列乙醇条件,ethanol_conversion_pct,乙醇转化率,4,0.3,2.1,-31.028233003944685,-1.0,-35.503267402138896,-26.30022666848402,True,本近似对照序列内的局部条件对应关系，不是独立因果效应
+ethanol_condition,附件所列乙醇条件,c4_selectivity_pct,C4烯烃选择性,4,0.3,2.1,5.6075,0.7999999999999999,3.343333333333333,7.5933333333333355,True,本近似对照序列内的局部条件对应关系，不是独立因果效应
+active_mass,活性催化剂总质量,ethanol_conversion_pct,乙醇转化率,5,20.0,200.0,5.35176498508258,0.7,3.743442463829976,6.34627002826908,True,本近似对照序列内的局部条件对应关系，不是独立因果效应
+active_mass,活性催化剂总质量,c4_selectivity_pct,C4烯烃选择性,5,20.0,200.0,2.7025000000000006,0.6,0.580000000000001,3.7299999999999986,True,本近似对照序列内的局部条件对应关系，不是独立因果效应
+hap_fraction,HAP质量分数,ethanol_conversion_pct,乙醇转化率,3,0.33,0.67,4.913387255897795,1.0,3.4201421004617267,6.1692696159899265,True,本近似对照序列内的局部条件对应关系，不是独立因果效应
+hap_fraction,HAP质量分数,c4_selectivity_pct,C4烯烃选择性,3,0.33,0.67,-7.5325000000000015,-1.0,-8.943333333333333,-5.833333333333334,True,本近似对照序列内的局部条件对应关系，不是独立因果效应

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capability-ledger.schema.json",
+  "title": "V7 atomic capability migration ledger",
+  "type": "object",
+  "required": ["schema_version", "source_root", "source_snapshot", "entries"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "source_root": {"type": "string", "minLength": 1},
+    "source_snapshot": {
+      "type": "object",
+      "required": ["algorithm", "digest", "file_count"],
+      "properties": {
+        "algorithm": {"const": "sha256-tree-v1"},
+        "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "file_count": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "capability_id", "source_file", "source_lines", "source_sha256",
+          "source_anchor", "source_text", "candidate_kind", "review_status",
+          "strength", "v7_owner", "treatment", "rationale", "trigger_ids",
+          "test_ids"
+        ],
+        "properties": {
+          "capability_id": {"type": "string", "pattern": "^V6-[A-F0-9]{12}$"},
+          "source_file": {"type": "string", "minLength": 1},
+          "source_lines": {
+            "type": "array", "prefixItems": [
+              {"type": "integer", "minimum": 1},
+              {"type": "integer", "minimum": 1}
+            ], "items": false
+          },
+          "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_anchor": {"type": "string"},
+          "source_text": {"type": "string", "minLength": 1},
+          "candidate_kind": {"enum": ["heading", "prose", "list", "code", "frontmatter", "separator"]},
+          "review_status": {"enum": ["unreviewed", "confirmed_capability", "context_only", "superseded"]},
+          "strength": {"enum": ["unclassified", "must", "should", "may", "guidance", "prohibition"]},
+          "v7_owner": {"type": ["string", "null"]},
+          "treatment": {"enum": ["unclassified", "preserve", "move", "rewrite", "merge", "remove"]},
+          "rationale": {"type": ["string", "null"]},
+          "trigger_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "test_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "merged_into": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "compatible-change-bundle.schema.json",
+  "title": "Atomic evidence and identity bundle for a compatible implementation change",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "change_id", "records", "artifact_updates"],
+  "properties": {
+    "schema_version": {"const": "16.0"},
+    "change_id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["component_id", "evidence"],
+        "properties": {
+          "component_id": {"type": "string", "minLength": 1},
+          "evidence": {"type": "object"}
+        }
+      }
+    },
+    "artifact_updates": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "expected_old_sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "expected_old_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "claim_updates": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_id", "expected_old_identity", "new_identity"],
+        "properties": {
+          "claim_id": {"type": "string", "minLength": 1},
+          "expected_old_identity": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "description": "SHA-256 of the current producer evidence claim text."
+          },
+          "new_identity": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "description": "SHA-256 of the replacement producer evidence claim text."
+          }
+        }
+      }
+    }
+  }
+}

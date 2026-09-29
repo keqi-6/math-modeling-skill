@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0",
+  "status": "candidate_sample_not_manuscript_replacement",
+  "source_npz": {
+    "path": "output/Q4/run_n10240-v1-20260911.npz",
+    "sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92"
+  },
+  "source_metadata": {
+    "path": "output/Q4/run_n10240-v1-20260911.json",
+    "sha256": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8"
+  },
+  "generator": {
+    "path": "scripts/build_q4_section_sample.py",
+    "sha256": "3c169ab50527364f33b11fcd485fcae4e91637c7dd2619142c4e2dee898b3b6e"
+  },
+  "source_arrays": [
+    "mesh_xi",
+    "snapshot_time_s",
+    "snapshot_radius_m",
+    "moisture_snapshots"
+  ],
+  "source_grid_n": 10240,
+  "nodes_per_snapshot": 10241,
+  "frames": [
+    {
+      "time_s": 0,
+      "snapshot_index": 0,
+      "radius_cm": 2.0,
+      "threshold_radius_cm": null,
+      "all_nodes_below": false,
+      "center": 2.55,
+      "surface": 2.55,
+      "minimum": 2.55,
+      "maximum": 2.55,
+      "max_radial_increase": 0.0
+    },
+    {
+      "time_s": 21600,
+      "snapshot_index": 2,
+      "radius_cm": 1.374,
+      "threshold_radius_cm": null,
+      "all_nodes_below": false,
+      "center": 1.719646143205418,
+      "surface": 0.4206644770044637,
+      "minimum": 0.4206644770044637,
+      "maximum": 1.719646143205418,
+      "max_radial_increase": -1.3297608791873472e-08
+    },
+    {
+      "time_s": 64800,
+      "snapshot_index": 4,
+      "radius_cm": 1.214,
+      "threshold_radius_cm": 1.1692631034949066,
+      "all_nodes_below": false,
+      "center": 0.40879432143271976,
+      "surface": 0.0891817439322852,
+      "minimum": 0.0891817439322852,
+      "maximum": 0.40879432143271976,
+      "max_radial_increase": -2.2488392259489842e-09
+    },
+    {
+      "time_s": 129600,
+      "snapshot_index": 7,
+      "radius_cm": 1.2,
+      "threshold_radius_cm": 0.8657173565281487,
+      "all_nodes_below": false,
+      "center": 0.19283323350451048,
+      "surface": 0.055956395987650544,
+      "minimum": 0.055956395987650544,
+      "maximum": 0.19283323350451048,
+      "max_radial_increase": -7.034705873376623e-10
+    },
+    {
+      "time_s": 172800,
+      "snapshot_index": 9,
+      "radius_cm": 1.2,
+      "threshold_radius_cm": 0.4085079864798911,
+      "all_nodes_below": false,
+      "center": 0.15615910105844608,
+      "surface": 0.053005445096416685,
+      "minimum": 0.053005445096416685,
+      "maximum": 0.15615910105844608,
+      "max_radial_increase": -4.957023680418615e-10
+    },
+    {
+      "time_s": 183949,
+      "snapshot_index": 12,
+      "radius_cm": 1.2,
+      "threshold_radius_cm": null,
+      "all_nodes_below": true,
+      "center": 0.1499998681598867,
+      "surface": 0.052610068743575475,
+      "minimum": 0.052610068743575475,
+      "maximum": 0.1499998681598867,
+      "max_radial_increase": -4.631894867657138e-10
+    }
+  ],
+  "mapping": {
+    "physical_radius_cm": "r_cm = 100 * snapshot_radius_m * mesh_xi",
+    "planar_field": "C(x,y,t)=U(sqrt(x^2+y^2)/R(t),t) inside the current disk",
+    "display": "512 midpoint-coloured nested vector disks from the retained radial field; 1 disk for the uniform initial state",
+    "interpolation": "piecewise linear interpolation in the saved material coordinate; no PDE recomputation",
+    "outside_current_radius": "transparent; no zero-valued field outside the material",
+    "threshold_contour": "one interpolated radial level set only if min(C)<0.15<max(C); no contour at the strict endpoint",
+    "no_mass_interpretation": "disk area and colour are not total water mass; this is a radial model rotated in the cross-section, not a 2D or 3D solve"
+  },
+  "design": {
+    "width_cm": 15.8,
+    "height_cm": 11.5,
+    "dpi": 360,
+    "layout": "2 rows by 3 columns, equal physical scale",
+    "each_axis_limits_cm": [
+      -2.2,
+      2.2
+    ],
+    "colour_limits_kg_kg": [
+      0.0,
+      2.55
+    ],
+    "colour_scale": "linear and identical for all frames",
+    "colour_nodes": [
+      {
+        "value": 0.0,
+        "colour": "#eaf3f7"
+      },
+      {
+        "value": 0.6375,
+        "colour": "#d6eff5"
+      },
+      {
+        "value": 1.275,
+        "colour": "#99d3e1"
+      },
+      {
+        "value": 1.9124999999999999,
+        "colour": "#469dbf"
+      },
+      {
+        "value": 2.55,
+        "colour": "#155c88"
+      }
+    ],
+    "threshold_line": {
+      "value_kg_kg": 0.15,
+      "colour": "#66395F",
+      "style": "dashed"
+    },
+    "descriptive_titles": false,
+    "initial_reference_circle": false,
+    "intended_textfree_reading": "the actual disk shrinks early; the internal threshold ring contracts later while the outside radius is nearly fixed"
+  },
+  "suggested_caption": "同尺度的药材含水率截面序列。各截面由问题四主轨迹的完整材料节点场按r=R(t)xi旋转绘制，统一使用0至2.55 kg/kg线性色标，圆外透明。实线为实际外表面；虚线仅表示C=0.15的内部等值线，不是物理相界面。末幅取183949 s，全部节点未舍入值均低于阈值。图中面积不表示水质量。",
+  "outputs": {
+    "pdf": {
+      "path": "output/paper_figures/redesign_v3/fig07_q4_sections_sample.pdf",
+      "sha256": "79c3384707c59d1b89eddd78c544e5f648f2a29e45bd6e84dc15fb346e31e632",
+      "bytes": 455105
+    },
+    "png": {
+      "path": "output/paper_figures/redesign_v3/fig07_q4_sections_sample.png",
+      "sha256": "89fabe845c729c5099b0ec6382037d131d96f53ef7ede08d95de658132a18478",
+      "bytes": 241235
+    },
+    "svg": {
+      "path": "output/paper_figures/redesign_v3/fig07_q4_sections_sample.svg",
+      "sha256": "8a5de02731bda579d61a88b62e7e5d184d1a96ce76f08473fb83d90dd157cd0a",
+      "bytes": 1751714
+    },
+    "textfree_png": {
+      "path": "output/paper_figures/redesign_v3/fig07_q4_sections_textfree.png",
+      "sha256": "a676815148ec1767f7f5ff719d5b231c754044209ed83f54dc9107450c9e0684",
+      "bytes": 185201
+    }
+  },
+  "audit": {
+    "grayscale_preview": "~\\AppData\\Local\\Temp\\cumcm-q4-sections-sample-20260911\\fig07_q4_sections_gray.png",
+    "grayscale_conversion": "rendered anew using equal-RGB colours with matched Rec.709 luminance",
+    "numerical_assertions": "passed",
+    "visual_review": "Colour PNG, text-free PNG, grayscale PNG and rendered final PDF reviewed by generating subagent; no label overlap or clipping found after adjustment. Parent review remains separate.",
+    "pdf_render_preview": "~\\AppData\\Local\\Temp\\cumcm-q4-sections-sample-20260911\\fig07_q4_sections_pdf_render.png",
+    "png_mode": "RGBA",
+    "png_size_px": [
+      2239,
+      1629
+    ],
+    "transparent_corner_checked": true,
+    "visible_text_outside_figure": [],
+    "minimum_text_bottom_margin_cm": 0.21245186089409715,
+    "observed_readability": "Shrinkage and contraction/disappearance of the internal threshold ring remain visible without text and in grayscale. Later moisture gradients are intentionally pale under the shared 0–2.55 linear colour scale.",
+    "numerical_scope": "All arithmetic is interpolation or display preparation from retained snapshots; no model solve was run."
+  }
+}

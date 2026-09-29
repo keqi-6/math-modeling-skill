@@ -1,0 +1,449 @@
+{
+  "schema_version": "1.0",
+  "validation_id": "Q1-E3-E4-MODEL-VALIDATION",
+  "status": "pass",
+  "external_reference_policy": "excluded",
+  "writing_boundary": "internal technical evidence; manuscript/teammate materials may only summarize object, setting, metric and conclusion",
+  "spec_identity": "cdb63ddda18c89311dfa7bd6477437cc8e4fc8a1ea19db33a1f2eeedf478e3bb",
+  "input_identity": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+  "formal_result_sha256": "98094e92eb87ae3fd2ba0e945a64793defd86dac4af81374cf30b431b998f4e0",
+  "e3_result_sha256": "17104a03bf817e28f0b57362a71b68ab9e38c98574697cccfc2a40c3d7245ece",
+  "E3_STRUCTURAL": {
+    "schema_version": "1.0",
+    "validation_id": "Q1-E3-STRUCTURAL-DETERMINISTIC",
+    "status": "pass",
+    "external_reference_policy": "excluded",
+    "spec_identity": "cdb63ddda18c89311dfa7bd6477437cc8e4fc8a1ea19db33a1f2eeedf478e3bb",
+    "input_identity": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "formal_result_sha256": "98094e92eb87ae3fd2ba0e945a64793defd86dac4af81374cf30b431b998f4e0",
+    "constraints": {
+      "status": "pass",
+      "checks": [
+        {
+          "constraint": "release/explosion event order",
+          "residual": -4.440892098500626e-16,
+          "tolerance": 1e-12
+        },
+        {
+          "constraint": "explosion above ground",
+          "residual": 1736.496,
+          "tolerance": ">=0 m"
+        },
+        {
+          "constraint": "occlusion interval inside active window",
+          "residual": {
+            "entry_slack_s": 2.956445490089715,
+            "exit_slack_s": 15.651911841140397
+          },
+          "tolerance": ">=0 s"
+        },
+        {
+          "constraint": "root feasibility residual",
+          "residual": 4.1726410771047995e-08,
+          "tolerance": 1e-07
+        },
+        {
+          "constraint": "inside/outside sign pattern",
+          "residual": {
+            "before_entry_m": 0.0004260439504442104,
+            "after_entry_m": -0.000426039087351171,
+            "midpoint_m": -2.8882256137224314,
+            "before_exit_m": -0.026418172015468144,
+            "after_exit_m": 0.026438240346251973
+          },
+          "tolerance": "strict sign at ±1e-4 s"
+        }
+      ]
+    },
+    "invariants": {
+      "status": "pass",
+      "checks": [
+        {
+          "invariant": "missile constant speed",
+          "test": "finite difference over [6.0,16.0] s",
+          "result": 300.00000000000006
+        },
+        {
+          "invariant": "smoke vertical constant sink",
+          "test": "finite difference over [6.0,16.0] s",
+          "result": 3.0
+        },
+        {
+          "invariant": "common-translation invariance of finite segment distance",
+          "test": [
+            123.0,
+            -45.0,
+            67.0
+          ],
+          "result": {
+            "distance_residual": 4.440892098500626e-15,
+            "lambda_residual": 0.0
+          }
+        },
+        {
+          "invariant": "pointwise margin decreases exactly with smoke radius",
+          "test": "+0.5 m radius over nine times",
+          "result": {
+            "maximum_residual": 0.0
+          }
+        }
+      ]
+    },
+    "full_surface_equivalence": {
+      "status": "pass",
+      "sample_count_per_time": 45360,
+      "records": [
+        {
+          "time_s": 5.1,
+          "sampled_surface_max_margin_m": 12.766076943887676,
+          "continuous_top_bottom_rim_max_margin_m": 12.766077086251705,
+          "surface_excess_over_rim_m": -1.4236402989808994e-07
+        },
+        {
+          "time_s": 8.056445490089715,
+          "sampled_surface_max_margin_m": -2.908468133000497e-09,
+          "continuous_top_bottom_rim_max_margin_m": 1.4551542193430578e-09,
+          "surface_excess_over_rim_m": -4.363622352343555e-09
+        },
+        {
+          "time_s": 8.75226682447466,
+          "sampled_surface_max_margin_m": -2.88822565274015,
+          "continuous_top_bottom_rim_max_margin_m": -2.8882256137224314,
+          "surface_excess_over_rim_m": -3.901771883363381e-08
+        },
+        {
+          "time_s": 9.448088158859605,
+          "sampled_surface_max_margin_m": 4.1726410771047995e-08,
+          "continuous_top_bottom_rim_max_margin_m": 4.1726410771047995e-08,
+          "surface_excess_over_rim_m": 0.0
+        },
+        {
+          "time_s": 25.1,
+          "sampled_surface_max_margin_m": 4689.9540766253,
+          "continuous_top_bottom_rim_max_margin_m": 4689.9540766253,
+          "surface_excess_over_rim_m": 0.0
+        }
+      ],
+      "maximum_surface_excess_over_rim_m": 0.0,
+      "implication": "deterministic full-surface samples found no point worse than the continuous top/bottom rim control"
+    },
+    "limit_cases": {
+      "status": "pass",
+      "cases": [
+        {
+          "case": "smoke radius -> small positive value",
+          "expected": "duration cannot exceed nominal",
+          "observed": 0.0
+        },
+        {
+          "case": "smoke radius -> very large value",
+          "expected": 20.0,
+          "observed": 20.0
+        },
+        {
+          "case": "full cylinder -> center-point relaxation",
+          "expected": "center duration >= full-cylinder duration for this scenario",
+          "observed": 1.4350821025371552
+        }
+      ]
+    },
+    "counterexamples": {
+      "status": "pass",
+      "cases": [
+        {
+          "counterexample": "target center is occluded while some cylinder boundary is not",
+          "result": {
+            "time_s": 8.013006056308747,
+            "full_cylinder_margin_m": 0.18524935783262642
+          },
+          "implication": "center-point visibility cannot replace complete-cylinder visibility"
+        },
+        {
+          "counterexample": "infinite line accepts smoke behind the missile while finite segment rejects it",
+          "result": {
+            "time_s": 9.498088158859606,
+            "infinite_line_distance_m": 4.486964812768115,
+            "finite_segment_distance_m": 24.266377172684816,
+            "raw_lambda": -0.0013829286139500673
+          },
+          "implication": "unclipped line distance violates directed finite-line-of-sight semantics"
+        }
+      ]
+    },
+    "sensitivity": {
+      "status": "pass",
+      "design_registered_before_execution": true,
+      "range_kind": "local structural perturbation, not empirical uncertainty",
+      "scan_step_s": 0.004,
+      "n_theta": 1024,
+      "nominal_duration_s": 1.3916426685750558,
+      "records": [
+        {
+          "factor": "smoke_radius",
+          "multiplier": 0.95,
+          "parameter_value": 9.5,
+          "duration_s": 1.2720347356679653,
+          "duration_change_s": -0.11960793290709049,
+          "interval_count": 1,
+          "decision_response": "positive complete-occlusion interval"
+        },
+        {
+          "factor": "smoke_radius",
+          "multiplier": 1.05,
+          "parameter_value": 10.5,
+          "duration_s": 1.5105891284119082,
+          "duration_change_s": 0.11894645983685237,
+          "interval_count": 1,
+          "decision_response": "positive complete-occlusion interval"
+        },
+        {
+          "factor": "smoke_sink_speed",
+          "multiplier": 0.95,
+          "parameter_value": 2.8499999999999996,
+          "duration_s": 1.2947601273303846,
+          "duration_change_s": -0.09688254124467122,
+          "interval_count": 1,
+          "decision_response": "positive complete-occlusion interval"
+        },
+        {
+          "factor": "smoke_sink_speed",
+          "multiplier": 1.05,
+          "parameter_value": 3.1500000000000004,
+          "duration_s": 1.4798378226357203,
+          "duration_change_s": 0.08819515406066447,
+          "interval_count": 1,
+          "decision_response": "positive complete-occlusion interval"
+        },
+        {
+          "factor": "gravity",
+          "multiplier": 0.99,
+          "parameter_value": 9.702,
+          "duration_s": 1.2570031149216945,
+          "duration_change_s": -0.13463955365336133,
+          "interval_count": 1,
+          "decision_response": "positive complete-occlusion interval"
+        },
+        {
+          "factor": "gravity",
+          "multiplier": 1.01,
+          "parameter_value": 9.898000000000001,
+          "duration_s": 1.5202225037329198,
+          "duration_change_s": 0.12857983515786398,
+          "interval_count": 1,
+          "decision_response": "positive complete-occlusion interval"
+        },
+        {
+          "factor": "target_radius",
+          "multiplier": 0.95,
+          "parameter_value": 6.6499999999999995,
+          "duration_s": 1.3925655342145653,
+          "duration_change_s": 0.0009228656395094958,
+          "interval_count": 1,
+          "decision_response": "positive complete-occlusion interval"
+        },
+        {
+          "factor": "target_radius",
+          "multiplier": 1.05,
+          "parameter_value": 7.3500000000000005,
+          "duration_s": 1.3907203300248199,
+          "duration_change_s": -0.0009223385502359349,
+          "interval_count": 1,
+          "decision_response": "positive complete-occlusion interval"
+        }
+      ],
+      "decision_stability": "one positive-measure interval in all predeclared scenarios"
+    },
+    "run_identity": {
+      "executed_at": "2026-08-28T06:08:46.811128+00:00",
+      "python": "3.12.3",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "model_sha256": "cb36870ca55ed3b1e3c3adfe02cd91667c89249fa1aeb730cb42f0a1bbd4f7f1",
+      "validator_sha256": "4fb34f6a31a84fde3ae859c46bd2d0feb0e1f6366aef5bd40ce78f75aa73745b",
+      "execution_kind": "deterministic",
+      "seed": "not_applicable"
+    }
+  },
+  "E4_REALITY": {
+    "status": "pass",
+    "assumptions": [
+      {
+        "assumption": "M1 moves at constant 300 m/s toward the origin",
+        "support": "explicit official-problem motion rule",
+        "violation_impact": "missile position and every line-of-sight segment must be rebuilt"
+      },
+      {
+        "assumption": "FY1 flies horizontally at constant 120 m/s toward the decoy before release",
+        "support": "explicit Q1 strategy in the official problem",
+        "violation_impact": "release and explosion positions change"
+      },
+      {
+        "assumption": "the released bomb follows ideal gravity-only motion with project convention g=9.8 m/s^2",
+        "support": "contest idealization plus resolved project convention",
+        "violation_impact": "drag, lift or another gravity convention changes explosion height"
+      },
+      {
+        "assumption": "effective smoke is a hard 10 m sphere sinking at 3 m/s for 20 s",
+        "support": "explicit official-problem effective-region rule",
+        "violation_impact": "wind, diffusion or concentration decay requires a different state and visibility model"
+      },
+      {
+        "assumption": "the true target is the complete closed cylinder and visibility uses the missile-to-target finite segment",
+        "support": "official target geometry and frozen task semantics",
+        "violation_impact": "center-point or infinite-line substitutes change the event being measured"
+      }
+    ],
+    "parameters": [
+      {
+        "parameter": "missile_initial",
+        "range": [
+          20000.0,
+          0.0,
+          2000.0
+        ],
+        "unit": "m",
+        "identifiability": "given exactly; not estimated"
+      },
+      {
+        "parameter": "uav_initial",
+        "range": [
+          17800.0,
+          0.0,
+          1800.0
+        ],
+        "unit": "m",
+        "identifiability": "given exactly; not estimated"
+      },
+      {
+        "parameter": "missile_speed",
+        "range": 300.0,
+        "unit": "m/s",
+        "identifiability": "given exactly; not estimated"
+      },
+      {
+        "parameter": "uav_speed",
+        "range": 120.0,
+        "unit": "m/s",
+        "identifiability": "fixed Q1 strategy; not optimized"
+      },
+      {
+        "parameter": "release_time",
+        "range": 1.5,
+        "unit": "s",
+        "identifiability": "fixed Q1 strategy"
+      },
+      {
+        "parameter": "fuse_delay",
+        "range": 3.6,
+        "unit": "s",
+        "identifiability": "fixed Q1 strategy"
+      },
+      {
+        "parameter": "target_radius/height",
+        "range": [
+          7.0,
+          10.0
+        ],
+        "unit": "m",
+        "identifiability": "given exactly"
+      },
+      {
+        "parameter": "smoke_radius/sink/duration",
+        "range": [
+          10.0,
+          3.0,
+          20.0
+        ],
+        "unit": "m, m/s, s",
+        "identifiability": "given exactly under hard-threshold interpretation"
+      },
+      {
+        "parameter": "gravity",
+        "range": 9.8,
+        "unit": "m/s^2",
+        "identifiability": "resolved project convention; not inferred from Q1 output"
+      }
+    ],
+    "scale_checks": [
+      {
+        "quantity": "initial engagement distance",
+        "model_value": 20099.751242241782,
+        "reference_range": "official scenario: order 10^4 m"
+      },
+      {
+        "quantity": "platform speeds",
+        "model_value": [
+          120.0,
+          300.0
+        ],
+        "reference_range": "official scenario: order 10^2 m/s"
+      },
+      {
+        "quantity": "target dimensions",
+        "model_value": [
+          7.0,
+          10.0
+        ],
+        "reference_range": "official scenario: order 10 m"
+      },
+      {
+        "quantity": "effective smoke scale",
+        "model_value": 10.0,
+        "reference_range": "official scenario: order 10 m"
+      },
+      {
+        "quantity": "event and effective times",
+        "model_value": [
+          5.1,
+          20.0
+        ],
+        "reference_range": "official scenario: order 1-10 s"
+      },
+      {
+        "quantity": "computed occlusion duration",
+        "model_value": 1.3916426687698902,
+        "reference_range": "strictly between 0 and the 20 s active-window upper bound"
+      }
+    ],
+    "mechanisms": [
+      {
+        "modeled_mechanism": "ballistic fall before explosion and vertical smoke sinking after explosion",
+        "domain_mechanism": "piecewise motion specified by the contest problem",
+        "direction_and_constraints": "height decreases under gravity, then smoke center decreases linearly",
+        "known_mismatch": "no aerodynamic drag, wind or turbulent spreading"
+      },
+      {
+        "modeled_mechanism": "complete occlusion requires every controlling target sightline to intersect the smoke sphere",
+        "domain_mechanism": "line-of-sight screening of the complete cylindrical target",
+        "direction_and_constraints": "larger smoke radius weakly enlarges the feasible time set; finite segment rejects smoke behind missile/target",
+        "known_mismatch": "hard binary visibility replaces graded optical density"
+      },
+      {
+        "modeled_mechanism": "effective duration is the measure of the feasible time-set union",
+        "domain_mechanism": "continuous-time accumulation without double counting",
+        "direction_and_constraints": "interval topology and endpoints determine duration",
+        "known_mismatch": "does not predict detection probability or operational damage"
+      }
+    ],
+    "reality_fit": {
+      "observed_reference": "official problem-defined Q1 scenario, frozen identities and model-generated feasibility pattern only",
+      "fit_measure": {
+        "all fixed inputs trace to official statement or resolved project convention": true,
+        "computed interval lies within the official active window": true,
+        "mechanism directions pass E3 invariants, limits and counterexamples": true
+      },
+      "context_match": "valid for the deterministic idealized contest scenario",
+      "use_boundary": "not an empirical field-performance, optical-density, probability-of-detection or causal-effect estimate"
+    }
+  },
+  "run_identity": {
+    "executed_at": "2026-08-28T06:09:05.066304+00:00",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "model_sha256": "cb36870ca55ed3b1e3c3adfe02cd91667c89249fa1aeb730cb42f0a1bbd4f7f1",
+    "validator_sha256": "4fb34f6a31a84fde3ae859c46bd2d0feb0e1f6366aef5bd40ce78f75aa73745b",
+    "execution_kind": "deterministic",
+    "seed": "not_applicable"
+  }
+}

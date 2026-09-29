@@ -1,0 +1,26 @@
+{
+  "command": "python3 src/q4/01_solve.py",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "started_utc": "2026-08-24T13:25:41.330873+00:00",
+  "finished_utc": "2026-08-24T13:44:48.472452+00:00",
+  "elapsed_seconds": 1147.141579,
+  "inputs_sha256": {
+    "planning/analysis/2026-08-24_q4_s4_specification.md": "2263e16072c98ceca7b95761571c0553b748bc9fc74a225913c9c2df9a48a1b2",
+    "planning/analysis/2026-08-23_q2_s2_assessment.md": "02ccfa086330a2b679cba87287e50aecc6324b0b8370d1e08d36366675909635",
+    "planning/analysis/2026-08-24_q3_s2_assessment.md": "6ed964e606e71b153eb71878aace069bc05ccd8ca22762214631f68a7ab4b7ba"
+  },
+  "sources_sha256": {
+    "src/q4/01_solve.py": "156736b11a75fe5a5125bba7e0adc5008f83aef4bef7124e9f3c90ede5edb602",
+    "src/q4/core.py": "890e09cf9554c62ff7e6fd936778bb2a22d3641a4f6ecfe6cdf0d6740d1b982f",
+    "src/q4/sampling.py": "5028541557d38387997dd1b3b9e61ca080a1a3a666b97c332e1bddaf4b3bcbd8"
+  },
+  "outputs_sha256": {
+    "output/q4/s5_intervals.json": "a5b9731ffbbbe9cbf9d167496b3bf4f0df97cde30a31becf25d79c481310971d",
+    "output/q4/s5_q2_candidates.jsonl.gz": "8c9e94f73aa2bac9704a53aeef885c12c23a2a86ca32a9bf7b7a264b8e6f6f6b",
+    "output/q4/s5_q2_summary.json": "31cb6ac2e22f792cabc0e9cd8a521618ce7d0ce509406e528dcbc89dad4e7e37",
+    "output/q4/s5_q3_representatives.jsonl.gz": "2561b7387c8d310710bf9a6a2beeed0b7cc0348d2084b2d0fcc344722a576b0c",
+    "output/q4/s5_q3_summary.json": "3a6a06df0a57294283cff08a3172a942517be3605d84b6f9704d9cdc5fd6fdc7",
+    "output/q4/s5_acceptance.json": "fd41bf49409fa7c30d390e0927e21320124fbeb3247ebc7651bdcefee4e5bc02"
+  }
+}

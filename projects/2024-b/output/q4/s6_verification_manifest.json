@@ -1,0 +1,16 @@
+{
+  "command": "python3 src/q4/02_verify_independent.py",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "started_utc": "2026-08-24T13:44:56.887491+00:00",
+  "finished_utc": "2026-08-24T13:45:07.757661+00:00",
+  "elapsed_seconds": 10.87017,
+  "inputs_sha256": {
+    "output/q4/s5_intervals.json": "a5b9731ffbbbe9cbf9d167496b3bf4f0df97cde30a31becf25d79c481310971d",
+    "output/q4/s5_q2_candidates.jsonl.gz": "8c9e94f73aa2bac9704a53aeef885c12c23a2a86ca32a9bf7b7a264b8e6f6f6b",
+    "output/q4/s5_q3_representatives.jsonl.gz": "2561b7387c8d310710bf9a6a2beeed0b7cc0348d2084b2d0fcc344722a576b0c",
+    "output/q4/s5_q3_summary.json": "3a6a06df0a57294283cff08a3172a942517be3605d84b6f9704d9cdc5fd6fdc7"
+  },
+  "source_sha256": "1d3814040f24dbaa2d5708e6bfe950b0e48068ab5186568738bf36f4a8505513",
+  "result_sha256": "de24559c3b5d356a00c9cef8873657b7e5147b75fa510fdb36f7898e5d65d3aa"
+}

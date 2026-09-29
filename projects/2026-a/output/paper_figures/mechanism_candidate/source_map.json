@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-11",
+  "status": "working_candidate_for_user_review",
+  "data_driven_visual": false,
+  "purpose": "Q2–Q3 局部物性耦合、内部径向输运和侧表面交换的对应关系",
+  "internal_only": "本来源核对文件不作为论文或提交附件；示意图本身仅采用项目已明确的模型。",
+  "layout_reference": {
+    "kind": "用户提供的示意图截图",
+    "use": "仅参考整体/截面/表面局部的组织方式；未抽取外部数值、未复制原图或原文",
+    "sha256": "9c893424c7c323772d93705ea66557d44466796527b33d6d55095d1e1ee31665"
+  },
+  "sources": [
+    {
+      "path": "A题.pdf",
+      "location": "第1页问题1；第2页问题2/3/4；第3页附录2；第4页附录3",
+      "role": "圆柱对象、尺寸、干基变量定义、分问区别和经验物性依赖",
+      "sha256": "052d8014bff5727c019b72e44fdffaf5c145ce04050dd938baaf3527db331736"
+    },
+    {
+      "path": "docs/Q2/solution_brief.md",
+      "location": "第3节；5.2–5.3节，式(3)、(6)、(7)",
+      "role": "当前径向模型、变量、中心与表面条件",
+      "sha256": "d95453f626cddc8d91a927514bd39c5118965fd330bbec396504faeaae8aefa5"
+    },
+    {
+      "path": "planning/model_explanation_corrections.md",
+      "location": "第1–2节",
+      "role": "分问关系、等效环境输入、干基通量及热储存的准确解释",
+      "sha256": "910619c73d0c453e6a959c9c66dae43c31847c89d1ccbca5bf8b58287c51e2a8"
+    }
+  ],
+  "mapping": [
+    {
+      "element": "圆柱与圆截面；R=2 cm、L=25 cm",
+      "basis": "原题第1页；Q2径向近似",
+      "limit": "未按比例绘制；长度不用于定量证明端面可忽略"
+    },
+    {
+      "element": "同心虚线与r箭头",
+      "basis": "径向坐标与中心对称",
+      "limit": "虚线仅示意位置，无网格精度或场值含义"
+    },
+    {
+      "element": "两场散度方程及两条变量依赖",
+      "basis": "Q2式(3)、(6)",
+      "limit": "热储存为ρcpθt；变量系数保留散度内；图只用于Q2/Q3"
+    },
+    {
+      "element": "圆柱侧面热入、水分外出箭头",
+      "basis": "Q2式(7)",
+      "limit": "条件T∞>θs、Cs>Ceq；通过图注明确，不声称全时段方向固定"
+    },
+    {
+      "element": "右侧水平界面与外法向向上",
+      "basis": "侧表面局部；与中图上侧表面朝向一致",
+      "limit": "不建立有限厚气膜或气相PDE"
+    },
+    {
+      "element": "qin=h(T∞−θs)，jC=hm(Cs−Ceq)",
+      "basis": "Q2式(7)；qin取向内正，jC取向外正",
+      "limit": "jC是含水率扩散通量，不是kg/(m²s)真实水质量通量"
+    },
+    {
+      "element": "Ceq:=Y∞",
+      "basis": "现行模型解释修订第1节",
+      "limit": "所采用的环境边界输入映射，不声称实测吸附等温线"
+    }
+  ],
+  "visual_qa": {
+    "pdf_checks": {
+      "fig_mechanism_q2_q3.pdf": {
+        "pages": 1,
+        "embedded_fonts": true,
+        "type3_fonts": false
+      },
+      "page_preview.pdf": {
+        "pages": 1,
+        "embedded_fonts": true,
+        "type3_fonts": false
+      }
+    },
+    "png_px": [
+      2103,
+      1140
+    ],
+    "pdf_mm": [
+      178,
+      96.5
+    ],
+    "a4_insert_mm": 164,
+    "scale_xy": [
+      0.9213483146067416,
+      0.9213483146067416
+    ],
+    "nominal_main_text_pt_after_scaling": 9.213483146067416,
+    "arrow_pt_after_scaling": 1.5662921348314607,
+    "reviewed": [
+      "PDF raster",
+      "SVG raster",
+      "grayscale raster",
+      "A4 page preview"
+    ],
+    "svg_raster_elements": 0,
+    "render_findings": "标签、引线、公式和箭头无可见遮挡；灰度仍可辨；页内图注连续。",
+    "independent_physics_review": "两场依赖、箭头正负、局部外法向与侧表面取样均符合现行模型；按复核意见补充表面状态定位引线。"
+  },
+  "outputs": {
+    "fig_mechanism_q2_q3.pdf": "a43b5652ea88ccff543bed3b7b17e8f301553c265658c1cd67ceaa7a3bac307d",
+    "fig_mechanism_q2_q3.png": "807076314d0ee5646b2fc8242a2b4107a69472b92c5b1427bf8fe20b232c8e63",
+    "fig_mechanism_q2_q3.svg": "b07e720465348fd9de2eb04fa3577a30c2025d44f26f54eaa1b7f6d1d35b05b2",
+    "fig_mechanism_q2_q3.tex": "f58a1305d88db8988af4e71c6506f65f3719515200fbe8df3875496793d9dfe7",
+    "page_preview.pdf": "7453597d0e560f2cfb64c8afcb81749d7f276852d78e2d3aea976d4d3de1c5c1",
+    "page_preview.tex": "2b8c9cf67002e384a9d4dfa11b989509cc82016eca3cf020179741a7c06bc256",
+    "README.md": "ab3545285781560b4a6749002fb58aceefebac6014a5a20289f32661588ac841"
+  }
+}

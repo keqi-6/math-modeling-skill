@@ -1,0 +1,4 @@
+interface:
+  display_name: "Math Modeling Project Controller"
+  short_description: "State-controlled mathematical-modeling project workflow"
+  default_prompt: "Use the project controller to recover or advance this mathematical-modeling project without skipping evidence or human decision gates."

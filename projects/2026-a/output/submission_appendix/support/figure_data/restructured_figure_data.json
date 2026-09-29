@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0",
+  "source_file": "run_n10240_startsafe.npz",
+  "diffusivity": {
+    "time_s": [
+      1800,
+      5400,
+      10800
+    ],
+    "positions": [
+      "中心",
+      "表面"
+    ],
+    "temperature_C": [
+      [
+        32.18924476096322,
+        35.41302025049541
+      ],
+      [
+        45.846754892043116,
+        47.140049889985484
+      ],
+      [
+        49.8494955728103,
+        49.96641284498236
+      ]
+    ],
+    "moisture_kg_kg": [
+      [
+        2.54993409992138,
+        1.6486177766658752
+      ],
+      [
+        2.3860642508797416,
+        1.347567290457406
+      ],
+      [
+        1.7661771073155368,
+        1.0081231261700119
+      ]
+    ],
+    "initial_temperature_C": 28.0,
+    "initial_moisture_kg_kg": 2.55,
+    "heat_log_contribution": [
+      [
+        0.17540055779989763,
+        0.30713490226727197
+      ],
+      [
+        0.7152384543819823,
+        0.7639720679442358
+      ],
+      [
+        0.8648034888562125,
+        0.8691164797461459
+      ]
+    ],
+    "drying_log_contribution": [
+      [
+        -4.560676936379848e-06,
+        -0.09648534270830464
+      ],
+      [
+        -0.012124500867643901,
+        -0.15746449848475833
+      ],
+      [
+        -0.07831699684668438,
+        -0.2699034590595113
+      ]
+    ],
+    "net_log_ratio": [
+      [
+        0.1753959971229601,
+        0.2106495595589663
+      ],
+      [
+        0.7031139535143377,
+        0.6065075694594758
+      ],
+      [
+        0.7864864920095266,
+        0.5992130206866335
+      ]
+    ],
+    "diffusivity_m2_s": [
+      [
+        6.72329227701888e-09,
+        6.9645397118862375e-09
+      ],
+      [
+        1.139638173243343e-08,
+        1.0346926603314024e-08
+      ],
+      [
+        1.2387259089849455e-08,
+        1.0271725056690614e-08
+      ]
+    ],
+    "initial_diffusivity_m2_s": 5.641680373025668e-09,
+    "interpretation": "Exact algebraic decomposition along one main trajectory; not independent causal effects or alternate simulations."
+  },
+  "completion": {
+    "threshold_kg_kg": 0.15,
+    "sampling_interval_s": 1,
+    "checked_time_range_s": [
+      0,
+      220000
+    ],
+    "sampled_positions": [
+      {
+        "radius_cm": 0.0,
+        "first_strict_second": 206927,
+        "previous_moisture_kg_kg": 0.15000004037842476,
+        "first_moisture_kg_kg": 0.1499997491345901
+      },
+      {
+        "radius_cm": 0.1,
+        "first_strict_second": 206614,
+        "previous_moisture_kg_kg": 0.15000016217024295,
+        "first_moisture_kg_kg": 0.14999987039338775
+      },
+      {
+        "radius_cm": 0.2,
+        "first_strict_second": 205675,
+        "previous_moisture_kg_kg": 0.15000023612667515,
+        "first_moisture_kg_kg": 0.14999994274185174
+      },
+      {
+        "radius_cm": 0.3,
+        "first_strict_second": 204107,
+        "previous_moisture_kg_kg": 0.15000024561606953,
+        "first_moisture_kg_kg": 0.14999994950995527
+      },
+      {
+        "radius_cm": 0.4,
+        "first_strict_second": 201905,
+        "previous_moisture_kg_kg": 0.1500001217075825,
+        "first_moisture_kg_kg": 0.1499998216954343
+      },
+      {
+        "radius_cm": 0.5,
+        "first_strict_second": 199060,
+        "previous_moisture_kg_kg": 0.15000027432558768,
+        "first_moisture_kg_kg": 0.1499999691149327
+      },
+      {
+        "radius_cm": 0.6,
+        "first_strict_second": 195563,
+        "previous_moisture_kg_kg": 0.15000029082916377,
+        "first_moisture_kg_kg": 0.1499999789867918
+      },
+      {
+        "radius_cm": 0.7000000000000001,
+        "first_strict_second": 191400,
+        "previous_moisture_kg_kg": 0.15000027946037553,
+        "first_moisture_kg_kg": 0.1499999593516097
+      },
+      {
+        "radius_cm": 0.8,
+        "first_strict_second": 186554,
+        "previous_moisture_kg_kg": 0.15000003401917333,
+        "first_moisture_kg_kg": 0.14999970374013727
+      },
+      {
+        "radius_cm": 0.9000000000000001,
+        "first_strict_second": 181000,
+        "previous_moisture_kg_kg": 0.15000033855876102,
+        "first_moisture_kg_kg": 0.14999999582578372
+      },
+      {
+        "radius_cm": 1.0,
+        "first_strict_second": 174712,
+        "previous_moisture_kg_kg": 0.1500001272288791,
+        "first_moisture_kg_kg": 0.14999976926353473
+      },
+      {
+        "radius_cm": 1.0999999999999999,
+        "first_strict_second": 167650,
+        "previous_moisture_kg_kg": 0.15000009168850165,
+        "first_moisture_kg_kg": 0.1499997149842592
+      },
+      {
+        "radius_cm": 1.2,
+        "first_strict_second": 159764,
+        "previous_moisture_kg_kg": 0.1500001724094853,
+        "first_moisture_kg_kg": 0.14999977242381446
+      },
+      {
+        "radius_cm": 1.3,
+        "first_strict_second": 150986,
+        "previous_moisture_kg_kg": 0.1500003846628237,
+        "first_moisture_kg_kg": 0.14999995529607937
+      },
+      {
+        "radius_cm": 1.4000000000000001,
+        "first_strict_second": 141222,
+        "previous_moisture_kg_kg": 0.15000020268165543,
+        "first_moisture_kg_kg": 0.14999973538716818
+      },
+      {
+        "radius_cm": 1.5,
+        "first_strict_second": 130331,
+        "previous_moisture_kg_kg": 0.15000038584182976,
+        "first_moisture_kg_kg": 0.1499998679458815
+      },
+      {
+        "radius_cm": 1.6,
+        "first_strict_second": 118097,
+        "previous_moisture_kg_kg": 0.1500005748336705,
+        "first_moisture_kg_kg": 0.14999998609975265
+      },
+      {
+        "radius_cm": 1.7000000000000002,
+        "first_strict_second": 104152,
+        "previous_moisture_kg_kg": 0.15000009581052137,
+        "first_moisture_kg_kg": 0.14999940012838814
+      },
+      {
+        "radius_cm": 1.8000000000000003,
+        "first_strict_second": 87777,
+        "previous_moisture_kg_kg": 0.1500000540941679,
+        "first_moisture_kg_kg": 0.1499991734600278
+      },
+      {
+        "radius_cm": 1.9,
+        "first_strict_second": 67337,
+        "previous_moisture_kg_kg": 0.1500012313572833,
+        "first_moisture_kg_kg": 0.1499998933067836
+      },
+      {
+        "radius_cm": 2.0,
+        "first_strict_second": 45187,
+        "previous_moisture_kg_kg": 0.15000157071205455,
+        "first_moisture_kg_kg": 0.14999495933971144
+      }
+    ],
+    "threshold_recrossings": 0,
+    "all_node_count": 10241,
+    "all_node_first_strict_second": 206927,
+    "all_node_previous_maximum_kg_kg": 0.15000004037842476,
+    "all_node_first_maximum_kg_kg": 0.1499997491345901,
+    "interpretation": "Bars classify integer-second samples at 21 requested output radii; the final stopping time separately uses the maximum over all 10241 solver nodes."
+  }
+}

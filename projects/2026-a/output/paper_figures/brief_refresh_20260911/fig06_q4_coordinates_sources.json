@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "figure_id": "fig06_q4_coordinates",
+  "data_driven_visual": true,
+  "role": "observed_radius_and_adopted_material_mapping",
+  "sources": [
+    {
+      "path": "A题.pdf",
+      "sha256": "052d8014bff5727c019b72e44fdffaf5c145ce04050dd938baaf3527db331736"
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af"
+    },
+    {
+      "path": "output/GEOMETRY/q4_radius.json",
+      "sha256": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989"
+    },
+    {
+      "path": "scripts/build_q4_coordinate_figure.py",
+      "sha256": "f9e6913aaaab59d4574e527bfbecb70c4df7699af945fbafbf278b6281f24b16"
+    }
+  ],
+  "truth_mapping": [
+    {
+      "object": "circular radial cross-section",
+      "source": "A题.pdf page 1: cylindrical object, initial radius 2 cm"
+    },
+    {
+      "object": "changing radius and fixed-distance output",
+      "source": "A题.pdf pages 2–3: Q4 and Table 6"
+    },
+    {
+      "object": "145 radius points and 0 h/6 h circle sizes",
+      "source": "附件/附件2.xlsx Sheet1!A2:B146; exact all-node agreement with GEOMETRY JSON"
+    },
+    {
+      "object": "uniform interior material scaling",
+      "source": "docs/Q4/solution_brief.md sections 5.1–5.2, equations (1),(3)",
+      "kind": "adopted model assumption, not observed internal motion"
+    },
+    {
+      "object": "fixed r=1.5 cm sampling marker",
+      "source": "docs/Q4/solution_brief.md section 5.7, equation (16)",
+      "kind": "coordinate marker, not a physical probe"
+    }
+  ],
+  "data_checks": {
+    "observations": 145,
+    "original_cells": "A2:B146",
+    "all_nodes_equal": true,
+    "time_range_h": [
+      0,
+      72
+    ],
+    "interpolation": "piecewise linear, no fitted curve",
+    "selected_times_h": [
+      0,
+      6
+    ],
+    "selected_radii_cm": [
+      2.0,
+      1.374
+    ],
+    "material_xi": 0.5,
+    "material_radii_cm": [
+      1.0,
+      0.687
+    ],
+    "fixed_radius_cm": 1.5,
+    "fixed_position_inside": [
+      true,
+      false
+    ]
+  },
+  "visual_contract": {
+    "width_cm": 15.8,
+    "height_cm": 6.4,
+    "dpi": 360,
+    "circle_scale": "one equal-aspect axis, identical physical centimetre scale",
+    "body_color": "material extent only; no moisture or density encoding",
+    "blue_ring": "same material coordinate, not a concentration contour",
+    "orange_marker": "fixed physical sampling radius; dashed line and x give non-colour redundancy",
+    "arrow": "snapshot order only; no velocity or quantitative displacement encoding",
+    "left_curve": "all observations and exact line segments, no extrapolation",
+    "no_top_title": true,
+    "svg_editable_text": true
+  },
+  "outputs": {
+    "png": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates.png",
+      "sha256": "c8de9834c0cbacad2fe0cfe161141cb827409a1d385954f0e03b6e5608cf1f12"
+    },
+    "pdf": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates.pdf",
+      "sha256": "b860aa347ce76e26261caeb84ff252b48c371b2808b35267b6459ee4cd61a1ce"
+    },
+    "svg": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates.svg",
+      "sha256": "3377905626448dc905b88a1a15c77fb55a317080b1d7c590fff4eedaf895e353"
+    },
+    "no_text": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates_no_text.png",
+      "sha256": "b4479a529986affc7fa5198b7caea72d2846b58fcd4669cb6b6f8067df7e969d"
+    },
+    "gray": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates_gray.png",
+      "sha256": "df46166fd276e54b0c4d281f558121bfb4a6532535cc8c0adf66a52484f07157"
+    }
+  },
+  "audit": {
+    "font_report": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nFGKKLO+MicrosoftYaHei                CID TrueType      Identity-H       yes yes yes     16  0\nFTUTIJ+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     23  0\nFXCONM+STIXGeneral-Italic            CID TrueType      Identity-H       yes yes yes     30  0\n",
+    "type3_fonts": false,
+    "source_and_geometry_checks": "passed",
+    "visual_review": "colour, no-text and grayscale PNGs inspected; PDF independently rendered and inspected at 896 px width",
+    "rendered_pdf_preview": "~/AppData/Local/Temp/cumcm-q4-coordinate-figure-20260911/figure_pdf_page.png",
+    "pdf_size_cm": [
+      15.8,
+      6.4
+    ],
+    "pdf_pages": 1,
+    "png_size_px": [
+      2239,
+      907
+    ],
+    "svg_editable_text_elements": 28,
+    "svg_raster_images": 0,
+    "findings": [
+      "The interior ring and outer contour both contract by the observed ratio 0.687.",
+      "The orange fixed coordinate is inside the initial disk and outside the 6 h disk.",
+      "The no-text rendering retains the snapshot sequence arrow and shows radius change and coordinate distinction.",
+      "The grayscale version preserves ring, outer rim, circle marker and dashed cross marker distinctions.",
+      "Panel labels are aligned; no cropped labels or overlapping explanatory text were seen.",
+      "This is independent figure QA; final brief and catalogue page embedding are delegated to parent."
+    ]
+  },
+  "suggested_caption": "外半径观测与均匀径向缩放下的材料坐标对应。（a）附件2的145个半径观测及逐段线性重建。（b）0 h和6 h的截面使用相同厘米尺度，实线外轮廓半径分别为2.000和1.374 cm；蓝色材料环保持ξ=0.5，其物理半径由1.000 cm缩至0.687 cm。橙色叉号标记固定r=1.5 cm位置，在6 h已落在药材外。内部材料对应来自均匀缩放假设，填色只表示材料范围，不表示含水率；箭头表示两个时刻的先后。"
+}

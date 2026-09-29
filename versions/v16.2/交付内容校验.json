@@ -1,0 +1,511 @@
+{
+  "status": "stable",
+  "version": "16.2.0",
+  "target_root": "<WORKSPACE>\\总skill\\skills_v16.2",
+  "files": {
+    "skills/agents/openai.yaml": {
+      "sha256": "259a882e4f6045e692923c43c8fc7768d996c12d75128e519c9243d910ef199b",
+      "size": 315
+    },
+    "skills/evals/release/frozen-manifest.json": {
+      "sha256": "a5749f66fea135cc8d3eb2262cccfc7002f69e7577a522761da8d94dbce6a8d8",
+      "size": 27341
+    },
+    "skills/evals/release/release-plan.json": {
+      "sha256": "6eea7e478ab5ec8f695cb79b123838758dd6dcbf9391a2d0f3cc45eecd922364",
+      "size": 12828
+    },
+    "skills/evals/release/release-state.json": {
+      "sha256": "abe62e3a6ed61789b657095661101dd4c1e7c89bcd361b8b2e3f4abc483e992b",
+      "size": 271
+    },
+    "skills/evals/v15-regression-cases.json": {
+      "sha256": "c03d89965f74c421e0a11daa57c5e62a4f86c8bb8a4a78210107f9b3b3fdd150",
+      "size": 14338
+    },
+    "skills/references/artifact-contract.json": {
+      "sha256": "7fcb3a569887b81a8b07b65dc474c9fab4575f2272df6cfc982f4ed9c7261c3f",
+      "size": 3594
+    },
+    "skills/references/capability-packet-registry.json": {
+      "sha256": "71d4d0101b3edaf0beacd51ff548e82ccae76177cd37cb7a23ef0c1ccb92d296",
+      "size": 8607
+    },
+    "skills/references/capability-packets/data/identity-and-audit.md": {
+      "sha256": "945e652dc68f0286056b3314354767ad0010128905af16081bf2684274283648",
+      "size": 4731
+    },
+    "skills/references/capability-packets/data/treatment-and-freeze.md": {
+      "sha256": "0c6239df194589057b50d11d4db3b513e5a0b0eda0f2c1def697d6a19d3e5bf5",
+      "size": 4432
+    },
+    "skills/references/capability-packets/evidence/final-delivery-and-compliance.md": {
+      "sha256": "e94709fa0aaea484c3c517b693606220509e3403744fb2980e3189f21bc8b386",
+      "size": 5950
+    },
+    "skills/references/capability-packets/evidence/literature-and-source-evidence.md": {
+      "sha256": "e880127fb7383a5e614c76a5b99ce176ee47627ebea4a2bc4010129ec95aebf4",
+      "size": 11128
+    },
+    "skills/references/capability-packets/evidence/provenance-and-handoff.md": {
+      "sha256": "8edc0bee9346fd09ed9c8ba4a543d75b79d06bdc1671a8567c013fac34de3aac",
+      "size": 6541
+    },
+    "skills/references/capability-packets/governance/skill-maintenance.md": {
+      "sha256": "385a320b958b23133274db5f6dbf717a0c894b5d28a9f3f948eecb31e9dc3be3",
+      "size": 14362
+    },
+    "skills/references/capability-packets/manuscript/expression-and-argument.md": {
+      "sha256": "b8695acf2eb141d1580f924f2d4ac375417270aee1e8cacc3a0b1ab7ebf81a61",
+      "size": 17301
+    },
+    "skills/references/capability-packets/manuscript/latex-and-finalization.md": {
+      "sha256": "8d57029220042193ec267ef6fcc5f3791722deaff7b402d4f19ec82897d0defa",
+      "size": 15820
+    },
+    "skills/references/capability-packets/manuscript/reader-audit-and-local-edit.md": {
+      "sha256": "d38ef4b3c28777fd77f4143171d29c9ffaff54335b0b31fe43fa90c362186511",
+      "size": 12880
+    },
+    "skills/references/capability-packets/manuscript/structure-and-section-contracts.md": {
+      "sha256": "510265d8ec0f7ad8f4bda0d9a81534ef6dc944ee1b71fe78d0c1063c20401c6d",
+      "size": 14535
+    },
+    "skills/references/capability-packets/modeling/implementation-solving-and-results.md": {
+      "sha256": "d78aa047df03eda7c683578fba9d302d49d2dc36938ba2d3f08b00c4598e40c6",
+      "size": 17004
+    },
+    "skills/references/capability-packets/modeling/mathematical-specification.md": {
+      "sha256": "98a24509e9ffba54e35b5eaf3fd3e821844ece0906da604972e9ca23736ac057",
+      "size": 8141
+    },
+    "skills/references/capability-packets/modeling/problem-and-candidates.md": {
+      "sha256": "e88d1be44ec5a85dd471ba9444ef28fe928fc77a2964ac0275dba59c54eb6a07",
+      "size": 8475
+    },
+    "skills/references/capability-packets/project/platform-and-artifacts.md": {
+      "sha256": "90b3b7c63123bd9d9035ddfac508bdb7e83bb090460533b8b6ca10f1f42e7baa",
+      "size": 16159
+    },
+    "skills/references/capability-packets/project/recovery-and-handoff.md": {
+      "sha256": "624ffcb72a4210274fc73f7e18f18cf4fb19e57ab018e9f142511c171005f4a2",
+      "size": 16674
+    },
+    "skills/references/capability-packets/project/scope-and-plan.md": {
+      "sha256": "905e3026993195a959e7721083a7f07a9f1be60d9a47238999357e4efa1c3ace",
+      "size": 9964
+    },
+    "skills/references/capability-packets/verification/implementation-axis.md": {
+      "sha256": "d793ed09f6f26f93aae0a737fc29aaf9cd630c58f0bf349d21b7306721b0e70a",
+      "size": 6549
+    },
+    "skills/references/capability-packets/verification/model-axis.md": {
+      "sha256": "3702db75f3f7830156444631613730ae719d8b376efcf41a187c48f1961e32a0",
+      "size": 5408
+    },
+    "skills/references/capability-packets/verification/uncertainty-and-robustness.md": {
+      "sha256": "7dab2a045a50c5536c8730b60e179ba62d15c024f73a15c583930a763d7a0c59",
+      "size": 6000
+    },
+    "skills/references/capability-packets/visual/figure-brief-and-data-charts.md": {
+      "sha256": "1c2dffbb71a193d93c963400f5a1d77b5f0b8cf1c68efbb81ca8012329ab3e63",
+      "size": 8163
+    },
+    "skills/references/capability-packets/visual/render-and-audit.md": {
+      "sha256": "1afd5d99c98b71253b58ad5a99776fe46feade8c91fb5e3115cc17156ed2d4cd",
+      "size": 8127
+    },
+    "skills/references/capability-packets/visual/scientific-schematics.md": {
+      "sha256": "ecefad6230ce7eed94f62ae275117ca19521f55ed62f3e7087e7de35ac186c7e",
+      "size": 6782
+    },
+    "skills/references/compatible-change-bundle.schema.json": {
+      "sha256": "62f108d1bb8606d6e4a151a96d766e6d6590ee1c0a5312b331476b31f32c011a",
+      "size": 1969
+    },
+    "skills/references/data-method-notes.md": {
+      "sha256": "6f09b17ecd48eaebbf9544499e2e66e0eb28b9bc332182a16f3838623ab49545",
+      "size": 2414
+    },
+    "skills/references/effect-target-registry.json": {
+      "sha256": "f110897ebdf6fe6c9a628a0878e704577fe1043e91b14ac300e5d1719ff2b869",
+      "size": 40133
+    },
+    "skills/references/evidence-method-notes.md": {
+      "sha256": "8b07abd1bbe6cc6c33ca5b6c9ce3af2fbd9750a05000d89957f7d7417555663d",
+      "size": 1424
+    },
+    "skills/references/maintenance-method-notes.md": {
+      "sha256": "f8cc9c13e6314ff40ddda41d907104e4e2cad7f1a8ab04e5ba3eb70526e3bf7a",
+      "size": 804
+    },
+    "skills/references/manuscript-change-closure.json": {
+      "sha256": "f15feba3ef4a9ae91a26f32a03cdc773bf499217537999c3c8e58059d9d19b46",
+      "size": 28487
+    },
+    "skills/references/manuscript-method-notes.md": {
+      "sha256": "b67abffbd90345824b69b5623f7cebb2578f64353848dec7d45b1eaf5de1b1bb",
+      "size": 2782
+    },
+    "skills/references/migration/capability-crosswalk.json": {
+      "sha256": "61c748c48d532afe9b914ad85ccdc782144931347aa650b3fb4bb07f21a94c94",
+      "size": 275288
+    },
+    "skills/references/migration/clause-preservation.json": {
+      "sha256": "3adbff68e30c5a3ad8e51bdc3edcb5c9d43cca66096a3f23ae166fc642a3b58a",
+      "size": 408661
+    },
+    "skills/references/migration/legacy-coverage.json": {
+      "sha256": "3b0b195d6244402343cf402a2a6b0b21cfa9750fdaf1769d14c829852a96a748",
+      "size": 519136
+    },
+    "skills/references/migration/native-capabilities.json": {
+      "sha256": "c160257539667dd727bd19653599de17c9343f7d3d6cd9185ebe6eab17873ce6",
+      "size": 3658
+    },
+    "skills/references/migration/platform-restoration.json": {
+      "sha256": "815268d49eecb9aed275ca256d9b835de6501fbb483b365d18830fa087be4597",
+      "size": 2755
+    },
+    "skills/references/migration/v1-v9-capability-ledger.json": {
+      "sha256": "c44427ba0829e71d37c4f6f6012c35760e70647b0022fee6b239190fab13166e",
+      "size": 2468438
+    },
+    "skills/references/migration/v15-preservation-ledger.json": {
+      "sha256": "7fdaf19541e967807c0ce4910ba77a30757a31faea75daf5b5f188d2f460e75c",
+      "size": 9190
+    },
+    "skills/references/migration/v9-capability-baseline.json": {
+      "sha256": "e76f1fc34e86ac8b2db86a6089b4de3aa5181f0f203102fcf816ce01ee1533f1",
+      "size": 23136
+    },
+    "skills/references/modeling-method-notes.md": {
+      "sha256": "7ce1c1f6c1b00d29e61557d958a7f0d05fb77f77c5f06cd264d830d96c6ec5a3",
+      "size": 2828
+    },
+    "skills/references/ownership-contract.json": {
+      "sha256": "f4ec7406b2e5b53da2e83f7922ac563b754a135e9f86460e83d4f0d9ee834004",
+      "size": 7936
+    },
+    "skills/references/preservation/audit-v1-v5.md": {
+      "sha256": "7a62d0330151a852ced85291e1febd72e011bc004ec22a438ddc373f9956f352",
+      "size": 64216
+    },
+    "skills/references/preservation/audit-v11-v14.md": {
+      "sha256": "17bc68dd696e1a44bc0a8940affabe76791538aab04fcefa19d74bc3d15e0be7",
+      "size": 33916
+    },
+    "skills/references/preservation/audit-v6-v10.md": {
+      "sha256": "919f59147e96552e3879fd7249f1e1442baba9cd05f21e18b2a65ab0d22538ec",
+      "size": 66025
+    },
+    "skills/references/preservation/forward-eval-data-model.md": {
+      "sha256": "4eb592518daebdfc6d513b50c478363cdcb35444d7dd4fe11e09e82758b8f752",
+      "size": 17505
+    },
+    "skills/references/preservation/forward-eval-manuscript.md": {
+      "sha256": "ecf8378d248bf3e5a371d105b13b885def70b50b95a45f64a96b55457b8c24d1",
+      "size": 15072
+    },
+    "skills/references/preservation/forward-eval-visual.md": {
+      "sha256": "d73b316d56d62a96d7bd3a5210f7acdfbea8fba3f299d74eb3460ef065e120ff",
+      "size": 15383
+    },
+    "skills/references/preservation/legacy-executable-retirement.json": {
+      "sha256": "e4c1c8920fd07ab0ca57cd02a9dff4cc2a5577360eef72d1a9b4d7f98c404ec4",
+      "size": 4292
+    },
+    "skills/references/preservation/module-source-manifest.json": {
+      "sha256": "fb05efae818ef0fa73de07d9b0e0f0739e93d978f67655ee0b3a1785b3ecc099",
+      "size": 8497
+    },
+    "skills/references/preservation/real-project-2025-a-rule-extraction.md": {
+      "sha256": "c0cfa2f1ee043b6a54393baaea2d5e690092a5a03068179f161712fa157b3dad",
+      "size": 21825
+    },
+    "skills/references/preservation/rule-disposition.json": {
+      "sha256": "3d4e67bc3a499539fa5c016f6b9844fdd75e76cc7597450e957bdb5a4090fbe9",
+      "size": 6906
+    },
+    "skills/references/preservation/v1-v14-audit.md": {
+      "sha256": "1ff8e7fae4e35ef4ae9a9822d5d57cdc97b597ee5677596939ef3bbfb7da60b8",
+      "size": 19832
+    },
+    "skills/references/preservation/v15-0-1-platform-hotfix.json": {
+      "sha256": "b032db7efe16a43a01fa0b7292e4708629781487984af928b232c91147ed02a5",
+      "size": 2812
+    },
+    "skills/references/preservation/v15-real-project-backfill-and-state-repair.md": {
+      "sha256": "a4d32664e1da57292d69c7e6793c5ba2d1ad7d8d7dbfea66cd5a1809624ad604",
+      "size": 13074
+    },
+    "skills/references/preservation/v16-2-cumcm2026-lessons.md": {
+      "sha256": "ac0bcde064ccf9ae0deca11962ab6f832464514b1cb65a1089a1e38d7e23db09",
+      "size": 5984
+    },
+    "skills/references/preservation/v16-2-release-lineage.json": {
+      "sha256": "87d532df51e965b9e18d2cbede1a31308ca6f0695a8890fec73f7f146672ec6e",
+      "size": 14888
+    },
+    "skills/references/preservation/v16-compatible-change-fast-path.json": {
+      "sha256": "189d8cabdcc3fc5160f12462800614401b214ef0a827d592173169f377f19143",
+      "size": 3760
+    },
+    "skills/references/preservation/v16-real-project-2024-b-teammate-brief.md": {
+      "sha256": "94e4f547c3c38ced9566bc7c025e0b462f1cf714a1c496ec125a4ad7f7822098",
+      "size": 13417
+    },
+    "skills/references/preservation/v16-real-project-2025-a-live-window-rule-extraction.md": {
+      "sha256": "f1860d28d57ed60978fe261e24b222f2ae5421f0528506209465ec98782164f4",
+      "size": 6582
+    },
+    "skills/references/preservation/v16-recovery-tier-redesign.md": {
+      "sha256": "c6196a8250b0d3ac084945c3f7c8db745285184eeaf9bd73bb427a4cbe55357d",
+      "size": 7040
+    },
+    "skills/references/preservation/v16-small-patch-20260910.json": {
+      "sha256": "3e594e1a4bd60e5f0e55d7a4f8b95a5489611270ffa6010a17426efb6eb369af",
+      "size": 3774
+    },
+    "skills/references/project-method-notes.md": {
+      "sha256": "72e6ae22c5629f66ebed55236e51ecdb817785101f425f2505f809b707c5ac99",
+      "size": 4715
+    },
+    "skills/references/project-platform-contract.json": {
+      "sha256": "945ec90327873ae46f5e7cd4f7259d3caa05939d475cf772177094a1325ec278",
+      "size": 10819
+    },
+    "skills/references/receipt.schema.json": {
+      "sha256": "858326abe3aa77413286e5f399fdfa1b9541196ece51349f511b0968ca8df8cc",
+      "size": 6454
+    },
+    "skills/references/recovery-receipt.schema.json": {
+      "sha256": "72009f98ba0548ac0c55e021d149045cea6829f2d9fdc3b508e3cf222d155ae2",
+      "size": 5190
+    },
+    "skills/references/release-manifest.schema.json": {
+      "sha256": "3b507a63d53422eead1a7648b2eb05a0a5c85fd32b973f257f5c2d5bc2988d5e",
+      "size": 3292
+    },
+    "skills/references/release-policy.json": {
+      "sha256": "fa09be381742782943d9621815cba9965188c860fe0fbc2b610fb93dc2e6405a",
+      "size": 6413
+    },
+    "skills/references/route-contract.json": {
+      "sha256": "f05298c897a48a09117d9cadb8fb3bfe1c4dd7f88cd65b9aa18e7a79235e289c",
+      "size": 51558
+    },
+    "skills/references/rule-atom.schema.json": {
+      "sha256": "465d0110893f522bdba167be5b56576f9f66338bb49ca3b3ae8b17249d4135bc",
+      "size": 6715
+    },
+    "skills/references/runtime-policy.json": {
+      "sha256": "8d15a661b27114ae87591d492a1960fc859b5f8055208e0e1657917a2d334610",
+      "size": 20088
+    },
+    "skills/references/semantic-plan.schema.json": {
+      "sha256": "37d3dcb246286f7af90bc6ab5c2b1adeb49dc8b1c45f78ed08d88e6a3aad6244",
+      "size": 13597
+    },
+    "skills/references/state-machine.json": {
+      "sha256": "68b5179e9467a692f6eb868fb3db21a36d4ea732e05080468a370054bd0c638b",
+      "size": 7733
+    },
+    "skills/references/state.schema.json": {
+      "sha256": "989576b575d321a4a5f116e4edb4b71e7642a1e51d8a6723eee88236d38ebcd2",
+      "size": 32463
+    },
+    "skills/references/verification-method-notes.md": {
+      "sha256": "6b226db6894119ac366364da7a9d90c2f7a8daaccbff364927375ca481465e12",
+      "size": 2944
+    },
+    "skills/references/visual-method-notes.md": {
+      "sha256": "38b7b2256c583ffbea3a8680be57d3b1d5a317e6c13ae0de128bdce97003e15e",
+      "size": 3300
+    },
+    "skills/rules/data.json": {
+      "sha256": "0567d1040bb6da657ab2ba83018a1c2cd787974eaf6e6752c321e245537793b6",
+      "size": 42579
+    },
+    "skills/rules/evidence_delivery.json": {
+      "sha256": "b482cc2f0356488c293deb0330df3e3f1756b24b6f7f40942534dff62e7eb66b",
+      "size": 51291
+    },
+    "skills/rules/governance.json": {
+      "sha256": "3413c7a3276d1aee413d55ed374eed51bf5afc00b01adea375b7240378c5a281",
+      "size": 87757
+    },
+    "skills/rules/maintenance.json": {
+      "sha256": "45767a3c6a30a3623a3271e0d723967e306b8a49795a9067112e48f6ddb3a2e7",
+      "size": 32420
+    },
+    "skills/rules/manuscript.json": {
+      "sha256": "211eaa9933c8e41e0723f9f865c58ad875f97602262efb2666e3123b9e2679fb",
+      "size": 64907
+    },
+    "skills/rules/modeling.json": {
+      "sha256": "ab5c53e214929f562993a92bd316775ba423b0dc917c08abcb4f7df2059d3e76",
+      "size": 67247
+    },
+    "skills/rules/project.json": {
+      "sha256": "2dced0e858953e6a708917a718886ebcdf689b363ef6eb4b98fb4516e6f3412f",
+      "size": 32267
+    },
+    "skills/rules/verification.json": {
+      "sha256": "36dc5d144f2bdcaf7776d1adc04e5c9d115fea6af13ef7240680c3bb3878c181",
+      "size": 76919
+    },
+    "skills/rules/visuals.json": {
+      "sha256": "d190dbb9aa44c60866fb6b085cfbb2226729a91eb2b576e353d48bcce5dc9f3c",
+      "size": 33511
+    },
+    "skills/scripts/artifact_guard.py": {
+      "sha256": "a619b4190b44e1662884d85ccfdec9bd1308c618b8093775382edeb83bc920bc",
+      "size": 1090
+    },
+    "skills/scripts/assess_recovery.py": {
+      "sha256": "4b253103a91d42c222d2982df5f441bf3bb55ab122d182f2d871687d19043318",
+      "size": 32941
+    },
+    "skills/scripts/build_clause_preservation.py": {
+      "sha256": "f4678852f0b16ce23fd0b298977d7c1f65b4ef446e46f78e455215586638eb3f",
+      "size": 63993
+    },
+    "skills/scripts/build_migration_coverage.py": {
+      "sha256": "8d6df02b2399add30981620526c8098cb8b68f0e105239c745c26fc2bb0168a3",
+      "size": 33820
+    },
+    "skills/scripts/freeze_release.py": {
+      "sha256": "12e946b04264f79de9ae049fdc53d83bd87570ebce9c5e558e141d13f3fbd82d",
+      "size": 11870
+    },
+    "skills/scripts/lib_v10.py": {
+      "sha256": "7b43e9d469ee3e8da1de9fb66683e8d03eed47268ba52faaaac955653fa17df1",
+      "size": 40375
+    },
+    "skills/scripts/lib_v11.py": {
+      "sha256": "aeff22e96af62da9fe59bed14e6464eb661172d5a8484771169661bb6ce4904c",
+      "size": 109274
+    },
+    "skills/scripts/recovery_manifest.py": {
+      "sha256": "8884bdd59880fd2e07a634a0770d611f2d66fedf46f5b686b8577f64fc817cac",
+      "size": 10900
+    },
+    "skills/scripts/recovery_v14.py": {
+      "sha256": "e2c28ef657610543b59fed85e0ca284254a50bb8acecb08e38c9993fe511283b",
+      "size": 16063
+    },
+    "skills/scripts/recovery_v16.py": {
+      "sha256": "21fc511f06a49882d9fe48c9be1c383c3974c42a33ee64e9a3e4da08142e8f05",
+      "size": 9709
+    },
+    "skills/scripts/resolve_route.py": {
+      "sha256": "375e0c0df3004f83d4c0724e1953d34b457017a99556d722955d0079f3ab1851",
+      "size": 3031
+    },
+    "skills/scripts/run_authorized_action.py": {
+      "sha256": "fc92139e5ca1389439ed5afb5537bfe3f8101e1f1933ca9533c0c88b05d216dc",
+      "size": 8150
+    },
+    "skills/scripts/run_v15_scenarios.py": {
+      "sha256": "f36b1799e96d0858adbb0b6e088a0a67a06b5df5c599b2b37cc097e5ab2030c8",
+      "size": 146048
+    },
+    "skills/scripts/run_v16_gate_scenarios.py": {
+      "sha256": "e052d7478ac626d0d613bd490ddfcb8e13d56f36b4dbd9a02190d2100547b7c4",
+      "size": 43248
+    },
+    "skills/scripts/run_v16_recovery_scenarios.py": {
+      "sha256": "43f3290bb99d30e2c8cdd5fa77f86de0b48616f9fe1875f6b1d9def7f0fc20db",
+      "size": 54491
+    },
+    "skills/scripts/run_v16_scenarios.py": {
+      "sha256": "772adc8f90a86d70eff4065e31537d96f1ede3879b88c568fc8b3b5d5c2d3d10",
+      "size": 3209
+    },
+    "skills/scripts/run_v16_teammate_brief_scenarios.py": {
+      "sha256": "94d54e9f1503a3a5b1f73c407a9bb47d6fd7e5b3e2d1c9c0760c682b2b4f4cbf",
+      "size": 8896
+    },
+    "skills/scripts/state_manager.py": {
+      "sha256": "66bfd05e45615ecb48ef9366cff00f064c38c7a6844cfd21decef3b696eacdf8",
+      "size": 116371
+    },
+    "skills/scripts/state_v11.py": {
+      "sha256": "13036608158246f1dda704a8a4fdd0b2eb7ab1af8fad48381d3c62599b74db5f",
+      "size": 48599
+    },
+    "skills/scripts/validate_capability_packets.py": {
+      "sha256": "9dde625fced74664795824f11896011d43db2622f7b3f35affee77cf68b8bd7e",
+      "size": 7654
+    },
+    "skills/scripts/validate_figure_assets.py": {
+      "sha256": "f5b9bea63cc3f06018bf17044a74d9603d14bfe3908dcd027a6ff8bc4a453407",
+      "size": 5377
+    },
+    "skills/scripts/validate_migration.py": {
+      "sha256": "f013d417192807a9188d27320997698cc136a8dd74aaf47e5fbf65773ca864a2",
+      "size": 40657
+    },
+    "skills/scripts/validate_receipt.py": {
+      "sha256": "86dbce3c41d9c2f49add32a6c17d2269b834f5dff7e4722ffdd96dddc45159d9",
+      "size": 31380
+    },
+    "skills/scripts/validate_release.py": {
+      "sha256": "bad2c7a29a6afbde1cb81f9a0fe4bb205f1b964b5ffd900f64f75374437c0890",
+      "size": 19756
+    },
+    "skills/scripts/validate_teammate_brief.py": {
+      "sha256": "317c4c57c32178027442f9d2c8f0ce8a519515ba9417da7ae594bbaa99c19356",
+      "size": 6034
+    },
+    "skills/scripts/validate_v15_contracts.py": {
+      "sha256": "93f61febad20cc52a05dc79e5949ce31bd7b93375b462738ff0d5f22e87116e9",
+      "size": 100051
+    },
+    "skills/scripts/validate_v15_package.py": {
+      "sha256": "8354fdf727f40c578c2c2012f89184ac36e27b6518f61239d22a6da9a856e7cb",
+      "size": 6526
+    },
+    "skills/scripts/validate_v16_contracts.py": {
+      "sha256": "c82b468a58baaeef951704b237b6b29123cd28b486408303fb7baae06f55978b",
+      "size": 29453
+    },
+    "skills/scripts/validate_v16_package.py": {
+      "sha256": "044044dd419029a7cd213fbdbf5f2b58e292f4cf3a558916c3d52e1c9bdf238e",
+      "size": 7229
+    },
+    "skills/SKILL.md": {
+      "sha256": "15c35f9b6faa29f37281895b246f1c36c997895547f32aa126e62764206448c4",
+      "size": 33569
+    },
+    "skills.zip": {
+      "sha256": "62fe1d7785d40a1ee723a15df5fa6cbbacd79f60c75e672e75665dd05a3ead83",
+      "size": 1215294
+    },
+    "冻结记录/freeze_output.log": {
+      "sha256": "68e3facc932830eb7bc3b9a570438bbc3a9ccc163aefa75a68b918c384df0710",
+      "size": 1210
+    },
+    "冻结记录/freeze_semantic_plan.json": {
+      "sha256": "70dc6b1543e0c7b50c6595501d6828601942a556cc6a8c0198514bb0475fbfb2",
+      "size": 2735
+    },
+    "冻结记录/preparation.diff": {
+      "sha256": "9947b772d6030977508cf444b69a147117ca9d2b73fd7213e10f4e6121af5c3c",
+      "size": 25833
+    },
+    "冻结记录/preparation_record.json": {
+      "sha256": "e43b84ae3571b13f22c8ffbf1816c59bc6e1ee16c3dbfd596f7baab6076f0929",
+      "size": 28622
+    },
+    "冻结记录/冻结与完整性核验.json": {
+      "sha256": "478746e38ea893876f21e7a3a80f9bf7d74a62a0d91eb230911a060aa13d9365",
+      "size": 1403
+    },
+    "冻结说明.md": {
+      "sha256": "6fbf6ae8c2b7abcd39e55df6bb5e4f393137b90fa43b2ee55bee1a5037d85f3a",
+      "size": 1797
+    }
+  }
+}

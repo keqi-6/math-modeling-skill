@@ -1,0 +1,654 @@
+{
+  "schema_version": "1.0",
+  "release": "9.0.0",
+  "evals": [
+    {
+      "id": "BEH-DATA-001",
+      "kind": "behavioral",
+      "routes": [
+        "RT-DATA-AUDIT"
+      ],
+      "capabilities": [
+        "DATA-AUDIT-001",
+        "DATA-IDENTITY-001",
+        "EVD-PROVENANCE-001"
+      ],
+      "cases": [
+        "BC-006",
+        "RC-006"
+      ]
+    },
+    {
+      "id": "BEH-INIT-001",
+      "kind": "behavioral",
+      "routes": [
+        "RT-PROJECT-INIT"
+      ],
+      "capabilities": [
+        "ART-LAZY-001",
+        "PRJ-SCOPE-001",
+        "PRJ-STRUCTURE-001",
+        "STATE-TYPED-001"
+      ],
+      "cases": [
+        "BC-002",
+        "RC-002"
+      ]
+    },
+    {
+      "id": "BEH-MAN-AUDIT",
+      "kind": "behavioral",
+      "routes": [
+        "RT-MANUSCRIPT-AUDIT"
+      ],
+      "capabilities": [
+        "EVD-PROVENANCE-001",
+        "MAN-ACCEPT-001",
+        "MAN-READER-001",
+        "VIS-LAYOUT-001"
+      ],
+      "cases": [
+        "BC-012",
+        "RC-017"
+      ]
+    },
+    {
+      "id": "BEH-MAN-LOCAL",
+      "kind": "behavioral",
+      "routes": [
+        "RT-MANUSCRIPT-LOCAL"
+      ],
+      "capabilities": [
+        "MAN-LOCAL-001"
+      ],
+      "cases": [
+        "BC-011",
+        "RC-016"
+      ]
+    },
+    {
+      "id": "BEH-MNT-CHANGE",
+      "kind": "behavioral",
+      "routes": [
+        "RT-SKILL-CHANGE"
+      ],
+      "capabilities": [
+        "MNT-CLASSIFY-001",
+        "MNT-EVAL-001",
+        "MNT-IMPACT-001",
+        "MNT-OWNER-001",
+        "MNT-RELOAD-001",
+        "MNT-ROLLBACK-001"
+      ],
+      "cases": [
+        "BC-014",
+        "RC-022"
+      ]
+    },
+    {
+      "id": "BEH-MNT-READONLY",
+      "kind": "behavioral",
+      "routes": [
+        "RT-SKILL-AUDIT"
+      ],
+      "capabilities": [
+        "GOV-OWNER-001",
+        "MNT-CLASSIFY-001",
+        "MNT-IMPACT-001"
+      ],
+      "cases": [
+        "BC-013",
+        "RC-021"
+      ]
+    },
+    {
+      "id": "BEH-MODEL-001",
+      "kind": "behavioral",
+      "routes": [
+        "RT-MODEL-COMPARE"
+      ],
+      "capabilities": [
+        "GOV-DECISION-001",
+        "MOD-COMPARE-001",
+        "MOD-RESTATE-001"
+      ],
+      "cases": [
+        "BC-007",
+        "RC-009"
+      ]
+    },
+    {
+      "id": "BEH-READONLY-001",
+      "kind": "behavioral",
+      "routes": [
+        "RT-ADVISORY-PROJECT"
+      ],
+      "capabilities": [
+        "GOV-AUTH-001",
+        "GOV-MODE-001",
+        "GOV-ROUTE-001"
+      ],
+      "cases": [
+        "BC-001",
+        "RC-001"
+      ]
+    },
+    {
+      "id": "BEH-REC-R0",
+      "kind": "behavioral",
+      "routes": [
+        "RT-PROJECT-RESUME"
+      ],
+      "capabilities": [
+        "DEL-HANDOFF-001",
+        "REC-R0-001",
+        "REC-R1-001",
+        "REC-R2-001",
+        "STATE-TYPED-001"
+      ],
+      "cases": [
+        "BC-003",
+        "RC-004"
+      ]
+    },
+    {
+      "id": "BEH-REC-R1",
+      "kind": "behavioral",
+      "routes": [
+        "RT-PROJECT-RESUME"
+      ],
+      "capabilities": [
+        "DEL-HANDOFF-001",
+        "REC-R0-001",
+        "REC-R1-001",
+        "REC-R2-001",
+        "STATE-TYPED-001"
+      ],
+      "cases": [
+        "BC-004",
+        "RC-004"
+      ]
+    },
+    {
+      "id": "BEH-REC-R2",
+      "kind": "behavioral",
+      "routes": [
+        "RT-PROJECT-RESUME"
+      ],
+      "capabilities": [
+        "DEL-HANDOFF-001",
+        "REC-R0-001",
+        "REC-R1-001",
+        "REC-R2-001",
+        "STATE-TYPED-001"
+      ],
+      "cases": [
+        "BC-005",
+        "RC-004"
+      ]
+    },
+    {
+      "id": "BEH-S6-AXIS1",
+      "kind": "behavioral",
+      "routes": [
+        "RT-VERIFY-IMPLEMENTATION"
+      ],
+      "capabilities": [
+        "VER-E1-001",
+        "VER-E2-001"
+      ],
+      "cases": [
+        "BC-008",
+        "RC-012"
+      ]
+    },
+    {
+      "id": "BEH-S6-AXIS2",
+      "kind": "behavioral",
+      "routes": [
+        "RT-VERIFY-MODEL"
+      ],
+      "capabilities": [
+        "VER-E3-001",
+        "VER-E4-001",
+        "VER-ROBUST-001",
+        "VER-UNCERTAINTY-001"
+      ],
+      "cases": [
+        "BC-009",
+        "RC-013"
+      ]
+    },
+    {
+      "id": "BEH-S6-DUAL",
+      "kind": "behavioral",
+      "routes": [
+        "RT-VERIFY-S6"
+      ],
+      "capabilities": [
+        "VER-E1-001",
+        "VER-E2-001",
+        "VER-E3-001",
+        "VER-E4-001",
+        "VER-S6-DUAL-001"
+      ],
+      "cases": [
+        "BC-010",
+        "RC-014"
+      ]
+    },
+    {
+      "id": "BEH-S6-READINESS",
+      "kind": "behavioral",
+      "routes": [
+        "RT-VERIFY-S6-AUDIT"
+      ],
+      "capabilities": [
+        "VER-E1-001",
+        "VER-E2-001",
+        "VER-E3-001",
+        "VER-E4-001",
+        "VER-ROBUST-001",
+        "VER-S6-DUAL-001",
+        "VER-UNCERTAINTY-001"
+      ],
+      "cases": [
+        "BC-009A",
+        "RC-014A"
+      ]
+    },
+    {
+      "id": "CONTRACT-ARTIFACT",
+      "kind": "contract",
+      "routes": [],
+      "capabilities": [
+        "ART-LAZY-001",
+        "ART-PROMOTE-001"
+      ],
+      "cases": []
+    },
+    {
+      "id": "CONTRACT-MIGRATION",
+      "kind": "contract",
+      "routes": [],
+      "capabilities": [
+        "GOV-OWNER-001",
+        "MNT-ROLLBACK-001"
+      ],
+      "cases": []
+    },
+    {
+      "id": "CONTRACT-RECEIPT",
+      "kind": "contract",
+      "routes": [],
+      "capabilities": [
+        "GOV-RECEIPT-001"
+      ],
+      "cases": []
+    },
+    {
+      "id": "CONTRACT-STATE",
+      "kind": "contract",
+      "routes": [],
+      "capabilities": [
+        "STATE-TYPED-001"
+      ],
+      "cases": []
+    },
+    {
+      "id": "ROUTE-001",
+      "kind": "routing",
+      "routes": [
+        "RT-ADVISORY-PROJECT"
+      ],
+      "capabilities": [
+        "GOV-AUTH-001",
+        "GOV-MODE-001",
+        "GOV-ROUTE-001"
+      ],
+      "cases": [
+        "RC-001"
+      ]
+    },
+    {
+      "id": "ROUTE-002",
+      "kind": "routing",
+      "routes": [
+        "RT-PROJECT-INIT"
+      ],
+      "capabilities": [
+        "ART-LAZY-001",
+        "PRJ-SCOPE-001",
+        "PRJ-STRUCTURE-001",
+        "STATE-TYPED-001"
+      ],
+      "cases": [
+        "RC-002"
+      ]
+    },
+    {
+      "id": "ROUTE-003",
+      "kind": "routing",
+      "routes": [
+        "RT-PROJECT-PLAN"
+      ],
+      "capabilities": [
+        "GOV-DECISION-001",
+        "PRJ-PLAN-001",
+        "PRJ-SCOPE-001"
+      ],
+      "cases": [
+        "RC-003"
+      ]
+    },
+    {
+      "id": "ROUTE-004",
+      "kind": "routing",
+      "routes": [
+        "RT-PROJECT-RESUME"
+      ],
+      "capabilities": [
+        "DEL-HANDOFF-001",
+        "REC-R0-001",
+        "REC-R1-001",
+        "REC-R2-001",
+        "STATE-TYPED-001"
+      ],
+      "cases": [
+        "RC-004"
+      ]
+    },
+    {
+      "id": "ROUTE-005",
+      "kind": "routing",
+      "routes": [
+        "RT-LITERATURE"
+      ],
+      "capabilities": [
+        "EVD-LITERATURE-001",
+        "EVD-PROVENANCE-001"
+      ],
+      "cases": [
+        "RC-005"
+      ]
+    },
+    {
+      "id": "ROUTE-006",
+      "kind": "routing",
+      "routes": [
+        "RT-DATA-AUDIT"
+      ],
+      "capabilities": [
+        "DATA-AUDIT-001",
+        "DATA-IDENTITY-001",
+        "EVD-PROVENANCE-001"
+      ],
+      "cases": [
+        "RC-006"
+      ]
+    },
+    {
+      "id": "ROUTE-007",
+      "kind": "routing",
+      "routes": [
+        "RT-DATA-TREAT"
+      ],
+      "capabilities": [
+        "DATA-IDENTITY-001",
+        "DATA-TREAT-001",
+        "GOV-DECISION-001"
+      ],
+      "cases": [
+        "RC-007"
+      ]
+    },
+    {
+      "id": "ROUTE-008",
+      "kind": "routing",
+      "routes": [
+        "RT-DATA-FREEZE"
+      ],
+      "capabilities": [
+        "ART-PROMOTE-001",
+        "DATA-FREEZE-001"
+      ],
+      "cases": [
+        "RC-008"
+      ]
+    },
+    {
+      "id": "ROUTE-009",
+      "kind": "routing",
+      "routes": [
+        "RT-MODEL-COMPARE"
+      ],
+      "capabilities": [
+        "GOV-DECISION-001",
+        "MOD-COMPARE-001",
+        "MOD-RESTATE-001"
+      ],
+      "cases": [
+        "RC-009"
+      ]
+    },
+    {
+      "id": "ROUTE-010",
+      "kind": "routing",
+      "routes": [
+        "RT-MODEL-SPEC"
+      ],
+      "capabilities": [
+        "GOV-DECISION-001",
+        "MOD-SPEC-001"
+      ],
+      "cases": [
+        "RC-010"
+      ]
+    },
+    {
+      "id": "ROUTE-011",
+      "kind": "routing",
+      "routes": [
+        "RT-MODEL-IMPLEMENT"
+      ],
+      "capabilities": [
+        "ART-LAZY-001",
+        "MOD-IMPLEMENT-001",
+        "MOD-RESULTS-001"
+      ],
+      "cases": [
+        "RC-011"
+      ]
+    },
+    {
+      "id": "ROUTE-012",
+      "kind": "routing",
+      "routes": [
+        "RT-VERIFY-IMPLEMENTATION"
+      ],
+      "capabilities": [
+        "VER-E1-001",
+        "VER-E2-001"
+      ],
+      "cases": [
+        "RC-012"
+      ]
+    },
+    {
+      "id": "ROUTE-013",
+      "kind": "routing",
+      "routes": [
+        "RT-VERIFY-MODEL"
+      ],
+      "capabilities": [
+        "VER-E3-001",
+        "VER-E4-001",
+        "VER-ROBUST-001",
+        "VER-UNCERTAINTY-001"
+      ],
+      "cases": [
+        "RC-013"
+      ]
+    },
+    {
+      "id": "ROUTE-014",
+      "kind": "routing",
+      "routes": [
+        "RT-VERIFY-S6"
+      ],
+      "capabilities": [
+        "VER-E1-001",
+        "VER-E2-001",
+        "VER-E3-001",
+        "VER-E4-001",
+        "VER-S6-DUAL-001"
+      ],
+      "cases": [
+        "RC-014"
+      ]
+    },
+    {
+      "id": "ROUTE-014A",
+      "kind": "routing",
+      "routes": [
+        "RT-VERIFY-S6-AUDIT"
+      ],
+      "capabilities": [
+        "VER-E1-001",
+        "VER-E2-001",
+        "VER-E3-001",
+        "VER-E4-001",
+        "VER-ROBUST-001",
+        "VER-S6-DUAL-001",
+        "VER-UNCERTAINTY-001"
+      ],
+      "cases": [
+        "RC-014A"
+      ]
+    },
+    {
+      "id": "ROUTE-015",
+      "kind": "routing",
+      "routes": [
+        "RT-MANUSCRIPT-DRAFT"
+      ],
+      "capabilities": [
+        "MAN-ACCEPT-001",
+        "MAN-CONTENT-001",
+        "MAN-PROFILE-001",
+        "MAN-STRUCTURE-001"
+      ],
+      "cases": [
+        "RC-015"
+      ]
+    },
+    {
+      "id": "ROUTE-016",
+      "kind": "routing",
+      "routes": [
+        "RT-MANUSCRIPT-LOCAL"
+      ],
+      "capabilities": [
+        "MAN-LOCAL-001"
+      ],
+      "cases": [
+        "RC-016"
+      ]
+    },
+    {
+      "id": "ROUTE-017",
+      "kind": "routing",
+      "routes": [
+        "RT-MANUSCRIPT-AUDIT"
+      ],
+      "capabilities": [
+        "EVD-PROVENANCE-001",
+        "MAN-ACCEPT-001",
+        "MAN-READER-001",
+        "VIS-LAYOUT-001"
+      ],
+      "cases": [
+        "RC-017"
+      ]
+    },
+    {
+      "id": "ROUTE-018",
+      "kind": "routing",
+      "routes": [
+        "RT-VISUAL-CREATE"
+      ],
+      "capabilities": [
+        "ART-LAZY-001",
+        "VIS-DESIGN-001",
+        "VIS-IDENTITY-001",
+        "VIS-LAYOUT-001"
+      ],
+      "cases": [
+        "RC-018"
+      ]
+    },
+    {
+      "id": "ROUTE-019",
+      "kind": "routing",
+      "routes": [
+        "RT-VISUAL-AUDIT"
+      ],
+      "capabilities": [
+        "VIS-IDENTITY-001",
+        "VIS-LAYOUT-001"
+      ],
+      "cases": [
+        "RC-019"
+      ]
+    },
+    {
+      "id": "ROUTE-020",
+      "kind": "routing",
+      "routes": [
+        "RT-DELIVERY"
+      ],
+      "capabilities": [
+        "ART-PROMOTE-001",
+        "DEL-FINAL-001",
+        "DEL-HANDOFF-001",
+        "DEL-PROVENANCE-001"
+      ],
+      "cases": [
+        "RC-020"
+      ]
+    },
+    {
+      "id": "ROUTE-021",
+      "kind": "routing",
+      "routes": [
+        "RT-SKILL-AUDIT"
+      ],
+      "capabilities": [
+        "GOV-OWNER-001",
+        "MNT-CLASSIFY-001",
+        "MNT-IMPACT-001"
+      ],
+      "cases": [
+        "RC-021"
+      ]
+    },
+    {
+      "id": "ROUTE-022",
+      "kind": "routing",
+      "routes": [
+        "RT-SKILL-CHANGE"
+      ],
+      "capabilities": [
+        "MNT-CLASSIFY-001",
+        "MNT-EVAL-001",
+        "MNT-IMPACT-001",
+        "MNT-OWNER-001",
+        "MNT-RELOAD-001",
+        "MNT-ROLLBACK-001"
+      ],
+      "cases": [
+        "RC-022"
+      ]
+    }
+  ]
+}

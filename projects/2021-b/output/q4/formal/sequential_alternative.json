@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "status": "conditional_alternative_not_formal_one_shot_design",
+  "activation_condition": "only_if_results_are_available_before_scheduling_later_experiments",
+  "budget": 5,
+  "stage1_fixed": [
+    "A3@375",
+    "A3@425",
+    "A2@337.5"
+  ],
+  "run4_rule": "repeat the observed highest-yield A3 condition among 350, 375, 400, 425 and 450 C",
+  "run5_rule": "if A2@337.5 changes the strict-low recommendation or reverses the prior A2 325-to-350 increasing relation, repeat the updated A2 strict-low best; otherwise run A4@375",
+  "significance_threshold_used": false,
+  "may_not_be_combined_with_formal_one_shot_as_seven_runs": true
+}

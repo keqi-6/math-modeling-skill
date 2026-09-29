@@ -1,0 +1,535 @@
+{
+  "schema_version": "1.0",
+  "status": "pass",
+  "raw_sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+  "candidate_path": "output\\GEOMETRY\\q4_radius.json",
+  "candidate_sha256": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+  "generator": {
+    "path": "~\\AppData\\Local\\Temp\\cumcm_geometry_generate.py",
+    "sha256": "135ed3e327b048d633e5b40cad35215d446ba986103fb63c9dab2e0d7118cdc4"
+  },
+  "verifier": {
+    "path": "~\\AppData\\Local\\Temp\\cumcm_geometry_verify.py",
+    "sha256": "c5912d7561624ea0a34634ed5da71f627ad8ac2f4abe625d2edee42cb73adc21"
+  },
+  "read_independence": "Direct raw ZIP/XML and Decimal reference; no generator or solver import.",
+  "scope": "Data candidate and contract reference only. Consumer RadiusInput branches and field sensitivities remain Q4 implementation/model verification.",
+  "prior_attempt": {
+    "status": "fail",
+    "report_path": "~\\AppData\\Local\\Temp\\cumcm-geometry-initial-verification.json",
+    "sha256": "acfe7c872462650fa7a1754f39668c8ab3e58115b0bcc22426c2e057776da7b1",
+    "reason": "Original checker required decimal text equality although raw XML and candidate encode exactly the same binary64 radii. Radius comparison corrected to exact binary64 equality; original Decimal continuous-time oracle and tolerances remain unchanged."
+  },
+  "checks": [
+    {
+      "name": "raw_identity",
+      "passed": true
+    },
+    {
+      "name": "sheet_identity",
+      "passed": true
+    },
+    {
+      "name": "original_node_count",
+      "passed": true
+    },
+    {
+      "name": "original_domain",
+      "passed": true
+    },
+    {
+      "name": "all_original_fields",
+      "passed": true,
+      "field_count": 435,
+      "mismatches": [],
+      "radius_comparison": "Exact binary64 hex equality after independent raw XML/Decimal parsing; JSON shortest-decimal formatting is not an observation change.",
+      "decimal_text_difference_count": 56,
+      "max_decimal_text_difference_cm": "1E-16",
+      "decimal_text_differences": [
+        {
+          "row": 5,
+          "raw_xml_decimal": "1.7030000000000001",
+          "candidate_decimal": "1.703",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.b3f7ced916873p+0"
+        },
+        {
+          "row": 10,
+          "raw_xml_decimal": "1.4770000000000001",
+          "candidate_decimal": "1.477",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.7a1cac083126fp+0"
+        },
+        {
+          "row": 11,
+          "raw_xml_decimal": "1.4470000000000001",
+          "candidate_decimal": "1.447",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.726e978d4fdf4p+0"
+        },
+        {
+          "row": 12,
+          "raw_xml_decimal": "1.4239999999999999",
+          "candidate_decimal": "1.424",
+          "difference_cm": "-1E-16",
+          "binary64_hex": "0x1.6c8b439581062p+0"
+        },
+        {
+          "row": 14,
+          "raw_xml_decimal": "1.3740000000000001",
+          "candidate_decimal": "1.374",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.5fbe76c8b4396p+0"
+        },
+        {
+          "row": 15,
+          "raw_xml_decimal": "1.3560000000000001",
+          "candidate_decimal": "1.356",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.5b22d0e560419p+0"
+        },
+        {
+          "row": 18,
+          "raw_xml_decimal": "1.3109999999999999",
+          "candidate_decimal": "1.311",
+          "difference_cm": "-1E-16",
+          "binary64_hex": "0x1.4f9db22d0e560p+0"
+        },
+        {
+          "row": 19,
+          "raw_xml_decimal": "1.2989999999999999",
+          "candidate_decimal": "1.299",
+          "difference_cm": "-1E-16",
+          "binary64_hex": "0x1.4c8b439581062p+0"
+        },
+        {
+          "row": 20,
+          "raw_xml_decimal": "1.2909999999999999",
+          "candidate_decimal": "1.291",
+          "difference_cm": "-1E-16",
+          "binary64_hex": "0x1.4a7ef9db22d0ep+0"
+        },
+        {
+          "row": 21,
+          "raw_xml_decimal": "1.2809999999999999",
+          "candidate_decimal": "1.281",
+          "difference_cm": "-1E-16",
+          "binary64_hex": "0x1.47ef9db22d0e5p+0"
+        },
+        {
+          "row": 22,
+          "raw_xml_decimal": "1.2729999999999999",
+          "candidate_decimal": "1.273",
+          "difference_cm": "-1E-16",
+          "binary64_hex": "0x1.45e353f7ced91p+0"
+        },
+        {
+          "row": 25,
+          "raw_xml_decimal": "1.2529999999999999",
+          "candidate_decimal": "1.253",
+          "difference_cm": "-1E-16",
+          "binary64_hex": "0x1.40c49ba5e353fp+0"
+        },
+        {
+          "row": 30,
+          "raw_xml_decimal": "1.2330000000000001",
+          "candidate_decimal": "1.233",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3ba5e353f7ceep+0"
+        },
+        {
+          "row": 31,
+          "raw_xml_decimal": "1.2290000000000001",
+          "candidate_decimal": "1.229",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3a9fbe76c8b44p+0"
+        },
+        {
+          "row": 33,
+          "raw_xml_decimal": "1.2230000000000001",
+          "candidate_decimal": "1.223",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3916872b020c5p+0"
+        },
+        {
+          "row": 34,
+          "raw_xml_decimal": "1.2210000000000001",
+          "candidate_decimal": "1.221",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.389374bc6a7f0p+0"
+        },
+        {
+          "row": 35,
+          "raw_xml_decimal": "1.2190000000000001",
+          "candidate_decimal": "1.219",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3810624dd2f1bp+0"
+        },
+        {
+          "row": 39,
+          "raw_xml_decimal": "1.2130000000000001",
+          "candidate_decimal": "1.213",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.36872b020c49cp+0"
+        },
+        {
+          "row": 41,
+          "raw_xml_decimal": "1.2110000000000001",
+          "candidate_decimal": "1.211",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3604189374bc7p+0"
+        },
+        {
+          "row": 43,
+          "raw_xml_decimal": "1.2090000000000001",
+          "candidate_decimal": "1.209",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.35810624dd2f2p+0"
+        },
+        {
+          "row": 45,
+          "raw_xml_decimal": "1.2070000000000001",
+          "candidate_decimal": "1.207",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.34fdf3b645a1dp+0"
+        },
+        {
+          "row": 48,
+          "raw_xml_decimal": "1.2050000000000001",
+          "candidate_decimal": "1.205",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.347ae147ae148p+0"
+        },
+        {
+          "row": 49,
+          "raw_xml_decimal": "1.2050000000000001",
+          "candidate_decimal": "1.205",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.347ae147ae148p+0"
+        },
+        {
+          "row": 52,
+          "raw_xml_decimal": "1.2030000000000001",
+          "candidate_decimal": "1.203",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.33f7ced916873p+0"
+        },
+        {
+          "row": 53,
+          "raw_xml_decimal": "1.2030000000000001",
+          "candidate_decimal": "1.203",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.33f7ced916873p+0"
+        },
+        {
+          "row": 54,
+          "raw_xml_decimal": "1.2030000000000001",
+          "candidate_decimal": "1.203",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.33f7ced916873p+0"
+        },
+        {
+          "row": 55,
+          "raw_xml_decimal": "1.2030000000000001",
+          "candidate_decimal": "1.203",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.33f7ced916873p+0"
+        },
+        {
+          "row": 61,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 62,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 63,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 64,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 65,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 66,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 67,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 68,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 69,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 70,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 71,
+          "raw_xml_decimal": "1.2010000000000001",
+          "candidate_decimal": "1.201",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.3374bc6a7ef9ep+0"
+        },
+        {
+          "row": 118,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 119,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 120,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 121,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 122,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 123,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 124,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 125,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 126,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 127,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 128,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 129,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 130,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 131,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 132,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 133,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 134,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        },
+        {
+          "row": 135,
+          "raw_xml_decimal": "1.1990000000000001",
+          "candidate_decimal": "1.199",
+          "difference_cm": "1E-16",
+          "binary64_hex": "0x1.32f1a9fbe76c9p+0"
+        }
+      ]
+    },
+    {
+      "name": "source_metadata",
+      "passed": true
+    },
+    {
+      "name": "schema_units_scope",
+      "passed": true
+    },
+    {
+      "name": "selected_rules",
+      "passed": true
+    },
+    {
+      "name": "full_integer_linear_reference",
+      "passed": true,
+      "count": 259201,
+      "max_abs_error_m": 5.204170427930421e-18,
+      "worst_time_s": 10894,
+      "tolerance_m": 1e-14
+    },
+    {
+      "name": "all_integer_no_overshoot",
+      "passed": true,
+      "count": 259201,
+      "overshoot_count": 0
+    },
+    {
+      "name": "all_intervals_fractional_reference",
+      "passed": true,
+      "count": 144,
+      "max_abs_error_m": 3.469446951953614e-18,
+      "tolerance_m": 1e-14
+    },
+    {
+      "name": "contract_reject_-1",
+      "passed": true
+    },
+    {
+      "name": "contract_reject_nan",
+      "passed": true
+    },
+    {
+      "name": "contract_reject_inf",
+      "passed": true
+    },
+    {
+      "name": "contract_reject_259201",
+      "passed": true
+    },
+    {
+      "name": "explicit_hold_last",
+      "passed": true
+    },
+    {
+      "name": "hand_example_0",
+      "passed": true,
+      "value_m": 0.02,
+      "expected_m": 0.02
+    },
+    {
+      "name": "hand_example_900",
+      "passed": true,
+      "value_m": 0.019365,
+      "expected_m": 0.019365
+    },
+    {
+      "name": "hand_example_2700",
+      "passed": true,
+      "value_m": 0.018335,
+      "expected_m": 0.018335
+    },
+    {
+      "name": "hand_example_259200",
+      "passed": true,
+      "value_m": 0.01198,
+      "expected_m": 0.01198
+    },
+    {
+      "name": "pchip_auxiliary_nodes_positive_monotone",
+      "passed": true
+    },
+    {
+      "name": "raw_identity_unchanged",
+      "passed": true
+    },
+    {
+      "name": "generator_identity",
+      "passed": true
+    }
+  ],
+  "passed_checks": 23,
+  "total_checks": 23
+}

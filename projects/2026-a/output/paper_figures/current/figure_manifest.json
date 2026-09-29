@@ -1,0 +1,190 @@
+{
+  "role": "Current brief-consumer index; working figure selection, not official submission",
+  "selection_authority": "docs/Q1..Q4/solution_brief.md actual ordered image references",
+  "generator": {
+    "path": "scripts/build_current_figure_catalog.py",
+    "sha256": "733d1afbc4d4c1689c637af49958c1b7747fe4d6863b593d01d1cefccadda212"
+  },
+  "figures": [
+    {
+      "q": 1,
+      "number": "图1-1",
+      "caption": "图1-1 圆柱截面与径向控制体划分。(a)圆形截面中的节点与环带；(b)对应的径向控制体。圆点表示状态节点，虚线位于相邻节点中点；蓝色环带标出一个内部控制体，浅橙环带为真实边界截断的表面半控制体，填色不表示含水率。箭头表示均匀初态下的表面向外水分交换，此时内部面通量为零；节点数、间距及箭头长度用于示意。",
+      "section": "5.4 圆环控制体、端点处理与初始变化率",
+      "brief": "docs/Q1/solution_brief.md",
+      "brief_sha256": "116e880cd7b382d712b430384737e8f3a4ae9503a52243d32a2cf80e4ef89e2e",
+      "files": {
+        "pdf": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig01_annular_control_volumes.pdf",
+          "sha256": "43c5121292909a053139cb6f63bbcc8db62394d77ddc5ffea1aba97018c3ad57"
+        },
+        "svg": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig01_annular_control_volumes.svg",
+          "sha256": "76ab78f71da2574e381eda4a1b82c580979a76d5125bf42291e2e2ab087c9656"
+        },
+        "png": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig01_annular_control_volumes.png",
+          "sha256": "20054dd022adde3249df22c0973a1853938a654b2445a4fab381abe2554ecb06"
+        }
+      }
+    },
+    {
+      "q": 1,
+      "number": "图1-2",
+      "caption": "图1-2 径向—时间计算网格与隐式耦合示意。交点表示uiⁿ≈u(ri,tn)，蓝色实心点为已知历史，橙色空心点为本层未知；粗横线表示本层相邻节点直接耦合，竖箭头表示同列历史输入。斜虚线表示整层联立后的跨层影响，不是额外差分项或全部影响路径；节点数和时间间距仅为示意。",
+      "section": "5.5 非线性处理：隐式BDF与解析稀疏Jacobian",
+      "brief": "docs/Q1/solution_brief.md",
+      "brief_sha256": "116e880cd7b382d712b430384737e8f3a4ae9503a52243d32a2cf80e4ef89e2e",
+      "files": {
+        "pdf": {
+          "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid.pdf",
+          "sha256": "bd27a79a725d2e3a9fe66adb47ba6bb23a5821a28b7f2f7cc06f67bbcab18230"
+        },
+        "svg": {
+          "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid.svg",
+          "sha256": "11e893d2ed5ed67cd901094c135bf27139b638249fcef4ab664bc573f48e6a9d"
+        },
+        "png": {
+          "path": "output/paper_figures/spacetime_grid_20260912/fig01_spacetime_grid.png",
+          "sha256": "277a191cc63d60542b01e64d16e1ae12f851d62d8d6e5c3e533d2f51e5ddfa0e"
+        }
+      }
+    },
+    {
+      "q": 1,
+      "number": "图1-3",
+      "caption": "图1-3 预热阶段温度与含水率的径向响应。(a)温度；(b)干基含水率。五个时刻为100、600、900、1200、1800 s，以不同标记与线型区分；曲线连接21个规定半径的未舍入值，稀疏标记用于辨认，未额外拟合。",
+      "section": "7.2 热量与水分向内部传播的差异",
+      "brief": "docs/Q1/solution_brief.md",
+      "brief_sha256": "116e880cd7b382d712b430384737e8f3a4ae9503a52243d32a2cf80e4ef89e2e",
+      "files": {
+        "pdf": {
+          "path": "output/paper_figures/v1/fig03_q1_profiles.pdf",
+          "sha256": "2ae94231677401644378d8829e774fde3fe90352e8a406ea6aaa222e51eba5e8"
+        },
+        "svg": {
+          "path": "output/paper_figures/v1/fig03_q1_profiles.svg",
+          "sha256": "7408229974ce69abb992cf520289a6d7a24239a439e7982b49dbf9f7fe958cc0"
+        },
+        "png": {
+          "path": "output/paper_figures/reading/fig03_q1_profiles_d98d193909de.png",
+          "sha256": "d98d193909dee551d4763e85471fe84f93fbcd4438fe8c772971bcfb317517a3"
+        }
+      }
+    },
+    {
+      "q": 2,
+      "number": "图2-1",
+      "caption": "图2-1 前三小时温度与含水率的时空分布。横轴为时间，纵轴为实际半径，0为中心、2 cm为表面；(a)温度，(b)干基含水率，细线为对应状态的等值线。色场对逐秒21个规定半径作双线性显示内插，等值线由同一原网格线性定位；含水率色标为0～2.55 kg/kg，显示内插不增加计算分辨率。",
+      "section": "7.2 温度趋于均匀与水分梯度持续",
+      "brief": "docs/Q2/solution_brief.md",
+      "brief_sha256": "e26e194f0d86b1a3a098e18ed84b0a17e1d0d6075f25316c3c5c87e9aecd9d88",
+      "files": {
+        "pdf": {
+          "path": "output/paper_figures/redesign_v3/fig04_q2_fields_sample.pdf",
+          "sha256": "031ca5b1ba9d03fb244b4ab9b3f4d0cd21b28d594511224facb842ddf995cb80"
+        },
+        "svg": {
+          "path": "output/paper_figures/redesign_v3/fig04_q2_fields_sample.svg",
+          "sha256": "17abb8b57ec8aefdced81e2636f8b6dbddb4d1c1a937c52931256cdbbab9675e"
+        },
+        "png": {
+          "path": "output/paper_figures/redesign_v3/fig04_q2_fields_sample.png",
+          "sha256": "0cc87331bb2e0f2e264e03938bb75572fc166ca4fe9ab82e8019b5e8d0577a4b"
+        }
+      }
+    },
+    {
+      "q": 2,
+      "number": "图2-2",
+      "caption": "图2-2 升温与变干对局部扩散系数变化的分解。取主方案0.5、1.5、3 h的中心和表面状态，正、负条分别表示Aθ、AC，净值点为ln(D/D0)。各值由未舍入温湿结果代入式（16）计算，不拟合参数，也不额外求解扰动情景。",
+      "section": "7.3 升温与变干对扩散能力的竞争",
+      "brief": "docs/Q2/solution_brief.md",
+      "brief_sha256": "e26e194f0d86b1a3a098e18ed84b0a17e1d0d6075f25316c3c5c87e9aecd9d88",
+      "files": {
+        "pdf": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig09_q2_diffusivity_decomposition.pdf",
+          "sha256": "e6daad717fe5bce28cd1359ee9f843d9cb0325eea12f47226965b3a911277cb1"
+        },
+        "svg": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig09_q2_diffusivity_decomposition.svg",
+          "sha256": "e78c5fa5fcdc81c1a42ab6d1ee4143cb280d302acf6b639ab6a18c23929c5f6b"
+        },
+        "png": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig09_q2_diffusivity_decomposition.png",
+          "sha256": "768b60e59e97b9ed94b1a1f9a51b6bfa0b49fece792fb3bc6ac46bfe87534fcc"
+        }
+      }
+    },
+    {
+      "q": 3,
+      "number": "图3-1",
+      "caption": "图3-1 规定径向位置的未达标与达标时段。 每条时段带对应一个固定半径，依据主轨迹该位置的逐秒未舍入含水率与0.15 kg/kg比较，展示到结束秒206927 s。图展示0、0.1、…、2 cm的21个规定位置；全域终点仍由全部10241节点的最大值确定。",
+      "section": "7.2 径向干燥进程与表5",
+      "brief": "docs/Q3/solution_brief.md",
+      "brief_sha256": "44d0d1ac179c1d4fcb31a0181a0b5ebdc532961a00d18fb323c6cb2eb762abd5",
+      "files": {
+        "pdf": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig05_q3_completion_progress.pdf",
+          "sha256": "8bebd598e107c510145803fd75720df94a847f09bb9d2261a962fbc804fdf3f5"
+        },
+        "svg": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig05_q3_completion_progress.svg",
+          "sha256": "6f46558b1d8371968c3b7fc903822cc9ed4808775a03fdd1b143822dc12fe86d"
+        },
+        "png": {
+          "path": "output/paper_figures/structural_rebuild_20260912/fig05_q3_completion_progress.png",
+          "sha256": "2d0455d7866cd53bf1de4e0f3077138dbed0cf5c9a1f224ae0036d4a589bd556"
+        }
+      }
+    },
+    {
+      "q": 4,
+      "number": "图4-1",
+      "caption": "图4-1 外半径观测与均匀径向缩放下的材料坐标对应。 （a）0～72 h半径观测及线性重建。（b）0 h、6 h截面保持相同厘米尺度，蓝色材料环保持ξ=0.5，物理半径由1.000 cm缩到0.687 cm；橙色叉号为固定r=1.5 cm，6 h已在药材外。填色表示材料范围，蓝环由均匀缩放假设确定，不表示等含水率线。",
+      "section": "5.2 材料坐标与时间导数的变换",
+      "brief": "docs/Q4/solution_brief.md",
+      "brief_sha256": "2777ef96b8adba0595bf634fd9ae45de3c4813fc501488a0fddf0984073fe9ef",
+      "files": {
+        "pdf": {
+          "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates.pdf",
+          "sha256": "b860aa347ce76e26261caeb84ff252b48c371b2808b35267b6459ee4cd61a1ce"
+        },
+        "svg": {
+          "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates.svg",
+          "sha256": "3377905626448dc905b88a1a15c77fb55a317080b1d7c590fff4eedaf895e353"
+        },
+        "png": {
+          "path": "output/paper_figures/brief_refresh_20260911/fig06_q4_coordinates.png",
+          "sha256": "c8de9834c0cbacad2fe0cfe161141cb827409a1d385954f0e03b6e5608cf1f12"
+        }
+      }
+    },
+    {
+      "q": 4,
+      "number": "图4-2",
+      "caption": "图4-2 问题4同尺度的含水率截面序列。 六幅为0、6、18、36、48 h及结束秒183949 s。完整10241节点场按r=R(t)ξ映射到截面，保持相同厘米尺度和0～2.55 kg/kg线性色标；实线是实际表面，紫色虚线是C=0.15 kg/kg等值线，圆外不赋值。",
+      "section": "7.2 表6与收缩过程中的内部干燥",
+      "brief": "docs/Q4/solution_brief.md",
+      "brief_sha256": "2777ef96b8adba0595bf634fd9ae45de3c4813fc501488a0fddf0984073fe9ef",
+      "files": {
+        "pdf": {
+          "path": "output/paper_figures/redesign_v3/fig07_q4_sections_sample.pdf",
+          "sha256": "79c3384707c59d1b89eddd78c544e5f648f2a29e45bd6e84dc15fb346e31e632"
+        },
+        "svg": {
+          "path": "output/paper_figures/redesign_v3/fig07_q4_sections_sample.svg",
+          "sha256": "8a5de02731bda579d61a88b62e7e5d184d1a96ce76f08473fb83d90dd157cd0a"
+        },
+        "png": {
+          "path": "output/paper_figures/redesign_v3/fig07_q4_sections_sample.png",
+          "sha256": "89fabe845c729c5099b0ec6382037d131d96f53ef7ede08d95de658132a18478"
+        }
+      }
+    }
+  ],
+  "figure_count": 8,
+  "catalog_pdf_sha256": "c9c5dc772f02a7711f5ecbb17014a140ccf654e9208438fd675e026e934c5e80",
+  "archive_sha256": "f61d750ec27e9e1e634c673644e340e6b8974a2392d34d5ef860e576e406daee",
+  "historical_producer_statuses": "Preserved as records at their creation time; current use is established by this consumer manifest."
+}

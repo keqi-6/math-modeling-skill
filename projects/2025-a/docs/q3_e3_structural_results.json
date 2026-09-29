@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "axis": "E3_STRUCTURAL",
+  "spec_id": "SPEC-Q3-WORKING-2.0",
+  "formal_result_sha256": "569e8444cfe1f7106b90742d6341f8e351a99bcffb26d094eb8748eb9ae7e0c9",
+  "verification_spec_sha256": "8d8639eb0181e7dd8f20806c22e3e30476d8a4a7fe9683a1e71a63ac8177c1f5",
+  "validator_sha256": "e9ddd240bfcacb7f3d31ea52ce27568fd58cbf0e00e066a403472400a0b749c1",
+  "run_identity": {
+    "executed_at": "2026-08-28T08:33:45.934439+00:00",
+    "python": "3.12.3",
+    "elapsed_seconds": 0.356061447000684
+  },
+  "result_id": "Q3-E3-STRUCTURAL-20260828",
+  "status": "pass",
+  "method_role": "auxiliary_validator",
+  "settings": {
+    "name": "e3",
+    "scan_step_s": 0.01,
+    "n_theta": 256,
+    "n_levels": 17,
+    "root_time_tolerance_s": 1e-09,
+    "margin_tolerance_m": 1e-08,
+    "surface_refinement": false
+  },
+  "checks": {
+    "label_permutation_invariance": true,
+    "single_cloud_degeneration": true,
+    "resource_monotonicity": true,
+    "no_active_cloud_is_false": true,
+    "interval_union_not_double_counted": true,
+    "max_min_synergy_counterexample": true,
+    "current_solution_has_positive_leave_one_out_margins": true,
+    "current_pure_synergy_is_diagnostic_zero": true
+  },
+  "label_permutation": {
+    "maximum_difference_m": 0.0,
+    "records": [
+      {
+        "cloud_order": [
+          0,
+          1,
+          2
+        ],
+        "maximum_margin_difference_m": 0.0
+      },
+      {
+        "cloud_order": [
+          0,
+          2,
+          1
+        ],
+        "maximum_margin_difference_m": 0.0
+      },
+      {
+        "cloud_order": [
+          1,
+          0,
+          2
+        ],
+        "maximum_margin_difference_m": 0.0
+      },
+      {
+        "cloud_order": [
+          1,
+          2,
+          0
+        ],
+        "maximum_margin_difference_m": 0.0
+      },
+      {
+        "cloud_order": [
+          2,
+          0,
+          1
+        ],
+        "maximum_margin_difference_m": 0.0
+      },
+      {
+        "cloud_order": [
+          2,
+          1,
+          0
+        ],
+        "maximum_margin_difference_m": 0.0
+      }
+    ]
+  },
+  "single_cloud_degeneration": [
+    {
+      "bomb": 1,
+      "e3_duration_s": 3.2896835966053892,
+      "stored_precise_duration_s": 3.2896835966053892,
+      "same_single_cloud_semantics": true
+    },
+    {
+      "bomb": 2,
+      "e3_duration_s": 2.60543129713084,
+      "stored_precise_duration_s": 2.6054312970247704,
+      "same_single_cloud_semantics": true
+    },
+    {
+      "bomb": 3,
+      "e3_duration_s": 1.3204643852396973,
+      "stored_precise_duration_s": 1.3204643852396973,
+      "same_single_cloud_semantics": true
+    }
+  ],
+  "resource_monotonicity": [
+    {
+      "active_cloud_indices": [
+        0
+      ],
+      "maximum_joint_minus_subset_margin_m": 0.0,
+      "status": "pass"
+    },
+    {
+      "active_cloud_indices": [
+        1
+      ],
+      "maximum_joint_minus_subset_margin_m": 0.0,
+      "status": "pass"
+    },
+    {
+      "active_cloud_indices": [
+        2
+      ],
+      "maximum_joint_minus_subset_margin_m": 0.0,
+      "status": "pass"
+    },
+    {
+      "active_cloud_indices": [
+        0,
+        1
+      ],
+      "maximum_joint_minus_subset_margin_m": 0.0,
+      "status": "pass"
+    },
+    {
+      "active_cloud_indices": [
+        0,
+        2
+      ],
+      "maximum_joint_minus_subset_margin_m": 0.0,
+      "status": "pass"
+    },
+    {
+      "active_cloud_indices": [
+        1,
+        2
+      ],
+      "maximum_joint_minus_subset_margin_m": 0.0,
+      "status": "pass"
+    }
+  ],
+  "no_active_margin": Infinity,
+  "interval_union_oracle": {
+    "input": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        1.5,
+        3.0
+      ],
+      [
+        4.0,
+        5.0
+      ]
+    ],
+    "merged": [
+      [
+        1.0,
+        3.0
+      ],
+      [
+        4.0,
+        5.0
+      ]
+    ],
+    "measure_s": 3.0
+  },
+  "synergy_counterexample": {
+    "distance_margin_matrix_m": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "single_worst_margins_m": [
+      1.0,
+      1.0
+    ],
+    "joint_max_min_margin_m": -1.0,
+    "role": "quantifier capability test, not a claim about the selected Q3 solution"
+  },
+  "claim_boundary": [
+    "supports internal max-min structure and invariants",
+    "does not prove global optimality",
+    "toy synergy witness is not a physical Q3 result"
+  ]
+}

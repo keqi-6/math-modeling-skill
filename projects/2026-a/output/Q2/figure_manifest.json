@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0",
+  "question": "Q2",
+  "visual_id": "Q2_FIELD_EVOLUTION",
+  "data_driven_visual": true,
+  "output_end_s": 10800,
+  "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "created_at": "2026-09-10T18:21:23.753524+00:00",
+  "purpose": "Compare temperature and dry-basis moisture histories at five prescribed radii during the first three hours.",
+  "supported_claim": "Temperature and moisture show different radial evolution over 0..10800 seconds.",
+  "source_identities": {
+    "runs": {
+      "nominal": {
+        "npz": {
+          "path": "output/Q2/run_n10240_startsafe.npz",
+          "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+          "size": 38314283
+        },
+        "metadata": {
+          "path": "output/Q2/run_n10240_startsafe.json",
+          "sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+          "size": 2477
+        },
+        "grid_n": 10240,
+        "binding": "individually frozen validated NPZ and frozen report binding"
+      },
+      "coarse": {
+        "npz": {
+          "path": "output/Q2/run_n5120_startsafe.npz",
+          "sha256": "1a4c436af2032829e20ad9ad976ff7eafadd70aff1747901844402ebfd5b4414",
+          "size": 37768492
+        },
+        "metadata": {
+          "path": "output/Q2/run_n5120_startsafe.json",
+          "sha256": "56d260115f23fd8435fb5d7ff6426c6ab22501baa23d9e6f4032df903b4d756c",
+          "size": 2473
+        },
+        "grid_n": 5120,
+        "binding": "exact NPZ/metadata pair bound by frozen passing implementation report; not claimed individually registered"
+      },
+      "tight": {
+        "npz": {
+          "path": "output/Q2/run_n10240_tight_startsafe.npz",
+          "sha256": "2b5fd0e7c819a97721d3063091a6f251d441af086dcf63d9bfa64f74fe20fadf",
+          "size": 38317655
+        },
+        "metadata": {
+          "path": "output/Q2/run_n10240_tight_startsafe.json",
+          "sha256": "0e324fa21adf3eae8a7ff214604b48c6c673ad2ba089892569b6e62a2674ed32",
+          "size": 2529
+        },
+        "grid_n": 10240,
+        "binding": "exact NPZ/metadata pair bound by frozen passing implementation report; not claimed individually registered"
+      }
+    },
+    "prior_reports": [
+      {
+        "path": "output/Q2/verification_implementation.json",
+        "sha256": "8365797324c7ceaadc7ca2cf27515d6ea14b325dba4f0a2ea2dd494b33b436f7",
+        "size": 119791,
+        "passed_check_count": 640,
+        "axes": [
+          "E1",
+          "E2"
+        ],
+        "reuse": "Identity and existing checks only; no prior verifier execution"
+      },
+      {
+        "path": "output/Q2/verification_structure.json",
+        "sha256": "ff82989f40157cebb12a03bdb18e02d8411ede05c1cadf4e7f84c44898ac5fd8",
+        "size": 6945,
+        "passed_check_count": 18,
+        "axes": [
+          "E3"
+        ],
+        "reuse": "Identity and existing checks only; no prior verifier execution"
+      }
+    ],
+    "generator": {
+      "path": "src/Q2/review_submission.py",
+      "sha256": "0029c17a0c63d14bb75592163da7f035cae490e0f9e7952a747e35d664bfdf95",
+      "size": 23830
+    },
+    "boundary": {
+      "path": "output/ENV/q2_boundary.json",
+      "sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+      "size": 10560
+    },
+    "prior_summary": {
+      "path": "output/Q2/summary_values.json",
+      "sha256": "9138ad6e7d3b46ff31b87a40900b32315bc091f30dd6014b282f66aabf39ea84",
+      "size": 10450
+    },
+    "brief_table_snapshot": {
+      "path": "docs/Q2/solution_brief.md",
+      "sha256": "2b33534cc0c88f51f6a12fd6e1c7724cbf47c138da112b7e8345902f71441d26",
+      "size": 25921
+    }
+  },
+  "generator": {
+    "path": "src/Q2/review_submission.py",
+    "sha256": "0029c17a0c63d14bb75592163da7f035cae490e0f9e7952a747e35d664bfdf95",
+    "size": 23830
+  },
+  "generation_argv": [
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+    "<AI_ROOT>/数模国赛2026/CUMCM2026Problems/A题/src/Q2/review_submission.py",
+    "--project-root",
+    "<AI_ROOT>/数模国赛2026/CUMCM2026Problems/A题",
+    "--brief",
+    "docs/Q2/solution_brief.md",
+    "--output-dir",
+    "output/Q2"
+  ],
+  "consumers": [
+    "docs/Q2/solution_brief.md"
+  ],
+  "table_relation": "Same unrounded nominal trajectory as the independently checked 6-by-5 tables.",
+  "panels": [
+    {
+      "id": "a",
+      "interval_s": [
+        0,
+        10800
+      ],
+      "field": "temperature_C",
+      "columns": [
+        0,
+        5,
+        10,
+        15,
+        20
+      ],
+      "environment": "181 original nodes from 0..10800 s"
+    },
+    {
+      "id": "b",
+      "interval_s": [
+        0,
+        10800
+      ],
+      "field": "moisture_kg_kg",
+      "columns": [
+        0,
+        5,
+        10,
+        15,
+        20
+      ]
+    }
+  ],
+  "transformations": [
+    "seconds to hours; metres to centimetres in legend",
+    "all 10801 integer-second samples plotted at five radii; no smoothing or field rounding"
+  ],
+  "visual_encoding": {
+    "radius_cm": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "colors": [
+      "#0072B2",
+      "#D55E00",
+      "#009E73",
+      "#CC79A7",
+      "#343434"
+    ],
+    "line_styles": [
+      "-",
+      "--",
+      "-.",
+      ":",
+      "(0, (5, 1, 1, 1))"
+    ],
+    "markers": [
+      "o",
+      "s",
+      "^",
+      "D",
+      "v"
+    ],
+    "radius_encoding": "Same color, line style and marker identify each radius in both panels",
+    "units": "Temperature degC; moisture kg water/kg dry solid; time hours; radius cm"
+  },
+  "font": {
+    "family": "Microsoft YaHei",
+    "file": "C:\\Windows\\Fonts\\msyh.ttc",
+    "sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f",
+    "chinese_glyph_coverage": "All planned Chinese labels present in font character map",
+    "visual_glyph_check": "pass: actual original PNG inspection by root and q1_model_review"
+  },
+  "matplotlib_version": "3.11.1",
+  "target": {
+    "width_mm": 190.5,
+    "height_mm": 93.98,
+    "dpi": 240,
+    "pixels": [
+      1800,
+      888
+    ],
+    "smallest_font_pt": 8.2,
+    "minimum_main_linewidth_pt": 1.35
+  },
+  "outputs": [
+    {
+      "path": "output/Q2/field_evolution.png",
+      "sha256": "842f434c5235e2542fc89ab22546f4e6d1d231ef02835e3f70f86bc81b42856a",
+      "size": 183649
+    }
+  ],
+  "caption_draft": "问题2前三小时的径向温湿响应。两面板分别显示距中心0、0.5、1、1.5、2 cm处的温度与干基含水率，灰色虚线为环境温度。所有药材曲线来自同一未舍入数值轨迹。",
+  "claim_boundary": [
+    "First three hours only; five plotted radii, with 21 radii checked numerically.",
+    "Numerical consistency is separate from material-model validation."
+  ],
+  "acceptance": {
+    "numerical_sources": "Source identities and scoped sample comparisons passed",
+    "independent_png_visual_review": "pass",
+    "grayscale_review": "pass at separately recorded 1200x600 view",
+    "final_manuscript_size_review": "pending at actual placement",
+    "formal_visual_acceptance": "Standalone generated figure content/readability reviewed; final manuscript page acceptance not claimed"
+  },
+  "post_generation_review": {
+    "status": "pass",
+    "reviewed_at": "2026-09-10T18:30:52.626963+00:00",
+    "png_identity": {
+      "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\field_evolution.png",
+      "sha256": "842f434c5235e2542fc89ab22546f4e6d1d231ef02835e3f70f86bc81b42856a",
+      "size": 183649
+    },
+    "original_pixels": [
+      1800,
+      888
+    ],
+    "reviewers": [
+      "root",
+      "q1_model_review"
+    ],
+    "findings": [
+      "Both panels cover 0..3 h; temperature and dry-basis moisture units and all Chinese labels readable.",
+      "Five radius colors, line styles and markers are consistent between panels and global legend; environmental temperature is separately labelled.",
+      "Observed radial temperature convergence and remaining moisture separation agree with the tables; no scientific data or image pixels changed."
+    ],
+    "grayscale": {
+      "status": "pass",
+      "reviewer": "root",
+      "view": {
+        "path": "~\\AppData\\Local\\Temp\\cumcm-q2-field-grayscale-1200.png",
+        "sha256": "e168b0d65f548cb689541be47f90864c1e607302ccf981754ee6b0634a5520ec",
+        "size": 55066
+      },
+      "pixels": [
+        1200,
+        600
+      ],
+      "scope": "Actual slightly rescaled grayscale PNG inspection; five radii distinguishable by line styles and circle/square/triangle/diamond/inverted-triangle markers."
+    },
+    "final_manuscript_page_review": "not performed; deferred until actual final-page placement"
+  },
+  "post_edit_brief": {
+    "identity": {
+      "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\docs\\Q2\\solution_brief.md",
+      "sha256": "a22c4d0722ab98f89612d177b179bb66afb12c7c430f2d54a3da07d4deca9d49",
+      "size": 26722
+    },
+    "table_content_sha256": "e31666f405df23ca8476a71529a7ca42ebf72e2ba44220e468e664cc47399cb4",
+    "table_values_unchanged": true,
+    "scope": "Current complete brief read by q1_model_review; all 60 summary entries have the exact prior reviewed table-content hash. Original generator snapshot remains historical."
+  }
+}

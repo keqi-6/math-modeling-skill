@@ -1,0 +1,11 @@
+{
+  "contract_version": "9.0.0",
+  "metric": "directly loaded non-optional module lines",
+  "default_max_modules": 3,
+  "default_max_lines": 3000,
+  "overrides": {
+    "RT-MANUSCRIPT-LOCAL": {"max_modules": 1, "max_lines": 100},
+    "RT-MANUSCRIPT-AUDIT": {"max_modules": 4, "max_lines": 5000}
+  },
+  "principle": "Capability fidelity precedes compression; exceeding a budget requires measured justification, not silent deletion."
+}

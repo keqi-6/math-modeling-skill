@@ -1,0 +1,107 @@
+% Compile with XeLaTeX. The graphic is a conceptual diagram, not a data plot.
+% Authoritative equations: docs/Q2/solution_brief.md, Sections 5.2--5.3.
+\documentclass[tikz,border=3mm]{standalone}
+\usepackage{ctex}
+\usepackage{amsmath,lmodern}
+\setCJKmainfont{Microsoft YaHei}
+\setCJKsansfont{Microsoft YaHei}
+\usetikzlibrary{arrows.meta,calc}
+\definecolor{ink}{HTML}{333333}
+\definecolor{heat}{HTML}{D95319}
+\definecolor{moist}{HTML}{0072BD}
+\definecolor{material}{HTML}{F4EFE5}
+\definecolor{guide}{HTML}{909090}
+\begin{document}
+\begin{tikzpicture}[
+  x=1cm,y=1cm,text=ink,
+  font=\sffamily\fontsize{10}{12}\selectfont,
+  every node/.style={inner sep=1.5pt},
+  outline/.style={draw=ink,line width=.95pt},
+  guide/.style={draw=guide,line width=.55pt,densely dashed},
+  heatflow/.style={draw=heat,line width=1.7pt,-{Stealth[length=2.5mm,width=1.8mm]}},
+  moistflow/.style={draw=moist,line width=1.7pt,-{Stealth[length=2.5mm,width=1.8mm]}},
+  direction/.style={draw=ink,line width=.9pt,-{Stealth[length=2mm,width=1.3mm]}},
+  panel/.style={font=\sffamily\bfseries\fontsize{10}{12}\selectfont}
+]
+\path[use as bounding box] (0,0) rectangle (17.2,9.05);
+
+% Two local field equations: keep variable coefficients inside the divergence.
+\node[anchor=west,text=heat,panel] at (.25,8.75) {内部导热};
+\draw[heat,line width=1.05pt] (.25,8.42)--(7.8,8.42);
+\node at (4.02,7.86) {$\displaystyle
+ \rho(C)c_p(C)\frac{\partial\theta}{\partial t}
+ =\frac{1}{r}\frac{\partial}{\partial r}
+ \!\left[rk(C)\frac{\partial\theta}{\partial r}\right]$};
+\node at (4.02,7.12) {$C\longrightarrow k,\,\rho c_p$\quad 含水率改变热响应};
+\node[anchor=west,text=moist,panel] at (9.05,8.75) {内部水分扩散};
+\draw[moist,line width=1.05pt] (9.05,8.42)--(16.95,8.42);
+\node at (13.0,7.86) {$\displaystyle
+ \frac{\partial C}{\partial t}
+ =\frac{1}{r}\frac{\partial}{\partial r}
+ \!\left[rD(C,\theta)\frac{\partial C}{\partial r}\right]$};
+\node at (13.0,7.12) {$(C,\theta)\longrightarrow D$\quad 温湿状态改变扩散};
+% The two directed dependency statements identify the feedback without
+% introducing extra transport terms or an independent coupling mechanism.
+
+\node[panel] at (1.85,6.48) {(a) 中部径向截面};
+\node[panel] at (7.25,6.48) {(b) 侧表面传热传质};
+\node[panel] at (14.10,6.48) {(c) 表面局部交换};
+
+% (a) Neutral rings show radial locations, never temperature/moisture values.
+\filldraw[outline,fill=material] (1.85,3.95) circle[radius=1.17];
+\draw[guide] (1.85,3.95) circle[radius=.78];
+\draw[guide] (1.85,3.95) circle[radius=.39];
+\draw[guide] (.45,3.95)--(3.26,3.95);
+\draw[guide] (1.85,2.55)--(1.85,5.33);
+\fill[ink] (1.85,3.95) circle[radius=1.25pt];
+\draw[direction] (1.85,3.95)--(3.00,3.95);
+\node[above,fill=material] at (2.49,3.99) {$r$};
+\node[below left] at (1.80,3.90) {$0$};
+\node at (1.85,2.35) {$R=2\,\mathrm{cm}$};
+\node at (1.85,1.71) {$\theta(r,t),\ C(r,t)$};
+\node at (1.85,1.04) {中心对称};
+\node at (1.85,.54) {$\partial_r\theta(0,t)=\partial_rC(0,t)=0$};
+
+% (b) A conceptual cylinder. No axial flux arrows, airflow speed or end model.
+\path[fill=material] (4.95,2.98) rectangle (9.52,4.92);
+\filldraw[outline,fill=material] (9.52,3.95) ellipse[x radius=.30,y radius=.97];
+\draw[outline] (4.95,4.92)--(9.52,4.92);
+\draw[outline] (4.95,2.98)--(9.52,2.98);
+\filldraw[outline,fill=material] (4.95,3.95) ellipse[x radius=.30,y radius=.97];
+\draw[guide] (4.45,3.95)--(9.99,3.95);
+\node[fill=material] at (7.23,4.33) {$\theta(r,t),\ C(r,t)$};
+\node[fill=material] at (7.23,3.53) {药材内部};
+\foreach \xx in {5.90,7.15,8.40}{
+ \draw[heatflow] (\xx,5.70)--(\xx,4.94);
+ \draw[moistflow] (\xx,2.96)--(\xx,2.17);
+}
+\node[text=heat] at (7.15,5.98) {热量传入};
+\node[text=moist] at (7.15,1.86) {水分向外交换};
+\node at (7.23,1.14) {固定半径，轴对称径向近似};
+\node at (7.23,.55) {$L=25\,\mathrm{cm}$};
+
+% (c) Surface tangent view. The horizontal interface matches the upper side
+% of (b), so outward normal is upward. There is no finite gas-film thickness.
+\path[fill=material] (11.12,2.47) rectangle (17.02,3.82);
+\draw[outline,line width=1.25pt] (11.12,3.82)--(17.02,3.82);
+\node[anchor=west] at (11.17,5.50) {烘房环境};
+\node[anchor=east] at (16.97,5.50) {$T_\infty(t),\ C_{\rm eq}(t)$};
+\node[anchor=west] at (11.17,2.73) {药材};
+\node[anchor=east] at (16.97,2.73) {表面状态 $\theta_s,\ C_s$};
+\draw[ink,line width=.55pt] (16.90,2.99)--(16.90,3.82);
+\fill[ink] (16.90,3.82) circle[radius=1.05pt];
+\node at (11.62,4.08) {$r=R$};
+\draw[heatflow] (12.48,4.89)--(12.48,3.12);
+\draw[moistflow] (14.54,3.12)--(14.54,4.89);
+\node[above,text=heat] at (12.48,4.91) {$q_{\rm in}$};
+\node[above,text=moist] at (14.54,4.91) {$j_C$};
+\draw[direction] (16.36,3.82)--(16.36,4.63);
+\node[above] at (16.36,4.67) {$\boldsymbol n=\boldsymbol e_r$};
+\node at (14.07,1.87) {$q_{\rm in}=h(T_\infty-\theta_s)$};
+\node at (14.07,1.24) {$j_C=h_m(C_s-C_{\rm eq})$};
+\node at (14.07,.57) {$C_{\rm eq}(t):=Y_\infty(t)$};
+% Leader touches a side-surface point, not the cylinder's end face.
+\draw[guide] (9.03,4.92)--(10.32,4.92)--(11.12,3.82);
+\draw[outline,fill=white,line width=.7pt] (9.03,4.92) circle[radius=2pt];
+\end{tikzpicture}
+\end{document}

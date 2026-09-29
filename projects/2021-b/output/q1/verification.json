@@ -1,0 +1,102 @@
+{
+  "passed": 19,
+  "total": 19,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "组合数",
+      "passed": true,
+      "details": "应为21种完整组合"
+    },
+    {
+      "check": "相邻变化行数",
+      "passed": true,
+      "details": "两项响应应有186行"
+    },
+    {
+      "check": "变化类型行数",
+      "passed": true,
+      "details": "21种组合乘2项响应"
+    },
+    {
+      "check": "受限线性概括行数",
+      "passed": true,
+      "details": "21种组合乘2项响应"
+    },
+    {
+      "check": "线性斜率与单位换算",
+      "passed": true,
+      "details": "直接读取输入并复算斜率"
+    },
+    {
+      "check": "Spearman辅助数字",
+      "passed": true,
+      "details": "直接按排序复算"
+    },
+    {
+      "check": "残差诊断",
+      "passed": true,
+      "details": "直接复算平均和最大绝对残差"
+    },
+    {
+      "check": "逐次删点行数",
+      "passed": true,
+      "details": "每条附件1记录对两个响应各删一次，应为228行"
+    },
+    {
+      "check": "逐次删点斜率",
+      "passed": true,
+      "details": "不调用主程序逐项重算"
+    },
+    {
+      "check": "转化率在各相邻条件均为较高温度对应较高值的组合数",
+      "passed": true,
+      "details": "应为19种"
+    },
+    {
+      "check": "选择性在各相邻条件均为较高温度对应较高值的组合数",
+      "passed": true,
+      "details": "应为15种"
+    },
+    {
+      "check": "A5的250℃与275℃条件差异",
+      "passed": true,
+      "details": "核对250→275摄氏度"
+    },
+    {
+      "check": "A3的400℃与450℃条件差异",
+      "passed": true,
+      "details": "核对400→450摄氏度"
+    },
+    {
+      "check": "乙醛相对比例",
+      "passed": true,
+      "details": "逐时点直接相除"
+    },
+    {
+      "check": "脂肪醇相对比例",
+      "passed": true,
+      "details": "逐时点直接相除"
+    },
+    {
+      "check": "六类首末变化相抵",
+      "passed": true,
+      "details": "首末变化合计应为0"
+    },
+    {
+      "check": "附件2受限线性概括",
+      "passed": true,
+      "details": "只复算转化率和C4收率"
+    },
+    {
+      "check": "附件2未拟合C4选择性",
+      "passed": true,
+      "details": "选择性保持波动描述"
+    },
+    {
+      "check": "图件齐全",
+      "passed": true,
+      "details": "6种图均应有PNG和PDF"
+    }
+  ]
+}

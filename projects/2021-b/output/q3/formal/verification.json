@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "status": "s10_independent_verification",
+  "passed": true,
+  "tolerance_pct_point": 1e-10,
+  "check_count": 10,
+  "passed_count": 10,
+  "independence": [
+    "未导入S9正式实现",
+    "未调用scipy.interpolate.PchipInterpolator",
+    "按PCHIP节点导数与Hermite分段公式手工复算",
+    "直接读取唯一清洁输入和S9冻结产物"
+  ],
+  "checks": [
+    {
+      "check": "1_输入规模与主键",
+      "passed": true,
+      "detail": "rows=114, combinations=21, duplicate_keys=0"
+    },
+    {
+      "check": "2_收率公式",
+      "passed": true,
+      "detail": "max_abs_error_pct_point=3.553e-15"
+    },
+    {
+      "check": "3_D0两情景边界",
+      "passed": true,
+      "detail": "general=114, strict_below_350=73, 350_excluded=True"
+    },
+    {
+      "check": "4_D1标签身份",
+      "passed": true,
+      "detail": "derived=[('A10', 325.0), ('A11', 325.0), ('A12', 325.0), ('A13', 325.0), ('A14', 325.0), ('A6', 325.0), ('A7', 325.0), ('A8', 325.0), ('A9', 325.0), ('B1', 325.0), ('B2', 325.0)], saved_count=11"
+    },
+    {
+      "check": "5_D1同组合包围与零外推",
+      "passed": true,
+      "detail": "all_11_have_lower_and_upper_observations=True"
+    },
+    {
+      "check": "6_D1手工PCHIP复算",
+      "passed": true,
+      "detail": "max_abs_error_pct_point=1.776e-15"
+    },
+    {
+      "check": "7_D0排序推荐与差距",
+      "passed": true,
+      "detail": "full_ranking_identity=True, max_abs_error=7.105e-15"
+    },
+    {
+      "check": "8_D0与D1证据状态",
+      "passed": true,
+      "detail": "d0=observation, d1=candidate_prediction_not_observation"
+    },
+    {
+      "check": "9_D1不改变低温推荐",
+      "passed": true,
+      "detail": "highest_d1=6.551703373656, low_d0_best=17.264309323383"
+    },
+    {
+      "check": "10_结构化产物与哈希闭合",
+      "passed": true,
+      "detail": "pre_verification_manifest_hashes=6/6"
+    }
+  ],
+  "verified_recommendations": {
+    "general": {
+      "catalyst_id": "A3",
+      "temperature_c": 400.0,
+      "c4_yield_pct": 44.72805977609709
+    },
+    "strict_below_350": {
+      "catalyst_id": "A2",
+      "temperature_c": 325.0,
+      "c4_yield_pct": 17.264309323382783
+    },
+    "highest_d1": {
+      "catalyst_id": "A7",
+      "temperature_c": 325.0,
+      "predicted_c4_yield_pct": 6.551703373656117,
+      "changes_formal_recommendation": false
+    }
+  },
+  "note": "通过证明S9实现与S8规格及冻结产物一致；不等于完成S11解释、S12人工冻结或论文批准。"
+}

@@ -1,0 +1,566 @@
+{
+  "schema_version": "1.0",
+  "verification_id": "Q1-S5-E1-E2-DETERMINISTIC",
+  "status": "pass",
+  "external_reference_policy": "internal_only; excluded from this report and all manuscript assets",
+  "spec_identity": "cdb63ddda18c89311dfa7bd6477437cc8e4fc8a1ea19db33a1f2eeedf478e3bb",
+  "input_identity": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+  "formal_result_sha256": "98094e92eb87ae3fd2ba0e945a64793defd86dac4af81374cf30b431b998f4e0",
+  "tolerances_predeclared": {
+    "angular_refinement_m": 1e-07,
+    "independent_geometry_m": 1e-06,
+    "time_endpoint_s": 5e-07,
+    "time_duration_s": 1e-06,
+    "time_root_residual_m": 1e-07,
+    "reproduction_semantic_s": 1e-12
+  },
+  "tolerance_scale_basis": {
+    "geometry": "10 m smoke radius and continuous circle extremum residual",
+    "time": "millisecond discovery grid followed by sub-microsecond bracketed roots"
+  },
+  "E1_IMPLEMENTATION": {
+    "status": "pass",
+    "unit_suite": {
+      "status": "pass",
+      "tests_run": 17,
+      "failures": 0,
+      "errors": 0,
+      "semantic_oracles": [
+        "frozen kinematics",
+        "input/output shape and float64 type",
+        "finite segment lambda<0, 0<=lambda<=1, lambda>1 branches",
+        "active-window inclusivity and outside rejection",
+        "full-circle endpoint plateau",
+        "invalid scale, direction, explosion and degenerate geometry failures",
+        "primary/dense/critical-root geometry agreement",
+        "deterministic repeat"
+      ]
+    },
+    "fresh_entrypoint": {
+      "status": "pass",
+      "entrypoint": "python3 -B src/q1/solve.py",
+      "exit_code": 0,
+      "new_output_sha256": "bdbcad0830c0d79e514aba8da7bb4a9f139329b102b25c699db86ddce0e8a642",
+      "semantic_differences_unrounded": {
+        "duration_s": 0.0,
+        "entry_s": 0.0,
+        "exit_s": 0.0,
+        "explosion_time_s": 0.0
+      },
+      "stage_markers_observed": true
+    },
+    "error_paths": {
+      "status": "pass",
+      "cases": [
+        {
+          "failure_case": "invalid frozen input identity",
+          "expected_signal": "Q1_INVALID_INPUT",
+          "observed_signal": "Q1_INVALID_INPUT",
+          "partial_output_disposition": "no result or report created"
+        },
+        {
+          "failure_case": "output target is a directory",
+          "expected_signal": "OSError subclass",
+          "observed_signal": "IsADirectoryError",
+          "partial_output_disposition": "isolated temporary target; no formal output changed"
+        },
+        {
+          "failure_case": "runtime dependencies",
+          "expected_signal": "NumPy and SciPy import with recorded versions",
+          "observed_signal": "numpy=2.4.6; scipy=1.17.1",
+          "partial_output_disposition": "dependency imports completed before verification"
+        },
+        {
+          "failure_case": "solver and geometry invalid branches",
+          "expected_signal": "typed Q1Error codes",
+          "observed_signal": "covered by unit suite",
+          "partial_output_disposition": "no output writer invoked"
+        }
+      ]
+    },
+    "units": [
+      {
+        "quantity": "position/distance/radius",
+        "expected_unit": "m",
+        "observed_unit": "m"
+      },
+      {
+        "quantity": "time/duration",
+        "expected_unit": "s",
+        "observed_unit": "s"
+      },
+      {
+        "quantity": "speed/sink speed",
+        "expected_unit": "m/s",
+        "observed_unit": "m/s"
+      },
+      {
+        "quantity": "gravity",
+        "expected_unit": "m/s^2",
+        "observed_unit": "m/s^2"
+      },
+      {
+        "quantity": "theta/lambda",
+        "expected_unit": "rad/dimensionless",
+        "observed_unit": "rad/dimensionless"
+      }
+    ],
+    "path_inventory": {
+      "entrypoint": "src/q1/solve.py",
+      "executed_paths": [
+        "frozen kinematics",
+        "input/output shape and float64 type",
+        "finite segment lambda<0, 0<=lambda<=1, lambda>1 branches",
+        "active-window inclusivity and outside rejection",
+        "full-circle endpoint plateau",
+        "invalid scale, direction, explosion and degenerate geometry failures",
+        "primary/dense/critical-root geometry agreement",
+        "deterministic repeat"
+      ],
+      "unexecuted_paths": []
+    }
+  },
+  "E2_NUMERICAL": {
+    "status": "pass",
+    "angular_refinement": {
+      "status": "pass",
+      "refinement_parameter": "n_theta",
+      "sequence": [
+        256,
+        512,
+        1024,
+        2048,
+        4096,
+        8192
+      ],
+      "records": [
+        {
+          "time_s": 5.1,
+          "n_theta": [
+            256,
+            512,
+            1024,
+            2048,
+            4096,
+            8192
+          ],
+          "primary_margins_m_unrounded": [
+            12.766077086251673,
+            12.766077086251656,
+            12.76607708625157,
+            12.766077086251606,
+            12.766077086251705,
+            12.766077086251649
+          ],
+          "consecutive_differences_m_unrounded": [
+            1.7763568394002505e-14,
+            8.526512829121202e-14,
+            3.552713678800501e-14,
+            9.947598300641403e-14,
+            5.684341886080802e-14
+          ],
+          "dense_margin_m_unrounded": 12.766077086197377,
+          "analytic_margin_m_unrounded": 12.766077086251489,
+          "decision_sequence": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "time_s": 8.046445490089715,
+          "n_theta": [
+            256,
+            512,
+            1024,
+            2048,
+            4096,
+            8192
+          ],
+          "primary_margins_m_unrounded": [
+            0.042613856606495304,
+            0.04261385660662853,
+            0.04261385660662853,
+            0.04261385660654149,
+            0.04261385660650241,
+            0.04261385660652195
+          ],
+          "consecutive_differences_m_unrounded": [
+            1.3322676295501878e-13,
+            0.0,
+            8.704148513061227e-14,
+            3.907985046680551e-14,
+            1.9539925233402755e-14
+          ],
+          "dense_margin_m_unrounded": 0.042613856605489886,
+          "analytic_margin_m_unrounded": 0.04261385660647221,
+          "decision_sequence": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "time_s": 8.066445490089714,
+          "n_theta": [
+            256,
+            512,
+            1024,
+            2048,
+            4096,
+            8192
+          ],
+          "primary_margins_m_unrounded": [
+            -0.04259432508353456,
+            -0.042594325083609164,
+            -0.04259432508352923,
+            -0.042594325083637585,
+            -0.04259432508364647,
+            -0.04259432508352212
+          ],
+          "consecutive_differences_m_unrounded": [
+            7.460698725481052e-14,
+            7.993605777301127e-14,
+            1.0835776720341528e-13,
+            8.881784197001252e-15,
+            1.2434497875801753e-13
+          ],
+          "dense_margin_m_unrounded": -0.04259432508361094,
+          "analytic_margin_m_unrounded": -0.04259432508360028,
+          "decision_sequence": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 8.75226682447466,
+          "n_theta": [
+            256,
+            512,
+            1024,
+            2048,
+            4096,
+            8192
+          ],
+          "primary_margins_m_unrounded": [
+            -2.888225613722387,
+            -2.888225613722285,
+            -2.8882256137224562,
+            -2.888225613722317,
+            -2.8882256137224314,
+            -2.8882256137223594
+          ],
+          "consecutive_differences_m_unrounded": [
+            1.021405182655144e-13,
+            1.7141843500212417e-13,
+            1.3944401189291966e-13,
+            1.1457501614131615e-13,
+            7.194245199571014e-14
+          ],
+          "dense_margin_m_unrounded": -2.888225613727534,
+          "analytic_margin_m_unrounded": -2.8882256137224527,
+          "decision_sequence": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 9.438088158859605,
+          "n_theta": [
+            256,
+            512,
+            1024,
+            2048,
+            4096,
+            8192
+          ],
+          "primary_margins_m_unrounded": [
+            -2.5082362045006583,
+            -2.5082362045006583,
+            -2.5082362045006583,
+            -2.5082362045006583,
+            -2.5082362045006583,
+            -2.5082362045006583
+          ],
+          "consecutive_differences_m_unrounded": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dense_margin_m_unrounded": -2.5082362045006583,
+          "analytic_margin_m_unrounded": -2.5082362045006583,
+          "decision_sequence": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "time_s": 9.458088158859605,
+          "n_theta": [
+            256,
+            512,
+            1024,
+            2048,
+            4096,
+            8192
+          ],
+          "primary_margins_m_unrounded": [
+            2.7216137169296317,
+            2.7216137169296317,
+            2.7216137169296317,
+            2.7216137169296317,
+            2.7216137169296317,
+            2.7216137169296317
+          ],
+          "consecutive_differences_m_unrounded": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dense_margin_m_unrounded": 2.7216137169296317,
+          "analytic_margin_m_unrounded": 2.7216137169296317,
+          "decision_sequence": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "time_s": 25.1,
+          "n_theta": [
+            256,
+            512,
+            1024,
+            2048,
+            4096,
+            8192
+          ],
+          "primary_margins_m_unrounded": [
+            4689.9540766253,
+            4689.9540766253,
+            4689.9540766253,
+            4689.9540766253,
+            4689.9540766253,
+            4689.9540766253
+          ],
+          "consecutive_differences_m_unrounded": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dense_margin_m_unrounded": 4689.9540766253,
+          "analytic_margin_m_unrounded": 4689.9540766253,
+          "decision_sequence": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      ],
+      "maximum_consecutive_difference_m": 1.7141843500212417e-13,
+      "maximum_independent_difference_m": 5.427125415735645e-11,
+      "decision_stability": true
+    },
+    "time_refinement": {
+      "status": "pass",
+      "refinement_parameter": "scan_step_s and n_theta",
+      "records": [
+        {
+          "scan_step_s": 0.008,
+          "n_theta": 512,
+          "intervals_s_unrounded": [
+            [
+              8.056445490404005,
+              9.448088158589936
+            ]
+          ],
+          "duration_s_unrounded": 1.3916426681859306,
+          "root_residuals_unrounded": [
+            {
+              "kind": "entry",
+              "time_s": 8.056445490404005,
+              "margin_m": 1.1622525164511899e-10,
+              "iterations": 24
+            },
+            {
+              "kind": "exit",
+              "time_s": 9.448088158589936,
+              "margin_m": -2.954097766405539e-08,
+              "iterations": 24
+            }
+          ]
+        },
+        {
+          "scan_step_s": 0.004,
+          "n_theta": 1024,
+          "intervals_s_unrounded": [
+            [
+              8.056445490194577,
+              9.448088158769632
+            ]
+          ],
+          "duration_s_unrounded": 1.3916426685750558,
+          "root_residuals_unrounded": [
+            {
+              "kind": "entry",
+              "time_s": 8.056445490194577,
+              "margin_m": 1.0082032986247214e-09,
+              "iterations": 23
+            },
+            {
+              "kind": "exit",
+              "time_s": 9.448088158769632,
+              "margin_m": 1.795014625827207e-08,
+              "iterations": 23
+            }
+          ]
+        },
+        {
+          "scan_step_s": 0.002,
+          "n_theta": 2048,
+          "intervals_s_unrounded": [
+            [
+              8.056445490089715,
+              9.448088158859605
+            ]
+          ],
+          "duration_s_unrounded": 1.3916426687698902,
+          "root_residuals_unrounded": [
+            {
+              "kind": "entry",
+              "time_s": 8.056445490089715,
+              "margin_m": 1.4551968519072034e-09,
+              "iterations": 22
+            },
+            {
+              "kind": "exit",
+              "time_s": 9.448088158859605,
+              "margin_m": 4.1726410771047995e-08,
+              "iterations": 22
+            }
+          ]
+        },
+        {
+          "scan_step_s": 0.001,
+          "n_theta": 4096,
+          "intervals_s_unrounded": [
+            [
+              8.056445490089715,
+              9.448088158859605
+            ]
+          ],
+          "duration_s_unrounded": 1.3916426687698902,
+          "root_residuals_unrounded": [
+            {
+              "kind": "entry",
+              "time_s": 8.056445490089715,
+              "margin_m": 1.4551542193430578e-09,
+              "iterations": 21
+            },
+            {
+              "kind": "exit",
+              "time_s": 9.448088158859605,
+              "margin_m": 4.1726410771047995e-08,
+              "iterations": 21
+            }
+          ]
+        },
+        {
+          "scan_step_s": 0.0005,
+          "n_theta": 4096,
+          "intervals_s_unrounded": [
+            [
+              8.056445490089715,
+              9.448088158859605
+            ]
+          ],
+          "duration_s_unrounded": 1.3916426687698902,
+          "root_residuals_unrounded": [
+            {
+              "kind": "entry",
+              "time_s": 8.056445490089715,
+              "margin_m": 1.4551542193430578e-09,
+              "iterations": 21
+            },
+            {
+              "kind": "exit",
+              "time_s": 9.448088158859605,
+              "margin_m": 4.1726410771047995e-08,
+              "iterations": 21
+            }
+          ],
+          "source": "fresh entrypoint internal refinement; stored endpoint differences are exactly zero"
+        }
+      ],
+      "maximum_endpoint_difference_s": 3.142908155950863e-10,
+      "maximum_duration_difference_s": 5.839595473844383e-10,
+      "maximum_root_residual_m": 4.1726410771047995e-08,
+      "decision_stability": true
+    },
+    "independent_recomputation": {
+      "method": "critical-angle polynomial real roots plus scipy brentq",
+      "scan_step_s": 0.01,
+      "intervals_s": [
+        [
+          8.056445490431024,
+          9.448088158701715
+        ]
+      ],
+      "effective_duration_s": 1.3916426682706913,
+      "root_residuals_m": [
+        8.260059303211165e-13,
+        4.227729277772596e-13
+      ],
+      "status": "pass",
+      "endpoint_differences_s": [
+        3.413092031223641e-10,
+        1.5788970131325186e-10
+      ],
+      "duration_difference_s": 4.99198904435616e-10,
+      "maximum_root_residual_m": 8.260059303211165e-13
+    },
+    "formatting_policy": "all assertions use unrounded float64 values; formatting is presentation only"
+  },
+  "run_identity": {
+    "executed_at": "2026-08-28T06:08:13.164422+00:00",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "model_sha256": "cb36870ca55ed3b1e3c3adfe02cd91667c89249fa1aeb730cb42f0a1bbd4f7f1",
+    "solver_sha256": "69522ab4467990f99e95a8c42007d75da2b13495f7fc9803892f15bd223119e1",
+    "verifier_sha256": "1ff3f26cd6c05936290b4336dd6584e9f1d2edd3e1f32b8114e028b4134518fd",
+    "tests_sha256": "685652284d315026a98278ae09bff3bced29f959611ea345c434833119167b93",
+    "execution_kind": "deterministic",
+    "seed": "not_applicable"
+  }
+}

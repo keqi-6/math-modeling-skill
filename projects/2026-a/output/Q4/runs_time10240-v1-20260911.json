@@ -1,0 +1,9 @@
+{
+  "common_end_s": 259200,
+  "runs": {
+    "main": "output/Q4/run_n10240-v1-20260911.npz",
+    "tight": "output/Q4/run_n10240-tight-v1-20260911.npz"
+  },
+  "main": "main",
+  "tight": "tight"
+}

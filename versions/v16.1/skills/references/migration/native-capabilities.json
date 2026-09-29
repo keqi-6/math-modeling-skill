@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "entries": [
+    {"capability_id":"V7-ARCH-001","introduced_in":"V7","capability":"Single discoverable controller with layered runtime ownership","source":"skills_v7/skills/SKILL.md","v9_owner":"SKILL.md","migration_status":"normalized"},
+    {"capability_id":"V7-ARCH-002","introduced_in":"V7","capability":"Progressive disclosure across controller, routes, detailed procedures, acceptance crosschecks and evidence","source":"skills_v7/skills/references/v7-architecture-decision.md","v9_owner":"SKILL.md","migration_status":"normalized"},
+    {"capability_id":"V7-ROUTE-001","introduced_in":"V7","capability":"Machine-readable routing registry","source":"skills_v7/skills/references/routing-registry.json","v9_owner":"references/route-contract.json","migration_status":"normalized"},
+    {"capability_id":"V7-CAP-001","introduced_in":"V7","capability":"Atomic migration ledger and capability-test binding","source":"skills_v7/skills/references/v6-capability-ledger.json","v9_owner":"references/migration/v1-v9-capability-ledger.json","migration_status":"normalized"},
+    {"capability_id":"V7-OWN-001","introduced_in":"V7","capability":"Responsibility overlap analysis and canonical ownership decisions","source":"skills_v7/skills/references/responsibility-decisions.md","v9_owner":"references/capability-registry.json","migration_status":"normalized"},
+    {"capability_id":"V7-STATE-001","introduced_in":"V7","capability":"Component-aware state and earliest-open-state handling","source":"skills_v7/skills/SKILL.md","v9_owner":"references/state-contract.json","migration_status":"strengthened"},
+    {"capability_id":"V7-REC-001","introduced_in":"V7","capability":"Proportional R0/R1/R2 recovery","source":"skills_v7/skills/SKILL.md","v9_owner":"references/recovery-governance.md","migration_status":"strengthened"},
+    {"capability_id":"V7-RECEIPT-001","introduced_in":"V7","capability":"Distinct start and end receipt semantics","source":"skills_v7/skills/references/start_receipt.schema.json","v9_owner":"references/receipt.schema.json","migration_status":"normalized"},
+    {"capability_id":"V7-SCAFFOLD-001","introduced_in":"V7","capability":"Scaffold artifact contract and bootstrap validation","source":"skills_v7/skills/references/scaffold-artifact-contract.json","v9_owner":"references/artifact-contract.json","migration_status":"strengthened"},
+    {"capability_id":"V8-S6-001","introduced_in":"V8","capability":"S6 requires both solution verification and model examination","source":"skills_v8/skills/SKILL.md","v9_owner":"references/modules/verification.md","migration_status":"retained"},
+    {"capability_id":"V8-S6-002","introduced_in":"V8","capability":"Implementation and numerical verification axis","source":"skills_v8/skills/rules/32-verification-minimum.md","v9_owner":"references/modules/verification.md","migration_status":"normalized"},
+    {"capability_id":"V8-S6-003","introduced_in":"V8","capability":"Assumption, structure, parameter and reality examination axis","source":"skills_v8/skills/rules/32-verification-minimum.md","v9_owner":"references/modules/verification.md","migration_status":"normalized"},
+    {"capability_id":"V8-S6-004","introduced_in":"V8","capability":"Dual-axis route evidence requirement","source":"skills_v8/skills/references/routing-registry.json","v9_owner":"references/route-contract.json","migration_status":"strengthened"},
+    {"capability_id":"V8-S6-005","introduced_in":"V8","capability":"Regression guard for dual-axis S6","source":"skills_v8/skills/scripts/test_s6_dual_axis.py","v9_owner":"evals/behavior-cases.json","migration_status":"strengthened"}
+  ]
+}
+

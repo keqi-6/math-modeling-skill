@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "owner": "SKILL.md",
+  "scope": "manuscript module acceptance only",
+  "states": [
+    {"level": 1, "id": "unread", "label": "未读取"},
+    {"level": 2, "id": "read_not_audited", "label": "已读取但未审计"},
+    {"level": 3, "id": "structure_failed", "label": "结构审计失败"},
+    {"level": 4, "id": "sentence_failed", "label": "逐句审计失败"},
+    {"level": 5, "id": "machine_pass_expression_failed", "label": "机器核对通过但表达未通过"},
+    {"level": 6, "id": "evidence_expression_pass_human_pending", "label": "表达与证据均通过，待人工审计"},
+    {"level": 7, "id": "human_audit_passed", "label": "人工审计通过"}
+  ],
+  "promotion_rules": {
+    "submit_for_human_review_from": 6,
+    "formal_promotion_requires": 7,
+    "explicit_human_confirmation": true,
+    "compile_or_machine_check_cannot_promote_alone": true
+  },
+  "mirrors": [
+    "rules/17-reader-first-manuscript-audit.md",
+    "rules/20-execution-gates.md"
+  ]
+}

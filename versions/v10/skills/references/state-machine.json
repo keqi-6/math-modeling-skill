@@ -1,0 +1,49 @@
+{
+  "schema_version": "10.0",
+  "state_sets": {
+    "project": ["P0", "P1", "P2"],
+    "question": ["S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7"],
+    "shared_data": ["D0", "D1", "D2", "D3"],
+    "artifact": ["A0", "A1", "A2", "A3"]
+  },
+  "transitions": {
+    "question": [
+      {"from": "S0", "to": "S1", "requires": ["scope", "problem_definition"]},
+      {"from": "S1", "to": "S2", "requires": ["evidence_plan"]},
+      {"from": "S2", "to": "S3", "requires": ["candidate_set"]},
+      {"from": "S3", "to": "S4", "requires": ["model_spec", "selection_rationale"]},
+      {"from": "S4", "to": "S5", "requires": ["implementation_ref"]},
+      {"from": "S5", "to": "S6", "requires": ["E1_IMPLEMENTATION", "E2_NUMERICAL"]},
+      {"from": "S6", "to": "S7", "requires": ["E1_IMPLEMENTATION", "E2_NUMERICAL", "E3_STRUCTURAL", "E4_REALITY", "result_claims", "delivery_acceptance"]},
+      {"from": "S4", "to": "S2", "requires": ["model_redesign_control", "consumer_invalidation"], "reason_levels": ["model_redesign_control"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S5", "to": "S2", "requires": ["model_redesign_control", "consumer_invalidation"], "reason_levels": ["model_redesign_control"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S6", "to": "S2", "requires": ["model_redesign_control", "consumer_invalidation"], "reason_levels": ["model_redesign_control"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S7", "to": "S2", "requires": ["model_redesign_control", "consumer_invalidation"], "reason_levels": ["model_redesign_control"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S7", "to": "S5", "requires": ["consumer_invalidation"], "reason_levels": ["E1_IMPLEMENTATION", "E2_NUMERICAL"], "reason_statuses": ["fail"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S7", "to": "S6", "requires": ["consumer_invalidation"], "reason_levels": ["E3_STRUCTURAL", "E4_REALITY", "uncertainty", "robustness"], "reason_statuses": ["fail"], "invalidate_consumers": true, "kind": "reopen"}
+    ],
+    "shared_data": [
+      {"from": "D0", "to": "D1", "requires": ["data_identity", "provenance"]},
+      {"from": "D1", "to": "D2", "requires": ["data_audit", "treatment_decision"]},
+      {"from": "D2", "to": "D3", "requires": ["processed_identity", "artifact_validation"]},
+      {"from": "D3", "to": "D1", "requires": ["data_audit"], "reason_levels": ["data_audit"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"}
+    ],
+    "artifact": [
+      {"from": "A0", "to": "A1", "requires": ["artifact_draft"]},
+      {"from": "A1", "to": "A2", "requires": ["artifact_validation"]},
+      {"from": "A2", "to": "A3", "requires": ["artifact_acceptance"]},
+      {"from": "A3", "to": "A1", "requires": ["selection_rationale"], "reason_levels": ["selection_rationale"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"}
+    ],
+    "project": [
+      {"from": "P0", "to": "P1", "requires": ["all_required_components_ready"]},
+      {"from": "P1", "to": "P2", "requires": ["delivery_acceptance"]},
+      {"from": "P2", "to": "P0", "requires": ["selection_rationale"], "kind": "reopen"}
+    ]
+  },
+  "invalidation": {
+    "strategy": "transitive_consumers",
+    "on_artifact_hash_change": "invalidate_producer_and_all_transitive_consumers",
+    "on_dependency_change": "invalidate_component_and_all_transitive_consumers",
+    "promotion_blocked_statuses": ["blocked", "invalidated"]
+  }
+}

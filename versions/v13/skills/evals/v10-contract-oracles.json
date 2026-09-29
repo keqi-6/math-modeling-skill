@@ -1,0 +1,335 @@
+{
+  "schema_version": "10.0",
+  "cases": [
+    {
+      "id": "STATE.TYPE.REJECT",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "state_type_reject"
+    },
+    {
+      "id": "STATE.EVIDENCE.SPOOF",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "string_evidence_reject"
+    },
+    {
+      "id": "STATE.S6.GATES",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "s6_gate_order"
+    },
+    {
+      "id": "STATE.REOPEN",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "controlled_reopen"
+    },
+    {
+      "id": "STATE.ROUTE.RECORD",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "route_record"
+    },
+    {
+      "id": "STATE.ARTIFACT.IDENTITY",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "artifact_identity"
+    },
+    {
+      "id": "STATE.DEPENDENCY.CYCLE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "dependency_cycle"
+    },
+    {
+      "id": "STATE.NEXT_ACTION",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "next_action"
+    },
+    {
+      "id": "REC.R0.SCENARIO",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "recovery_r0"
+    },
+    {
+      "id": "REC.R1.TRANSITIVE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "recovery_r1_transitive"
+    },
+    {
+      "id": "REC.R2.MISSING",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "recovery_r2_missing"
+    },
+    {
+      "id": "REC.R2.INVALID",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "recovery_r2_invalid"
+    },
+    {
+      "id": "STATE.SCHEMA.STRICT",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "schema_extra_unknown_level_reject"
+    },
+    {
+      "id": "STATE.COMMAND.EXIT",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "passing_command_nonzero_reject"
+    },
+    {
+      "id": "STATE.S6.STRONG_EVIDENCE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "observation_only_s6_reject"
+    },
+    {
+      "id": "STATE.SUBJECT.BIND",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "stale_subject_hash_reject"
+    },
+    {
+      "id": "STATE.CLOSED.IMMUTABLE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "closed_evidence_write_reject"
+    },
+    {
+      "id": "STATE.REOPEN.D3.FRESH",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "stale_d3_reopen_reason_reject"
+    },
+    {
+      "id": "STATE.REOPEN.A3.FRESH",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "stale_a3_reopen_reason_reject"
+    },
+    {
+      "id": "STATE.REOPEN.EPOCH",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "reopen_immediate_reclose_reject"
+    },
+    {
+      "id": "STATE.REOPEN.MODEL.REDESIGN",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "model_redesign_reopen_matrix"
+    },
+    {
+      "id": "STATE.REOPEN.S7.FAILURE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "s7_failure_reopen_matrix"
+    },
+    {
+      "id": "STATE.REOPEN.D3.INVALIDATE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "d3_reopen_invalidation"
+    },
+    {
+      "id": "STATE.REOPEN.A3.PROJECT",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "a3_reopen_resets_project"
+    },
+    {
+      "id": "STATE.REOPEN.P2",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "project_p2_reopen"
+    },
+    {
+      "id": "STATE.INVALIDATE.TRANSITIVE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "transitive_invalidation"
+    },
+    {
+      "id": "STATE.INVALIDATE.RECOVER",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "invalidated_s6_recovery"
+    },
+    {
+      "id": "STATE.DEPENDENCY.INVALIDATE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "dependency_change_transitive"
+    },
+    {
+      "id": "REC.CHECKPOINT.NO_LAUNDER",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "checkpoint_launder_reject"
+    },
+    {
+      "id": "REC.WATCH_ROOT.SAFE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "watch_root_reject"
+    },
+    {
+      "id": "RECEIPT.ROOTLESS.AUTHENTIC",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "rootless_end_forgery_reject"
+    },
+    {
+      "id": "RECEIPT.ROUTE.AUTHORITATIVE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "forged_record_route_reject"
+    },
+    {
+      "id": "RECEIPT.COMPONENT.BIND",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "component_bound_receipt"
+    },
+    {
+      "id": "RECEIPT.COMPONENT.MAP",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "component_map_receipt"
+    },
+    {
+      "id": "STATE.INSPECT.BINDINGS",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "state_inspect_values"
+    },
+    {
+      "id": "RECEIPT.UNAUTHORIZED.DELTA",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "unauthorized_execution_delta_reject"
+    },
+    {
+      "id": "RECEIPT.REPLAY.REJECT",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "execution_replay_reject"
+    },
+    {
+      "id": "RECEIPT.DELTA.CLOSED_WORLD",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "end_omitted_artifact_delta_reject"
+    },
+    {
+      "id": "RECEIPT.READONLY.NO_DELTA",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "readonly_delta_reject"
+    },
+    {
+      "id": "RECEIPT.EXECUTION.BIND",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "wrong_execution_binding_reject"
+    },
+    {
+      "id": "STATE.PROJECT.GATES",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "project_gate_reject"
+    },
+    {
+      "id": "ARTIFACT.VALIDATION.EVIDENCE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "artifact_validation_evidence_required"
+    },
+    {
+      "id": "REC.RULE.EXCLUSIVE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "recovery_rule_exclusive"
+    },
+    {
+      "id": "MNT.CHANGE.ANALYZE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "analyze_change"
+    },
+    {
+      "id": "MNT.CHANGE.ATOMIZE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "reject_compound_atom"
+    },
+    {
+      "id": "MNT.CHANGE.RISK",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "risk_escalation"
+    },
+    {
+      "id": "MNT.IMPACT.TRANSITIVE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "impact_graph"
+    },
+    {
+      "id": "MNT.OWNER.DUPLICATE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "duplicate_owner"
+    },
+    {
+      "id": "MNT.OWNER.SPOOF",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "spoof_owner"
+    },
+    {
+      "id": "MNT.CONFLICT.DETECT",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "structured_conflict"
+    },
+    {
+      "id": "MNT.EVAL.ENVELOPE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "behavior_test_bundle"
+    },
+    {
+      "id": "MNT.ROUTE.UNREACHABLE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "unreachable_rule"
+    },
+    {
+      "id": "MNT.RELOAD.FRESH_PROCESS",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "fresh_process"
+    },
+    {
+      "id": "MNT.ROLLBACK.PRESERVE",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "previous_version"
+    },
+    {
+      "id": "MNT.RELEASE.NO_STATIC_PASS",
+      "kind": "legacy_v10_oracle",
+      "driver": "v10_lineage",
+      "scenario": "generated_release_report"
+    }
+  ]
+}

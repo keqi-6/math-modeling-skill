@@ -1,0 +1,567 @@
+{
+  "schema": "q3_workbook_audit_v1",
+  "status": "pass",
+  "data_status": "pass",
+  "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q3\\result3.xlsx",
+  "input_npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.npz",
+  "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.json",
+  "metadata_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+  "template": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件3\\result3.xlsx",
+  "template_sha256": "07e4793d620a7f899804c0298d49a16a197960440fd47f8bb780c57ec27e2859",
+  "specification": {
+    "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q3\\model_spec.md",
+    "sha256": "90a61593754bf52d1a9ec47e5e1d1f6d2224bec60c49e8eee9c5efb4508af6d9",
+    "identity_class": "frozen",
+    "status": "validated"
+  },
+  "exporter_sha256": "324d648e5f36f7374534401feaa0b41883fe99017ddcb6e2dfe7b49942424816",
+  "audit_source_sha256": "38931ef7501f0b64238ff40340e6e5e150ed39c231c6490a151514f9a16d98f0",
+  "prior_verification": {
+    "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\verification_implementation.json",
+    "sha256": "8365797324c7ceaadc7ca2cf27515d6ea14b325dba4f0a2ea2dd494b33b436f7",
+    "passed_checks": 640,
+    "reuse": "Existing evidence identity only; verifier not executed"
+  },
+  "prior_structural_verification": {
+    "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\verification_structure.json",
+    "sha256": "ff82989f40157cebb12a03bdb18e02d8411ede05c1cadf4e7f84c44898ac5fd8",
+    "passed_checks": 18,
+    "reuse": "Existing structural/sensitivity evidence only; no new numerical run"
+  },
+  "terminal_time_s": 206927,
+  "schedule": "60,120,...,206880 seconds, then the actual terminal second 206927; final gap 47 seconds",
+  "units": {
+    "time": "s",
+    "radius": "cm",
+    "moisture": "kg water/kg dry solid"
+  },
+  "rounding": "Number(binary64.toFixed(4)) stored as numeric values with 0.0000 format; independent Decimal-based audit",
+  "independent_verification": {
+    "status": "pass",
+    "error_count": 0,
+    "errors": [],
+    "sheet": "Sheet1",
+    "rows": 3450,
+    "data_rows": 3449,
+    "columns": 22,
+    "total_cells": 75900,
+    "actual_used_range": "A1:V3450",
+    "declared_dimension": null,
+    "used_range_basis": "Every row index and every A:V cell coordinate checked, plus exact total row/cell counts",
+    "result_values_checked": 72429,
+    "number_formats_checked": 72429,
+    "maximum_saved_vs_rounded_difference": 0.0,
+    "maximum_absolute_export_rounding": 4.999723537069123e-05,
+    "terminal_verification": {
+      "before_n_end": {
+        "time_s": 206926,
+        "max_moisture_kg_kg": 0.15000004037842476,
+        "argmax_node": 0,
+        "argmax_radius_m": 0.0,
+        "strictly_below_0_15": false,
+        "nodes_checked": 10241
+      },
+      "n_end": {
+        "time_s": 206927,
+        "max_moisture_kg_kg": 0.1499997491345901,
+        "argmax_node": 0,
+        "argmax_radius_m": 0.0,
+        "strictly_below_0_15": true,
+        "nodes_checked": 10241
+      },
+      "status": "pass",
+      "first_passing_integer_s": 206927,
+      "stored_maxima_samples_checked": 206928,
+      "criterion": "max over all 10241 nodes C(t) < 0.15, evaluated without rounding",
+      "post_endpoint_samples_checked": 13074,
+      "post_endpoint_observed_end_s": 220000,
+      "maximum_post_endpoint_upward_step": 0.0,
+      "post_endpoint_upward_allowance": 5e-09,
+      "crossing_time_s": 206926.13864059298,
+      "crossing_snapshot_max_moisture": 0.15,
+      "scope": "First integer from the stored whole-mesh maxima series, with independent recomputation over every node at 206926 and 206927 s. Exact retained numerical trajectory, not an exact continuous-PDE stopping-time proof."
+    },
+    "table5": {
+      "values_checked": 50,
+      "cells": [
+        {
+          "time_s": 21600,
+          "radius_cm": 0.0,
+          "raw_float64": 1.0169942031493668,
+          "display_4dp": "1.0170",
+          "passed": true
+        },
+        {
+          "time_s": 21600,
+          "radius_cm": 0.5,
+          "raw_float64": 0.9881623678497928,
+          "display_4dp": "0.9882",
+          "passed": true
+        },
+        {
+          "time_s": 21600,
+          "radius_cm": 1.0,
+          "raw_float64": 0.9015450586090435,
+          "display_4dp": "0.9015",
+          "passed": true
+        },
+        {
+          "time_s": 21600,
+          "radius_cm": 1.5,
+          "raw_float64": 0.7550150171145703,
+          "display_4dp": "0.7550",
+          "passed": true
+        },
+        {
+          "time_s": 21600,
+          "radius_cm": 2.0,
+          "raw_float64": 0.5327672958872741,
+          "display_4dp": "0.5328",
+          "passed": true
+        },
+        {
+          "time_s": 43200,
+          "radius_cm": 0.0,
+          "raw_float64": 0.4561749134341306,
+          "display_4dp": "0.4562",
+          "passed": true
+        },
+        {
+          "time_s": 43200,
+          "radius_cm": 0.5,
+          "raw_float64": 0.4431890074510878,
+          "display_4dp": "0.4432",
+          "passed": true
+        },
+        {
+          "time_s": 43200,
+          "radius_cm": 1.0,
+          "raw_float64": 0.40309760232705566,
+          "display_4dp": "0.4031",
+          "passed": true
+        },
+        {
+          "time_s": 43200,
+          "radius_cm": 1.5,
+          "raw_float64": 0.32975389824758405,
+          "display_4dp": "0.3298",
+          "passed": true
+        },
+        {
+          "time_s": 43200,
+          "radius_cm": 2.0,
+          "raw_float64": 0.1641805082476735,
+          "display_4dp": "0.1642",
+          "passed": true
+        },
+        {
+          "time_s": 64800,
+          "radius_cm": 0.0,
+          "raw_float64": 0.29886004005876887,
+          "display_4dp": "0.2989",
+          "passed": true
+        },
+        {
+          "time_s": 64800,
+          "radius_cm": 0.5,
+          "raw_float64": 0.291568642150791,
+          "display_4dp": "0.2916",
+          "passed": true
+        },
+        {
+          "time_s": 64800,
+          "radius_cm": 1.0,
+          "raw_float64": 0.26872648176063635,
+          "display_4dp": "0.2687",
+          "passed": true
+        },
+        {
+          "time_s": 64800,
+          "radius_cm": 1.5,
+          "raw_float64": 0.22531267027907226,
+          "display_4dp": "0.2253",
+          "passed": true
+        },
+        {
+          "time_s": 64800,
+          "radius_cm": 2.0,
+          "raw_float64": 0.08447034325514502,
+          "display_4dp": "0.0845",
+          "passed": true
+        },
+        {
+          "time_s": 86400,
+          "radius_cm": 0.0,
+          "raw_float64": 0.23781232123803944,
+          "display_4dp": "0.2378",
+          "passed": true
+        },
+        {
+          "time_s": 86400,
+          "radius_cm": 0.5,
+          "raw_float64": 0.23275196612814217,
+          "display_4dp": "0.2328",
+          "passed": true
+        },
+        {
+          "time_s": 86400,
+          "radius_cm": 1.0,
+          "raw_float64": 0.21673694609401115,
+          "display_4dp": "0.2167",
+          "passed": true
+        },
+        {
+          "time_s": 86400,
+          "radius_cm": 1.5,
+          "raw_float64": 0.18555806396611682,
+          "display_4dp": "0.1856",
+          "passed": true
+        },
+        {
+          "time_s": 86400,
+          "radius_cm": 2.0,
+          "raw_float64": 0.06646576524178277,
+          "display_4dp": "0.0665",
+          "passed": true
+        },
+        {
+          "time_s": 108000,
+          "radius_cm": 0.0,
+          "raw_float64": 0.20583420950253478,
+          "display_4dp": "0.2058",
+          "passed": true
+        },
+        {
+          "time_s": 108000,
+          "radius_cm": 0.5,
+          "raw_float64": 0.20185514220533254,
+          "display_4dp": "0.2019",
+          "passed": true
+        },
+        {
+          "time_s": 108000,
+          "radius_cm": 1.0,
+          "raw_float64": 0.18917628221120025,
+          "display_4dp": "0.1892",
+          "passed": true
+        },
+        {
+          "time_s": 108000,
+          "radius_cm": 1.5,
+          "raw_float64": 0.16409854163552548,
+          "display_4dp": "0.1641",
+          "passed": true
+        },
+        {
+          "time_s": 108000,
+          "radius_cm": 2.0,
+          "raw_float64": 0.0598320211554052,
+          "display_4dp": "0.0598",
+          "passed": true
+        },
+        {
+          "time_s": 129600,
+          "radius_cm": 0.0,
+          "raw_float64": 0.18588650140539023,
+          "display_4dp": "0.1859",
+          "passed": true
+        },
+        {
+          "time_s": 129600,
+          "radius_cm": 0.5,
+          "raw_float64": 0.18253827583080548,
+          "display_4dp": "0.1825",
+          "passed": true
+        },
+        {
+          "time_s": 129600,
+          "radius_cm": 1.0,
+          "raw_float64": 0.17181874308590875,
+          "display_4dp": "0.1718",
+          "passed": true
+        },
+        {
+          "time_s": 129600,
+          "radius_cm": 1.5,
+          "raw_float64": 0.15038065121049282,
+          "display_4dp": "0.1504",
+          "passed": true
+        },
+        {
+          "time_s": 129600,
+          "radius_cm": 2.0,
+          "raw_float64": 0.05663923168706831,
+          "display_4dp": "0.0566",
+          "passed": true
+        },
+        {
+          "time_s": 151200,
+          "radius_cm": 0.0,
+          "raw_float64": 0.17207372635376808,
+          "display_4dp": "0.1721",
+          "passed": true
+        },
+        {
+          "time_s": 151200,
+          "radius_cm": 0.5,
+          "raw_float64": 0.1691399027647704,
+          "display_4dp": "0.1691",
+          "passed": true
+        },
+        {
+          "time_s": 151200,
+          "radius_cm": 1.0,
+          "raw_float64": 0.15971391236630678,
+          "display_4dp": "0.1597",
+          "passed": true
+        },
+        {
+          "time_s": 151200,
+          "radius_cm": 1.5,
+          "raw_float64": 0.14070701289336554,
+          "display_4dp": "0.1407",
+          "passed": true
+        },
+        {
+          "time_s": 151200,
+          "radius_cm": 2.0,
+          "raw_float64": 0.054843756074870416,
+          "display_4dp": "0.0548",
+          "passed": true
+        },
+        {
+          "time_s": 172800,
+          "radius_cm": 0.0,
+          "raw_float64": 0.16183433250439383,
+          "display_4dp": "0.1618",
+          "passed": true
+        },
+        {
+          "time_s": 172800,
+          "radius_cm": 0.5,
+          "raw_float64": 0.1591949495404056,
+          "display_4dp": "0.1592",
+          "passed": true
+        },
+        {
+          "time_s": 172800,
+          "radius_cm": 1.0,
+          "raw_float64": 0.1506916204302176,
+          "display_4dp": "0.1507",
+          "passed": true
+        },
+        {
+          "time_s": 172800,
+          "radius_cm": 1.5,
+          "raw_float64": 0.13343468863192484,
+          "display_4dp": "0.1334",
+          "passed": true
+        },
+        {
+          "time_s": 172800,
+          "radius_cm": 2.0,
+          "raw_float64": 0.053725426046185666,
+          "display_4dp": "0.0537",
+          "passed": true
+        },
+        {
+          "time_s": 194400,
+          "radius_cm": 0.0,
+          "raw_float64": 0.1538733728086256,
+          "display_4dp": "0.1539",
+          "passed": true
+        },
+        {
+          "time_s": 194400,
+          "radius_cm": 0.5,
+          "raw_float64": 0.15145501957081356,
+          "display_4dp": "0.1515",
+          "passed": true
+        },
+        {
+          "time_s": 194400,
+          "radius_cm": 1.0,
+          "raw_float64": 0.1436464735342918,
+          "display_4dp": "0.1436",
+          "passed": true
+        },
+        {
+          "time_s": 194400,
+          "radius_cm": 1.5,
+          "raw_float64": 0.12771698467020715,
+          "display_4dp": "0.1277",
+          "passed": true
+        },
+        {
+          "time_s": 194400,
+          "radius_cm": 2.0,
+          "raw_float64": 0.05297675876958872,
+          "display_4dp": "0.0530",
+          "passed": true
+        },
+        {
+          "time_s": 206927,
+          "radius_cm": 0.0,
+          "raw_float64": 0.1499997491345901,
+          "display_4dp": "0.1500",
+          "passed": true
+        },
+        {
+          "time_s": 206927,
+          "radius_cm": 0.5,
+          "raw_float64": 0.14768636060397036,
+          "display_4dp": "0.1477",
+          "passed": true
+        },
+        {
+          "time_s": 206927,
+          "radius_cm": 1.0,
+          "raw_float64": 0.1402084586087133,
+          "display_4dp": "0.1402",
+          "passed": true
+        },
+        {
+          "time_s": 206927,
+          "radius_cm": 1.5,
+          "raw_float64": 0.12491384632639439,
+          "display_4dp": "0.1249",
+          "passed": true
+        },
+        {
+          "time_s": 206927,
+          "radius_cm": 2.0,
+          "raw_float64": 0.05264949793874387,
+          "display_4dp": "0.0526",
+          "passed": true
+        }
+      ]
+    },
+    "xlsx_sha256": "2e3a99684461b84bc592ec9cd9127a411a8fed9257d154c5439fd5a9d4b0d1fe",
+    "xlsx_bytes": 341546,
+    "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+    "metadata_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+    "summary_sha256": "357911e9e349e6e7772d861da285bf8b1fc2d473a236b82216ace243c7162f72"
+  },
+  "native_previews": [
+    "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\moisture_first.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\moisture_last.png"
+  ],
+  "native_render_scope": "Native first and last ranges from the complete original artifact-tool authoring workbook, not a reopened whole XLSX; final saved XML checked in full.",
+  "visual_review": {
+    "status": "pass",
+    "reviewer": "/root/q1_data_audit",
+    "actual_views": [
+      {
+        "path": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\moisture_first.png",
+        "sha256": "802949ce25321eae8ef971c2b3ea3905caba2630af787d5b8106e44d27cd2ac6"
+      },
+      {
+        "path": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\moisture_last.png",
+        "sha256": "c447a67f29637f1d572d9e449cb76a1a6a78e3ebb45b22876c275b8956fb632e"
+      }
+    ],
+    "scope": "Native first and last ranges from the complete original artifact-tool authoring workbook, not a reopened whole XLSX; final saved XML checked in full.",
+    "observations": [
+      "Original Chinese header and 0.0 to 2.0 radius columns are readable.",
+      "Result cells visibly retain four decimals; first and terminal rows and all displayed columns are unobscured.",
+      "The last row is 206927 s; displayed center 0.1500 is rounding. The strict stopping decision uses unrounded all-node maxima."
+    ]
+  },
+  "memory_samples": [
+    {
+      "label": "rows:1024/3449",
+      "rss": 354545664,
+      "heapTotal": 218107904,
+      "heapUsed": 110943240,
+      "external": 102476378,
+      "arrayBuffers": 6945514
+    },
+    {
+      "label": "rows:2048/3449",
+      "rss": 373563392,
+      "heapTotal": 235954176,
+      "heapUsed": 153693912,
+      "external": 102476418,
+      "arrayBuffers": 6945514
+    },
+    {
+      "label": "rows:3072/3449",
+      "rss": 399515648,
+      "heapTotal": 261705728,
+      "heapUsed": 145020656,
+      "external": 102476418,
+      "arrayBuffers": 6945514
+    },
+    {
+      "label": "rows:3449/3449",
+      "rss": 401727488,
+      "heapTotal": 262754304,
+      "heapUsed": 191351600,
+      "external": 102476418,
+      "arrayBuffers": 6945514
+    },
+    {
+      "label": "before_export",
+      "rss": 562884608,
+      "heapTotal": 282271744,
+      "heapUsed": 174426536,
+      "external": 102663142,
+      "arrayBuffers": 7061497
+    },
+    {
+      "label": "after_export",
+      "rss": 1015820288,
+      "heapTotal": 579444736,
+      "heapUsed": 390401872,
+      "external": 175025706,
+      "arrayBuffers": 4525494
+    }
+  ],
+  "elapsed_s": 1.0407677000039257,
+  "detailed_report": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\q3_export_report.json",
+  "recovery": {
+    "first_attempt": {
+      "status": "fail",
+      "exit_code": 1,
+      "wrapper_elapsed_s": 6.828,
+      "export_elapsed_s": 5.3122685,
+      "report_path": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\q3_export_report.json",
+      "report_sha256": "c3b6f868e9bf899f2a7dde3ba45c7b1024f5a438c853002b35b9d9c71108ecee",
+      "reason": "Error: [\"Exact used range\"]\n    at insist (file:///<AI_ROOT>/%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B2026/CUMCM2026Problems/A%E9%A2%98/src/Q3/export_workbook.mjs:26:50)\n    at main (file:///<AI_ROOT>/%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B2026/CUMCM2026Problems/A%E9%A2%98/src/Q3/export_workbook.mjs:404:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+      "error_count": 1,
+      "errors": [
+        "Exact used range"
+      ],
+      "actual_declared_dimension": null,
+      "actual_used_range": "A1:V3450",
+      "format_reference": "https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.sheetdimension?view=openxml-3.0.1",
+      "repair_rationale": "The dimension element is optional. Every row index and every A:V cell coordinate are independently checked, plus exact total row and cell counts.",
+      "all_result_values_passed": 72429,
+      "all_table5_values_passed": 50,
+      "maximum_sampled_rss_bytes": 1015820288
+    },
+    "scope": "Re-executed the independent full XML/Decimal audit with optional dimension handling, then hash-checked placement only. No workbook authoring, marker invocation or model integration.",
+    "auditor_code_sha256": "721e4250dd53f7c3ad8f1e88d97d4d4ba9fc095d367ad41c1f773bf11e2dc478",
+    "recovery_program_sha256": "c99e163a5fd8262f563a7e14a75db921a9a71ed165627c66376212c147e84f04",
+    "marker_reused": true,
+    "placement": [
+      {
+        "source": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\result3.xlsx",
+        "target": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q3\\result3.xlsx",
+        "source_sha256": "2e3a99684461b84bc592ec9cd9127a411a8fed9257d154c5439fd5a9d4b0d1fe",
+        "copied_sha256": "2e3a99684461b84bc592ec9cd9127a411a8fed9257d154c5439fd5a9d4b0d1fe",
+        "final_sha256": "2e3a99684461b84bc592ec9cd9127a411a8fed9257d154c5439fd5a9d4b0d1fe",
+        "passed": true
+      },
+      {
+        "source": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\summary_values.json",
+        "target": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q3\\summary_values.json",
+        "source_sha256": "357911e9e349e6e7772d861da285bf8b1fc2d473a236b82216ace243c7162f72",
+        "copied_sha256": "357911e9e349e6e7772d861da285bf8b1fc2d473a236b82216ace243c7162f72",
+        "final_sha256": "357911e9e349e6e7772d861da285bf8b1fc2d473a236b82216ace243c7162f72",
+        "passed": true
+      }
+    ]
+  }
+}

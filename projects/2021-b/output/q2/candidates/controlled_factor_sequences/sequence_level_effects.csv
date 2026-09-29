@@ -1,0 +1,33 @@
+sequence,factor_cn,fixed_conditions,response,response_cn,catalyst_id,factor_level,factor_unit,four_temperature_mean_pct,subset_adjusted_effect_pct_point
+co_loading,Co负载量,方式I；Co/SiO2 200 mg；HAP 200 mg；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,A4,0.5,wt%,26.515535413080272,1.4058073702306686
+co_loading,Co负载量,方式I；Co/SiO2 200 mg；HAP 200 mg；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,A1,1.0,wt%,14.922199724893877,-10.187528317955726
+co_loading,Co负载量,方式I；Co/SiO2 200 mg；HAP 200 mg；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,A2,2.0,wt%,32.150019298336346,7.040291255486743
+co_loading,Co负载量,方式I；Co/SiO2 200 mg；HAP 200 mg；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,A6,5.0,wt%,26.851157735087924,1.7414296922383201
+co_loading,Co负载量,方式I；Co/SiO2 200 mg；HAP 200 mg；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,A4,0.5,wt%,14.0525,-7.455
+co_loading,Co负载量,方式I；Co/SiO2 200 mg；HAP 200 mg；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,A1,1.0,wt%,41.4075,19.9
+co_loading,Co负载量,方式I；Co/SiO2 200 mg；HAP 200 mg；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,A2,2.0,wt%,23.512500000000003,2.0050000000000026
+co_loading,Co负载量,方式I；Co/SiO2 200 mg；HAP 200 mg；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,A6,5.0,wt%,7.057499999999999,-14.450000000000001
+ethanol_condition,附件所列乙醇条件,方式I；1 wt% Co；Co/SiO2 50 mg；HAP 50 mg,ethanol_conversion_pct,乙醇转化率,A7,0.3,ml/min,36.822652660888096,20.43906941440498
+ethanol_condition,附件所列乙醇条件,方式I；1 wt% Co；Co/SiO2 50 mg；HAP 50 mg,ethanol_conversion_pct,乙醇转化率,A8,0.9,ml/min,14.981754416855512,-1.401828829627604
+ethanol_condition,附件所列乙醇条件,方式I；1 wt% Co；Co/SiO2 50 mg；HAP 50 mg,ethanol_conversion_pct,乙醇转化率,A12,1.68,ml/min,7.93550625124544,-8.448076995237678
+ethanol_condition,附件所列乙醇条件,方式I；1 wt% Co；Co/SiO2 50 mg；HAP 50 mg,ethanol_conversion_pct,乙醇转化率,A9,2.1,ml/min,5.794419656943412,-10.589163589539705
+ethanol_condition,附件所列乙醇条件,方式I；1 wt% Co；Co/SiO2 50 mg；HAP 50 mg,c4_selectivity_pct,C4烯烃选择性,A7,0.3,ml/min,9.9475,-2.7793750000000017
+ethanol_condition,附件所列乙醇条件,方式I；1 wt% Co；Co/SiO2 50 mg；HAP 50 mg,c4_selectivity_pct,C4烯烃选择性,A8,0.9,ml/min,13.465,0.7381249999999984
+ethanol_condition,附件所列乙醇条件,方式I；1 wt% Co；Co/SiO2 50 mg；HAP 50 mg,c4_selectivity_pct,C4烯烃选择性,A12,1.68,ml/min,11.940000000000001,-0.7868750000000002
+ethanol_condition,附件所列乙醇条件,方式I；1 wt% Co；Co/SiO2 50 mg；HAP 50 mg,c4_selectivity_pct,C4烯烃选择性,A9,2.1,ml/min,15.555,2.8281249999999982
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,B3,20.0,mg,2.042305035898963,-4.600129663069955
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,B4,50.0,mg,3.578871646315839,-3.063563052653079
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,B1,100.0,mg,7.71477103151859,1.0723363325496722
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,B6,150.0,mg,12.482155760129658,5.8397210611607395
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,B2,200.0,mg,7.394070020981543,0.7516353220126248
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,B3,20.0,mg,7.404999999999999,-2.331500000000002
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,B4,50.0,mg,7.8475,-1.8890000000000011
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,B1,100.0,mg,13.205,3.468499999999999
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,B6,150.0,mg,10.1175,0.38099999999999845
+active_mass,活性催化剂总质量,方式II；1 wt% Co；Co/SiO2:HAP=1:1；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,B2,200.0,mg,10.1075,0.37099999999999866
+hap_fraction,HAP质量分数,方式I；1 wt% Co；活性催化剂总质量100 mg；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,A13,0.33,比例,5.589477390925205,-2.419805372072676
+hap_fraction,HAP质量分数,方式I；1 wt% Co；活性催化剂总质量100 mg；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,A12,0.5,比例,7.93550625124544,-0.07377651175244093
+hap_fraction,HAP质量分数,方式I；1 wt% Co；活性催化剂总质量100 mg；附件乙醇条件1.68 ml/min,ethanol_conversion_pct,乙醇转化率,A14,0.67,比例,10.502864646823,2.4935818838251187
+hap_fraction,HAP质量分数,方式I；1 wt% Co；活性催化剂总质量100 mg；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,A13,0.33,比例,12.252500000000001,2.615
+hap_fraction,HAP质量分数,方式I；1 wt% Co；活性催化剂总质量100 mg；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,A12,0.5,比例,11.940000000000001,2.3025
+hap_fraction,HAP质量分数,方式I；1 wt% Co；活性催化剂总质量100 mg；附件乙醇条件1.68 ml/min,c4_selectivity_pct,C4烯烃选择性,A14,0.67,比例,4.72,-4.917500000000001

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "question": "Q2",
+  "specification": "Q2-v1",
+  "method": "interleaved_nodal_finite_volume_segmented_BDF",
+  "spec_sha256": "10d2ce44107c11c835ccf173c820e4100648f7c48fd7955c3890038a20f688a4",
+  "boundary_sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+  "raw_environment_sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+  "solver_sha256": "f6fec45927ba500f1760bd661248e27d19b9630a6a55dbdd9a1b90a47f595a67",
+  "boundary_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json",
+  "output_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_common.npz",
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "success": false,
+  "status": "failed",
+  "grid_n": 10240,
+  "scenario": "mean_tail",
+  "tight": false,
+  "failure_type": "ValueError",
+  "failure_message": "Nonpositive moisture or absolute temperature; no clipping",
+  "last_complete_segment_time_s": 0.0,
+  "last_output_time_s": 0,
+  "t_cross_s": null,
+  "n_end": null,
+  "observed_extrema": {
+    "temperature_min_C": 28.0,
+    "temperature_max_C": 28.0,
+    "moisture_min_kg_kg": 2.55,
+    "moisture_max_kg_kg": 2.55
+  },
+  "work": {
+    "nfev": 0,
+    "njev": 0,
+    "nlu": 0,
+    "accepted_steps": 0,
+    "segments": 0
+  },
+  "elapsed_s": 0.0019112000009045005
+}

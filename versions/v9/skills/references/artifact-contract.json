@@ -1,0 +1,22 @@
+{
+  "contract_version": "9.0.0",
+  "default_policy": "lazy_materialization",
+  "readonly_creates_files": false,
+  "minimal_project_initialization": [".modeling/state.json"],
+  "required_before_creation": ["path", "consumer", "purpose", "lifecycle", "artifact_class", "authorization_basis"],
+  "artifact_classes": {
+    "temporary": {"location": "system_temp", "promotable": true},
+    "working": {"location": "existing_project_area", "requires_consumer": true},
+    "formal": {"location": "declared_project_area", "requires_validation": true}
+  },
+  "forbidden_by_default": [
+    "empty_placeholder_files",
+    "empty_future_directories",
+    "duplicate_status_documents",
+    "one_receipt_file_per_turn",
+    "speculative_paper_sections",
+    "project_local_skill_copy"
+  ],
+  "promotion_requirements": ["consumer_exists", "content_complete_for_claimed_scope", "validation_recorded", "state_registry_updated"]
+}
+

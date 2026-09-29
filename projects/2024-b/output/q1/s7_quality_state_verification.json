@@ -1,0 +1,3693 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s7_independent_exact_quality_state_verification",
+  "producer": "src/q1/10_verify_quality_state_evaluation.py",
+  "independence_boundary": "does not import src/q1/core.py or src/q1/09_quality_state_evaluation.py",
+  "input_identities": {
+    "output/q1/s5_large_batch_extension.json": "28a794aa079c2f22036ecba1f1e483f3eba90b05995d6b89173ab4c7a1e9991b",
+    "output/q1/s7_quality_state_evaluation.json": "4dffd9d8a689f792b7912d2856e4c8862450e7777cf46474cee61b2df6ba1cb8"
+  },
+  "check_count": 1228,
+  "all_checks_passed": true,
+  "checks": [
+    "R:D=0:accept_probability",
+    "R:D=0:reject_probability",
+    "R:D=0:terminal_probability",
+    "R:D=0:average_inspected_items",
+    "R:D=0:ratio_identity",
+    "R:D=0:mass_conservation",
+    "R:D=10:accept_probability",
+    "R:D=10:reject_probability",
+    "R:D=10:terminal_probability",
+    "R:D=10:average_inspected_items",
+    "R:D=10:ratio_identity",
+    "R:D=10:mass_conservation",
+    "R:D=20:accept_probability",
+    "R:D=20:reject_probability",
+    "R:D=20:terminal_probability",
+    "R:D=20:average_inspected_items",
+    "R:D=20:ratio_identity",
+    "R:D=20:mass_conservation",
+    "R:D=30:accept_probability",
+    "R:D=30:reject_probability",
+    "R:D=30:terminal_probability",
+    "R:D=30:average_inspected_items",
+    "R:D=30:ratio_identity",
+    "R:D=30:mass_conservation",
+    "R:D=40:accept_probability",
+    "R:D=40:reject_probability",
+    "R:D=40:terminal_probability",
+    "R:D=40:average_inspected_items",
+    "R:D=40:ratio_identity",
+    "R:D=40:mass_conservation",
+    "R:D=50:accept_probability",
+    "R:D=50:reject_probability",
+    "R:D=50:terminal_probability",
+    "R:D=50:average_inspected_items",
+    "R:D=50:ratio_identity",
+    "R:D=50:mass_conservation",
+    "R:D=60:accept_probability",
+    "R:D=60:reject_probability",
+    "R:D=60:terminal_probability",
+    "R:D=60:average_inspected_items",
+    "R:D=60:ratio_identity",
+    "R:D=60:mass_conservation",
+    "R:D=70:accept_probability",
+    "R:D=70:reject_probability",
+    "R:D=70:terminal_probability",
+    "R:D=70:average_inspected_items",
+    "R:D=70:ratio_identity",
+    "R:D=70:mass_conservation",
+    "R:D=80:accept_probability",
+    "R:D=80:reject_probability",
+    "R:D=80:terminal_probability",
+    "R:D=80:average_inspected_items",
+    "R:D=80:ratio_identity",
+    "R:D=80:mass_conservation",
+    "R:D=90:accept_probability",
+    "R:D=90:reject_probability",
+    "R:D=90:terminal_probability",
+    "R:D=90:average_inspected_items",
+    "R:D=90:ratio_identity",
+    "R:D=90:mass_conservation",
+    "R:D=100:accept_probability",
+    "R:D=100:reject_probability",
+    "R:D=100:terminal_probability",
+    "R:D=100:average_inspected_items",
+    "R:D=100:ratio_identity",
+    "R:D=100:mass_conservation",
+    "R:D=101:accept_probability",
+    "R:D=101:reject_probability",
+    "R:D=101:terminal_probability",
+    "R:D=101:average_inspected_items",
+    "R:D=101:ratio_identity",
+    "R:D=101:mass_conservation",
+    "R:D=110:accept_probability",
+    "R:D=110:reject_probability",
+    "R:D=110:terminal_probability",
+    "R:D=110:average_inspected_items",
+    "R:D=110:ratio_identity",
+    "R:D=110:mass_conservation",
+    "R:D=120:accept_probability",
+    "R:D=120:reject_probability",
+    "R:D=120:terminal_probability",
+    "R:D=120:average_inspected_items",
+    "R:D=120:ratio_identity",
+    "R:D=120:mass_conservation",
+    "R:D=130:accept_probability",
+    "R:D=130:reject_probability",
+    "R:D=130:terminal_probability",
+    "R:D=130:average_inspected_items",
+    "R:D=130:ratio_identity",
+    "R:D=130:mass_conservation",
+    "R:D=140:accept_probability",
+    "R:D=140:reject_probability",
+    "R:D=140:terminal_probability",
+    "R:D=140:average_inspected_items",
+    "R:D=140:ratio_identity",
+    "R:D=140:mass_conservation",
+    "R:D=150:accept_probability",
+    "R:D=150:reject_probability",
+    "R:D=150:terminal_probability",
+    "R:D=150:average_inspected_items",
+    "R:D=150:ratio_identity",
+    "R:D=150:mass_conservation",
+    "R:D=160:accept_probability",
+    "R:D=160:reject_probability",
+    "R:D=160:terminal_probability",
+    "R:D=160:average_inspected_items",
+    "R:D=160:ratio_identity",
+    "R:D=160:mass_conservation",
+    "R:D=170:accept_probability",
+    "R:D=170:reject_probability",
+    "R:D=170:terminal_probability",
+    "R:D=170:average_inspected_items",
+    "R:D=170:ratio_identity",
+    "R:D=170:mass_conservation",
+    "R:D=180:accept_probability",
+    "R:D=180:reject_probability",
+    "R:D=180:terminal_probability",
+    "R:D=180:average_inspected_items",
+    "R:D=180:ratio_identity",
+    "R:D=180:mass_conservation",
+    "R:D=190:accept_probability",
+    "R:D=190:reject_probability",
+    "R:D=190:terminal_probability",
+    "R:D=190:average_inspected_items",
+    "R:D=190:ratio_identity",
+    "R:D=190:mass_conservation",
+    "R:D=200:accept_probability",
+    "R:D=200:reject_probability",
+    "R:D=200:terminal_probability",
+    "R:D=200:average_inspected_items",
+    "R:D=200:ratio_identity",
+    "R:D=200:mass_conservation",
+    "R:D=210:accept_probability",
+    "R:D=210:reject_probability",
+    "R:D=210:terminal_probability",
+    "R:D=210:average_inspected_items",
+    "R:D=210:ratio_identity",
+    "R:D=210:mass_conservation",
+    "R:D=220:accept_probability",
+    "R:D=220:reject_probability",
+    "R:D=220:terminal_probability",
+    "R:D=220:average_inspected_items",
+    "R:D=220:ratio_identity",
+    "R:D=220:mass_conservation",
+    "R:D=230:accept_probability",
+    "R:D=230:reject_probability",
+    "R:D=230:terminal_probability",
+    "R:D=230:average_inspected_items",
+    "R:D=230:ratio_identity",
+    "R:D=230:mass_conservation",
+    "R:D=240:accept_probability",
+    "R:D=240:reject_probability",
+    "R:D=240:terminal_probability",
+    "R:D=240:average_inspected_items",
+    "R:D=240:ratio_identity",
+    "R:D=240:mass_conservation",
+    "R:D=250:accept_probability",
+    "R:D=250:reject_probability",
+    "R:D=250:terminal_probability",
+    "R:D=250:average_inspected_items",
+    "R:D=250:ratio_identity",
+    "R:D=250:mass_conservation",
+    "R:D=260:accept_probability",
+    "R:D=260:reject_probability",
+    "R:D=260:terminal_probability",
+    "R:D=260:average_inspected_items",
+    "R:D=260:ratio_identity",
+    "R:D=260:mass_conservation",
+    "R:D=270:accept_probability",
+    "R:D=270:reject_probability",
+    "R:D=270:terminal_probability",
+    "R:D=270:average_inspected_items",
+    "R:D=270:ratio_identity",
+    "R:D=270:mass_conservation",
+    "R:D=280:accept_probability",
+    "R:D=280:reject_probability",
+    "R:D=280:terminal_probability",
+    "R:D=280:average_inspected_items",
+    "R:D=280:ratio_identity",
+    "R:D=280:mass_conservation",
+    "R:D=290:accept_probability",
+    "R:D=290:reject_probability",
+    "R:D=290:terminal_probability",
+    "R:D=290:average_inspected_items",
+    "R:D=290:ratio_identity",
+    "R:D=290:mass_conservation",
+    "R:D=300:accept_probability",
+    "R:D=300:reject_probability",
+    "R:D=300:terminal_probability",
+    "R:D=300:average_inspected_items",
+    "R:D=300:ratio_identity",
+    "R:D=300:mass_conservation",
+    "R:D=310:accept_probability",
+    "R:D=310:reject_probability",
+    "R:D=310:terminal_probability",
+    "R:D=310:average_inspected_items",
+    "R:D=310:ratio_identity",
+    "R:D=310:mass_conservation",
+    "R:D=320:accept_probability",
+    "R:D=320:reject_probability",
+    "R:D=320:terminal_probability",
+    "R:D=320:average_inspected_items",
+    "R:D=320:ratio_identity",
+    "R:D=320:mass_conservation",
+    "R:D=330:accept_probability",
+    "R:D=330:reject_probability",
+    "R:D=330:terminal_probability",
+    "R:D=330:average_inspected_items",
+    "R:D=330:ratio_identity",
+    "R:D=330:mass_conservation",
+    "R:D=340:accept_probability",
+    "R:D=340:reject_probability",
+    "R:D=340:terminal_probability",
+    "R:D=340:average_inspected_items",
+    "R:D=340:ratio_identity",
+    "R:D=340:mass_conservation",
+    "R:D=350:accept_probability",
+    "R:D=350:reject_probability",
+    "R:D=350:terminal_probability",
+    "R:D=350:average_inspected_items",
+    "R:D=350:ratio_identity",
+    "R:D=350:mass_conservation",
+    "R:D=360:accept_probability",
+    "R:D=360:reject_probability",
+    "R:D=360:terminal_probability",
+    "R:D=360:average_inspected_items",
+    "R:D=360:ratio_identity",
+    "R:D=360:mass_conservation",
+    "R:D=370:accept_probability",
+    "R:D=370:reject_probability",
+    "R:D=370:terminal_probability",
+    "R:D=370:average_inspected_items",
+    "R:D=370:ratio_identity",
+    "R:D=370:mass_conservation",
+    "R:D=380:accept_probability",
+    "R:D=380:reject_probability",
+    "R:D=380:terminal_probability",
+    "R:D=380:average_inspected_items",
+    "R:D=380:ratio_identity",
+    "R:D=380:mass_conservation",
+    "R:D=390:accept_probability",
+    "R:D=390:reject_probability",
+    "R:D=390:terminal_probability",
+    "R:D=390:average_inspected_items",
+    "R:D=390:ratio_identity",
+    "R:D=390:mass_conservation",
+    "R:D=400:accept_probability",
+    "R:D=400:reject_probability",
+    "R:D=400:terminal_probability",
+    "R:D=400:average_inspected_items",
+    "R:D=400:ratio_identity",
+    "R:D=400:mass_conservation",
+    "R:D=410:accept_probability",
+    "R:D=410:reject_probability",
+    "R:D=410:terminal_probability",
+    "R:D=410:average_inspected_items",
+    "R:D=410:ratio_identity",
+    "R:D=410:mass_conservation",
+    "R:D=420:accept_probability",
+    "R:D=420:reject_probability",
+    "R:D=420:terminal_probability",
+    "R:D=420:average_inspected_items",
+    "R:D=420:ratio_identity",
+    "R:D=420:mass_conservation",
+    "R:D=430:accept_probability",
+    "R:D=430:reject_probability",
+    "R:D=430:terminal_probability",
+    "R:D=430:average_inspected_items",
+    "R:D=430:ratio_identity",
+    "R:D=430:mass_conservation",
+    "R:D=440:accept_probability",
+    "R:D=440:reject_probability",
+    "R:D=440:terminal_probability",
+    "R:D=440:average_inspected_items",
+    "R:D=440:ratio_identity",
+    "R:D=440:mass_conservation",
+    "R:D=450:accept_probability",
+    "R:D=450:reject_probability",
+    "R:D=450:terminal_probability",
+    "R:D=450:average_inspected_items",
+    "R:D=450:ratio_identity",
+    "R:D=450:mass_conservation",
+    "R:D=460:accept_probability",
+    "R:D=460:reject_probability",
+    "R:D=460:terminal_probability",
+    "R:D=460:average_inspected_items",
+    "R:D=460:ratio_identity",
+    "R:D=460:mass_conservation",
+    "R:D=470:accept_probability",
+    "R:D=470:reject_probability",
+    "R:D=470:terminal_probability",
+    "R:D=470:average_inspected_items",
+    "R:D=470:ratio_identity",
+    "R:D=470:mass_conservation",
+    "R:D=480:accept_probability",
+    "R:D=480:reject_probability",
+    "R:D=480:terminal_probability",
+    "R:D=480:average_inspected_items",
+    "R:D=480:ratio_identity",
+    "R:D=480:mass_conservation",
+    "R:D=490:accept_probability",
+    "R:D=490:reject_probability",
+    "R:D=490:terminal_probability",
+    "R:D=490:average_inspected_items",
+    "R:D=490:ratio_identity",
+    "R:D=490:mass_conservation",
+    "R:D=500:accept_probability",
+    "R:D=500:reject_probability",
+    "R:D=500:terminal_probability",
+    "R:D=500:average_inspected_items",
+    "R:D=500:ratio_identity",
+    "R:D=500:mass_conservation",
+    "R:D=510:accept_probability",
+    "R:D=510:reject_probability",
+    "R:D=510:terminal_probability",
+    "R:D=510:average_inspected_items",
+    "R:D=510:ratio_identity",
+    "R:D=510:mass_conservation",
+    "R:D=520:accept_probability",
+    "R:D=520:reject_probability",
+    "R:D=520:terminal_probability",
+    "R:D=520:average_inspected_items",
+    "R:D=520:ratio_identity",
+    "R:D=520:mass_conservation",
+    "R:D=530:accept_probability",
+    "R:D=530:reject_probability",
+    "R:D=530:terminal_probability",
+    "R:D=530:average_inspected_items",
+    "R:D=530:ratio_identity",
+    "R:D=530:mass_conservation",
+    "R:D=540:accept_probability",
+    "R:D=540:reject_probability",
+    "R:D=540:terminal_probability",
+    "R:D=540:average_inspected_items",
+    "R:D=540:ratio_identity",
+    "R:D=540:mass_conservation",
+    "R:D=550:accept_probability",
+    "R:D=550:reject_probability",
+    "R:D=550:terminal_probability",
+    "R:D=550:average_inspected_items",
+    "R:D=550:ratio_identity",
+    "R:D=550:mass_conservation",
+    "R:D=560:accept_probability",
+    "R:D=560:reject_probability",
+    "R:D=560:terminal_probability",
+    "R:D=560:average_inspected_items",
+    "R:D=560:ratio_identity",
+    "R:D=560:mass_conservation",
+    "R:D=570:accept_probability",
+    "R:D=570:reject_probability",
+    "R:D=570:terminal_probability",
+    "R:D=570:average_inspected_items",
+    "R:D=570:ratio_identity",
+    "R:D=570:mass_conservation",
+    "R:D=580:accept_probability",
+    "R:D=580:reject_probability",
+    "R:D=580:terminal_probability",
+    "R:D=580:average_inspected_items",
+    "R:D=580:ratio_identity",
+    "R:D=580:mass_conservation",
+    "R:D=590:accept_probability",
+    "R:D=590:reject_probability",
+    "R:D=590:terminal_probability",
+    "R:D=590:average_inspected_items",
+    "R:D=590:ratio_identity",
+    "R:D=590:mass_conservation",
+    "R:D=600:accept_probability",
+    "R:D=600:reject_probability",
+    "R:D=600:terminal_probability",
+    "R:D=600:average_inspected_items",
+    "R:D=600:ratio_identity",
+    "R:D=600:mass_conservation",
+    "R:D=610:accept_probability",
+    "R:D=610:reject_probability",
+    "R:D=610:terminal_probability",
+    "R:D=610:average_inspected_items",
+    "R:D=610:ratio_identity",
+    "R:D=610:mass_conservation",
+    "R:D=620:accept_probability",
+    "R:D=620:reject_probability",
+    "R:D=620:terminal_probability",
+    "R:D=620:average_inspected_items",
+    "R:D=620:ratio_identity",
+    "R:D=620:mass_conservation",
+    "R:D=630:accept_probability",
+    "R:D=630:reject_probability",
+    "R:D=630:terminal_probability",
+    "R:D=630:average_inspected_items",
+    "R:D=630:ratio_identity",
+    "R:D=630:mass_conservation",
+    "R:D=640:accept_probability",
+    "R:D=640:reject_probability",
+    "R:D=640:terminal_probability",
+    "R:D=640:average_inspected_items",
+    "R:D=640:ratio_identity",
+    "R:D=640:mass_conservation",
+    "R:D=650:accept_probability",
+    "R:D=650:reject_probability",
+    "R:D=650:terminal_probability",
+    "R:D=650:average_inspected_items",
+    "R:D=650:ratio_identity",
+    "R:D=650:mass_conservation",
+    "R:D=660:accept_probability",
+    "R:D=660:reject_probability",
+    "R:D=660:terminal_probability",
+    "R:D=660:average_inspected_items",
+    "R:D=660:ratio_identity",
+    "R:D=660:mass_conservation",
+    "R:D=670:accept_probability",
+    "R:D=670:reject_probability",
+    "R:D=670:terminal_probability",
+    "R:D=670:average_inspected_items",
+    "R:D=670:ratio_identity",
+    "R:D=670:mass_conservation",
+    "R:D=680:accept_probability",
+    "R:D=680:reject_probability",
+    "R:D=680:terminal_probability",
+    "R:D=680:average_inspected_items",
+    "R:D=680:ratio_identity",
+    "R:D=680:mass_conservation",
+    "R:D=690:accept_probability",
+    "R:D=690:reject_probability",
+    "R:D=690:terminal_probability",
+    "R:D=690:average_inspected_items",
+    "R:D=690:ratio_identity",
+    "R:D=690:mass_conservation",
+    "R:D=700:accept_probability",
+    "R:D=700:reject_probability",
+    "R:D=700:terminal_probability",
+    "R:D=700:average_inspected_items",
+    "R:D=700:ratio_identity",
+    "R:D=700:mass_conservation",
+    "R:D=710:accept_probability",
+    "R:D=710:reject_probability",
+    "R:D=710:terminal_probability",
+    "R:D=710:average_inspected_items",
+    "R:D=710:ratio_identity",
+    "R:D=710:mass_conservation",
+    "R:D=720:accept_probability",
+    "R:D=720:reject_probability",
+    "R:D=720:terminal_probability",
+    "R:D=720:average_inspected_items",
+    "R:D=720:ratio_identity",
+    "R:D=720:mass_conservation",
+    "R:D=730:accept_probability",
+    "R:D=730:reject_probability",
+    "R:D=730:terminal_probability",
+    "R:D=730:average_inspected_items",
+    "R:D=730:ratio_identity",
+    "R:D=730:mass_conservation",
+    "R:D=740:accept_probability",
+    "R:D=740:reject_probability",
+    "R:D=740:terminal_probability",
+    "R:D=740:average_inspected_items",
+    "R:D=740:ratio_identity",
+    "R:D=740:mass_conservation",
+    "R:D=750:accept_probability",
+    "R:D=750:reject_probability",
+    "R:D=750:terminal_probability",
+    "R:D=750:average_inspected_items",
+    "R:D=750:ratio_identity",
+    "R:D=750:mass_conservation",
+    "R:D=760:accept_probability",
+    "R:D=760:reject_probability",
+    "R:D=760:terminal_probability",
+    "R:D=760:average_inspected_items",
+    "R:D=760:ratio_identity",
+    "R:D=760:mass_conservation",
+    "R:D=770:accept_probability",
+    "R:D=770:reject_probability",
+    "R:D=770:terminal_probability",
+    "R:D=770:average_inspected_items",
+    "R:D=770:ratio_identity",
+    "R:D=770:mass_conservation",
+    "R:D=780:accept_probability",
+    "R:D=780:reject_probability",
+    "R:D=780:terminal_probability",
+    "R:D=780:average_inspected_items",
+    "R:D=780:ratio_identity",
+    "R:D=780:mass_conservation",
+    "R:D=790:accept_probability",
+    "R:D=790:reject_probability",
+    "R:D=790:terminal_probability",
+    "R:D=790:average_inspected_items",
+    "R:D=790:ratio_identity",
+    "R:D=790:mass_conservation",
+    "R:D=800:accept_probability",
+    "R:D=800:reject_probability",
+    "R:D=800:terminal_probability",
+    "R:D=800:average_inspected_items",
+    "R:D=800:ratio_identity",
+    "R:D=800:mass_conservation",
+    "R:D=810:accept_probability",
+    "R:D=810:reject_probability",
+    "R:D=810:terminal_probability",
+    "R:D=810:average_inspected_items",
+    "R:D=810:ratio_identity",
+    "R:D=810:mass_conservation",
+    "R:D=820:accept_probability",
+    "R:D=820:reject_probability",
+    "R:D=820:terminal_probability",
+    "R:D=820:average_inspected_items",
+    "R:D=820:ratio_identity",
+    "R:D=820:mass_conservation",
+    "R:D=830:accept_probability",
+    "R:D=830:reject_probability",
+    "R:D=830:terminal_probability",
+    "R:D=830:average_inspected_items",
+    "R:D=830:ratio_identity",
+    "R:D=830:mass_conservation",
+    "R:D=840:accept_probability",
+    "R:D=840:reject_probability",
+    "R:D=840:terminal_probability",
+    "R:D=840:average_inspected_items",
+    "R:D=840:ratio_identity",
+    "R:D=840:mass_conservation",
+    "R:D=850:accept_probability",
+    "R:D=850:reject_probability",
+    "R:D=850:terminal_probability",
+    "R:D=850:average_inspected_items",
+    "R:D=850:ratio_identity",
+    "R:D=850:mass_conservation",
+    "R:D=860:accept_probability",
+    "R:D=860:reject_probability",
+    "R:D=860:terminal_probability",
+    "R:D=860:average_inspected_items",
+    "R:D=860:ratio_identity",
+    "R:D=860:mass_conservation",
+    "R:D=870:accept_probability",
+    "R:D=870:reject_probability",
+    "R:D=870:terminal_probability",
+    "R:D=870:average_inspected_items",
+    "R:D=870:ratio_identity",
+    "R:D=870:mass_conservation",
+    "R:D=880:accept_probability",
+    "R:D=880:reject_probability",
+    "R:D=880:terminal_probability",
+    "R:D=880:average_inspected_items",
+    "R:D=880:ratio_identity",
+    "R:D=880:mass_conservation",
+    "R:D=890:accept_probability",
+    "R:D=890:reject_probability",
+    "R:D=890:terminal_probability",
+    "R:D=890:average_inspected_items",
+    "R:D=890:ratio_identity",
+    "R:D=890:mass_conservation",
+    "R:D=900:accept_probability",
+    "R:D=900:reject_probability",
+    "R:D=900:terminal_probability",
+    "R:D=900:average_inspected_items",
+    "R:D=900:ratio_identity",
+    "R:D=900:mass_conservation",
+    "R:D=910:accept_probability",
+    "R:D=910:reject_probability",
+    "R:D=910:terminal_probability",
+    "R:D=910:average_inspected_items",
+    "R:D=910:ratio_identity",
+    "R:D=910:mass_conservation",
+    "R:D=920:accept_probability",
+    "R:D=920:reject_probability",
+    "R:D=920:terminal_probability",
+    "R:D=920:average_inspected_items",
+    "R:D=920:ratio_identity",
+    "R:D=920:mass_conservation",
+    "R:D=930:accept_probability",
+    "R:D=930:reject_probability",
+    "R:D=930:terminal_probability",
+    "R:D=930:average_inspected_items",
+    "R:D=930:ratio_identity",
+    "R:D=930:mass_conservation",
+    "R:D=940:accept_probability",
+    "R:D=940:reject_probability",
+    "R:D=940:terminal_probability",
+    "R:D=940:average_inspected_items",
+    "R:D=940:ratio_identity",
+    "R:D=940:mass_conservation",
+    "R:D=950:accept_probability",
+    "R:D=950:reject_probability",
+    "R:D=950:terminal_probability",
+    "R:D=950:average_inspected_items",
+    "R:D=950:ratio_identity",
+    "R:D=950:mass_conservation",
+    "R:D=960:accept_probability",
+    "R:D=960:reject_probability",
+    "R:D=960:terminal_probability",
+    "R:D=960:average_inspected_items",
+    "R:D=960:ratio_identity",
+    "R:D=960:mass_conservation",
+    "R:D=970:accept_probability",
+    "R:D=970:reject_probability",
+    "R:D=970:terminal_probability",
+    "R:D=970:average_inspected_items",
+    "R:D=970:ratio_identity",
+    "R:D=970:mass_conservation",
+    "R:D=980:accept_probability",
+    "R:D=980:reject_probability",
+    "R:D=980:terminal_probability",
+    "R:D=980:average_inspected_items",
+    "R:D=980:ratio_identity",
+    "R:D=980:mass_conservation",
+    "R:D=990:accept_probability",
+    "R:D=990:reject_probability",
+    "R:D=990:terminal_probability",
+    "R:D=990:average_inspected_items",
+    "R:D=990:ratio_identity",
+    "R:D=990:mass_conservation",
+    "R:D=1000:accept_probability",
+    "R:D=1000:reject_probability",
+    "R:D=1000:terminal_probability",
+    "R:D=1000:average_inspected_items",
+    "R:D=1000:ratio_identity",
+    "R:D=1000:mass_conservation",
+    "R:D=0:deterministic_early_stop",
+    "R:D=1000:deterministic_early_stop",
+    "A:D=0:accept_probability",
+    "A:D=0:reject_probability",
+    "A:D=0:terminal_probability",
+    "A:D=0:average_inspected_items",
+    "A:D=0:ratio_identity",
+    "A:D=0:mass_conservation",
+    "A:D=10:accept_probability",
+    "A:D=10:reject_probability",
+    "A:D=10:terminal_probability",
+    "A:D=10:average_inspected_items",
+    "A:D=10:ratio_identity",
+    "A:D=10:mass_conservation",
+    "A:D=20:accept_probability",
+    "A:D=20:reject_probability",
+    "A:D=20:terminal_probability",
+    "A:D=20:average_inspected_items",
+    "A:D=20:ratio_identity",
+    "A:D=20:mass_conservation",
+    "A:D=30:accept_probability",
+    "A:D=30:reject_probability",
+    "A:D=30:terminal_probability",
+    "A:D=30:average_inspected_items",
+    "A:D=30:ratio_identity",
+    "A:D=30:mass_conservation",
+    "A:D=40:accept_probability",
+    "A:D=40:reject_probability",
+    "A:D=40:terminal_probability",
+    "A:D=40:average_inspected_items",
+    "A:D=40:ratio_identity",
+    "A:D=40:mass_conservation",
+    "A:D=50:accept_probability",
+    "A:D=50:reject_probability",
+    "A:D=50:terminal_probability",
+    "A:D=50:average_inspected_items",
+    "A:D=50:ratio_identity",
+    "A:D=50:mass_conservation",
+    "A:D=60:accept_probability",
+    "A:D=60:reject_probability",
+    "A:D=60:terminal_probability",
+    "A:D=60:average_inspected_items",
+    "A:D=60:ratio_identity",
+    "A:D=60:mass_conservation",
+    "A:D=70:accept_probability",
+    "A:D=70:reject_probability",
+    "A:D=70:terminal_probability",
+    "A:D=70:average_inspected_items",
+    "A:D=70:ratio_identity",
+    "A:D=70:mass_conservation",
+    "A:D=80:accept_probability",
+    "A:D=80:reject_probability",
+    "A:D=80:terminal_probability",
+    "A:D=80:average_inspected_items",
+    "A:D=80:ratio_identity",
+    "A:D=80:mass_conservation",
+    "A:D=90:accept_probability",
+    "A:D=90:reject_probability",
+    "A:D=90:terminal_probability",
+    "A:D=90:average_inspected_items",
+    "A:D=90:ratio_identity",
+    "A:D=90:mass_conservation",
+    "A:D=100:accept_probability",
+    "A:D=100:reject_probability",
+    "A:D=100:terminal_probability",
+    "A:D=100:average_inspected_items",
+    "A:D=100:ratio_identity",
+    "A:D=100:mass_conservation",
+    "A:D=101:accept_probability",
+    "A:D=101:reject_probability",
+    "A:D=101:terminal_probability",
+    "A:D=101:average_inspected_items",
+    "A:D=101:ratio_identity",
+    "A:D=101:mass_conservation",
+    "A:D=110:accept_probability",
+    "A:D=110:reject_probability",
+    "A:D=110:terminal_probability",
+    "A:D=110:average_inspected_items",
+    "A:D=110:ratio_identity",
+    "A:D=110:mass_conservation",
+    "A:D=120:accept_probability",
+    "A:D=120:reject_probability",
+    "A:D=120:terminal_probability",
+    "A:D=120:average_inspected_items",
+    "A:D=120:ratio_identity",
+    "A:D=120:mass_conservation",
+    "A:D=130:accept_probability",
+    "A:D=130:reject_probability",
+    "A:D=130:terminal_probability",
+    "A:D=130:average_inspected_items",
+    "A:D=130:ratio_identity",
+    "A:D=130:mass_conservation",
+    "A:D=140:accept_probability",
+    "A:D=140:reject_probability",
+    "A:D=140:terminal_probability",
+    "A:D=140:average_inspected_items",
+    "A:D=140:ratio_identity",
+    "A:D=140:mass_conservation",
+    "A:D=150:accept_probability",
+    "A:D=150:reject_probability",
+    "A:D=150:terminal_probability",
+    "A:D=150:average_inspected_items",
+    "A:D=150:ratio_identity",
+    "A:D=150:mass_conservation",
+    "A:D=160:accept_probability",
+    "A:D=160:reject_probability",
+    "A:D=160:terminal_probability",
+    "A:D=160:average_inspected_items",
+    "A:D=160:ratio_identity",
+    "A:D=160:mass_conservation",
+    "A:D=170:accept_probability",
+    "A:D=170:reject_probability",
+    "A:D=170:terminal_probability",
+    "A:D=170:average_inspected_items",
+    "A:D=170:ratio_identity",
+    "A:D=170:mass_conservation",
+    "A:D=180:accept_probability",
+    "A:D=180:reject_probability",
+    "A:D=180:terminal_probability",
+    "A:D=180:average_inspected_items",
+    "A:D=180:ratio_identity",
+    "A:D=180:mass_conservation",
+    "A:D=190:accept_probability",
+    "A:D=190:reject_probability",
+    "A:D=190:terminal_probability",
+    "A:D=190:average_inspected_items",
+    "A:D=190:ratio_identity",
+    "A:D=190:mass_conservation",
+    "A:D=200:accept_probability",
+    "A:D=200:reject_probability",
+    "A:D=200:terminal_probability",
+    "A:D=200:average_inspected_items",
+    "A:D=200:ratio_identity",
+    "A:D=200:mass_conservation",
+    "A:D=210:accept_probability",
+    "A:D=210:reject_probability",
+    "A:D=210:terminal_probability",
+    "A:D=210:average_inspected_items",
+    "A:D=210:ratio_identity",
+    "A:D=210:mass_conservation",
+    "A:D=220:accept_probability",
+    "A:D=220:reject_probability",
+    "A:D=220:terminal_probability",
+    "A:D=220:average_inspected_items",
+    "A:D=220:ratio_identity",
+    "A:D=220:mass_conservation",
+    "A:D=230:accept_probability",
+    "A:D=230:reject_probability",
+    "A:D=230:terminal_probability",
+    "A:D=230:average_inspected_items",
+    "A:D=230:ratio_identity",
+    "A:D=230:mass_conservation",
+    "A:D=240:accept_probability",
+    "A:D=240:reject_probability",
+    "A:D=240:terminal_probability",
+    "A:D=240:average_inspected_items",
+    "A:D=240:ratio_identity",
+    "A:D=240:mass_conservation",
+    "A:D=250:accept_probability",
+    "A:D=250:reject_probability",
+    "A:D=250:terminal_probability",
+    "A:D=250:average_inspected_items",
+    "A:D=250:ratio_identity",
+    "A:D=250:mass_conservation",
+    "A:D=260:accept_probability",
+    "A:D=260:reject_probability",
+    "A:D=260:terminal_probability",
+    "A:D=260:average_inspected_items",
+    "A:D=260:ratio_identity",
+    "A:D=260:mass_conservation",
+    "A:D=270:accept_probability",
+    "A:D=270:reject_probability",
+    "A:D=270:terminal_probability",
+    "A:D=270:average_inspected_items",
+    "A:D=270:ratio_identity",
+    "A:D=270:mass_conservation",
+    "A:D=280:accept_probability",
+    "A:D=280:reject_probability",
+    "A:D=280:terminal_probability",
+    "A:D=280:average_inspected_items",
+    "A:D=280:ratio_identity",
+    "A:D=280:mass_conservation",
+    "A:D=290:accept_probability",
+    "A:D=290:reject_probability",
+    "A:D=290:terminal_probability",
+    "A:D=290:average_inspected_items",
+    "A:D=290:ratio_identity",
+    "A:D=290:mass_conservation",
+    "A:D=300:accept_probability",
+    "A:D=300:reject_probability",
+    "A:D=300:terminal_probability",
+    "A:D=300:average_inspected_items",
+    "A:D=300:ratio_identity",
+    "A:D=300:mass_conservation",
+    "A:D=310:accept_probability",
+    "A:D=310:reject_probability",
+    "A:D=310:terminal_probability",
+    "A:D=310:average_inspected_items",
+    "A:D=310:ratio_identity",
+    "A:D=310:mass_conservation",
+    "A:D=320:accept_probability",
+    "A:D=320:reject_probability",
+    "A:D=320:terminal_probability",
+    "A:D=320:average_inspected_items",
+    "A:D=320:ratio_identity",
+    "A:D=320:mass_conservation",
+    "A:D=330:accept_probability",
+    "A:D=330:reject_probability",
+    "A:D=330:terminal_probability",
+    "A:D=330:average_inspected_items",
+    "A:D=330:ratio_identity",
+    "A:D=330:mass_conservation",
+    "A:D=340:accept_probability",
+    "A:D=340:reject_probability",
+    "A:D=340:terminal_probability",
+    "A:D=340:average_inspected_items",
+    "A:D=340:ratio_identity",
+    "A:D=340:mass_conservation",
+    "A:D=350:accept_probability",
+    "A:D=350:reject_probability",
+    "A:D=350:terminal_probability",
+    "A:D=350:average_inspected_items",
+    "A:D=350:ratio_identity",
+    "A:D=350:mass_conservation",
+    "A:D=360:accept_probability",
+    "A:D=360:reject_probability",
+    "A:D=360:terminal_probability",
+    "A:D=360:average_inspected_items",
+    "A:D=360:ratio_identity",
+    "A:D=360:mass_conservation",
+    "A:D=370:accept_probability",
+    "A:D=370:reject_probability",
+    "A:D=370:terminal_probability",
+    "A:D=370:average_inspected_items",
+    "A:D=370:ratio_identity",
+    "A:D=370:mass_conservation",
+    "A:D=380:accept_probability",
+    "A:D=380:reject_probability",
+    "A:D=380:terminal_probability",
+    "A:D=380:average_inspected_items",
+    "A:D=380:ratio_identity",
+    "A:D=380:mass_conservation",
+    "A:D=390:accept_probability",
+    "A:D=390:reject_probability",
+    "A:D=390:terminal_probability",
+    "A:D=390:average_inspected_items",
+    "A:D=390:ratio_identity",
+    "A:D=390:mass_conservation",
+    "A:D=400:accept_probability",
+    "A:D=400:reject_probability",
+    "A:D=400:terminal_probability",
+    "A:D=400:average_inspected_items",
+    "A:D=400:ratio_identity",
+    "A:D=400:mass_conservation",
+    "A:D=410:accept_probability",
+    "A:D=410:reject_probability",
+    "A:D=410:terminal_probability",
+    "A:D=410:average_inspected_items",
+    "A:D=410:ratio_identity",
+    "A:D=410:mass_conservation",
+    "A:D=420:accept_probability",
+    "A:D=420:reject_probability",
+    "A:D=420:terminal_probability",
+    "A:D=420:average_inspected_items",
+    "A:D=420:ratio_identity",
+    "A:D=420:mass_conservation",
+    "A:D=430:accept_probability",
+    "A:D=430:reject_probability",
+    "A:D=430:terminal_probability",
+    "A:D=430:average_inspected_items",
+    "A:D=430:ratio_identity",
+    "A:D=430:mass_conservation",
+    "A:D=440:accept_probability",
+    "A:D=440:reject_probability",
+    "A:D=440:terminal_probability",
+    "A:D=440:average_inspected_items",
+    "A:D=440:ratio_identity",
+    "A:D=440:mass_conservation",
+    "A:D=450:accept_probability",
+    "A:D=450:reject_probability",
+    "A:D=450:terminal_probability",
+    "A:D=450:average_inspected_items",
+    "A:D=450:ratio_identity",
+    "A:D=450:mass_conservation",
+    "A:D=460:accept_probability",
+    "A:D=460:reject_probability",
+    "A:D=460:terminal_probability",
+    "A:D=460:average_inspected_items",
+    "A:D=460:ratio_identity",
+    "A:D=460:mass_conservation",
+    "A:D=470:accept_probability",
+    "A:D=470:reject_probability",
+    "A:D=470:terminal_probability",
+    "A:D=470:average_inspected_items",
+    "A:D=470:ratio_identity",
+    "A:D=470:mass_conservation",
+    "A:D=480:accept_probability",
+    "A:D=480:reject_probability",
+    "A:D=480:terminal_probability",
+    "A:D=480:average_inspected_items",
+    "A:D=480:ratio_identity",
+    "A:D=480:mass_conservation",
+    "A:D=490:accept_probability",
+    "A:D=490:reject_probability",
+    "A:D=490:terminal_probability",
+    "A:D=490:average_inspected_items",
+    "A:D=490:ratio_identity",
+    "A:D=490:mass_conservation",
+    "A:D=500:accept_probability",
+    "A:D=500:reject_probability",
+    "A:D=500:terminal_probability",
+    "A:D=500:average_inspected_items",
+    "A:D=500:ratio_identity",
+    "A:D=500:mass_conservation",
+    "A:D=510:accept_probability",
+    "A:D=510:reject_probability",
+    "A:D=510:terminal_probability",
+    "A:D=510:average_inspected_items",
+    "A:D=510:ratio_identity",
+    "A:D=510:mass_conservation",
+    "A:D=520:accept_probability",
+    "A:D=520:reject_probability",
+    "A:D=520:terminal_probability",
+    "A:D=520:average_inspected_items",
+    "A:D=520:ratio_identity",
+    "A:D=520:mass_conservation",
+    "A:D=530:accept_probability",
+    "A:D=530:reject_probability",
+    "A:D=530:terminal_probability",
+    "A:D=530:average_inspected_items",
+    "A:D=530:ratio_identity",
+    "A:D=530:mass_conservation",
+    "A:D=540:accept_probability",
+    "A:D=540:reject_probability",
+    "A:D=540:terminal_probability",
+    "A:D=540:average_inspected_items",
+    "A:D=540:ratio_identity",
+    "A:D=540:mass_conservation",
+    "A:D=550:accept_probability",
+    "A:D=550:reject_probability",
+    "A:D=550:terminal_probability",
+    "A:D=550:average_inspected_items",
+    "A:D=550:ratio_identity",
+    "A:D=550:mass_conservation",
+    "A:D=560:accept_probability",
+    "A:D=560:reject_probability",
+    "A:D=560:terminal_probability",
+    "A:D=560:average_inspected_items",
+    "A:D=560:ratio_identity",
+    "A:D=560:mass_conservation",
+    "A:D=570:accept_probability",
+    "A:D=570:reject_probability",
+    "A:D=570:terminal_probability",
+    "A:D=570:average_inspected_items",
+    "A:D=570:ratio_identity",
+    "A:D=570:mass_conservation",
+    "A:D=580:accept_probability",
+    "A:D=580:reject_probability",
+    "A:D=580:terminal_probability",
+    "A:D=580:average_inspected_items",
+    "A:D=580:ratio_identity",
+    "A:D=580:mass_conservation",
+    "A:D=590:accept_probability",
+    "A:D=590:reject_probability",
+    "A:D=590:terminal_probability",
+    "A:D=590:average_inspected_items",
+    "A:D=590:ratio_identity",
+    "A:D=590:mass_conservation",
+    "A:D=600:accept_probability",
+    "A:D=600:reject_probability",
+    "A:D=600:terminal_probability",
+    "A:D=600:average_inspected_items",
+    "A:D=600:ratio_identity",
+    "A:D=600:mass_conservation",
+    "A:D=610:accept_probability",
+    "A:D=610:reject_probability",
+    "A:D=610:terminal_probability",
+    "A:D=610:average_inspected_items",
+    "A:D=610:ratio_identity",
+    "A:D=610:mass_conservation",
+    "A:D=620:accept_probability",
+    "A:D=620:reject_probability",
+    "A:D=620:terminal_probability",
+    "A:D=620:average_inspected_items",
+    "A:D=620:ratio_identity",
+    "A:D=620:mass_conservation",
+    "A:D=630:accept_probability",
+    "A:D=630:reject_probability",
+    "A:D=630:terminal_probability",
+    "A:D=630:average_inspected_items",
+    "A:D=630:ratio_identity",
+    "A:D=630:mass_conservation",
+    "A:D=640:accept_probability",
+    "A:D=640:reject_probability",
+    "A:D=640:terminal_probability",
+    "A:D=640:average_inspected_items",
+    "A:D=640:ratio_identity",
+    "A:D=640:mass_conservation",
+    "A:D=650:accept_probability",
+    "A:D=650:reject_probability",
+    "A:D=650:terminal_probability",
+    "A:D=650:average_inspected_items",
+    "A:D=650:ratio_identity",
+    "A:D=650:mass_conservation",
+    "A:D=660:accept_probability",
+    "A:D=660:reject_probability",
+    "A:D=660:terminal_probability",
+    "A:D=660:average_inspected_items",
+    "A:D=660:ratio_identity",
+    "A:D=660:mass_conservation",
+    "A:D=670:accept_probability",
+    "A:D=670:reject_probability",
+    "A:D=670:terminal_probability",
+    "A:D=670:average_inspected_items",
+    "A:D=670:ratio_identity",
+    "A:D=670:mass_conservation",
+    "A:D=680:accept_probability",
+    "A:D=680:reject_probability",
+    "A:D=680:terminal_probability",
+    "A:D=680:average_inspected_items",
+    "A:D=680:ratio_identity",
+    "A:D=680:mass_conservation",
+    "A:D=690:accept_probability",
+    "A:D=690:reject_probability",
+    "A:D=690:terminal_probability",
+    "A:D=690:average_inspected_items",
+    "A:D=690:ratio_identity",
+    "A:D=690:mass_conservation",
+    "A:D=700:accept_probability",
+    "A:D=700:reject_probability",
+    "A:D=700:terminal_probability",
+    "A:D=700:average_inspected_items",
+    "A:D=700:ratio_identity",
+    "A:D=700:mass_conservation",
+    "A:D=710:accept_probability",
+    "A:D=710:reject_probability",
+    "A:D=710:terminal_probability",
+    "A:D=710:average_inspected_items",
+    "A:D=710:ratio_identity",
+    "A:D=710:mass_conservation",
+    "A:D=720:accept_probability",
+    "A:D=720:reject_probability",
+    "A:D=720:terminal_probability",
+    "A:D=720:average_inspected_items",
+    "A:D=720:ratio_identity",
+    "A:D=720:mass_conservation",
+    "A:D=730:accept_probability",
+    "A:D=730:reject_probability",
+    "A:D=730:terminal_probability",
+    "A:D=730:average_inspected_items",
+    "A:D=730:ratio_identity",
+    "A:D=730:mass_conservation",
+    "A:D=740:accept_probability",
+    "A:D=740:reject_probability",
+    "A:D=740:terminal_probability",
+    "A:D=740:average_inspected_items",
+    "A:D=740:ratio_identity",
+    "A:D=740:mass_conservation",
+    "A:D=750:accept_probability",
+    "A:D=750:reject_probability",
+    "A:D=750:terminal_probability",
+    "A:D=750:average_inspected_items",
+    "A:D=750:ratio_identity",
+    "A:D=750:mass_conservation",
+    "A:D=760:accept_probability",
+    "A:D=760:reject_probability",
+    "A:D=760:terminal_probability",
+    "A:D=760:average_inspected_items",
+    "A:D=760:ratio_identity",
+    "A:D=760:mass_conservation",
+    "A:D=770:accept_probability",
+    "A:D=770:reject_probability",
+    "A:D=770:terminal_probability",
+    "A:D=770:average_inspected_items",
+    "A:D=770:ratio_identity",
+    "A:D=770:mass_conservation",
+    "A:D=780:accept_probability",
+    "A:D=780:reject_probability",
+    "A:D=780:terminal_probability",
+    "A:D=780:average_inspected_items",
+    "A:D=780:ratio_identity",
+    "A:D=780:mass_conservation",
+    "A:D=790:accept_probability",
+    "A:D=790:reject_probability",
+    "A:D=790:terminal_probability",
+    "A:D=790:average_inspected_items",
+    "A:D=790:ratio_identity",
+    "A:D=790:mass_conservation",
+    "A:D=800:accept_probability",
+    "A:D=800:reject_probability",
+    "A:D=800:terminal_probability",
+    "A:D=800:average_inspected_items",
+    "A:D=800:ratio_identity",
+    "A:D=800:mass_conservation",
+    "A:D=810:accept_probability",
+    "A:D=810:reject_probability",
+    "A:D=810:terminal_probability",
+    "A:D=810:average_inspected_items",
+    "A:D=810:ratio_identity",
+    "A:D=810:mass_conservation",
+    "A:D=820:accept_probability",
+    "A:D=820:reject_probability",
+    "A:D=820:terminal_probability",
+    "A:D=820:average_inspected_items",
+    "A:D=820:ratio_identity",
+    "A:D=820:mass_conservation",
+    "A:D=830:accept_probability",
+    "A:D=830:reject_probability",
+    "A:D=830:terminal_probability",
+    "A:D=830:average_inspected_items",
+    "A:D=830:ratio_identity",
+    "A:D=830:mass_conservation",
+    "A:D=840:accept_probability",
+    "A:D=840:reject_probability",
+    "A:D=840:terminal_probability",
+    "A:D=840:average_inspected_items",
+    "A:D=840:ratio_identity",
+    "A:D=840:mass_conservation",
+    "A:D=850:accept_probability",
+    "A:D=850:reject_probability",
+    "A:D=850:terminal_probability",
+    "A:D=850:average_inspected_items",
+    "A:D=850:ratio_identity",
+    "A:D=850:mass_conservation",
+    "A:D=860:accept_probability",
+    "A:D=860:reject_probability",
+    "A:D=860:terminal_probability",
+    "A:D=860:average_inspected_items",
+    "A:D=860:ratio_identity",
+    "A:D=860:mass_conservation",
+    "A:D=870:accept_probability",
+    "A:D=870:reject_probability",
+    "A:D=870:terminal_probability",
+    "A:D=870:average_inspected_items",
+    "A:D=870:ratio_identity",
+    "A:D=870:mass_conservation",
+    "A:D=880:accept_probability",
+    "A:D=880:reject_probability",
+    "A:D=880:terminal_probability",
+    "A:D=880:average_inspected_items",
+    "A:D=880:ratio_identity",
+    "A:D=880:mass_conservation",
+    "A:D=890:accept_probability",
+    "A:D=890:reject_probability",
+    "A:D=890:terminal_probability",
+    "A:D=890:average_inspected_items",
+    "A:D=890:ratio_identity",
+    "A:D=890:mass_conservation",
+    "A:D=900:accept_probability",
+    "A:D=900:reject_probability",
+    "A:D=900:terminal_probability",
+    "A:D=900:average_inspected_items",
+    "A:D=900:ratio_identity",
+    "A:D=900:mass_conservation",
+    "A:D=910:accept_probability",
+    "A:D=910:reject_probability",
+    "A:D=910:terminal_probability",
+    "A:D=910:average_inspected_items",
+    "A:D=910:ratio_identity",
+    "A:D=910:mass_conservation",
+    "A:D=920:accept_probability",
+    "A:D=920:reject_probability",
+    "A:D=920:terminal_probability",
+    "A:D=920:average_inspected_items",
+    "A:D=920:ratio_identity",
+    "A:D=920:mass_conservation",
+    "A:D=930:accept_probability",
+    "A:D=930:reject_probability",
+    "A:D=930:terminal_probability",
+    "A:D=930:average_inspected_items",
+    "A:D=930:ratio_identity",
+    "A:D=930:mass_conservation",
+    "A:D=940:accept_probability",
+    "A:D=940:reject_probability",
+    "A:D=940:terminal_probability",
+    "A:D=940:average_inspected_items",
+    "A:D=940:ratio_identity",
+    "A:D=940:mass_conservation",
+    "A:D=950:accept_probability",
+    "A:D=950:reject_probability",
+    "A:D=950:terminal_probability",
+    "A:D=950:average_inspected_items",
+    "A:D=950:ratio_identity",
+    "A:D=950:mass_conservation",
+    "A:D=960:accept_probability",
+    "A:D=960:reject_probability",
+    "A:D=960:terminal_probability",
+    "A:D=960:average_inspected_items",
+    "A:D=960:ratio_identity",
+    "A:D=960:mass_conservation",
+    "A:D=970:accept_probability",
+    "A:D=970:reject_probability",
+    "A:D=970:terminal_probability",
+    "A:D=970:average_inspected_items",
+    "A:D=970:ratio_identity",
+    "A:D=970:mass_conservation",
+    "A:D=980:accept_probability",
+    "A:D=980:reject_probability",
+    "A:D=980:terminal_probability",
+    "A:D=980:average_inspected_items",
+    "A:D=980:ratio_identity",
+    "A:D=980:mass_conservation",
+    "A:D=990:accept_probability",
+    "A:D=990:reject_probability",
+    "A:D=990:terminal_probability",
+    "A:D=990:average_inspected_items",
+    "A:D=990:ratio_identity",
+    "A:D=990:mass_conservation",
+    "A:D=1000:accept_probability",
+    "A:D=1000:reject_probability",
+    "A:D=1000:terminal_probability",
+    "A:D=1000:average_inspected_items",
+    "A:D=1000:ratio_identity",
+    "A:D=1000:mass_conservation",
+    "A:D=0:deterministic_early_stop",
+    "A:D=1000:deterministic_early_stop"
+  ],
+  "records": [
+    {
+      "scenario": "R",
+      "D": 0,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 10,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 20,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 30,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 40,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 50,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 60,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 70,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 80,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 90,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 100,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 101,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 110,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 120,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 130,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 140,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 150,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 160,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 170,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 180,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 190,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 200,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 210,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 220,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 230,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 240,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 250,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 260,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 270,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 280,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 290,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 300,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 310,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 320,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 330,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 340,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 350,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 360,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 370,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 380,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 390,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 400,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 410,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 420,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 430,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 440,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 450,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 460,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 470,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 480,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 490,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 500,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 510,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 520,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 530,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 540,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 550,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 560,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 570,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 580,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 590,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 600,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 610,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 620,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 630,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 640,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 650,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 660,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 670,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 680,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 690,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 700,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 710,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 720,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 730,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 740,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 750,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 760,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 770,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 780,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 790,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 800,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 810,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 820,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 830,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 840,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 850,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 860,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 870,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 880,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 890,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 900,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 910,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 920,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 930,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 940,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 950,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 960,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 970,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 980,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 990,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "R",
+      "D": 1000,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 0,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 10,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 20,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 30,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 40,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 50,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 60,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 70,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 80,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 90,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 100,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 101,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 110,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 120,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 130,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 140,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 150,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 160,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 170,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 180,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 190,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 200,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 210,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 220,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 230,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 240,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 250,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 260,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 270,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 280,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 290,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 300,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 310,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 320,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 330,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 340,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 350,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 360,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 370,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 380,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 390,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 400,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 410,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 420,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 430,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 440,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 450,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 460,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 470,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 480,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 490,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 500,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 510,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 520,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 530,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 540,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 550,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 560,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 570,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 580,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 590,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 600,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 610,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 620,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 630,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 640,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 650,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 660,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 670,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 680,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 690,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 700,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 710,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 720,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 730,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 740,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 750,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 760,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 770,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 780,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 790,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 800,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 810,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 820,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 830,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 840,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 850,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 860,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 870,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 880,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 890,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 900,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 910,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 920,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 930,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 940,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 950,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 960,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 970,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 980,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 990,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    },
+    {
+      "scenario": "A",
+      "D": 1000,
+      "checks": {
+        "accept_probability": true,
+        "reject_probability": true,
+        "terminal_probability": true,
+        "average_inspected_items": true,
+        "ratio_identity": true,
+        "mass_conservation": true
+      }
+    }
+  ],
+  "claim_boundary": "confirms exact plotted expectations and probability identities; does not claim the frozen N=1000 thresholds are globally optimal"
+}

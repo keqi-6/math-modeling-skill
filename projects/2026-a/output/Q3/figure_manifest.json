@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0",
+  "question": "Q3",
+  "visual_id": "Q3_MOISTURE_AND_TERMINAL",
+  "data_driven_visual": true,
+  "created_at": "2026-09-10T19:54:52.313126+00:00",
+  "purpose": "Relate the full moisture history to the strict whole-node endpoint that four-decimal output cannot resolve.",
+  "supported_claim": "A slowly drying interior controls completion; the last two integer seconds straddle the strict threshold in the stored nominal trajectory.",
+  "source_identities": {
+    "result": {
+      "path": "output/Q2/run_n10240_startsafe.npz",
+      "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+      "size": 38314283
+    },
+    "metadata": {
+      "path": "output/Q2/run_n10240_startsafe.json",
+      "sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+      "size": 2477
+    },
+    "specification": {
+      "path": "planning/Q3/model_spec.md",
+      "sha256": "90a61593754bf52d1a9ec47e5e1d1f6d2224bec60c49e8eee9c5efb4508af6d9",
+      "size": 10517
+    },
+    "summary": {
+      "path": "output/Q3/summary_values.json",
+      "sha256": "357911e9e349e6e7772d861da285bf8b1fc2d473a236b82216ace243c7162f72",
+      "size": 57514
+    },
+    "workbook_audit": {
+      "path": "output/Q3/workbook_audit.json",
+      "sha256": "030faa9eef5b8e539818b0ea53b3b0f162c7d716ea6cc0455c88a7b4811f15e0",
+      "size": 19795
+    },
+    "generator": {
+      "path": "src/Q3/plot_results.py",
+      "sha256": "5943f5cc33f533e464fd2e5f5ddf07749ca768d1c03baac2e2d1a0b46470e14f",
+      "size": 13606
+    }
+  },
+  "generation_argv": [
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+    "src/Q3/plot_results.py",
+    "--project-root",
+    ".",
+    "--output-dir",
+    "output/Q3"
+  ],
+  "consumers": [
+    "docs/Q3/solution_brief.md:7.3"
+  ],
+  "table_relation": "Table5 provides exact 6h and terminal queries; the figure supplies full temporal structure and enlarged threshold differences.",
+  "panels": [
+    {
+      "id": "a",
+      "interval_s": [
+        0,
+        206927
+      ],
+      "field": "moisture_kg_kg",
+      "columns": [
+        0,
+        5,
+        10,
+        15,
+        20
+      ],
+      "sample_count_per_radius": 206928
+    },
+    {
+      "id": "b",
+      "interval_s": [
+        206922,
+        206927
+      ],
+      "field": "max_moisture_kg_kg",
+      "node_scope": "All 10241 original mesh nodes",
+      "seconds": [
+        206922,
+        206923,
+        206924,
+        206925,
+        206926,
+        206927
+      ],
+      "unrounded_maxima": [
+        0.15000120538198428,
+        0.15000091412706162,
+        0.15000062287482752,
+        0.1500003316252819,
+        0.15000004037842476,
+        0.1499997491345901
+      ],
+      "scaled_threshold_excess": [
+        1.2053819842816615,
+        0.9141270616297437,
+        0.6228748275216578,
+        0.3316252819018928,
+        0.04037842477044862,
+        -0.2508654098898333
+      ],
+      "crossing_marker": {
+        "time_s": 206926.13864059298,
+        "max_moisture_kg_kg": 0.15,
+        "source": "Stored full-mesh crossing snapshot"
+      }
+    }
+  ],
+  "transformations": [
+    "Panel a uses every stored integer second through actual endpoint; seconds converted to hours.",
+    "Panel b subtracts n_end from time and scales (M_N-0.15) by 1e6; all six integer values are displayed.",
+    "The crossing marker comes from its separate stored snapshot; connecting integer points is a visual aid, not a newly fitted trajectory.",
+    "No smoothing, altered result values or new model run."
+  ],
+  "visual_encoding": {
+    "radius_cm": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "colors": [
+      "#0072B2",
+      "#D55E00",
+      "#009E73",
+      "#CC79A7",
+      "#343434"
+    ],
+    "line_styles": [
+      "-",
+      "--",
+      "-.",
+      ":",
+      "(0, (5, 1, 1, 1))"
+    ],
+    "markers": [
+      "o",
+      "s",
+      "^",
+      "D",
+      "v"
+    ],
+    "radius_encoding": "Same five radius styles as earlier accepted Q2 plots",
+    "global_maximum": "Black open circles at integer seconds; open diamond at continuous crossing",
+    "threshold": "Grey dashed line"
+  },
+  "font": {
+    "family": "Microsoft YaHei",
+    "file": "C:\\Windows\\Fonts\\msyh.ttc",
+    "sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f",
+    "glyph_coverage": "All planned Chinese labels covered"
+  },
+  "matplotlib_version": "3.11.1",
+  "target": {
+    "width_mm": 190.5,
+    "height_mm": 96.52,
+    "dpi": 240,
+    "pixels": [
+      1800,
+      912
+    ],
+    "smallest_font_pt": 7.8,
+    "minimum_main_linewidth_pt": 1.05
+  },
+  "outputs": [
+    {
+      "path": "output/Q3/field_evolution.png",
+      "sha256": "045d1a02a051c2dafb194591fb460bea6c0aad416033d68fa9c9cbcc6e2cb853",
+      "size": 172506
+    }
+  ],
+  "caption_draft": "问题3主情景的含水率历程与严格终点。左图为五个固定半径的未舍入轨迹，灰线为0.15阈值；右图放大全节点最大值在最后几秒的阈值差，并标出连续穿越事件。右图缩放仅用于分辨严格比较，不增加数值精度。",
+  "claim_boundary": [
+    "The strict endpoint is for the selected N10240 trajectory; neighboring grids differ by one integer second.",
+    "The two panels have different vertical scales and time units."
+  ],
+  "acceptance": {
+    "numerical_source_binding": "Passing Q3 workbook audit and unchanged frozen numerical source/specification checked",
+    "independent_png_visual_review": {
+      "status": "pass",
+      "reviewer": "/root",
+      "image_sha256": "045d1a02a051c2dafb194591fb460bea6c0aad416033d68fa9c9cbcc6e2cb853",
+      "scope": "Root independently displayed this exact final standalone PNG; no full manuscript-page review claimed.",
+      "observations": [
+        "Both numeric annotations are separated from curves, axes and legend.",
+        "All five radial series use distinct line styles and markers.",
+        "Both axes and units, threshold, crossing diamond and integer-second points match the caption and intended claim."
+      ]
+    },
+    "grayscale_review": {
+      "status": "pass",
+      "reviewer": "/root/q1_data_audit",
+      "diagnostic_path": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\field_evolution_grayscale_final_qa.png",
+      "diagnostic_sha256": "ee498b8b2aad8dfab73167ab54d1dfe4627f3357d4cf9fff760e599c3b86011c",
+      "scope": "Temporary grayscale version of unchanged final PNG actually displayed; line styles, marker shapes, threshold and legend remain interpretable."
+    },
+    "final_manuscript_size_review": "Standalone target 190.5x96.52 mm at 240 dpi reviewed for legibility; future full manuscript-page placement remains unreviewed.",
+    "formal_visual_acceptance": "Standalone figure visual review passed; project-state acceptance remains under the sole state controller.",
+    "actual_png_visual_review": {
+      "status": "pass",
+      "reviewer": "/root/q1_data_audit",
+      "image_sha256": "045d1a02a051c2dafb194591fb460bea6c0aad416033d68fa9c9cbcc6e2cb853",
+      "scope": "Actual final 1800x912 standalone PNG displayed after both label-only corrections; both panels, axes, labels and legends checked.",
+      "observations": [
+        "Five radius line styles and marker shapes agree with the legend.",
+        "Both terminal annotations are separated from curves, axes and legend.",
+        "The last six actual integer samples, stored crossing event, time units and threshold-excess scaling are explicit."
+      ]
+    }
+  },
+  "layout_iterations": [
+    {
+      "reason": "First actual PNG terminal annotation intersected lower axis; only last annotation offset/alignment changed.",
+      "png_sha256": "181851b2589695efce6e020f787603d26921c177347b9b6f1067163cc8c248c2",
+      "manifest_sha256": "ef01b7469f73bf0217b58327f81dc27598764ce57ae106bab448dccadf95e13e",
+      "source_sha256": "fd75f1b090470cbdc3976aa0219223b06ef12fd05dece4b390a7f715df727a7f",
+      "wrapper_elapsed_s": 1.86,
+      "preserved_directory": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\first_plot_layout"
+    },
+    {
+      "reason": "Root actual review found previous-second annotation intersected curve; only its offset changed from(-20,33) to(-25,60).",
+      "png_sha256": "ae2e16df9b368c4917244458389170b1321c9621c36b4c10ba25d21b9a450f94",
+      "manifest_sha256": "ba575afa063eabe442977bf0208993bdc5e4d8b869f1494f584c0a928f9b0ca3",
+      "source_sha256": "c26d4e94dfef0eb7b7a5dbab9399ee378a24e9c9a3d8d22d8437775a5e47db6a",
+      "wrapper_elapsed_s": 1.875,
+      "preserved_directory": "~\\AppData\\Local\\Temp\\cumcm-q3-workbook\\second_plot_layout"
+    }
+  ],
+  "final_render": {
+    "source_sha256": "5943f5cc33f533e464fd2e5f5ddf07749ca768d1c03baac2e2d1a0b46470e14f",
+    "wrapper_elapsed_s": 1.859,
+    "exit_code": 0,
+    "source_data_changed": false
+  }
+}

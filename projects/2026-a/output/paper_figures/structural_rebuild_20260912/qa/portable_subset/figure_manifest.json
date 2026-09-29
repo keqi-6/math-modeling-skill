@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "generator_file": "build_restructured_figures.py",
+  "generator_sha256": "13d54d7ac2150511e83eb38a1fd6874df8ef77586ef227cc6786b447fb11234f",
+  "compact_file": "restructured_figure_data.json",
+  "compact_sha256": "7f61b4c1b9103163e1ab291ff65c0b97382aa370f5d2b6082888c6575c0ddd05",
+  "figures": [
+    {
+      "data_driven_visual": true,
+      "source_file": "run_n10240_startsafe.npz",
+      "quantity": "Natural logarithm of local diffusivity relative to its uniform initial value; dimensionless.",
+      "sampling": "0.5, 1.5 and 3 h, centre and surface.",
+      "interpretation": "Exact algebraic decomposition along one main trajectory; not independent causal effects or alternate simulations.",
+      "identity_residual": 1.6653345369377348e-15,
+      "id": "2-2",
+      "name": "fig09_q2_diffusivity_decomposition",
+      "outputs": {
+        "png": {
+          "file": "fig09_q2_diffusivity_decomposition.png",
+          "sha256": "768b60e59e97b9ed94b1a1f9a51b6bfa0b49fece792fb3bc6ac46bfe87534fcc"
+        },
+        "pdf": {
+          "file": "fig09_q2_diffusivity_decomposition.pdf",
+          "sha256": "1a9cdee5c26e713e6324584b65ecad0e27e344f8bd5a8d01a7de68e7d45eb117"
+        },
+        "svg": {
+          "file": "fig09_q2_diffusivity_decomposition.svg",
+          "sha256": "d8e19486e9f248350fdab717319ff5cd562af7d368dadda3d7721dbf69064cda"
+        }
+      },
+      "width_cm": 15.8,
+      "height_cm": 7.3,
+      "font": "Microsoft YaHei",
+      "font_size_pt": 9,
+      "solver_executed": false
+    }
+  ],
+  "qa_rendered": false,
+  "human_visual_acceptance": "not implied by successful generation"
+}

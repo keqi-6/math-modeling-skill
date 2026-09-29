@@ -1,0 +1,62 @@
+{
+  "ast": [
+    {
+      "source": "src/Q2/solve.py",
+      "target": "q23_model.py",
+      "object": "System",
+      "equal": true
+    },
+    {
+      "source": "src/Q2/solve.py",
+      "target": "q23_model.py",
+      "object": "Recorder",
+      "equal": true
+    },
+    {
+      "source": "src/Q2/solve.py",
+      "target": "q23_model.py",
+      "object": "solve",
+      "equal": true
+    }
+  ],
+  "numerical": [
+    {
+      "case": "q23",
+      "elapsed_s": 159.71664820000296,
+      "fields": {
+        "temperature_C": 0.0,
+        "moisture_kg_kg": 0.0,
+        "max_moisture_kg_kg": 0.0,
+        "temperature_mean": 0.0,
+        "moisture_mean": 0.0
+      },
+      "snapshots": {
+        "temperature_snapshots@0": 0.0,
+        "moisture_snapshots@0": 0.0,
+        "temperature_snapshots@1800": 0.0,
+        "moisture_snapshots@1800": 0.0,
+        "temperature_snapshots@3600": 0.0,
+        "moisture_snapshots@3600": 0.0,
+        "temperature_snapshots@5400": 0.0,
+        "moisture_snapshots@5400": 0.0,
+        "temperature_snapshots@7200": 0.0,
+        "moisture_snapshots@7200": 0.0,
+        "temperature_snapshots@9000": 0.0,
+        "moisture_snapshots@9000": 0.0,
+        "temperature_snapshots@10800": 0.0,
+        "moisture_snapshots@10800": 0.0
+      },
+      "new_sha256": "76e613f95817b5067c9466c7c28451323fdd0b9ad36ece826e3315843a621778",
+      "original_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b"
+    }
+  ],
+  "workbooks": [
+    {
+      "workbook": "result2.xlsx",
+      "compared_cells": 475244,
+      "difference_count": 0,
+      "examples": []
+    }
+  ],
+  "pass": true
+}

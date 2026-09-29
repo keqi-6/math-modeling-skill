@@ -1,0 +1,42 @@
+{
+  "role": "internal visual-design sample; not part of briefs or submissions",
+  "data_driven_visual": true,
+  "source": "output/Q2/run_n10240_startsafe.npz",
+  "source_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "formula": "Original problem Appendix 3",
+  "state_rectangle": {
+    "T_C": [
+      28,
+      50
+    ],
+    "C_kg_kg": [
+      1,
+      2.55
+    ]
+  },
+  "domain_meaning": "Constitutive function evaluated over a rectangle containing the first-three-hour states; all rectangle pairs are not claimed to have occurred in the PDE trajectory.",
+  "trajectories": "Minute samples of the existing center/surface states, 0 to 10800 s; markers at 0.5,1.5,3 h.",
+  "rendering": "Small vertical line offset only prevents z-fighting; constitutive values and plane projections are unaltered.",
+  "normalization": "No normalization; D axis displays physical D times 1e9.",
+  "mathematical_checks": "D increases with C and T; k increases with C and is constant along T.",
+  "qa_views": [
+    "property_response_sample.png",
+    "property_response_sample_no_text.png",
+    "property_response_sample_grayscale.png",
+    "property_response_sample_page_width.png"
+  ],
+  "quantity_ranges": [
+    {
+      "quantity": "D",
+      "minimum": 4.291569633044881e-09,
+      "maximum": 1.347096821741582e-08
+    },
+    {
+      "quantity": "k",
+      "minimum": 0.4,
+      "maximum": 0.48295774647887324
+    }
+  ],
+  "generator_sha256": "b01e0aabc222460fe3800e961002144ae89c59d5a7ae84e0b4e5e79e64680edb",
+  "actual_visual_review": "Opened color, no-text, grayscale and 1130-pixel-width views. Corrected adjacent axis-corner tick crowding and rerendered. Surface shape, floor contours and solid/dashed state paths remain legible without text and in grayscale. Not embedded in briefs or submissions."
+}

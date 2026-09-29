@@ -1,0 +1,642 @@
+{
+  "schema_version": "q5-v2-working-validation-1.0",
+  "status": "working_validation_complete",
+  "generated_at": "2026-08-29T07:57:04+08:00",
+  "elapsed_s": 61.12764612400497,
+  "working_verification_pass": true,
+  "formal_s6_close": false,
+  "inputs": {
+    "docs/q5_v2_precise.json": "c7e6fd78ad46165ef48e68567e5dfaa14bff1c11024fd580d2b83d5dfd94dcf4",
+    "docs/q5_v2_result.json": "aed5f5549c7c94937ef1b55f3b4f71e127a88149cbddd58a16983e3440b53061",
+    "docs/q5_v2_structural_audit.json": "c36f8859b656129540674ff4e725362e54217ee4863f2b725455aa57d2c344cf"
+  },
+  "result_identity": {
+    "source": "docs/q5_v2_precise.json",
+    "metrics": {
+      "per_missile_intervals_s": [
+        [
+          [
+            0.8799569621178185,
+            5.467224080622593
+          ],
+          [
+            12.636509585961074,
+            16.3716050912726
+          ],
+          [
+            16.404996578610273,
+            24.990408993362628
+          ],
+          [
+            28.277089323468083,
+            31.251494787125814
+          ]
+        ],
+        [
+          [
+            9.668738509349161,
+            13.46775354346526
+          ],
+          [
+            13.527858482413162,
+            17.762547660963286
+          ],
+          [
+            19.99094786593336,
+            23.547243155909925
+          ],
+          [
+            27.813558385296126,
+            30.710252294363066
+          ]
+        ],
+        [
+          [
+            13.638989736263934,
+            23.875913502785373
+          ],
+          [
+            24.307277799214006,
+            27.2170651622259
+          ]
+        ]
+      ],
+      "per_missile_duration_s": [
+        19.882180502226387,
+        14.486693411709727,
+        13.146711129533333
+      ],
+      "intersection_intervals_s": [
+        [
+          13.638989736263934,
+          16.3716050912726
+        ],
+        [
+          16.404996578610273,
+          17.762547660963286
+        ],
+        [
+          19.99094786593336,
+          23.547243155909925
+        ]
+      ],
+      "longest_all_interval_s": [
+        19.99094786593336,
+        23.547243155909925
+      ],
+      "j_sum_missile_s": 47.51558504346944,
+      "j_fair_s": 13.146711129533333,
+      "j_all_s": 7.646461727338242,
+      "l_all_s": 3.556295289976564,
+      "units": {
+        "j_sum_missile_s": "missile*s",
+        "j_fair_s": "s",
+        "j_all_s": "s",
+        "l_all_s": "s"
+      }
+    },
+    "decision_bomb_count": 13
+  },
+  "E1": {
+    "input_identity": {
+      "expected": {
+        "data/A题.pdf": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+        "data/附件/result3.xlsx": "b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a"
+      },
+      "observed": {
+        "data/A题.pdf": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+        "data/附件/result3.xlsx": "b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a"
+      },
+      "pass": true
+    },
+    "constants": {
+      "smoke_radius_m": 10.0,
+      "smoke_sink_speed_mps": 3.0,
+      "smoke_duration_s": 20.0,
+      "pass": true
+    },
+    "constraint_margins": {
+      "speed_low_mps": 46.77496647102279,
+      "speed_high_mps": 0.0,
+      "release_time_s": 0.45802634217840493,
+      "fuse_delay_s": 0.4060711513214376,
+      "explosion_height_m": 626.7536423919216,
+      "one_second_gap_s": 0.001082581160741114,
+      "latest_arrival_s": 39.50052967524984,
+      "capacity_bombs": 0.0
+    },
+    "invalid_cases_rejected": {
+      "speed_below_lower_bound": true,
+      "negative_release": true,
+      "negative_explosion_height": true,
+      "invalid_label": true,
+      "release_gap_below_one_second": true,
+      "more_than_three_bombs_on_platform": true
+    },
+    "kinematic_roundtrip": {
+      "maximum_position_residual_m": 6.431098710768743e-13,
+      "maximum_time_residual_s": 8.881784197001252e-15,
+      "pass": true
+    },
+    "independent_oracle": {
+      "mesh": "256x17 complete cylinder",
+      "by_missile": [
+        {
+          "missile": "M1",
+          "probe_count": 28,
+          "maximum_abs_difference_m": 6.110312256168982e-10
+        },
+        {
+          "missile": "M2",
+          "probe_count": 28,
+          "maximum_abs_difference_m": 6.044249545311686e-10
+        },
+        {
+          "missile": "M3",
+          "probe_count": 14,
+          "maximum_abs_difference_m": 9.791358834831954e-10
+        }
+      ],
+      "maximum_abs_difference_m": 9.791358834831954e-10,
+      "pass": true
+    },
+    "pass": true
+  },
+  "E2": {
+    "interval_algebra": {
+      "maximum_metric_residual": 0.0,
+      "pass": true
+    },
+    "screen_to_precise": {
+      "per_missile_delta_s": [
+        -9.602588288615266e-05,
+        -0.0003384704298277086,
+        -6.674336816558935e-05
+      ],
+      "j_sum_delta_missile_s": -0.000501239680886556,
+      "pass": true
+    },
+    "root_quality": {
+      "geometric_root_count": 17,
+      "fallback_count": 0,
+      "maximum_abs_residual_m": 9.781796705965462e-09,
+      "pass": true
+    },
+    "targeted_densified": {
+      "settings": {
+        "name": "densified_strict",
+        "scan_step_s": 0.0025,
+        "n_theta": 1024,
+        "n_levels": 65,
+        "root_time_tolerance_s": 5e-09,
+        "margin_tolerance_m": 5e-09
+      },
+      "mode": "targeted_reported_interval_interior_and_endpoint_check",
+      "by_missile": [
+        {
+          "missile": "M1",
+          "interior_probe_count": 12,
+          "maximum_interior_margin_m": -0.9940438177529618,
+          "geometric_roots": [
+            {
+              "kind": "entry",
+              "precise_time_s": 0.8799569621178185,
+              "probe_times_s": [
+                0.8749569621178185,
+                0.8849569621178185
+              ],
+              "probe_margins_m": [
+                0.02059439615298686,
+                -0.020595902266085986
+              ],
+              "linearized_drift_s": -1.8282376634815023e-07,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 5.467224080622593,
+              "probe_times_s": [
+                5.462224080622593,
+                5.472224080622593
+              ],
+              "probe_margins_m": [
+                -0.02081444921289588,
+                0.020819640295499653
+              ],
+              "linearized_drift_s": -6.23417331979681e-07,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 16.3716050912726,
+              "probe_times_s": [
+                16.3666050912726,
+                16.376605091272598
+              ],
+              "probe_margins_m": [
+                -0.019780682995119037,
+                0.019807080604737237
+              ],
+              "linearized_drift_s": -3.334061741355754e-06,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 24.990408993362628,
+              "probe_times_s": [
+                24.98540899336263,
+                24.995408993362627
+              ],
+              "probe_margins_m": [
+                -0.025331285023698413,
+                0.025337390159835493
+              ],
+              "linearized_drift_s": -6.024566587825575e-07,
+              "bracket_pass": true
+            },
+            {
+              "kind": "entry",
+              "precise_time_s": 28.277089323468083,
+              "probe_times_s": [
+                28.272089323468084,
+                28.28208932346808
+              ],
+              "probe_margins_m": [
+                0.02051341966844511,
+                -0.020482529103791336
+              ],
+              "linearized_drift_s": 3.767514300534458e-06,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 31.251494787125814,
+              "probe_times_s": [
+                31.246494787125815,
+                31.256494787125813
+              ],
+              "probe_margins_m": [
+                -0.020931334448320627,
+                0.020961081113682667
+              ],
+              "linearized_drift_s": -3.5503640667400305e-06,
+              "bracket_pass": true
+            }
+          ],
+          "maximum_abs_linearized_endpoint_drift_s": 3.767514300534458e-06,
+          "pass": true
+        },
+        {
+          "missile": "M2",
+          "interior_probe_count": 12,
+          "maximum_interior_margin_m": -1.8397515013628425,
+          "geometric_roots": [
+            {
+              "kind": "entry",
+              "precise_time_s": 9.668738509349161,
+              "probe_times_s": [
+                9.66373850934916,
+                9.673738509349162
+              ],
+              "probe_margins_m": [
+                0.01991092639200076,
+                -0.019911490925837327
+              ],
+              "linearized_drift_s": -7.08814127392543e-08,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 13.46775354346526,
+              "probe_times_s": [
+                13.46275354346526,
+                13.472753543465261
+              ],
+              "probe_margins_m": [
+                -0.020345054126050144,
+                0.02034739131792307
+              ],
+              "linearized_drift_s": -2.871776132451487e-07,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 17.762547660963286,
+              "probe_times_s": [
+                17.757547660963287,
+                17.767547660963285
+              ],
+              "probe_margins_m": [
+                -0.02140350826295112,
+                0.02141529052748581
+              ],
+              "linearized_drift_s": -1.3758284751475003e-06,
+              "bracket_pass": true
+            },
+            {
+              "kind": "entry",
+              "precise_time_s": 19.99094786593336,
+              "probe_times_s": [
+                19.985947865933362,
+                19.99594786593336
+              ],
+              "probe_margins_m": [
+                0.025774713015790596,
+                -0.025755438987793866
+              ],
+              "linearized_drift_s": 1.8701699140422079e-06,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 23.547243155909925,
+              "probe_times_s": [
+                23.542243155909926,
+                23.552243155909924
+              ],
+              "probe_margins_m": [
+                -0.0269413904558089,
+                0.02695006409111045
+              ],
+              "linearized_drift_s": -8.04731971726369e-07,
+              "bracket_pass": true
+            },
+            {
+              "kind": "entry",
+              "precise_time_s": 27.813558385296126,
+              "probe_times_s": [
+                27.808558385296127,
+                27.818558385296125
+              ],
+              "probe_margins_m": [
+                0.02223525972885021,
+                -0.02222635112391913
+              ],
+              "linearized_drift_s": 1.0018311016324333e-06,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 30.710252294363066,
+              "probe_times_s": [
+                30.705252294363067,
+                30.715252294363065
+              ],
+              "probe_margins_m": [
+                -0.022960522268400396,
+                0.0229646935638268
+              ],
+              "linearized_drift_s": -4.541399931667911e-07,
+              "bracket_pass": true
+            }
+          ],
+          "maximum_abs_linearized_endpoint_drift_s": 1.8701699140422079e-06,
+          "pass": true
+        },
+        {
+          "missile": "M3",
+          "interior_probe_count": 6,
+          "maximum_interior_margin_m": -3.2406147322906866,
+          "geometric_roots": [
+            {
+              "kind": "entry",
+              "precise_time_s": 13.638989736263934,
+              "probe_times_s": [
+                13.633989736263933,
+                13.643989736263935
+              ],
+              "probe_margins_m": [
+                0.024157579381370198,
+                -0.02414292490659875
+              ],
+              "linearized_drift_s": 1.5170105349682217e-06,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 23.875913502785373,
+              "probe_times_s": [
+                23.870913502785374,
+                23.880913502785372
+              ],
+              "probe_margins_m": [
+                -0.02845048486996049,
+                0.02846201737141385
+              ],
+              "linearized_drift_s": -1.0131782133271372e-06,
+              "bracket_pass": true
+            },
+            {
+              "kind": "entry",
+              "precise_time_s": 24.307277799214006,
+              "probe_times_s": [
+                24.302277799214007,
+                24.312277799214005
+              ],
+              "probe_margins_m": [
+                0.022023455994037988,
+                -0.022026809044097817
+              ],
+              "linearized_drift_s": -3.80593629500936e-07,
+              "bracket_pass": true
+            },
+            {
+              "kind": "exit",
+              "precise_time_s": 27.2170651622259,
+              "probe_times_s": [
+                27.2120651622259,
+                27.2220651622259
+              ],
+              "probe_margins_m": [
+                -0.022732228534877663,
+                0.0227363061305752
+              ],
+              "linearized_drift_s": -4.4839752533221144e-07,
+              "bracket_pass": true
+            }
+          ],
+          "maximum_abs_linearized_endpoint_drift_s": 1.5170105349682217e-06,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "claim_boundary": "not an independent full-horizon DENSIFIED missed-island proof"
+    },
+    "rounded_excel_readback": {
+      "path": "output/q5_v2/result3.xlsx",
+      "sha256": "6654c8709f06e13e18a99818d33de5381e1168c6365b95a21566022481782e24",
+      "numeric_precision_decimal_places": 6,
+      "active_row_count": 13,
+      "blank_reserved_row_count": 2,
+      "maximum_spatial_reconstruction_residual_m": 1.650189631731939e-05,
+      "maximum_single_bomb_duration_rounding_residual_s": 4.5082092459125533e-07,
+      "rounded_metrics": {
+        "per_missile_intervals_s": [
+          [
+            [
+              0.879957076320647,
+              5.467224202162053
+            ],
+            [
+              12.636509633810585,
+              16.37160572228852
+            ],
+            [
+              16.404996588574356,
+              24.990408841114714
+            ],
+            [
+              28.277089550179223,
+              31.25149499918342
+            ]
+          ],
+          [
+            [
+              9.668739085836547,
+              13.467753858352598
+            ],
+            [
+              13.527858488155896,
+              17.762547652760226
+            ],
+            [
+              19.990947565411595,
+              23.54724286998448
+            ],
+            [
+              27.813558436566332,
+              30.71025233373439
+            ]
+          ],
+          [
+            [
+              13.638989560847612,
+              23.875913414650064
+            ],
+            [
+              24.30727815555851,
+              27.217065502471968
+            ]
+          ]
+        ],
+        "per_missile_duration_s": [
+          19.8821809158639,
+          14.486693138861321,
+          13.14671120071591
+        ],
+        "intersection_intervals_s": [
+          [
+            13.638989560847612,
+            16.37160572228852
+          ],
+          [
+            16.404996588574356,
+            17.762547652760226
+          ],
+          [
+            19.990947565411595,
+            23.54724286998448
+          ]
+        ],
+        "longest_all_interval_s": [
+          19.990947565411595,
+          23.54724286998448
+        ],
+        "j_sum_missile_s": 47.51558525544113,
+        "j_fair_s": 13.14671120071591,
+        "j_all_s": 7.646462530199663,
+        "l_all_s": 3.5562953045728847,
+        "units": {
+          "j_sum_missile_s": "missile*s",
+          "j_fair_s": "s",
+          "j_all_s": "s",
+          "l_all_s": "s"
+        }
+      },
+      "delta_from_unrounded": {
+        "j_sum_missile_s": 2.119716882020839e-07,
+        "j_fair_s": 7.118257627780622e-08,
+        "j_all_s": 8.028614217892027e-07,
+        "l_all_s": 1.459632059663818e-08
+      },
+      "constraint_margins": {
+        "speed_low_mps": 46.774966000000006,
+        "speed_high_mps": 0.0,
+        "release_time_s": 0.4580263385949419,
+        "fuse_delay_s": 0.406071154711252,
+        "explosion_height_m": 626.7536430266483,
+        "one_second_gap_s": 0.0010825775302159002,
+        "latest_arrival_s": 39.500529776573316,
+        "capacity_bombs": 0.0
+      },
+      "pass": true
+    },
+    "restricted_master": {
+      "mip_gap": 0.0,
+      "pass_within_current_library_only": true
+    },
+    "pass": true
+  },
+  "E3": {
+    "cyclic_label_permutation_max_margin_difference_m": 0.0,
+    "bomb_order_reversal_max_margin_difference_m": 0.0,
+    "empty_resource_metrics": {
+      "per_missile_intervals_s": [
+        [],
+        [],
+        []
+      ],
+      "per_missile_duration_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "intersection_intervals_s": [],
+      "longest_all_interval_s": null,
+      "j_sum_missile_s": 0.0,
+      "j_fair_s": 0.0,
+      "j_all_s": 0.0,
+      "l_all_s": 0.0,
+      "units": {
+        "j_sum_missile_s": "missile*s",
+        "j_fair_s": "s",
+        "j_all_s": "s",
+        "l_all_s": "s"
+      }
+    },
+    "multi_cloud_quantifier_counterexample": {
+      "cloud_by_target_point_margins": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          1.0,
+          -1.0
+        ]
+      ],
+      "single_cloud_complete_margins": [
+        1.0,
+        1.0
+      ],
+      "joint_max_point_min_cloud_margin": -1.0,
+      "interpretation": "each cloud fails alone, while pointwise cloud choice completes joint coverage"
+    },
+    "all_13_bombs_positive_primary_marginal_at_screen": true,
+    "all_5_platforms_positive_primary_marginal_at_screen": true,
+    "fy1_existing_library_improvement_counterexample": false,
+    "pass": true,
+    "claim_boundary": "逐项删除只支持其余参数固定时的局部必要性；有限 FY1 计划库没有穷尽连续加弹域，且只有明确列出的删除对象取得 PRECISE 确认。"
+  },
+  "E4": {
+    "status": "justified_not_triggered_working",
+    "pass": true,
+    "conclusion": "题面理想运动学下，烟团截断有限视线段会降低真目标几何可见性，机制方向一致；但缺少导引头探测、烟雾浓度与实装散布数据，不能把本结果外推为现实部署成功率。",
+    "unavailable_evidence": [
+      "seeker detection model",
+      "smoke concentration/transmittance",
+      "deployment dispersion and field trials"
+    ]
+  },
+  "proof_boundary": "受限 MILP 的零 gap 只属于当前列库与离散主问题；PRECISE 依赖全时域 SCREEN 支撑区间守卫，DENSIFIED 为报告区间定向检查；未认证列定价、未证明连续域全局最优，也未完成需要用户通读并复述的正式 S6 人类验收。"
+}

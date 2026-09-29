@@ -1,0 +1,1291 @@
+{
+  "schema_version": "1.0",
+  "artifact_role": "internal_source_review_diagnostics_only",
+  "created_at_utc": "2026-09-11T02:43:18.829112+00:00",
+  "plan": {
+    "plan_id": "internal-online-solution-review-20260911",
+    "plan_sha256": "015bff41f8f4c1d2fc8bbe074787e3f2c624d903631a114e24a27e4f45a51e07",
+    "tier": "G1_WORKING",
+    "permitted_change_paths": [
+      "references/internal_reviews/online_solutions_20260911.md",
+      "output/diagnostics/online_review_20260911_checks.json"
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Skyrim86 initial A modeling outline",
+      "url": "https://github.com/Skyrim86/my-blog/blob/main/content/projects/CMC2026/分析思路/A题/A题建模思路.md",
+      "read_status": "full_article_and_author_note",
+      "support_scope": "Author outline claims only; no numerical answer set",
+      "identities": [
+        {
+          "name": "article",
+          "git_blob_sha1": "f40ffc3dcf608d5d7fbecb940fd199bc4be1fef2",
+          "bytes": 9473,
+          "sha256": "2d12cb194549d064bab3f23fc3542afa2f55cfa66e526e74b89b9f7e3230c29f",
+          "path": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\article.md",
+          "url": "https://api.github.com/repos/Skyrim86/my-blog/git/blobs/f40ffc3dcf608d5d7fbecb940fd199bc4be1fef2"
+        },
+        {
+          "name": "author_note",
+          "git_blob_sha1": "fb2f8f79c7a3068c1568669efa5c89586ffc8513",
+          "bytes": 421,
+          "sha256": "fcdf6cb060c2ddd88725761bf87c8687d5a7ab1cb8ee63a48bd78f98dda13fe7",
+          "path": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\author_note.md",
+          "url": "https://api.github.com/repos/Skyrim86/my-blog/git/blobs/fb2f8f79c7a3068c1568669efa5c89586ffc8513"
+        }
+      ],
+      "source_authority": "external_author_self_published",
+      "use_role": [
+        "candidate_hint",
+        "internal_regression"
+      ],
+      "permitted_consumers": [
+        "references/internal_reviews/online_solutions_20260911.md",
+        "output/diagnostics/online_review_20260911_checks.json",
+        "current_thread_internal_review"
+      ],
+      "forbidden_consumers": [
+        "paper",
+        "teammate_brief",
+        "official_submission",
+        "formal_acceptance",
+        "numerical_truth"
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "strewberryDeng/CUMCM2026-A",
+      "url": "https://github.com/strewberryDeng/CUMCM2026-A",
+      "branch_at_read": "master",
+      "git_tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212",
+      "tree_sha_is_not_commit_sha": true,
+      "read_status": "selected_sources_read",
+      "support_scope": "Full main solver and four entry scripts; abstract; selected equations, result tables and verification paragraphs. Not a full PDF or workbook audit.",
+      "source_authority": "external_author_self_published",
+      "use_role": [
+        "candidate_hint",
+        "internal_regression"
+      ],
+      "permitted_consumers": [
+        "references/internal_reviews/online_solutions_20260911.md",
+        "output/diagnostics/online_review_20260911_checks.json",
+        "current_thread_internal_review"
+      ],
+      "forbidden_consumers": [
+        "paper",
+        "teammate_brief",
+        "official_submission",
+        "formal_acceptance",
+        "numerical_truth"
+      ],
+      "identities": [
+        {
+          "path": "texfile/1abstract.tex",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/texfile/1abstract.tex",
+          "sha256": "8cd0a75339505c76ad2b19994a20a0c2bf9ca8c32c98a40a6c0c4626c9c25ef8",
+          "size": 5185,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\texfile__1abstract.tex",
+          "git_blob_sha1": "1d6b6097e59b90d3022165c5856401483f61f6a0",
+          "tree_expected_blob": "1d6b6097e59b90d3022165c5856401483f61f6a0",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "texfile/5MakeModel.tex",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/texfile/5MakeModel.tex",
+          "sha256": "64e0024ae9fe7b8b1cc4041de6dcc6efd04442c13d7321e71664ef5053acb21e",
+          "size": 38956,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\texfile__5MakeModel.tex",
+          "git_blob_sha1": "342e2319cfecaf70bbfc578e95ba90593846ebe7",
+          "tree_expected_blob": "342e2319cfecaf70bbfc578e95ba90593846ebe7",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "texfile/6ErrorAnalysis.tex",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/texfile/6ErrorAnalysis.tex",
+          "sha256": "271448e21669021db3c90e99b93237710ff894984b634e63bb7d5765f183fabd",
+          "size": 13536,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\texfile__6ErrorAnalysis.tex",
+          "git_blob_sha1": "8ec57026ca82f7853fd2a42a50bbd0dd4d20d86f",
+          "tree_expected_blob": "8ec57026ca82f7853fd2a42a50bbd0dd4d20d86f",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "code/herb_model.py",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/code/herb_model.py",
+          "sha256": "38fe57e0ea010764219ee01a4e0b338aa38ad05b053bae5257a657777ca411de",
+          "size": 14687,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\code__herb_model.py",
+          "git_blob_sha1": "6f7df4bb40ea9d6515edd7f9a3c474f6dd1ffc2e",
+          "tree_expected_blob": "6f7df4bb40ea9d6515edd7f9a3c474f6dd1ffc2e",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "code/q1_preheat.py",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/code/q1_preheat.py",
+          "sha256": "7bb3a9624b01c27d5da83da44bafef656e5851cec3b7190315f4e1d9bdde7488",
+          "size": 3247,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\code__q1_preheat.py",
+          "git_blob_sha1": "886523679ab8c601f546665d637457f2701e4a1c",
+          "tree_expected_blob": "886523679ab8c601f546665d637457f2701e4a1c",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "code/q2_full.py",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/code/q2_full.py",
+          "sha256": "f18c4b73a463510b9dc05edec0f07e9ef6d5c3759f7b7e851f2c1182509ea36e",
+          "size": 2863,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\code__q2_full.py",
+          "git_blob_sha1": "e6df2f361a59d7c42c1cb862b8d7cd2f889ab039",
+          "tree_expected_blob": "e6df2f361a59d7c42c1cb862b8d7cd2f889ab039",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "code/q3_drying_time.py",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/code/q3_drying_time.py",
+          "sha256": "9be587f64df1496839523a8e0ae5b4597cadb42559ae33e61cf19feed5487ce1",
+          "size": 4122,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\code__q3_drying_time.py",
+          "git_blob_sha1": "4a4df70e3adb6e718b45f5300a26b581cd18e320",
+          "tree_expected_blob": "4a4df70e3adb6e718b45f5300a26b581cd18e320",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "code/q4_shrinkage.py",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/code/q4_shrinkage.py",
+          "sha256": "bf2756ac6461fb19b28fe0cc831cf2051de01e6a9a323288fb48cae1143ec424",
+          "size": 6855,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\code__q4_shrinkage.py",
+          "git_blob_sha1": "c4b0b16c43b69d307cb69b8d329d7775618e00af",
+          "tree_expected_blob": "c4b0b16c43b69d307cb69b8d329d7775618e00af",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "phase012/model_contract.json",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/phase012/model_contract.json",
+          "sha256": "ffab48efa6154f6f5f31a90f624e8ab147739c7dc48cbf6db543be064810b2f1",
+          "size": 2010,
+          "local": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\strewberry\\phase012__model_contract.json",
+          "git_blob_sha1": "5bc708b57531617395a6e857a62e82bfd6c9b0f7",
+          "tree_expected_blob": "5bc708b57531617395a6e857a62e82bfd6c9b0f7",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        },
+        {
+          "path": "code/q0_verify.py",
+          "url": "https://raw.githubusercontent.com/strewberryDeng/CUMCM2026-A/master/code/q0_verify.py",
+          "sha256": "6cbfc86121f99bdb5fda00efc9154dceafb3f818bde8f10d28a7d2b10a3759ab",
+          "size": 7322,
+          "git_blob_sha1": "849e5f3af273b24b3156c60561334b2d71b62685",
+          "tree_expected_blob": "849e5f3af273b24b3156c60561334b2d71b62685",
+          "tree_blob_match": true,
+          "tree_sha": "1c57a43e755855f94a9393f1c98f7cd9d381c212"
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "li2396803/cumcm2026-a-herb-drying",
+      "url": "https://github.com/li2396803/cumcm2026-a-herb-drying",
+      "branch_at_read": "main",
+      "git_tree_sha": "7eb0c488f01515186cc6f6e940a9c3386e204c65",
+      "tree_sha_is_not_commit_sha": true,
+      "read_status": "version_separated_sources_read",
+      "support_scope": "v1/v2 selected solvers, related entry/export scripts, corresponding manuscript sections and public result JSON/MD. Not an execution or exhaustive PDF/workbook audit.",
+      "source_authority": "external_author_self_published",
+      "use_role": [
+        "candidate_hint",
+        "internal_regression"
+      ],
+      "permitted_consumers": [
+        "references/internal_reviews/online_solutions_20260911.md",
+        "output/diagnostics/online_review_20260911_checks.json",
+        "current_thread_internal_review"
+      ],
+      "forbidden_consumers": [
+        "paper",
+        "teammate_brief",
+        "official_submission",
+        "formal_acceptance",
+        "numerical_truth"
+      ],
+      "identities": [
+        {
+          "path": "docs/药材烘干问题A题_建模与求解说明文档.md",
+          "bytes": 43860,
+          "sha256": "aaa3e7eb73b5cb114df790431c5770e89de4ad3d4c0c7a1a66dc38d4e9717de3",
+          "git_blob_sha1": "aef97f15d0e54ff44f41aa3629cef623e1d778c9",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/aef97f15d0e54ff44f41aa3629cef623e1d778c9",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\docs__药材烘干问题A题_建模与求解说明文档.md"
+        },
+        {
+          "path": "docs/药材烘干问题A题_建模与求解说明文档_v2.md",
+          "bytes": 37653,
+          "sha256": "f1511fc0fde16137cae3e9c6d6d280c59737e6a55efceb9a6aa95df9e0366bdb",
+          "git_blob_sha1": "9cbb5daaec727e4c185d2579c0c776af77d9f20f",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/9cbb5daaec727e4c185d2579c0c776af77d9f20f",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\docs__药材烘干问题A题_建模与求解说明文档_v2.md"
+        },
+        {
+          "path": "docs/问题4收缩建模两条路线的说明.md",
+          "bytes": 10661,
+          "sha256": "da40eed30d86a9b4651aff02d5e4c70df29a81bb744bd9443ff2b8015a3fa35e",
+          "git_blob_sha1": "e3e79ff4c2ea0812735fd51143a0606de6690d21",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/e3e79ff4c2ea0812735fd51143a0606de6690d21",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\docs__问题4收缩建模两条路线的说明.md"
+        },
+        {
+          "path": "outputs/tables/tables.json",
+          "bytes": 5856,
+          "sha256": "bd1f81a57fecb5ecf35be709519cf657a1cc51dbe4c0245b22950b81028b6b22",
+          "git_blob_sha1": "898458ba2d61c622b3ac5f2b460a063ef80b0b29",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/898458ba2d61c622b3ac5f2b460a063ef80b0b29",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\outputs__tables__tables.json"
+        },
+        {
+          "path": "outputs/tables/v2_compare.json",
+          "bytes": 849,
+          "sha256": "d235963b9b58dfc144fdc653d3ef216976b865d35d85c4bbe055dc5a3f9ee421",
+          "git_blob_sha1": "6527afd8ff82b7f1075ac814daf5840d4dcbc98f",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/6527afd8ff82b7f1075ac814daf5840d4dcbc98f",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\outputs__tables__v2_compare.json"
+        },
+        {
+          "path": "outputs/tables/v2_stop.json",
+          "bytes": 164,
+          "sha256": "f8c6795a1eda7f93f2f184d8285592853743cc990a572907483fa05740e62fd1",
+          "git_blob_sha1": "16794e0db586587b6290134807cab48106319813",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/16794e0db586587b6290134807cab48106319813",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\outputs__tables__v2_stop.json"
+        },
+        {
+          "path": "outputs/tables/v2_tables.md",
+          "bytes": 3643,
+          "sha256": "d9b94bd51848ecf56844d8521b08e37ba763c2e1e00455b43dc26bff94b86348",
+          "git_blob_sha1": "352f4431830fd683958cbeb2af009c4c31c2f88f",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/352f4431830fd683958cbeb2af009c4c31c2f88f",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\outputs__tables__v2_tables.md"
+        },
+        {
+          "path": "outputs/tables/v2_times.json",
+          "bytes": 212,
+          "sha256": "0b99270ce8aff9a0070c94901cefc07fdff633da312622b34cd7b57a42b54864",
+          "git_blob_sha1": "a568cc999fd0ab4481f4918337e71b25e56a7028",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/a568cc999fd0ab4481f4918337e71b25e56a7028",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\outputs__tables__v2_times.json"
+        },
+        {
+          "path": "README.md",
+          "bytes": 11309,
+          "sha256": "c65c4e25cb1a2bed6ee556bbeac648580bc706371d7d3bb40650250c617e452a",
+          "git_blob_sha1": "04eb3cb764a3df22779516a93131c39d0e332cbf",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/04eb3cb764a3df22779516a93131c39d0e332cbf",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\README.md"
+        },
+        {
+          "path": "work/src/herb_model.py",
+          "bytes": 18949,
+          "sha256": "7cb647a604e33f3c3a8df49ede9f58e33e273cce7693bcfcdd8dafe833c7d06b",
+          "git_blob_sha1": "aaae7fbbf30d234013f86c850e2309164f8d775f",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/aaae7fbbf30d234013f86c850e2309164f8d775f",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\work__src__herb_model.py"
+        },
+        {
+          "path": "work/src/herb_v2.py",
+          "bytes": 11604,
+          "sha256": "5971dfe270b77f3876fc9ef7f6e3c67034f86880c4bc5e3ae150ae068fff626c",
+          "git_blob_sha1": "ff13b3477fab637444727f245dfd74deb005a0b7",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/ff13b3477fab637444727f245dfd74deb005a0b7",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\work__src__herb_v2.py"
+        },
+        {
+          "path": "work/src/run_production.py",
+          "bytes": 9538,
+          "sha256": "dd3eb108f03d3a59d6956e3d9d087b5e02b29d16fc08fb6cd7e3281a52211660",
+          "git_blob_sha1": "a0bbaa2ffc3d3def3e9cdc42bb9c38f171865702",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/a0bbaa2ffc3d3def3e9cdc42bb9c38f171865702",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\work__src__run_production.py"
+        },
+        {
+          "path": "work/src/v2_compare_external.py",
+          "bytes": 5614,
+          "sha256": "879c1434b7708e4a817e9033a123ceefd8ce902e2778a44fe73feb1a5fd203e2",
+          "git_blob_sha1": "88e23fdf0618af614641705e2f90aec74826d7d3",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/88e23fdf0618af614641705e2f90aec74826d7d3",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\work__src__v2_compare_external.py"
+        },
+        {
+          "path": "work/src/v2_selfconsistent.py",
+          "bytes": 4452,
+          "sha256": "e0105c90393394764e826f39aab170c1543658d170f06ee4b0b6d77744139f86",
+          "git_blob_sha1": "336043009e95d2e80c021190b28697d588edb4d1",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/336043009e95d2e80c021190b28697d588edb4d1",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\work__src__v2_selfconsistent.py"
+        },
+        {
+          "path": "work/src/v2_write_results.py",
+          "bytes": 8844,
+          "sha256": "48d75d047229ccd535f7a281cb82905130ee8bd98d8aa1849cbaecc9c6b762f2",
+          "git_blob_sha1": "d4f195596d2a473d863cfae008dbef97d8c55c67",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/d4f195596d2a473d863cfae008dbef97d8c55c67",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\work__src__v2_write_results.py"
+        },
+        {
+          "path": "work/src/v2_regen_result4.py",
+          "bytes": 2694,
+          "sha256": "2802c60a5efa0bbc6c2d92be2ee0ab844ca6158701aa01125b90f0f0eadfc3a2",
+          "git_blob_sha1": "ad9d98de374f9f0ad99f12f6d530db8c808d030b",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/ad9d98de374f9f0ad99f12f6d530db8c808d030b",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\work__src__v2_regen_result4.py"
+        },
+        {
+          "path": "work/out/v2_selfconsistent.json",
+          "bytes": 131,
+          "sha256": "d3d95a99e1f9183ef77a3c25485467b8ad85e3cc0392100a53a20853411e00c5",
+          "git_blob_sha1": "7370e6fc70a7228021b6277a480eae07edf1f628",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/7370e6fc70a7228021b6277a480eae07edf1f628",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\work__out__v2_selfconsistent.json"
+        },
+        {
+          "path": "outputs/tables/关键结果表_v2.md",
+          "bytes": 3144,
+          "sha256": "b0641cf2f9b7786aec6079147a26481543e495de6c29b31ef41f0000e0adb7a4",
+          "git_blob_sha1": "227ed5c4475979cd710298979a0e2394a56dc4fe",
+          "matches_tree": true,
+          "blob_api_url": "https://api.github.com/repos/li2396803/cumcm2026-a-herb-drying/git/blobs/227ed5c4475979cd710298979a0e2394a56dc4fe",
+          "local_cache": "~\\AppData\\Local\\Temp\\cumcm-online-review-20260911\\li\\outputs__tables__关键结果表_v2.md"
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "Hardware2Math-Modeling/cumcm2026A",
+      "url": "https://github.com/Hardware2Math-Modeling/cumcm2026A",
+      "branch_at_read": "main",
+      "git_tree_sha": "bab4b28a9a692a981fb6d902acbc9fcf3ab99d41",
+      "tree_sha_is_not_commit_sha": true,
+      "read_status": "readme_and_q3q4_templates_read",
+      "support_scope": "Scaffold status; no numerical result usable for comparison",
+      "source_authority": "external_author_self_published",
+      "use_role": [
+        "candidate_hint",
+        "internal_regression"
+      ],
+      "permitted_consumers": [
+        "references/internal_reviews/online_solutions_20260911.md",
+        "output/diagnostics/online_review_20260911_checks.json",
+        "current_thread_internal_review"
+      ],
+      "forbidden_consumers": [
+        "paper",
+        "teammate_brief",
+        "official_submission",
+        "formal_acceptance",
+        "numerical_truth"
+      ],
+      "identities": [
+        {
+          "path": "README.md",
+          "git_blob_sha1": "72f579cddad9e9fdb90fd2b0cf53267257294d4a",
+          "status": "web_read_and_tree_metadata; no local content sha256 claimed"
+        },
+        {
+          "path": "docs/model/q3.md",
+          "git_blob_sha1": "99eddb1798f088238e5713b447da04fd0be6ce69",
+          "status": "web_read_and_tree_metadata; no local content sha256 claimed"
+        },
+        {
+          "path": "docs/model/q4.md",
+          "git_blob_sha1": "eb66ad0d1b8a7466445d90c038a7c8356e530c4f",
+          "status": "web_read_and_tree_metadata; no local content sha256 claimed"
+        },
+        {
+          "path": "src/q3/solver.py",
+          "git_blob_sha1": "f270fb8f66c916eb91c51af9608d0ba076162da1",
+          "status": "web_read_and_tree_metadata; no local content sha256 claimed"
+        },
+        {
+          "path": "src/q4/solver.py",
+          "git_blob_sha1": "3728002739a2d5320f9eab6277e2c7e67c65e4fc",
+          "status": "web_read_and_tree_metadata; no local content sha256 claimed"
+        }
+      ]
+    }
+  ],
+  "input_identity_checks": [
+    {
+      "local_path": "A题.pdf",
+      "local_sha256": "052d8014bff5727c019b72e44fdffaf5c145ce04050dd938baaf3527db331736",
+      "git_blob_sha1": "c492bcd60b55904dc2bf63199f7568756f1120d1",
+      "repo_matches": {
+        "strewberry": true,
+        "li": true,
+        "hardware": true
+      }
+    },
+    {
+      "local_path": "附件/附件1.xlsx",
+      "local_sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+      "git_blob_sha1": "7e6d9ff0c4b8493720d0acfb8fdbddef6d22fc33",
+      "repo_matches": {
+        "strewberry": true,
+        "li": true,
+        "hardware": true
+      }
+    },
+    {
+      "local_path": "附件/附件2.xlsx",
+      "local_sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+      "git_blob_sha1": "0066c189b555f705df8b5bf0fe945cac7872fd3d",
+      "repo_matches": {
+        "strewberry": true,
+        "li": true,
+        "hardware": true
+      }
+    },
+    {
+      "local_path": "附件/附件3/result1.xlsx",
+      "local_sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4",
+      "git_blob_sha1": "03cefc945518800f20cdec88f821ebc6c76edcfb",
+      "repo_matches": {
+        "strewberry": true,
+        "li": true,
+        "hardware": true
+      }
+    },
+    {
+      "local_path": "附件/附件3/result2.xlsx",
+      "local_sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4",
+      "git_blob_sha1": "03cefc945518800f20cdec88f821ebc6c76edcfb",
+      "repo_matches": {
+        "strewberry": true,
+        "li": true,
+        "hardware": true
+      }
+    },
+    {
+      "local_path": "附件/附件3/result3.xlsx",
+      "local_sha256": "07e4793d620a7f899804c0298d49a16a197960440fd47f8bb780c57ec27e2859",
+      "git_blob_sha1": "4fb701ec33d7705489e8f33231d3443fbd7ccf46",
+      "repo_matches": {
+        "strewberry": true,
+        "li": true,
+        "hardware": true
+      }
+    },
+    {
+      "local_path": "附件/附件3/result4.xlsx",
+      "local_sha256": "86e9300ffa3d30c43de895ea6723da943e85b8740b137bcae5af7107f076eeac",
+      "git_blob_sha1": "c0536cbd43d4645ced85c448545126a3b6622d59",
+      "repo_matches": {
+        "strewberry": true,
+        "li": true,
+        "hardware": true
+      }
+    }
+  ],
+  "short_term_comparisons": {
+    "role": "internal_regression_candidate_hint_only",
+    "execution": "only independent data loading/arithmetic; no project or external solver code executed",
+    "identities": [
+      {
+        "path": "docs/药材烘干问题A题_建模与求解说明文档.md",
+        "bytes": 43860,
+        "sha256": "aaa3e7eb73b5cb114df790431c5770e89de4ad3d4c0c7a1a66dc38d4e9717de3",
+        "git_blob_sha": "aef97f15d0e54ff44f41aa3629cef623e1d778c9",
+        "tree_sha": "aef97f15d0e54ff44f41aa3629cef623e1d778c9",
+        "matches_tree": true
+      },
+      {
+        "path": "docs/药材烘干问题A题_建模与求解说明文档_v2.md",
+        "bytes": 37653,
+        "sha256": "f1511fc0fde16137cae3e9c6d6d280c59737e6a55efceb9a6aa95df9e0366bdb",
+        "git_blob_sha": "9cbb5daaec727e4c185d2579c0c776af77d9f20f",
+        "tree_sha": "9cbb5daaec727e4c185d2579c0c776af77d9f20f",
+        "matches_tree": true
+      },
+      {
+        "path": "docs/问题4收缩建模两条路线的说明.md",
+        "bytes": 10661,
+        "sha256": "da40eed30d86a9b4651aff02d5e4c70df29a81bb744bd9443ff2b8015a3fa35e",
+        "git_blob_sha": "e3e79ff4c2ea0812735fd51143a0606de6690d21",
+        "tree_sha": "e3e79ff4c2ea0812735fd51143a0606de6690d21",
+        "matches_tree": true
+      },
+      {
+        "path": "outputs/tables/tables.json",
+        "bytes": 5856,
+        "sha256": "bd1f81a57fecb5ecf35be709519cf657a1cc51dbe4c0245b22950b81028b6b22",
+        "git_blob_sha": "898458ba2d61c622b3ac5f2b460a063ef80b0b29",
+        "tree_sha": "898458ba2d61c622b3ac5f2b460a063ef80b0b29",
+        "matches_tree": true
+      },
+      {
+        "path": "outputs/tables/v2_compare.json",
+        "bytes": 849,
+        "sha256": "d235963b9b58dfc144fdc653d3ef216976b865d35d85c4bbe055dc5a3f9ee421",
+        "git_blob_sha": "6527afd8ff82b7f1075ac814daf5840d4dcbc98f",
+        "tree_sha": "6527afd8ff82b7f1075ac814daf5840d4dcbc98f",
+        "matches_tree": true
+      },
+      {
+        "path": "outputs/tables/v2_stop.json",
+        "bytes": 164,
+        "sha256": "f8c6795a1eda7f93f2f184d8285592853743cc990a572907483fa05740e62fd1",
+        "git_blob_sha": "16794e0db586587b6290134807cab48106319813",
+        "tree_sha": "16794e0db586587b6290134807cab48106319813",
+        "matches_tree": true
+      },
+      {
+        "path": "outputs/tables/v2_tables.md",
+        "bytes": 3643,
+        "sha256": "d9b94bd51848ecf56844d8521b08e37ba763c2e1e00455b43dc26bff94b86348",
+        "git_blob_sha": "352f4431830fd683958cbeb2af009c4c31c2f88f",
+        "tree_sha": "352f4431830fd683958cbeb2af009c4c31c2f88f",
+        "matches_tree": true
+      },
+      {
+        "path": "outputs/tables/v2_times.json",
+        "bytes": 212,
+        "sha256": "0b99270ce8aff9a0070c94901cefc07fdff633da312622b34cd7b57a42b54864",
+        "git_blob_sha": "a568cc999fd0ab4481f4918337e71b25e56a7028",
+        "tree_sha": "a568cc999fd0ab4481f4918337e71b25e56a7028",
+        "matches_tree": true
+      },
+      {
+        "path": "README.md",
+        "bytes": 11309,
+        "sha256": "c65c4e25cb1a2bed6ee556bbeac648580bc706371d7d3bb40650250c617e452a",
+        "git_blob_sha": "04eb3cb764a3df22779516a93131c39d0e332cbf",
+        "tree_sha": "04eb3cb764a3df22779516a93131c39d0e332cbf",
+        "matches_tree": true
+      },
+      {
+        "path": "work/src/herb_model.py",
+        "bytes": 18949,
+        "sha256": "7cb647a604e33f3c3a8df49ede9f58e33e273cce7693bcfcdd8dafe833c7d06b",
+        "git_blob_sha": "aaae7fbbf30d234013f86c850e2309164f8d775f",
+        "tree_sha": "aaae7fbbf30d234013f86c850e2309164f8d775f",
+        "matches_tree": true
+      },
+      {
+        "path": "work/src/herb_v2.py",
+        "bytes": 11604,
+        "sha256": "5971dfe270b77f3876fc9ef7f6e3c67034f86880c4bc5e3ae150ae068fff626c",
+        "git_blob_sha": "ff13b3477fab637444727f245dfd74deb005a0b7",
+        "tree_sha": "ff13b3477fab637444727f245dfd74deb005a0b7",
+        "matches_tree": true
+      },
+      {
+        "path": "work/src/run_production.py",
+        "bytes": 9538,
+        "sha256": "dd3eb108f03d3a59d6956e3d9d087b5e02b29d16fc08fb6cd7e3281a52211660",
+        "git_blob_sha": "a0bbaa2ffc3d3def3e9cdc42bb9c38f171865702",
+        "tree_sha": "a0bbaa2ffc3d3def3e9cdc42bb9c38f171865702",
+        "matches_tree": true
+      },
+      {
+        "path": "work/src/v2_compare_external.py",
+        "bytes": 5614,
+        "sha256": "879c1434b7708e4a817e9033a123ceefd8ce902e2778a44fe73feb1a5fd203e2",
+        "git_blob_sha": "88e23fdf0618af614641705e2f90aec74826d7d3",
+        "tree_sha": "88e23fdf0618af614641705e2f90aec74826d7d3",
+        "matches_tree": true
+      },
+      {
+        "path": "work/src/v2_selfconsistent.py",
+        "bytes": 4452,
+        "sha256": "e0105c90393394764e826f39aab170c1543658d170f06ee4b0b6d77744139f86",
+        "git_blob_sha": "336043009e95d2e80c021190b28697d588edb4d1",
+        "tree_sha": "336043009e95d2e80c021190b28697d588edb4d1",
+        "matches_tree": true
+      },
+      {
+        "path": "work/src/v2_write_results.py",
+        "bytes": 8844,
+        "sha256": "48d75d047229ccd535f7a281cb82905130ee8bd98d8aa1849cbaecc9c6b762f2",
+        "git_blob_sha": "d4f195596d2a473d863cfae008dbef97d8c55c67",
+        "tree_sha": "d4f195596d2a473d863cfae008dbef97d8c55c67",
+        "matches_tree": true
+      }
+    ],
+    "all_git_blobs_match": true,
+    "comparisons": {
+      "v1_tables_full": [
+        {
+          "table": 1,
+          "count": 35,
+          "max_absolute_difference": 0.0018224384619358602,
+          "time_s": 1200,
+          "radius_cm": 2.0,
+          "external": 33.4294582920364,
+          "project": 33.427635853574465,
+          "last_center_pair": [
+            33.575830276132216,
+            33.57534490607055
+          ],
+          "last_surface_pair": [
+            36.785783051842905,
+            36.785560475221004
+          ]
+        },
+        {
+          "table": 2,
+          "count": 35,
+          "max_absolute_difference": 7.269368846474222e-05,
+          "time_s": 100,
+          "radius_cm": 2.0,
+          "external": 2.24711835460379,
+          "project": 2.247045660915325,
+          "last_center_pair": [
+            2.5499923832336204,
+            2.5499924032280714
+          ],
+          "last_surface_pair": [
+            1.5102390324012929,
+            1.5102345980487442
+          ]
+        },
+        {
+          "table": 3,
+          "count": 30,
+          "max_absolute_difference": 0.0023963171664362903,
+          "time_s": 3600,
+          "radius_cm": 2.0,
+          "external": 43.000005068683265,
+          "project": 42.99760875151683,
+          "last_center_pair": [
+            49.84938774538279,
+            49.8494955728103
+          ],
+          "last_surface_pair": [
+            49.96664523931671,
+            49.96641284498236
+          ]
+        },
+        {
+          "table": 4,
+          "count": 30,
+          "max_absolute_difference": 6.933893963001481e-06,
+          "time_s": 5400,
+          "radius_cm": 0.0,
+          "external": 2.3860573169857786,
+          "project": 2.3860642508797416,
+          "last_center_pair": [
+            1.7661742255613444,
+            1.7661771073155368
+          ],
+          "last_surface_pair": [
+            1.0081206650368157,
+            1.0081231261700119
+          ]
+        }
+      ],
+      "v2_tables_rounded": [
+        {
+          "table": 1,
+          "count": 35,
+          "max_absolute_difference": 0.0017641464255362393,
+          "time_s": 1200,
+          "radius_cm": 2.0,
+          "external": 33.4294,
+          "project": 33.427635853574465,
+          "last_center_pair": [
+            33.5758,
+            33.57534490607055
+          ],
+          "last_surface_pair": [
+            36.7858,
+            36.785560475221004
+          ]
+        },
+        {
+          "table": 2,
+          "count": 35,
+          "max_absolute_difference": 6.315825372027462e-05,
+          "time_s": 300,
+          "radius_cm": 2.0,
+          "external": 2.0509,
+          "project": 2.0508368417462797,
+          "last_center_pair": [
+            2.55,
+            2.5499924032280714
+          ],
+          "last_surface_pair": [
+            1.5102,
+            1.5102345980487442
+          ]
+        },
+        {
+          "table": 3,
+          "count": 30,
+          "max_absolute_difference": 0.00571033203747362,
+          "time_s": 9000,
+          "radius_cm": 2.0,
+          "external": 49.6552,
+          "project": 49.660910332037474,
+          "last_center_pair": [
+            49.8496,
+            49.8494955728103
+          ],
+          "last_surface_pair": [
+            49.9669,
+            49.96641284498236
+          ]
+        },
+        {
+          "table": 4,
+          "count": 30,
+          "max_absolute_difference": 4.845948525922239e-05,
+          "time_s": 7200,
+          "radius_cm": 0.0,
+          "external": 2.1709,
+          "project": 2.170851540514741,
+          "last_center_pair": [
+            1.7662,
+            1.7661771073155368
+          ],
+          "last_surface_pair": [
+            1.0081,
+            1.0081231261700119
+          ]
+        }
+      ],
+      "v2_manuscript_rounded": [
+        {
+          "table": 1,
+          "count": 35,
+          "max_absolute_difference": 0.03464490607054671,
+          "time_s": 1800,
+          "radius_cm": 0.0,
+          "external": 33.5407,
+          "project": 33.57534490607055,
+          "last_center_pair": [
+            33.5407,
+            33.57534490607055
+          ],
+          "last_surface_pair": [
+            36.7783,
+            36.785560475221004
+          ]
+        },
+        {
+          "table": 2,
+          "count": 35,
+          "max_absolute_difference": 0.004254339084674985,
+          "time_s": 100,
+          "radius_cm": 2.0,
+          "external": 2.2513,
+          "project": 2.247045660915325,
+          "last_center_pair": [
+            2.55,
+            2.5499924032280714
+          ],
+          "last_surface_pair": [
+            1.5128,
+            1.5102345980487442
+          ]
+        },
+        {
+          "table": 3,
+          "count": 30,
+          "max_absolute_difference": 0.00571033203747362,
+          "time_s": 9000,
+          "radius_cm": 2.0,
+          "external": 49.6552,
+          "project": 49.660910332037474,
+          "last_center_pair": [
+            49.8496,
+            49.8494955728103
+          ],
+          "last_surface_pair": [
+            49.9669,
+            49.96641284498236
+          ]
+        },
+        {
+          "table": 4,
+          "count": 30,
+          "max_absolute_difference": 0.00013637887826156714,
+          "time_s": 3600,
+          "radius_cm": 1.5,
+          "external": 2.0231,
+          "project": 2.0229636211217383,
+          "last_center_pair": [
+            1.7662,
+            1.7661771073155368
+          ],
+          "last_surface_pair": [
+            1.0081,
+            1.0081231261700119
+          ]
+        }
+      ]
+    },
+    "v2_carrier_differences": [
+      {
+        "table": 1,
+        "max_difference": 0.03509999999999991,
+        "time_s": 1800,
+        "radius_cm": 0.0,
+        "table_file": 33.5758,
+        "manuscript": 33.5407
+      },
+      {
+        "table": 2,
+        "max_difference": 0.0041999999999999815,
+        "time_s": 100,
+        "radius_cm": 2.0,
+        "table_file": 2.2471,
+        "manuscript": 2.2513
+      },
+      {
+        "table": 3,
+        "max_difference": 0.0,
+        "time_s": 1800,
+        "radius_cm": 0.0,
+        "table_file": 32.1896,
+        "manuscript": 32.1896
+      },
+      {
+        "table": 4,
+        "max_difference": 0.00010000000000021103,
+        "time_s": 7200,
+        "radius_cm": 0.0,
+        "table_file": 2.1709,
+        "manuscript": 2.1708
+      }
+    ],
+    "project_data_sources": [
+      {
+        "component": "Q1",
+        "project_relative_path": "output/Q1/run_n5120.npz",
+        "absolute_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\run_n5120.npz",
+        "bytes": 640170,
+        "sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e",
+        "production_role": "official retained production trajectory; not tight control",
+        "arrays": [
+          "temperature_C",
+          "moisture_kg_kg"
+        ],
+        "time_array": "time_s",
+        "radius_array": "radius_m",
+        "time_rows": [
+          100,
+          300,
+          600,
+          900,
+          1200,
+          1500,
+          1800
+        ],
+        "time_s": [
+          100,
+          300,
+          600,
+          900,
+          1200,
+          1500,
+          1800
+        ],
+        "radius_column_indices": [
+          0,
+          5,
+          10,
+          15,
+          20
+        ],
+        "radius_m": [
+          0.0,
+          0.005,
+          0.01,
+          0.015,
+          0.02
+        ],
+        "selection": "Direct array indexing at matching stored timestamps and radius nodes; no interpolation, no rerun, values not rounded before comparing",
+        "axis_matches_checked": true
+      },
+      {
+        "component": "Q2",
+        "project_relative_path": "output/Q2/run_n10240_startsafe.npz",
+        "absolute_path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.npz",
+        "bytes": 38314283,
+        "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+        "production_role": "official retained production trajectory; not tight control",
+        "arrays": [
+          "temperature_C",
+          "moisture_kg_kg"
+        ],
+        "time_array": "time_s",
+        "radius_array": "radius_m",
+        "time_rows": [
+          1800,
+          3600,
+          5400,
+          7200,
+          9000,
+          10800
+        ],
+        "time_s": [
+          1800,
+          3600,
+          5400,
+          7200,
+          9000,
+          10800
+        ],
+        "radius_column_indices": [
+          0,
+          5,
+          10,
+          15,
+          20
+        ],
+        "radius_m": [
+          0.0,
+          0.005,
+          0.01,
+          0.015,
+          0.02
+        ],
+        "selection": "Direct array indexing at matching stored timestamps and radius nodes; no interpolation, no rerun, values not rounded before comparing",
+        "axis_matches_checked": true
+      }
+    ],
+    "external_table_selection": {
+      "v1": "tables.json keys 表1/表2/表3/表4 (raw stored floats)",
+      "v2_tables": "v2_tables.md first four labelled summary tables (four-decimal values)",
+      "v2_manuscript": "v2 manuscript section4.1 first four labelled summary tables (four-decimal values)",
+      "layout": "Table1/2 7 times x 5 radii, Table3/4 6 times x 5 radii. Q1 rounded hour labels in v2_tables are display labels; row time selection is the original 100/300/600/900/1200/1500/1800 s table sequence; no new time interpolation."
+    }
+  },
+  "project_long_term_baselines": {
+    "Q3_main": {
+      "source_path": "output/Q2/run_n10240_startsafe.json",
+      "source_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+      "t_cross_s": 206926.13864059298,
+      "strict_integer_s": 206927,
+      "reported_integer_hours": 57.47972222222222,
+      "method": "interleaved_nodal_finite_volume_segmented_BDF",
+      "result_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+      "scenario": "mean_tail",
+      "spec_sha256": "10d2ce44107c11c835ccf173c820e4100648f7c48fd7955c3890038a20f688a4"
+    },
+    "Q3_last": {
+      "source_path": "output/Q2/run_n10240_last_startsafe.json",
+      "source_sha256": "0be1e87fea665222d245b052e6b614653301ff1f9014b777821929308cc1ee36",
+      "t_cross_s": 205809.46534786082,
+      "strict_integer_s": 205810,
+      "reported_integer_hours": 57.169444444444444,
+      "method": "interleaved_nodal_finite_volume_segmented_BDF",
+      "result_sha256": "5a15e36911a87bc085632cfb4beb914f2f204ee49209f929b6829d0c06c034cb",
+      "scenario": "last_value",
+      "spec_sha256": "10d2ce44107c11c835ccf173c820e4100648f7c48fd7955c3890038a20f688a4"
+    },
+    "Q4_main": {
+      "source_path": "output/Q4/run_n10240-v1-20260911.json",
+      "source_sha256": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8",
+      "t_cross_s": 183948.7432153488,
+      "strict_integer_s": 183949,
+      "reported_integer_hours": 51.096944444444446,
+      "method": "material_coordinate_nodal_finite_volume_segmented_BDF",
+      "result_sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92",
+      "scenario": "mean_tail",
+      "spec_sha256": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532"
+    },
+    "Q4_last": {
+      "source_path": "output/Q4/run_n10240-last-v1-20260911.json",
+      "source_sha256": "619be66bc654c78ded0fc2752592724f545259f6fcdab08e9d3eeb6e1aa85c75",
+      "t_cross_s": 182967.03132693187,
+      "strict_integer_s": 182968,
+      "reported_integer_hours": 50.824444444444445,
+      "method": "material_coordinate_nodal_finite_volume_segmented_BDF",
+      "result_sha256": "5e7f9d9c2d8f9269395be7c2f5f3c9fc0fbd997a3746013c87eb8aadaf0f7533",
+      "scenario": "last_value",
+      "spec_sha256": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532"
+    }
+  },
+  "long_term_comparisons": [
+    {
+      "source": "S2",
+      "question": "Q3",
+      "external_time_s": 205620.0,
+      "external_time_h": 57.11666666666667,
+      "external_endpoint_rule": "first 60-second output sample below threshold",
+      "project_main_integer_s": 206927,
+      "project_last_integer_s": 205810,
+      "project_last_minus_external_s": 190.0,
+      "comparability": "input interpolation, radius interpolation, discretization and endpoint rules must be distinguished; not an error estimate"
+    },
+    {
+      "source": "S2",
+      "question": "Q4",
+      "external_time_s": 182940.0,
+      "external_time_h": 50.81666666666667,
+      "external_endpoint_rule": "first 60-second output sample below threshold",
+      "project_main_integer_s": 183949,
+      "project_last_integer_s": 182968,
+      "project_last_minus_external_s": 28.0,
+      "comparability": "input interpolation, radius interpolation, discretization and endpoint rules must be distinguished; not an error estimate"
+    },
+    {
+      "source": "S3_v1",
+      "question": "Q3",
+      "external_time_s": 205729.35634070582,
+      "external_time_h": 57.14704342797384,
+      "external_endpoint_rule": "interpolated threshold crossing from minute samples; equality is not strict threshold attainment",
+      "project_main_integer_s": 206927,
+      "project_last_integer_s": 205810,
+      "project_last_minus_external_s": 80.64365929417545,
+      "comparability": "input interpolation, radius interpolation, discretization and endpoint rules must be distinguished; not an error estimate"
+    },
+    {
+      "source": "S3_v1",
+      "question": "Q4",
+      "external_time_s": 182942.10628269942,
+      "external_time_h": 50.817251745194284,
+      "external_endpoint_rule": "interpolated threshold crossing from minute samples; equality is not strict threshold attainment",
+      "project_main_integer_s": 183949,
+      "project_last_integer_s": 182968,
+      "project_last_minus_external_s": 25.893717300583376,
+      "comparability": "input interpolation, radius interpolation, discretization and endpoint rules must be distinguished; not an error estimate"
+    }
+  ],
+  "S3_v2_model_variants": {
+    "times": {
+      "问题2_烘干时长_h": 57.14706946648055,
+      "问题3_烘干时长_h": 57.14706946648055,
+      "问题4_基线_烘干时长_h": 50.811872367695265,
+      "问题4_v2非均匀收缩_烘干时长_h": 47.62075179004256
+    },
+    "stop_records": {
+      "基线": {
+        "t_stop_s": 182922.74052370296,
+        "Cmax": 0.1499999975771881
+      },
+      "非均匀": {
+        "t_stop_s": 171434.7064441532,
+        "Cmax": 0.1499999976960279
+      }
+    },
+    "interpretation": "Changed heat storage and/or shrinkage closure. Not same-model numerical truth, rigorous bounds, or an independent third implementation."
+  },
+  "independent_arithmetic": {
+    "Bi_heat_R": 1.3888888888888888,
+    "Bi_heat_volume_over_side_area": 0.6944444444444444,
+    "D1_initial": 4.937655094173937e-09,
+    "D1_at_threshold": 1.8547445945663438e-11,
+    "Bi_mass_initial_R": 3.2404045432170427,
+    "Arrhenius_10K_ratio": {
+      "301.15": 1.5081344585910206,
+      "313.15": 1.4629511788523255,
+      "323.15": 1.4299162039310533
+    },
+    "D4_over_D3_at_same_T_C": {
+      "2.55": 0.18560291078450278,
+      "0.15": 0.4756993199803329
+    },
+    "physical_step_cm_at_R_1p2_and_dxi_0p05": 0.06
+  },
+  "existing_project_mesh_results_read_only": [
+    {
+      "question": "Q3",
+      "N": 160,
+      "t_cross_s": 206627.1029043664,
+      "path": "output/Q2/run_n160_startsafe.json",
+      "sha256": "5ddae8a5f4eeb6936c4d80f8a582ceae8d700bf14fef5cc27fc16938111b6066"
+    },
+    {
+      "question": "Q3",
+      "N": 320,
+      "t_cross_s": 206814.00317937927,
+      "path": "output/Q2/run_n320_startsafe.json",
+      "sha256": "b08e29f54633760d400a1715212da4018e33fb492bf36952c32fd4d3e905d1af"
+    },
+    {
+      "question": "Q3",
+      "N": 640,
+      "t_cross_s": 206888.05798060293,
+      "path": "output/Q2/run_n640_startsafe.json",
+      "sha256": "e51350f907ad6bf7155522e79137c206130a5f515af520537fe16379d581485c"
+    },
+    {
+      "question": "Q3",
+      "N": 1280,
+      "t_cross_s": 206914.60342598715,
+      "path": "output/Q2/run_n1280_startsafe.json",
+      "sha256": "2c074c576cfd72991837f0e68cdfe08101634c1f4fcaca6b57c681f024c7cda5"
+    },
+    {
+      "question": "Q3",
+      "N": 2560,
+      "t_cross_s": 206923.07788765206,
+      "path": "output/Q2/run_n2560_startsafe.json",
+      "sha256": "05dea1b08ab1c2aa7d866d882970e6b4fbce6885042581d0bd6b25c07b4ae44c"
+    },
+    {
+      "question": "Q3",
+      "N": 5120,
+      "t_cross_s": 206925.49889643877,
+      "path": "output/Q2/run_n5120_startsafe.json",
+      "sha256": "56d260115f23fd8435fb5d7ff6426c6ab22501baa23d9e6f4032df903b4d756c"
+    },
+    {
+      "question": "Q3",
+      "N": 10240,
+      "t_cross_s": 206926.13864059298,
+      "path": "output/Q2/run_n10240_startsafe.json",
+      "sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f"
+    },
+    {
+      "question": "Q4",
+      "N": 160,
+      "t_cross_s": 183886.34487390058,
+      "path": "output/Q4/run_n160-v1-20260911.json",
+      "sha256": "eaf94d23c403adf8bc81884304e707f124614ffaa9548949d63a1d9974197a0d"
+    },
+    {
+      "question": "Q4",
+      "N": 320,
+      "t_cross_s": 183930.0782267262,
+      "path": "output/Q4/run_n320-v1-20260911.json",
+      "sha256": "d46742001a43b2361ed656c461f5c9a84c9b99a6da75ae616975bb7d2b25b935"
+    },
+    {
+      "question": "Q4",
+      "N": 640,
+      "t_cross_s": 183943.6887208659,
+      "path": "output/Q4/run_n640-v1-20260911.json",
+      "sha256": "2eedf10e7f70f2b5480e0db8a630b0f6d346325d0f9c9d63e59314780d62cc7f"
+    },
+    {
+      "question": "Q4",
+      "N": 1280,
+      "t_cross_s": 183947.45673780047,
+      "path": "output/Q4/run_n1280-v1-20260911.json",
+      "sha256": "88dfd0192b2083095773fac60cb78ed0029699b0966bd9098064385883f42508"
+    },
+    {
+      "question": "Q4",
+      "N": 2560,
+      "t_cross_s": 183948.43437675684,
+      "path": "output/Q4/run_n2560-v1-20260911.json",
+      "sha256": "8ed8b3f9ef87a439f89bcdb6b996aa1609e35ae95a9bd251b9f8e1583676122c"
+    },
+    {
+      "question": "Q4",
+      "N": 5120,
+      "t_cross_s": 183948.68132100574,
+      "path": "output/Q4/run_n5120-v1-20260911.json",
+      "sha256": "345256202c5281aec1cbf507dd2a5ea0f17cb8e49d9959e7b5ceac70b9faa456"
+    },
+    {
+      "question": "Q4",
+      "N": 10240,
+      "t_cross_s": 183948.7432153488,
+      "path": "output/Q4/run_n10240-v1-20260911.json",
+      "sha256": "29cdaa1eb4d9e3336a3c77d300991a5e915f70d2c6a260fd46dcdb2da3ddb0e8"
+    }
+  ],
+  "analytic_checks": [
+    {
+      "id": "chain_rule",
+      "formula": "U_t=(R^-2/xi)*d_xi(xi*D*U_xi)+((xi*Rprime-v(R*xi,t))/R)*U_xi",
+      "interpretation": "Drift cancels for v=xi*Rprime. For v=0 sign is positive."
+    },
+    {
+      "id": "constant_field",
+      "formula": "U_xi=0 for U=constant",
+      "interpretation": "D=hm=0 with any first derivative drift preserves a uniform field; such a test cannot establish drift invalidity."
+    },
+    {
+      "id": "S3_v2_mass_storage",
+      "formula": "rho_eff=(1+C)/v0; v0=(1+C0)/rho(C0)",
+      "interpretation": "Different from the instantaneous Appendix 4 rho(C) used by the project."
+    },
+    {
+      "id": "S3_v2_local_mass_closure",
+      "formula": "I=integral_0^1[(1+C)/rho(C)] ds; dry mass per axial length proportional to R^2/I",
+      "interpretation": "Fixed length requires R^2/I constant; variable length requires additional L*R^2/I closure."
+    }
+  ],
+  "disposition": "Retain project models and official artifacts. External observations remain internal hints; no new formal acceptance or correctness/uniqueness proof.",
+  "execution_scope": {
+    "external_code_executed": false,
+    "project_solver_executed": false,
+    "new_long_simulation_started": false,
+    "performed": [
+      "public source reads",
+      "static code and mathematical review",
+      "read-only existing array/JSON comparison",
+      "independent scalar arithmetic",
+      "hash identity checks"
+    ]
+  },
+  "protected_artifact_checks": {
+    "before": {
+      "docs/Q1/solution_brief.md": "06e3f5b7b33afc4e09b33c1702f7eb3c326805759e72c3f2261bf3b56d6bd265",
+      "docs/Q1/verification_note.md": "c109b74558c9206b38985aaa726b57a97c8a8350aeb4f9d7c8e87cfa68339ba5",
+      "docs/Q2/solution_brief.md": "357571f0e60c3c272bb817aba9c5f97b6a8960cc7fb82de71cf3c143d29f214c",
+      "docs/Q2/verification_note.md": "ef058e0665a3ceb7c0c0490592a770f73e48eacf68afe2bc90ef448c7b007ed8",
+      "docs/Q3/solution_brief.md": "e50f55121cb8c95104678108e9e167c2e6ea38fc3f4120fd3dac526bb1e253d1",
+      "docs/Q4/solution_brief.md": "ce9ab84d5246cd204081d483abdd36f4de4fb8e9b94361a78994cfc1a9383274",
+      "output/Q1/result1.xlsx": "8a94ff36cb51d8c06c09ff5caa0e9397f7b2846c90176100e3f7e2f426e69b0b",
+      "output/Q2/result2.xlsx": "c36c0a979d2692560c8e5b0fed275c5b6795f7eaaec38d8465c09b5cc7736c93",
+      "output/Q3/result3.xlsx": "2e3a99684461b84bc592ec9cd9127a411a8fed9257d154c5439fd5a9d4b0d1fe",
+      "output/Q4/result4.xlsx": "4aa7fe3845e2bfe3fa1a7a9c05cce0b69d960f7e54c4b5b82c29e994b1bbe7f2"
+    },
+    "after": {
+      "docs/Q1/solution_brief.md": "06e3f5b7b33afc4e09b33c1702f7eb3c326805759e72c3f2261bf3b56d6bd265",
+      "docs/Q1/verification_note.md": "c109b74558c9206b38985aaa726b57a97c8a8350aeb4f9d7c8e87cfa68339ba5",
+      "docs/Q2/solution_brief.md": "357571f0e60c3c272bb817aba9c5f97b6a8960cc7fb82de71cf3c143d29f214c",
+      "docs/Q2/verification_note.md": "ef058e0665a3ceb7c0c0490592a770f73e48eacf68afe2bc90ef448c7b007ed8",
+      "docs/Q3/solution_brief.md": "e50f55121cb8c95104678108e9e167c2e6ea38fc3f4120fd3dac526bb1e253d1",
+      "docs/Q4/solution_brief.md": "ce9ab84d5246cd204081d483abdd36f4de4fb8e9b94361a78994cfc1a9383274",
+      "output/Q1/result1.xlsx": "8a94ff36cb51d8c06c09ff5caa0e9397f7b2846c90176100e3f7e2f426e69b0b",
+      "output/Q2/result2.xlsx": "c36c0a979d2692560c8e5b0fed275c5b6795f7eaaec38d8465c09b5cc7736c93",
+      "output/Q3/result3.xlsx": "2e3a99684461b84bc592ec9cd9127a411a8fed9257d154c5439fd5a9d4b0d1fe",
+      "output/Q4/result4.xlsx": "4aa7fe3845e2bfe3fa1a7a9c05cce0b69d960f7e54c4b5b82c29e994b1bbe7f2"
+    },
+    "mismatches": [],
+    "all_10_byte_unchanged": true,
+    "current_state_sha256": "52958911ed0431f2ddf3a95055d31e6c6abd4f07f1e6b2a22e22699842d53be9",
+    "expected_state_sha256": "52958911ed0431f2ddf3a95055d31e6c6abd4f07f1e6b2a22e22699842d53be9",
+    "state_unchanged": true
+  },
+  "report": {
+    "path": "references/internal_reviews/online_solutions_20260911.md",
+    "sha256": "b078ebec23a5333980c6a103214c5bb63826b809cedbc1ea09ab68e21c8989da"
+  },
+  "review_closure": {
+    "independent_review": "Q3/Q4 source-comparison and mathematical statements read by a second reviewer; endpoint interpolation wording and v2 branch labels refined.",
+    "material_open_issues": [],
+    "scope": "Internal review only; not formal model acceptance."
+  }
+}

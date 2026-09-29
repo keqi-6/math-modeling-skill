@@ -1,0 +1,116 @@
+{
+  "schema_version": "10.0",
+  "cases": [
+    {
+      "id": "CHG.BASELINE.POSITIVE",
+      "kind": "positive",
+      "target_rule_id": "MNT.OWNER.CANONICAL",
+      "prompt": "修改Skill中的一条规则",
+      "expected": {
+        "base": {
+          "status": "resolved", "mode": "skill_maintenance", "route_ids": ["RT.SKILL.CHANGE"],
+          "target_selected": true,
+          "target_effect": {"verb": "require", "target": "edit_target", "value": "declared_rule_owner"},
+          "target_behavior": "只修改规则声明的规范 owner。",
+          "selected_rule_ids": ["MNT.OWNER.CANONICAL"]
+        },
+        "candidate": {
+          "status": "resolved", "mode": "skill_maintenance", "route_ids": ["RT.SKILL.CHANGE"],
+          "target_selected": true,
+          "target_effect": {"verb": "require", "target": "edit_target", "value": "declared_rule_owner"},
+          "target_behavior": "只修改规则声明的规范 owner。",
+          "selected_rule_ids": ["MNT.OWNER.CANONICAL"]
+        }
+      }
+    },
+    {
+      "id": "CHG.BASELINE.NEAR_NEGATIVE",
+      "kind": "near_negative",
+      "target_rule_id": "MNT.OWNER.CANONICAL",
+      "prompt": "只读检查V10技能规则",
+      "expected": {
+        "base": {
+          "status": "resolved", "mode": "project_readonly", "route_ids": ["RT.SKILL.AUDIT"],
+          "target_selected": false, "excluded_rule_ids": ["MNT.OWNER.CANONICAL"]
+        },
+        "candidate": {
+          "status": "resolved", "mode": "project_readonly", "route_ids": ["RT.SKILL.AUDIT"],
+          "target_selected": false, "excluded_rule_ids": ["MNT.OWNER.CANONICAL"]
+        }
+      }
+    },
+    {
+      "id": "CHG.BASELINE.CONFLICT",
+      "kind": "conflict",
+      "target_rule_id": "REC.R0.CONTINUE",
+      "prompt": "继续完成这个项目",
+      "fixture": {"project_state": "P0", "components": []},
+      "conflict_rule_ids": ["REC.R1.TRANSITIVE", "REC.R2.FULL"],
+      "resolution": "target_wins",
+      "expected": {
+        "base": {
+          "status": "resolved", "mode": "mutate", "route_ids": ["RT.PROJECT.RESUME"],
+          "target_selected": true,
+          "target_effect": {"verb": "select", "target": "recovery_level", "value": "R0_CONTINUE"},
+          "selected_rule_ids": ["REC.R0.CONTINUE"],
+          "excluded_rule_ids": ["REC.R1.TRANSITIVE", "REC.R2.FULL"]
+        },
+        "candidate": {
+          "status": "resolved", "mode": "mutate", "route_ids": ["RT.PROJECT.RESUME"],
+          "target_selected": true,
+          "target_effect": {"verb": "select", "target": "recovery_level", "value": "R0_CONTINUE"},
+          "selected_rule_ids": ["REC.R0.CONTINUE"],
+          "excluded_rule_ids": ["REC.R1.TRANSITIVE", "REC.R2.FULL"]
+        }
+      }
+    },
+    {
+      "id": "CHG.BASELINE.STATE_D1",
+      "kind": "state_binding",
+      "target_rule_id": "DATA.TREAT.COPY",
+      "prompt": "清洗并预处理这个数据集",
+      "component_id": "data-main",
+      "pair_id": "CHG.BASELINE.DATA_TREAT.STATE",
+      "fixture": {
+        "project_state": "P0",
+        "components": [{"id": "data-main", "type": "shared_data", "state": "D1"}]
+      },
+      "expected": {
+        "base": {
+          "status": "resolved", "mode": "mutate", "route_ids": ["RT.DATA.TREAT"],
+          "target_selected": true,
+          "target_effect": {"verb": "require", "target": "treatment_output", "value": "new_candidate_identity"},
+          "selected_rule_ids": ["DATA.TREAT.COPY"]
+        },
+        "candidate": {
+          "status": "resolved", "mode": "mutate", "route_ids": ["RT.DATA.TREAT"],
+          "target_selected": true,
+          "target_effect": {"verb": "require", "target": "treatment_output", "value": "new_candidate_identity"},
+          "selected_rule_ids": ["DATA.TREAT.COPY"]
+        }
+      }
+    },
+    {
+      "id": "CHG.BASELINE.STATE_D3",
+      "kind": "state_binding",
+      "target_rule_id": "DATA.TREAT.COPY",
+      "prompt": "清洗并预处理这个数据集",
+      "component_id": "data-main",
+      "pair_id": "CHG.BASELINE.DATA_TREAT.STATE",
+      "fixture": {
+        "project_state": "P0",
+        "components": [{"id": "data-main", "type": "shared_data", "state": "D3"}]
+      },
+      "expected": {
+        "base": {
+          "status": "blocked", "mode": "mutate", "route_ids": [],
+          "target_selected": false, "excluded_rule_ids": ["DATA.TREAT.COPY"]
+        },
+        "candidate": {
+          "status": "blocked", "mode": "mutate", "route_ids": [],
+          "target_selected": false, "excluded_rule_ids": ["DATA.TREAT.COPY"]
+        }
+      }
+    }
+  ]
+}

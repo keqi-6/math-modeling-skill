@@ -1,0 +1,43 @@
+{
+  "schema_version": "16.0",
+  "decision_id": "V16.COMPATIBLE_CHANGE.FAST_PATH",
+  "effective_release": "V16.0.0",
+  "authorization": {
+    "quote": "现在还是在门禁层进行简化优化，就目前的阻碍点在于，在实际情况下，在我做q3时有一个新点子需要传播回q1q2，但这个过程中耗时最长的不是新点子的实现，而是各类门禁的回填，就很麻烦",
+    "quote_sha256": "2996b781621fa0c957a9c53fe57273ed082762124b4ea3a6b6ed6e56e0380e54"
+  },
+  "observed_failure": {
+    "project": "CUMCM-2025-A",
+    "change": "Q3 geometry-window pruning backported to Q1 and Q2 with the mathematical contract unchanged",
+    "observed_state_events": 48,
+    "repeated_checkpoint_execution_transition_close_events": 32,
+    "implementation_time_minutes_approx": 4,
+    "gate_replay_time_minutes_before_first_partial_return": 24,
+    "finding": "The controller lacked a compatible implementation change class and sealed only one state_effect per execution, so an implementation-equivalent cross-question change was forced through serial model-redesign lifecycle replay."
+  },
+  "decision": [
+    "Keep ordinary propagation in one G1 cross-component ChangeSet with no lifecycle mutation or persistent evidence backfill.",
+    "Represent acceptance as a validity overlay, not a new lifecycle state or a synthetic S7-to-S2 redesign.",
+    "Seal all affected questions and exact post-specification evidence levels in one G2 compatible-change execution.",
+    "Install replacement evidence and declared identity refreshes through one atomic bundle; reject missing evidence or undeclared exact consumers without a partial state commit.",
+    "Reuse current scope, problem definition, evidence plan, candidate set, model specification, and selection rationale only after their live evidence identities are revalidated.",
+    "Close the identity world by requiring every actual protected registered delta in artifact_updates, globally scanning changed file/command locators and artifact input refs, binding fresh replacement locators to the ChangeSet, and using optional claim_updates only for actual claim identity deltas bound to old/new producer claim-text SHA-256 identities and exact typed consumers.",
+    "Do not block the batch for an unrelated unprotected working artifact that has no exact evidence binding.",
+    "Seal target and source state, status, and invalidation markers so reconciliation cannot erase an intervening validity change.",
+    "For compatible-change R1, read unchanged official inputs by identity and semantically reread target model/selection sources, the source question implementation and E1/E2 evidence, plus actual workspace deltas.",
+    "Escalate to the ordinary earliest-layer reopen whenever the model contract, selection, assumptions, objective, constraints, feasible domain, or claim boundary changes."
+  ],
+  "preserved": [
+    "All V15 active atoms, capability packets, transition edges, artifact controls, recovery barriers, dangerous-runtime authorization, and Skill-maintenance isolation remain active.",
+    "E1 and E2 remain mandatory for each implementation target; E3, E4, uncertainty, and robustness are refreshed whenever the declared delta actually affects them.",
+    "An exact consumer outside the declared closure remains fail-closed.",
+    "Normal model redesign and failed-evidence reopen paths remain unchanged.",
+    "Freeze, installation, and stable-version replacement still require separate explicit authorization."
+  ],
+  "rollback": {
+    "kind": "isolated_v15_0_1_candidate_tree",
+    "tree_sha256": "76debfe2bf592b0136eb73ec1ab1de0163150aeb677b3fc878201aa9bec6a96d",
+    "location": "/mnt/c/Users/35190/skills_v15_candidate",
+    "location_shipped": false
+  }
+}

@@ -1,0 +1,4783 @@
+{
+  "schema_version": "11.0",
+  "generated_by": "inherited_v10_semantic_oracle",
+  "cases": [
+    {
+      "id": "ATOM.ART.ADMIT.CONSUMER",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "ART.ADMIT.CONSUMER",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "artifact_consumer_count",
+          "value": ">=1"
+        },
+        "owner": "rules/governance.json#ART.ADMIT.CONSUMER",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "0baf383738ff05e81bec0a808afa5935472ae9e2506f7b06496fffa2f959e399"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.ART.ADMIT.MINIMAL",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "ART.ADMIT.MINIMAL",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "default_project_files",
+          "value": [
+            ".modeling/state.json"
+          ]
+        },
+        "owner": "rules/governance.json#ART.ADMIT.MINIMAL",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "1920290e370fa42870d96ab720463c85571a2710c841787c17ba74732624a237"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.ART.ADMIT.NO_SPECULATION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "ART.ADMIT.NO_SPECULATION",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "artifact_admission_bypass",
+          "value": "project_file_or_directory_creation_without_current_contract_pass"
+        },
+        "owner": "rules/governance.json#ART.ADMIT.NO_SPECULATION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4977b874a1375a385cdb49ff36953bb1f95d8d0a403869ba992621fbdfab7482"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.ART.ADMIT.PROPOSAL_FIELDS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "ART.ADMIT.PROPOSAL_FIELDS",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "artifact_proposal_metadata_validation",
+          "value": "current_artifact_contract_metadata_profile_pass"
+        },
+        "owner": "rules/governance.json#ART.ADMIT.PROPOSAL_FIELDS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "1d77b6073e44cafac92ae46a28dfc2ad645244f3a84733787e1f7baf54198b1b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.ART.PROMOTE.VALIDATE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "ART.PROMOTE.VALIDATE",
+      "source_behavior_case_id": "BEH.DATA.FREEZE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "promotion_gate",
+          "value": "declared_validation_pass"
+        },
+        "owner": "rules/governance.json#ART.PROMOTE.VALIDATE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "5c9255cf16278ba18a71df4e6aeef1dc1f7964491558f511e1a044bd0183ee44"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.ART.REGISTER.IDENTITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "ART.REGISTER.IDENTITY",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "artifact_identity",
+          "value": "path_hash_size_producer_consumers"
+        },
+        "owner": "rules/governance.json#ART.REGISTER.IDENTITY",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "0ee9f8b623d6de1f67bb0284cb45520e792e10b4a4d5619ff335b5dedefc5960"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.DATA.AUDIT.ANOMALY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.AUDIT.ANOMALY",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "anomaly_set",
+          "value": "statistical_and_domain_checks"
+        },
+        "owner": "rules/data.json#DATA.AUDIT.ANOMALY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "e9320b854eebf606f4c4300357a11cde41a8dbe4a2c1407a9c8558bfc2100f8f"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.AUDIT.BEFORE_TREATMENT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.AUDIT.BEFORE_TREATMENT",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "data_audit_readiness",
+          "value": "documented_audit_evidence_before_any_cleaning_or_transformation"
+        },
+        "owner": "rules/data.json#DATA.AUDIT.BEFORE_TREATMENT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4f795be26d268d79e95af7575f8958a4277d93f25ec3980f6f09dc84ea3a87e1"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.AUDIT.COMPLETENESS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.AUDIT.COMPLETENESS",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "dataset_completeness",
+          "value": "expected_population_time_space_and_required_field_coverage"
+        },
+        "owner": "rules/data.json#DATA.AUDIT.COMPLETENESS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "335f5edcd81910083478d267e5970bf7a10b8cc2ef72df730b44e1722e435fb5"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.AUDIT.DUPLICATE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.AUDIT.DUPLICATE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "duplicate_identity",
+          "value": "key_semantics"
+        },
+        "owner": "rules/data.json#DATA.AUDIT.DUPLICATE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "f19b90cc6e0e847322ea11012fd70b40e54943f52e1a0c7ef7097d27b0cb2132"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.AUDIT.LEAKAGE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.AUDIT.LEAKAGE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "data_leakage",
+          "value": "time_group_target_boundaries"
+        },
+        "owner": "rules/data.json#DATA.AUDIT.LEAKAGE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4a5e9ed2de29d8ab589a1985b3d9b5520fcc7ab3f3fabeff60356da7abc70a68"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.AUDIT.MISSING",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.AUDIT.MISSING",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "missingness_pattern",
+          "value": "rate_structure_mechanism"
+        },
+        "owner": "rules/data.json#DATA.AUDIT.MISSING",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d507635af2d259736867839346d8b4e492c4293ee47cee416f32148125c567c3"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.AUDIT.SCHEMA",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.AUDIT.SCHEMA",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "dataset_schema",
+          "value": "shape_types_keys_ranges"
+        },
+        "owner": "rules/data.json#DATA.AUDIT.SCHEMA",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "5e273cd64e83792ec1a787905cf09fdb10e68e4aaaa2f371a1a08858cd8c1282"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.AUDIT.SEMANTIC_CONSISTENCY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.AUDIT.SEMANTIC_CONSISTENCY",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "dataset_semantic_consistency",
+          "value": "definitions_units_codes_keys_and_time_space_meanings_agree"
+        },
+        "owner": "rules/data.json#DATA.AUDIT.SEMANTIC_CONSISTENCY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "32a9e2ab5f7a350c02a1bfbdb7e04b62adccc389077d297b8e3b54098cbcb8f4"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.FREEZE.IDENTITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.FREEZE.IDENTITY",
+      "source_behavior_case_id": "BEH.DATA.FREEZE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "frozen_dataset_identity",
+          "value": "path_sha256_schema"
+        },
+        "owner": "rules/data.json#DATA.FREEZE.IDENTITY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b3e4b516138b353d509b5899573b073144b0d4979998a0110834e4a6b39e1d4d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.FREEZE.INVALIDATE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.FREEZE.INVALIDATE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D3",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "invalidate",
+          "target": "dataset_consumers",
+          "value": "transitive_dependency_closure"
+        },
+        "owner": "rules/data.json#DATA.FREEZE.INVALIDATE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "1d6d93c5d40326f148f9175813eeae842ed7dc95836eb40ae1c960316ee750b3"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.FREEZE.VALIDATE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.FREEZE.VALIDATE",
+      "source_behavior_case_id": "BEH.DATA.FREEZE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "frozen_dataset",
+          "value": "audit_and_treatment_acceptance"
+        },
+        "owner": "rules/data.json#DATA.FREEZE.VALIDATE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "cce05c5e9176aa59f44e1efe9633daf674cdedb23699e7b23261f64796e9b7ff"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.IDENTITY.BEFORE_USE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.IDENTITY.BEFORE_USE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "data_identity_readiness",
+          "value": "before_any_data_use_source_schema_units_time_space_raw_identity_ready"
+        },
+        "owner": "rules/data.json#DATA.IDENTITY.BEFORE_USE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "9851644d0f0e271887374df76c50406137b8268b945561a075f170caf6c442b0"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.IDENTITY.CONTEXT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.IDENTITY.CONTEXT",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "dataset_context",
+          "value": "units_time_space_population"
+        },
+        "owner": "rules/data.json#DATA.IDENTITY.CONTEXT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b9cd43fbab9814a7e553458d87aa6175ccc93a6cd0ac750b0052ba8cf6d4ff54"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.IDENTITY.RAW_IMMUTABLE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.IDENTITY.RAW_IMMUTABLE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "raw_dataset_mutation",
+          "value": true
+        },
+        "owner": "rules/data.json#DATA.IDENTITY.RAW_IMMUTABLE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "ab00b7206c4c281620db349ccbc64141dd0170293c489c6948ad0c4456f27999"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.IDENTITY.SOURCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.IDENTITY.SOURCE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "dataset_source",
+          "value": "origin_acquisition_time_terms"
+        },
+        "owner": "rules/data.json#DATA.IDENTITY.SOURCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "6d35acc76c9b3e00a5d6c4e742f2cd133e920899d7dc8b237e61dd0c4652344b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.TREAT.COPY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.TREAT.COPY",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "treatment_output",
+          "value": "new_candidate_identity"
+        },
+        "owner": "rules/data.json#DATA.TREAT.COPY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7da73a981db33e7530b4109af3c297b593f30444e5f37b6fdebe857e3cb485c9"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.TREAT.DECIDE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.TREAT.DECIDE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "treatment_decision",
+          "value": "alternatives_effect_reason"
+        },
+        "owner": "rules/data.json#DATA.TREAT.DECIDE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "2d49204c8ba57c938734ccc6638dc082d8d87b719e5a622b77245583da12d21b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DATA.TREAT.LINEAGE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DATA.TREAT.LINEAGE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "transformation_lineage",
+          "value": "input_operation_parameters_output"
+        },
+        "owner": "rules/data.json#DATA.TREAT.LINEAGE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "f7c99859d74f13a82b87a2c471d32cb0c27dc0ff1bb5d665cd7fe4d877384a51"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.FINAL.BOUNDARY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.FINAL.BOUNDARY",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "submission_boundary",
+          "value": "required_allowed_and_excluded_material"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.FINAL.BOUNDARY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "6030b3bb06222e09fc780c52e9a38edc09417d056eb7c4baffcd6e10c36e300a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.FINAL.COVERAGE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.FINAL.COVERAGE",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "request_coverage",
+          "value": "all_declared_deliverables"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.FINAL.COVERAGE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "da5b3c15409dcc1946e5f079180d40e8df5d8af5c64f3727a0580e550a5def64"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.FINAL.NO_TEMP",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.FINAL.NO_TEMP",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "delivered_artifact_status",
+          "value": [
+            "temporary",
+            "working"
+          ]
+        },
+        "owner": "rules/evidence_delivery.json#DEL.FINAL.NO_TEMP",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d4647f13b8fb581fbc49a1563ac49add4525d818e0ff8dedd4ca4f24eb1b5b20"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.FINAL.RENDER",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.FINAL.RENDER",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "delivery_rendering",
+          "value": "all_rendered_deliverables_opened_and_inspected"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.FINAL.RENDER",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "87b862173bff54924a85a3e1d7b45ef6f4f023bffb31e00bf886a13ef1494407"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.FINAL.REPRODUCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.FINAL.REPRODUCE",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "reproducibility",
+          "value": "declared_entrypoints_and_inputs"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.FINAL.REPRODUCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "805ea2b9604f91e841211603cff6c4726586206dd7df0802b9b6f0d346f4661f"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.HANDOFF.STATE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.HANDOFF.STATE",
+      "source_behavior_case_id": "BEH.CLAUSE.PRJ.SCOPE.CONTROLLED_CHANGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "handoff_authority",
+          "value": "state_next_actions_open_decisions"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.HANDOFF.STATE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "c84d943d296ae494e27325868ea80b871fa9c0e19df1ba6f9505655f8512f03a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.PROV.CITATIONS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.PROV.CITATIONS",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "external_material_citations",
+          "value": "every_external_claim_or_asset_has_resolving_citation"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.PROV.CITATIONS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "f2ac47abb23b8d5071a8c9cd5acc98c9e93d8cd6bb108a7bb196c8ba1e48cb0e"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.PROV.LICENSE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.PROV.LICENSE",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "redistribution_permission",
+          "value": "source_terms_allow_package"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.PROV.LICENSE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "567e9e861604b2125f7b2d25ed694430ef741bbf677f3a3c636fbaed8c02e6ef"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.PROV.LINEAGE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.PROV.LINEAGE",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "external_material_lineage",
+          "value": "source_identity_to_packaged_identity"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.PROV.LINEAGE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "bd9b058b60a868f96b09c2a8a3cc57d6ba9123de5acc02759a982186a6ebebb5"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.PROV.SECRETS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.PROV.SECRETS",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "package_sensitive_content",
+          "value": "credentials_or_private_data"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.PROV.SECRETS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "81b97577613055781b4f24f56f81562672c5e058443f71f9fee953191747b3dd"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.DEL.PROV.WHITELIST",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "DEL.PROV.WHITELIST",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "package_members",
+          "value": "validated_declared_whitelist"
+        },
+        "owner": "rules/evidence_delivery.json#DEL.PROV.WHITELIST",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "c019bbf8b16c08cd20e565ef6567d10fb7cbe5ff76f0dbe1064f6fe5a84746c3"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.EXTERNAL.AUTHORITATIVE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.EXTERNAL.AUTHORITATIVE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "external_fact_source",
+          "value": "authoritative_accessed_source"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.EXTERNAL.AUTHORITATIVE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "1c300f73ba82d9bfb5aeb60a1458b946163d3714e27fd42024bc2d46790b842a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.EXTERNAL.NO_SNIPPET_AI",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.EXTERNAL.NO_SNIPPET_AI",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "primary_evidence_substitute",
+          "value": "search_snippet_or_ai_answer"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.EXTERNAL.NO_SNIPPET_AI",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "c0e5a5cdfaee39066fb6b8d90422f3a813dd99ee966beb51b06f2d577312ba3f"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.POLICY.CURRENT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.POLICY.CURRENT",
+      "source_behavior_case_id": "BEH.LITERATURE.SEARCH",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "external_policy",
+          "value": "current_official_source"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.POLICY.CURRENT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "51d08cb03bae149280067fe822a586345b2ecfe0f1a0bf46aea649e222f5464b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.PROV.CLAIM_MAP",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.PROV.CLAIM_MAP",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "claim_source_link",
+          "value": "claim_to_exact_source"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.PROV.CLAIM_MAP",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "571cc5a10bff52d2a065f16f518484ee54e40b93b8c15731fb868e118d316478"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.PROV.METADATA",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.PROV.METADATA",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "source_identity",
+          "value": "creator_title_uri_date_license"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.PROV.METADATA",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "65aa7fa61c73f561ffc65fe88d76eddedd8f624320159d0ca4fa686d5a1333b9"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.PROV.NO_FORCED_FILES",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.PROV.NO_FORCED_FILES",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.D2",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "default_provenance_bundle",
+          "value": [
+            "README",
+            "json",
+            "bib",
+            "note",
+            "refs"
+          ]
+        },
+        "owner": "rules/evidence_delivery.json#EVD.PROV.NO_FORCED_FILES",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "6117e4c5fab57898782a410b1737f48396e2f9bc09228c767910144a80e39e65"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.SEARCH.CLAIM_FIRST",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.SEARCH.CLAIM_FIRST",
+      "source_behavior_case_id": "BEH.LITERATURE.ACCESS_SCOPE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "search_input",
+          "value": "explicit_claim_or_decision"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.SEARCH.CLAIM_FIRST",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "6df932bb9adbe528fd5937c9a2b8f812037bdb53a75fd555b963c1800d5c2d3c"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.SEARCH.COUNTEREVIDENCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.SEARCH.COUNTEREVIDENCE",
+      "source_behavior_case_id": "BEH.LITERATURE.ACCESS_SCOPE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "search_direction",
+          "value": "support_and_counterevidence"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.SEARCH.COUNTEREVIDENCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d011e0afcf5defbbe6cd8aeb21cfd93562213d19085549819cd424fa0585b5f6"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.SEARCH.FULLTEXT_SCOPE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.SEARCH.FULLTEXT_SCOPE",
+      "source_behavior_case_id": "BEH.LITERATURE.ACCESS_SCOPE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "source_claim_scope",
+          "value": "actually_accessed_content"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.SEARCH.FULLTEXT_SCOPE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "34917e824572dc72f98321b33fd4c7561d1f8a5a167487c333024d3729a9c4e6"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.EVD.SEARCH.PRIMARY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "EVD.SEARCH.PRIMARY",
+      "source_behavior_case_id": "BEH.LITERATURE.ACCESS_SCOPE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "select",
+          "target": "source_preference",
+          "value": "primary_authoritative"
+        },
+        "owner": "rules/evidence_delivery.json#EVD.SEARCH.PRIMARY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "5cd077f5f3be8a7283ace0a16bdc4eba9395b11c67bba80fce20975c40eb645a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.GOV.AUTH.CLAIM_SCOPE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.AUTH.CLAIM_SCOPE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "claim_scope",
+          "value": "verified_evidence_scope"
+        },
+        "owner": "rules/governance.json#GOV.AUTH.CLAIM_SCOPE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "122b6f98b6201379dd56b9c65b5ce282237b9e4d84394faa9a16e310f75a3ff2"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.GOV.AUTH.DIMENSION_SEPARATION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.AUTH.DIMENSION_SEPARATION",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "decision_dimension_model",
+          "value": "authorization_epistemic_project_choice_state_and_procedure_separate"
+        },
+        "owner": "rules/governance.json#GOV.AUTH.DIMENSION_SEPARATION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "dda6f1968c0b074e4f7c85c6e2b6a6b0adf9ce8a58b7ddcd42ccc75e7c93d769"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.GOV.AUTH.FROZEN_CHOICE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.AUTH.FROZEN_CHOICE",
+      "source_behavior_case_id": "BEH.ROUTE.FROZEN_DECISION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "frozen_change_authorization",
+          "value": "explicit_change_decision"
+        },
+        "owner": "rules/governance.json#GOV.AUTH.FROZEN_CHOICE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "ed0a33e2056c374be63b01853577e3978ff16cd597937332fdee92298b7057fc"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.GOV.AUTH.WRITE_SCOPE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.AUTH.WRITE_SCOPE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "write_scope",
+          "value": "explicit_request_boundary"
+        },
+        "owner": "rules/governance.json#GOV.AUTH.WRITE_SCOPE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "1d2a2ffaa715c9455b55dc8156d0b7b892c7b624c978579b90f9a730d283e9fe"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.GOV.DECISION.CLASSIFY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.DECISION.CLASSIFY",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "select",
+          "target": "decision_kind",
+          "value": [
+            "new_design",
+            "change_existing",
+            "not_applicable"
+          ]
+        },
+        "owner": "rules/governance.json#GOV.DECISION.CLASSIFY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7e963974d1214d5b2f72f8141aa77f8e87375007e0ecdb276504d8055267a9ec"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.GOV.MODE.DERIVE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.MODE.DERIVE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "select",
+          "target": "execution_mode",
+          "value": "derive_from_complete_request"
+        },
+        "owner": "rules/governance.json#GOV.MODE.DERIVE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "5fe668a056e7bb8b0ac93d584bdb3ed0a5b882b340a1531e0f8fcd78e98157cc"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.GOV.MODE.STABLE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.MODE.STABLE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "mode_change",
+          "value": "material_authorization_change"
+        },
+        "owner": "rules/governance.json#GOV.MODE.STABLE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "c7a0919b5ee3b1244bbc99c36136500c69d2a7564d7a4cbe7a2a801975773665"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.GOV.OWNER.UNIQUE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.OWNER.UNIQUE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "semantic_owner_count",
+          "value": 1
+        },
+        "owner": "rules/governance.json#GOV.OWNER.UNIQUE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "340d6276180ace53171e2408c51506ffcab86af7dee1d18e059240456b772482"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.GOV.RECEIPT.END_MATCH",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.RECEIPT.END_MATCH",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "end_receipt",
+          "value": "actual_state_and_artifact_facts"
+        },
+        "owner": "rules/governance.json#GOV.RECEIPT.END_MATCH",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "87f306239a29301a1853c18c4b9d5f07fadc5d5355325320a72e5150a9c4d209"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.GOV.RECEIPT.START_MATCH",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.RECEIPT.START_MATCH",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "start_receipt",
+          "value": "recomputed_runtime_facts"
+        },
+        "owner": "rules/governance.json#GOV.RECEIPT.START_MATCH",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "8e837e21df7a722bee5948c3adfb91161020bdf7546a3257ffae2aa67599010c"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.GOV.ROUTE.DECOMPOSE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.ROUTE.DECOMPOSE",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.RENDER",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "route_shape",
+          "value": "dependency_ordered_chain"
+        },
+        "owner": "rules/governance.json#GOV.ROUTE.DECOMPOSE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "c744719dd08cf46029842465004c56bbb37685a73922af752e7c521b90f99f23"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.GOV.ROUTE.PROOF_SOURCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.ROUTE.PROOF_SOURCE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "route_proof_source",
+          "value": [
+            "catchall_match",
+            "legacy_transitive_link"
+          ]
+        },
+        "owner": "rules/governance.json#GOV.ROUTE.PROOF_SOURCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "99741f21e93333d819480c0bf171303523f109e6f1146aa7864c87c769116861"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.GOV.ROUTE.RAW_REQUEST",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.ROUTE.RAW_REQUEST",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "route_input",
+          "value": "raw_user_request"
+        },
+        "owner": "rules/governance.json#GOV.ROUTE.RAW_REQUEST",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "ee4ab7b2b44521160afd5c345ae52c5c01ffc149f774a412b452a66e0aed66d6"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.GOV.ROUTE.STATE_BIND",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.ROUTE.STATE_BIND",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "route_state",
+          "value": "authoritative_state_lookup"
+        },
+        "owner": "rules/governance.json#GOV.ROUTE.STATE_BIND",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "39f99388e215c0bdb70e648f7e5a469729e00a12a2853b88334ef553b5992f36"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.GOV.ROUTE.TUPLE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.ROUTE.TUPLE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "route_tuple",
+          "value": "mode_object_action_state_contract_match"
+        },
+        "owner": "rules/governance.json#GOV.ROUTE.TUPLE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "8ab5349db178910f070e61771744175eaaa929fcbaa7ca6439e8999b03c9eda6"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.GOV.ROUTE.UNIQUE_WRITE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "GOV.ROUTE.UNIQUE_WRITE",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "writable_route_status",
+          "value": "resolved"
+        },
+        "owner": "rules/governance.json#GOV.ROUTE.UNIQUE_WRITE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "1f525f77b81dd3c629b32efb01042f0195141c29c613654166f7cf24fc455d9a"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MAN.ACCEPT.CROSSREF",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.ACCEPT.CROSSREF",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "cross_references",
+          "value": "figures_tables_equations_citations_resolve"
+        },
+        "owner": "rules/manuscript.json#MAN.ACCEPT.CROSSREF",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "c0a1da9c4ac79dfdfac070da0d069c6fe09004a15bb2f493607bb0941cfdea94"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.ACCEPT.GLOBAL",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.ACCEPT.GLOBAL",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "global_manuscript_acceptance",
+          "value": "cross_section_claim_evidence_consistency"
+        },
+        "owner": "rules/manuscript.json#MAN.ACCEPT.GLOBAL",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "43818f3f016a2bf5ff9a132b30984fc345c8a11b24a271bf0a306338a6a0ea94"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.ACCEPT.NO_PLACEHOLDER",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.ACCEPT.NO_PLACEHOLDER",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "published_placeholders",
+          "value": true
+        },
+        "owner": "rules/manuscript.json#MAN.ACCEPT.NO_PLACEHOLDER",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "9f4d7e6ed5956c8952a6b625925ab053de1a2cc093956154c2e39350aca15dba"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.ACCEPT.RENDER",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.ACCEPT.RENDER",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "rendered_manuscript",
+          "value": "visual_and_content_inspection"
+        },
+        "owner": "rules/manuscript.json#MAN.ACCEPT.RENDER",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "78601be94c68189bcd2a613ff41fda3fbdf81498aaec629c3e72a606e5e74851"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.ACCEPT.SECTION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.ACCEPT.SECTION",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "section_acceptance",
+          "value": "section_specific_criteria"
+        },
+        "owner": "rules/manuscript.json#MAN.ACCEPT.SECTION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "6876531155bab636203db5abd0750e0c2d162609179adc69f4d5f81f739a951e"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.CONTENT.CLAIM_EVIDENCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.CONTENT.CLAIM_EVIDENCE",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "manuscript_claim",
+          "value": "exact_evidence_link"
+        },
+        "owner": "rules/manuscript.json#MAN.CONTENT.CLAIM_EVIDENCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7ab411af327a85801c633ba81d866b7d92d754e08bf6887fe2cba55c345979c4"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.CONTENT.EXPLANATION_TRACE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.CONTENT.EXPLANATION_TRACE",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "reader_explanation_chain",
+          "value": [
+            "objects",
+            "data",
+            "derivation",
+            "results",
+            "meaning"
+          ]
+        },
+        "owner": "rules/manuscript.json#MAN.CONTENT.EXPLANATION_TRACE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "bc4eedcbad4e001a27d2bafba0c7c4183865178610ac42fd75a9264a9da6dea1"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.CONTENT.LIMITATION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.CONTENT.LIMITATION",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "material_limitations",
+          "value": "evidence_based_boundary"
+        },
+        "owner": "rules/manuscript.json#MAN.CONTENT.LIMITATION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "2292a60de965f63dd4e835b720dcbb27ccd8c1bb64ff45b78f0833e48752bf6d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.CONTENT.METHOD",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.CONTENT.METHOD",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "method_description",
+          "value": "specification_level_reproducibility"
+        },
+        "owner": "rules/manuscript.json#MAN.CONTENT.METHOD",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "1b76bafd97b3b04690389cf0f8511998966743963d7ef98111f490def4fb207c"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.CONTENT.NOTATION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.CONTENT.NOTATION",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "notation_consistency",
+          "value": "one_symbol_one_meaning"
+        },
+        "owner": "rules/manuscript.json#MAN.CONTENT.NOTATION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4da12bab404429faffc086ef946b19e164c76dbbc9c30e9e748c55b79089b0af"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.CONTENT.NO_DUMP",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.CONTENT.NO_DUMP",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "explanation_substitute",
+          "value": "formula_or_number_dump"
+        },
+        "owner": "rules/manuscript.json#MAN.CONTENT.NO_DUMP",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "3b51be69653c8a8e4f8a17fcad1f94a8dd9f6bfde02dc934590d2cc6ebd322e3"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.CONTENT.RESULT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.CONTENT.RESULT",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "reported_result_identity",
+          "value": "registered_run_output"
+        },
+        "owner": "rules/manuscript.json#MAN.CONTENT.RESULT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "fbd9cdf2e13ff63a4e461a5ed1af4082f0f80ddd4ac699528b61a18d14758bc7"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.LOCAL.DEPENDENCIES",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.LOCAL.DEPENDENCIES",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.LOCAL",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "local_edit_dependencies",
+          "value": "symbols_refs_claims_direct_consumers"
+        },
+        "owner": "rules/manuscript.json#MAN.LOCAL.DEPENDENCIES",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "bead5457d68ec63dad8f38d3ba16a5fe82c361a6120a70c96eb26e980cf7fafc"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.LOCAL.NO_FULL_AUDIT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.LOCAL.NO_FULL_AUDIT",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.LOCAL",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "audit_scope_escalation",
+          "value": "full_manuscript_audit_without_dependency_trigger"
+        },
+        "owner": "rules/manuscript.json#MAN.LOCAL.NO_FULL_AUDIT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "f7b46353d4e9d5969137050055102ea5382c70ded15a83111039733c79f54c0d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.LOCAL.REOPEN_A3",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.LOCAL.REOPEN_A3",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.REOPEN",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "transition",
+          "target": "artifact_state",
+          "value": "A3_to_A1"
+        },
+        "owner": "rules/manuscript.json#MAN.LOCAL.REOPEN_A3",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "f71a6fe06889a35016d8a7ab50b1c9ac28948b3fe5f51a505dde76c3c08c2b1f"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.LOCAL.SCOPE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.LOCAL.SCOPE",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.LOCAL",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "edit_scope",
+          "value": "requested_span"
+        },
+        "owner": "rules/manuscript.json#MAN.LOCAL.SCOPE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "e37ee00e63cc102f7b7e9e5b36c8772d468ed393dc4cbcf04b610fa0d1384962"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.PROFILE.FORMAT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.PROFILE.FORMAT",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.DRAFT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "writing_profile_transformation",
+          "value": "cannot_override_current_official_format"
+        },
+        "owner": "rules/manuscript.json#MAN.PROFILE.FORMAT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "80b4782f29a541b28b3d6f694df929a076a52adb412752f1482e05e4434df58e"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.PROFILE.OPT_IN",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.PROFILE.OPT_IN",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.DRAFT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "writing_profile_source",
+          "value": "current_user_or_project_preference"
+        },
+        "owner": "rules/manuscript.json#MAN.PROFILE.OPT_IN",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b6c1aa5e00209963c4265113ee90f7df96e587a8893f52f2538cbc577145675a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.PROFILE.TRUTH",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.PROFILE.TRUTH",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.DRAFT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "style_transformation",
+          "value": "no_claim_or_precision_change"
+        },
+        "owner": "rules/manuscript.json#MAN.PROFILE.TRUTH",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "2f228ecda55c345432cb10dc782ebb539062e2eecdb869fcbcbdebeda14c7a8b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.READER.FLOW",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.READER.FLOW",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "reader_flow",
+          "value": "terms_before_use_transitions_no_gaps"
+        },
+        "owner": "rules/manuscript.json#MAN.READER.FLOW",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "bcfb4366f1b358ee88ef8a994d3b060ed01df5bb194221958742dfb4a25ab676"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.READER.FRONT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.READER.FRONT",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "front_matter",
+          "value": "problem_method_result_conclusion_alignment"
+        },
+        "owner": "rules/manuscript.json#MAN.READER.FRONT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "ba5721c78ea6d1280087874766cdcc6c91ee50b7488aa719f8bcf18fdea31e71"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.READER.NO_META",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.READER.NO_META",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "evaluator_visible_meta_language",
+          "value": "audit_or_internal_process"
+        },
+        "owner": "rules/manuscript.json#MAN.READER.NO_META",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4ca6ed39c73fae9e29e9a1815e12e7a3dfa8b4d6a15665a2f9cb58de214b2398"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.READER.SCOPE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.READER.SCOPE",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "audit_read_scope",
+          "value": "actually_read_sections"
+        },
+        "owner": "rules/manuscript.json#MAN.READER.SCOPE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "8bdb87c1f3b614d1bd49950b772723af29a71b013cf9f6f7d21fa0f338372d64"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.READER.STANDALONE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.READER.STANDALONE",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "standalone_comprehension",
+          "value": "without_code_or_internal_notes"
+        },
+        "owner": "rules/manuscript.json#MAN.READER.STANDALONE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d6614ee2b7e3728eb76dcade7108f2ab2d0ed4b34a576eb2bd9b9391e2e562f3"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.STRUCTURE.DEPENDENCY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.STRUCTURE.DEPENDENCY",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "section_dependency_order",
+          "value": "definitions_evidence_derivation_claims"
+        },
+        "owner": "rules/manuscript.json#MAN.STRUCTURE.DEPENDENCY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "962088f7c2d36576e9c310361a30cf451e75ad83a2db3d1b1c3e7c1dc996a9d2"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.STRUCTURE.NO_WORKLOG",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.STRUCTURE.NO_WORKLOG",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "manuscript_organization_source",
+          "value": "worklog_or_internal_project_state"
+        },
+        "owner": "rules/manuscript.json#MAN.STRUCTURE.NO_WORKLOG",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "bdd1a146cc376b1bb21cae7563a00229a5be09b4f99d125257a9f156fc67cade"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.STRUCTURE.REQUIREMENTS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.STRUCTURE.REQUIREMENTS",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "select",
+          "target": "manuscript_structure",
+          "value": "current_project_requirements"
+        },
+        "owner": "rules/manuscript.json#MAN.STRUCTURE.REQUIREMENTS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "25fc05114af138d208fc72eb88991958899e039ae9f39a49e5411c2d9e4277cf"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.STRUCTURE.RESPONSIBILITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.STRUCTURE.RESPONSIBILITY",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "section_responsibility",
+          "value": "question_facing_claim"
+        },
+        "owner": "rules/manuscript.json#MAN.STRUCTURE.RESPONSIBILITY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "5c9c34b408e15e3550e17ad44ea555ffec881edf2d94ccf444b35e8a467e1d97"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MAN.STRUCTURE.TRACE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MAN.STRUCTURE.TRACE",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "section_trace",
+          "value": "problem_method_result_conclusion"
+        },
+        "owner": "rules/manuscript.json#MAN.STRUCTURE.TRACE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "a0ea461ce41a1f672005fa2fdb02665554ed65b86748ebcf63068f26023a306d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MNT.CLASSIFY.NEW",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.CLASSIFY.NEW",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "new_behavior",
+          "value": "single_observable_effect"
+        },
+        "owner": "rules/maintenance.json#MNT.CLASSIFY.NEW",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "bcd781663039c365ae389bc9c3435c3e0a2d939f8118ed338ac2816d0cc87160"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.CLASSIFY.OLD",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.CLASSIFY.OLD",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "old_behavior",
+          "value": "current_owner_effect"
+        },
+        "owner": "rules/maintenance.json#MNT.CLASSIFY.OLD",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "d30f59da439b10f8a23a959dc8bc9adcb51748fdee5a311a9a4afc9efa79b210"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.CLASSIFY.RISK",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.CLASSIFY.RISK",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "select",
+          "target": "change_risk",
+          "value": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ]
+        },
+        "owner": "rules/maintenance.json#MNT.CLASSIFY.RISK",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "7f1f3f20d78083c51adce017e9826db0928542b61e90810dae9b5d9c81fb63e8"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.CLASSIFY.TRIGGER",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.CLASSIFY.TRIGGER",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "rule_applicability",
+          "value": "trigger_scope_exceptions"
+        },
+        "owner": "rules/maintenance.json#MNT.CLASSIFY.TRIGGER",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "3e4ac7899ff98de7c989ecc0110e21df71f6846087492976cc591698d3e6bc5f"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.EVAL.CONFLICT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.EVAL.CONFLICT",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "behavior_eval_set",
+          "value": "conflict_and_state_binding_prompt"
+        },
+        "owner": "rules/maintenance.json#MNT.EVAL.CONFLICT",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "b0f00218752bc83a2fde1ecd3377675c7d1aacd1091012801df62f7e6fe5f7e0"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.EVAL.NEAR_NEGATIVE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.EVAL.NEAR_NEGATIVE",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "behavior_eval_set",
+          "value": "near_negative_prompt"
+        },
+        "owner": "rules/maintenance.json#MNT.EVAL.NEAR_NEGATIVE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "892a0d0b48728f74a2b46152b42f45f9a69ed6327390242b54d95919c982c6a1"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.EVAL.POSITIVE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.EVAL.POSITIVE",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "behavior_eval_set",
+          "value": "positive_prompt"
+        },
+        "owner": "rules/maintenance.json#MNT.EVAL.POSITIVE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "329421bc18876981fb22c63560b0dd9c49101acaceec24e37a4e3761fc5f1113"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.IMPACT.CONFLICT_GRAPH",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.IMPACT.CONFLICT_GRAPH",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 3,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "structured_conflicts",
+          "value": "overlapping_scope_target_effect_explicit_resolution"
+        },
+        "owner": "rules/maintenance.json#MNT.IMPACT.CONFLICT_GRAPH",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "bb4569278bc88d45e8ccec02aeaaa529cec80b31b2f4b81811caaa7d9b2d2502"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.IMPACT.ROUTE_REACH",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.IMPACT.ROUTE_REACH",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "rule_reachability",
+          "value": "at_least_one_executable_route"
+        },
+        "owner": "rules/maintenance.json#MNT.IMPACT.ROUTE_REACH",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "57dccbd98c04ae5f93bfca36a4b98edbed91f08250ac16bbd1f03dd66e073ad0"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.IMPACT.TRANSITIVE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.IMPACT.TRANSITIVE",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "change_impact",
+          "value": "rules_capabilities_routes_state_schemas_scripts_evals"
+        },
+        "owner": "rules/maintenance.json#MNT.IMPACT.TRANSITIVE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "c5367c2675840162c78cadbbc8950f40fb260478a9e5f7274033f7bc005d58ba"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.OWNER.CANONICAL",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.OWNER.CANONICAL",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "edit_target",
+          "value": "declared_rule_owner"
+        },
+        "owner": "rules/maintenance.json#MNT.OWNER.CANONICAL",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "15dcc9707dd006304a855d072f10ba6d9d3d6f7467bd3ddd213b83c716f80db4"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.RELOAD.INDEPENDENT_AGENT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.RELOAD.INDEPENDENT_AGENT",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "agent_behavior",
+          "value": "independent_reloaded_invocation"
+        },
+        "owner": "rules/maintenance.json#MNT.RELOAD.INDEPENDENT_AGENT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b4f14ea9e03a9fa22187e5d500828e54d0d2cac0dec3f0cb793904607e63e3b6"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MNT.RELOAD.ISOLATED",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.RELOAD.ISOLATED",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "candidate_behavior",
+          "value": "fresh_process_from_candidate_root"
+        },
+        "owner": "rules/maintenance.json#MNT.RELOAD.ISOLATED",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "dc4b9ec13937dba514097cc6b3923424e6dc5ba4a2b40d47af35ba5739f87b4c"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.ROLLBACK.COMPATIBILITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.ROLLBACK.COMPATIBILITY",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "compatibility_report",
+          "value": "preserved_changed_retired_unverified"
+        },
+        "owner": "rules/maintenance.json#MNT.ROLLBACK.COMPATIBILITY",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "c3dc53b54f05b56b89af8a8438fb9fd0dfe87b2dd666226b1f0e53b288890aee"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MNT.ROLLBACK.PRESERVE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MNT.ROLLBACK.PRESERVE",
+      "source_behavior_case_id": "BEH.ROUTE.RAW",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "rollback_point",
+          "value": "immutable_previous_version"
+        },
+        "owner": "rules/maintenance.json#MNT.ROLLBACK.PRESERVE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "8461ba1355dc2f2d8a17cec4f341246f92d4d4c998e6f978cbbb76bd92e726cf"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.MOD.COMPARE.ASSUMPTIONS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.COMPARE.ASSUMPTIONS",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "candidate_assumptions",
+          "value": "assumption_applicability_failure"
+        },
+        "owner": "rules/modeling.json#MOD.COMPARE.ASSUMPTIONS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "5d990c5c53b926993357c2eef7a3f473b1c1704303ad67d82cbda14e7d3be2e5"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.COMPARE.BASELINE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.COMPARE.BASELINE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "candidate_set",
+          "value": "feasible_baseline_present"
+        },
+        "owner": "rules/modeling.json#MOD.COMPARE.BASELINE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "3d83546c3b2de210ee89437d12b0a5177ef3f629a785250b69faad1a64cb1cb1"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.COMPARE.RATIONALE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.COMPARE.RATIONALE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "selection_rationale",
+          "value": "criteria_evidence_tradeoff"
+        },
+        "owner": "rules/modeling.json#MOD.COMPARE.RATIONALE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "cef4bd31e3816a3cccd8e7d60a97ce6c9b29726b42cd7243d047d3872e205f40"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.COMPARE.SAME_EVIDENCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.COMPARE.SAME_EVIDENCE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "candidate_evaluation",
+          "value": "same_data_split_metric_budget"
+        },
+        "owner": "rules/modeling.json#MOD.COMPARE.SAME_EVIDENCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d952c51c4c75ca7706218fe3de56d78a496a2238cfaf4c3aded778c902f3d45b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.IMPLEMENT.DETERMINISM",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.IMPLEMENT.DETERMINISM",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.IMPLEMENT.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "execution_determinism_contract",
+          "value": "deterministic_or_declared_stochastic_with_seed_repetition_and_variability_policy"
+        },
+        "owner": "rules/modeling.json#MOD.IMPLEMENT.DETERMINISM",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "3ba5baebde71fda8a3bd15e67a0db84ed14120577a13dc918bcff7e938f9c144"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.IMPLEMENT.OUTPUT_REGISTER",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.IMPLEMENT.OUTPUT_REGISTER",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.IMPLEMENT.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "registered_model_output",
+          "value": "inspectable_path_schema_unit_hash_and_run_identity"
+        },
+        "owner": "rules/modeling.json#MOD.IMPLEMENT.OUTPUT_REGISTER",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b040beacbd854e1afaff4c7d2a1bf35119ea2f904b1b829af50a4603a931fbfd"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.IMPLEMENT.REPRODUCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.IMPLEMENT.REPRODUCE",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.IMPLEMENT.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "run_identity",
+          "value": "code_input_environment_seed_parameters"
+        },
+        "owner": "rules/modeling.json#MOD.IMPLEMENT.REPRODUCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "279af30652680be0675963fde7fe299ee471a9f42c3c86f388e7cd025c993750"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.IMPLEMENT.SPEC_BIND",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.IMPLEMENT.SPEC_BIND",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.IMPLEMENT.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "implementation_spec_identity",
+          "value": "frozen_spec_reference"
+        },
+        "owner": "rules/modeling.json#MOD.IMPLEMENT.SPEC_BIND",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d55ac0185dcad69bbca7b6f4a4693a35f70ed76cc5cc9dc6d62a54af4f3afdc5"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESTATE.BEFORE_ALGORITHM",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESTATE.BEFORE_ALGORITHM",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "problem_definition_readiness",
+          "value": "objects_variables_constraints_objectives_and_outputs_before_algorithm_selection"
+        },
+        "owner": "rules/modeling.json#MOD.RESTATE.BEFORE_ALGORITHM",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "0f15cc9c057b8fed5570f259a40f7162aa4b21b354ad0d0bc70c05a332f87557"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESTATE.KNOWN",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESTATE.KNOWN",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "known_information",
+          "value": "given_observed_derived"
+        },
+        "owner": "rules/modeling.json#MOD.RESTATE.KNOWN",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "3d0cd37e9e0ee3d797c184465780e05f3525433578859b1057068a26453e0332"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESTATE.OBJECTIVE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESTATE.OBJECTIVE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "objective_and_constraints",
+          "value": "measurable_target_feasible_boundary"
+        },
+        "owner": "rules/modeling.json#MOD.RESTATE.OBJECTIVE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "e10d15808e66e9871d0fc51da087991c73c31f8df67ddceea453d1d286d1d87a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESTATE.OBJECTS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESTATE.OBJECTS",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "model_objects",
+          "value": "entities_systems_relationships_and_roles"
+        },
+        "owner": "rules/modeling.json#MOD.RESTATE.OBJECTS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b743fff5a85445136022a56668476dfe97cc9f060cf5f1c67df497f609d8543e"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESTATE.OUTPUTS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESTATE.OUTPUTS",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "required_model_outputs",
+          "value": "quantity_format_unit_and_acceptance_meaning"
+        },
+        "owner": "rules/modeling.json#MOD.RESTATE.OUTPUTS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "90245ed72b3dcbbcd1446a583e42eda4aa95ba97c250c68dee7eac9f092a8449"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESTATE.REDESIGN",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESTATE.REDESIGN",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.RESTATE.REDESIGN",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "model_redesign_control",
+          "value": "authorize_invalidate_consumers_and_reopen_to_s2_before_replacement"
+        },
+        "owner": "rules/modeling.json#MOD.RESTATE.REDESIGN",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "679d4befc546b89a1c6c6708655245458de325d133f12bf939296cda4adc05d0"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESTATE.UNKNOWN",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESTATE.UNKNOWN",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "unknown_variables",
+          "value": "symbols_domains_units"
+        },
+        "owner": "rules/modeling.json#MOD.RESTATE.UNKNOWN",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "a6c0cdd0007e47cbcf63ebda614f1c70ac37ce87edcf8d3edcbe6dff94562570"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESULTS.FAILURES",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESULTS.FAILURES",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.RESULTS.TRACE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "failed_runs",
+          "value": "attempt_reason_disposition"
+        },
+        "owner": "rules/modeling.json#MOD.RESULTS.FAILURES",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "1efe6e9c391d63a6136086faccdac76b03b7a8fc1eb80d57fb8b5777b81f6f06"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESULTS.IDENTITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESULTS.IDENTITY",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.RESULTS.TRACE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "result_identity",
+          "value": "run_metric_value_unit"
+        },
+        "owner": "rules/modeling.json#MOD.RESULTS.IDENTITY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "a850215b5dc3eb5e5f94bea880bf3556fc2086416aab6dcfb015700fdcc3f664"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESULTS.INTERPRET",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESULTS.INTERPRET",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.RESULTS.TRACE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "result_statement_type",
+          "value": [
+            "computed",
+            "interpreted",
+            "extrapolated"
+          ]
+        },
+        "owner": "rules/modeling.json#MOD.RESULTS.INTERPRET",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7b3224cae1f73b33a407b4668a0a6a2d14c62e1e10c29eab9d956d14c376ff3d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.RESULTS.TRACE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.RESULTS.TRACE",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.RESULTS.TRACE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "result_interpretation_trace",
+          "value": "result_to_question_baseline_and_material_limitations"
+        },
+        "owner": "rules/modeling.json#MOD.RESULTS.TRACE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d7d8b0603741067b1a98866340268bd3373870c6fc01da665329c74da1751e7b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.SPEC.ALGORITHM",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.SPEC.ALGORITHM",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.SPEC.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "solution_algorithm",
+          "value": "initialization_stop_failure"
+        },
+        "owner": "rules/modeling.json#MOD.SPEC.ALGORITHM",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "83e815a736d11faf8656631d3f8a3dbea327c439c448eca89fcfff77ed8a2a73"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.SPEC.ASSUMPTIONS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.SPEC.ASSUMPTIONS",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.SPEC.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "frozen_model_assumptions",
+          "value": "statement_scope_evidence_failure_consequence_and_versioned_identity"
+        },
+        "owner": "rules/modeling.json#MOD.SPEC.ASSUMPTIONS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b5bc585241e03ba6128e96aefef61a10c0b6a2480926e84a5e8d0bbf9372b83a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.SPEC.EQUATIONS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.SPEC.EQUATIONS",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.SPEC.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "mathematical_core",
+          "value": "objective_equations_constraints"
+        },
+        "owner": "rules/modeling.json#MOD.SPEC.EQUATIONS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "cecd353b83eca77a885e3d3e28df0eb477a1bc00c55e5a5d76e06513e0cd31b8"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.SPEC.FREEZE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.SPEC.FREEZE",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.SPEC.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "frozen_model_specification",
+          "value": "versioned_assumptions_symbols_equations_parameters_units_and_interfaces"
+        },
+        "owner": "rules/modeling.json#MOD.SPEC.FREEZE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "ba082155d08595fc2dc68aec0e4d21db59d8b663dd3bf853050a392536eeeccf"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.SPEC.INTERFACE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.SPEC.INTERFACE",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.SPEC.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "model_io_interface",
+          "value": "inputs_outputs_shapes_types_units_and_failure_signals"
+        },
+        "owner": "rules/modeling.json#MOD.SPEC.INTERFACE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "e1b5c87a32d149a52fdfba39a2c21de83e77e30bf5a7c5f0193548329c1f8098"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.SPEC.PARAMETERS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.SPEC.PARAMETERS",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.SPEC.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "model_parameters",
+          "value": "value_source_unit_uncertainty"
+        },
+        "owner": "rules/modeling.json#MOD.SPEC.PARAMETERS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "c9f5ad99a4e457ffaad1747232cbc4fa51b97d27a4cbe99bede4479f4f008204"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.SPEC.READINESS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.SPEC.READINESS",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.IMPLEMENT.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "model_specification_readiness",
+          "value": "unambiguous_frozen_assumptions_symbols_equations_parameters_units_and_interfaces_before_implementation"
+        },
+        "owner": "rules/modeling.json#MOD.SPEC.READINESS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4b1cc486e43f899616b9a1c8581e561c756a6fa4df682774aba055d16b8885bb"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.MOD.SPEC.VARIABLES",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "MOD.SPEC.VARIABLES",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.SPEC.COVERAGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "model_variables",
+          "value": "symbol_role_domain_unit"
+        },
+        "owner": "rules/modeling.json#MOD.SPEC.VARIABLES",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "1f76d8c74c1ce0719b517b14f787fe317e9f3025619a661a8a8447cc78bbb237"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.PLAN.COMPONENTS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.PLAN.COMPONENTS",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "component_decomposition",
+          "value": "questions_shared_data_artifacts"
+        },
+        "owner": "rules/project.json#PRJ.PLAN.COMPONENTS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "32353c8f816f15c5cb28b890e4cc1fae2bc90232bee2295abf1a645cb083dcb1"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.PLAN.DEPENDENCIES",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.PLAN.DEPENDENCIES",
+      "source_behavior_case_id": "BEH.CLAUSE.PRJ.SCOPE.CONTROLLED_CHANGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "dependency_graph",
+          "value": "acyclic_producer_consumer_edges"
+        },
+        "owner": "rules/project.json#PRJ.PLAN.DEPENDENCIES",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "185efe7314826889e191ded6640ec22d7cb2064a7ba7d257596b8e1f0842284a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.PLAN.NEXT_ACTION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.PLAN.NEXT_ACTION",
+      "source_behavior_case_id": "BEH.CLAUSE.PRJ.SCOPE.CONTROLLED_CHANGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "next_action",
+          "value": "component_action_blockers"
+        },
+        "owner": "rules/project.json#PRJ.PLAN.NEXT_ACTION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d16add470e7958657092b565c790c17e9fbd2b5e12f41c787fbf0c05f12e2085"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.PLAN.OWNER_BOUNDARY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.PLAN.OWNER_BOUNDARY",
+      "source_behavior_case_id": "BEH.CLAUSE.GOV.AUTH.DIMENSION_SEPARATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "orchestration_override",
+          "value": "state_or_recovery_owner"
+        },
+        "owner": "rules/project.json#PRJ.PLAN.OWNER_BOUNDARY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "8e22efc53cc03a3bbd1a08e3068cd8b382a893d2c95adbebaf5ad0d9997d235b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.PLAN.TRACE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.PLAN.TRACE",
+      "source_behavior_case_id": "BEH.CLAUSE.GOV.AUTH.DIMENSION_SEPARATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "work_package_trace",
+          "value": "work_package_dependency_evidence_deliverable"
+        },
+        "owner": "rules/project.json#PRJ.PLAN.TRACE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "80bd645c859584089f3f15d7014eae799a4fc65afe8db54d699ba5f39391c09e"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.SCOPE.AMBIGUITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.SCOPE.AMBIGUITY",
+      "source_behavior_case_id": "BEH.PROJECT.AMBIGUITY",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "ambiguity_register",
+          "value": "interpretation_impact_resolution"
+        },
+        "owner": "rules/project.json#PRJ.SCOPE.AMBIGUITY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "09a141593731b6d5ce9c7ddc576049414cbe17eae7d6268d411675ea8fbed5bd"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.SCOPE.BOUNDARY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.SCOPE.BOUNDARY",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "project_boundary",
+          "value": "included_excluded_deliverables"
+        },
+        "owner": "rules/project.json#PRJ.SCOPE.BOUNDARY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "ed16ae0b74279efe58d8c0b6c49cc85161ca6e44cdca198d75f4579564828a5b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.SCOPE.CONTROLLED_CHANGE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.SCOPE.CONTROLLED_CHANGE",
+      "source_behavior_case_id": "BEH.CLAUSE.PRJ.SCOPE.CONTROLLED_CHANGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "allow",
+          "target": "project_scope_change",
+          "value": "explicit_authorization_impact_trace_and_rebaseline"
+        },
+        "owner": "rules/project.json#PRJ.SCOPE.CONTROLLED_CHANGE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "164f6c4a73b6b69a7a513f2f250763865d50b97511bc802bb784155f0ad058c2"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.SCOPE.INVENTORY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.SCOPE.INVENTORY",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "scope_inventory",
+          "value": "questions_shared_evidence_and_boundary_deliverable_refs"
+        },
+        "owner": "rules/project.json#PRJ.SCOPE.INVENTORY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "ebf80d9be7ed979da86827b502d40c584a7680525ce32151d5869f1c33f6bcba"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.SCOPE.NO_UNSUPPORTED_TASK",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.SCOPE.NO_UNSUPPORTED_TASK",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "scope_task_admission",
+          "value": "unsupported_by_request_or_contract"
+        },
+        "owner": "rules/project.json#PRJ.SCOPE.NO_UNSUPPORTED_TASK",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "71a5c0f3d305285c784851a9f2bd38921486c24bea53f427f52c33b4a03754c5"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.SCOPE.SUCCESS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.SCOPE.SUCCESS",
+      "source_behavior_case_id": "BEH.PROBLEM.DEFINE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "success_criteria",
+          "value": "observable_acceptance_conditions"
+        },
+        "owner": "rules/project.json#PRJ.SCOPE.SUCCESS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "246a52a800a79688719e8f3f6a43fa9741344c58b3b564eea6dbfc5a20cc922f"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.STRUCTURE.INSPECT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.STRUCTURE.INSPECT",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "structure_input",
+          "value": "existing_tree_inventory"
+        },
+        "owner": "rules/project.json#PRJ.STRUCTURE.INSPECT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "2e14a2dc13aa5fee6c376fb85579c5a9bbf6d2e5974b6854075e4c3739e55041"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.STRUCTURE.LAZY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.STRUCTURE.LAZY",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "structure_creation",
+          "value": "admitted_artifact_parents_only"
+        },
+        "owner": "rules/project.json#PRJ.STRUCTURE.LAZY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "8617fd2f58085f42be219efaf9c47ee1e1ec69c7fe9a167eb35a384bf23d2821"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.PRJ.STRUCTURE.TOOLCHAIN",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "PRJ.STRUCTURE.TOOLCHAIN",
+      "source_behavior_case_id": "BEH.CLAUSE.PRJ.SCOPE.CONTROLLED_CHANGE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "SHOULD",
+        "effect": {
+          "verb": "select",
+          "target": "project_toolchain",
+          "value": "existing_or_user_required"
+        },
+        "owner": "rules/project.json#PRJ.STRUCTURE.TOOLCHAIN",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "80a7e4e09defbfddc9906dca77a7d8d66ad5673a595e03c1113ea42f6f49ac1d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.REC.R0.CONTINUE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R0.CONTINUE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "select",
+          "target": "recovery_level",
+          "value": "R0_CONTINUE"
+        },
+        "owner": "rules/governance.json#REC.R0.CONTINUE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "898571f46d62dcd89ce2e220017b6b931cc5380098a97162c08690e310becd3a"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.REC.R0.NO_MANIFEST",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R0.NO_MANIFEST",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "recovery_manifest",
+          "value": "ordinary_consistent_continuation"
+        },
+        "owner": "rules/governance.json#REC.R0.NO_MANIFEST",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "e23f42db6981ae5ab7dcfd91ee1cd1c3dfa351c67151ccc6bf01cf9409c5291d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.REC.R0.READ_SCOPE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R0.READ_SCOPE",
+      "source_behavior_case_id": "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "recovery_read_scope",
+          "value": "direct_state_and_declared_inputs"
+        },
+        "owner": "rules/governance.json#REC.R0.READ_SCOPE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "1029c5b921667cdedd545c4894a162bf208400ea1efa4c8334d48bcf16ceb0a6"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.REC.R1.READ_SCOPE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R1.READ_SCOPE",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R1.READ_SCOPE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "limit",
+          "target": "recovery_read_scope",
+          "value": "affected_closure_and_declared_inputs"
+        },
+        "owner": "rules/governance.json#REC.R1.READ_SCOPE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4130ddd635c9fd565892e52d652b9268e2f08e77be9aafcd2e119aef0c081cf5"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.REC.R1.REVIEW_CLOSURE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R1.REVIEW_CLOSURE",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R1.READ_SCOPE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "affected_closure_review",
+          "value": "changed_owner_and_transitive_consumers"
+        },
+        "owner": "rules/governance.json#REC.R1.REVIEW_CLOSURE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4450af3b03841288e2750ce353dbfcdf6a29c2c4e3b918e08408bc2d0a5e36c4"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.REC.R1.TRANSITIVE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R1.TRANSITIVE",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R1.READ_SCOPE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "invalidate",
+          "target": "affected_components",
+          "value": "changed_owner_plus_transitive_consumers"
+        },
+        "owner": "rules/governance.json#REC.R1.TRANSITIVE",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "104375832ecc732be559497b685f0ededfdbc990136eb9535cbb10cb03758dff"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.REC.R2.EVIDENCE_REBUILD",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R2.EVIDENCE_REBUILD",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "recovery_evidence_coverage",
+          "value": "complete_rebuilt_and_verified"
+        },
+        "owner": "rules/governance.json#REC.R2.EVIDENCE_REBUILD",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7712df90871a32f2b4d36569a39d71193d1a7747f81fc67c4af3c4fb30d2d403"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.REC.R2.FULL",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R2.FULL",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "select",
+          "target": "recovery_level",
+          "value": "R2_FULL"
+        },
+        "owner": "rules/governance.json#REC.R2.FULL",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "e9c4c8f0dbbf5b09a247af5b83cb5866715fac29a2822219c2aae9023ee9a60f"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.REC.R2.NO_NARRATIVE_ONLY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "REC.R2.NO_NARRATIVE_ONLY",
+      "source_behavior_case_id": "BEH.CLAUSE.REC.R2.CLOSURE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "recovery_claim_basis",
+          "value": "narrative_summary_only"
+        },
+        "owner": "rules/governance.json#REC.R2.NO_NARRATIVE_ONLY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "98e927cb5e78a7aa30dcc4366a72f5aab298830a551e36b69fc371a1310e7931"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.STATE.EVIDENCE.TYPED",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "STATE.EVIDENCE.TYPED",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "evidence_shape",
+          "value": "typed_locator_status"
+        },
+        "owner": "rules/governance.json#STATE.EVIDENCE.TYPED",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "2652e391e4c98ab8c43237af37a12bcc87f3ff39696fbbb9e818ce91e1433ece"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.STATE.ROUTE.RECORD",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "STATE.ROUTE.RECORD",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "last_route",
+          "value": "request_route_rule_component_identity"
+        },
+        "owner": "rules/governance.json#STATE.ROUTE.RECORD",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "d2708e34d4046d5871f44122220d897ea86cc763fd441780f951a6599c69ce22"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.STATE.TRANSITION.GATED",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "STATE.TRANSITION.GATED",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "transition_gate",
+          "value": "all_required_pass_evidence"
+        },
+        "owner": "rules/governance.json#STATE.TRANSITION.GATED",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "8cd60f6396ed95cea68365227ef6c20f87a202154c721338015965cc121aa5e4"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.STATE.TYPE.MATCH",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "STATE.TYPE.MATCH",
+      "source_behavior_case_id": "BEH.CLAUSE.ART.ADMIT.NO_SPECULATION",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "component_state_set",
+          "value": "type_specific"
+        },
+        "owner": "rules/governance.json#STATE.TYPE.MATCH",
+        "enforcement_kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "semantic_envelope_sha256": "3ece4083ed63ab01778304f4614f76ecc536ef1d744662c0e1d259a56b1da983"
+      },
+      "verified_boundary": "runtime_guard_and_selection"
+    },
+    {
+      "id": "ATOM.VER.E1.BOUNDARY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E1.BOUNDARY",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "implementation_boundaries",
+          "value": "zero_empty_extreme_invalid"
+        },
+        "owner": "rules/verification.json#VER.E1.BOUNDARY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7662bcd12c46281591cd34b2309a7177c942ce22999e20362e11b18478b7d47c"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E1.CODE_PATHS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E1.CODE_PATHS",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "implementation_code_paths",
+          "value": "declared_entrypoints_branches_and_state_transitions"
+        },
+        "owner": "rules/verification.json#VER.E1.CODE_PATHS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "74329601894632a316cc93dc3734e0561cba6fada7904c9bc12eb82e714a2088"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E1.ERROR_PATHS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E1.ERROR_PATHS",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "implementation_error_paths",
+          "value": "invalid_input_dependency_solver_and_output_failures"
+        },
+        "owner": "rules/verification.json#VER.E1.ERROR_PATHS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "c73d4644ab581cad9e92a7c5c8f9dca04a4d71afbb4b53ff7ecf39a336e43d6c"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E1.EXIT_ZERO",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E1.EXIT_ZERO",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "exit_zero_as_correctness_proof",
+          "value": true
+        },
+        "owner": "rules/verification.json#VER.E1.EXIT_ZERO",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "5ffc8ec7a0f29d564ad67def84624ec0a581d34a812e6250696f9a7aac2ed30b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E1.INTERFACE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E1.INTERFACE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "implementation_interface",
+          "value": "inputs_outputs_shapes_types"
+        },
+        "owner": "rules/verification.json#VER.E1.INTERFACE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "dabb60817a6a5de5207ee9b6e73426f7a053b4d606e2974ab48adbfe832bb7e3"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E1.REPRODUCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E1.REPRODUCE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "implementation_reproduction",
+          "value": "fresh_entrypoint_run"
+        },
+        "owner": "rules/verification.json#VER.E1.REPRODUCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "cdf1597033def6b941539614970ac0c0ef6c253d8c1ec4694fc2629154097dd0"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E1.UNITS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E1.UNITS",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "implementation_units",
+          "value": "dimensionally_consistent"
+        },
+        "owner": "rules/verification.json#VER.E1.UNITS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d9dda23f04f5d67ad08ecca6508425dfaf447febff82fd1920a5e95183e056bf"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E2.CONVERGENCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E2.CONVERGENCE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "numerical_convergence",
+          "value": "refinement_sequence_residual_or_rate_and_decision_stability"
+        },
+        "owner": "rules/verification.json#VER.E2.CONVERGENCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "46f66ef84aea9c5b4dbb35ae8fa1ba62637352e72012dcd527a2a10265b41cee"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E2.NO_FORMAT_MASK",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E2.NO_FORMAT_MASK",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "formatting_as_numerical_stability",
+          "value": true
+        },
+        "owner": "rules/verification.json#VER.E2.NO_FORMAT_MASK",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "928b7917cd7c60ac0acf9008d181e433901b49d4d95c1c7247b7f06b7440e40d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E2.RECOMPUTE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E2.RECOMPUTE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "key_numerical_result",
+          "value": "independent_recomputation"
+        },
+        "owner": "rules/verification.json#VER.E2.RECOMPUTE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4d15f3e007d25183b23fd813401895defc51bf8408520805b3ef49a6322be46c"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E2.STABILITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E2.STABILITY",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "numerical_stability",
+          "value": "resolution_step_precision_variation"
+        },
+        "owner": "rules/verification.json#VER.E2.STABILITY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "e41d0beaa7d7a1fe695d665bed263416eaf79d0227c92ed45bb28c9988337f85"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E2.TOLERANCE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E2.TOLERANCE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E1.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "numeric_tolerance",
+          "value": "absolute_relative_scale_basis"
+        },
+        "owner": "rules/verification.json#VER.E2.TOLERANCE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d6f4401e3277208f246e4fbeac3664156535b53cfab05d0bf8ab64f40b246cc0"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E3.CONSTRAINT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E3.CONSTRAINT",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "model_constraints",
+          "value": "all_outputs_feasible"
+        },
+        "owner": "rules/verification.json#VER.E3.CONSTRAINT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "759d3582fd5b512b13d044a4478a66b0b364285007c0fa75dd61c21af0988779"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E3.COUNTEREXAMPLE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E3.COUNTEREXAMPLE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 3,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "model_failure_boundary",
+          "value": "adversarial_or_counterexample_case"
+        },
+        "owner": "rules/verification.json#VER.E3.COUNTEREXAMPLE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "a9fa40358b794482a735e7e89d7c675bd8dd1597a63626734928648635998941"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E3.INVARIANT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E3.INVARIANT",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "model_invariants",
+          "value": "conservation_monotonicity_symmetry"
+        },
+        "owner": "rules/verification.json#VER.E3.INVARIANT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "a6b0ff097a20654987c783dc8938cd5c9b2e7620ff74ba530398199f9e7eca8d"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E3.LIMIT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E3.LIMIT",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "limit_case_behavior",
+          "value": "known_or_simplified_result"
+        },
+        "owner": "rules/verification.json#VER.E3.LIMIT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7b464d3a6dff39eb3840d34805caabbe41eef4c5c87dae5e7ceff1af75b197a9"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E3.SENSITIVITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E3.SENSITIVITY",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "model_sensitivity",
+          "value": "key_input_parameter_to_output_and_decision_response"
+        },
+        "owner": "rules/verification.json#VER.E3.SENSITIVITY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "5c6863fea837704094ee2dba790d758c709a05daaec9a4084de7f1c195967d60"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E4.ASSUMPTIONS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E4.ASSUMPTIONS",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "assumption_applicability",
+          "value": "evidence_and_violation_impact"
+        },
+        "owner": "rules/verification.json#VER.E4.ASSUMPTIONS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "5f324593b8f298d647a3f6f91ab7babe84ce0db34d8af8b0ff450cc01618564a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E4.MECHANISM",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E4.MECHANISM",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "mechanism_consistency",
+          "value": "represented_process_direction_constraints_and_interactions_match_domain_mechanism"
+        },
+        "owner": "rules/verification.json#VER.E4.MECHANISM",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b6154faf3a6e278d365a8f64f93b909fce0d9df55e030480f50321ff3123d5ec"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E4.PARAMETERS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E4.PARAMETERS",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "parameter_plausibility",
+          "value": "source_range_identifiability"
+        },
+        "owner": "rules/verification.json#VER.E4.PARAMETERS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "c784bdee4727bae7e9beb99b0e747f1580919e5e543e169d3365039861957149"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E4.REALITY_FIT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E4.REALITY_FIT",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "reality_fit",
+          "value": "observed_patterns_ranges_context_and_intended_use"
+        },
+        "owner": "rules/verification.json#VER.E4.REALITY_FIT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "41047f3c2342c8469293ea8852265f29c3f86d379f51e02fe063c6bbbad52686"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E4.SCALE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E4.SCALE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "result_scale",
+          "value": "realistic_order_of_magnitude"
+        },
+        "owner": "rules/verification.json#VER.E4.SCALE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "e50c4c80a31630cd7ff5294da56d1cef3b0e67be5892d41d1291820265e74556"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.E4.USE_CLAIM_GATE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.E4.USE_CLAIM_GATE",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.RESULTS.TRACE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "model_claim_e4_readiness",
+          "value": "assumptions_parameters_scale_mechanisms_and_reality_fit_before_model_use_or_claim"
+        },
+        "owner": "rules/verification.json#VER.E4.USE_CLAIM_GATE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d1150be41ce976054c44373ac292b32ce1ba1f4673de9be55d8eccca7f240228"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.ROBUST.BASELINE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.ROBUST.BASELINE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "robustness_baseline",
+          "value": "nominal_run_identity_metric_value_and_decision_before_perturbation"
+        },
+        "owner": "rules/verification.json#VER.ROBUST.BASELINE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7bf0c4c63c75cfb30d3eecdba91a8e125811fa14b6f318f3eadf7711e986d4a3"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.ROBUST.FAILURE_REGION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.ROBUST.FAILURE_REGION",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 3,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "robustness_failure_region",
+          "value": "boundary_and_consequence"
+        },
+        "owner": "rules/verification.json#VER.ROBUST.FAILURE_REGION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "cbd4533c5b65d8af0413addb83844185c57b35cdec60b2b3782caa0d8d7491fb"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.ROBUST.METRIC",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.ROBUST.METRIC",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "robustness_metric",
+          "value": "name_scale_direction_and_decision_threshold_before_perturbation"
+        },
+        "owner": "rules/verification.json#VER.ROBUST.METRIC",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "91bd64aa47a19f778f657d0f7b8e0d9cda513ba367bb96e92485f9d52b687974"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.ROBUST.NO_VISUAL_PROXY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.ROBUST.NO_VISUAL_PROXY",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "visual_similarity_as_robustness_proof",
+          "value": true
+        },
+        "owner": "rules/verification.json#VER.ROBUST.NO_VISUAL_PROXY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "aebd9646836b9108594921f579bbcad45989dd304c1c2f2f2e8b28ebad750637"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.ROBUST.PERTURB",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.ROBUST.PERTURB",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "decision_robustness",
+          "value": "plausible_perturbations"
+        },
+        "owner": "rules/verification.json#VER.ROBUST.PERTURB",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "92b30530ab9d4f5631cfc76fba6903b9599729898dc9ab39509ad24ea6e3082a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.S6.DUAL_AXIS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.S6.DUAL_AXIS",
+      "source_behavior_case_id": "BEH.VERIFY.S6.CLOSE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "s6_evidence",
+          "value": [
+            "E1_IMPLEMENTATION",
+            "E2_NUMERICAL",
+            "E3_STRUCTURAL",
+            "E4_REALITY"
+          ]
+        },
+        "owner": "rules/verification.json#VER.S6.DUAL_AXIS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4a85820d1ed7e9a822ef73a4e2dedb42eacd4d123b69424e2c59710cfe5a4d6c"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.UNCERTAINTY.BOUND",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.UNCERTAINTY.BOUND",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "claim_uncertainty_bound",
+          "value": "quantified_or_bounded_with_method_coverage_and_propagation_to_each_affected_claim"
+        },
+        "owner": "rules/verification.json#VER.UNCERTAINTY.BOUND",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "8fb6caa3f934111abb5b3f6be6bac21b0d38d9de6b0951f862e3888dd3a1cf1b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.UNCERTAINTY.CLAIM_GATE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.UNCERTAINTY.CLAIM_GATE",
+      "source_behavior_case_id": "BEH.CLAUSE.MOD.RESULTS.TRACE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "uncertainty_claim_readiness",
+          "value": "quantified_or_bounded_uncertainty_propagated_before_each_affected_claim"
+        },
+        "owner": "rules/verification.json#VER.UNCERTAINTY.CLAIM_GATE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "c1b35e5f929915a8e8ac6bcaf89bf829c9085b8471ef956acee6fff72dcf05ea"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.UNCERTAINTY.PROPAGATE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.UNCERTAINTY.PROPAGATE",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "uncertainty_propagation",
+          "value": "inputs_to_decision_metric"
+        },
+        "owner": "rules/verification.json#VER.UNCERTAINTY.PROPAGATE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7dbbbe27f9154330fbab22e8e697fc3b3d740cbde0b0ebb94c2a02daffb112b3"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VER.UNCERTAINTY.SOURCES",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VER.UNCERTAINTY.SOURCES",
+      "source_behavior_case_id": "BEH.CLAUSE.VER.E3.S7",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "uncertainty_sources",
+          "value": "data_parameter_model_numerical"
+        },
+        "owner": "rules/verification.json#VER.UNCERTAINTY.SOURCES",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "8e71bc220e929e7f8d9729b54996929e1bc988f3b9c0b00d82bddd551bab0d21"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.DESIGN.QUESTION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.DESIGN.QUESTION",
+      "source_behavior_case_id": "BEH.VISUAL.CREATE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "visual_question",
+          "value": "single_reader_question"
+        },
+        "owner": "rules/visuals.json#VIS.DESIGN.QUESTION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "00965d55a1ff8a593cfbb0fb2e95c0747545d886f4768462088ea429c11f61ef"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.DESIGN.TYPE",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.DESIGN.TYPE",
+      "source_behavior_case_id": "BEH.VISUAL.CREATE",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "select",
+          "target": "visual_type",
+          "value": "relationship_appropriate"
+        },
+        "owner": "rules/visuals.json#VIS.DESIGN.TYPE",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "3982979f7c92544747721d0f5b5880e921c88b01d4a72c0770b9232aaf40dd3b"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.DESIGN.UNCERTAINTY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.DESIGN.UNCERTAINTY",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.RENDER",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "visual_uncertainty_encoding",
+          "value": "interval_distribution_or_scenario"
+        },
+        "owner": "rules/visuals.json#VIS.DESIGN.UNCERTAINTY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "3ebd3ce09b04fb5499681ecec1174a2781de588ccd9eed80ef6e7c9379e0d630"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.IDENTITY.DATA",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.IDENTITY.DATA",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.RENDER",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "record",
+          "target": "visual_data_identity",
+          "value": "dataset_or_run_hash"
+        },
+        "owner": "rules/visuals.json#VIS.IDENTITY.DATA",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "b041c2665f708017bf2ae716ebfe99fccaa99d4f1b22197bf81e346337be8347"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.IDENTITY.NO_MANUAL_VALUES",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.IDENTITY.NO_MANUAL_VALUES",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.RENDER",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "forbid",
+          "target": "plotted_value_mutation",
+          "value": "manual_or_untraced_edit"
+        },
+        "owner": "rules/visuals.json#VIS.IDENTITY.NO_MANUAL_VALUES",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "231d96033200f1257c2821883bd09624786b7fdf011ed79170ea033604e28203"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.IDENTITY.RENDER",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.IDENTITY.RENDER",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.RENDER",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "rendered_visual",
+          "value": "actual_output_inspection"
+        },
+        "owner": "rules/visuals.json#VIS.IDENTITY.RENDER",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "097bc477b93ac9e3e331dad70f96632fad2bc6fb737dd8a050663d37e491045a"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.IDENTITY.SYNC",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.IDENTITY.SYNC",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.RENDER",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "visual_source_output_sync",
+          "value": "render_newer_and_matching"
+        },
+        "owner": "rules/visuals.json#VIS.IDENTITY.SYNC",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "eed8cd3790010817849f1606616e41aeb0a39c2eed9c4b5a1d61cec013ce26c5"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.LAYOUT.CAPTION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.LAYOUT.CAPTION",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "visual_caption",
+          "value": "what_encoding_scope_takeaway"
+        },
+        "owner": "rules/visuals.json#VIS.LAYOUT.CAPTION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4024f17b31798907a2d33275e5c81de036928cb118a15c0b57ff60c0f367d6d0"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.LAYOUT.COLOR",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.LAYOUT.COLOR",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 3,
+        "strength": "MUST",
+        "effect": {
+          "verb": "require",
+          "target": "categorical_distinction",
+          "value": "not_color_only"
+        },
+        "owner": "rules/visuals.json#VIS.LAYOUT.COLOR",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "d5c29749687c24457b7ad94e1a98cd4cdc960a888aaf48abc2d9dd2f79034edd"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.LAYOUT.FONTS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.LAYOUT.FONTS",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "rendered_fonts",
+          "value": "embedded_supported_and_legible"
+        },
+        "owner": "rules/visuals.json#VIS.LAYOUT.FONTS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "7c1d12f4a0840336a8a08ee25c4042f96dbe188a5ede9ab806e64f1cc6c476ce"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.LAYOUT.LABELS",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.LAYOUT.LABELS",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "axis_and_legend_labels",
+          "value": "meaning_unit_identity"
+        },
+        "owner": "rules/visuals.json#VIS.LAYOUT.LABELS",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "45d5688b0bf1bc48ee0ab034676cda7df41250ceb2a68203822400f9a14bfffd"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.LAYOUT.LEGIBILITY",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.LAYOUT.LEGIBILITY",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 2,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "render_legibility",
+          "value": "target_output_size"
+        },
+        "owner": "rules/visuals.json#VIS.LAYOUT.LEGIBILITY",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "71e6dee9e538df63584fbde75a20eba906a3e42438243cda1e408be3ea110922"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.LAYOUT.PAGINATION",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.LAYOUT.PAGINATION",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "page_layout",
+          "value": "pagination_and_page_breaks"
+        },
+        "owner": "rules/visuals.json#VIS.LAYOUT.PAGINATION",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "4d0f0d1ae7ddf4b55cff3d2729ad71d78c041ce776879dbf7438c4e6f10f3018"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    },
+    {
+      "id": "ATOM.VIS.LAYOUT.PLACEMENT",
+      "kind": "atomic_rule",
+      "driver": "atomic_rule_evals",
+      "target_rule_id": "VIS.LAYOUT.PLACEMENT",
+      "source_behavior_case_id": "BEH.MANUSCRIPT.AUDIT",
+      "expected": {
+        "applicability_status": "applicable",
+        "source_status": "resolved",
+        "revision": 1,
+        "strength": "MUST",
+        "effect": {
+          "verb": "verify",
+          "target": "visual_placement",
+          "value": "near_first_reference_with_caption"
+        },
+        "owner": "rules/visuals.json#VIS.LAYOUT.PLACEMENT",
+        "enforcement_kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "semantic_envelope_sha256": "a96ff1c64c8ce1b1593ffc7ea4e30acdf14afd0008e2888df28b2415bd0ad1f7"
+      },
+      "verified_boundary": "selection_and_semantic_delivery_only"
+    }
+  ]
+}

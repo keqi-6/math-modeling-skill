@@ -1,0 +1,1362 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "Q5-A196-STRUCTURAL-AUDIT-1.0",
+  "status": "pilot_complete",
+  "generated_at": "2026-08-28T22:25:52.803155+00:00",
+  "source_audit": {
+    "official_display_url": "https://dxs.moe.gov.cn/zx/a/hd_sxjm_sxjmlw_2025qgdxssxjmjslwzs/2022729.shtml",
+    "ocr_url": "https://raw.githubusercontent.com/yushugulao/CUMCM-Archive/refs/heads/main/research_index/pdf_text/2025/A/%E4%BC%98%E7%A7%80%E8%AE%BA%E6%96%87/A196--89f5a9e676.md",
+    "appendix_pages": [
+      89,
+      90,
+      91,
+      92
+    ],
+    "result_screenshot_page": 34,
+    "result_table_exactly_recoverable": false,
+    "reason_exact_table_unavailable": "official display contains only a low-resolution screenshot; result3.xlsx is listed but not publicly downloadable",
+    "executable_structure": {
+      "missile_choice": "one nearest missile per UAV",
+      "release_pattern_s": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "shared_fuse_within_uav": true,
+      "per_uav_metric": "get_last_time(bomb1)+get_last_time(bomb2)+get_last_time(bomb3)",
+      "overall_metric": "sum of five per-UAV metrics",
+      "within_missile_interval_union_in_main_q5": false,
+      "three_missile_interval_intersection_in_main_q5": false,
+      "IntervalInter_called_by_main_q5": false,
+      "fy5_appendix_coordinate_m": [
+        13000.0,
+        2000.0,
+        1300.0
+      ],
+      "fy5_official_coordinate_m": [
+        13000.0,
+        -2000.0,
+        1300.0
+      ]
+    }
+  },
+  "reported_result": {
+    "value_s": 21.077,
+    "classification": "independent single-cloud duration accumulator; not verified as a simultaneous three-missile interval intersection",
+    "directly_comparable_to_strict_longest_continuous": false
+  },
+  "structural_reproduction": {
+    "uses_official_fy5_coordinate": true,
+    "nearest_missile_assignments": [
+      "M1",
+      "M2",
+      "M3",
+      "M2",
+      "M3"
+    ],
+    "independent_duration_sum_s": 16.75,
+    "platforms": [
+      {
+        "platform_index": 0,
+        "platform": "FY1",
+        "assigned_missile_index": 0,
+        "assigned_missile": "M1",
+        "paper_intercept_seed": {
+          "heading_rad": 3.141592653589793,
+          "speed_mps": 70.058405245759,
+          "base_release_s": 5.405043913966515,
+          "shared_fuse_s": 4.224956086033485,
+          "intercept_time_s": 9.63
+        },
+        "heading_rad": 3.095314550370455,
+        "heading_deg": 177.34846000166115,
+        "speed_mps": 70.0,
+        "base_release_s": 0.0,
+        "release_times_s": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "shared_fuse_s": 0.0,
+        "proxy_metric": {
+          "independent_single_cloud_duration_sum_s": 3.0,
+          "per_bomb_duration_s": [
+            2.25,
+            0.75,
+            0.0
+          ],
+          "threshold_duration_sums": [
+            {
+              "threshold_m": 0.0,
+              "duration_sum_s": 3.0
+            },
+            {
+              "threshold_m": 5.0,
+              "duration_sum_s": 5.75
+            },
+            {
+              "threshold_m": 10.0,
+              "duration_sum_s": 9.25
+            },
+            {
+              "threshold_m": 20.0,
+              "duration_sum_s": 17.0
+            },
+            {
+              "threshold_m": 40.0,
+              "duration_sum_s": 20.0
+            },
+            {
+              "threshold_m": 80.0,
+              "duration_sum_s": 20.25
+            }
+          ],
+          "minimum_margin_m": -8.342401522140273
+        },
+        "score": [
+          3.0,
+          5.75,
+          9.25,
+          17.0,
+          20.0,
+          20.25,
+          4.604428703404861
+        ],
+        "evaluation_count": 3454,
+        "generation_count": 246
+      },
+      {
+        "platform_index": 1,
+        "platform": "FY2",
+        "assigned_missile_index": 1,
+        "assigned_missile": "M2",
+        "paper_intercept_seed": {
+          "heading_rad": 3.692544084274191,
+          "speed_mps": 70.01940327246216,
+          "base_release_s": 21.978969860784773,
+          "shared_fuse_s": 7.386030139215227,
+          "intercept_time_s": 29.365
+        },
+        "heading_rad": 4.9896070890623045,
+        "heading_deg": 285.8834276318263,
+        "speed_mps": 77.22020030810553,
+        "base_release_s": 9.865158778704933,
+        "release_times_s": [
+          9.865158778704933,
+          10.865158778704933,
+          11.865158778704933
+        ],
+        "shared_fuse_s": 2.4593588753837365,
+        "proxy_metric": {
+          "independent_single_cloud_duration_sum_s": 3.75,
+          "per_bomb_duration_s": [
+            0.0,
+            3.75,
+            0.0
+          ],
+          "threshold_duration_sums": [
+            {
+              "threshold_m": 0.0,
+              "duration_sum_s": 3.75
+            },
+            {
+              "threshold_m": 5.0,
+              "duration_sum_s": 5.75
+            },
+            {
+              "threshold_m": 10.0,
+              "duration_sum_s": 7.5
+            },
+            {
+              "threshold_m": 20.0,
+              "duration_sum_s": 9.0
+            },
+            {
+              "threshold_m": 40.0,
+              "duration_sum_s": 9.0
+            },
+            {
+              "threshold_m": 80.0,
+              "duration_sum_s": 25.5
+            }
+          ],
+          "minimum_margin_m": -8.458220405629547
+        },
+        "score": [
+          3.75,
+          5.75,
+          7.5,
+          9.0,
+          9.0,
+          25.5,
+          5.427154781032129
+        ],
+        "evaluation_count": 2872,
+        "generation_count": 205
+      },
+      {
+        "platform_index": 2,
+        "platform": "FY3",
+        "assigned_missile_index": 2,
+        "assigned_missile": "M3",
+        "paper_intercept_seed": {
+          "heading_rad": 1.3477110475551695,
+          "speed_mps": 74.73379719667557,
+          "base_release_s": 37.973638165490904,
+          "shared_fuse_s": 0.1563618345090956,
+          "intercept_time_s": 38.13
+        },
+        "heading_rad": 1.4278904257828764,
+        "heading_deg": 81.81209500449692,
+        "speed_mps": 137.80862030881133,
+        "base_release_s": 17.54401768800357,
+        "release_times_s": [
+          17.54401768800357,
+          18.54401768800357,
+          19.54401768800357
+        ],
+        "shared_fuse_s": 1.473637006633063,
+        "proxy_metric": {
+          "independent_single_cloud_duration_sum_s": 2.75,
+          "per_bomb_duration_s": [
+            0.0,
+            0.0,
+            2.75
+          ],
+          "threshold_duration_sums": [
+            {
+              "threshold_m": 0.0,
+              "duration_sum_s": 2.75
+            },
+            {
+              "threshold_m": 5.0,
+              "duration_sum_s": 5.25
+            },
+            {
+              "threshold_m": 10.0,
+              "duration_sum_s": 6.75
+            },
+            {
+              "threshold_m": 20.0,
+              "duration_sum_s": 8.75
+            },
+            {
+              "threshold_m": 40.0,
+              "duration_sum_s": 12.25
+            },
+            {
+              "threshold_m": 80.0,
+              "duration_sum_s": 20.75
+            }
+          ],
+          "minimum_margin_m": -6.069492117152102
+        },
+        "score": [
+          2.75,
+          5.25,
+          6.75,
+          8.75,
+          12.25,
+          20.75,
+          3.2703395185651423
+        ],
+        "evaluation_count": 3092,
+        "generation_count": 220
+      },
+      {
+        "platform_index": 3,
+        "platform": "FY4",
+        "assigned_missile_index": 1,
+        "assigned_missile": "M2",
+        "paper_intercept_seed": {
+          "heading_rad": 5.661796681172002,
+          "speed_mps": 139.96686900724612,
+          "base_release_s": 11.096556897687625,
+          "shared_fuse_s": 8.328443102312374,
+          "intercept_time_s": 19.425
+        },
+        "heading_rad": 4.819932900048624,
+        "heading_deg": 276.1618127090374,
+        "speed_mps": 137.89123112237257,
+        "base_release_s": 0.0,
+        "release_times_s": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "shared_fuse_s": 10.65806378702375,
+        "proxy_metric": {
+          "independent_single_cloud_duration_sum_s": 3.75,
+          "per_bomb_duration_s": [
+            0.0,
+            3.75,
+            0.0
+          ],
+          "threshold_duration_sums": [
+            {
+              "threshold_m": 0.0,
+              "duration_sum_s": 3.75
+            },
+            {
+              "threshold_m": 5.0,
+              "duration_sum_s": 5.25
+            },
+            {
+              "threshold_m": 10.0,
+              "duration_sum_s": 6.5
+            },
+            {
+              "threshold_m": 20.0,
+              "duration_sum_s": 8.5
+            },
+            {
+              "threshold_m": 40.0,
+              "duration_sum_s": 12.5
+            },
+            {
+              "threshold_m": 80.0,
+              "duration_sum_s": 14.5
+            }
+          ],
+          "minimum_margin_m": -7.421910421296898
+        },
+        "score": [
+          3.75,
+          5.25,
+          6.5,
+          8.5,
+          12.5,
+          14.5,
+          4.7515475316146345
+        ],
+        "evaluation_count": 3008,
+        "generation_count": 214
+      },
+      {
+        "platform_index": 4,
+        "platform": "FY5",
+        "assigned_missile_index": 2,
+        "assigned_missile": "M3",
+        "paper_intercept_seed": {
+          "heading_rad": 1.97758239953042,
+          "speed_mps": 90.78020449045185,
+          "base_release_s": 18.954435486499953,
+          "shared_fuse_s": 0.11056451350004531,
+          "intercept_time_s": 19.064999999999998
+        },
+        "heading_rad": 2.033677891448168,
+        "heading_deg": 116.52116006904441,
+        "speed_mps": 138.21928873619623,
+        "base_release_s": 12.432393764013366,
+        "release_times_s": [
+          12.432393764013366,
+          13.432393764013366,
+          14.432393764013366
+        ],
+        "shared_fuse_s": 0.5588445070535552,
+        "proxy_metric": {
+          "independent_single_cloud_duration_sum_s": 3.5,
+          "per_bomb_duration_s": [
+            3.5,
+            0.0,
+            0.0
+          ],
+          "threshold_duration_sums": [
+            {
+              "threshold_m": 0.0,
+              "duration_sum_s": 3.5
+            },
+            {
+              "threshold_m": 5.0,
+              "duration_sum_s": 5.5
+            },
+            {
+              "threshold_m": 10.0,
+              "duration_sum_s": 6.5
+            },
+            {
+              "threshold_m": 20.0,
+              "duration_sum_s": 6.5
+            },
+            {
+              "threshold_m": 40.0,
+              "duration_sum_s": 6.5
+            },
+            {
+              "threshold_m": 80.0,
+              "duration_sum_s": 6.75
+            }
+          ],
+          "minimum_margin_m": -9.262190435862536
+        },
+        "score": [
+          3.5,
+          5.5,
+          6.5,
+          6.5,
+          6.5,
+          6.75,
+          5.600473119627359
+        ],
+        "evaluation_count": 3064,
+        "generation_count": 218
+      }
+    ],
+    "decision": {
+      "source": "a196_structural_reproduction",
+      "active_bomb_count": 15,
+      "platforms": [
+        {
+          "platform": "FY1",
+          "heading_rad": 3.095314550370455,
+          "heading_deg": 177.34846000166115,
+          "speed_mps": 70.0,
+          "bombs": [
+            {
+              "platform": 0,
+              "label": "M1",
+              "release_s": 0.0,
+              "fuse_s": 0.0,
+              "bomb_number": 1,
+              "explosion_time_s": 0.0,
+              "release_point_m": [
+                17800.0,
+                0.0,
+                1800.0
+              ],
+              "explosion_point_m": [
+                17800.0,
+                0.0,
+                1800.0
+              ]
+            },
+            {
+              "platform": 0,
+              "label": "M1",
+              "release_s": 1.0,
+              "fuse_s": 0.0,
+              "bomb_number": 2,
+              "explosion_time_s": 1.0,
+              "release_point_m": [
+                17730.07494482234,
+                3.2383110414067406,
+                1800.0
+              ],
+              "explosion_point_m": [
+                17730.07494482234,
+                3.2383110414067406,
+                1800.0
+              ]
+            },
+            {
+              "platform": 0,
+              "label": "M1",
+              "release_s": 2.0,
+              "fuse_s": 0.0,
+              "bomb_number": 3,
+              "explosion_time_s": 2.0,
+              "release_point_m": [
+                17660.149889644676,
+                6.476622082813481,
+                1800.0
+              ],
+              "explosion_point_m": [
+                17660.149889644676,
+                6.476622082813481,
+                1800.0
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY2",
+          "heading_rad": 4.9896070890623045,
+          "heading_deg": 285.8834276318263,
+          "speed_mps": 77.22020030810553,
+          "bombs": [
+            {
+              "platform": 1,
+              "label": "M2",
+              "release_s": 9.865158778704933,
+              "fuse_s": 2.4593588753837365,
+              "bomb_number": 1,
+              "explosion_time_s": 12.32451765408867,
+              "release_point_m": [
+                12208.487345791116,
+                667.2951990937516,
+                1400.0
+              ],
+              "explosion_point_m": [
+                12260.462708355315,
+                484.63376448665304,
+                1370.362614218149
+              ]
+            },
+            {
+              "platform": 1,
+              "label": "M2",
+              "release_s": 10.865158778704933,
+              "fuse_s": 2.4593588753837365,
+              "bomb_number": 2,
+              "explosion_time_s": 13.32451765408867,
+              "release_point_m": [
+                12229.621049816353,
+                593.0232266559765,
+                1400.0
+              ],
+              "explosion_point_m": [
+                12281.596412380552,
+                410.3617920488779,
+                1370.362614218149
+              ]
+            },
+            {
+              "platform": 1,
+              "label": "M2",
+              "release_s": 11.865158778704933,
+              "fuse_s": 2.4593588753837365,
+              "bomb_number": 3,
+              "explosion_time_s": 14.32451765408867,
+              "release_point_m": [
+                12250.75475384159,
+                518.7512542182013,
+                1400.0
+              ],
+              "explosion_point_m": [
+                12302.73011640579,
+                336.08981961110294,
+                1370.362614218149
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY3",
+          "heading_rad": 1.4278904257828764,
+          "heading_deg": 81.81209500449692,
+          "speed_mps": 137.80862030881133,
+          "bombs": [
+            {
+              "platform": 2,
+              "label": "M3",
+              "release_s": 17.54401768800357,
+              "fuse_s": 1.473637006633063,
+              "bomb_number": 1,
+              "explosion_time_s": 19.017654694636633,
+              "release_point_m": [
+                6344.3312154080595,
+                -606.928565944484,
+                700.0
+              ],
+              "explosion_point_m": [
+                6373.253850495872,
+                -405.9188150735613,
+                689.3591304661396
+              ]
+            },
+            {
+              "platform": 2,
+              "label": "M3",
+              "release_s": 18.54401768800357,
+              "fuse_s": 1.473637006633063,
+              "bomb_number": 2,
+              "explosion_time_s": 20.017654694636633,
+              "release_point_m": [
+                6363.95791788474,
+                -470.524722958628,
+                700.0
+              ],
+              "explosion_point_m": [
+                6392.880552972552,
+                -269.51497208770525,
+                689.3591304661396
+              ]
+            },
+            {
+              "platform": 2,
+              "label": "M3",
+              "release_s": 19.54401768800357,
+              "fuse_s": 1.473637006633063,
+              "bomb_number": 3,
+              "explosion_time_s": 21.017654694636633,
+              "release_point_m": [
+                6383.58462036142,
+                -334.1208799727724,
+                700.0
+              ],
+              "explosion_point_m": [
+                6412.507255449233,
+                -133.1111291018492,
+                689.3591304661396
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY4",
+          "heading_rad": 4.819932900048624,
+          "heading_deg": 276.1618127090374,
+          "speed_mps": 137.89123112237257,
+          "bombs": [
+            {
+              "platform": 3,
+              "label": "M2",
+              "release_s": 0.0,
+              "fuse_s": 10.65806378702375,
+              "bomb_number": 1,
+              "explosion_time_s": 10.65806378702375,
+              "release_point_m": [
+                11000.0,
+                2000.0,
+                1800.0
+              ],
+              "explosion_point_m": [
+                11157.747813937567,
+                538.8370570204765,
+                1243.3878139274916
+              ]
+            },
+            {
+              "platform": 3,
+              "label": "M2",
+              "release_s": 1.0,
+              "fuse_s": 10.65806378702375,
+              "bomb_number": 2,
+              "explosion_time_s": 11.65806378702375,
+              "release_point_m": [
+                11014.800794693087,
+                1862.9054045671505,
+                1800.0
+              ],
+              "explosion_point_m": [
+                11172.548608630654,
+                401.7424615876271,
+                1243.3878139274916
+              ]
+            },
+            {
+              "platform": 3,
+              "label": "M2",
+              "release_s": 2.0,
+              "fuse_s": 10.65806378702375,
+              "bomb_number": 3,
+              "explosion_time_s": 12.65806378702375,
+              "release_point_m": [
+                11029.601589386175,
+                1725.8108091343013,
+                1800.0
+              ],
+              "explosion_point_m": [
+                11187.349403323742,
+                264.6478661547776,
+                1243.3878139274916
+              ]
+            }
+          ]
+        },
+        {
+          "platform": "FY5",
+          "heading_rad": 2.033677891448168,
+          "heading_deg": 116.52116006904441,
+          "speed_mps": 138.21928873619623,
+          "bombs": [
+            {
+              "platform": 4,
+              "label": "M3",
+              "release_s": 12.432393764013366,
+              "fuse_s": 0.5588445070535552,
+              "bomb_number": 1,
+              "explosion_time_s": 12.991238271066921,
+              "release_point_m": [
+                12232.687288296222,
+                -462.4310885038899,
+                1300.0
+              ],
+              "explosion_point_m": [
+                12198.196063012701,
+                -393.3163261567447,
+                1298.4696948029869
+              ]
+            },
+            {
+              "platform": 4,
+              "label": "M3",
+              "release_s": 13.432393764013366,
+              "fuse_s": 0.5588445070535552,
+              "bomb_number": 2,
+              "explosion_time_s": 13.991238271066921,
+              "release_point_m": [
+                12170.968465174255,
+                -338.7566826990533,
+                1300.0
+              ],
+              "explosion_point_m": [
+                12136.477239890735,
+                -269.6419203519081,
+                1298.4696948029869
+              ]
+            },
+            {
+              "platform": 4,
+              "label": "M3",
+              "release_s": 14.432393764013366,
+              "fuse_s": 0.5588445070535552,
+              "bomb_number": 3,
+              "explosion_time_s": 14.991238271066921,
+              "release_point_m": [
+                12109.24964205229,
+                -215.08227689421665,
+                1300.0
+              ],
+              "explosion_point_m": [
+                12074.75841676877,
+                -145.96751454707123,
+                1298.4696948029869
+              ]
+            }
+          ]
+        }
+      ],
+      "constraint_margins": {
+        "speed_low_mps": 0.0,
+        "speed_high_mps": 1.7807112638037665,
+        "release_time_s": 0.0,
+        "fuse_delay_s": 0.0,
+        "explosion_height_m": 689.3591304661396,
+        "one_second_gap_s": 0.0,
+        "latest_arrival_s": 45.981516112835976,
+        "capacity_bombs": 0.0
+      }
+    }
+  },
+  "strict_comparison": {
+    "structural_probe": {
+      "settings": "refine_probe",
+      "longest_continuous_s": 0.0,
+      "longest_interval_s": null,
+      "total_intersection_s": 0.0,
+      "intersection_intervals_s": [],
+      "durations_s": [
+        2.7759263900066316,
+        6.935517134271354,
+        6.656091820036922
+      ]
+    },
+    "structural_screen": {
+      "settings": "screen_strict",
+      "longest_continuous_s": 0.0,
+      "longest_interval_s": null,
+      "total_intersection_s": 0.0,
+      "intersection_intervals_s": [],
+      "durations_s": [
+        2.7755349091837003,
+        7.009198327678355,
+        6.654039412031247
+      ]
+    },
+    "incumbent_registered_screen": {
+      "settings": "screen_strict",
+      "longest_continuous_s": 8.134011505745754,
+      "longest_interval_s": [
+        15.88759915659558,
+        24.021610662341335
+      ],
+      "total_intersection_s": 8.134011505745754,
+      "intersection_intervals_s": [
+        [
+          15.88759915659558,
+          24.021610662341335
+        ]
+      ],
+      "durations_s": [
+        14.056207170631241,
+        10.792686965638158,
+        8.46468651246867
+      ]
+    },
+    "incumbent_screen": {
+      "settings": "screen_strict",
+      "longest_continuous_s": 8.134011505745754,
+      "longest_interval_s": [
+        15.88759915659558,
+        24.021610662341335
+      ],
+      "total_intersection_s": 8.134011505745754,
+      "intersection_intervals_s": [
+        [
+          15.88759915659558,
+          24.021610662341335
+        ]
+      ],
+      "durations_s": [
+        14.056207170631241,
+        10.792686965638158,
+        8.46468651246867
+      ]
+    },
+    "candidate_probe": {
+      "settings": "refine_probe",
+      "longest_continuous_s": 8.237316810522351,
+      "longest_interval_s": [
+        15.887597635898342,
+        24.124914446420693
+      ],
+      "total_intersection_s": 8.237316810522351,
+      "intersection_intervals_s": [
+        [
+          15.887597635898342,
+          24.124914446420693
+        ]
+      ],
+      "durations_s": [
+        14.056313988930253,
+        10.792763273933645,
+        10.35234688532038
+      ]
+    },
+    "candidate_screen": {
+      "settings": "screen_strict",
+      "longest_continuous_s": 8.237238682982337,
+      "longest_interval_s": [
+        15.88759915659558,
+        24.124837839577918
+      ],
+      "total_intersection_s": 8.237238682982337,
+      "intersection_intervals_s": [
+        [
+          15.88759915659558,
+          24.124837839577918
+        ]
+      ],
+      "durations_s": [
+        14.056207170631241,
+        10.792686965638158,
+        10.35010862162796
+      ]
+    },
+    "screen_improvement_s": 0.10322717723658315,
+    "independent_sum_minus_structural_strict_s": 16.75
+  },
+  "refinement": {
+    "algorithm": "A196/incumbent platform-block seeding plus bounded differential evolution",
+    "decision_dimension": 40,
+    "population_size": 28,
+    "evaluation_count": 7805,
+    "generation_count": 278,
+    "failure_count": 0,
+    "strict_audits": [
+      {
+        "source": "incumbent",
+        "settings": "refine_probe",
+        "longest_continuous_s": 8.134531617667093,
+        "longest_interval_s": [
+          15.887597635898342,
+          24.022129253565435
+        ],
+        "total_intersection_s": 8.134531617667093,
+        "intersection_intervals_s": [
+          [
+            15.887597635898342,
+            24.022129253565435
+          ]
+        ],
+        "durations_s": [
+          14.056313988930253,
+          10.792763273933645,
+          8.466422682524946
+        ]
+      },
+      {
+        "source": "a196_structural",
+        "settings": "refine_probe",
+        "longest_continuous_s": 0.0,
+        "longest_interval_s": null,
+        "total_intersection_s": 0.0,
+        "intersection_intervals_s": [],
+        "durations_s": [
+          2.7759263900066316,
+          6.935517134271354,
+          6.656091820036922
+        ]
+      },
+      {
+        "source": "final_proxy",
+        "settings": "refine_probe",
+        "longest_continuous_s": 8.134531330193784,
+        "longest_interval_s": [
+          15.887597635898342,
+          24.022128966092126
+        ],
+        "total_intersection_s": 8.134531330193784,
+        "intersection_intervals_s": [
+          [
+            15.887597635898342,
+            24.022128966092126
+          ]
+        ],
+        "durations_s": [
+          12.76736521307663,
+          10.792762546248387,
+          8.466422395051637
+        ]
+      },
+      {
+        "source": "final_proxy",
+        "settings": "refine_probe",
+        "longest_continuous_s": 8.237316810522351,
+        "longest_interval_s": [
+          15.887597635898342,
+          24.124914446420693
+        ],
+        "total_intersection_s": 8.237316810522351,
+        "intersection_intervals_s": [
+          [
+            15.887597635898342,
+            24.124914446420693
+          ]
+        ],
+        "durations_s": [
+          14.056313988930253,
+          10.792763273933645,
+          10.35234688532038
+        ]
+      }
+    ],
+    "best_proxy": {
+      "longest_continuous_node_s": 8.0,
+      "longest_interval_nodes_s": [
+        16.0,
+        24.0
+      ],
+      "threshold_runs": [
+        {
+          "threshold_m": 0.0,
+          "duration_s": 8.0,
+          "interval_s": [
+            16.0,
+            24.0
+          ],
+          "node_count": 17
+        },
+        {
+          "threshold_m": 2.5,
+          "duration_s": 9.0,
+          "interval_s": [
+            15.5,
+            24.5
+          ],
+          "node_count": 19
+        },
+        {
+          "threshold_m": 5.0,
+          "duration_s": 9.5,
+          "interval_s": [
+            15.0,
+            24.5
+          ],
+          "node_count": 20
+        },
+        {
+          "threshold_m": 10.0,
+          "duration_s": 11.0,
+          "interval_s": [
+            13.5,
+            24.5
+          ],
+          "node_count": 23
+        },
+        {
+          "threshold_m": 20.0,
+          "duration_s": 11.0,
+          "interval_s": [
+            13.5,
+            24.5
+          ],
+          "node_count": 23
+        },
+        {
+          "threshold_m": 40.0,
+          "duration_s": 13.0,
+          "interval_s": [
+            13.5,
+            26.5
+          ],
+          "node_count": 27
+        },
+        {
+          "threshold_m": 80.0,
+          "duration_s": 13.0,
+          "interval_s": [
+            13.5,
+            26.5
+          ],
+          "node_count": 27
+        },
+        {
+          "threshold_m": 160.0,
+          "duration_s": 13.5,
+          "interval_s": [
+            13.5,
+            27.0
+          ],
+          "node_count": 28
+        }
+      ],
+      "strict_extension_margin_m": 2.003442225486907,
+      "minimum_global_margin_m": -4.468274914978397,
+      "minimum_per_missile_margin_m": [
+        -8.909849121379983,
+        -7.989270186682338,
+        -8.392089790389997
+      ]
+    },
+    "random_seed": 20260829,
+    "all_condition_proxy_uses_missile_assignment_labels": false,
+    "continuous_domain_exhausted": false
+  },
+  "best_decision": {
+    "source": "a196_seeded_final_proxy_audit",
+    "active_bomb_count": 15,
+    "platforms": [
+      {
+        "platform": "FY1",
+        "heading_rad": 0.0643902074044416,
+        "heading_deg": 3.6892871262465263,
+        "speed_mps": 139.55234670566875,
+        "bombs": [
+          {
+            "platform": 0,
+            "label": "M1",
+            "release_s": 0.7388948056749916,
+            "fuse_s": 0.381497400697505,
+            "bomb_number": 1,
+            "explosion_time_s": 1.1203922063724965,
+            "release_point_m": [
+              17902.900816485362,
+              6.6349772081961405,
+              1800.0
+            ],
+            "explosion_point_m": [
+              17956.02934536026,
+              10.060669930858742,
+              1799.2868526929792
+            ]
+          },
+          {
+            "platform": 0,
+            "label": "M1",
+            "release_s": 2.555246076687102,
+            "fuse_s": 0.0,
+            "bomb_number": 2,
+            "explosion_time_s": 2.555246076687102,
+            "release_point_m": [
+              18155.851611883943,
+              22.94507871748238,
+              1800.0
+            ],
+            "explosion_point_m": [
+              18155.851611883943,
+              22.94507871748238,
+              1800.0
+            ]
+          },
+          {
+            "platform": 0,
+            "label": "M1",
+            "release_s": 3.711581244831144,
+            "fuse_s": 9.153887478917668e-06,
+            "bomb_number": 3,
+            "explosion_time_s": 3.711590398718623,
+            "release_point_m": [
+              18316.886487239528,
+              33.32850194193264,
+              1800.0
+            ],
+            "explosion_point_m": [
+              18316.88776203871,
+              33.328584140148585,
+              1799.9999999995894
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY2",
+        "heading_rad": 4.287008023812072,
+        "heading_deg": 245.62746650315123,
+        "speed_mps": 116.7749664710228,
+        "bombs": [
+          {
+            "platform": 1,
+            "label": "M1",
+            "release_s": 4.669232920364355,
+            "fuse_s": 4.702136852482555,
+            "bomb_number": 1,
+            "explosion_time_s": 9.371369772846911,
+            "release_point_m": [
+              11774.99307125184,
+              903.3422520585816,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11548.400526014648,
+              403.1845731642718,
+              1291.6605542005748
+            ]
+          },
+          {
+            "platform": 1,
+            "label": "M1",
+            "release_s": 5.672103525786559,
+            "fuse_s": 7.041286008645829,
+            "bomb_number": 2,
+            "explosion_time_s": 12.713389534432388,
+            "release_point_m": [
+              11726.665468258701,
+              796.6687438270043,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11387.351031334196,
+              47.70005639802821,
+              1157.0594275877975
+            ]
+          },
+          {
+            "platform": 1,
+            "label": "M1",
+            "release_s": 9.872766702636778,
+            "fuse_s": 6.588834226174666,
+            "bomb_number": 3,
+            "explosion_time_s": 16.461600928811443,
+            "release_point_m": [
+              11524.238573681165,
+              349.85190070578483,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11206.727458140876,
+              -350.99031987803914,
+              1187.2775913459475
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY3",
+        "heading_rad": 1.4278904257828764,
+        "heading_deg": 81.81209500449692,
+        "speed_mps": 137.80862030881133,
+        "bombs": [
+          {
+            "platform": 2,
+            "label": "M1",
+            "release_s": 17.54401768800357,
+            "fuse_s": 1.473637006633063,
+            "bomb_number": 1,
+            "explosion_time_s": 19.017654694636633,
+            "release_point_m": [
+              6344.3312154080595,
+              -606.928565944484,
+              700.0
+            ],
+            "explosion_point_m": [
+              6373.253850495872,
+              -405.9188150735613,
+              689.3591304661396
+            ]
+          },
+          {
+            "platform": 2,
+            "label": "M1",
+            "release_s": 18.54401768800357,
+            "fuse_s": 1.473637006633063,
+            "bomb_number": 2,
+            "explosion_time_s": 20.017654694636633,
+            "release_point_m": [
+              6363.95791788474,
+              -470.524722958628,
+              700.0
+            ],
+            "explosion_point_m": [
+              6392.880552972552,
+              -269.51497208770525,
+              689.3591304661396
+            ]
+          },
+          {
+            "platform": 2,
+            "label": "M1",
+            "release_s": 19.54401768800357,
+            "fuse_s": 1.473637006633063,
+            "bomb_number": 3,
+            "explosion_time_s": 21.017654694636633,
+            "release_point_m": [
+              6383.58462036142,
+              -334.1208799727724,
+              700.0
+            ],
+            "explosion_point_m": [
+              6412.507255449233,
+              -133.1111291018492,
+              689.3591304661396
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY4",
+        "heading_rad": 4.745469394950402,
+        "heading_deg": 271.8953681391584,
+        "speed_mps": 129.2675849601,
+        "bombs": [
+          {
+            "platform": 3,
+            "label": "M1",
+            "release_s": 1.8208704544187657,
+            "fuse_s": 10.67912954558123,
+            "bomb_number": 1,
+            "explosion_time_s": 12.499999999999995,
+            "release_point_m": [
+              11007.785032246546,
+              1764.7492516229718,
+              1800.0
+            ],
+            "explosion_point_m": [
+              11053.443067762273,
+              385.03922803694377,
+              1241.185341528601
+            ]
+          },
+          {
+            "platform": 3,
+            "label": "M1",
+            "release_s": 3.398124999845491,
+            "fuse_s": 11.747958459281808,
+            "bomb_number": 2,
+            "explosion_time_s": 15.146083459127299,
+            "release_point_m": [
+              11014.528497970514,
+              1560.972914161805,
+              1800.0
+            ],
+            "explosion_point_m": [
+              11064.756253171136,
+              43.17354917047123,
+              1123.7288129910462
+            ]
+          },
+          {
+            "platform": 3,
+            "label": "M1",
+            "release_s": 6.990613292571973,
+            "fuse_s": 11.289500291265194,
+            "bomb_number": 3,
+            "explosion_time_s": 18.280113583837167,
+            "release_point_m": [
+              11029.887985591582,
+              1096.8347008426208,
+              1800.0
+            ],
+            "explosion_point_m": [
+              11078.155627917045,
+              -361.73330759408236,
+              1175.4811975502632
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY5",
+        "heading_rad": 2.105207078339758,
+        "heading_deg": 120.619480589935,
+        "speed_mps": 138.5268955873774,
+        "bombs": [
+          {
+            "platform": 4,
+            "label": "M1",
+            "release_s": 11.456346482904353,
+            "fuse_s": 2.0396668448585524,
+            "bomb_number": 1,
+            "explosion_time_s": 13.496013327762906,
+            "release_point_m": [
+              12191.68071054156,
+              -634.2667268982661,
+              1300.0
+            ],
+            "explosion_point_m": [
+              12047.76903178531,
+              -391.114088295496,
+              1279.6148198937253
+            ]
+          },
+          {
+            "platform": 4,
+            "label": "M1",
+            "release_s": 12.45842906406513,
+            "fuse_s": 4.452454083418179,
+            "bomb_number": 2,
+            "explosion_time_s": 16.91088314748331,
+            "release_point_m": [
+              12120.977307742833,
+              -514.8065197956621,
+              1300.0
+            ],
+            "explosion_point_m": [
+              11806.82789488896,
+              15.979162861196983,
+              1202.8606979117585
+            ]
+          },
+          {
+            "platform": 4,
+            "label": "M1",
+            "release_s": 18.2935611601275,
+            "fuse_s": 1.6413268042005313,
+            "bomb_number": 3,
+            "explosion_time_s": 19.93488796432803,
+            "release_point_m": [
+              11709.27102452037,
+              180.81088916,
+              1300.0
+            ],
+            "explosion_point_m": [
+              11593.46481019888,
+              376.47663930778344,
+              1286.799626976883
+            ]
+          }
+        ]
+      }
+    ],
+    "constraint_margins": {
+      "speed_low_mps": 46.77496647102279,
+      "speed_high_mps": 0.44765329433124634,
+      "release_time_s": 0.7388948056749916,
+      "fuse_delay_s": 0.0,
+      "explosion_height_m": 689.3591304661396,
+      "one_second_gap_s": 0.0,
+      "latest_arrival_s": 45.981516112835976,
+      "capacity_bombs": 0.0
+    }
+  },
+  "claims": {
+    "exact_A196_table_reproduced": false,
+    "A196_executable_structure_reproduced": true,
+    "strict_three_missile_re_evaluation": true,
+    "formal_q5_result_modified": false,
+    "global_optimality": false
+  },
+  "input_hashes": {
+    "data/A题.pdf": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "docs/q5_full_condition_search.json": "7d3cf60c26135173eab0a937c43c377c5b1639864fba4a23161932899c570363",
+    "planning/47_q5_a196_structural_audit_spec.md": "48b7c87024149d9e2c07fc50505ea055e384ddfb25c05e570c63bc4f538c4b55",
+    "src/q5/a196_structural_audit.py": "4acf6cbc497d4eb6d76860a747745cde2eece1423e166c8f58cc522a5f6056b1",
+    "a196_image_pdf_external": "e072d5a2500eee46a5fc48f29f74f4939d3e8805db99300d6609d7a57f368d6c"
+  },
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.4.6"
+  },
+  "elapsed_s": 55.048209749991656
+}

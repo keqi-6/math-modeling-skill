@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v10/change-envelope.schema.json",
+  "title": "V10 staged rule-change envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "operation", "rule_id", "request", "old_behavior", "new_behavior",
+    "trigger", "exceptions", "risk", "impact_analysis", "behavior_tests"
+  ],
+  "properties": {
+    "operation": {"enum": ["add", "modify", "retire"]},
+    "rule_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"},
+    "request": {"type": "string", "minLength": 3},
+    "old_behavior": {"type": ["string", "null"]},
+    "new_behavior": {"type": ["string", "null"]},
+    "trigger": {"$ref": "#/$defs/trigger"},
+    "exceptions": {"type": "array"},
+    "risk": {"enum": ["L0", "L1", "L2", "L3", "L4"]},
+    "impact_analysis": {"$ref": "#/$defs/impact_analysis"},
+    "expected_owner": {"type": ["string", "null"]},
+    "expected_revision": {"type": ["integer", "null"], "minimum": 1},
+    "expected_rule_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "replacement_ids": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"}
+    },
+    "replacement_expectations": {
+      "type": "array", "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "expected_owner", "expected_revision", "expected_rule_sha256"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"},
+          "expected_owner": {"type": "string"},
+          "expected_revision": {"type": "integer", "minimum": 1},
+          "expected_rule_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "patch": {"type": "object", "minProperties": 1},
+    "new_rule": {"type": "object"},
+    "behavior_tests": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/behavior_test"}
+    }
+  },
+  "$defs": {
+    "impact_analysis": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "status", "rule_id", "base_rule_sha256", "candidate_rule_sha256", "minimum_risk",
+        "affected_rule_ids", "affected_routes", "affected_test_ids", "affected_contracts",
+        "relation_edges", "analysis_sha256"
+      ],
+      "properties": {
+        "status": {"const": "passed"},
+        "rule_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"},
+        "base_rule_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "candidate_rule_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "minimum_risk": {"enum": ["L0", "L1", "L2", "L3", "L4"]},
+        "affected_rule_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"}},
+        "affected_routes": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "affected_test_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "affected_contracts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "relation_edges": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["from", "to", "kind"],
+            "properties": {"from": {"type": "string"}, "to": {"type": "string"}, "kind": {"type": "string"}}
+          }
+        },
+        "analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "trigger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["events", "predicates"],
+      "properties": {
+        "events": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "predicates": {"type": "array"}
+      }
+    },
+    "fixture": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "project_state": {"type": "string"},
+        "missing_state": {"type": "boolean"},
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["id", "type", "state"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "type": {"enum": ["project", "question", "shared_data", "artifact"]},
+              "state": {"type": "string", "minLength": 1},
+              "status": {"enum": ["active", "closed", "blocked", "invalidated"]}
+            }
+          }
+        },
+        "open_decisions": {"type": "array", "items": {"type": "object"}},
+        "r1_changed_artifact": {
+          "type": "object", "additionalProperties": false,
+          "required": ["producer"],
+          "properties": {
+            "path": {"type": "string", "minLength": 1},
+            "producer": {"type": "string", "minLength": 1},
+            "content": {"type": "string", "maxLength": 100000}
+          }
+        }
+      }
+    },
+    "oracle": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "route_ids", "target_selected"],
+      "properties": {
+        "status": {"enum": ["resolved", "blocked", "ambiguous"]},
+        "mode": {"enum": ["advisory_readonly", "project_readonly", "mutate", "promote", "skill_maintenance"]},
+        "route_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "target_selected": {"type": "boolean"},
+        "target_strength": {"enum": ["MUST", "SHOULD", "MAY"]},
+        "target_effect": {
+          "type": "object", "additionalProperties": false,
+          "required": ["verb", "target", "value"],
+          "properties": {
+            "verb": {"enum": ["require", "forbid", "allow", "select", "record", "verify", "invalidate", "transition", "limit"]},
+            "target": {"type": "string", "minLength": 1},
+            "value": {}
+          }
+        },
+        "target_behavior": {"type": "string"},
+        "target_failure": {"type": "string"},
+        "target_evidence": {"type": "object"},
+        "target_outcomes": {"type": "object"},
+        "target_enforcement": {"type": "object"},
+        "target_scope": {"type": "object"},
+        "target_trigger": {"type": "object"},
+        "target_exceptions": {"type": "array"},
+        "target_context_ref": {"type": ["string", "null"]},
+        "target_fields": {"type": "object"},
+        "target_conflicts_with": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "target_refines": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "target_depends_on": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "selected_rule_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"}},
+        "excluded_rule_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"}}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"target_selected": {"const": true}}, "required": ["target_selected"]},
+          "then": {"required": ["target_effect"]}
+        },
+        {
+          "if": {"properties": {"target_selected": {"const": false}}, "required": ["target_selected"]},
+          "then": {
+            "not": {
+              "anyOf": [
+                {"required": ["target_strength"]}, {"required": ["target_effect"]},
+                {"required": ["target_behavior"]}, {"required": ["target_failure"]},
+                {"required": ["target_evidence"]}, {"required": ["target_outcomes"]},
+                {"required": ["target_enforcement"]}, {"required": ["target_scope"]},
+                {"required": ["target_trigger"]}, {"required": ["target_exceptions"]},
+                {"required": ["target_context_ref"]},
+                {"required": ["target_fields"]},
+                {"required": ["target_conflicts_with"]}, {"required": ["target_refines"]},
+                {"required": ["target_depends_on"]}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "behavior_test": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "target_rule_id", "prompt", "expected"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z0-9_.-]+$"},
+        "kind": {"enum": ["positive", "near_negative", "conflict", "state_binding", "retirement"]},
+        "target_rule_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"},
+        "prompt": {"type": "string", "minLength": 2},
+        "fixture": {"$ref": "#/$defs/fixture"},
+        "component_id": {"type": "string"},
+        "pair_id": {"type": "string"},
+        "conflict_rule_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"}},
+        "resolution": {"enum": ["blocked", "target_wins", "target_loses", "disjoint"]},
+        "replacement_rule_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"}},
+        "expected": {
+          "type": "object", "additionalProperties": false,
+          "required": ["base", "candidate"],
+          "properties": {
+            "base": {"$ref": "#/$defs/oracle"},
+            "candidate": {"$ref": "#/$defs/oracle"}
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"operation": {"const": "add"}}, "required": ["operation"]},
+      "then": {
+        "required": ["new_rule"],
+        "properties": {"old_behavior": {"type": "null"}, "new_behavior": {"type": "string"}},
+        "not": {"anyOf": [{"required": ["patch"]}, {"required": ["replacement_ids"]}, {"required": ["replacement_expectations"]}]}
+      }
+    },
+    {
+      "if": {"properties": {"operation": {"enum": ["modify", "retire"]}}, "required": ["operation"]},
+      "then": {
+        "required": ["expected_owner", "expected_revision", "expected_rule_sha256"],
+        "properties": {
+          "expected_owner": {"type": "string", "minLength": 1},
+          "expected_revision": {"type": "integer", "minimum": 1},
+          "expected_rule_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "old_behavior": {"type": "string"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"operation": {"const": "modify"}}, "required": ["operation"]},
+      "then": {
+        "required": ["patch"],
+        "properties": {"new_behavior": {"type": "string"}},
+        "not": {"anyOf": [{"required": ["new_rule"]}, {"required": ["replacement_ids"]}, {"required": ["replacement_expectations"]}]}
+      }
+    },
+    {
+      "if": {"properties": {"operation": {"const": "retire"}}, "required": ["operation"]},
+      "then": {
+        "required": ["replacement_ids", "replacement_expectations"],
+        "properties": {"new_behavior": {"type": "null"}},
+        "not": {"anyOf": [{"required": ["patch"]}, {"required": ["new_rule"]}]}
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "s6_candidate_independent_verification",
+  "passed": true,
+  "check_count": 8,
+  "checks": [
+    {
+      "check": "内部遮点数量",
+      "passed": true,
+      "detail": "rows=72"
+    },
+    {
+      "check": "PCHIP逐点独立复算",
+      "passed": true,
+      "detail": "max_abs_error=3.553e-15"
+    },
+    {
+      "check": "误差改善",
+      "passed": true,
+      "detail": "mae_pchip=0.715219, mae_linear=1.557041, wins=68/72"
+    },
+    {
+      "check": "最坏误差仍显式保留",
+      "passed": true,
+      "detail": "max_abs_error=13.490627"
+    },
+    {
+      "check": "325摄氏度缺口身份",
+      "passed": true,
+      "detail": "count=11"
+    },
+    {
+      "check": "325摄氏度预测独立复算",
+      "passed": true,
+      "detail": "max_abs_error=4.441e-16"
+    },
+    {
+      "check": "低温D0推荐不变",
+      "passed": true,
+      "detail": "max_missing_prediction=6.551703, d0_best=17.264309"
+    },
+    {
+      "check": "最高候选识别并非全对",
+      "passed": true,
+      "detail": "top1_correct=4/5"
+    }
+  ],
+  "note": "通过只证明窄候选产物一致，不批准D1或最终方法。"
+}

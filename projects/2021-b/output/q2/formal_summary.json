@@ -1,0 +1,236 @@
+{
+  "status": "q2_revised_s9_results",
+  "input": "output/data_audit/tables/cleaned_attachment1.csv",
+  "method": "A direct evidence plus B fixed combination-temperature additive decomposition",
+  "common_temperatures_c": [
+    250.0,
+    275.0,
+    300.0,
+    350.0
+  ],
+  "common_combination_count": 21,
+  "common_cell_count": 84,
+  "responses": {
+    "ethanol_conversion_pct": {
+      "response_cn": "乙醇转化率",
+      "grand_mean_pct": 13.779336303442294,
+      "answers": {
+        "temperature_influence": {
+          "intervals": [
+            {
+              "from_c": 250.0,
+              "to_c": 275.0,
+              "positive_count": 19,
+              "negative_count": 2,
+              "zero_count": 0,
+              "paired_count": 21,
+              "median_change_pct_point": 2.0097320871053403
+            },
+            {
+              "from_c": 275.0,
+              "to_c": 300.0,
+              "positive_count": 21,
+              "negative_count": 0,
+              "zero_count": 0,
+              "paired_count": 21,
+              "median_change_pct_point": 3.799999999999999
+            },
+            {
+              "from_c": 300.0,
+              "to_c": 350.0,
+              "positive_count": 21,
+              "negative_count": 0,
+              "zero_count": 0,
+              "paired_count": 21,
+              "median_change_pct_point": 13.8798622976709
+            }
+          ],
+          "temperature_share_of_total_variation": 0.38397082807589067,
+          "allowed_conclusion": "共同组合与共同温度域内的配对条件关联"
+        },
+        "combination_influence": {
+          "combination_share_of_total_variation": 0.456119244390824,
+          "highest_adjusted_combination": "A7",
+          "highest_adjusted_effect_pct_point": 23.043316357445804,
+          "lowest_adjusted_combination": "B3",
+          "lowest_adjusted_effect_pct_point": -11.737031267543331,
+          "allowed_conclusion": "完整组合的调整后水平差异，不拆成单一成分作用"
+        },
+        "joint_variation": {
+          "nonadditive_share_of_total_variation": 0.15990992753328476,
+          "largest_residual_cell": {
+            "catalyst_id": "A2",
+            "temperature_c": 350.0,
+            "residual_pct_point": 20.440785584206516
+          },
+          "allowed_conclusion": "存在加和结构未解释的共同变化迹象"
+        }
+      },
+      "technical_decomposition": {
+        "combination": 0.456119244390824,
+        "temperature": 0.38397082807589067,
+        "nonadditive": 0.15990992753328476
+      },
+      "largest_positive_combination_effects": [
+        "A7",
+        "A2",
+        "A6",
+        "A3",
+        "A4"
+      ],
+      "largest_negative_combination_effects": [
+        "B3",
+        "A11",
+        "A10",
+        "B4",
+        "A13"
+      ],
+      "largest_absolute_residual_cells": [
+        {
+          "catalyst_id": "A2",
+          "temperature_c": 350.0,
+          "residual_pct_point": 20.440785584206516
+        },
+        {
+          "catalyst_id": "A4",
+          "temperature_c": 350.0,
+          "residual_pct_point": 18.664402076483384
+        },
+        {
+          "catalyst_id": "A2",
+          "temperature_c": 250.0,
+          "residual_pct_point": -18.374308774288693
+        },
+        {
+          "catalyst_id": "A6",
+          "temperature_c": 350.0,
+          "residual_pct_point": 13.615378643001932
+        },
+        {
+          "catalyst_id": "A4",
+          "temperature_c": 250.0,
+          "residual_pct_point": -13.323430800233007
+        }
+      ]
+    },
+    "c4_selectivity_pct": {
+      "response_cn": "C4 烯烃选择性",
+      "grand_mean_pct": 12.060238095238095,
+      "answers": {
+        "temperature_influence": {
+          "intervals": [
+            {
+              "from_c": 250.0,
+              "to_c": 275.0,
+              "positive_count": 17,
+              "negative_count": 3,
+              "zero_count": 1,
+              "paired_count": 21,
+              "median_change_pct_point": 1.93
+            },
+            {
+              "from_c": 275.0,
+              "to_c": 300.0,
+              "positive_count": 20,
+              "negative_count": 1,
+              "zero_count": 0,
+              "paired_count": 21,
+              "median_change_pct_point": 3.110000000000001
+            },
+            {
+              "from_c": 300.0,
+              "to_c": 350.0,
+              "positive_count": 21,
+              "negative_count": 0,
+              "zero_count": 0,
+              "paired_count": 21,
+              "median_change_pct_point": 10.72
+            }
+          ],
+          "temperature_share_of_total_variation": 0.3182498830850667,
+          "allowed_conclusion": "共同组合与共同温度域内的配对条件关联"
+        },
+        "combination_influence": {
+          "combination_share_of_total_variation": 0.5969146511606382,
+          "highest_adjusted_combination": "A1",
+          "highest_adjusted_effect_pct_point": 29.347261904761904,
+          "lowest_adjusted_combination": "A11",
+          "lowest_adjusted_effect_pct_point": -10.242738095238096,
+          "allowed_conclusion": "完整组合的调整后水平差异，不拆成单一成分作用"
+        },
+        "joint_variation": {
+          "nonadditive_share_of_total_variation": 0.08483546575429507,
+          "largest_residual_cell": {
+            "catalyst_id": "A3",
+            "temperature_c": 350.0,
+            "residual_pct_point": 10.244047619047617
+          },
+          "allowed_conclusion": "存在加和结构未解释的共同变化迹象"
+        }
+      },
+      "technical_decomposition": {
+        "combination": 0.5969146511606382,
+        "temperature": 0.3182498830850667,
+        "nonadditive": 0.08483546575429507
+      },
+      "largest_positive_combination_effects": [
+        "A1",
+        "A2",
+        "A3",
+        "A9",
+        "A4"
+      ],
+      "largest_negative_combination_effects": [
+        "A11",
+        "A10",
+        "A14",
+        "A6",
+        "B3"
+      ],
+      "largest_absolute_residual_cells": [
+        {
+          "catalyst_id": "A3",
+          "temperature_c": 350.0,
+          "residual_pct_point": 10.244047619047617
+        },
+        {
+          "catalyst_id": "A10",
+          "temperature_c": 350.0,
+          "residual_pct_point": -8.78345238095238
+        },
+        {
+          "catalyst_id": "A11",
+          "temperature_c": 350.0,
+          "residual_pct_point": -7.223452380952379
+        },
+        {
+          "catalyst_id": "A6",
+          "temperature_c": 350.0,
+          "residual_pct_point": -6.16345238095238
+        },
+        {
+          "catalyst_id": "A1",
+          "temperature_c": 300.0,
+          "residual_pct_point": 5.892738095238087
+        }
+      ]
+    }
+  },
+  "a_layer": {
+    "summary": "output/q2/summary.json",
+    "verification": "output/q2/verification.json"
+  },
+  "direct_answer_tables": {
+    "question_summary": "output/q2/tables/question2_answer_summary.csv",
+    "combination_profiles": "output/q2/tables/combination_adjusted_profiles.csv",
+    "nonadditive_summary": "output/q2/tables/nonadditive_combination_summary.csv"
+  },
+  "b_layer_verification_expected": "output/q2/formal_verification.json",
+  "claim_boundaries": [
+    "影响仅指现有实验域内条件差异或关联",
+    "完整组合不拆成配方成分的独立作用",
+    "非加和剩余不称为纯交互或随机误差",
+    "不进行普通交互显著性检验",
+    "不预测未测温度或新组合"
+  ]
+}

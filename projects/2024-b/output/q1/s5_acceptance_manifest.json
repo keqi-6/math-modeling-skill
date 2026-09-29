@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s5_acceptance_run_identity",
+  "producer": "src/q1/04_acceptance.py",
+  "started_at": "2026-08-25T15:22:43.607164+08:00",
+  "finished_at": "2026-08-25T15:22:43.756355+08:00",
+  "command": [
+    "/usr/bin/python3",
+    "src/q1/04_acceptance.py"
+  ],
+  "environment": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39"
+  },
+  "parameters": {
+    "n_values": [
+      1,
+      2,
+      3,
+      9,
+      10,
+      20,
+      23,
+      50
+    ]
+  },
+  "inputs": {
+    "planning/analysis/2026-08-25_q1_s4_complete_action_specification.md": "f156e3c423ce0cedcfef23dea027afbd842a07892cdd0cb2229cdaa25584a8f6",
+    "output/q1/s5_results.json": "fb674e2b4f3cb425fff1de79ee461b8c24112fc6e499e9a8fd54ab61db87374f",
+    "output/q1/s5_finite_closure.json": "28bac9784cc8ab21d4e5455d2ee66909d901b18d85905699deb22f3265e6c2bc"
+  },
+  "sources": {
+    "src/q1/core.py": "8ba6be5e2fbae44c3acb37aceb64f83046bb2e724c8d14bbe80304f48d03e20b",
+    "src/q1/04_acceptance.py": "f73c7c6d7b0f379a5b271c22b64cff1f3b4dbc4a30f2a0fee7b0e0018de6420e"
+  },
+  "outputs": {
+    "output/q1/s5_acceptance.json": "00aa1c2e7c0059edd5fdcfbe6475ccc032fe5443de646e8e38e139bb92862c71"
+  },
+  "claim_boundary": "This manifest identifies an S5 same-source acceptance run; it does not provide S6 independent verification."
+}

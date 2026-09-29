@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.0",
+  "role": "G1 working manuscript figure package",
+  "generator": {
+    "path": "scripts/build_paper_figures.py",
+    "sha256": "03522cf8fa7094682f4f1059bfbd7c1f7e5216ba7067278816d6333be7b64ee3"
+  },
+  "source_files": {
+    "A题.pdf": {
+      "sha256": "052d8014bff5727c019b72e44fdffaf5c145ce04050dd938baaf3527db331736",
+      "bytes": 553320
+    },
+    "docs/Q1/solution_brief.md": {
+      "sha256": "021767b1bffb533569029fa959f4e2dffaa358d5641fdf97aba32bd9d405898e",
+      "bytes": 29896
+    },
+    "output/ENV/q2_boundary.json": {
+      "sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+      "bytes": 10560
+    },
+    "附件/附件1.xlsx": {
+      "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+      "bytes": 16586
+    },
+    "output/Q1/run_n5120.npz": {
+      "sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e",
+      "bytes": 640170
+    },
+    "output/Q2/run_n10240_startsafe.npz": {
+      "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+      "bytes": 38314283
+    },
+    "output/Q3/summary_values.json": {
+      "sha256": "357911e9e349e6e7772d861da285bf8b1fc2d473a236b82216ace243c7162f72",
+      "bytes": 57514
+    },
+    "output/GEOMETRY/q4_radius.json": {
+      "sha256": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+      "bytes": 14147
+    },
+    "附件/附件2.xlsx": {
+      "sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+      "bytes": 11485
+    },
+    "output/Q4/summary_values.json": {
+      "sha256": "bd7d592f1a7a8d709fe18c036f63ec170e09890cb706bb1e7783df7443a78556",
+      "bytes": 124737
+    },
+    "output/Q4/run_n10240-v1-20260911.npz": {
+      "sha256": "4045f74c14062b4554aa2aa752797aa1f1dedf28d84f956513da924d5f8a6b92",
+      "bytes": 1771968
+    },
+    "output/Q1/verification_report.json": {
+      "sha256": "3818639fc480837542a93ee4a5e4c72cb6b5ac55dcb1d9023fff32af9f838ec7",
+      "bytes": 57391
+    }
+  },
+  "figures": {
+    "fig01_radial_model": {
+      "title": "圆柱中部径向模型与控制体",
+      "caption": "圆柱及网格均为示意。控制体按径向位置截取圆环，中心与表面控制体分别截断于0与R；图中少量节点不代表正式网格数。",
+      "sources": [
+        "A题.pdf",
+        "docs/Q1/solution_brief.md"
+      ],
+      "transformations": {
+        "kind": "schematic",
+        "geometry": "cylinder L=25 cm, R=2 cm; schematic projection",
+        "indices": "i=0,...,N; ai,bi follow Q1 equation (7)",
+        "no_flux_direction_claim": true
+      },
+      "width_cm": 15.8,
+      "height_cm": 8.89,
+      "outputs": {
+        "png": {
+          "file": "fig01_radial_model.png",
+          "sha256": "d583bea32319c6514d0e3189f76e102bad20c6a7b76e24e544e4e6f28e727158",
+          "bytes": 101397
+        },
+        "pdf": {
+          "file": "fig01_radial_model.pdf",
+          "sha256": "8fafdc0852375dd0294a3d46f5e3d3c90fb3365dc5febaee597fbe7b9e7317b2",
+          "bytes": 39335
+        },
+        "svg": {
+          "file": "fig01_radial_model.svg",
+          "sha256": "20598886d7671478bd32e41f9591c3315cf7a29bce73d4faa4afbc6fd583c156",
+          "bytes": 22923
+        }
+      }
+    },
+    "fig02_environment": {
+      "title": "烘房环境观测与分段线性重建",
+      "caption": "两幅图分别表示附件1的温度与空气水分浓度。灰点为241个原始观测，蓝线为分段线性重建。图示0—4 h；Q1仅使用前0.5 h，Q2结果展示前三小时。",
+      "sources": [
+        "output/ENV/q2_boundary.json",
+        "附件/附件1.xlsx"
+      ],
+      "transformations": {
+        "time_unit": "s/3600 -> h",
+        "observations": 241,
+        "interpolation": "piecewise linear, no smoothing or extrapolation"
+      },
+      "width_cm": 15.8,
+      "height_cm": 6.8580000000000005,
+      "outputs": {
+        "png": {
+          "file": "fig02_environment.png",
+          "sha256": "1b3f011a3b55b100607522428d14546bfbce88f33ea9d2032bab88aa2693346e",
+          "bytes": 130596
+        },
+        "pdf": {
+          "file": "fig02_environment.pdf",
+          "sha256": "16a31501dd072a43b13887ff977b25bef2f121bc2c1812b3b44fab0630260093",
+          "bytes": 35287
+        },
+        "svg": {
+          "file": "fig02_environment.svg",
+          "sha256": "7d23b543c88997194fc1f1c09113246b91a8937936d719e587c62c9040ad6224",
+          "bytes": 104016
+        }
+      }
+    },
+    "fig03_q1_profiles": {
+      "title": "Q1预热阶段温度与含水率的径向响应",
+      "caption": "分别绘制100、600、900、1200、1800 s时的温度和干基含水率，均为题目规定的表格时刻。900、1200 s的剖面补充中间阶段的径向变化。每条曲线连接21个规定半径的未舍入计算值，稀疏标记用于识别曲线，未额外拟合。",
+      "sources": [
+        "output/Q1/run_n5120.npz"
+      ],
+      "transformations": {
+        "times_s": [
+          100,
+          600,
+          900,
+          1200,
+          1800
+        ],
+        "radius_count": 21,
+        "radius_unit": "m*100 -> cm",
+        "extra_fit": false,
+        "style_indices_by_time_s": {
+          "100": 0,
+          "600": 1,
+          "900": 3,
+          "1200": 4,
+          "1800": 2
+        },
+        "legend": "two columns; chronological order down columns; temperature upper left, moisture lower left"
+      },
+      "width_cm": 15.8,
+      "height_cm": 7.111999999999999,
+      "outputs": {
+        "png": {
+          "file": "fig03_q1_profiles.png",
+          "sha256": "d98d193909dee551d4763e85471fe84f93fbcd4438fe8c772971bcfb317517a3",
+          "bytes": 152392
+        },
+        "pdf": {
+          "file": "fig03_q1_profiles.pdf",
+          "sha256": "2ae94231677401644378d8829e774fde3fe90352e8a406ea6aaa222e51eba5e8",
+          "bytes": 27297
+        },
+        "svg": {
+          "file": "fig03_q1_profiles.svg",
+          "sha256": "7408229974ce69abb992cf520289a6d7a24239a439e7982b49dbf9f7fe958cc0",
+          "bytes": 49812
+        }
+      }
+    },
+    "fig04_q2_fields": {
+      "title": "Q2前三小时温度与含水率的时空分布",
+      "caption": "横轴为时间，纵轴为实际半径，色标分别表示温度与干基含水率。色场取前三小时逐秒保存的21个规定半径值，采用邻近色块显示；它不表示全部细网格节点的逐秒快照。",
+      "sources": [
+        "output/Q2/run_n10240_startsafe.npz"
+      ],
+      "transformations": {
+        "time_s": [
+          0,
+          10800
+        ],
+        "time_stride_s": 1,
+        "radius_count": 21,
+        "display": "pcolormesh shading=nearest; color fields rasterized, labels vector"
+      },
+      "width_cm": 15.8,
+      "height_cm": 8.128,
+      "outputs": {
+        "png": {
+          "file": "fig04_q2_fields.png",
+          "sha256": "def3e798e265226156ec7c80afd39296b5d4b4b028eacdd23e54f3f4312724d2",
+          "bytes": 92822
+        },
+        "pdf": {
+          "file": "fig04_q2_fields.pdf",
+          "sha256": "088d20cf813f4490ac1e48cb7486fbc44c03ad3a91aa80cb422539cbb07d8573",
+          "bytes": 43510
+        },
+        "svg": {
+          "file": "fig04_q2_fields.svg",
+          "sha256": "e764c116b8f72c53094e46ffbe7da513bb667e8a1f1170ca9bd96cbdf2d1390f",
+          "bytes": 45743
+        }
+      }
+    },
+    "fig05_q3_drying": {
+      "title": "Q3完整干燥过程与全域达标判定",
+      "caption": "主图为五个固定半径的干基含水率历程。小图的M_N为全10241节点的最大含水率，206926 s尚未严格低于0.15，206927 s首次达标。微小差值只解释数值终点判据，不代表实际干燥时长具有秒级准确度。",
+      "sources": [
+        "output/Q3/summary_values.json",
+        "output/Q2/run_n10240_startsafe.npz"
+      ],
+      "transformations": {
+        "time_s": [
+          0,
+          206927
+        ],
+        "main_display_sampling": "every 60 s plus exact end",
+        "inset_sampling": "every integer second from end-4 to end",
+        "max_source": "saved maximum of all 10241 nodes, not five display curves"
+      },
+      "width_cm": 15.8,
+      "height_cm": 9.017,
+      "outputs": {
+        "png": {
+          "file": "fig05_q3_drying.png",
+          "sha256": "6ef6b724594910bbbfcaa352832d4d448299653212181737adf2c92ca404c43f",
+          "bytes": 172998
+        },
+        "pdf": {
+          "file": "fig05_q3_drying.pdf",
+          "sha256": "9f044424f9a8d5128e98ac7d7aacd68e960524dcbb22548b63269802e2474e3f",
+          "bytes": 30845
+        },
+        "svg": {
+          "file": "fig05_q3_drying.svg",
+          "sha256": "6265ee4754ccd7152e418aafc95ad051aa6fb4fe971b7c028a881e5b8709fbc5",
+          "bytes": 54666
+        }
+      }
+    },
+    "fig06_q4_geometry": {
+      "title": "Q4外半径观测与收缩坐标对应",
+      "caption": "左图展示附件2的0—72 h外半径观测，虚线标出当前模型结束时刻。右图按均匀径向缩放假设绘制r=R(t)ξ：同一ξ的位置随半径移动，固定r=1.5 cm在6 h时已位于材料外。三行仅排列时刻，内部位置不是实测数据。",
+      "sources": [
+        "output/GEOMETRY/q4_radius.json",
+        "附件/附件2.xlsx",
+        "output/Q4/summary_values.json"
+      ],
+      "transformations": {
+        "geometry_times_h": [
+          0,
+          6,
+          51.096944444444446
+        ],
+        "radius_unit": "cm",
+        "mapping": "r=R(t)*xi, xi=0.5; uniform radial scaling assumption",
+        "fixed_probe_cm": 1.5
+      },
+      "width_cm": 15.8,
+      "height_cm": 7.747,
+      "outputs": {
+        "png": {
+          "file": "fig06_q4_geometry.png",
+          "sha256": "4b0e9d2c5bf350f71a7dbaaad3c469f23c1528eccb167ce9700de06e52ab1a03",
+          "bytes": 98391
+        },
+        "pdf": {
+          "file": "fig06_q4_geometry.pdf",
+          "sha256": "5dc52e787918f617560416753d5c1628faf63aadad6c2bd548cfce41acfb46ab",
+          "bytes": 36646
+        },
+        "svg": {
+          "file": "fig06_q4_geometry.svg",
+          "sha256": "c84ce831ce7d01f5d2a1389b09dbb84d0035fc46a74cffa46132e52b10f00d70",
+          "bytes": 42122
+        }
+      }
+    },
+    "fig07_q4_profiles": {
+      "title": "Q4收缩条件下的含水率演变",
+      "caption": "左图采用固定物理位置和实际移动表面的含水率；固定位置移出材料后断线。右图为6、18、30、42 h及结束时的完整细网格剖面，横坐标是实际半径，各曲线端点为当时表面R(t)。",
+      "sources": [
+        "output/Q4/run_n10240-v1-20260911.npz",
+        "output/Q4/summary_values.json"
+      ],
+      "transformations": {
+        "time_s": [
+          0,
+          183949
+        ],
+        "fixed_radius_cm": [
+          0,
+          0.5,
+          1,
+          1.5
+        ],
+        "outside_domain": "masked by saved inside_mask, never zero filled",
+        "profile_times_s": [
+          21600,
+          64800,
+          108000,
+          151200,
+          183949
+        ],
+        "profile_radius": "mesh_xi * snapshot_radius_m *100 -> cm"
+      },
+      "width_cm": 15.8,
+      "height_cm": 8.001,
+      "outputs": {
+        "png": {
+          "file": "fig07_q4_profiles.png",
+          "sha256": "f5df090083c5c9ed551cd4d6cde0086eed6e1f78ee04e745a65c34af19904a2e",
+          "bytes": 170264
+        },
+        "pdf": {
+          "file": "fig07_q4_profiles.pdf",
+          "sha256": "f81a09af5c8aa660a372a92518ce2b40adea67e6203d8c86637c82ea8a821230",
+          "bytes": 29968
+        },
+        "svg": {
+          "file": "fig07_q4_profiles.svg",
+          "sha256": "536243d29fda0f950bef3d866af3eee1a1d9518a8023d25ceaae5445a3255d6f",
+          "bytes": 50364
+        }
+      }
+    },
+    "fig08_grid_convergence": {
+      "title": "Q1网格加密的数值一致性",
+      "caption": "比较N与2N网格在全部1800×21个规定输出点上的最大绝对差。温度和含水率分别显示，虚线为已有预定检验标准。相邻网格差用于评价数值一致性，不是连续解误差的严格上界；本图只对应Q1。",
+      "sources": [
+        "output/Q1/verification_report.json"
+      ],
+      "transformations": {
+        "source_fields": [
+          "checks.temperature_spatial_differences_decrease.comparisons",
+          "checks.moisture_spatial_differences_decrease.comparisons"
+        ],
+        "maximum_over": "1800 times x 21 radii",
+        "coarse_N": [
+          160,
+          320,
+          640,
+          1280,
+          2560
+        ],
+        "reference_slopes": false
+      },
+      "width_cm": 15.8,
+      "height_cm": 7.366,
+      "outputs": {
+        "png": {
+          "file": "fig08_grid_convergence.png",
+          "sha256": "fdd435e1c9954e095aac8e31a068a8170944242342899855e5bc38e2ef50b0b4",
+          "bytes": 132952
+        },
+        "pdf": {
+          "file": "fig08_grid_convergence.pdf",
+          "sha256": "407dd29b78c8f70ae625b3f3af0e8efc72f7cc84811541bab2c2fc7dd127dd4f",
+          "bytes": 31662
+        },
+        "svg": {
+          "file": "fig08_grid_convergence.svg",
+          "sha256": "6f585b61778ba5ffab46bc794bb173f4d92c9af8f99bde7162302002f158ac09",
+          "bytes": 25325
+        }
+      }
+    }
+  },
+  "style": {
+    "main_linewidth_pt": 1.8,
+    "input_linewidth_pt": 1.7,
+    "categorical_colors": [
+      "#0072BD",
+      "#D95319",
+      "#3A923A",
+      "#7E2F8E",
+      "#333333"
+    ],
+    "palette_reference": "https://doi.org/10.3303/CET2187033",
+    "palette_basis": "Distinct curve hues inspired by drying-paper figures; color values adapted for this project, not sampled from the paper.",
+    "continuous_colormaps": [
+      "cividis",
+      "viridis"
+    ],
+    "chinese_ylabels": "upright characters stacked vertically; units intact",
+    "in_image_titles": "panel identifiers only; descriptive titles in adjacent text"
+  },
+  "claim_boundary": "Existing results visualized; no model change, no solver run, no new experimental validation. Final team manuscript acceptance is not asserted."
+}

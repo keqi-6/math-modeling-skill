@@ -1,0 +1,778 @@
+{
+  "schema_version": "q5-v2-precise-working-1.0",
+  "status": "working_precise_rescore_complete",
+  "generated_at": "2026-08-29T07:14:28+08:00",
+  "elapsed_s": 30.67902815200796,
+  "source_result": "docs/q5_v2_result.json",
+  "source_result_sha256": "aed5f5549c7c94937ef1b55f3b4f71e127a88149cbddd58a16983e3440b53061",
+  "settings": {
+    "name": "precise_strict",
+    "scan_step_s": 0.005,
+    "n_theta": 512,
+    "n_levels": 33,
+    "root_time_tolerance_s": 1e-08,
+    "margin_tolerance_m": 1e-08
+  },
+  "guard": {
+    "source": "full-horizon SCREEN intervals",
+    "pad_s": 0.15,
+    "restricts_s": [
+      [
+        [
+          0.7299499206151502,
+          5.617224141282275
+        ],
+        [
+          12.486509585961073,
+          25.140412079135682
+        ],
+        [
+          28.127074533021307,
+          31.40149490688915
+        ]
+      ],
+      [
+        [
+          9.518703341203446,
+          17.912591496607654
+        ],
+        [
+          19.84094736175384,
+          23.697243489128233
+        ],
+        [
+          27.663447139651105,
+          30.860372655659518
+        ]
+      ],
+      [
+        [
+          13.488987702203433,
+          24.025913215744623
+        ],
+        [
+          24.15725729875207,
+          27.367109658112376
+        ]
+      ]
+    ],
+    "claim_boundary": "PRECISE rescoring covers all SCREEN-positive support plus padding; it is not an independent full-horizon missed-island proof"
+  },
+  "by_missile": [
+    {
+      "missile": "M1",
+      "settings": {
+        "name": "precise_strict",
+        "scan_step_s": 0.005,
+        "n_theta": 512,
+        "n_levels": 33,
+        "root_time_tolerance_s": 1e-08,
+        "margin_tolerance_m": 1e-08
+      },
+      "surface_point_count": 33281,
+      "scan_count": 4146,
+      "intervals_s": [
+        [
+          0.8799569621178185,
+          5.467224080622593
+        ],
+        [
+          12.636509585961074,
+          16.3716050912726
+        ],
+        [
+          16.404996578610273,
+          24.990408993362628
+        ],
+        [
+          28.277089323468083,
+          31.251494787125814
+        ]
+      ],
+      "duration_s": 19.882180502226387,
+      "minimum_scan_margin_m": -9.470050381772346,
+      "root_residuals": [
+        {
+          "kind": "entry",
+          "time_s": 0.8799569621178185,
+          "margin_m": -7.124617340537043e-09,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 5.467224080622593,
+          "margin_m": -9.781796705965462e-09,
+          "iterations": 20,
+          "fallback": false
+        },
+        {
+          "kind": "entry",
+          "time_s": 12.636509585961074,
+          "margin_m": -0.025761994596864568,
+          "iterations": 0,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 16.3716050912726,
+          "margin_m": 3.166496398421259e-09,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "entry",
+          "time_s": 16.404996578610273,
+          "margin_m": -0.42041065411087963,
+          "iterations": 0,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 24.990408993362628,
+          "margin_m": -5.6461431086063385e-09,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "entry",
+          "time_s": 28.277089323468083,
+          "margin_m": -8.940697071579962e-09,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 31.251494787125814,
+          "margin_m": 2.7939677238464355e-09,
+          "iterations": 20,
+          "fallback": false
+        }
+      ],
+      "root_fallback_count": 0,
+      "local_minimum_checks": 0,
+      "recovered_unsampled_interval_count": 0
+    },
+    {
+      "missile": "M2",
+      "settings": {
+        "name": "precise_strict",
+        "scan_step_s": 0.005,
+        "n_theta": 512,
+        "n_levels": 33,
+        "root_time_tolerance_s": 1e-08,
+        "margin_tolerance_m": 1e-08
+      },
+      "surface_point_count": 33281,
+      "scan_count": 3098,
+      "intervals_s": [
+        [
+          9.668738509349161,
+          13.46775354346526
+        ],
+        [
+          13.527858482413162,
+          17.762547660963286
+        ],
+        [
+          19.99094786593336,
+          23.547243155909925
+        ],
+        [
+          27.813558385296126,
+          30.710252294363066
+        ]
+      ],
+      "duration_s": 14.486693411709727,
+      "minimum_scan_margin_m": -9.154801002419038,
+      "root_residuals": [
+        {
+          "kind": "entry",
+          "time_s": 9.668738509349161,
+          "margin_m": -6.332992796842518e-09,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 13.46775354346526,
+          "margin_m": -1.0244551873483942e-09,
+          "iterations": 20,
+          "fallback": false
+        },
+        {
+          "kind": "entry",
+          "time_s": 13.527858482413162,
+          "margin_m": -0.5457156175074083,
+          "iterations": 0,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 17.762547660963286,
+          "margin_m": 1.3969838619232178e-09,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "entry",
+          "time_s": 19.99094786593336,
+          "margin_m": 4.470347647611561e-09,
+          "iterations": 20,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 23.547243155909925,
+          "margin_m": 6.344631486854269e-10,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "entry",
+          "time_s": 27.813558385296126,
+          "margin_m": 9.313225746154785e-09,
+          "iterations": 20,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 30.710252294363066,
+          "margin_m": -3.9115555239277455e-09,
+          "iterations": 20,
+          "fallback": false
+        }
+      ],
+      "root_fallback_count": 0,
+      "local_minimum_checks": 0,
+      "recovered_unsampled_interval_count": 0
+    },
+    {
+      "missile": "M3",
+      "settings": {
+        "name": "precise_strict",
+        "scan_step_s": 0.005,
+        "n_theta": 512,
+        "n_levels": 33,
+        "root_time_tolerance_s": 1e-08,
+        "margin_tolerance_m": 1e-08
+      },
+      "surface_point_count": 33281,
+      "scan_count": 2756,
+      "intervals_s": [
+        [
+          13.638989736263934,
+          23.875913502785373
+        ],
+        [
+          24.307277799214006,
+          27.2170651622259
+        ]
+      ],
+      "duration_s": 13.146711129533333,
+      "minimum_scan_margin_m": -8.352917425355537,
+      "root_residuals": [
+        {
+          "kind": "entry",
+          "time_s": 13.638989736263934,
+          "margin_m": -2.6775524020195007e-09,
+          "iterations": 20,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 23.875913502785373,
+          "margin_m": -8.368665760372096e-10,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "entry",
+          "time_s": 24.307277799214006,
+          "margin_m": -3.725290298461914e-09,
+          "iterations": 21,
+          "fallback": false
+        },
+        {
+          "kind": "exit",
+          "time_s": 27.2170651622259,
+          "margin_m": -5.029141547652216e-09,
+          "iterations": 21,
+          "fallback": false
+        }
+      ],
+      "root_fallback_count": 0,
+      "local_minimum_checks": 0,
+      "recovered_unsampled_interval_count": 0
+    }
+  ],
+  "metrics": {
+    "per_missile_intervals_s": [
+      [
+        [
+          0.8799569621178185,
+          5.467224080622593
+        ],
+        [
+          12.636509585961074,
+          16.3716050912726
+        ],
+        [
+          16.404996578610273,
+          24.990408993362628
+        ],
+        [
+          28.277089323468083,
+          31.251494787125814
+        ]
+      ],
+      [
+        [
+          9.668738509349161,
+          13.46775354346526
+        ],
+        [
+          13.527858482413162,
+          17.762547660963286
+        ],
+        [
+          19.99094786593336,
+          23.547243155909925
+        ],
+        [
+          27.813558385296126,
+          30.710252294363066
+        ]
+      ],
+      [
+        [
+          13.638989736263934,
+          23.875913502785373
+        ],
+        [
+          24.307277799214006,
+          27.2170651622259
+        ]
+      ]
+    ],
+    "per_missile_duration_s": [
+      19.882180502226387,
+      14.486693411709727,
+      13.146711129533333
+    ],
+    "intersection_intervals_s": [
+      [
+        13.638989736263934,
+        16.3716050912726
+      ],
+      [
+        16.404996578610273,
+        17.762547660963286
+      ],
+      [
+        19.99094786593336,
+        23.547243155909925
+      ]
+    ],
+    "longest_all_interval_s": [
+      19.99094786593336,
+      23.547243155909925
+    ],
+    "j_sum_missile_s": 47.51558504346944,
+    "j_fair_s": 13.146711129533333,
+    "j_all_s": 7.646461727338242,
+    "l_all_s": 3.556295289976564,
+    "units": {
+      "j_sum_missile_s": "missile*s",
+      "j_fair_s": "s",
+      "j_all_s": "s",
+      "l_all_s": "s"
+    }
+  },
+  "screen_metrics": {
+    "per_missile_intervals_s": [
+      [
+        [
+          0.8799499206151502,
+          5.467224141282275
+        ],
+        [
+          12.636509585961074,
+          16.371676019009968
+        ],
+        [
+          16.404996578610273,
+          24.990412079135684
+        ],
+        [
+          28.277074533021306,
+          31.25149490688915
+        ]
+      ],
+      [
+        [
+          9.668703341203447,
+          13.467780565765697
+        ],
+        [
+          13.527858482413162,
+          17.762591496607655
+        ],
+        [
+          19.99094736175384,
+          23.547243489128235
+        ],
+        [
+          27.813447139651103,
+          30.71037265565952
+        ]
+      ],
+      [
+        [
+          13.638987702203433,
+          23.875913215744625
+        ],
+        [
+          24.30725729875207,
+          27.217109658112378
+        ]
+      ]
+    ],
+    "per_missile_duration_s": [
+      19.882276528109273,
+      14.487031882139554,
+      13.146777872901499
+    ],
+    "intersection_intervals_s": [
+      [
+        13.638987702203433,
+        16.371676019009968
+      ],
+      [
+        16.404996578610273,
+        17.762591496607655
+      ],
+      [
+        19.99094736175384,
+        23.547243489128235
+      ]
+    ],
+    "longest_all_interval_s": [
+      19.99094736175384,
+      23.547243489128235
+    ],
+    "j_sum_missile_s": 47.51608628315033,
+    "j_fair_s": 13.146777872901499,
+    "j_all_s": 7.646579362178311,
+    "l_all_s": 3.556296127374395,
+    "units": {
+      "j_sum_missile_s": "missile*s",
+      "j_fair_s": "s",
+      "j_all_s": "s",
+      "l_all_s": "s"
+    }
+  },
+  "comparison_to_screen": {
+    "j_sum_missile_s": -0.000501239680886556,
+    "j_fair_s": -6.674336816558935e-05,
+    "j_all_s": -0.0001176348400697691,
+    "l_all_s": -8.37397831077169e-07
+  },
+  "decision": {
+    "source": "q5_v2_precise_rescore",
+    "active_bomb_count": 13,
+    "platforms": [
+      {
+        "platform": "FY1",
+        "heading_rad": 0.09919999999999998,
+        "heading_deg": 5.683741327697765,
+        "speed_mps": 140.0,
+        "bombs": [
+          {
+            "platform": 0,
+            "label": "M1",
+            "release_s": 0.45802634217840493,
+            "fuse_s": 0.4060711513214376,
+            "bomb_number": 1,
+            "explosion_time_s": 0.8640974934998426,
+            "release_point_m": [
+              17863.80843749031,
+              6.350642139206828,
+              1800.0
+            ],
+            "explosion_point_m": [
+              17920.37890798438,
+              11.980913430663872,
+              1799.192020478316
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY2",
+        "heading_rad": 4.287008023812072,
+        "heading_deg": 245.62746650315123,
+        "speed_mps": 116.7749664710228,
+        "bombs": [
+          {
+            "platform": 1,
+            "label": "M2",
+            "release_s": 4.395003123150486,
+            "fuse_s": 4.8612157428172456,
+            "bomb_number": 1,
+            "explosion_time_s": 9.256218865967732,
+            "release_point_m": [
+              11788.20800515955,
+              932.5115729782251,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11553.949564227423,
+              415.43296407974617,
+              1284.2060493587503
+            ]
+          },
+          {
+            "platform": 1,
+            "label": "M1",
+            "release_s": 5.454287066544548,
+            "fuse_s": 7.182222519416525,
+            "bomb_number": 2,
+            "explosion_time_s": 12.636509585961074,
+            "release_point_m": [
+              11737.161884556781,
+              819.837481381281,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11391.055819975689,
+              55.87763561089719,
+              1147.2368304397721
+            ]
+          },
+          {
+            "platform": 1,
+            "label": "M3",
+            "release_s": 9.996450377055005,
+            "fuse_s": 6.503549622945005,
+            "bomb_number": 3,
+            "explosion_time_s": 16.50000000000001,
+            "release_point_m": [
+              11518.278347624384,
+              336.69589494608863,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11204.877034908135,
+              -355.074758702322,
+              1192.7488272792702
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY3",
+        "heading_rad": 1.5284152420002775,
+        "heading_deg": 87.57174271008226,
+        "speed_mps": 119.18394355511182,
+        "bombs": [
+          {
+            "platform": 2,
+            "label": "M3",
+            "release_s": 21.066622413774102,
+            "fuse_s": 3.09684080893906,
+            "bomb_number": 1,
+            "explosion_time_s": 24.163463222713162,
+            "release_point_m": [
+              6106.378708497423,
+              -491.45142334443744,
+              700.0
+            ],
+            "explosion_point_m": [
+              6122.016617565449,
+              -122.68914855692492,
+              653.0069273200394
+            ]
+          },
+          {
+            "platform": 2,
+            "label": "M1",
+            "release_s": 22.080989336345567,
+            "fuse_s": 3.8662948990663666,
+            "bomb_number": 2,
+            "explosion_time_s": 25.947284235411935,
+            "release_point_m": [
+              6111.500889027659,
+              -370.6637313336205,
+              700.0
+            ],
+            "explosion_point_m": [
+              6131.024258742775,
+              89.72276895520599,
+              626.7536423919216
+            ]
+          },
+          {
+            "platform": 2,
+            "label": "M2",
+            "release_s": 25.794762698007126,
+            "fuse_s": 1.703878434215645,
+            "bomb_number": 3,
+            "explosion_time_s": 27.498641132222772,
+            "release_point_m": [
+              6130.254080977754,
+              71.56097357807948,
+              700.0
+            ],
+            "explosion_point_m": [
+              6138.858041484967,
+              274.453574821604,
+              685.7743115789327
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY4",
+        "heading_rad": 4.654392649691131,
+        "heading_deg": 266.67705502401407,
+        "speed_mps": 119.20857604735,
+        "bombs": [
+          {
+            "platform": 3,
+            "label": "M2",
+            "release_s": 2.576760614782653,
+            "fuse_s": 10.951097867630509,
+            "bomb_number": 1,
+            "explosion_time_s": 13.527858482413162,
+            "release_point_m": [
+              10982.195138460851,
+              1693.344489384568,
+              1800.0
+            ],
+            "explosion_point_m": [
+              10906.52540797978,
+              390.07460504528717,
+              1212.3599319185346
+            ]
+          },
+          {
+            "platform": 3,
+            "label": "M1",
+            "release_s": 4.432290169482324,
+            "fuse_s": 11.972706409127948,
+            "bomb_number": 2,
+            "explosion_time_s": 16.404996578610273,
+            "release_point_m": [
+              10969.373828396696,
+              1472.5213520725101,
+              1800.0
+            ],
+            "explosion_point_m": [
+              10886.645002660824,
+              47.67172643141316,
+              1097.6060760800501
+            ]
+          },
+          {
+            "platform": 3,
+            "label": "M3",
+            "release_s": 8.285109796957393,
+            "fuse_s": 11.49885414135558,
+            "bomb_number": 3,
+            "explosion_time_s": 19.783963938312972,
+            "release_point_m": [
+              10942.751673583802,
+              1014.0044206220567,
+              1800.0
+            ],
+            "explosion_point_m": [
+              10863.297065083825,
+              -354.4529238360742,
+              1152.104131835565
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY5",
+        "heading_rad": 2.105807078339758,
+        "heading_deg": 120.65385805764286,
+        "speed_mps": 138.5268955873774,
+        "bombs": [
+          {
+            "platform": 4,
+            "label": "M3",
+            "release_s": 11.456346482904364,
+            "fuse_s": 2.1314674200863966,
+            "bomb_number": 1,
+            "explosion_time_s": 13.58781390299076,
+            "release_point_m": [
+              12190.861416124331,
+              -634.7519642748225,
+              1300.0
+            ],
+            "explosion_point_m": [
+              12040.320182718076,
+              -380.7458801512705,
+              1277.7385485218401
+            ]
+          },
+          {
+            "platform": 4,
+            "label": "M1",
+            "release_s": 12.457429064065105,
+            "fuse_s": 4.49745408341818,
+            "bomb_number": 2,
+            "explosion_time_s": 16.954883147483287,
+            "release_point_m": [
+              12120.156977909955,
+              -515.4533702974252,
+              1300.0
+            ],
+            "explosion_point_m": [
+              11802.510891216156,
+              20.506358427035366,
+              1200.8872431609711
+            ]
+          },
+          {
+            "platform": 4,
+            "label": "M2",
+            "release_s": 18.310561160127516,
+            "fuse_s": 1.6663268042005406,
+            "bomb_number": 3,
+            "explosion_time_s": 19.976887964328057,
+            "release_point_m": [
+              11706.762094775753,
+              182.06194219017016,
+              1300.0
+            ],
+            "explosion_point_m": [
+              11589.072802413928,
+              380.63741297448814,
+              1286.3944394098537
+            ]
+          }
+        ]
+      }
+    ],
+    "constraint_margins": {
+      "speed_low_mps": 46.77496647102279,
+      "speed_high_mps": 0.0,
+      "release_time_s": 0.45802634217840493,
+      "fuse_delay_s": 0.4060711513214376,
+      "explosion_height_m": 626.7536423919216,
+      "one_second_gap_s": 0.001082581160741114,
+      "latest_arrival_s": 39.50052967524984,
+      "capacity_bombs": 0.0
+    }
+  },
+  "proof_boundary": {
+    "strict_continuous_endpoints": true,
+    "strict_complete_cylinder_mesh": true,
+    "full_horizon_screen_guard": true,
+    "independent_full_horizon_precise_scan": false,
+    "global_optimality": false
+  }
+}

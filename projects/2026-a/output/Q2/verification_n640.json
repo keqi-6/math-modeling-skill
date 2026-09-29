@@ -1,0 +1,2316 @@
+{
+  "schema_version": "1.0",
+  "question": "Q2",
+  "axes": [
+    "E1",
+    "E2"
+  ],
+  "mode": "full_process",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T15:28:39.832527+00:00",
+  "passed": false,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q2\\model_spec.md": "10d2ce44107c11c835ccf173c820e4100648f7c48fd7955c3890038a20f688a4",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\solve.py": "f6fec45927ba500f1760bd661248e27d19b9630a6a55dbdd9a1b90a47f595a67",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\verify.py": "8a4cd6c83b614f8eee62fe1f60d29f32c1ba713223ccf4d8c6dcf566ce789ae8"
+  },
+  "checks": [
+    {
+      "axis": "E1",
+      "name": "raw_workbook_identity",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "all_frozen_nodes_equal_authoritative_worksheet",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "last_hour_integral_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 2e-13
+    },
+    {
+      "axis": "E1",
+      "name": "last_hour_integral_moisture",
+      "passed": true,
+      "value": 6.938893903907228e-18,
+      "limit": 2e-16
+    },
+    {
+      "axis": "E1",
+      "name": "full_boundary_interpolation_temperature",
+      "passed": true,
+      "value": 7.105427357601002e-15,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "full_boundary_interpolation_moisture",
+      "passed": true,
+      "value": 6.938893903907228e-18,
+      "limit": 2e-14
+    },
+    {
+      "axis": "E1",
+      "name": "boundary_rejects_negative",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "boundary_rejects_nan",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "boundary_rejects_inf",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "last_value_boundary_extension",
+      "passed": true,
+      "value": 0.0,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "independent_radius_geometry",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E1",
+      "name": "independent_volume_geometry",
+      "passed": true,
+      "value": 4.573977915173222e-20,
+      "limit": 1e-18
+    },
+    {
+      "axis": "E1",
+      "name": "independent_face_factors",
+      "passed": true,
+      "value": 7.105427357601002e-15,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "unchanged_surface_transfer_coefficients",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "interleaved_rhs_shape",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "temperature_rhs_independent_faces",
+      "passed": true,
+      "value": 1.8665252972381503e-15,
+      "limit": 2e-11
+    },
+    {
+      "axis": "E1",
+      "name": "moisture_rhs_independent_faces",
+      "passed": true,
+      "value": 1.728629616419131e-15,
+      "limit": 2e-11
+    },
+    {
+      "axis": "E1",
+      "name": "jacobian_sparse_CSC",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "complete_jac_theta_by_theta",
+      "passed": true,
+      "value": 3.0098009492383764e-15,
+      "limit": 2e-10,
+      "oracle": "complex step of independent face assembly"
+    },
+    {
+      "axis": "E1",
+      "name": "complete_jac_C_by_theta",
+      "passed": true,
+      "value": 2.523476868351077e-15,
+      "limit": 2e-10,
+      "oracle": "complex step of independent face assembly"
+    },
+    {
+      "axis": "E1",
+      "name": "complete_jac_theta_by_C",
+      "passed": true,
+      "value": 1.747665230932113e-15,
+      "limit": 2e-10,
+      "oracle": "complex step of independent face assembly"
+    },
+    {
+      "axis": "E1",
+      "name": "complete_jac_C_by_C",
+      "passed": true,
+      "value": 2.2864581778311607e-15,
+      "limit": 2e-10,
+      "oracle": "complex step of independent face assembly"
+    },
+    {
+      "axis": "E1",
+      "name": "chosen_state_exercises_all_coupling_derivatives",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "exact_quadratic_all_shells_including_axis_surface",
+      "passed": true,
+      "value": 1.4487154232009493e-12,
+      "limit": 5e-10
+    },
+    {
+      "axis": "E1",
+      "name": "quadratic_temperature_has_zero_moisture_rhs",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_zero_C",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_negative_C",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_absolute_zero_temperature",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_nan",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_infinity",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_series_truncation_difference",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-09,
+      "modes": 256,
+      "excludes_initial_robin_corner": true
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_C_remains_uniform_n160",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-11
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_C_remains_uniform_n320",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-11
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_C_remains_uniform_n640",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-11
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_finest_temperature",
+      "passed": true,
+      "value": 2.5559569916566716e-05,
+      "limit": 5e-05,
+      "grids": [
+        160,
+        320,
+        640
+      ],
+      "grid_errors": [
+        0.00040907119608135645,
+        0.00010223937918141246,
+        2.5559569916566716e-05
+      ]
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_spatial_error_decreases",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "manufactured_temperature_fine_error",
+      "passed": true,
+      "value": 5.6968382274646956e-05,
+      "limit": 0.0005,
+      "grids": [
+        20,
+        40,
+        80
+      ],
+      "errors": [
+        0.0009114079396113084,
+        0.00022786717554623692,
+        5.6968382274646956e-05
+      ],
+      "observed_order": 1.9999597743261646,
+      "source": "independent continuous radial divergence, not DUT residual"
+    },
+    {
+      "axis": "E2",
+      "name": "manufactured_temperature_convergence",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "manufactured_moisture_fine_error",
+      "passed": true,
+      "value": 2.6038065632505436e-06,
+      "limit": 5e-06,
+      "grids": [
+        20,
+        40,
+        80
+      ],
+      "errors": [
+        4.064916508284e-05,
+        1.039150992809823e-05,
+        2.6038065632505436e-06
+      ],
+      "observed_order": 1.9967111190484501,
+      "source": "independent continuous radial divergence, not DUT residual"
+    },
+    {
+      "axis": "E2",
+      "name": "manufactured_moisture_convergence",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "primary_and_tight_scenario_contract",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "nominal_settings_within_specification_rtol",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "nominal_settings_within_specification_atol_temperature",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "nominal_settings_within_specification_atol_moisture",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "nominal_settings_within_specification_max_step_before_4h",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "nominal_settings_within_specification_max_step_after_4h",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "tight_metadata_rtol",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E2",
+      "name": "tight_metadata_atol_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E2",
+      "name": "tight_metadata_atol_moisture",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E2",
+      "name": "tight_metadata_max_step_before_4h",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E2",
+      "name": "tight_metadata_max_step_after_4h",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E1",
+      "name": "spatial_sequence_same_time_settings_rtol",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "spatial_sequence_same_time_settings_atol_temperature",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "spatial_sequence_same_time_settings_atol_moisture",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "spatial_sequence_same_time_settings_max_step_before_4h",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "spatial_sequence_same_time_settings_max_step_after_4h",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_mesh_has_exact_output_nodes",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_complete_second_axis",
+      "passed": true,
+      "required_common_end_s": 220000,
+      "actual_end_s": 220000
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_output_radii",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_accepted_and_sampled_all_node_temperature_range",
+      "passed": true,
+      "observed_range": [
+        27.999999999999996,
+        50.039868108076355
+      ],
+      "theoretical_range": [
+        28.0,
+        50.246
+      ],
+      "numerical_allowance": 5e-07,
+      "scope": "all nodes at accepted steps and integer-second dense samples"
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_accepted_and_sampled_all_node_moisture_range",
+      "passed": true,
+      "observed_range": [
+        0.052358967240180715,
+        2.5500000000000007
+      ],
+      "theoretical_range": [
+        0.01963,
+        2.55
+      ],
+      "numerical_allowance": 5e-09,
+      "scope": "all nodes at accepted steps and integer-second dense samples"
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_all_node_maximum_axis",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_all_node_maximum_finite_and_bounded",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_argmax_is_a_mesh_location",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_argmax_node_indices",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_full_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_temperature_C_shape_dtype",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_temperature_C_finite_and_invariant_range",
+      "passed": true,
+      "observed_range": [
+        28.0,
+        50.03986800382265
+      ],
+      "theoretical_range": [
+        28.0,
+        50.246
+      ],
+      "numerical_allowance": 5e-07
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_temperature_C_initial",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_moisture_kg_kg_shape_dtype",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_moisture_kg_kg_finite_and_invariant_range",
+      "passed": true,
+      "observed_range": [
+        0.05235896724018072,
+        2.5500000000000003
+      ],
+      "theoretical_range": [
+        0.01963,
+        2.55
+      ],
+      "numerical_allowance": 5e-09
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_moisture_kg_kg_initial",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_max_over_all_nodes_dominates_21_samples",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_full_snapshot_shape",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_role_time_mapping",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_0_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_0_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_0_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_1800_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_1800_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_1800_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_3600_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_3600_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_3600_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_5400_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_5400_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_5400_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_7200_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_7200_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_7200_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_9000_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_9000_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_9000_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_10800_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_10800_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_10800_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_14400_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_14400_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_14400_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_206627_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_206627_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_206627_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_206628_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_206628_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_206628_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_snapshot_220000_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_220000_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_snapshot_220000_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_full_initial_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_full_initial_moisture",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_all_required_snapshot_projections_0",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_temperature_mean_axis_finite",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_temperature_mean_independent_snapshot_weights",
+      "passed": true,
+      "value": 1.4210854715202004e-14,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_all_required_snapshot_projections_1",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_moisture_mean_axis_finite",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_moisture_mean_independent_snapshot_weights",
+      "passed": true,
+      "value": 6.661338147750939e-16,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_first_strict_integer_endpoint",
+      "passed": true,
+      "stop_integer_s": 206628,
+      "previous_max": 0.1500000300556081,
+      "current_max": 0.14999973798426733,
+      "threshold": 0.15
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n160_nominal_event_uses_all_nodes",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-10,
+      "crossing_time_s": 206627.1029043671,
+      "argmax_radius_m": 0.0
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_event_precedes_strict_integer",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n160_nominal_metadata_common_end",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_mesh_has_exact_output_nodes",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_complete_second_axis",
+      "passed": true,
+      "required_common_end_s": 220000,
+      "actual_end_s": 220000
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_output_radii",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_accepted_and_sampled_all_node_temperature_range",
+      "passed": true,
+      "observed_range": [
+        28.0,
+        50.039867107016114
+      ],
+      "theoretical_range": [
+        28.0,
+        50.246
+      ],
+      "numerical_allowance": 5e-07,
+      "scope": "all nodes at accepted steps and integer-second dense samples"
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_accepted_and_sampled_all_node_moisture_range",
+      "passed": true,
+      "observed_range": [
+        0.052363611820644834,
+        2.5500000000000003
+      ],
+      "theoretical_range": [
+        0.01963,
+        2.55
+      ],
+      "numerical_allowance": 5e-09,
+      "scope": "all nodes at accepted steps and integer-second dense samples"
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_all_node_maximum_axis",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_all_node_maximum_finite_and_bounded",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_argmax_is_a_mesh_location",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_argmax_node_indices",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_full_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_temperature_C_shape_dtype",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_temperature_C_finite_and_invariant_range",
+      "passed": true,
+      "observed_range": [
+        28.0,
+        50.03986702325399
+      ],
+      "theoretical_range": [
+        28.0,
+        50.246
+      ],
+      "numerical_allowance": 5e-07
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_temperature_C_initial",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_moisture_kg_kg_shape_dtype",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_moisture_kg_kg_finite_and_invariant_range",
+      "passed": true,
+      "observed_range": [
+        0.052363611820644834,
+        2.5500000000000003
+      ],
+      "theoretical_range": [
+        0.01963,
+        2.55
+      ],
+      "numerical_allowance": 5e-09
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_moisture_kg_kg_initial",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_max_over_all_nodes_dominates_21_samples",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_full_snapshot_shape",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_role_time_mapping",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_0_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_0_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_0_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_1800_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_1800_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_1800_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_3600_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_3600_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_3600_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_5400_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_5400_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_5400_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_7200_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_7200_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_7200_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_9000_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_9000_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_9000_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_10800_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_10800_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_10800_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_14400_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_14400_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_14400_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_206814_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_206814_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_206814_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_206815_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_206815_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_206815_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_snapshot_220000_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_220000_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_snapshot_220000_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_full_initial_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_full_initial_moisture",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_all_required_snapshot_projections_0",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_temperature_mean_axis_finite",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_temperature_mean_independent_snapshot_weights",
+      "passed": true,
+      "value": 4.263256414560601e-14,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_all_required_snapshot_projections_1",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_moisture_mean_axis_finite",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_moisture_mean_independent_snapshot_weights",
+      "passed": true,
+      "value": 8.881784197001252e-16,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_first_strict_integer_endpoint",
+      "passed": true,
+      "stop_integer_s": 206815,
+      "previous_max": 0.1500000009269941,
+      "current_max": 0.14999970936424184,
+      "threshold": 0.15
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n320_nominal_event_uses_all_nodes",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-10,
+      "crossing_time_s": 206814.00317937954,
+      "argmax_radius_m": 0.0
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_event_precedes_strict_integer",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n320_nominal_metadata_common_end",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_mesh_has_exact_output_nodes",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_complete_second_axis",
+      "passed": true,
+      "required_common_end_s": 220000,
+      "actual_end_s": 220000
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_output_radii",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_accepted_and_sampled_all_node_temperature_range",
+      "passed": true,
+      "observed_range": [
+        28.0,
+        50.03986683865793
+      ],
+      "theoretical_range": [
+        28.0,
+        50.246
+      ],
+      "numerical_allowance": 5e-07,
+      "scope": "all nodes at accepted steps and integer-second dense samples"
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_accepted_and_sampled_all_node_moisture_range",
+      "passed": true,
+      "observed_range": [
+        0.05236573778386882,
+        2.550000000000001
+      ],
+      "theoretical_range": [
+        0.01963,
+        2.55
+      ],
+      "numerical_allowance": 5e-09,
+      "scope": "all nodes at accepted steps and integer-second dense samples"
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_all_node_maximum_axis",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_all_node_maximum_finite_and_bounded",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_argmax_is_a_mesh_location",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_argmax_node_indices",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_full_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_temperature_C_shape_dtype",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_temperature_C_finite_and_invariant_range",
+      "passed": true,
+      "observed_range": [
+        28.0,
+        50.03986676525991
+      ],
+      "theoretical_range": [
+        28.0,
+        50.246
+      ],
+      "numerical_allowance": 5e-07
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_temperature_C_initial",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_moisture_kg_kg_shape_dtype",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_moisture_kg_kg_finite_and_invariant_range",
+      "passed": true,
+      "observed_range": [
+        0.05236573778386882,
+        2.5500000000000003
+      ],
+      "theoretical_range": [
+        0.01963,
+        2.55
+      ],
+      "numerical_allowance": 5e-09
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_moisture_kg_kg_initial",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_max_over_all_nodes_dominates_21_samples",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_full_snapshot_shape",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_role_time_mapping",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_0_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_0_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_0_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_1800_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_1800_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_1800_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_3600_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_3600_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_3600_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_5400_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_5400_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_5400_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_7200_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_7200_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_7200_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_9000_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_9000_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_9000_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_10800_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_10800_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_10800_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_14400_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_14400_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_14400_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_206888_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_206888_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_206888_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_206889_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_206889_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_206889_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_snapshot_220000_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_220000_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_snapshot_220000_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_full_initial_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_full_initial_moisture",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_all_required_snapshot_projections_0",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_temperature_mean_axis_finite",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_temperature_mean_independent_snapshot_weights",
+      "passed": true,
+      "value": 8.526512829121202e-14,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_all_required_snapshot_projections_1",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_moisture_mean_axis_finite",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_moisture_mean_independent_snapshot_weights",
+      "passed": true,
+      "value": 1.7763568394002505e-15,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_first_strict_integer_endpoint",
+      "passed": true,
+      "stop_integer_s": 206889,
+      "previous_max": 0.15000001689197573,
+      "current_max": 0.14999972553661348,
+      "threshold": 0.15
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_nominal_event_uses_all_nodes",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-10,
+      "crossing_time_s": 206888.05797689315,
+      "argmax_radius_m": 0.0
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_event_precedes_strict_integer",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_nominal_metadata_common_end",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_mesh_has_exact_output_nodes",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_complete_second_axis",
+      "passed": true,
+      "required_common_end_s": 220000,
+      "actual_end_s": 220000
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_output_radii",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_accepted_and_sampled_all_node_temperature_range",
+      "passed": true,
+      "observed_range": [
+        27.999999999999996,
+        50.03986670595741
+      ],
+      "theoretical_range": [
+        28.0,
+        50.246
+      ],
+      "numerical_allowance": 5e-07,
+      "scope": "all nodes at accepted steps and integer-second dense samples"
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_accepted_and_sampled_all_node_moisture_range",
+      "passed": true,
+      "observed_range": [
+        0.05236573915132623,
+        2.550000000000001
+      ],
+      "theoretical_range": [
+        0.01963,
+        2.55
+      ],
+      "numerical_allowance": 5e-09,
+      "scope": "all nodes at accepted steps and integer-second dense samples"
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_all_node_maximum_axis",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_all_node_maximum_finite_and_bounded",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_argmax_is_a_mesh_location",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_argmax_node_indices",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_full_mesh_radius",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_temperature_C_shape_dtype",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_temperature_C_finite_and_invariant_range",
+      "passed": true,
+      "observed_range": [
+        28.0,
+        50.03986663581201
+      ],
+      "theoretical_range": [
+        28.0,
+        50.246
+      ],
+      "numerical_allowance": 5e-07
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_temperature_C_initial",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_moisture_kg_kg_shape_dtype",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_moisture_kg_kg_finite_and_invariant_range",
+      "passed": true,
+      "observed_range": [
+        0.05236573915132623,
+        2.5500000000000007
+      ],
+      "theoretical_range": [
+        0.01963,
+        2.55
+      ],
+      "numerical_allowance": 5e-09
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_moisture_kg_kg_initial",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_max_over_all_nodes_dominates_21_samples",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_full_snapshot_shape",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_role_time_mapping",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_0_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_0_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_0_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_1800_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_1800_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_1800_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_3600_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_3600_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_3600_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_5400_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_5400_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_5400_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_7200_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_7200_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_7200_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_9000_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_9000_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_9000_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_10800_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_10800_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_10800_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_14400_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_14400_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_14400_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_206888_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_206888_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_206888_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_206889_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_206889_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_206889_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_snapshot_220000_physical",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_220000_all_node_max",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_snapshot_220000_argmax_value",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_full_initial_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_full_initial_moisture",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-13
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_all_required_snapshot_projections_0",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_temperature_mean_axis_finite",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_temperature_mean_independent_snapshot_weights",
+      "passed": true,
+      "value": 5.684341886080802e-14,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_all_required_snapshot_projections_1",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_moisture_mean_axis_finite",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_moisture_mean_independent_snapshot_weights",
+      "passed": true,
+      "value": 8.881784197001252e-16,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_first_strict_integer_endpoint",
+      "passed": true,
+      "stop_integer_s": 206889,
+      "previous_max": 0.15000003597564138,
+      "current_max": 0.1499997446201418,
+      "threshold": 0.15
+    },
+    {
+      "axis": "E2",
+      "name": "mean_tail_n640_tight_event_uses_all_nodes",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-10,
+      "crossing_time_s": 206888.1234761435,
+      "argmax_radius_m": 0.0
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_event_precedes_strict_integer",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "mean_tail_n640_tight_metadata_common_end",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "full_process_spatial_temperature_C",
+      "passed": true,
+      "value": 4.970599228215633e-06,
+      "limit": 2.5e-05,
+      "comparison": {
+        "max_abs": 4.970599228215633e-06,
+        "time_s": 2940,
+        "radius_m": 0.02,
+        "first": 40.59647981596848,
+        "second": 40.59647484536925
+      }
+    },
+    {
+      "axis": "E2",
+      "name": "spatial_trend_temperature_C",
+      "passed": true,
+      "previous_difference": 1.980400195833454e-05,
+      "final_difference": 4.970599228215633e-06,
+      "observed_ratio": 3.9842282688809463
+    },
+    {
+      "axis": "E2",
+      "name": "full_process_spatial_moisture_kg_kg",
+      "passed": false,
+      "value": 0.0010673077435008338,
+      "limit": 2.5e-05,
+      "comparison": {
+        "max_abs": 0.0010673077435008338,
+        "time_s": 1,
+        "radius_m": 0.02,
+        "first": 2.521196248975199,
+        "second": 2.520128941231698
+      }
+    },
+    {
+      "axis": "E2",
+      "name": "spatial_trend_moisture_kg_kg",
+      "passed": true,
+      "previous_difference": 0.004975108455246957,
+      "final_difference": 0.0010673077435008338,
+      "observed_ratio": 4.6613626534070685
+    },
+    {
+      "axis": "E2",
+      "name": "spatial_crossing_time_difference",
+      "passed": false,
+      "value": 74.05479751361418,
+      "limit": 1.0
+    },
+    {
+      "axis": "E2",
+      "name": "full_process_temporal_temperature_C",
+      "passed": true,
+      "value": 6.554408003012213e-07,
+      "limit": 5e-06,
+      "comparison": {
+        "max_abs": 6.554408003012213e-07,
+        "time_s": 7861,
+        "radius_m": 0.02,
+        "first": 49.31135800236342,
+        "second": 49.31135865780422
+      }
+    },
+    {
+      "axis": "E2",
+      "name": "full_process_temporal_moisture_kg_kg",
+      "passed": true,
+      "value": 7.19035284646452e-08,
+      "limit": 5e-06,
+      "comparison": {
+        "max_abs": 7.19035284646452e-08,
+        "time_s": 3,
+        "radius_m": 0.02,
+        "first": 2.4981525461018106,
+        "second": 2.498152618005339
+      }
+    },
+    {
+      "axis": "E2",
+      "name": "temporal_crossing_time_difference",
+      "passed": true,
+      "value": 0.0654992503405083,
+      "limit": 0.1
+    }
+  ],
+  "details": {
+    "runs_config_identity": {
+      "path": "~\\AppData\\Local\\Temp\\cumcm-q2-full-n640.json",
+      "sha256": "47d1ff616f63eae18d061f0eb2491e52251eed968a663bc8a14c67595b459334"
+    },
+    "reused_checks_reports": [
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\checks_implementation_refined.json",
+        "sha256": "0c64fb507a5636a750ec00b41ce60a768eefe2bbebe1b367619fbc3148bb48ce",
+        "details": {
+          "derivative_omission_signals": {
+            "s_prime": 0.31890010991946466,
+            "k_prime": 0.15313568544629835,
+            "D_C": 0.0028278332626710465,
+            "D_theta": 7.889437184079011e-05
+          },
+          "coverage": "E1 implementation and E2 independent small examples; full-process refinement remains separate."
+        }
+      }
+    ],
+    "run_identities": [
+      {
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n160_common.npz",
+        "result_sha256": "886262482aa456a6aa530bc8c16a80060c2cd3f5c9baa07e6a807af55dccfbeb",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n160_common.json",
+        "metadata_sha256": "2b958e2dc8d2cd48628e4a054dcb88098600063cc8d09069bcaa47458c09f22a"
+      },
+      {
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n320_common.npz",
+        "result_sha256": "5d739328c99203e21104797b66aaf954da2f837384f417a7babf50ac29da70d7",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n320_common.json",
+        "metadata_sha256": "a103b42c5e9e29896d0153535c8c78814f708bafaad348a0a2cadf9d312eaa6d"
+      },
+      {
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n640_common.npz",
+        "result_sha256": "55bfae2a46f405dd5ff37ecad58fe160e0820c99e229a7d7322ac1dcd52ca621",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n640_common.json",
+        "metadata_sha256": "15918e024d1db047ac90ff487db7e14b19cede7f1763fa8a8f1cf75bac2a5708"
+      },
+      {
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n640_tight_common.npz",
+        "result_sha256": "d39e23b89a42b9c8779a9adf97a980ded2fdff365bda8a3b37a00f85d6e26cf1",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n640_tight_common.json",
+        "metadata_sha256": "40c1c331629e6814bc1aabe9b1323fe665bce301655a7efce6c98974eab26c74"
+      }
+    ],
+    "spatial_comparisons": [
+      {
+        "coarse": 160,
+        "fine": 320,
+        "temperature_C": {
+          "max_abs": 1.980400195833454e-05,
+          "time_s": 2940,
+          "radius_m": 0.02,
+          "first": 40.59649961997044,
+          "second": 40.59647981596848
+        },
+        "moisture_kg_kg": {
+          "max_abs": 0.004975108455246957,
+          "time_s": 1,
+          "radius_m": 0.02,
+          "first": 2.526171357430446,
+          "second": 2.521196248975199
+        }
+      },
+      {
+        "coarse": 320,
+        "fine": 640,
+        "temperature_C": {
+          "max_abs": 4.970599228215633e-06,
+          "time_s": 2940,
+          "radius_m": 0.02,
+          "first": 40.59647981596848,
+          "second": 40.59647484536925
+        },
+        "moisture_kg_kg": {
+          "max_abs": 0.0010673077435008338,
+          "time_s": 1,
+          "radius_m": 0.02,
+          "first": 2.521196248975199,
+          "second": 2.520128941231698
+        }
+      }
+    ],
+    "integer_endpoint_stability": {
+      "stable": false,
+      "coarse_fine_tight_endpoints": [
+        206815,
+        206889,
+        206889
+      ],
+      "status": "integer_boundary_unresolved",
+      "claim": "The nominal path has a strict all-node integer endpoint; cross-grid integer stability is separate."
+    },
+    "coverage": "E1 result contract and E2 full-process refinement; earlier quick evidence is included only if explicitly bound."
+  },
+  "claim_boundary": "E1 implementation, E2 numerical agreement and selected E3 structural properties of the fixed-grid Q2 model. No continuous-PDE global well-posedness, rigorous total error bound, per-cell correct rounding or E4 empirical validation is established by this report."
+}

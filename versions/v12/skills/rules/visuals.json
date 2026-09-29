@@ -1,0 +1,915 @@
+{
+  "schema_version": "10.0",
+  "domain": "visuals",
+  "rules": [
+    {
+      "id": "VIS.DESIGN.QUESTION",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-DESIGN-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.DESIGN.QUESTION",
+      "strength": "MUST",
+      "semantic_key": "visuals.design.question",
+      "scope": {
+        "objects": [
+          "visual"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_design"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "visual_question",
+        "value": "single_reader_question"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "question",
+          "consumer_ids"
+        ]
+      },
+      "outcomes": {
+        "pass": "图表有明确用途。",
+        "fail": "图表没有信息消费者。",
+        "not_applicable": "不创建图表。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-DESIGN-001"
+      ],
+      "routes": [
+        "RT.VISUAL.CREATE"
+      ],
+      "tests": [
+        "BEH.VISUAL.CREATE",
+        "ATOM.VIS.DESIGN.QUESTION"
+      ],
+      "instruction_gloss": "为每个图表声明一个主要读者问题。",
+      "failure_example": "为装饰或凑数量创建图表。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.DESIGN.TYPE",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-DESIGN-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.DESIGN.TYPE",
+      "strength": "MUST",
+      "semantic_key": "visuals.design.type",
+      "scope": {
+        "objects": [
+          "visual"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_design"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "select",
+        "target": "visual_type",
+        "value": "relationship_appropriate"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "relationship",
+          "selected_type"
+        ]
+      },
+      "outcomes": {
+        "pass": "图形编码匹配问题。",
+        "fail": "图形类型误导关系。",
+        "not_applicable": "工程示意图另有结构约束。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "visuals.design.type.exception.1",
+          "when": "官方模板指定图形",
+          "disposition": "遵循当前已核验要求"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-DESIGN-001"
+      ],
+      "routes": [
+        "RT.VISUAL.CREATE"
+      ],
+      "tests": [
+        "BEH.VISUAL.CREATE",
+        "ATOM.VIS.DESIGN.TYPE"
+      ],
+      "instruction_gloss": "按比较、趋势、分布、关系、空间或流程选择图形类型。",
+      "failure_example": "默认使用最熟悉图形。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.DESIGN.UNCERTAINTY",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-DESIGN-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.DESIGN.UNCERTAINTY",
+      "strength": "MUST",
+      "semantic_key": "visuals.design.uncertainty",
+      "scope": {
+        "objects": [
+          "visual"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "uncertain_result_visualization"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "visual_uncertainty_encoding",
+        "value": "interval_distribution_or_scenario"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "uncertainty_source",
+          "encoding"
+        ]
+      },
+      "outcomes": {
+        "pass": "读者能识别不确定范围。",
+        "fail": "不确定性被隐藏。",
+        "not_applicable": "结果确定且精确。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-DESIGN-001"
+      ],
+      "routes": [
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT"
+      ],
+      "tests": [
+        "BEH.VISUAL.CREATE",
+        "ATOM.VIS.DESIGN.UNCERTAINTY"
+      ],
+      "instruction_gloss": "在图中表达会改变解读的不确定性。",
+      "failure_example": "只画中心估计制造虚假确定性。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.LAYOUT.LABELS",
+      "revision": 2,
+      "status": "active",
+      "capability": "VIS-LAYOUT-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.LABELS",
+      "strength": "MUST",
+      "semantic_key": "visuals.layout.labels",
+      "scope": {
+        "objects": [
+          "visual",
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_render",
+          "visual_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "axis_and_legend_labels",
+        "value": "meaning_unit_identity"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "render_path",
+          "labels_checked"
+        ]
+      },
+      "outcomes": {
+        "pass": "标注完整且准确。",
+        "fail": "标注缺失或歧义。",
+        "not_applicable": "无坐标或图例的示意图。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-LAYOUT-001"
+      ],
+      "routes": [
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT",
+        "RT.MANUSCRIPT.RENDER",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.VISUAL.AUDIT",
+        "ATOM.VIS.LAYOUT.LABELS"
+      ],
+      "instruction_gloss": "核对坐标、图例和标注的含义与单位。",
+      "failure_example": "省略读者理解所需的单位或类别解释。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.LAYOUT.LEGIBILITY",
+      "revision": 2,
+      "status": "active",
+      "capability": "VIS-LAYOUT-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.LEGIBILITY",
+      "strength": "MUST",
+      "semantic_key": "visuals.layout.legibility",
+      "scope": {
+        "objects": [
+          "visual",
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_render",
+          "visual_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "render_legibility",
+        "value": "target_output_size"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "target_size",
+          "render_hash",
+          "inspection"
+        ]
+      },
+      "outcomes": {
+        "pass": "最终尺寸可读。",
+        "fail": "存在遮挡或不可读元素。",
+        "not_applicable": "非视觉产物。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-LAYOUT-001"
+      ],
+      "routes": [
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT",
+        "RT.MANUSCRIPT.RENDER",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.VISUAL.AUDIT",
+        "ATOM.VIS.LAYOUT.LEGIBILITY"
+      ],
+      "instruction_gloss": "在最终输出尺寸下检查文字、线条和重叠。",
+      "failure_example": "只在放大编辑视图中判断可读性。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.LAYOUT.COLOR",
+      "revision": 3,
+      "status": "active",
+      "capability": "VIS-LAYOUT-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.COLOR",
+      "strength": "MUST",
+      "semantic_key": "visuals.layout.color_accessibility",
+      "scope": {
+        "objects": [
+          "visual",
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_design",
+          "visual_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "categorical_distinction",
+        "value": "not_color_only"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "encoding_channels",
+          "contrast_check"
+        ]
+      },
+      "outcomes": {
+        "pass": "类别在灰度或色觉差异下仍可区分。",
+        "fail": "关键信息只由颜色承载。",
+        "not_applicable": "单色图。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V8.VISUAL.NATURE.GLOBAL"
+      ],
+      "legacy_refs": [
+        "VIS-LAYOUT-001"
+      ],
+      "routes": [
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT",
+        "RT.MANUSCRIPT.RENDER",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.VISUAL.AUDIT",
+        "ATOM.VIS.LAYOUT.COLOR"
+      ],
+      "instruction_gloss": "为关键类别提供颜色之外的区分线索。",
+      "failure_example": "只靠红绿差异传达关键状态。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.LAYOUT.CAPTION",
+      "revision": 2,
+      "status": "active",
+      "capability": "VIS-LAYOUT-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.CAPTION",
+      "strength": "MUST",
+      "semantic_key": "visuals.layout.caption",
+      "scope": {
+        "objects": [
+          "visual",
+          "manuscript"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_embed",
+          "visual_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "visual_caption",
+        "value": "what_encoding_scope_takeaway"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "caption",
+          "visual_identity"
+        ]
+      },
+      "outcomes": {
+        "pass": "图注可独立解释图。",
+        "fail": "图注缺少必要语境。",
+        "not_applicable": "非论文嵌入图。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-LAYOUT-001"
+      ],
+      "routes": [
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT",
+        "RT.MANUSCRIPT.RENDER",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.VISUAL.AUDIT",
+        "ATOM.VIS.LAYOUT.CAPTION"
+      ],
+      "instruction_gloss": "让图注说明对象、编码、范围和主要读法。",
+      "failure_example": "用“结果如图所示”作为完整图注。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.IDENTITY.DATA",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-IDENTITY-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.IDENTITY.DATA",
+      "strength": "MUST",
+      "semantic_key": "visuals.identity.data",
+      "scope": {
+        "objects": [
+          "visual"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A0",
+          "A1",
+          "A2",
+          "A3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_generate",
+          "visual_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "visual_data_identity",
+        "value": "dataset_or_run_hash"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "visual_path",
+          "source_hash"
+        ]
+      },
+      "outcomes": {
+        "pass": "图表数据来源唯一。",
+        "fail": "图表数据身份未知。",
+        "not_applicable": "非数据驱动示意图。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "visuals.identity.data.exception.1",
+          "when": "概念示意图",
+          "disposition": "显式标记非数据图"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-IDENTITY-001"
+      ],
+      "routes": [
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT"
+      ],
+      "tests": [
+        "BEH.VISUAL.AUDIT",
+        "ATOM.VIS.IDENTITY.DATA"
+      ],
+      "instruction_gloss": "把图表绑定到数据集或运行哈希。",
+      "failure_example": "从手工复制数据生成正式图表。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.IDENTITY.RENDER",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-IDENTITY-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.IDENTITY.RENDER",
+      "strength": "MUST",
+      "semantic_key": "visuals.identity.render",
+      "scope": {
+        "objects": [
+          "visual"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "rendered_visual",
+        "value": "actual_output_inspection"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation"
+        ],
+        "fields": [
+          "render_path",
+          "render_hash",
+          "inspection"
+        ]
+      },
+      "outcomes": {
+        "pass": "渲染结果已检查。",
+        "fail": "未检查或发现渲染缺陷。",
+        "not_applicable": "没有渲染输出。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-IDENTITY-001"
+      ],
+      "routes": [
+        "RT.VISUAL.AUDIT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "BEH.VISUAL.AUDIT",
+        "ATOM.VIS.IDENTITY.RENDER"
+      ],
+      "instruction_gloss": "实际打开并检查最终渲染图。",
+      "failure_example": "只检查绘图代码宣称图表通过。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.IDENTITY.SYNC",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-IDENTITY-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.IDENTITY.SYNC",
+      "strength": "MUST",
+      "semantic_key": "visuals.identity.source_output_sync",
+      "scope": {
+        "objects": [
+          "visual"
+        ],
+        "component_types": [
+          "artifact",
+          "question"
+        ],
+        "states": [
+          "A1",
+          "A2",
+          "A3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "visual_source_change",
+          "visual_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "visual_source_output_sync",
+        "value": "render_newer_and_matching"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command"
+        ],
+        "fields": [
+          "source_hash",
+          "data_hash",
+          "render_hash"
+        ]
+      },
+      "outcomes": {
+        "pass": "源、数据和输出同步。",
+        "fail": "输出身份陈旧。",
+        "not_applicable": "无可编辑图源。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "VIS-IDENTITY-001"
+      ],
+      "routes": [
+        "RT.VISUAL.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "BEH.VISUAL.AUDIT",
+        "ATOM.VIS.IDENTITY.SYNC"
+      ],
+      "instruction_gloss": "确认渲染输出对应当前图源和数据身份。",
+      "failure_example": "交付陈旧渲染缓存。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "VIS.LAYOUT.FONTS",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-LAYOUT-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.FONTS",
+      "strength": "MUST",
+      "semantic_key": "visuals.layout.fonts",
+      "scope": {"objects": ["visual", "manuscript"], "component_types": ["artifact", "question"], "states": ["A1", "A2", "A3", "S5", "S6", "S7"]},
+      "trigger": {"events": ["visual_render", "visual_audit"], "predicates": []},
+      "effect": {"verb": "verify", "target": "rendered_fonts", "value": "embedded_supported_and_legible"},
+      "instruction_gloss": "在实际渲染件中核对字体嵌入、替代和最终尺寸可读性。",
+      "failure_example": "源码指定字体但导出时被缺字或错误替代。",
+      "evidence": {"required": true, "kinds": ["file", "command", "observation"], "fields": ["render_path", "font_inventory", "glyph_check", "legibility"]},
+      "outcomes": {"pass": "字体渲染正确。", "fail": "字体缺失、替代或不可读。", "not_applicable": "输出不含文字。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["VIS.LAYOUT.LEGIBILITY"], "supersedes": [],
+      "legacy_refs": ["VIS-LAYOUT-001"], "routes": ["RT.VISUAL.CREATE", "RT.VISUAL.AUDIT", "RT.MANUSCRIPT.RENDER", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.VISUAL.AUDIT", "BEH.MANUSCRIPT.AUDIT", "ATOM.VIS.LAYOUT.FONTS"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "VIS.LAYOUT.PAGINATION",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-LAYOUT-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.PAGINATION",
+      "strength": "MUST",
+      "semantic_key": "visuals.layout.pagination",
+      "scope": {"objects": ["manuscript"], "component_types": ["artifact"], "states": ["A1", "A2", "A3"]},
+      "trigger": {"events": ["visual_render", "visual_audit"], "predicates": []},
+      "effect": {"verb": "verify", "target": "page_layout", "value": "pagination_and_page_breaks"},
+      "instruction_gloss": "逐页检查页码、分页、孤行和内容越界。",
+      "failure_example": "只确认 PDF 可打开，不检查断页和越界。",
+      "evidence": {"required": true, "kinds": ["file", "observation"], "fields": ["render_path", "pages_inspected", "pagination_findings"]},
+      "outcomes": {"pass": "分页与页码正确。", "fail": "存在分页或越界问题。", "not_applicable": "非分页输出。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": [], "supersedes": [],
+      "legacy_refs": ["VIS-LAYOUT-001"], "routes": ["RT.MANUSCRIPT.RENDER", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.MANUSCRIPT.AUDIT", "ATOM.VIS.LAYOUT.PAGINATION"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "VIS.LAYOUT.PLACEMENT",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-LAYOUT-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.LAYOUT.PLACEMENT",
+      "strength": "MUST",
+      "semantic_key": "visuals.layout.placement",
+      "scope": {"objects": ["visual", "manuscript"], "component_types": ["artifact", "question"], "states": ["A1", "A2", "A3", "S5", "S6", "S7"]},
+      "trigger": {"events": ["visual_embed", "visual_audit"], "predicates": []},
+      "effect": {"verb": "verify", "target": "visual_placement", "value": "near_first_reference_with_caption"},
+      "instruction_gloss": "核对图表与首次引用、图注和相关正文的实际位置关系。",
+      "failure_example": "图表漂移到无关页面或与图注分离。",
+      "evidence": {"required": true, "kinds": ["file", "observation"], "fields": ["visual_id", "first_reference", "page", "caption_position"]},
+      "outcomes": {"pass": "图表位置支持阅读。", "fail": "图表、引用或图注错位。", "not_applicable": "非嵌入式视觉。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["VIS.LAYOUT.CAPTION"], "supersedes": [],
+      "legacy_refs": ["VIS-LAYOUT-001"], "routes": ["RT.VISUAL.CREATE", "RT.VISUAL.AUDIT", "RT.MANUSCRIPT.RENDER", "RT.MANUSCRIPT.AUDIT"],
+      "tests": ["BEH.VISUAL.AUDIT", "BEH.MANUSCRIPT.AUDIT", "ATOM.VIS.LAYOUT.PLACEMENT"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    },
+    {
+      "id": "VIS.IDENTITY.NO_MANUAL_VALUES",
+      "revision": 1,
+      "status": "active",
+      "capability": "VIS-IDENTITY-001",
+      "domain": "visuals",
+      "owner": "rules/visuals.json#VIS.IDENTITY.NO_MANUAL_VALUES",
+      "strength": "MUST",
+      "semantic_key": "visuals.identity.no_manual_values",
+      "scope": {"objects": ["visual"], "component_types": ["artifact", "question"], "states": ["A0", "A1", "A2", "A3", "S5", "S6", "S7"]},
+      "trigger": {"events": ["visual_generate", "visual_audit"], "predicates": []},
+      "effect": {"verb": "forbid", "target": "plotted_value_mutation", "value": "manual_or_untraced_edit"},
+      "instruction_gloss": "禁止在来源链之外手工改动正式图表中的数据值。",
+      "failure_example": "为了让趋势更好看而在绘图软件中手改数据点。",
+      "evidence": {"required": true, "kinds": ["file", "command"], "fields": ["visual_id", "source_hash", "render_hash", "generation_command"]},
+      "outcomes": {"pass": "绘图值由可追溯来源生成。", "fail": "存在手工或无记录的数值改动。", "not_applicable": "非数据驱动示意图。"},
+      "exceptions": [], "conflicts_with": [], "refines": [], "depends_on": ["VIS.IDENTITY.DATA", "VIS.IDENTITY.SYNC"], "supersedes": [],
+      "legacy_refs": ["VIS-IDENTITY-001"], "routes": ["RT.VISUAL.CREATE", "RT.VISUAL.AUDIT"],
+      "tests": ["BEH.VISUAL.AUDIT", "ATOM.VIS.IDENTITY.NO_MANUAL_VALUES"],
+      "enforcement": {"kind": "agent_obligation", "assurance": "selection_verified", "refs": ["scripts/resolve_route.py", "evals/atomic-rule-cases.json"]}
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "cases": [
+    {
+      "id":"MC-VALID-L2",
+      "postflight":true,
+      "expected":"PASS",
+      "payload":{"receipt_kind":"skill_change","change_id":"CHG-2026-001","risk_level":"L2","change_type":"behavior_change","old_behavior":{"trigger":"explicit uncertainty request"},"new_behavior":{"trigger":"decision-sensitive uncertainty"},"affected_capabilities":["VER-UNCERTAINTY-001"],"canonical_owner":"references/modules/verification.md","affected_routes":["RT-VERIFY-MODEL"],"tests":["BEH-S6-AXIS2"],"compatibility":"behavior_change"}
+    },
+    {
+      "id":"MC-VALID-L3",
+      "postflight":true,
+      "expected":"PASS",
+      "payload":{"receipt_kind":"skill_change","change_id":"CHG-2026-002","risk_level":"L3","change_type":"routing","old_behavior":{"route":"old"},"new_behavior":{"route":"new"},"affected_capabilities":["GOV-ROUTE-001"],"canonical_owner":"references/route-contract.json","affected_routes":["RT-SKILL-CHANGE"],"tests":["ROUTE-022"],"compatibility":"behavior_change"}
+    },
+    {
+      "id":"MC-INVALID-MODEL-AS-COMPATIBLE",
+      "postflight":true,
+      "expected":"FAIL",
+      "payload":{"receipt_kind":"skill_change","change_id":"CHG-2026-003","risk_level":"L4","change_type":"maintenance_kernel","old_behavior":{"kernel":"v9"},"new_behavior":{"kernel":"changed"},"affected_capabilities":["MNT-RELOAD-001"],"canonical_owner":"references/maintenance-contract.md","affected_routes":["RT-SKILL-CHANGE"],"tests":["BEH-MNT-CHANGE"],"compatibility":"backward_compatible"}
+    },
+    {
+      "id":"MC-INVALID-UNKNOWN-OWNER",
+      "postflight":true,
+      "expected":"FAIL",
+      "payload":{"receipt_kind":"skill_change","change_id":"CHG-2026-004","risk_level":"L2","change_type":"behavior_change","old_behavior":{"x":1},"new_behavior":{"x":2},"affected_capabilities":["UNKNOWN-CAP"],"canonical_owner":"references/does-not-exist.md","affected_routes":["RT-SKILL-CHANGE"],"tests":["BEH-MNT-CHANGE"],"compatibility":"behavior_change"}
+    }
+  ]
+}
+

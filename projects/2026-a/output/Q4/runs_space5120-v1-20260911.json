@@ -1,0 +1,34 @@
+{
+  "common_end_s": 259200,
+  "runs": {
+    "main": "output/Q4/run_n5120-v1-20260911.npz",
+    "coarse0": "output/Q4/run_n160-v1-20260911.npz",
+    "coarse1": "output/Q4/run_n320-v1-20260911.npz",
+    "coarse2": "output/Q4/run_n640-v1-20260911.npz",
+    "coarse3": "output/Q4/run_n1280-v1-20260911.npz",
+    "coarse4": "output/Q4/run_n2560-v1-20260911.npz"
+  },
+  "main": "main",
+  "spatial_pairs": [
+    [
+      "coarse0",
+      "coarse1"
+    ],
+    [
+      "coarse1",
+      "coarse2"
+    ],
+    [
+      "coarse2",
+      "coarse3"
+    ],
+    [
+      "coarse3",
+      "coarse4"
+    ],
+    [
+      "coarse4",
+      "main"
+    ]
+  ]
+}

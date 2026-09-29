@@ -1,0 +1,2470 @@
+{
+  "schema_version": "10.0",
+  "domain": "modeling",
+  "rules": [
+    {
+      "id": "MOD.RESTATE.KNOWN",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-RESTATE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESTATE.KNOWN",
+      "strength": "MUST",
+      "semantic_key": "modeling.restate.known",
+      "scope": {
+        "objects": [
+          "project",
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "problem_definition",
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "known_information",
+        "value": "given_observed_derived"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "citation"
+        ],
+        "fields": [
+          "item",
+          "origin"
+        ]
+      },
+      "outcomes": {
+        "pass": "已知信息来源明确。",
+        "fail": "信息角色混淆。",
+        "not_applicable": "没有项目题意。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESTATE-001"
+      ],
+      "routes": [
+        "RT.PROBLEM.DEFINE",
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "区分题目给定、实际观测和后续推导的信息。",
+      "failure_example": "把推导量伪装成已知输入。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.RESTATE.UNKNOWN",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-RESTATE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESTATE.UNKNOWN",
+      "strength": "MUST",
+      "semantic_key": "modeling.restate.unknown",
+      "scope": {
+        "objects": [
+          "project",
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "problem_definition",
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "unknown_variables",
+        "value": "symbols_domains_units"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "symbol",
+          "domain",
+          "unit"
+        ]
+      },
+      "outcomes": {
+        "pass": "未知量定义唯一。",
+        "fail": "未知量缺少域或单位。",
+        "not_applicable": "纯定性问题。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "modeling.restate.unknown.exception.1",
+          "when": "无量纲量",
+          "disposition": "显式标记无量纲"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESTATE-001"
+      ],
+      "routes": [
+        "RT.PROBLEM.DEFINE",
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为每个未知量定义符号、取值域和单位。",
+      "failure_example": "用同一符号表示不同物理量。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.RESTATE.OBJECTIVE",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-RESTATE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESTATE.OBJECTIVE",
+      "strength": "MUST",
+      "semantic_key": "modeling.restate.objective",
+      "scope": {
+        "objects": [
+          "project",
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "problem_definition",
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "objective_and_constraints",
+        "value": "measurable_target_feasible_boundary"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "objective",
+          "constraints"
+        ]
+      },
+      "outcomes": {
+        "pass": "目标可计算或可验收。",
+        "fail": "目标与约束不可判定。",
+        "not_applicable": "纯解释任务。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESTATE-001"
+      ],
+      "routes": [
+        "RT.PROBLEM.DEFINE",
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把目标和约束翻译为可判定表达。",
+      "failure_example": "用方法名称代替问题目标。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.RESTATE.OBJECTS",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESTATE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESTATE.OBJECTS",
+      "strength": "MUST",
+      "semantic_key": "modeling.restate.objects",
+      "scope": {
+        "objects": [
+          "project",
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "problem_definition",
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "model_objects",
+        "value": "entities_systems_relationships_and_roles"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "object_id",
+          "object_role",
+          "relationships"
+        ]
+      },
+      "outcomes": {
+        "pass": "被建模对象、系统边界、角色和关系均有唯一含义。",
+        "fail": "直接定义变量或算法，却没有说明变量属于什么对象或系统。",
+        "not_applicable": "任务不构造任何数学或计算模型。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESTATE-001"
+      ],
+      "routes": [
+        "RT.PROBLEM.DEFINE",
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在变量之前登记被建模实体、系统边界、角色和关系，使后续符号能回指具体对象。",
+      "failure_example": "先写节点变量，却未说明节点代表地点、个体还是时间状态。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.RESTATE.OUTPUTS",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESTATE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESTATE.OUTPUTS",
+      "strength": "MUST",
+      "semantic_key": "modeling.restate.outputs",
+      "scope": {
+        "objects": [
+          "project",
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "problem_definition",
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "required_model_outputs",
+        "value": "quantity_format_unit_and_acceptance_meaning"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "output_name",
+          "format",
+          "unit",
+          "acceptance_meaning"
+        ]
+      },
+      "outcomes": {
+        "pass": "每个必需输出都能与题目请求和验收含义对应。",
+        "fail": "目标看似明确，但最终应交付的量、单位或格式未定义。",
+        "not_applicable": "任务不产生模型输出。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESTATE-001"
+      ],
+      "routes": [
+        "RT.PROBLEM.DEFINE",
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在选择算法前登记题目真正需要的输出量、格式、单位和验收含义。",
+      "failure_example": "只写“得到最优方案”，却不定义方案内容、指标和单位。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.RESTATE.OBJECTIVE"
+      ]
+    },
+    {
+      "id": "MOD.RESTATE.REDESIGN",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESTATE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESTATE.REDESIGN",
+      "strength": "MUST",
+      "semantic_key": "modeling.restate.controlled_redesign",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "model_redesign_control",
+        "value": "authorize_invalidate_consumers_and_reopen_to_s2_before_replacement"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "authorization",
+          "prior_state",
+          "invalidated_consumers",
+          "reopen_transition"
+        ]
+      },
+      "outcomes": {
+        "pass": "冻结规格之后的重设计先获授权、传播失效并回到候选比较阶段。",
+        "fail": "在 S4–S7 原地替换模型定义，旧实现、结果或稿件仍保持有效。",
+        "not_applicable": "当前仍处于 S0–S3，或没有改变既有模型定义。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESTATE-001"
+      ],
+      "routes": [
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "S4 以后若重新设计模型，先登记变更授权，失效所有消费者并通过合法重开回到 S2，再重做问题定义与比较。",
+      "failure_example": "在 S7 直接换掉目标函数，同时保留旧结果和终稿的通过状态。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "GOV.AUTH.FROZEN_CHOICE",
+        "STATE.TRANSITION.GATED"
+      ]
+    },
+    {
+      "id": "MOD.RESTATE.BEFORE_ALGORITHM",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESTATE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESTATE.BEFORE_ALGORITHM",
+      "strength": "MUST",
+      "semantic_key": "modeling.restate.before_algorithm_gate",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "problem_definition_readiness",
+        "value": "objects_variables_constraints_objectives_and_outputs_before_algorithm_selection"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "observation"
+        ],
+        "fields": [
+          "objects",
+          "variables",
+          "constraints",
+          "objectives",
+          "outputs"
+        ]
+      },
+      "outcomes": {
+        "pass": "算法选择只在数学问题的对象、变量、约束、目标和输出均已定义后发生。",
+        "fail": "先选算法，再倒推问题定义以迎合算法。",
+        "not_applicable": "当前动作不选择或替换算法。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESTATE-001"
+      ],
+      "routes": [
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把问题定义作为算法选择的前置门禁，不能以已有代码或熟悉算法反向替代数学问题。",
+      "failure_example": "因为熟悉随机森林便直接采用，再把题目重述成预测问题。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.RESTATE.OBJECTS",
+        "MOD.RESTATE.UNKNOWN",
+        "MOD.RESTATE.OBJECTIVE",
+        "MOD.RESTATE.OUTPUTS"
+      ]
+    },
+    {
+      "id": "MOD.COMPARE.BASELINE",
+      "revision": 4,
+      "status": "active",
+      "capability": "MOD-COMPARE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.COMPARE.BASELINE",
+      "strength": "MUST",
+      "semantic_key": "modeling.compare.baseline",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_comparison",
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "candidate_set",
+        "value": "feasible_baseline_present"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "command"
+        ],
+        "fields": [
+          "baseline",
+          "candidate_ids"
+        ]
+      },
+      "outcomes": {
+        "pass": "基线可运行或有不可行证明。",
+        "fail": "候选无比较锚点。",
+        "not_applicable": "唯一方法由题目强制。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "modeling.compare.baseline.exception.1",
+          "when": "题目强制唯一方法",
+          "disposition": "记录强制依据"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-COMPARE-001"
+      ],
+      "routes": [
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在候选集中保留一个可解释基线。",
+      "failure_example": "只评估最复杂或最熟悉的方法。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.COMPARE.SAME_EVIDENCE",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-COMPARE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.COMPARE.SAME_EVIDENCE",
+      "strength": "MUST",
+      "semantic_key": "modeling.compare.same_evidence",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_comparison"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "candidate_evaluation",
+        "value": "same_data_split_metric_budget"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "decision"
+        ],
+        "fields": [
+          "data_identity",
+          "split",
+          "metrics",
+          "budget"
+        ]
+      },
+      "outcomes": {
+        "pass": "候选比较条件一致。",
+        "fail": "比较条件不公平。",
+        "not_applicable": "只做理论可行性筛选。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-COMPARE-001"
+      ],
+      "routes": [
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在相同数据、划分、指标和预算下比较候选。",
+      "failure_example": "用不同条件制造优劣差异。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.COMPARE.ASSUMPTIONS",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-COMPARE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.COMPARE.ASSUMPTIONS",
+      "strength": "MUST",
+      "semantic_key": "modeling.compare.assumptions",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_comparison"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "candidate_assumptions",
+        "value": "assumption_applicability_failure"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "candidate",
+          "assumptions",
+          "failure_conditions"
+        ]
+      },
+      "outcomes": {
+        "pass": "选择反映适用性。",
+        "fail": "候选假设未检查。",
+        "not_applicable": "候选仅作计算实现比较。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-COMPARE-001"
+      ],
+      "routes": [
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "逐候选记录适用假设和失效条件。",
+      "failure_example": "仅按指标排序而忽略适用性。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.COMPARE.RATIONALE",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-COMPARE-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.COMPARE.RATIONALE",
+      "strength": "MUST",
+      "semantic_key": "modeling.compare.rationale",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_selection"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "selection_rationale",
+        "value": "criteria_evidence_tradeoff"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "command"
+        ],
+        "fields": [
+          "criteria",
+          "evidence",
+          "tradeoffs"
+        ]
+      },
+      "outcomes": {
+        "pass": "选择可复核。",
+        "fail": "选择理由不可证实。",
+        "not_applicable": "没有选择动作。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-COMPARE-001"
+      ],
+      "routes": [
+        "RT.MODEL.COMPARE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "用标准、证据和权衡记录模型选择理由。",
+      "failure_example": "用“效果最好”作为唯一理由。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.SPEC.VARIABLES",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.SPEC.VARIABLES",
+      "strength": "MUST",
+      "semantic_key": "modeling.spec.variables",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S3",
+          "S4"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_specification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "model_variables",
+        "value": "symbol_role_domain_unit"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "symbol",
+          "role",
+          "domain",
+          "unit"
+        ]
+      },
+      "outcomes": {
+        "pass": "变量规格完整。",
+        "fail": "变量身份含糊。",
+        "not_applicable": "无形式模型。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-SPEC-001"
+      ],
+      "routes": [
+        "RT.MODEL.SPEC"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为每个模型变量冻结符号、角色、取值域和单位。",
+      "failure_example": "实现中引入规格外变量。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.SPEC.EQUATIONS",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.SPEC.EQUATIONS",
+      "strength": "MUST",
+      "semantic_key": "modeling.spec.equations",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S3",
+          "S4"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_specification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "mathematical_core",
+        "value": "objective_equations_constraints"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "objective",
+          "equations",
+          "constraints"
+        ]
+      },
+      "outcomes": {
+        "pass": "数学核心可直接实现。",
+        "fail": "规格仍需猜测。",
+        "not_applicable": "非数学流程任务。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-SPEC-001"
+      ],
+      "routes": [
+        "RT.MODEL.SPEC"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "冻结目标、方程和约束的明确数学形式。",
+      "failure_example": "只写方法名称而不写可实现规格。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.SPEC.PARAMETERS",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.SPEC.PARAMETERS",
+      "strength": "MUST",
+      "semantic_key": "modeling.spec.parameters",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S3",
+          "S4"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_specification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "model_parameters",
+        "value": "value_source_unit_uncertainty"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "parameter",
+          "value",
+          "source",
+          "unit",
+          "uncertainty"
+        ]
+      },
+      "outcomes": {
+        "pass": "参数可追溯。",
+        "fail": "参数身份或尺度未知。",
+        "not_applicable": "模型无外部参数。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "modeling.spec.parameters.exception.1",
+          "when": "参数待估计",
+          "disposition": "记录估计方法和识别边界"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-SPEC-001"
+      ],
+      "routes": [
+        "RT.MODEL.SPEC"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "记录参数值、来源、单位和不确定性。",
+      "failure_example": "使用无来源的精确常数。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.SPEC.ALGORITHM",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.SPEC.ALGORITHM",
+      "strength": "MUST",
+      "semantic_key": "modeling.spec.algorithm",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S3",
+          "S4"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_specification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "solution_algorithm",
+        "value": "method_role_formula_link_initialization_stop_failure"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "algorithm",
+          "method_role",
+          "formula_or_spec_link",
+          "initialization",
+          "stopping",
+          "failure"
+        ]
+      },
+      "outcomes": {
+        "pass": "算法规格足以复现。",
+        "fail": "求解行为依赖隐含默认值。",
+        "not_applicable": "闭式解无需迭代。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-SPEC-001"
+      ],
+      "routes": [
+        "RT.MODEL.SPEC"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "登记方法是 primary_model、primary_solver 还是 auxiliary_validator，并冻结它到公式/规格的链接、初始化、停止条件和失败判据。",
+      "failure_example": "让实现自行决定未记录的求解逻辑，或让辅助验证器静默成为第二套主模型。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.SPEC.ASSUMPTIONS",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.SPEC.ASSUMPTIONS",
+      "strength": "MUST",
+      "semantic_key": "modeling.specification.frozen_assumptions",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S3",
+          "S4"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_specification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "frozen_model_assumptions",
+        "value": "statement_scope_evidence_failure_consequence_and_versioned_identity"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state",
+          "citation"
+        ],
+        "fields": [
+          "assumption_id",
+          "statement",
+          "applicability_scope",
+          "failure_consequence",
+          "spec_identity"
+        ]
+      },
+      "outcomes": {
+        "pass": "假设内容、适用范围、失效后果与冻结规格身份绑定。",
+        "fail": "实现依赖未登记或可被静默改写的假设。",
+        "not_applicable": "模型不引入题意之外的任何假设。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-SPEC-001"
+      ],
+      "routes": [
+        "RT.MODEL.SPEC"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把每条假设的陈述、适用范围、证据与违反后果绑定到版本化规格身份，实施后不得静默漂移。",
+      "failure_example": "代码里默认独立同分布，但冻结规格没有这条假设。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.COMPARE.ASSUMPTIONS"
+      ]
+    },
+    {
+      "id": "MOD.SPEC.INTERFACE",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.SPEC.INTERFACE",
+      "strength": "MUST",
+      "semantic_key": "modeling.specification.io_interface",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S3",
+          "S4"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_specification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "model_io_interface",
+        "value": "inputs_outputs_shapes_types_units_and_failure_signals"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "input_contract",
+          "output_contract",
+          "units",
+          "failure_signals"
+        ]
+      },
+      "outcomes": {
+        "pass": "规格明确输入、输出、形状、类型、单位与失败信号。",
+        "fail": "实现者必须猜测输入含义或输出契约。",
+        "not_applicable": "纯手工闭式推导且没有计算接口。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-SPEC-001"
+      ],
+      "routes": [
+        "RT.MODEL.SPEC"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "冻结输入和输出接口，包括含义、形状、类型、单位及可观察失败信号，使实现无需猜测。",
+      "failure_example": "规格只给方程，未说明程序接收什么文件或输出什么结构。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.RESTATE.OUTPUTS",
+        "MOD.SPEC.VARIABLES"
+      ]
+    },
+    {
+      "id": "MOD.SPEC.FREEZE",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.SPEC.FREEZE",
+      "strength": "MUST",
+      "semantic_key": "modeling.specification.freeze_complete",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S3",
+          "S4"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_specification"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "frozen_model_specification",
+        "value": "versioned_assumptions_symbols_equations_parameters_units_and_interfaces"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "file"
+        ],
+        "fields": [
+          "spec_identity",
+          "spec_sha256",
+          "assumptions",
+          "symbols",
+          "equations",
+          "parameters",
+          "units",
+          "interfaces"
+        ]
+      },
+      "outcomes": {
+        "pass": "规格全部必需部分绑定同一版本化冻结身份。",
+        "fail": "只有部分字段冻结，其他定义可在实施中静默变化。",
+        "not_applicable": "当前动作不冻结模型规格。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-SPEC-001"
+      ],
+      "routes": [
+        "RT.MODEL.SPEC"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "将假设、符号、方程、参数、单位和接口作为一份完整规格绑定到同一版本化冻结身份。",
+      "failure_example": "只冻结方程文件，参数单位和接口仍可在代码中任意改变。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.SPEC.ASSUMPTIONS",
+        "MOD.SPEC.VARIABLES",
+        "MOD.SPEC.EQUATIONS",
+        "MOD.SPEC.PARAMETERS",
+        "MOD.SPEC.INTERFACE"
+      ]
+    },
+    {
+      "id": "MOD.SPEC.READINESS",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.SPEC.READINESS",
+      "strength": "MUST",
+      "semantic_key": "modeling.specification.before_implementation_gate",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_implementation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "model_specification_readiness",
+        "value": "unambiguous_frozen_assumptions_symbols_equations_parameters_units_and_interfaces_before_implementation"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "decision"
+        ],
+        "fields": [
+          "spec_identity",
+          "assumptions",
+          "symbols",
+          "equations",
+          "parameters",
+          "units",
+          "interfaces"
+        ]
+      },
+      "outcomes": {
+        "pass": "实施前，冻结规格的全部必需部分均明确且可定位。",
+        "fail": "代码开始后仍需猜测或临时决定规格含义。",
+        "not_applicable": "当前动作不实施模型。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-SPEC-001"
+      ],
+      "routes": [
+        "RT.MODEL.IMPLEMENT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "实施动作开始时重新核销冻结规格身份及假设、符号、方程、参数、单位和接口的完整性。",
+      "failure_example": "先写求解代码，遇到未定义边界条件时再临时补一个默认值。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.SPEC.ASSUMPTIONS",
+        "MOD.SPEC.VARIABLES",
+        "MOD.SPEC.EQUATIONS",
+        "MOD.SPEC.PARAMETERS",
+        "MOD.SPEC.INTERFACE"
+      ]
+    },
+    {
+      "id": "MOD.IMPLEMENT.SPEC_BIND",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-IMPLEMENT-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.IMPLEMENT.SPEC_BIND",
+      "strength": "MUST",
+      "semantic_key": "modeling.implementation.spec_binding",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_implementation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "implementation_spec_identity",
+        "value": "frozen_spec_reference"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "spec_ref",
+          "spec_hash"
+        ]
+      },
+      "outcomes": {
+        "pass": "实现与规格身份一致。",
+        "fail": "实现偏离冻结规格。",
+        "not_applicable": "仅讨论模型。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "modeling.implementation.spec_binding.exception.1",
+          "when": "发现规格缺陷",
+          "disposition": "先记录 change_existing 决定"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-IMPLEMENT-001"
+      ],
+      "routes": [
+        "RT.MODEL.IMPLEMENT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把实现绑定到一个冻结规格身份。",
+      "failure_example": "实现时静默改变目标、约束或数据口径。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.IMPLEMENT.REPRODUCE",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-IMPLEMENT-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.IMPLEMENT.REPRODUCE",
+      "strength": "MUST",
+      "semantic_key": "modeling.implementation.reproduce",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_execution"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "run_identity",
+        "value": "code_input_environment_seed_parameters"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "file"
+        ],
+        "fields": [
+          "code_hash",
+          "input_hash",
+          "environment",
+          "seed",
+          "parameters"
+        ]
+      },
+      "outcomes": {
+        "pass": "运行可重建。",
+        "fail": "运行身份不完整。",
+        "not_applicable": "纯解析解无代码运行。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "modeling.implementation.reproduce.exception.1",
+          "when": "算法确定且无随机性",
+          "disposition": "种子标记 not_applicable"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-IMPLEMENT-001"
+      ],
+      "routes": [
+        "RT.MODEL.IMPLEMENT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "记录代码、输入、环境、随机种子和参数身份。",
+      "failure_example": "只保存结果而不保存运行身份。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.IMPLEMENT.DETERMINISM",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-IMPLEMENT-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.IMPLEMENT.DETERMINISM",
+      "strength": "MUST",
+      "semantic_key": "modeling.implementation.determinism_contract",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "model_execution"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "execution_determinism_contract",
+        "value": "deterministic_or_declared_stochastic_with_seed_repetition_and_variability_policy"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "command",
+          "state"
+        ],
+        "fields": [
+          "execution_kind",
+          "input_identity",
+          "seed_policy",
+          "repetition_policy",
+          "variability_summary"
+        ]
+      },
+      "outcomes": {
+        "pass": "确定性运行固定全部输入；随机运行显式声明种子、重复与波动处理。",
+        "fail": "运行结果随隐含随机状态变化，却被当作确定性输出。",
+        "not_applicable": "没有任何计算执行。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-IMPLEMENT-001"
+      ],
+      "routes": [
+        "RT.MODEL.IMPLEMENT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "运行必须二选一：固定全部决定性输入，或声明为随机执行并登记种子、重复策略和输出波动。",
+      "failure_example": "随机优化只跑一次且未记录种子，却声称任何人都会得到同一结果。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.IMPLEMENT.REPRODUCE"
+      ]
+    },
+    {
+      "id": "MOD.IMPLEMENT.OUTPUT_REGISTER",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-IMPLEMENT-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.IMPLEMENT.OUTPUT_REGISTER",
+      "strength": "MUST",
+      "semantic_key": "modeling.implementation.inspectable_output",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "result_record"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "registered_model_output",
+        "value": "inspectable_path_schema_unit_hash_and_run_identity"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "output_id",
+          "path",
+          "schema",
+          "unit",
+          "sha256",
+          "run_identity"
+        ]
+      },
+      "outcomes": {
+        "pass": "输出有可打开的载体、明确结构和运行身份。",
+        "fail": "只在对话或日志中给出数字，后续验证者无法独立检查。",
+        "not_applicable": "执行失败且没有产生任何结果输出。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-IMPLEMENT-001"
+      ],
+      "routes": [
+        "RT.MODEL.IMPLEMENT",
+        "RT.MODEL.RESULTS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "每个正式模型输出都登记为可检查对象，包含路径或载体、schema、单位、哈希和产生它的运行身份。",
+      "failure_example": "终端打印一个最优值后关闭会话，没有保存可检查输出。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.IMPLEMENT.REPRODUCE"
+      ]
+    },
+    {
+      "id": "MOD.RESULTS.IDENTITY",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESULTS-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESULTS.IDENTITY",
+      "strength": "MUST",
+      "semantic_key": "modeling.results.identity",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "result_record"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "result_identity",
+        "value": "run_metric_value_unit"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "command"
+        ],
+        "fields": [
+          "run_id",
+          "metric",
+          "value",
+          "unit"
+        ]
+      },
+      "outcomes": {
+        "pass": "结果可回溯到运行。",
+        "fail": "结果来源不明。",
+        "not_applicable": "没有数值结果。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESULTS-001"
+      ],
+      "routes": [
+        "RT.MODEL.IMPLEMENT",
+        "RT.MODEL.RESULTS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把每个关键结果绑定到运行、指标、数值和单位。",
+      "failure_example": "在论文或图表中手工改写未绑定数值。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.RESULTS.INTERPRET",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESULTS-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESULTS.INTERPRET",
+      "strength": "MUST",
+      "semantic_key": "modeling.results.interpretation",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "result_interpretation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "result_statement_type",
+        "value": [
+          "computed",
+          "interpreted",
+          "extrapolated"
+        ]
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "statement",
+          "type",
+          "support"
+        ]
+      },
+      "outcomes": {
+        "pass": "陈述层级清楚。",
+        "fail": "解释越过证据。",
+        "not_applicable": "只输出原始数值。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESULTS-001"
+      ],
+      "routes": [
+        "RT.MODEL.RESULTS",
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "标记结果陈述属于计算、解释或外推。",
+      "failure_example": "把相关性或模型输出表述为现实因果。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.RESULTS.FAILURES",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESULTS-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESULTS.FAILURES",
+      "strength": "MUST",
+      "semantic_key": "modeling.results.failures",
+      "scope": {
+        "objects": [
+          "model"
+        ],
+        "component_types": [
+          "question"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "result_summary"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "failed_runs",
+        "value": "attempt_reason_disposition"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "attempt",
+          "failure",
+          "disposition"
+        ]
+      },
+      "outcomes": {
+        "pass": "失败不会被隐藏。",
+        "fail": "结论忽略相关失败。",
+        "not_applicable": "没有失败运行。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESULTS-001"
+      ],
+      "routes": [
+        "RT.MODEL.RESULTS",
+        "RT.VERIFY.IMPLEMENTATION"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "记录影响结论的失败运行和处置。",
+      "failure_example": "只报告成功运行造成选择性偏差。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "MOD.RESULTS.TRACE",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESULTS-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESULTS.TRACE",
+      "strength": "MUST",
+      "semantic_key": "modeling.results.question_baseline_limitation_trace",
+      "scope": {
+        "objects": [
+          "model",
+          "manuscript"
+        ],
+        "component_types": [
+          "question",
+          "artifact"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7",
+          "A0",
+          "A1",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "result_interpretation"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "result_interpretation_trace",
+        "value": "result_to_question_baseline_and_material_limitations"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "result_id",
+          "question_id",
+          "baseline_comparison",
+          "material_limitations"
+        ]
+      },
+      "outcomes": {
+        "pass": "每项解释均回答具体问题、比较基线并声明影响结论的限制。",
+        "fail": "只列数字或优劣标签，无法判断它回答什么以及受何限制。",
+        "not_applicable": "仅登记原始输出而尚未解释。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESULTS-001"
+      ],
+      "routes": [
+        "RT.MODEL.RESULTS",
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "解释模型输出时，为每项结果建立到题目问题、可比基线和实质限制的明确映射。",
+      "failure_example": "罗列十个指标并写“效果很好”，没有对应题目、基线或限制。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.COMPARE.BASELINE",
+        "MOD.RESULTS.IDENTITY"
+      ]
+    },
+    {
+      "id": "MOD.RESULTS.TEAMMATE_BRIEF",
+      "revision": 2,
+      "status": "active",
+      "capability": "MOD-RESULTS-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESULTS.TEAMMATE_BRIEF",
+      "strength": "MUST",
+      "semantic_key": "modeling.results.teammate_solution_brief",
+      "scope": {
+        "objects": [
+          "model",
+          "manuscript"
+        ],
+        "component_types": [
+          "question",
+          "artifact"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7",
+          "A0",
+          "A1",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "teammate_brief_write"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "teammate_solution_brief",
+        "value": "per_question_nine_semantic_items_current_identity_and_human_restatement"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "question_interpretation_and_boundary",
+          "object_variable_relation_objective_constraint_map",
+          "assumptions_basis_and_impact",
+          "model_establishment_and_formula_roles",
+          "solution_inputs_algorithm_parameters_and_stopping",
+          "key_results_units_and_meaning",
+          "validation_uncertainty_robustness_and_claim_boundaries",
+          "code_output_identity_and_reproduction_path",
+          "minimum_restatement_conclusion_and_open_items",
+          "human_restatement_review"
+        ]
+      },
+      "outcomes": {
+        "pass": "本问讲解稿覆盖九项语义、绑定当前身份，并经未深度参与该问的人复述核对。",
+        "fail": "缺少本问讲解稿，讲解只复制论文结构，或无法让队友复述模型、证据、结论和边界。",
+        "not_applicable": "当前步骤既不准备讲解稿也不进入稿件写作；不得据此永久免除每问讲解稿。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESULTS-001"
+      ],
+      "routes": [
+        "RT.MODEL.RESULTS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "每问必须形成面向队友的技术讲解稿；九项是语义覆盖而非固定标题，稿件不是 S7 证据门，也不自动晋升为论文。",
+      "failure_example": "完成模型后只留下代码和论文片段，没有能供队友独立复述与复现的逐问讲解。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.IMPLEMENT.REPRODUCE",
+        "MOD.RESULTS.IDENTITY",
+        "MOD.RESULTS.TRACE"
+      ]
+    },
+    {
+      "id": "MOD.RESULTS.AUXILIARY_METHOD_VISIBILITY",
+      "revision": 3,
+      "status": "active",
+      "capability": "MOD-RESULTS-001",
+      "domain": "modeling",
+      "owner": "rules/modeling.json#MOD.RESULTS.AUXILIARY_METHOD_VISIBILITY",
+      "strength": "MUST",
+      "semantic_key": "modeling.results.auxiliary_method_visibility",
+      "scope": {
+        "objects": [
+          "model",
+          "manuscript"
+        ],
+        "component_types": [
+          "question",
+          "artifact"
+        ],
+        "states": [
+          "S5",
+          "S6",
+          "S7",
+          "A0",
+          "A1",
+          "A2",
+          "A3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "result_interpretation",
+          "teammate_brief_write"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "auxiliary_method_visibility",
+        "value": "internal_full_contract_public_evidence_summary_unless_promoted"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation",
+          "file"
+        ],
+        "fields": [
+          "method_id",
+          "method_role",
+          "required_for_primary_model",
+          "separate_contract_required",
+          "actual_consumer",
+          "visible_content"
+        ]
+      },
+      "outcomes": {
+        "pass": "辅助验证器的完整合同留在内部技术证据；公开消费者看到对象、设置、指标、结果、结论和边界。",
+        "fail": "未升格的辅助验证器在讲解稿或论文中展开成竞争主模型，或主模型必要逻辑反被藏进内部报告。",
+        "not_applicable": "没有需要独立强合同的辅助方法。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "modeling.results.auxiliary_method_visibility.exception.1",
+          "when": "该方法被正式升格为共同主方法或主证明合同",
+          "disposition": "重开并冻结模型规格后按主方法公开"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "MOD-RESULTS-001"
+      ],
+      "routes": [
+        "RT.MODEL.RESULTS"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "先登记方法角色；强合同辅助验证器要么正式升格并重开规格，要么只对外给出验证证据摘要。",
+      "failure_example": "为了展示工作量，把内部回归求解器完整推导塞入正文，形成与正式模型竞争的第二合同。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "MOD.SPEC.ALGORITHM"
+      ]
+    }
+  ]
+}

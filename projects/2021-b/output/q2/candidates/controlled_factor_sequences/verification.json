@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "1 共同温度接口",
+      "passed": true,
+      "detail": "rows=84, combinations=21"
+    },
+    {
+      "check": "2 对照序列合同",
+      "passed": true,
+      "detail": "contracts=4"
+    },
+    {
+      "check": "3 四温度均值复算",
+      "passed": true,
+      "detail": "max=1.776e-15"
+    },
+    {
+      "check": "4 调整效应和为零",
+      "passed": true,
+      "detail": "max=7.216e-15"
+    },
+    {
+      "check": "5 端点差与删温度方向",
+      "passed": true,
+      "detail": "contrast_max=4.441e-16, stability=8/8"
+    },
+    {
+      "check": "6 装料方式匹配差复算",
+      "passed": true,
+      "detail": "max=4.441e-16, counts=8/8"
+    },
+    {
+      "check": "7 产物清单",
+      "passed": true,
+      "detail": "manifest_rows=5"
+    },
+    {
+      "check": "8 输入与候选状态",
+      "passed": true,
+      "detail": "candidate_evidence_not_formal_question2_model"
+    }
+  ],
+  "what_this_proves": "候选产物忠实实现四条近似对照序列和两组完全匹配配方的描述计算",
+  "what_this_does_not_prove": "不证明单一配方因素的独立因果作用，也不批准其进入正式第二问"
+}

@@ -1,0 +1,19 @@
+{
+  "source": {
+    "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.npz",
+    "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b"
+  },
+  "compact_file": "restructured_figure_data.json",
+  "compact_sha256": "7f61b4c1b9103163e1ab291ff65c0b97382aa370f5d2b6082888c6575c0ddd05",
+  "extraction_script_sha256": "9ea89eedfb16bf7aed6d748629c6da50a747bb7083c1b321300627c670d9144f",
+  "solver_executed": false,
+  "identity_residual": 1.6653345369377348e-15,
+  "threshold_checks": {
+    "positions": 21,
+    "checked_until_s": 220000,
+    "sample_interval_s": 1,
+    "recrossings": 0,
+    "all_node_final_s": 206927
+  },
+  "rounding": "All numerical inputs retained as float64; only plot labels are formatted."
+}

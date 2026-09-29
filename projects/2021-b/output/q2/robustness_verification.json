@@ -1,0 +1,53 @@
+{
+  "status": "q2_s11_independent_verification",
+  "passed": true,
+  "check_count": 9,
+  "checks": [
+    {
+      "check": "1 完整组合删除结构",
+      "passed": true,
+      "detail": "rows=42, expected=42, cells=80"
+    },
+    {
+      "check": "2 完整温度删除结构",
+      "passed": true,
+      "detail": "rows=8, expected=8, cells=63"
+    },
+    {
+      "check": "3 完整组合删除数值复算",
+      "passed": true,
+      "detail": "max_abs_error=3.553e-15, categorical_errors=0"
+    },
+    {
+      "check": "4 完整温度删除数值复算",
+      "passed": true,
+      "detail": "max_abs_error=1.776e-15, categorical_errors=0"
+    },
+    {
+      "check": "5 所有删减平方和闭合",
+      "passed": true,
+      "detail": "runs=50, max_abs_error=5.457e-12"
+    },
+    {
+      "check": "6 异常标记影响复算",
+      "passed": true,
+      "detail": "rows=2, mismatches=0"
+    },
+    {
+      "check": "7 高温匹配与个案边界",
+      "passed": true,
+      "detail": "matched_supported=6/6, a3_rows=2"
+    },
+    {
+      "check": "8 禁止单单元替换",
+      "passed": true,
+      "detail": "forbidden_hits=0"
+    },
+    {
+      "check": "9 S11输出合同与哈希",
+      "passed": true,
+      "detail": "files=5/5, hashes=5/5"
+    }
+  ],
+  "note": "稳健性验证支持条件关联的稳定范围，不构成显著性或因果检验。"
+}

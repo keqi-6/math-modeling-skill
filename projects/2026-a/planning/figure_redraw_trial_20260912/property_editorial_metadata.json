@@ -1,0 +1,96 @@
+{
+  "source": "output/Q2/run_n10240_startsafe.npz",
+  "source_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "role": "Internal A0 visual trial only; no official brief or result modifications.",
+  "width_mm": 170,
+  "height_mm": 103.7,
+  "formula": {
+    "D": "2.4e-3 exp(-0.45/C-3850/(theta+273.15))",
+    "k": "0.21+0.38C/(1+C)",
+    "log_heat": "-3850[1/(theta+273.15)-1/(28+273.15)]",
+    "log_water": "-0.45[1/C-1/2.55]"
+  },
+  "source_formula": "Original problem Appendix 3; theta in Celsius, C in dry-basis kg/kg.",
+  "surface_domain": {
+    "theta_C": [
+      28,
+      50
+    ],
+    "C_kg_kg": [
+      1,
+      2.55
+    ],
+    "meaning": "Constitutive rectangle; not all pairs are states visited by the solution."
+  },
+  "state_selection": "Existing centre/surface values at minute intervals from 0 through 10800 s. No PDE rerun.",
+  "surface_mapping": "Exact orthographic projection of direct formula evaluation; no lighting, false geometry, normalization, or 3D k dependence.",
+  "projection_floor_D_display": 3,
+  "path_mapping": "Solid centre; dashed surface; filled lake-blue circle marks the centre at 3h; open lake-blue circle marks the surface at 3h. Initial state is a filled deep-ink circle. Dotted lines project endpoint onto floor. Symbols match the companion drying-process trial.",
+  "bar_mapping": "Positive heat term in coral; negative water term in hatched lake blue; black vertical ticks denote their algebraic sum. Common signed scale. Net marker differs from the filled/open circle spatial-location symbols.",
+  "source_state_3h": {
+    "temperature_C": [
+      49.8494955728103,
+      49.96641284498236
+    ],
+    "moisture_kg_kg": [
+      1.7661771073155368,
+      1.0081231261700119
+    ]
+  },
+  "derived_3h": {
+    "heat": [
+      0.8648034888562125,
+      0.8691164797461459
+    ],
+    "water": [
+      -0.07831699684668438,
+      -0.2699034590595113
+    ],
+    "net": [
+      0.7864864920095266,
+      0.5992130206866335
+    ],
+    "k": [
+      0.4526262942473793,
+      0.40076857536880517
+    ]
+  },
+  "mathematical_audit": {
+    "D_monotone_C": true,
+    "D_monotone_theta": true,
+    "k_monotone_C": true,
+    "k_theta_derivative": 0,
+    "log_identity_max_error": 1.5543122344752192e-15
+  },
+  "editable_structure": "Nine named SVG layers. Surface/floor geometry and axes separate from editable labels. Inkscape CLI exports all final rasters and PDF.",
+  "exports": [
+    {
+      "renderer": "Inkscape 1.4.4 (dcaf3e7, 2026-05-05)",
+      "input": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\property_editorial.svg",
+      "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\property_editorial.png",
+      "bytes": 548591,
+      "dpi": 300,
+      "text_to_path": false,
+      "warnings": ""
+    },
+    {
+      "renderer": "Inkscape 1.4.4 (dcaf3e7, 2026-05-05)",
+      "input": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\property_editorial.svg",
+      "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\property_editorial.pdf",
+      "bytes": 364573,
+      "dpi": 300,
+      "text_to_path": false,
+      "warnings": ""
+    },
+    {
+      "renderer": "Inkscape 1.4.4 (dcaf3e7, 2026-05-05)",
+      "input": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\property_editorial_no_text.svg",
+      "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\property_editorial_no_text.png",
+      "bytes": 186756,
+      "dpi": 150,
+      "text_to_path": false,
+      "warnings": ""
+    }
+  ],
+  "generator_sha256": "a3726cbe7d44c343d14c48f3a09df1c4a069a02fcacbd419af9271de37991c07"
+}

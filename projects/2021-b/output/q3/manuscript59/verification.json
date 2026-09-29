@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "passed": true,
+  "checks_passed": 5,
+  "checks_total": 5,
+  "checks": [
+    {
+      "check": "325摄氏度内部缺口身份",
+      "passed": true,
+      "detail": "count=11"
+    },
+    {
+      "check": "分量PCHIP逐点独立复算",
+      "passed": true,
+      "detail": "max_abs_difference=7.105e-15"
+    },
+    {
+      "check": "底稿表14排序和显示值",
+      "passed": true,
+      "detail": "ids=['A7', 'A8', 'A6', 'B1', 'A12'], yields=[6.4562, 4.1571, 3.3078, 2.2259, 1.9996]"
+    },
+    {
+      "check": "底稿表15显示值",
+      "passed": true,
+      "detail": "三种方法最高缺测预测及A2领先幅度"
+    },
+    {
+      "check": "底稿表16显示值",
+      "passed": true,
+      "detail": "分量PCHIP后重构=(0.5365, 0.0804, 1.7048, 13.0338, 1.0864); 直接收率PCHIP=(0.7152, 0.1627, 1.9203, 13.4906, 1.8012); 局部直线插值=(1.557, 0.8092, 2.7874, 14.1522, 4.0679)"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v14/project-platform-contract.json",
+  "schema_version": "14.0",
+  "owner": "references/project-platform-contract.json",
+  "principle": "logical_platform_is_mandatory_while_directories_materialize_only_for_admitted_artifacts",
+  "applicability": {
+    "object": "project",
+    "skill_candidate_packages": "excluded_and_governed_by_route_contract_skill_package_boundary"
+  },
+  "new_project_policy": {
+    "layout": "canonical",
+    "eager_scaffold": false,
+    "directory_creation": "create_only_the_parent_chain_of_an_admitted_artifact",
+    "arbitrary_top_level_paths": "forbidden"
+  },
+  "existing_project_policy": {
+    "inspect_before_change": true,
+    "automatic_move_or_rename": false,
+    "existing_files": "grandfathered_until_their_role_or_location_is_changed",
+    "new_files": "use_the_canonical_role_path",
+    "noncanonical_new_path": "requires_a_separate_user_approved_platform_migration"
+  },
+  "roles": {
+    "official_input": {
+      "path_patterns": ["^data/[^/].*"],
+      "classes": ["source", "data"],
+      "responsibility": "immutable official statements, attachments, templates, and raw inputs"
+    },
+    "external_evidence": {
+      "path_patterns": ["^references/[^/].*"],
+      "classes": ["source", "data"],
+      "responsibility": "external literature, source records, notes, and legally obtained evidence"
+    },
+    "planning": {
+      "path_patterns": ["^planning/[^/].*"],
+      "classes": ["source", "control"],
+      "responsibility": "problem understanding, plans, alternatives, decisions, audits, and claim mappings"
+    },
+    "code": {
+      "path_patterns": ["^src/[^/].*"],
+      "classes": ["code"],
+      "responsibility": "executable project code, with task-specific code below src/<task-id>/ and shared utilities below src/_utils/"
+    },
+    "result": {
+      "path_patterns": ["^output/[^/].*"],
+      "classes": ["data", "result"],
+      "responsibility": "machine-produced results and frozen downstream inputs organized by real task or stable production stage"
+    },
+    "technical_documentation": {
+      "path_patterns": ["^docs/[^/].*"],
+      "classes": ["source", "result"],
+      "responsibility": "derivation, verification, reproduction, defense, and teammate-facing technical explanation; never the manuscript workspace"
+    },
+    "manuscript": {
+      "path_patterns": ["^paper/[^/].*"],
+      "classes": ["manuscript"],
+      "responsibility": "the sole evaluator-facing manuscript workspace"
+    },
+    "visual": {
+      "path_patterns": ["^(?:paper|output)/[^/].*"],
+      "classes": ["visual"],
+      "responsibility": "generated or publication visuals whose producer and consumer determine whether they live with results or manuscript assets"
+    },
+    "delivery": {
+      "path_patterns": ["^delivery/[^/].*"],
+      "classes": ["delivery"],
+      "responsibility": "explicit final-package staging or delivery mirrors; never the working authority"
+    },
+    "control": {
+      "path_patterns": ["^\\.modeling/[^/].*"],
+      "classes": ["control"],
+      "responsibility": "typed cross-session state and recovery control data"
+    },
+    "skill_support": {
+      "path_patterns": ["^skills/[^/].*"],
+      "classes": ["source", "code", "control"],
+      "responsibility": "cross-project workflow support only; never project-specific parameters, results, or answers"
+    },
+    "navigation": {
+      "path_patterns": ["^(?:README\\.md|HANDOFF\\.md)$"],
+      "classes": ["control"],
+      "responsibility": "optional human navigation that points to authorities without becoming one"
+    }
+  },
+  "cross_role_invariants": [
+    "one artifact has exactly one platform_role",
+    "a path must match its role and class",
+    "planning and technical documentation are not manuscript prose",
+    "working results do not become delivery artifacts by copying or renaming",
+    "navigation files do not become evidence or state authorities",
+    "admission never authorizes moving existing inputs or inventing empty placeholders"
+  ]
+}

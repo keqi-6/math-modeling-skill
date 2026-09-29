@@ -1,0 +1,61 @@
+\documentclass[border=6pt]{standalone}
+\usepackage[UTF8,fontset=windows]{ctex}
+\usepackage{chemfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+
+\tikzset{
+  molecule/.style={
+    align=center,
+    text=black,
+    inner sep=2pt,
+    font=\sffamily\footnotesize
+  },
+  reaction/.style={
+    -{Latex[length=2.0mm,width=1.35mm]},
+    draw=black,
+    line width=0.5pt
+  },
+  route label/.style={
+    fill=white,
+    text=black,
+    inner sep=1.2pt,
+    font=\sffamily\scriptsize
+  }
+}
+
+\begin{document}
+\sffamily
+\setchemfig{atom sep=2.0em,bond style={line width=0.5pt,draw=black}}
+\begin{tikzpicture}[node distance=12mm and 22mm]
+  \node[molecule] (ethanol) {
+    \chemfig{CH_3-CH_2-OH}\\[-1pt]
+    乙醇
+  };
+
+  \node[molecule, right=27mm of ethanol] (acetaldehyde) {
+    \chemfig{CH_3-C(=[2]O)-H}\\[-1pt]
+    乙醛
+  };
+
+  \node[molecule, right=30mm of acetaldehyde] (butadiene) {
+    \chemfig{CH_2=CH-CH=CH_2}\\[-1pt]
+    丁二烯（C4烯烃示例）
+  };
+
+  \node[molecule, below=18mm of acetaldehyde] (butanol) {
+    \chemfig{CH_3-CH_2-CH_2-CH_2-OH}\\[-1pt]
+    正丁醇（高碳醇示例）
+  };
+
+  \node[molecule, below=18mm of ethanol] (ethylene) {
+    \chemfig{CH_2=CH_2}\\[-1pt]
+    乙烯
+  };
+
+  \draw[reaction] (ethanol) -- node[route label,above]{脱氢} (acetaldehyde);
+  \draw[reaction] (acetaldehyde) -- node[route label,above]{多步转化} (butadiene);
+  \draw[reaction] (ethanol) -- node[route label,left]{脱水} (ethylene);
+  \draw[reaction] (ethanol.south east) -- node[route label,sloped,above]{碳链增长} (butanol.north west);
+\end{tikzpicture}
+\end{document}

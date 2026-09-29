@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "run_status": "complete",
+  "artifact_status": "s5_frozen_unverified",
+  "producer": "src/q2/01_solve.py",
+  "started_at_utc": "2026-08-23T14:06:28.647804+00:00",
+  "finished_at_utc": "2026-08-23T14:06:28.696660+00:00",
+  "python_version": "3.12.3",
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "randomness": "none",
+  "solver": "exact Fraction Gaussian elimination plus closed-form regression",
+  "inputs": {
+    "planning/analysis/2026-08-23_q2_s2_assessment.md": "02ccfa086330a2b679cba87287e50aecc6324b0b8370d1e08d36366675909635",
+    "planning/analysis/2026-08-23_q2_s4_specification.md": "c063079de8a375fc968a274496b0b4f6586c768180bbda0f52d3e72acfe3da8b"
+  },
+  "code": {
+    "src/q2/core.py": "68b2c9e0d037aa22137b6983da91481abfba446192e2f640f879f6d3df46c7fc",
+    "src/q2/01_solve.py": "194ace75063cfce3dc845e0407aaf45585bc761c89b1073c50b5058eb29d184d"
+  },
+  "outputs": {
+    "output/q2/s5_results.json": "28c003c3dfc6531f3f14f074fa192bd8cda46f302113657ed731971d740d5190"
+  },
+  "dimensions": {
+    "scenarios": 6,
+    "policies_per_scenario": 16,
+    "candidate_records": 96,
+    "feasible_per_scenario": 10,
+    "infeasible_per_scenario": 6
+  },
+  "consumers": [
+    "planning/analysis/2026-08-23_q2_s5_implementation.md",
+    "future independent S6 verifier",
+    "future docs/q2/solution_brief.md after S6 authorization"
+  ]
+}

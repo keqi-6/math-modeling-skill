@@ -1,0 +1,10 @@
+{
+  "schema_version": "q5-v2-verification-checkpoint-1.0",
+  "stage": "complete",
+  "elapsed_s": 61.142355814998155,
+  "updated_at": "2026-08-29T07:57:04+08:00",
+  "passed": true,
+  "output_json": "docs/q5_v2_validation_results.json",
+  "report_md": "docs/q5_v2_validation_report.md",
+  "excel": "output/q5_v2/result3.xlsx"
+}

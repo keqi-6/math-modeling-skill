@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "status": "q3_s11_robustness_and_explanation",
+  "s10_verified": true,
+  "interior_holdout": {
+    "count": 72,
+    "linear": {
+      "mae_pct_point": 1.5570410003985922,
+      "median_ae_pct_point": 0.809218541419311,
+      "rmse_pct_point": 2.787380179021031,
+      "max_ae_pct_point": 14.15218846592203
+    },
+    "pchip": {
+      "mae_pct_point": 0.7152185718885238,
+      "median_ae_pct_point": 0.16268086556685651,
+      "rmse_pct_point": 1.92033365547368,
+      "max_ae_pct_point": 13.490627137330009,
+      "points_beating_linear": 68
+    },
+    "top1_identification": {
+      "correct_temperature_blocks": 4,
+      "temperature_block_count": 5,
+      "perfect": false
+    }
+  },
+  "d1_alternative_prediction": {
+    "cell_count": 11,
+    "all_pchip_and_linear_below_low_d0_recommendation": true,
+    "maximum_pchip_prediction_pct": 6.551703373656117,
+    "maximum_linear_prediction_pct": 7.229294685464113,
+    "maximum_absolute_method_difference_pct_point": 0.7399659644946341,
+    "changes_formal_recommendation_under_either_method": false
+  },
+  "ranking_gaps": [
+    {
+      "scenario": "general",
+      "best_catalyst_id": "A3",
+      "best_temperature_c": 400.0,
+      "best_c4_yield_pct": 44.72805977609709,
+      "runner_up_catalyst_id": "A3",
+      "runner_up_temperature_c": 450.0,
+      "runner_up_c4_yield_pct": 43.118441667406906,
+      "lead_over_runner_up_pct_point": 1.609618108690185,
+      "best_distinct_combination_id": "A4",
+      "best_distinct_combination_temperature_c": 400.0,
+      "best_distinct_combination_c4_yield_pct": 36.27781909092121,
+      "lead_over_best_distinct_combination_pct_point": 8.450240685175878
+    },
+    {
+      "scenario": "strict_below_350",
+      "best_catalyst_id": "A2",
+      "best_temperature_c": 325.0,
+      "best_c4_yield_pct": 17.264309323382783,
+      "runner_up_catalyst_id": "A3",
+      "runner_up_temperature_c": 325.0,
+      "runner_up_c4_yield_pct": 10.7927419705323,
+      "lead_over_runner_up_pct_point": 6.471567352850483,
+      "best_distinct_combination_id": "A3",
+      "best_distinct_combination_temperature_c": 325.0,
+      "best_distinct_combination_c4_yield_pct": 10.7927419705323,
+      "lead_over_best_distinct_combination_pct_point": 6.471567352850483
+    }
+  ],
+  "coverage": {
+    "temperature_450_observed_combinations": 1,
+    "temperature_450_observed_ids": [
+      "A3"
+    ],
+    "temperature_325_observed_combinations": 10,
+    "temperature_325_total_combinations": 21
+  },
+  "interpretation": [
+    "PCHIP在72次内部遮点的平均和中位绝对误差低于局部直线，且68次更准，因此适合作为窄D1辅助。",
+    "PCHIP的最高候选识别只在5个温度块中正确4个，最坏遮点误差仍为13.4906个百分点，不能把插值候选写成真实最优。",
+    "11个325摄氏度缺口改用局部直线后也均低于低温D0推荐，因此低温推荐不依赖单一插值形式。",
+    "一般情景最高与次高均为A3，领先1.6096个百分点；与最高不同组合A4的差距为8.4502个百分点。",
+    "严格低温A2领先A3为6.4716个百分点；但没有重复实验，差距是观测差，不是显著性结论。",
+    "450摄氏度只有A3一个实测组合，325摄氏度仅覆盖10/21个组合，跨组合比较和高温推广必须受限。"
+  ],
+  "claim_boundaries": [
+    "遮点误差是预测验证误差，不是实验测量误差",
+    "不构造无重复数据无法支持的传统显著性检验或置信区间",
+    "D1两种插值对照只检查推荐是否依赖单一插值形式，不批准新模型",
+    "450摄氏度结果仅代表A3个案，不能推为全部组合的高温规律",
+    "325摄氏度实测覆盖不足，D1预测仍须实验验证",
+    "本阶段不改变D0正式推荐、D1辅助和D2关闭的权限结构"
+  ]
+}

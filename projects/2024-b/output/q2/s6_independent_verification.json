@@ -1,0 +1,2244 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s6_frozen_awaiting_human_review",
+  "producer": "src/q2/02_verify_independent.py",
+  "independence_boundary": {
+    "production_core_imported": false,
+    "production_solver_imported": false,
+    "method": "从S4关系独立推导两类可行循环的精确几何更新闭式式",
+    "comparison_order": "先从S2和S4重建结果，再逐字段读取S5冻结结果进行对账"
+  },
+  "solution_verification": {
+    "V1_implementation_conformity": {
+      "status": "passed",
+      "candidate_records_checked": 96,
+      "exact_field_comparisons": 930,
+      "flow_and_cost_invariant_checks": 336,
+      "candidate_checks": [
+        {
+          "scenario_id": 1,
+          "policy_id": "0000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "0001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "0010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "0011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "0100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "0101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "0110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "0111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "1000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "1001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "1010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "1011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "1100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "1101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "1110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 1,
+          "policy_id": "1111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "0000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "0001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "0010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "0011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "0100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "0101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "0110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "0111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "1000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "1001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "1010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "1011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "1100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "1101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "1110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 2,
+          "policy_id": "1111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "0000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "0001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "0010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "0011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "0100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "0101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "0110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "0111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "1000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "1001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "1010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "1011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "1100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "1101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "1110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 3,
+          "policy_id": "1111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "0000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "0001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "0010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "0011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "0100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "0101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "0110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "0111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "1000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "1001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "1010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "1011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "1100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "1101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "1110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 4,
+          "policy_id": "1111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "0000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "0001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "0010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "0011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "0100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "0101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "0110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "0111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "1000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "1001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "1010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "1011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "1100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "1101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "1110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 5,
+          "policy_id": "1111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "0000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "0001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "0010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "0011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "0100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "0101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "0110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "0111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "1000",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "1001",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "1010",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "1011",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "1100",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "1101",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "1110",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        },
+        {
+          "scenario_id": 6,
+          "policy_id": "1111",
+          "passed": true,
+          "compared_fields": [
+            "feasible",
+            "absorption_probability",
+            "part1_purchases",
+            "part2_purchases",
+            "part1_inspections",
+            "part2_inspections",
+            "assemblies",
+            "product_inspections",
+            "disassemblies",
+            "market_bad_products_and_exchanges",
+            "any_market_bad",
+            "cost",
+            "profit"
+          ]
+        }
+      ]
+    },
+    "V2_numerical_solution_verification": {
+      "status": "not_triggered",
+      "reason": "全部输入按有限小数精确转为Fraction，候选域16种穷尽，无网格、迭代容差、随机搜索或浮点排序",
+      "display_boundary": "小数只作展示，全部排序和对账使用精确分数"
+    }
+  },
+  "model_examination": {
+    "V3_structure": {
+      "status": "passed",
+      "claim": "固定方案域内的循环可行性、事件费用和推荐排序在所声明条件下自洽",
+      "failure_risks": [
+        "持久坏件被有限截断伪装为有限成本",
+        "失败装配、检测、拆解、调换或收入发生时点错位",
+        "把只在0<p1,p2,p0<1内成立的门判定外推到退化边界",
+        "未知零件相关性改变无检测方案良率并引起最优决策切换"
+      ],
+      "tests": {
+        "persistent_bad_closed_class": {
+          "mathematical_relation": "拆解且存在未检零件时，最终吸收概率等于所有未检零件初始为正品的联合概率；六情景中严格小于1",
+          "criterion": "全部36个情景—不可行方案的吸收概率严格小于1且不生成利润",
+          "result": "passed"
+        },
+        "completed_order_flow_invariants": {
+          "mathematical_relation": "期望失败装配数=期望装配数-1；成品检测数=xp×装配数；调换数=(1-xp)×失败数；拆解数=xd×失败数；利润=一次售价-总成本",
+          "criterion": "全部60个可行情景—方案精确满足五个不变量",
+          "result": "passed"
+        },
+        "degenerate_boundaries": {
+          "zero_part_defect_rates": {
+            "operation": "令p1=p2=0且0<p0<1",
+            "criterion": "持久坏件闭类不可达，16种固定方案均能最终完成",
+            "result": "passed",
+            "feasible_policy_count": 16,
+            "meaning": "S5的10可行6不可行只适用于已批准的六情景正次品率范围"
+          },
+          "certain_assembly_failure": {
+            "operation": "令p0=1",
+            "criterion": "每次装配必失败，任何方案都不能完成订单",
+            "result": "passed",
+            "feasible_policy_count": 0,
+            "meaning": "S5可行性证明依赖g0>0，不能外推到表外退化边界"
+          }
+        },
+        "joint_quality_correlation_bounds": {
+          "mathematical_relation": "max(0,g1+g2-1)≤P(G1,G2)≤min(g1,g2)，在每个允许值下重新比较全部16种方案",
+          "criterion": "给出六情景连续区间的精确切换点和最优集合，不把独立性点代替整个区间",
+          "result": "passed"
+        }
+      },
+      "proof_boundary": "结构检查支持题面六情景及批准的透明补购耦合，不确认检测误差、时间依赖、公共库存、产能或真实工厂利润"
+    },
+    "V4_reality_confirmation": {
+      "status": "not_triggered",
+      "reason": "题面没有工厂历史、检测误差、联合质量频数、批次序列、重复装配试验或现实成本对照",
+      "boundary": "现实产线有效性保持未确认；获得企业或问题四估计数据后必须重新打开V4"
+    }
+  },
+  "uncertainty_register": {
+    "table1_finite_decimals": {
+      "status": "not_triggered",
+      "reason": "问题二把六行作为固定离散情景，未给测量精度或样本量"
+    },
+    "part_quality_correlation": {
+      "status": "bounded",
+      "method": "Fréchet联合合格概率界内连续重新优化"
+    },
+    "repeat_purchase_and_assembly_dependence": {
+      "status": "unresolved",
+      "effect": "缺少批次和重复试验，不能给现实概率分布；主结论保持条件性"
+    },
+    "inspection_error": {
+      "status": "unresolved",
+      "effect": "没有灵敏度和特异度，结论仅适用于理想检测"
+    },
+    "numerical_approximation": {
+      "status": "not_triggered",
+      "reason": "精确有理数闭式计算和穷尽候选"
+    },
+    "solver_uncertainty": {
+      "status": "not_triggered",
+      "reason": "无随机、提前停止、局部搜索或未闭合最优性间隙"
+    }
+  },
+  "scenario_results": [
+    {
+      "scenario_id": 1,
+      "best_policy_ids": [
+        "1101"
+      ],
+      "best_expected_profit": {
+        "fraction": "158/9",
+        "decimal": 17.555555555555557
+      },
+      "best_expected_cost": {
+        "fraction": "346/9",
+        "decimal": 38.44444444444444
+      },
+      "candidate_count": 16,
+      "feasible_count": 10,
+      "infeasible_count": 6,
+      "s5_exact_agreement": true,
+      "correlation_boundary_reoptimization": {
+        "marginally_admissible_joint_good_interval": {
+          "lower": {
+            "fraction": "4/5",
+            "decimal": 0.8
+          },
+          "upper": {
+            "fraction": "9/10",
+            "decimal": 0.9
+          }
+        },
+        "independence_value": {
+          "fraction": "81/100",
+          "decimal": 0.81
+        },
+        "lower_endpoint_best_policy_ids": [
+          "1101"
+        ],
+        "independence_best_policy_ids": [
+          "1101"
+        ],
+        "upper_endpoint_best_policy_ids": [
+          "0000"
+        ],
+        "all_policies_optimal_somewhere_in_interval": [
+          "0000",
+          "1101"
+        ],
+        "decision_invariant_over_full_interval": false,
+        "critical_points": [
+          {
+            "joint_good_probability": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "best_policy_ids": [
+              "1101"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "17/20",
+              "decimal": 0.85
+            },
+            "best_policy_ids": [
+              "0000",
+              "1101"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "9/10",
+              "decimal": 0.9
+            },
+            "best_policy_ids": [
+              "0000"
+            ]
+          }
+        ],
+        "open_intervals": [
+          {
+            "left_open": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "right_open": {
+              "fraction": "17/20",
+              "decimal": 0.85
+            },
+            "representative_midpoint": {
+              "fraction": "33/40",
+              "decimal": 0.825
+            },
+            "best_policy_ids": [
+              "1101"
+            ]
+          },
+          {
+            "left_open": {
+              "fraction": "17/20",
+              "decimal": 0.85
+            },
+            "right_open": {
+              "fraction": "9/10",
+              "decimal": 0.9
+            },
+            "representative_midpoint": {
+              "fraction": "7/8",
+              "decimal": 0.875
+            },
+            "best_policy_ids": [
+              "0000"
+            ]
+          }
+        ],
+        "proof_boundary": "只改变两个空槽首次成对新购时的联合合格概率；单槽补购仍按边际率，不代表批次、时间或重复装配依赖的全部可能结构"
+      }
+    },
+    {
+      "scenario_id": 2,
+      "best_policy_ids": [
+        "1101"
+      ],
+      "best_expected_profit": {
+        "fraction": "43/4",
+        "decimal": 10.75
+      },
+      "best_expected_cost": {
+        "fraction": "181/4",
+        "decimal": 45.25
+      },
+      "candidate_count": 16,
+      "feasible_count": 10,
+      "infeasible_count": 6,
+      "s5_exact_agreement": true,
+      "correlation_boundary_reoptimization": {
+        "marginally_admissible_joint_good_interval": {
+          "lower": {
+            "fraction": "3/5",
+            "decimal": 0.6
+          },
+          "upper": {
+            "fraction": "4/5",
+            "decimal": 0.8
+          }
+        },
+        "independence_value": {
+          "fraction": "16/25",
+          "decimal": 0.64
+        },
+        "lower_endpoint_best_policy_ids": [
+          "1101"
+        ],
+        "independence_best_policy_ids": [
+          "1101"
+        ],
+        "upper_endpoint_best_policy_ids": [
+          "1101"
+        ],
+        "all_policies_optimal_somewhere_in_interval": [
+          "1101"
+        ],
+        "decision_invariant_over_full_interval": true,
+        "critical_points": [
+          {
+            "joint_good_probability": {
+              "fraction": "3/5",
+              "decimal": 0.6
+            },
+            "best_policy_ids": [
+              "1101"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "best_policy_ids": [
+              "1101"
+            ]
+          }
+        ],
+        "open_intervals": [
+          {
+            "left_open": {
+              "fraction": "3/5",
+              "decimal": 0.6
+            },
+            "right_open": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "representative_midpoint": {
+              "fraction": "7/10",
+              "decimal": 0.7
+            },
+            "best_policy_ids": [
+              "1101"
+            ]
+          }
+        ],
+        "proof_boundary": "只改变两个空槽首次成对新购时的联合合格概率；单槽补购仍按边际率，不代表批次、时间或重复装配依赖的全部可能结构"
+      }
+    },
+    {
+      "scenario_id": 3,
+      "best_policy_ids": [
+        "1101",
+        "1111"
+      ],
+      "best_expected_profit": {
+        "fraction": "134/9",
+        "decimal": 14.88888888888889
+      },
+      "best_expected_cost": {
+        "fraction": "370/9",
+        "decimal": 41.111111111111114
+      },
+      "candidate_count": 16,
+      "feasible_count": 10,
+      "infeasible_count": 6,
+      "s5_exact_agreement": true,
+      "correlation_boundary_reoptimization": {
+        "marginally_admissible_joint_good_interval": {
+          "lower": {
+            "fraction": "4/5",
+            "decimal": 0.8
+          },
+          "upper": {
+            "fraction": "9/10",
+            "decimal": 0.9
+          }
+        },
+        "independence_value": {
+          "fraction": "81/100",
+          "decimal": 0.81
+        },
+        "lower_endpoint_best_policy_ids": [
+          "1101",
+          "1111"
+        ],
+        "independence_best_policy_ids": [
+          "1101",
+          "1111"
+        ],
+        "upper_endpoint_best_policy_ids": [
+          "0010"
+        ],
+        "all_policies_optimal_somewhere_in_interval": [
+          "0010",
+          "1101",
+          "1111"
+        ],
+        "decision_invariant_over_full_interval": false,
+        "critical_points": [
+          {
+            "joint_good_probability": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "best_policy_ids": [
+              "1101",
+              "1111"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "31/37",
+              "decimal": 0.8378378378378378
+            },
+            "best_policy_ids": [
+              "0010",
+              "1101",
+              "1111"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "9/10",
+              "decimal": 0.9
+            },
+            "best_policy_ids": [
+              "0010"
+            ]
+          }
+        ],
+        "open_intervals": [
+          {
+            "left_open": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "right_open": {
+              "fraction": "31/37",
+              "decimal": 0.8378378378378378
+            },
+            "representative_midpoint": {
+              "fraction": "303/370",
+              "decimal": 0.8189189189189189
+            },
+            "best_policy_ids": [
+              "1101",
+              "1111"
+            ]
+          },
+          {
+            "left_open": {
+              "fraction": "31/37",
+              "decimal": 0.8378378378378378
+            },
+            "right_open": {
+              "fraction": "9/10",
+              "decimal": 0.9
+            },
+            "representative_midpoint": {
+              "fraction": "643/740",
+              "decimal": 0.8689189189189189
+            },
+            "best_policy_ids": [
+              "0010"
+            ]
+          }
+        ],
+        "proof_boundary": "只改变两个空槽首次成对新购时的联合合格概率；单槽补购仍按边际率，不代表批次、时间或重复装配依赖的全部可能结构"
+      }
+    },
+    {
+      "scenario_id": 4,
+      "best_policy_ids": [
+        "1111"
+      ],
+      "best_expected_profit": {
+        "fraction": "57/4",
+        "decimal": 14.25
+      },
+      "best_expected_cost": {
+        "fraction": "167/4",
+        "decimal": 41.75
+      },
+      "candidate_count": 16,
+      "feasible_count": 10,
+      "infeasible_count": 6,
+      "s5_exact_agreement": true,
+      "correlation_boundary_reoptimization": {
+        "marginally_admissible_joint_good_interval": {
+          "lower": {
+            "fraction": "3/5",
+            "decimal": 0.6
+          },
+          "upper": {
+            "fraction": "4/5",
+            "decimal": 0.8
+          }
+        },
+        "independence_value": {
+          "fraction": "16/25",
+          "decimal": 0.64
+        },
+        "lower_endpoint_best_policy_ids": [
+          "1111"
+        ],
+        "independence_best_policy_ids": [
+          "1111"
+        ],
+        "upper_endpoint_best_policy_ids": [
+          "1111"
+        ],
+        "all_policies_optimal_somewhere_in_interval": [
+          "1111"
+        ],
+        "decision_invariant_over_full_interval": true,
+        "critical_points": [
+          {
+            "joint_good_probability": {
+              "fraction": "3/5",
+              "decimal": 0.6
+            },
+            "best_policy_ids": [
+              "1111"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "best_policy_ids": [
+              "1111"
+            ]
+          }
+        ],
+        "open_intervals": [
+          {
+            "left_open": {
+              "fraction": "3/5",
+              "decimal": 0.6
+            },
+            "right_open": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "representative_midpoint": {
+              "fraction": "7/10",
+              "decimal": 0.7
+            },
+            "best_policy_ids": [
+              "1111"
+            ]
+          }
+        ],
+        "proof_boundary": "只改变两个空槽首次成对新购时的联合合格概率；单槽补购仍按边际率，不代表批次、时间或重复装配依赖的全部可能结构"
+      }
+    },
+    {
+      "scenario_id": 5,
+      "best_policy_ids": [
+        "0100"
+      ],
+      "best_expected_profit": {
+        "fraction": "971/81",
+        "decimal": 11.987654320987655
+      },
+      "best_expected_cost": {
+        "fraction": "3565/81",
+        "decimal": 44.01234567901235
+      },
+      "candidate_count": 16,
+      "feasible_count": 10,
+      "infeasible_count": 6,
+      "s5_exact_agreement": true,
+      "correlation_boundary_reoptimization": {
+        "marginally_admissible_joint_good_interval": {
+          "lower": {
+            "fraction": "7/10",
+            "decimal": 0.7
+          },
+          "upper": {
+            "fraction": "4/5",
+            "decimal": 0.8
+          }
+        },
+        "independence_value": {
+          "fraction": "18/25",
+          "decimal": 0.72
+        },
+        "lower_endpoint_best_policy_ids": [
+          "0100"
+        ],
+        "independence_best_policy_ids": [
+          "0100"
+        ],
+        "upper_endpoint_best_policy_ids": [
+          "0010"
+        ],
+        "all_policies_optimal_somewhere_in_interval": [
+          "0010",
+          "0100"
+        ],
+        "decision_invariant_over_full_interval": false,
+        "critical_points": [
+          {
+            "joint_good_probability": {
+              "fraction": "7/10",
+              "decimal": 0.7
+            },
+            "best_policy_ids": [
+              "0100"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "540/713",
+              "decimal": 0.7573632538569425
+            },
+            "best_policy_ids": [
+              "0010",
+              "0100"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "best_policy_ids": [
+              "0010"
+            ]
+          }
+        ],
+        "open_intervals": [
+          {
+            "left_open": {
+              "fraction": "7/10",
+              "decimal": 0.7
+            },
+            "right_open": {
+              "fraction": "540/713",
+              "decimal": 0.7573632538569425
+            },
+            "representative_midpoint": {
+              "fraction": "10391/14260",
+              "decimal": 0.7286816269284713
+            },
+            "best_policy_ids": [
+              "0100"
+            ]
+          },
+          {
+            "left_open": {
+              "fraction": "540/713",
+              "decimal": 0.7573632538569425
+            },
+            "right_open": {
+              "fraction": "4/5",
+              "decimal": 0.8
+            },
+            "representative_midpoint": {
+              "fraction": "2776/3565",
+              "decimal": 0.7786816269284712
+            },
+            "best_policy_ids": [
+              "0010"
+            ]
+          }
+        ],
+        "proof_boundary": "只改变两个空槽首次成对新购时的联合合格概率；单槽补购仍按边际率，不代表批次、时间或重复装配依赖的全部可能结构"
+      }
+    },
+    {
+      "scenario_id": 6,
+      "best_policy_ids": [
+        "0000"
+      ],
+      "best_expected_profit": {
+        "fraction": "7826/361",
+        "decimal": 21.678670360110804
+      },
+      "best_expected_cost": {
+        "fraction": "12390/361",
+        "decimal": 34.3213296398892
+      },
+      "candidate_count": 16,
+      "feasible_count": 10,
+      "infeasible_count": 6,
+      "s5_exact_agreement": true,
+      "correlation_boundary_reoptimization": {
+        "marginally_admissible_joint_good_interval": {
+          "lower": {
+            "fraction": "9/10",
+            "decimal": 0.9
+          },
+          "upper": {
+            "fraction": "19/20",
+            "decimal": 0.95
+          }
+        },
+        "independence_value": {
+          "fraction": "361/400",
+          "decimal": 0.9025
+        },
+        "lower_endpoint_best_policy_ids": [
+          "0000"
+        ],
+        "independence_best_policy_ids": [
+          "0000"
+        ],
+        "upper_endpoint_best_policy_ids": [
+          "0000"
+        ],
+        "all_policies_optimal_somewhere_in_interval": [
+          "0000"
+        ],
+        "decision_invariant_over_full_interval": true,
+        "critical_points": [
+          {
+            "joint_good_probability": {
+              "fraction": "9/10",
+              "decimal": 0.9
+            },
+            "best_policy_ids": [
+              "0000"
+            ]
+          },
+          {
+            "joint_good_probability": {
+              "fraction": "19/20",
+              "decimal": 0.95
+            },
+            "best_policy_ids": [
+              "0000"
+            ]
+          }
+        ],
+        "open_intervals": [
+          {
+            "left_open": {
+              "fraction": "9/10",
+              "decimal": 0.9
+            },
+            "right_open": {
+              "fraction": "19/20",
+              "decimal": 0.95
+            },
+            "representative_midpoint": {
+              "fraction": "37/40",
+              "decimal": 0.925
+            },
+            "best_policy_ids": [
+              "0000"
+            ]
+          }
+        ],
+        "proof_boundary": "只改变两个空槽首次成对新购时的联合合格概率；单槽补购仍按边际率，不代表批次、时间或重复装配依赖的全部可能结构"
+      }
+    }
+  ],
+  "direct_conclusion_boundary": "S5六情景最优集合在独立主模型复算中精确重现；相关性边界下的决策依赖另见各情景重新优化结果；结论仍只属于16种固定方案和已批准成本口径",
+  "human_review_status": "awaiting"
+}

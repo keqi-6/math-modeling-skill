@@ -1,0 +1,78 @@
+{
+  "schema_version": "11.0",
+  "state_sets": {
+    "project": ["P0", "P1", "P2"],
+    "question": ["S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7"],
+    "shared_data": ["D0", "D1", "D2", "D3"],
+    "artifact": ["A0", "A1", "A2", "A3"]
+  },
+  "evidence_closure_policy": {
+    "default": "pass",
+    "justified_not_applicable": {
+      "levels": ["E2_NUMERICAL", "E4_REALITY"],
+      "disposition": "justified_not_triggered",
+      "requires_resolved_decision_evidence": true,
+      "requires_current_artifact_identity_ref": true,
+      "semantic_truth_authority": "human_confirmation; automation verifies structure and current identity, not the truth of the rationale",
+      "required_fields": [
+        "disposition",
+        "rationale",
+        "applicability_basis",
+        "claim_boundaries"
+      ],
+      "interpretation": {
+        "E2_NUMERICAL": "no numerical approximation, search, stochastic, discretization, or comparison risk is present",
+        "E4_REALITY": "no defensible reality comparator is available and the resulting claim is explicitly bounded against empirical or deployment validity"
+      },
+      "forbidden": [
+        "bare_not_applicable",
+        "not_applicable_used_to_hide_failed_or_unperformed_applicable_check",
+        "not_applicable_for_E1_IMPLEMENTATION_or_E3_STRUCTURAL"
+      ]
+    }
+  },
+  "transitions": {
+    "question": [
+      {"from": "S0", "to": "S1", "requires": ["scope", "problem_definition"]},
+      {"from": "S1", "to": "S2", "requires": ["evidence_plan"]},
+      {"from": "S2", "to": "S3", "requires": ["candidate_set"]},
+      {"from": "S3", "to": "S4", "requires": ["model_spec", "selection_rationale"]},
+      {"from": "S4", "to": "S5", "requires": ["implementation_ref"]},
+      {"from": "S5", "to": "S6", "requires": ["E1_IMPLEMENTATION", "E2_NUMERICAL"]},
+      {"from": "S6", "to": "S7", "requires": ["E1_IMPLEMENTATION", "E2_NUMERICAL", "E3_STRUCTURAL", "E4_REALITY"]},
+      {"from": "S4", "to": "S2", "requires": ["model_redesign_control", "consumer_invalidation"], "reason_levels": ["model_redesign_control"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S5", "to": "S2", "requires": ["model_redesign_control", "consumer_invalidation"], "reason_levels": ["model_redesign_control"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S6", "to": "S2", "requires": ["model_redesign_control", "consumer_invalidation"], "reason_levels": ["model_redesign_control"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S7", "to": "S2", "requires": ["model_redesign_control", "consumer_invalidation"], "reason_levels": ["model_redesign_control"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S7", "to": "S5", "requires": ["consumer_invalidation"], "reason_levels": ["E1_IMPLEMENTATION", "E2_NUMERICAL"], "reason_statuses": ["fail"], "invalidate_consumers": true, "kind": "reopen"},
+      {"from": "S7", "to": "S6", "requires": ["consumer_invalidation"], "reason_levels": ["E3_STRUCTURAL", "E4_REALITY", "uncertainty", "robustness"], "reason_statuses": ["fail"], "invalidate_consumers": true, "kind": "reopen"}
+    ],
+    "shared_data": [
+      {"from": "D0", "to": "D1", "requires": ["data_identity", "provenance"]},
+      {"from": "D1", "to": "D2", "requires": ["data_audit", "treatment_decision"]},
+      {"from": "D2", "to": "D3", "requires": ["processed_identity", "artifact_validation"]},
+      {"from": "D3", "to": "D1", "requires": ["data_audit"], "reason_levels": ["data_audit"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"}
+    ],
+    "artifact": [
+      {"from": "A0", "to": "A1", "requires": ["artifact_draft"]},
+      {"from": "A1", "to": "A2", "requires": ["artifact_validation"]},
+      {"from": "A2", "to": "A3", "requires": ["artifact_acceptance"]},
+      {"from": "A3", "to": "A1", "requires": ["selection_rationale"], "reason_levels": ["selection_rationale"], "reason_statuses": ["pass"], "invalidate_consumers": true, "kind": "reopen"}
+    ],
+    "project": [
+      {"from": "P0", "to": "P1", "requires": ["all_required_components_ready"]},
+      {"from": "P1", "to": "P2", "requires": ["delivery_acceptance"]},
+      {"from": "P2", "to": "P0", "requires": ["selection_rationale"], "kind": "reopen"}
+    ]
+  },
+  "invalidation": {
+    "strategy": "typed_identity_then_declared_downstream_closure",
+    "on_new_artifact_registration": "no_invalidation",
+    "on_working_identity_change": "stale_only_evidence_exactly_bound_to_old_identity",
+    "on_protected_identity_change": "stale_exact_evidence_and_invalidate_declared_owner_and_transitive_consumers",
+    "protected_identity_classes": ["milestone", "frozen", "final"],
+    "upstream_rebinding": "forbidden_unless_a_new_upstream_identity_or_claim_change_is_observed",
+    "revalidation": "only_stale_or_missing_evidence_required_by_the_current_transition",
+    "promotion_blocked_statuses": ["blocked", "invalidated"]
+  }
+}

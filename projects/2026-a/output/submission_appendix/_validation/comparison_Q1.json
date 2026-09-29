@@ -1,0 +1,51 @@
+{
+  "ast": [
+    {
+      "source": "src/Q1/solve.py",
+      "target": "q1_model.py",
+      "object": "FieldSystem",
+      "equal": true
+    },
+    {
+      "source": "src/Q1/solve.py",
+      "target": "q1_model.py",
+      "object": "solve_field",
+      "equal": true
+    }
+  ],
+  "numerical": [
+    {
+      "case": "q1",
+      "elapsed_s": 2.2393703999987338,
+      "fields": {
+        "temperature_C": 0.0,
+        "moisture_kg_kg": 0.0,
+        "temperature_mean": 0.0,
+        "moisture_mean": 0.0,
+        "temperature_integral": 0.0,
+        "moisture_integral": 0.0
+      },
+      "snapshots": {
+        "temperature_snapshots@0": 0.0,
+        "moisture_snapshots@0": 0.0,
+        "temperature_snapshots@1": 0.0,
+        "moisture_snapshots@1": 0.0,
+        "temperature_snapshots@60": 0.0,
+        "moisture_snapshots@60": 0.0,
+        "temperature_snapshots@1800": 0.0,
+        "moisture_snapshots@1800": 0.0
+      },
+      "new_sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e",
+      "original_sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e"
+    }
+  ],
+  "workbooks": [
+    {
+      "workbook": "result1.xlsx",
+      "compared_cells": 79244,
+      "difference_count": 0,
+      "examples": []
+    }
+  ],
+  "pass": true
+}

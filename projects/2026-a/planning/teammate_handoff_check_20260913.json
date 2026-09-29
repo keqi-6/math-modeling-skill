@@ -1,0 +1,22 @@
+{
+  "files": 123,
+  "local_links_checked": 215,
+  "zip_bytes": 53452482,
+  "zip_sha256": "be4dcb760fb8d11e4ce321b5ec9dd25863f082b25b5b03d6ac2aef1634f53151",
+  "original_results_and_ai_unchanged": true,
+  "model_execution": false,
+  "files_validated": true,
+  "browser_checked": [
+    "index layout and search",
+    "Q1 embedded images and manuscript layout",
+    "Q4 four-scenario section",
+    "reference and appendix entry"
+  ],
+  "appendix_visual_check": {
+    "pages": 54,
+    "performed_by": "handoff_code_appendix",
+    "missing_glyphs": false,
+    "overfull_boxes": false
+  },
+  "excluded_environment_and_external_answer_material": true
+}

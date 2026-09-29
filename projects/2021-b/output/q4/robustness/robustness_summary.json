@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "status": "q4_s11_structural_robustness_generated",
+  "formal_responsibilities": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5"
+  ],
+  "leave_one_out": {
+    "case_count": 5,
+    "cases_retaining_all_responsibilities": 0,
+    "interpretation": "五次预算下每项实验都承担不可替代职责；删去任一项都会失去至少一项G职责"
+  },
+  "policy_result": {
+    "formal": "A_formal_one_shot",
+    "conditional": "B_conditional_three_plus_two",
+    "rejected": "C_symmetric_replication",
+    "reason_C_rejected": "失去A3/A4新增同温竞争G5"
+  },
+  "execution_gate": {
+    "337_5C_requires_device_confirmation": true,
+    "silent_rounding_allowed": false,
+    "unsupported_setpoint_action": "reopen_S8"
+  },
+  "interpretation_boundaries": [
+    "删一敏感说明职责紧凑，不证明所选温度数学唯一最优",
+    "一次重复不能估计全域误差",
+    "方案B的优势依赖真实反馈权限",
+    "设备不支持337.5摄氏度时必须回退规格而非静默舍入",
+    "未来观测无论高低都按预先更新规则解释"
+  ],
+  "generated_at": "2026-07-31T09:57:50.768419+08:00"
+}

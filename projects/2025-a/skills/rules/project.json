@@ -1,0 +1,1218 @@
+{
+  "schema_version": "10.0",
+  "domain": "project",
+  "rules": [
+    {
+      "id": "PRJ.SCOPE.BOUNDARY",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-SCOPE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.SCOPE.BOUNDARY",
+      "strength": "MUST",
+      "semantic_key": "project.scope.boundary",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "none"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "P1",
+          "S0",
+          "S1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "scope_definition"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "project_boundary",
+        "value": "included_excluded_deliverables"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "included",
+          "excluded",
+          "deliverables"
+        ]
+      },
+      "outcomes": {
+        "pass": "边界可判定。",
+        "fail": "范围开放或自相矛盾。",
+        "not_applicable": "孤立咨询不形成项目。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-SCOPE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROBLEM.DEFINE",
+        "RT.PROJECT.INIT",
+        "RT.PROJECT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "明确记录项目包含项、排除项和交付边界。",
+      "failure_example": "把未要求的扩展目标加入默认范围。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "PRJ.SCOPE.AMBIGUITY",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-SCOPE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.SCOPE.AMBIGUITY",
+      "strength": "MUST",
+      "semantic_key": "project.scope.ambiguity",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "none"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "S0",
+          "S1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "problem_definition"
+        ],
+        "predicates": [
+          {
+            "field": "ambiguity",
+            "op": "exists",
+            "value": true
+          }
+        ]
+      },
+      "effect": {
+        "verb": "record",
+        "target": "ambiguity_register",
+        "value": "interpretation_impact_resolution"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision"
+        ],
+        "fields": [
+          "ambiguity",
+          "alternatives",
+          "impact"
+        ]
+      },
+      "outcomes": {
+        "pass": "关键歧义有显式处置。",
+        "fail": "模型依赖未声明解释。",
+        "not_applicable": "没有实质歧义。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-SCOPE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROBLEM.DEFINE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把会改变结果的题意歧义登记为待决项。",
+      "failure_example": "静默选择便利解释。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "PRJ.SCOPE.SUCCESS",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-SCOPE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.SCOPE.SUCCESS",
+      "strength": "MUST",
+      "semantic_key": "project.scope.success_criteria",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "S0",
+          "S1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "scope_definition"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "success_criteria",
+        "value": "observable_acceptance_conditions"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "criterion",
+          "measurement"
+        ]
+      },
+      "outcomes": {
+        "pass": "每项标准可测。",
+        "fail": "至少一项标准不可判定。",
+        "not_applicable": "纯解释请求。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-SCOPE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROBLEM.DEFINE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "把成功标准表达为可观察的验收条件。",
+      "failure_example": "用“效果好”或“合理”等不可判定措辞收尾。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "PRJ.SCOPE.INVENTORY",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-SCOPE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.SCOPE.INVENTORY",
+      "strength": "MUST",
+      "semantic_key": "project.scope.inventory",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "none"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "P1",
+          "S0",
+          "S1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "scope_definition"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "scope_inventory",
+        "value": "questions_shared_evidence_and_boundary_deliverable_refs"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "question_ids",
+          "shared_evidence_ids",
+          "deliverable_ids",
+          "boundary_links"
+        ]
+      },
+      "outcomes": {
+        "pass": "每个问题、共享证据和交付物均有稳定身份并链接到范围边界。",
+        "fail": "至少一类清单缺失，或清单项无法追溯到项目边界。",
+        "not_applicable": "孤立咨询不形成项目范围。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-SCOPE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROBLEM.DEFINE",
+        "RT.PROJECT.INIT",
+        "RT.PROJECT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "建立问题、共享证据和交付物清单，并把每项链接到已记录的项目边界。",
+      "failure_example": "只写总体目标，没有列出各问题共用的数据证据和最终交付物。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#scope-and-decomposition",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "PRJ.SCOPE.BOUNDARY"
+      ]
+    },
+    {
+      "id": "PRJ.SCOPE.CONTROLLED_CHANGE",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-SCOPE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.SCOPE.CONTROLLED_CHANGE",
+      "strength": "MUST",
+      "semantic_key": "project.scope.controlled_change",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "none"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "scope_definition"
+        ],
+        "predicates": [
+          {
+            "field": "scope_change_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effect": {
+        "verb": "allow",
+        "target": "project_scope_change",
+        "value": "explicit_authorization_impact_trace_and_rebaseline"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "scope_delta",
+          "authorization_basis",
+          "affected_component_ids",
+          "rebaselined_inventory"
+        ]
+      },
+      "outcomes": {
+        "pass": "后期范围变化有明确授权、影响闭包和重基线记录。",
+        "fail": "新增任务没有授权，或范围改变后仍沿用陈旧清单。",
+        "not_applicable": "初始范围尚未建立或本次没有范围变化。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-SCOPE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROBLEM.DEFINE"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "初始范围建立后仍可变更，但变更必须有明确授权、影响追踪并重建范围清单。",
+      "failure_example": "把后来想到的分析任务直接加入计划，却不记录授权、影响或新交付边界。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#scope-and-decomposition",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "PRJ.SCOPE.BOUNDARY",
+        "PRJ.SCOPE.INVENTORY"
+      ]
+    },
+    {
+      "id": "PRJ.SCOPE.NO_UNSUPPORTED_TASK",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-SCOPE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.SCOPE.NO_UNSUPPORTED_TASK",
+      "strength": "MUST",
+      "semantic_key": "project.scope.no_unsupported_task",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "none"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "P1",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "scope_definition"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "scope_task_admission",
+        "value": "unsupported_by_request_or_contract"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "route"
+        ],
+        "fields": [
+          "task_id",
+          "request_clause",
+          "authorization_basis",
+          "boundary_link"
+        ]
+      },
+      "outcomes": {
+        "pass": "每个范围内任务均可追溯到用户请求或适用契约。",
+        "fail": "至少一个任务没有请求子句、授权依据或边界链接。",
+        "not_applicable": "孤立咨询不形成项目范围。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-SCOPE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROBLEM.DEFINE",
+        "RT.PROJECT.INIT",
+        "RT.PROJECT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "范围内每个任务都必须直接来自用户请求，或有当前适用契约提供的明确授权。",
+      "failure_example": "为了显得计划完整而加入用户未要求、契约也未要求的额外分析。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#scope-and-decomposition",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "PRJ.SCOPE.BOUNDARY"
+      ]
+    },
+    {
+      "id": "PRJ.STRUCTURE.INSPECT",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-STRUCTURE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.STRUCTURE.INSPECT",
+      "strength": "MUST",
+      "semantic_key": "project.structure.inspect_existing",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "P1",
+          "P2"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "project_initialization",
+          "project_resume"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "structure_input",
+        "value": "existing_tree_inventory"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation"
+        ],
+        "fields": [
+          "existing_paths",
+          "entrypoints"
+        ]
+      },
+      "outcomes": {
+        "pass": "结构决定基于现状。",
+        "fail": "出现重复平台。",
+        "not_applicable": "没有项目根。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-STRUCTURE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.INIT",
+        "RT.PROJECT.RESUME",
+        "RT.PROJECT.RECOVER.MISSING",
+        "RT.PROJECT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "在规划结构前检查现有目录和工作流。",
+      "failure_example": "无视用户现有结构另建平行平台。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "PRJ.STRUCTURE.LAZY",
+      "revision": 3,
+      "status": "active",
+      "capability": "PRJ-STRUCTURE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.STRUCTURE.LAZY",
+      "strength": "MUST",
+      "semantic_key": "project.structure.lazy",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "project_initialization"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "limit",
+        "target": "structure_creation",
+        "value": "canonical_platform_admitted_artifact_parents_only"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "decision"
+        ],
+        "fields": [
+          "created_paths",
+          "artifact_proposals"
+        ]
+      },
+      "outcomes": {
+        "pass": "目录均属于统一项目平台，并服务当前已准入文件。",
+        "fail": "存在空目录、占位结构或脱离统一平台的任意路径。",
+        "not_applicable": "不创建结构。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [
+        "V8.PRJ.PLATFORM.SCAFFOLD"
+      ],
+      "legacy_refs": [
+        "PRJ-STRUCTURE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.INIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "统一逻辑平台始终有效；仅在合格工件落盘时创建其规范父目录。",
+      "failure_example": "预建整套空目录树，或把新工件放到临时发明的顶层目录。",
+      "enforcement": {
+        "kind": "runtime_guard",
+        "assurance": "behavior_verified",
+        "refs": [
+          "references/project-platform-contract.json",
+          "scripts/artifact_guard.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "PRJ.STRUCTURE.TOOLCHAIN",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-STRUCTURE-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.STRUCTURE.TOOLCHAIN",
+      "strength": "SHOULD",
+      "semantic_key": "project.structure.toolchain_fit",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project"
+        ],
+        "states": [
+          "P0",
+          "P1"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "structure_design"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "select",
+        "target": "project_toolchain",
+        "value": "existing_or_user_required"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "observation",
+          "decision"
+        ],
+        "fields": [
+          "available_toolchain",
+          "selected_toolchain"
+        ]
+      },
+      "outcomes": {
+        "pass": "工具链有项目依据。",
+        "fail": "工具链来自 Skill 偏好。",
+        "not_applicable": "任务不涉及工程结构。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "project.structure.toolchain_fit.exception.1",
+          "when": "用户或官方要求指定格式",
+          "disposition": "采用已核验的项目要求"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [
+        "V8.PRJ.MANDATORY.LATEX"
+      ],
+      "legacy_refs": [
+        "PRJ-STRUCTURE-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROJECT.INIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "优先沿用可用的现有工具链。",
+      "failure_example": "把 LaTeX、Word 或特定模板设为全局固定偏好。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "PRJ.PLAN.COMPONENTS",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-PLAN-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.PLAN.COMPONENTS",
+      "strength": "MUST",
+      "semantic_key": "project.plan.components",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "P1",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "project_planning"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "component_decomposition",
+        "value": "questions_shared_data_artifacts"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "component_ids",
+          "component_types"
+        ]
+      },
+      "outcomes": {
+        "pass": "每个组件有唯一类型。",
+        "fail": "组件边界缺失或重叠。",
+        "not_applicable": "纯咨询不落地计划。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-PLAN-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROJECT.INIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "按问题、共享数据和产物拆分项目组件。",
+      "failure_example": "把全项目压成单一阶段字段。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "PRJ.PLAN.DEPENDENCIES",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-PLAN-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.PLAN.DEPENDENCIES",
+      "strength": "MUST",
+      "semantic_key": "project.plan.dependencies",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "project_planning"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "dependency_graph",
+        "value": "acyclic_producer_consumer_edges"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state"
+        ],
+        "fields": [
+          "dependencies",
+          "consumers"
+        ]
+      },
+      "outcomes": {
+        "pass": "依赖图无悬空边和环。",
+        "fail": "依赖图不可用于失效传播。",
+        "not_applicable": "只有一个独立组件。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-PLAN-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROJECT.INIT",
+        "RT.PROJECT.RESUME",
+        "RT.PROJECT.AUDIT"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "记录组件的生产者—消费者依赖图。",
+      "failure_example": "只写线性任务列表而不表达影响关系。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "PRJ.PLAN.TRACE",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-PLAN-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.PLAN.TRACE",
+      "strength": "MUST",
+      "semantic_key": "project.plan.work_package_trace",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "P1",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "project_planning"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "work_package_trace",
+        "value": "work_package_dependency_evidence_deliverable"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "work_package_id",
+          "dependency_ids",
+          "evidence_ids",
+          "deliverable_ids"
+        ]
+      },
+      "outcomes": {
+        "pass": "每个工作包均可追溯到依赖、验收证据和交付物。",
+        "fail": "工作包、依赖、证据或交付物之间至少有一条悬空链接。",
+        "not_applicable": "纯咨询不形成综合项目计划。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-PLAN-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "综合计划中的每个工作包都要链接其依赖、预期证据和目标交付物。",
+      "failure_example": "计划只有任务和先后顺序，没有证据入口或交付物出口。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/project-method-notes.md#scope-and-decomposition",
+          "scripts/resolve_route.py",
+          "scripts/run_v15_scenarios.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "PRJ.PLAN.COMPONENTS",
+        "PRJ.PLAN.DEPENDENCIES",
+        "PRJ.SCOPE.INVENTORY"
+      ]
+    },
+    {
+      "id": "PRJ.PLAN.OWNER_BOUNDARY",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-PLAN-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.PLAN.OWNER_BOUNDARY",
+      "strength": "MUST",
+      "semantic_key": "project.plan.owner_boundary",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "UNINITIALIZED",
+          "P0",
+          "P1",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "project_planning"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "orchestration_override",
+        "value": "state_or_recovery_owner"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "state"
+        ],
+        "fields": [
+          "work_package_id",
+          "state_owner_ref",
+          "recovery_owner_ref",
+          "override_count"
+        ]
+      },
+      "outcomes": {
+        "pass": "编排只组织工作包，没有改写状态机或恢复分级。",
+        "fail": "计划文本自建状态、转换门或恢复规则并覆盖其规范 owner。",
+        "not_applicable": "纯咨询不形成综合项目计划。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-PLAN-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "项目编排可以引用状态与恢复契约，但不得重定义或覆盖这些契约的规范 owner。",
+      "failure_example": "工作包计划另设一套阶段字段，并据此跳过 R1 失效传播。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "references/ownership-contract.json",
+          "references/state-machine.json",
+          "scripts/resolve_route.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "GOV.OWNER.UNIQUE"
+      ]
+    },
+    {
+      "id": "PRJ.PLAN.NEXT_ACTION",
+      "revision": 2,
+      "status": "active",
+      "capability": "PRJ-PLAN-001",
+      "domain": "project",
+      "owner": "rules/project.json#PRJ.PLAN.NEXT_ACTION",
+      "strength": "MUST",
+      "semantic_key": "project.plan.next_action",
+      "scope": {
+        "objects": [
+          "project"
+        ],
+        "component_types": [
+          "project",
+          "question",
+          "shared_data",
+          "artifact"
+        ],
+        "states": [
+          "P0",
+          "P1",
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "planning_complete",
+          "handoff"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "next_action",
+        "value": "component_action_blockers"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state"
+        ],
+        "fields": [
+          "component_id",
+          "action",
+          "blocked_by"
+        ]
+      },
+      "outcomes": {
+        "pass": "下一动作可直接开始或有明确阻塞。",
+        "fail": "下一动作无法执行。",
+        "not_applicable": "项目已关闭。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "PRJ-PLAN-001"
+      ],
+      "routes": [
+        "RT.PROJECT.PLAN",
+        "RT.PROJECT.RESUME",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ],
+      "instruction_gloss": "为活动组件记录一个可执行下一动作。",
+      "failure_example": "用宽泛愿望代替可执行动作。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "scripts/validate_v15_contracts.py"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "candidate_verification_only",
+  "passed": true,
+  "checks": [
+    {
+      "check": "42组Theil-Sen斜率独立复算",
+      "passed": true,
+      "detail": "count=42, max_abs_error=8.882e-16"
+    },
+    {
+      "check": "全部候选斜率方向",
+      "passed": true,
+      "detail": "positive=42/42"
+    },
+    {
+      "check": "SciPy实现交叉核对",
+      "passed": true,
+      "detail": "count=42, max_abs_error=8.882e-16"
+    },
+    {
+      "check": "留一方向变化关系数独立复算",
+      "passed": true,
+      "detail": "relationship_count=0"
+    }
+  ]
+}

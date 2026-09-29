@@ -1,0 +1,522 @@
+{
+  "schema_version": "10.1",
+  "artifact_kind": "v9_reviewed_capability_baseline",
+  "source_release": "V9.0.0",
+  "source_file": "references/capability-registry.json",
+  "source_file_sha256": "71c2d308f9a1cda6c7ac6f1c163967a23256bd52a79792efd8abf14005cacf0b",
+  "source_projection_sha256": "6d77f0814ada5a910705cf1511180b4992c74f2123a16fd6fa0029d3bdf07fe8",
+  "review_basis": "inherited_v9_capability_registry",
+  "capabilities": [
+    {
+      "id": "GOV-MODE-001",
+      "domain": "governance",
+      "owner": "SKILL.md#2-执行模式",
+      "strength": "MUST",
+      "trigger": "every request",
+      "expected": "select one execution mode before routing",
+      "forbidden": "infer write permission from silence or a read-only request",
+      "contract_sha256": "ab9759916b759bca6568113f064df503f937566a4d89835e26576a848206b451"
+    },
+    {
+      "id": "GOV-AUTH-001",
+      "domain": "governance",
+      "owner": "SKILL.md#1-目标与控制边界",
+      "strength": "MUST",
+      "trigger": "every action",
+      "expected": "separate authorization, epistemic truth, project choice, state and procedure",
+      "forbidden": "resolve different authority dimensions with one total priority list",
+      "contract_sha256": "76275625a201bc908ec0abdb82133f3015547034a3acdd3246318d3b0a73c97f"
+    },
+    {
+      "id": "GOV-ROUTE-001",
+      "domain": "governance",
+      "owner": "SKILL.md#3-请求分类与路由",
+      "strength": "MUST",
+      "trigger": "before substantive execution",
+      "expected": "validate mode-object-action-state against route contract",
+      "forbidden": "use a catchall or transitive legacy link as proof of routing",
+      "contract_sha256": "5cd69430bb336f52160d55126ce36432d790c848d1d9180e8d26532c28c86544"
+    },
+    {
+      "id": "GOV-OWNER-001",
+      "domain": "governance",
+      "owner": "references/maintenance-contract.md#维护不变量",
+      "strength": "MUST",
+      "trigger": "rule interpretation or maintenance",
+      "expected": "one canonical owner per semantic capability",
+      "forbidden": "duplicate normative ownership",
+      "contract_sha256": "cbf8cffec08e84a9289e08dfdaff97102f908c1d5b16d27286a7100aa09d3064"
+    },
+    {
+      "id": "GOV-RECEIPT-001",
+      "domain": "governance",
+      "owner": "references/receipt.schema.json",
+      "strength": "MUST",
+      "trigger": "structured execution receipt",
+      "expected": "use the discriminated V9 receipt contract and route-consistent modules",
+      "forbidden": "invent a second receipt schema",
+      "contract_sha256": "7ede3b9744fd9b798406d0d4e17eb167dd46094af7f626cb63cd470cbb45f0e7"
+    },
+    {
+      "id": "GOV-DECISION-001",
+      "domain": "governance",
+      "owner": "SKILL.md#6-决策与写入",
+      "strength": "MUST",
+      "trigger": "design or frozen-decision change",
+      "expected": "classify new_design, change_existing or not_applicable",
+      "forbidden": "force greenfield work into keep_current",
+      "contract_sha256": "1ff20e41cccf8ad26e63cd92a0eb4ca2df7266cbb9b149b68201bf985f75ecd5"
+    },
+    {
+      "id": "STATE-TYPED-001",
+      "domain": "state",
+      "owner": "references/state-contract.json",
+      "strength": "MUST",
+      "trigger": "project state read or write",
+      "expected": "track question, shared_data, artifact and project with type-specific states",
+      "forbidden": "treat one current_stage as project-wide authority",
+      "contract_sha256": "46650b6845425e80293734cac4eddb169d52b91c15d4aad4f94f658219312e8a"
+    },
+    {
+      "id": "REC-R0-001",
+      "domain": "recovery",
+      "owner": "references/recovery-governance.md#R0直接继续",
+      "strength": "MUST",
+      "trigger": "consistent state and artifacts",
+      "expected": "continue from direct state and inputs without full reread",
+      "forbidden": "create a recovery manifest for ordinary continuation",
+      "contract_sha256": "b9893883545dc5ff064aa9e72897174c520a206b7eb7336eee88bca4078038d2"
+    },
+    {
+      "id": "REC-R1-001",
+      "domain": "recovery",
+      "owner": "references/recovery-governance.md#R1定向恢复",
+      "strength": "MUST",
+      "trigger": "localizable changes",
+      "expected": "review affected components and direct consumers",
+      "forbidden": "escalate a local change to full-project reading without cause",
+      "contract_sha256": "d8821fe149f93dd7ce29efe1f9d04806aba3b2e82e1c57f822864c4762546851"
+    },
+    {
+      "id": "REC-R2-001",
+      "domain": "recovery",
+      "owner": "references/recovery-governance.md#R2完整恢复",
+      "strength": "MUST",
+      "trigger": "invalid state, identity conflict, unlocalizable change, explicit full recovery or closure",
+      "expected": "reconstruct complete evidence coverage",
+      "forbidden": "claim recovery from a narrative summary alone",
+      "contract_sha256": "48cf78416f86819e079860db59be289da258883f192e0366e95a74d81e13a7d4"
+    },
+    {
+      "id": "ART-LAZY-001",
+      "domain": "artifacts",
+      "owner": "references/artifact-contract.json",
+      "strength": "MUST",
+      "trigger": "before file creation",
+      "expected": "require consumer, purpose, lifecycle, class and authorization",
+      "forbidden": "create placeholders or speculative directories",
+      "contract_sha256": "ece482cece5e3860dfa45fdf007a2a2625d274177568ffa06fec274ab9ae946c"
+    },
+    {
+      "id": "ART-PROMOTE-001",
+      "domain": "artifacts",
+      "owner": "references/artifact-contract.json",
+      "strength": "MUST",
+      "trigger": "promote temporary or working artifact",
+      "expected": "validate artifact and update state registry",
+      "forbidden": "promote unvalidated scratch output",
+      "contract_sha256": "327c85af593c18ed10d04bd2e507a56093667d1e94fefc5c5b2bf407ea7fe4b9"
+    },
+    {
+      "id": "PRJ-SCOPE-001",
+      "domain": "project",
+      "owner": "references/modules/project-platform.md",
+      "strength": "MUST",
+      "trigger": "new project or scope change",
+      "expected": "identify questions, shared evidence, deliverables and boundaries",
+      "forbidden": "invent unsupported tasks",
+      "contract_sha256": "45a14741235a241a0ef116fab50b2d539724e50f884d98f8036bbc823db8cfcb"
+    },
+    {
+      "id": "PRJ-STRUCTURE-001",
+      "domain": "project",
+      "owner": "references/modules/project-platform.md",
+      "strength": "SHOULD",
+      "trigger": "authorized project initialization",
+      "expected": "materialize only immediately consumed structure",
+      "forbidden": "eagerly create the full legacy scaffold",
+      "contract_sha256": "b25b824eee6e8a9418014264e139be8abeb152f20a346e90c5b86f2107977348"
+    },
+    {
+      "id": "PRJ-PLAN-001",
+      "domain": "project",
+      "owner": "references/modules/orchestration-detail.md",
+      "strength": "MUST",
+      "trigger": "comprehensive project planning",
+      "expected": "link work packages, dependencies, evidence and deliverables",
+      "forbidden": "let orchestration detail override V9 state or recovery contracts",
+      "contract_sha256": "6104fc95d72cbe3074deeb1d042eb1094b10490eef6f51f74a0cc198b5121160"
+    },
+    {
+      "id": "EVD-LITERATURE-001",
+      "domain": "evidence",
+      "owner": "references/modules/evidence-delivery.md",
+      "strength": "MUST",
+      "trigger": "literature or external factual evidence needed",
+      "expected": "search authoritative sources and record claim-level use",
+      "forbidden": "treat search snippets or AI answers as primary evidence",
+      "contract_sha256": "fb14320ffc350414b7ef01037b97bea2e11ab33ae7af018c0f683bf0a183285c"
+    },
+    {
+      "id": "EVD-PROVENANCE-001",
+      "domain": "evidence",
+      "owner": "references/modules/evidence-delivery.md",
+      "strength": "MUST",
+      "trigger": "external data, facts, figures or references",
+      "expected": "record source, license, identity and claim linkage",
+      "forbidden": "claim full-text review when only an abstract was read",
+      "contract_sha256": "e292fe047128b513d143a4eb023c977f9588bf3fdaadc91c20d09cd357b426c0"
+    },
+    {
+      "id": "DATA-IDENTITY-001",
+      "domain": "data",
+      "owner": "references/modules/data.md",
+      "strength": "MUST",
+      "trigger": "any data use",
+      "expected": "establish source, schema, units, time-space scope and immutable raw identity",
+      "forbidden": "silently overwrite raw data",
+      "contract_sha256": "65df0b9082ce8b2885d02ccfa8ad49d5058ee804b21d3db595cf7f89f52fc85d"
+    },
+    {
+      "id": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "references/modules/data.md",
+      "strength": "MUST",
+      "trigger": "D0 or data quality question",
+      "expected": "audit completeness, validity, duplicates, missingness, outliers and semantic consistency",
+      "forbidden": "clean before documenting evidence",
+      "contract_sha256": "921d56e714ab528932a8aee01b86d29cbdf9d378620e190bdfb5f589d5a92f99"
+    },
+    {
+      "id": "DATA-TREAT-001",
+      "domain": "data",
+      "owner": "references/modules/data.md",
+      "strength": "MUST",
+      "trigger": "D1 findings require treatment",
+      "expected": "decide and justify treatment with sensitivity to alternatives",
+      "forbidden": "apply irreversible treatment without a decision",
+      "contract_sha256": "8c5847163918e28fa4940a07a1632913efa36c5b1a7adc2cab30d8c0474ee350"
+    },
+    {
+      "id": "DATA-FREEZE-001",
+      "domain": "data",
+      "owner": "references/modules/data.md",
+      "strength": "MUST",
+      "trigger": "promotion to D3",
+      "expected": "freeze processed identity, lineage and consumer contract",
+      "forbidden": "change the frozen dataset without invalidating consumers",
+      "contract_sha256": "19a57d0a5e74b8c0ffd85c1c8c5897d958af7a149bdb1d06f1509416e292796d"
+    },
+    {
+      "id": "MOD-RESTATE-001",
+      "domain": "modeling",
+      "owner": "references/modules/modeling.md",
+      "strength": "MUST",
+      "trigger": "model design",
+      "expected": "translate the question into objects, variables, constraints, objectives and outputs",
+      "forbidden": "choose an algorithm before defining the mathematical problem",
+      "contract_sha256": "3dfd61c4b789c50665242fcb605a99f3f8c5de11dc47711a4707ddfc6b84001a"
+    },
+    {
+      "id": "MOD-COMPARE-001",
+      "domain": "modeling",
+      "owner": "references/modules/modeling.md",
+      "strength": "MUST",
+      "trigger": "S2 to S3",
+      "expected": "compare viable candidate models using explicit criteria",
+      "forbidden": "pretend a single unexamined method is a comparison",
+      "contract_sha256": "d0dea304e0b8dfb950c53c386ada074d296345d0fd44260de03cb7e9f4ae407f"
+    },
+    {
+      "id": "MOD-SPEC-001",
+      "domain": "modeling",
+      "owner": "references/modules/modeling.md",
+      "strength": "MUST",
+      "trigger": "S3 to S4",
+      "expected": "freeze assumptions, symbols, equations, parameters, units and interfaces",
+      "forbidden": "implement an ambiguous specification",
+      "contract_sha256": "764de5f7911592eda9a2acdfde1a569ad57c9fc02f334362b6635cdc7221c049"
+    },
+    {
+      "id": "MOD-IMPLEMENT-001",
+      "domain": "modeling",
+      "owner": "references/modules/modeling.md",
+      "strength": "MUST",
+      "trigger": "S4 to S5",
+      "expected": "implement reproducibly with deterministic inputs and inspectable outputs",
+      "forbidden": "substitute code structure for model specification",
+      "contract_sha256": "cf0490aafe041973fb78fb19c2f4b00f53f2362acf089cb9e39ee63dafcba7a1"
+    },
+    {
+      "id": "MOD-RESULTS-001",
+      "domain": "modeling",
+      "owner": "references/modules/modeling.md",
+      "strength": "MUST",
+      "trigger": "interpret model output",
+      "expected": "connect results to question, baseline and limitations",
+      "forbidden": "report unexplained number lists",
+      "contract_sha256": "b755584163fde93f9c0b5c76a9bb92b06a7a2149137a519829fceab0f6fdc00d"
+    },
+    {
+      "id": "VER-E1-001",
+      "domain": "verification",
+      "owner": "references/modules/verification.md",
+      "strength": "MUST",
+      "trigger": "implementation exists",
+      "expected": "check code paths, interfaces, units, boundaries and reproducibility",
+      "forbidden": "equate process exit zero with correctness",
+      "contract_sha256": "cc99b62cfbef411a5f6e49c84df2c63e8974fb3de3c5457172f93b2c0f5e5aca"
+    },
+    {
+      "id": "VER-E2-001",
+      "domain": "verification",
+      "owner": "references/modules/verification.md",
+      "strength": "MUST",
+      "trigger": "numerical result exists",
+      "expected": "check recalculation, tolerances, convergence and numerical identity",
+      "forbidden": "hide numerical instability behind formatting",
+      "contract_sha256": "ca46ae0a7ad7173d06e578d0d67b8eddfc8aeba079adf8d6a40ef19705432449"
+    },
+    {
+      "id": "VER-E3-001",
+      "domain": "verification",
+      "owner": "references/modules/verification.md",
+      "strength": "MUST",
+      "trigger": "model result exists",
+      "expected": "check constraints, invariants, limiting cases, counterexamples and sensitivity",
+      "forbidden": "claim robustness from one nominal run",
+      "contract_sha256": "ce4eab5b6e5e918e0c4d675d9b1ae49621faae29475d6a7fa4abfe57f84cfd46"
+    },
+    {
+      "id": "VER-E4-001",
+      "domain": "verification",
+      "owner": "references/modules/verification.md",
+      "strength": "MUST",
+      "trigger": "model is examined for use or claim",
+      "expected": "check assumptions, parameters, scale, mechanisms and reality fit",
+      "forbidden": "use implementation verification as a substitute for model examination",
+      "contract_sha256": "88f1fa2be47121d63ef95e326b17d51e0d725c0f61b07e3a980a0c9ae618720b"
+    },
+    {
+      "id": "VER-S6-DUAL-001",
+      "domain": "verification",
+      "owner": "references/modules/verification.md",
+      "strength": "MUST",
+      "trigger": "S6 promotion",
+      "expected": "complete both solution verification and model examination",
+      "forbidden": "close S6 with only one axis",
+      "contract_sha256": "6230fc03ba7fc176db0fe62bbf3150e25eeafa683b8d87460f254e311c31d037"
+    },
+    {
+      "id": "VER-UNCERTAINTY-001",
+      "domain": "verification",
+      "owner": "references/modules/verification.md",
+      "strength": "MUST",
+      "trigger": "uncertain inputs or decision-sensitive parameters",
+      "expected": "quantify or bound uncertainty and propagate it to claims",
+      "forbidden": "attach generic limitation prose without analysis",
+      "contract_sha256": "f70152f32254d7e338dee9dd915c3341fa7f179699bad10a0e5887dda6230cff"
+    },
+    {
+      "id": "VER-ROBUST-001",
+      "domain": "verification",
+      "owner": "references/modules/verification.md",
+      "strength": "MUST",
+      "trigger": "robustness claim",
+      "expected": "define perturbations, metrics, baselines and decision impact",
+      "forbidden": "call visual similarity a robustness proof",
+      "contract_sha256": "3e915117e7b7193772202a9a11eb8a4f6236f6573ff59724e47a0253e67c94ec"
+    },
+    {
+      "id": "MAN-STRUCTURE-001",
+      "domain": "manuscript",
+      "owner": "references/modules/manuscript-content.md",
+      "strength": "MUST",
+      "trigger": "draft or structural revision",
+      "expected": "give each section a clear question-facing responsibility and dependency order",
+      "forbidden": "mirror the work log or internal project state in the paper",
+      "contract_sha256": "45ec2962e55070b161e9303329cc0bdb9be6bd77056fc8a21a9a3f081754e2d2"
+    },
+    {
+      "id": "MAN-CONTENT-001",
+      "domain": "manuscript",
+      "owner": "references/modules/manuscript-content.md",
+      "strength": "MUST",
+      "trigger": "write or revise paper content",
+      "expected": "explain objects, data, derivation, results and meaning for a reader",
+      "forbidden": "use formula or number dumping as explanation",
+      "contract_sha256": "f9ccc0967a1b70baa18facff704275cb45b3f17e601ebd32fb34943076c06a99"
+    },
+    {
+      "id": "MAN-READER-001",
+      "domain": "manuscript",
+      "owner": "references/modules/manuscript-content.md",
+      "strength": "MUST",
+      "trigger": "manuscript audit or substantial revision",
+      "expected": "audit comprehension without relying on code or internal notes",
+      "forbidden": "let audit meta-language leak into evaluator-visible prose",
+      "contract_sha256": "27980f0534ef37a9400562ce15018b383dc58bc359be7310e0b64951bb66c9ee"
+    },
+    {
+      "id": "MAN-ACCEPT-001",
+      "domain": "manuscript",
+      "owner": "references/modules/manuscript-acceptance.md",
+      "strength": "MUST",
+      "trigger": "claim manuscript section or full paper complete",
+      "expected": "apply global and section-specific acceptance criteria",
+      "forbidden": "aggregate local passes into a full-paper pass without scope evidence",
+      "contract_sha256": "b4ec7374af6f1d0b030bb77ce4fb28fef08f5c09aca1d8afdc26e529b6731b7b"
+    },
+    {
+      "id": "MAN-LOCAL-001",
+      "domain": "manuscript",
+      "owner": "references/manuscript-local.md",
+      "strength": "MUST",
+      "trigger": "small local edit",
+      "expected": "edit and recheck the local dependency surface only",
+      "forbidden": "force a full manuscript audit for a typo-only change",
+      "contract_sha256": "dd7be06bb00ebe5ff83fd246840e1434b76ab8ed4faf32945d7f9e3893485e08"
+    },
+    {
+      "id": "MAN-PROFILE-001",
+      "domain": "manuscript",
+      "owner": "references/modules/writing-profile.md",
+      "strength": "MAY",
+      "trigger": "user or project explicitly selects the profile",
+      "expected": "apply profile without overriding correctness or official format",
+      "forbidden": "activate a personal profile by default",
+      "contract_sha256": "a3451dba95ed308efbfcfbaf9fff77e9ec6dcbfb024aac642754ddd527fcafe5"
+    },
+    {
+      "id": "VIS-DESIGN-001",
+      "domain": "visuals",
+      "owner": "references/modules/visuals-layout.md",
+      "strength": "MUST",
+      "trigger": "figure or table creation",
+      "expected": "choose a visual that answers a defined reader question",
+      "forbidden": "create decorative visuals without information purpose",
+      "contract_sha256": "e4037c33b9665a2f5864908613a24f496a1f4832202f8f224c254ae4764519f4"
+    },
+    {
+      "id": "VIS-LAYOUT-001",
+      "domain": "visuals",
+      "owner": "references/modules/visuals-layout.md",
+      "strength": "MUST",
+      "trigger": "paper rendering or layout",
+      "expected": "verify readability, fonts, pagination, captions and placement",
+      "forbidden": "claim layout success from source inspection alone",
+      "contract_sha256": "63696abe01f3d7002ae81ea231761133903238e0d62bb9b1f7193f20cb7372ed"
+    },
+    {
+      "id": "VIS-IDENTITY-001",
+      "domain": "visuals",
+      "owner": "references/modules/visuals-layout.md",
+      "strength": "MUST",
+      "trigger": "visual consumes data or model output",
+      "expected": "preserve data identity, units, legend and provenance",
+      "forbidden": "manually alter plotted values",
+      "contract_sha256": "db9d028101c3c94f01c70625f59a5e0aefd75103ebc3ea2032ccd29a59c0a661"
+    },
+    {
+      "id": "DEL-FINAL-001",
+      "domain": "delivery",
+      "owner": "references/modules/evidence-delivery.md",
+      "strength": "MUST",
+      "trigger": "finalization or promotion",
+      "expected": "check required files, reproducibility, rendering and submission boundaries",
+      "forbidden": "deliver temporary or unverified artifacts",
+      "contract_sha256": "ca33c0d7c5188e901ec9bcf8581a37bc6638ebfdd0bacef45cb130a3c437647c"
+    },
+    {
+      "id": "DEL-PROVENANCE-001",
+      "domain": "delivery",
+      "owner": "references/modules/evidence-delivery.md",
+      "strength": "MUST",
+      "trigger": "delivery contains external material",
+      "expected": "close citation, license and source lineage",
+      "forbidden": "ship unverifiable external assets",
+      "contract_sha256": "ba685fa3b3e54d29c5ca4a20639ae18523382133ce4e03ce01b13909b5584810"
+    },
+    {
+      "id": "DEL-HANDOFF-001",
+      "domain": "delivery",
+      "owner": "references/recovery-governance.md#暂停与收尾",
+      "strength": "MUST",
+      "trigger": "pause, handoff or closure",
+      "expected": "synchronize authoritative state, open items and next legal action",
+      "forbidden": "use a narrative summary as the only handoff",
+      "contract_sha256": "fbe4588f536aba35b1e78091497dd5a6f2a75d77973751c96c14dfe2954aa120"
+    },
+    {
+      "id": "MNT-CLASSIFY-001",
+      "domain": "maintenance",
+      "owner": "references/maintenance-contract.md#变更分类与风险",
+      "strength": "MUST",
+      "trigger": "explicit skill change request",
+      "expected": "classify change type and L0-L4 risk",
+      "forbidden": "treat every edit as an append-only wording patch",
+      "contract_sha256": "9be1917954736c7bfccee1168a3ca5dc42685fc24d34b30393c1fe0e0af219d6"
+    },
+    {
+      "id": "MNT-IMPACT-001",
+      "domain": "maintenance",
+      "owner": "references/maintenance-contract.md#强制流程",
+      "strength": "MUST",
+      "trigger": "L1 or higher change",
+      "expected": "calculate capability, route, state, schema, module and test impact",
+      "forbidden": "edit before checking callers and conflicts",
+      "contract_sha256": "e5b3ced2323ebc9027f718e47c286cddb647f4dcbee7cd7ebec11f3b4c84e166"
+    },
+    {
+      "id": "MNT-OWNER-001",
+      "domain": "maintenance",
+      "owner": "references/maintenance-contract.md#维护不变量",
+      "strength": "MUST",
+      "trigger": "rule add or modification",
+      "expected": "modify or assign exactly one canonical owner",
+      "forbidden": "add a second normative copy",
+      "contract_sha256": "5e9aeb0c161ae3c4ca0ac898ab7b357c75a2e248c6a98c767536aa93dd00110c"
+    },
+    {
+      "id": "MNT-EVAL-001",
+      "domain": "maintenance",
+      "owner": "references/maintenance-contract.md#强制流程",
+      "strength": "MUST",
+      "trigger": "substantive change",
+      "expected": "add positive, near-miss negative and mixed/conflict cases",
+      "forbidden": "claim behavior from wording-only tests",
+      "contract_sha256": "a509bde018aa1a84206f29a9f6dc029a27858c8db30bf665c41d4e91d2ed2212"
+    },
+    {
+      "id": "MNT-RELOAD-001",
+      "domain": "maintenance",
+      "owner": "references/maintenance-contract.md#强制流程",
+      "strength": "MUST",
+      "trigger": "changed runtime behavior",
+      "expected": "verify with a fresh invocation that reloads the new skill",
+      "forbidden": "self-certify changed behavior in the editing context",
+      "contract_sha256": "40db5f5824c5433a812db2e2ffe8ce34a33ad80768a18461927ad1615fb183a0"
+    },
+    {
+      "id": "MNT-ROLLBACK-001",
+      "domain": "maintenance",
+      "owner": "references/maintenance-contract.md#维护不变量",
+      "strength": "MUST",
+      "trigger": "L3 or L4 change",
+      "expected": "preserve prior release and explicit rollback point",
+      "forbidden": "overwrite the only stable release",
+      "contract_sha256": "31987da2fcbae039830b8d806ac95eb54b04feb78dd69f51f8a2cfcacd785c2f"
+    }
+  ],
+  "payload_sha256": "13532c00471661d64b0113a83d5277f39a1009a95f654423683e72dacc9349c1"
+}

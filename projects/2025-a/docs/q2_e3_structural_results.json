@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "result_id": "Q2-S6-E3-STRUCTURAL-20260827",
+  "question_id": "Q2",
+  "level": "E3_STRUCTURAL",
+  "status": "pass",
+  "external_numeric_results_used": false,
+  "tolerance_policy": {
+    "declared_before_observation": true,
+    "values": {
+      "identity_and_kinematic_closure": 1e-07,
+      "constraint_margin": 1e-07,
+      "duration_consistency_s": 0.0001,
+      "endpoint_margin_m": 1e-06,
+      "monotonic_duration_s": 0.0001,
+      "symmetry_duration_s": 0.0001,
+      "zero_radius_limit_s": 0.0001
+    },
+    "basis": "Existing Q2 E1/E2 numerical scale and exact kinematic identities."
+  },
+  "identities": {
+    "data/A题.pdf": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "planning/12_q2_c3_geometry_and_candidate_reselection.md": "210f5fc5ccb99dc8bba7877265f0da7762efca0614bc5ffe540d08bbdb397eaf",
+    "planning/13_q2_reselection_pilot_spec.md": "dfe33fbda5cbc4203730e2f6bc26aa972e42711fd571c42b2cf2904553f331c3",
+    "planning/14_q2_formal_solver_spec.md": "39b2b9f842d25e7111198a7c3dd5a277c2286ca0cabe15104ac95c56d91031df",
+    "src/q1/model.py": "cb36870ca55ed3b1e3c3adfe02cd91667c89249fa1aeb730cb42f0a1bbd4f7f1",
+    "src/q2/reselection_pilot.py": "061ef27a29eb2afe62f28a13843ff2bd28d5133e22801c44b2804ecf2d621244",
+    "src/q2/solve.py": "7a9ca6e7dbe425620d22d714acb6f174531d368ac950f866da3818685b4e9d8f",
+    "docs/q2_result.json": "0dd12455e0898bdb5e087888da848ea66bfa8caf325b1180b0412f23557eab7f",
+    "docs/q2_validation_results.json": "16971468e98106e916405d7da4fda0d0c23f5e96fd23a0739f15d56fb083a436"
+  },
+  "nominal": {
+    "scan_step_s": 0.005,
+    "geometry_scope": "arbitrary_control_full_cylinder_mesh",
+    "scan_count": 1180,
+    "intervals_s": [
+      [
+        1.159295222442692,
+        5.741356219424883
+      ]
+    ],
+    "effective_duration_s": 4.582060996982191,
+    "root_residuals": [
+      {
+        "kind": "entry",
+        "time_s": 1.159295222442692,
+        "margin_m": -0.0023408152966961637,
+        "iterations": 0
+      },
+      {
+        "kind": "exit",
+        "time_s": 5.741356219424883,
+        "margin_m": -1.6922641066230426e-10,
+        "iterations": 24
+      }
+    ],
+    "minimum_scan_margin_m": -9.47095254240626,
+    "local_minimum_checks": 0,
+    "recovered_unsampled_interval_count": 0,
+    "local_minimum_records": [],
+    "geometry_pruning": {
+      "role": "safe_necessary_precheck_only",
+      "active_window_s": [
+        1.159295222442692,
+        21.159295222442694
+      ],
+      "possible_window_s": [
+        1.159295222442692,
+        7.049756278040042
+      ],
+      "upper_bounds_s": {
+        "active_stop_s": 21.159295222442694,
+        "candidate_x_cap_s": 7.049756276040042,
+        "candidate_z_upper_cap_s": 7.778498350263425,
+        "candidate_z_lower_cap_s": 603.7128802592719
+      },
+      "length_expansion_m": 1e-09,
+      "time_expansion_s": 2e-09,
+      "active_span_s": 20.0,
+      "possible_span_s": 5.89046105559735,
+      "pruned_fraction": 0.7054769472201325,
+      "pruned": false,
+      "reasons": [],
+      "enabled": true
+    }
+  },
+  "kinematic_and_constraint_closure": {
+    "release_point_residual_m": 0.0,
+    "explosion_point_residual_m": 0.0,
+    "heading_unit_norm_residual": 0.0,
+    "minimum_constraint_margin": 0.4683560670671222,
+    "constraint_margins": {
+      "release_time_lower_s": 0.4683560670671222,
+      "fuse_delay_lower_s": 0.6909391553755698,
+      "speed_lower_mps": 21.587028740138038,
+      "speed_upper_mps": 48.41297125986196,
+      "explosion_height_lower_m": 1797.6607551094876,
+      "explosion_height_upper_m": 2.3392448905124184,
+      "missile_arrival_margin_s": 65.83987558502992
+    },
+    "interval_window_residual_s": 0.0,
+    "duration_reconstruction_residual_s": 0.0,
+    "nominal_to_formal_duration_difference_s": 0.0
+  },
+  "event_geometry": {
+    "records": [
+      {
+        "kind": "entry",
+        "time_s": 1.159295222442692,
+        "margin_m": -0.0023408152966961637,
+        "lambda_raw": 0.08892158426978888,
+        "target_z_m": 0.0
+      },
+      {
+        "kind": "interior",
+        "time_s": 3.4503257209337876,
+        "margin_m": -9.392524548291119,
+        "lambda_raw": 0.056113707513308575,
+        "target_z_m": 10.0
+      },
+      {
+        "kind": "exit",
+        "time_s": 5.741356219424883,
+        "margin_m": -1.6922641066230426e-10,
+        "lambda_raw": 0.020852344117252876,
+        "target_z_m": 10.0
+      }
+    ],
+    "maximum_endpoint_root_residual_m": 1.6922641066230426e-10,
+    "maximum_active_boundary_margin_m": -0.0023408152966961637,
+    "all_interior_margins_nonpositive": true
+  },
+  "invariants": {
+    "monotonicity": {
+      "smoke_radius_m": {
+        "values": [
+          8.0,
+          10.0,
+          12.0
+        ],
+        "durations_s": [
+          3.620319233657864,
+          4.582060996982191,
+          5.058499867321577
+        ],
+        "expected_direction": "nondecreasing",
+        "status": "pass"
+      },
+      "smoke_duration_s": {
+        "values": [
+          1.0,
+          10.0,
+          20.0
+        ],
+        "durations_s": [
+          1.0,
+          4.582060996982191,
+          4.582060996982191
+        ],
+        "expected_direction": "nondecreasing",
+        "status": "pass"
+      },
+      "target_radius_m": {
+        "values": [
+          5.0,
+          7.0,
+          9.0
+        ],
+        "durations_s": [
+          4.5893453425645525,
+          4.582060996982191,
+          4.5446264733983
+        ],
+        "expected_direction": "nonincreasing",
+        "status": "pass"
+      },
+      "target_height_m": {
+        "values": [
+          5.0,
+          10.0,
+          15.0
+        ],
+        "durations_s": [
+          4.598675380569659,
+          4.582060996982191,
+          4.564863168720159
+        ],
+        "expected_direction": "nonincreasing",
+        "status": "pass"
+      }
+    },
+    "reflection_symmetry": {
+      "nominal_duration_s": 4.582060996982191,
+      "reflected_duration_s": 4.582060996982191,
+      "absolute_difference_s": 0.0
+    }
+  },
+  "limit_and_counterexample_cases": {
+    "near_zero_smoke_radius": {
+      "radius_m": 1e-06,
+      "duration_s": 0.0,
+      "expected": "zero measure effective interval"
+    },
+    "short_lived_cloud": {
+      "smoke_duration_s": 0.25,
+      "effective_duration_s": 0.25,
+      "expected_upper_bound_s": 0.25
+    },
+    "center_only_target_counterexample": {
+      "full_cylinder_duration_s": 4.582060996982191,
+      "center_only_duration_s": 4.623270443975924,
+      "center_minus_full_s": 0.04120944699373297,
+      "implication": "A center-only target can overstate coverage and cannot replace the full-cylinder model."
+    }
+  },
+  "c3_geometry": {
+    "witness_forward_inverse_residual_m": 3.375077994860476e-14,
+    "witness_minimum_constraint_margin": 0.5893251664328596,
+    "q_intervals": [
+      [
+        0.05334290795925978,
+        0.06847389203512949
+      ]
+    ]
+  },
+  "checks": {
+    "release_kinematic_closure": true,
+    "explosion_kinematic_closure": true,
+    "heading_unit_norm": true,
+    "all_hard_constraints_feasible": true,
+    "intervals_inside_active_window": true,
+    "duration_equals_interval_measure": true,
+    "nominal_reproduces_formal_result": true,
+    "computed_transition_endpoints_are_roots": true,
+    "active_domain_boundaries_are_feasible": true,
+    "interval_interior_is_effective": true,
+    "all_monotonic_invariants": true,
+    "y_reflection_symmetry": true,
+    "zero_radius_limit": true,
+    "short_lived_cloud_bound": true,
+    "c3_witness_forward_inverse": true,
+    "c3_witness_strictly_feasible": true,
+    "center_only_simplification_is_optimistic": true
+  },
+  "claim_boundary": "Supports structural consistency and feasible behavior of the frozen Q2 model; it is not a global-optimality proof.",
+  "observed_at": "2026-08-28T06:31:29.395346+00:00",
+  "verification_code_sha256": "c40630fbb6c75a8e3a7e9fbe45df747d7dc44f6118e14329fc721b014af6d825"
+}

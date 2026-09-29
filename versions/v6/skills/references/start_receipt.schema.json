@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Math modeling V6 start receipt",
+  "type": "object",
+  "required": ["receipt_kind", "task", "scope", "components", "state_before", "earliest_open_state", "required_inputs", "routed_rules", "allowed_actions", "prohibited_actions", "full_read_gate", "decisions_required", "implementation_allowed", "substantive_analysis", "artifact_plan"],
+  "properties": {
+    "receipt_kind": {"const": "start"},
+    "recovery_level": {"enum": ["R0_INCREMENTAL_CHECKPOINT", "R1_HASH_DELTA_RECOVERY", "R2_FULL_RECOVERY"]},
+    "full_read_gate": {"enum": ["not_triggered", "in_progress", "closed"]},
+    "manuscript_mutation": {"type": "boolean"},
+    "manuscript_round_id": {"type": "string", "minLength": 1},
+    "manuscript_rule_read_evidence": {"type": "array"},
+    "cross_section_propagation": {"type": "boolean"},
+    "propagation_matrix": {"type": "string"},
+    "pre_mutation_baseline": {"type": "string"},
+    "substantive_analysis": {"type": "boolean"},
+    "artifact_plan": {"type": "array", "minItems": 1}
+  },
+  "additionalProperties": true
+}

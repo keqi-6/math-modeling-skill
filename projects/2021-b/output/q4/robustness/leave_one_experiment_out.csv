@@ -1,0 +1,6 @@
+omitted_experiment_id,retained_experiment_count,retained_responsibility_codes,lost_responsibility_codes,all_five_responsibilities_retained
+E1,4,G1|G3|G4,G2|G5,False
+E2,4,G1|G2|G4|G5,G3,False
+E3,4,G1|G2|G3|G5,G4,False
+E4,4,G2|G3|G4|G5,G1,False
+E5,4,G1|G2|G3|G4,G5,False

@@ -1,0 +1,2502 @@
+{
+  "schema_version": "10.0",
+  "policy": "closed_target_vocabulary; additions require an impact-analyzed rule change",
+  "targets": [
+    {
+      "target": "affected_closure_review",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "affected_components",
+      "verbs": [
+        "invalidate"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "agent_behavior",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "ambiguity_register",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "anomaly_set",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "auxiliary_method_visibility",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "artifact_admission_bypass",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "artifact_consumer_count",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "artifact_identity",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "artifact_proposal_metadata_validation",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "artifact_state",
+      "verbs": [
+        "transition"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "assumption_applicability",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "audit_read_scope",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "audit_scope_escalation",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "axis_and_legend_labels",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "behavior_eval_set",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "candidate_assumptions",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "candidate_behavior",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "candidate_evaluation",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "candidate_set",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "categorical_distinction",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "change_impact",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "change_risk",
+      "verbs": [
+        "select"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "claim_scope",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "claim_source_link",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "claim_uncertainty_bound",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "compatibility_report",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "component_decomposition",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "component_state_set",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "cross_references",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "data_audit_readiness",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "data_identity_readiness",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "data_leakage",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "dataset_completeness",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "dataset_consumers",
+      "verbs": [
+        "invalidate"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "dataset_context",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "dataset_schema",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "dataset_semantic_consistency",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "dataset_source",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "decision_dimension_model",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "decision_kind",
+      "verbs": [
+        "select"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "decision_robustness",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "default_project_files",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "default_provenance_bundle",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "delivered_artifact_status",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "delivery_rendering",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "dependency_graph",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "duplicate_identity",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "edit_scope",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "edit_target",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "end_receipt",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "evaluator_visible_meta_language",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "evidence_shape",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "execution_determinism_contract",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "execution_mode",
+      "verbs": [
+        "select"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "exit_zero_as_correctness_proof",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "boolean"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "explanation_substitute",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "external_claim_consumers",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "external_fact_source",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "external_material_citations",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "external_material_lineage",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "external_policy",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "failed_runs",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "formatting_as_numerical_stability",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "boolean"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "front_matter",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "frozen_change_authorization",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "frozen_dataset",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "frozen_dataset_identity",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "frozen_model_assumptions",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "frozen_model_specification",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "global_manuscript_acceptance",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "handoff_authority",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "implementation_boundaries",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "implementation_code_paths",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "implementation_error_paths",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "implementation_interface",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "implementation_reproduction",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "implementation_spec_identity",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "implementation_units",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "key_numerical_result",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "known_information",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "last_route",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "limit_case_behavior",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "local_edit_dependencies",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "manuscript_claim",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "manuscript_organization_source",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "manuscript_structure",
+      "verbs": [
+        "select"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "material_limitations",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "mathematical_core",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "mechanism_consistency",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "method_description",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "missingness_pattern",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "mode_change",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "model_claim_e4_readiness",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "model_constraints",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "model_failure_boundary",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "model_invariants",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "model_io_interface",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "model_objects",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "model_parameters",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "model_redesign_control",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "model_sensitivity",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "model_specification_readiness",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "model_variables",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "new_behavior",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "next_action",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "notation_consistency",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "numeric_tolerance",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "numerical_convergence",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "numerical_stability",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "objective_and_constraints",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "old_behavior",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "orchestration_override",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "package_members",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "package_sensitive_content",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "page_layout",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "parameter_plausibility",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "plotted_value_mutation",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "primary_evidence_substitute",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "problem_definition_readiness",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "project_boundary",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "project_scope_change",
+      "verbs": [
+        "allow"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "project_toolchain",
+      "verbs": [
+        "select"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "promotion_gate",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "published_placeholders",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "boolean"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "raw_dataset_mutation",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "boolean"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "reader_explanation_chain",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "reader_flow",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "reality_fit",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "recovery_claim_basis",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "recovery_evidence_coverage",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "recovery_level",
+      "verbs": [
+        "select"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "recovery_manifest",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "recovery_read_scope",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "redistribution_permission",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "registered_model_output",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "render_legibility",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "rendered_fonts",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "rendered_manuscript",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "rendered_visual",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "reported_result_identity",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "reproducibility",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "request_coverage",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "required_model_outputs",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "result_identity",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "result_interpretation_trace",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "result_scale",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "result_statement_type",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "robustness_baseline",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "robustness_failure_region",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "robustness_metric",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "rollback_point",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "route_input",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "route_proof_source",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "route_shape",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "route_state",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "route_tuple",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "rule_applicability",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "rule_reachability",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "run_identity",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "s6_evidence",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "array"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "scope_inventory",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "scope_task_admission",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "search_direction",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "search_input",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "section_acceptance",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "section_dependency_order",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "section_responsibility",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "section_trace",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "selection_rationale",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "semantic_owner_count",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "integer"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "solution_algorithm",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "source_claim_scope",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "source_identity",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "source_preference",
+      "verbs": [
+        "select"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "standalone_comprehension",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "start_receipt",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "structural_test_profile",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "structure_creation",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "structure_input",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "structured_conflicts",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "maintenance"
+      ]
+    },
+    {
+      "target": "style_transformation",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "submission_boundary",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "evidence_delivery"
+      ]
+    },
+    {
+      "target": "success_criteria",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "teammate_solution_brief",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "transformation_lineage",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "transition_gate",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "treatment_decision",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "treatment_output",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "treatment_options",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "data"
+      ]
+    },
+    {
+      "target": "uncertainty_claim_readiness",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "uncertainty_propagation",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "uncertainty_sources",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "unknown_variables",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "modeling"
+      ]
+    },
+    {
+      "target": "visual_caption",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "visual_data_identity",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "visual_placement",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "visual_question",
+      "verbs": [
+        "record"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "visual_similarity_as_robustness_proof",
+      "verbs": [
+        "forbid"
+      ],
+      "value_types": [
+        "boolean"
+      ],
+      "domains": [
+        "verification"
+      ]
+    },
+    {
+      "target": "visual_source_output_sync",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "visual_source_fidelity",
+      "verbs": [
+        "verify"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "visual_type",
+      "verbs": [
+        "select"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "visual_uncertainty_encoding",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "visuals"
+      ]
+    },
+    {
+      "target": "work_package_trace",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "project"
+      ]
+    },
+    {
+      "target": "writable_route_status",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "write_scope",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "governance"
+      ]
+    },
+    {
+      "target": "writing_profile_source",
+      "verbs": [
+        "require"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    },
+    {
+      "target": "writing_profile_transformation",
+      "verbs": [
+        "limit"
+      ],
+      "value_types": [
+        "string"
+      ],
+      "domains": [
+        "manuscript"
+      ]
+    }
+  ]
+}

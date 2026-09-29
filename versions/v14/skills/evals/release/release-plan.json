@@ -1,0 +1,25 @@
+{
+  "schema_version": "14.0",
+  "release_id": "V14.0.0",
+  "policy": "references/release-policy.json",
+  "required_drivers": ["package", "contracts", "scenarios"],
+  "drivers": [
+    {"id": "package", "script": "scripts/validate_v14_package.py"},
+    {"id": "contracts", "script": "scripts/validate_v14_contracts.py"},
+    {"id": "scenarios", "script": "scripts/run_v14_scenarios.py"}
+  ],
+  "required_case_ids": [
+    "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
+    "SCENARIO.STATE.D0_D1_ROUNDTRIP",
+    "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
+    "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
+    "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
+    "SCENARIO.STATE.ALL_EDGES_RESOLVE"
+  ],
+  "legacy_diagnostic_suites_are_active_drivers": false,
+  "unverified_boundaries": [
+    "The gate proves declared local contracts and representative filesystem outcomes, not arbitrary mathematical correctness.",
+    "Natural-language intent remains an Agent responsibility and is not inferred from keyword counts.",
+    "External services and operating systems other than the release host are outside this local gate."
+  ]
+}

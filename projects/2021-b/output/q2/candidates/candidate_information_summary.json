@@ -1,0 +1,59 @@
+{
+  "status": "s6_candidate_diagnostic_not_formal_model",
+  "domain": "21 combinations x 4 common temperatures",
+  "responses": [
+    {
+      "response": "ethanol_conversion_pct",
+      "response_cn": "乙醇转化率",
+      "observation_count": 84,
+      "additive_parameter_count": 24,
+      "combination_line_parameter_count": 42,
+      "total_ss": 19402.354573913053,
+      "combination_ss": 8849.78730765607,
+      "temperature_ss": 7449.93815236744,
+      "additive_nonadditive_ss": 3102.6291138895326,
+      "combination_share_total_ss": 0.456119244390824,
+      "temperature_share_total_ss": 0.38397082807589067,
+      "nonadditive_share_total_ss": 0.15990992753328476,
+      "combination_line_sse": 334.05321166671524,
+      "line_sse_reduction_vs_additive": 0.8923322126478928,
+      "additive_leave_one_cell_out_mae": 5.769725962446474,
+      "additive_leave_one_cell_out_rmse": 8.874800547732958,
+      "line_leave_one_cell_out_mae": 4.091349426500396,
+      "line_leave_one_cell_out_rmse": 5.451227717644615,
+      "slope_per_25c_min": 1.4466465956321766,
+      "slope_per_25c_median": 5.513879927980111,
+      "slope_per_25c_max": 16.172237418510583
+    },
+    {
+      "response": "c4_selectivity_pct",
+      "response_cn": "C4烯烃选择性",
+      "observation_count": 84,
+      "additive_parameter_count": 24,
+      "combination_line_parameter_count": 42,
+      "total_ss": 9297.062795238095,
+      "combination_ss": 5549.552995238096,
+      "temperature_ss": 2958.789147619047,
+      "additive_nonadditive_ss": 788.7206523809522,
+      "combination_share_total_ss": 0.5969146511606382,
+      "temperature_share_total_ss": 0.3182498830850667,
+      "nonadditive_share_total_ss": 0.08483546575429507,
+      "combination_line_sse": 260.61872,
+      "line_sse_reduction_vs_additive": 0.6695677750883577,
+      "additive_leave_one_cell_out_mae": 3.3651494549627086,
+      "additive_leave_one_cell_out_rmse": 4.624649428832899,
+      "line_leave_one_cell_out_mae": 3.5685187728937686,
+      "line_leave_one_cell_out_rmse": 4.98228541567488,
+      "slope_per_25c_min": 0.33114285714285685,
+      "slope_per_25c_median": 4.148571428571427,
+      "slope_per_25c_max": 8.172571428571425
+    }
+  ],
+  "boundaries": [
+    "平方和占比只作平衡主体域的描述性分解",
+    "加和剩余混合交互、曲率、测量误差和未记录因素",
+    "逐组合直线用线性形状换取压缩，不证明因果交互",
+    "留一误差只比较候选压缩能力，不是未测温度外推证明",
+    "混合效应候选因职责不匹配而不作数值试拟合"
+  ]
+}

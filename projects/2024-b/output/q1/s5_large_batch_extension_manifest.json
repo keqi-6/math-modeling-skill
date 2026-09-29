@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s5_run_identity",
+  "producer": "src/q1/07_large_batch_extension.py",
+  "started_at": "2026-08-25T17:26:07.927375+08:00",
+  "finished_at": "2026-08-25T17:26:15.071825+08:00",
+  "elapsed_seconds": 7.144462076999844,
+  "command": [
+    "/usr/bin/python3",
+    "src/q1/07_large_batch_extension.py",
+    "--n-list",
+    "100,200,500,1000",
+    "--bisection-iterations",
+    "24"
+  ],
+  "environment": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "random_seed": null
+  },
+  "parameters": {
+    "n_values": [
+      100,
+      200,
+      500,
+      1000
+    ],
+    "bisection_iterations": 24
+  },
+  "inputs": {
+    "planning/analysis/2026-08-25_q1_s4_complete_action_specification.md": "f156e3c423ce0cedcfef23dea027afbd842a07892cdd0cb2229cdaa25584a8f6",
+    "src/q1/core.py": "8ba6be5e2fbae44c3acb37aceb64f83046bb2e724c8d14bbe80304f48d03e20b",
+    "src/q1/07_large_batch_extension.py": "c6097f852c12cd4690011a23b28abd0589ff462b6eb92fb75dee74b027f039b7"
+  },
+  "outputs": {
+    "output/q1/s5_large_batch_extension.json": "28a794aa079c2f22036ecba1f1e483f3eba90b05995d6b89173ab4c7a1e9991b"
+  },
+  "claim_boundary": "S5 large-batch feasible candidates; independent verification is a separate artifact"
+}

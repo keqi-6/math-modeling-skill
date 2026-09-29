@@ -1,0 +1,537 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "SPEC-Q5-GEOMETRY-AUDIT-1.0",
+  "status": "pass",
+  "generated_at": "2026-08-28T20:36:16.914485+00:00",
+  "objective": "independent Q5 geometry and kinematics audit; no optimization",
+  "checks": [
+    {
+      "name": "finite_segment_distance",
+      "status": "pass",
+      "random_pair_count": 36,
+      "surface_point_count": 482,
+      "maximum_absolute_error_m": 4.922640073345974e-11,
+      "counterexample": {
+        "description": "cloud lies beyond target on the infinite sightline",
+        "finite_segment_distance_m": 5.0,
+        "infinite_line_distance_m": 0.0,
+        "implication": "an infinite-line implementation would create a false obscuration"
+      }
+    },
+    {
+      "name": "visible_surface_first_hit",
+      "status": "pass",
+      "checked_point_views": 13806,
+      "nonambiguous_mismatch_count": 0,
+      "edge_or_tangent_mismatch_count": 327,
+      "mismatch_examples": [
+        {
+          "missile": 0,
+          "time_s": 0.0,
+          "point": [
+            -0.45155914614521364,
+            206.98542012605773,
+            10.0
+          ],
+          "normal_dot": -1496.7524211594032,
+          "ambiguous": true
+        },
+        {
+          "missile": 0,
+          "time_s": 0.0,
+          "point": [
+            -1.050387788412568,
+            206.92074313162638,
+            10.0
+          ],
+          "normal_dot": -3205.84348493952,
+          "ambiguous": true
+        },
+        {
+          "missile": 0,
+          "time_s": 0.0,
+          "point": [
+            -1.6414397269928673,
+            206.80482737640344,
+            10.0
+          ],
+          "normal_dot": -4891.251430734005,
+          "ambiguous": true
+        },
+        {
+          "missile": 0,
+          "time_s": 0.0,
+          "point": [
+            -2.2203390201237414,
+            206.6385310600852,
+            10.0
+          ],
+          "normal_dot": -6540.498087784553,
+          "ambiguous": true
+        },
+        {
+          "missile": 0,
+          "time_s": 0.0,
+          "point": [
+            -2.7827996999778906,
+            206.42308538241576,
+            10.0
+          ],
+          "normal_dot": -8141.373010862993,
+          "ambiguous": true
+        }
+      ],
+      "reference_method": "first analytic ray intersection with finite cylinder"
+    },
+    {
+      "name": "kinematic_roundtrip",
+      "status": "pass",
+      "roundtrip_count": 60,
+      "maximum_errors": {
+        "heading_rad": 2.6645352591003757e-15,
+        "speed_mps": 2.8421709430404007e-13,
+        "release_s": 1.2434497875801753e-14,
+        "fuse_s": 1.2434497875801753e-14,
+        "cloud_m": 1.1368683772161603e-12,
+        "missile_m": 3.6450773090749405e-12,
+        "production_explosion_m": 2.2737367544323206e-13
+      }
+    },
+    {
+      "name": "centreline_certificate_and_cloud_union",
+      "status": "pass",
+      "analytic_envelope_radius_m": 8.602325267042627,
+      "smoke_radius_m": 10.0,
+      "maximum_dense_centreline_distance_m": 8.602325267042637,
+      "base_centreline_counterexample": {
+        "worst_margin_m": 2.206555615733711,
+        "worst_point_m": [
+          3.0685980275235423,
+          206.29155832409418,
+          10.0
+        ],
+        "implication": "the base-centre sightline has no unconditional full-cylinder certificate"
+      },
+      "two_cloud_union_counterexample": {
+        "cloud_a_margin_m": 2.1156631609992633,
+        "cloud_b_margin_m": 2.1158367543851746,
+        "union_margin_m": -3.0401659640582004,
+        "implication": "each cloud may fail alone while their per-ray union fully obscures the target"
+      }
+    },
+    {
+      "name": "production_full_obscuration_quantifier",
+      "status": "pass",
+      "maximum_independent_margin_error_m": 3.8481751118979446e-10,
+      "maximum_relabelling_effect_m": 0.0,
+      "sample_records": [
+        {
+          "missile": "M1",
+          "time_s": 16.0,
+          "reference_margin_m": -0.45609037826878307,
+          "production_margin_m": -0.4560903783864667,
+          "worst_point_m": [
+            1.3656322541128982,
+            206.86549696282262,
+            0.0
+          ]
+        },
+        {
+          "missile": "M1",
+          "time_s": 18.0,
+          "reference_margin_m": -4.468274914770325,
+          "production_margin_m": -4.468274914978397,
+          "worst_point_m": [
+            -1.2858791391047208e-15,
+            193.0,
+            0.0
+          ]
+        },
+        {
+          "missile": "M1",
+          "time_s": 20.0,
+          "reference_margin_m": -6.411172696921355,
+          "production_margin_m": -6.411172696808803,
+          "worst_point_m": [
+            1.365632254112898,
+            193.13450303717738,
+            0.0
+          ]
+        },
+        {
+          "missile": "M1",
+          "time_s": 22.0,
+          "reference_margin_m": -0.12401861731807173,
+          "production_margin_m": -0.12401861740504572,
+          "worst_point_m": [
+            -1.2858791391047208e-15,
+            193.0,
+            2.5
+          ]
+        },
+        {
+          "missile": "M1",
+          "time_s": 30.0,
+          "reference_margin_m": -2.841862165579238,
+          "production_margin_m": -2.841862165949176,
+          "worst_point_m": [
+            1.3656322541128982,
+            206.86549696282262,
+            0.0
+          ]
+        },
+        {
+          "missile": "M1",
+          "time_s": 32.0,
+          "reference_margin_m": -0.9872919225027452,
+          "production_margin_m": -0.9872919225953645,
+          "worst_point_m": [
+            -1.3656322541129007,
+            193.13450303717738,
+            10.0
+          ]
+        },
+        {
+          "missile": "M2",
+          "time_s": 16.0,
+          "reference_margin_m": -0.6795202835571104,
+          "production_margin_m": -0.6795202834919571,
+          "worst_point_m": [
+            -1.2858791391047208e-15,
+            193.0,
+            10.0
+          ]
+        },
+        {
+          "missile": "M2",
+          "time_s": 18.0,
+          "reference_margin_m": -5.620468002556755,
+          "production_margin_m": -5.620468002194563,
+          "worst_point_m": [
+            4.286263797015736e-16,
+            207.0,
+            0.0
+          ]
+        },
+        {
+          "missile": "M2",
+          "time_s": 20.0,
+          "reference_margin_m": -2.009992943621394,
+          "production_margin_m": -2.0099929435935735,
+          "worst_point_m": [
+            -1.2858791391047208e-15,
+            193.0,
+            10.0
+          ]
+        },
+        {
+          "missile": "M2",
+          "time_s": 22.0,
+          "reference_margin_m": -5.963976797354628,
+          "production_margin_m": -5.963976797358427,
+          "worst_point_m": [
+            4.286263797015736e-16,
+            207.0,
+            10.0
+          ]
+        },
+        {
+          "missile": "M2",
+          "time_s": 30.0,
+          "reference_margin_m": -2.132440836043739,
+          "production_margin_m": -2.132440835996346,
+          "worst_point_m": [
+            4.286263797015736e-16,
+            207.0,
+            0.0
+          ]
+        },
+        {
+          "missile": "M2",
+          "time_s": 32.0,
+          "reference_margin_m": -1.559570801696701,
+          "production_margin_m": -1.5595708020815184,
+          "worst_point_m": [
+            -1.2858791391047208e-15,
+            193.0,
+            10.0
+          ]
+        },
+        {
+          "missile": "M3",
+          "time_s": 16.0,
+          "reference_margin_m": -5.884601476690084,
+          "production_margin_m": -5.88460147662944,
+          "worst_point_m": [
+            -1.2858791391047208e-15,
+            193.0,
+            10.0
+          ]
+        },
+        {
+          "missile": "M3",
+          "time_s": 18.0,
+          "reference_margin_m": -8.389354159187743,
+          "production_margin_m": -8.389354159135333,
+          "worst_point_m": [
+            -1.3656322541128973,
+            206.86549696282262,
+            10.0
+          ]
+        },
+        {
+          "missile": "M3",
+          "time_s": 20.0,
+          "reference_margin_m": -1.0277846986091017,
+          "production_margin_m": -1.02778469861118,
+          "worst_point_m": [
+            1.3656322541128982,
+            206.86549696282262,
+            0.0
+          ]
+        },
+        {
+          "missile": "M3",
+          "time_s": 22.0,
+          "reference_margin_m": -4.486322625288579,
+          "production_margin_m": -4.486322625291882,
+          "worst_point_m": [
+            -2.678784026555632,
+            193.532843272421,
+            10.0
+          ]
+        },
+        {
+          "missile": "M3",
+          "time_s": 30.0,
+          "reference_margin_m": -2.3621341712670123,
+          "production_margin_m": -2.3621341715577087,
+          "worst_point_m": [
+            1.3656322541128982,
+            206.86549696282262,
+            0.0
+          ]
+        },
+        {
+          "missile": "M3",
+          "time_s": 32.0,
+          "reference_margin_m": -1.2195941590502546,
+          "production_margin_m": -1.2195941589562214,
+          "worst_point_m": [
+            -1.3656322541129007,
+            193.13450303717738,
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "historical_geometry_mesh_convergence",
+      "status": "diagnostic",
+      "levels": [
+        {
+          "n_theta": 32,
+          "n_levels": 5,
+          "surface_point_count": 289,
+          "times_s": [
+            15.8876,
+            18.0,
+            20.0,
+            22.0,
+            22.9477,
+            29.55,
+            31.0,
+            32.2245
+          ],
+          "margins_m_by_missile": [
+            [
+              -5.027466785989532e-06,
+              -4.468274914978397,
+              -6.411172696808803,
+              -0.12401861740504572,
+              -3.4463055117683803,
+              -0.9703880068402295,
+              -5.089998474525574,
+              -0.04718782918038755
+            ],
+            [
+              -1.1516206231060941,
+              -5.620468002194563,
+              -2.0099929435935735,
+              -5.963976797358427,
+              -5.706618132444416,
+              -0.08141975177017002,
+              -5.756869396346024,
+              -0.5119769207862532
+            ],
+            [
+              -6.404107802090954,
+              -8.389354159135333,
+              -1.02778469861118,
+              -4.486322625291882,
+              1.3188245056028336e-05,
+              -0.003933283572958857,
+              -6.472651801106839,
+              2.4931800204797128e-05
+            ]
+          ]
+        },
+        {
+          "n_theta": 64,
+          "n_levels": 9,
+          "surface_point_count": 1089,
+          "times_s": [
+            15.8876,
+            18.0,
+            20.0,
+            22.0,
+            22.9477,
+            29.55,
+            31.0,
+            32.2245
+          ],
+          "margins_m_by_missile": [
+            [
+              -5.027466785989532e-06,
+              -4.468274914978397,
+              -6.406579449972513,
+              -0.12401861740504572,
+              -3.4433462067545397,
+              -0.960165817127999,
+              -5.079259247002746,
+              -0.0367339402569371
+            ],
+            [
+              -1.1516206231060941,
+              -5.616991083934789,
+              -2.0092195181079067,
+              -5.963635562723356,
+              -5.706199898039943,
+              -0.07859333197474427,
+              -5.7506577399421435,
+              -0.5045944903233455
+            ],
+            [
+              -6.402191427018468,
+              -8.388885376654054,
+              -1.023113027755592,
+              -4.486322625291882,
+              1.3188245056028336e-05,
+              0.001566876557383523,
+              -6.472535395501179,
+              0.0034548376184790897
+            ]
+          ]
+        },
+        {
+          "n_theta": 128,
+          "n_levels": 17,
+          "surface_point_count": 4225,
+          "times_s": [
+            15.8876,
+            18.0,
+            20.0,
+            22.0,
+            22.9477,
+            29.55,
+            31.0,
+            32.2245
+          ],
+          "margins_m_by_missile": [
+            [
+              -5.027466785989532e-06,
+              -4.467478046576339,
+              -6.406579449972513,
+              -0.12401861740504572,
+              -3.4433462067545397,
+              -0.960165817127999,
+              -5.079259247002746,
+              -0.0367339402569371
+            ],
+            [
+              -1.1508771075666413,
+              -5.616991083934789,
+              -2.0085474427478065,
+              -5.963269089412244,
+              -5.706199898039943,
+              -0.07699397668807073,
+              -5.7506577399421435,
+              -0.5045944903233455
+            ],
+            [
+              -6.402191427018468,
+              -8.388671186909678,
+              -1.023113027755592,
+              -4.486305430823656,
+              1.3188245056028336e-05,
+              0.001566876557383523,
+              -6.470519224756016,
+              0.0038426103768500752
+            ]
+          ]
+        },
+        {
+          "n_theta": 256,
+          "n_levels": 33,
+          "surface_point_count": 16641,
+          "times_s": [
+            15.8876,
+            18.0,
+            20.0,
+            22.0,
+            22.9477,
+            29.55,
+            31.0,
+            32.2245
+          ],
+          "margins_m_by_missile": [
+            [
+              -5.027466785989532e-06,
+              -4.467459367877796,
+              -6.406579449972513,
+              -0.12401861740504572,
+              -3.4433462067545397,
+              -0.960165817127999,
+              -5.079259247002746,
+              -0.0367339402569371
+            ],
+            [
+              -1.1508771075666413,
+              -5.616985703292889,
+              -2.0085474427478065,
+              -5.963269089412244,
+              -5.706199898039943,
+              -0.07699397668807073,
+              -5.75042090830428,
+              -0.5045944903233455
+            ],
+            [
+              -6.402116239242796,
+              -8.388664544295601,
+              -1.0227771930095493,
+              -4.486295972953777,
+              1.4161796775269408e-05,
+              0.002134771490972298,
+              -6.470519224756016,
+              0.004175356859771995
+            ]
+          ]
+        }
+      ],
+      "successive_maximum_margin_differences_m": [
+        0.010739227522828187,
+        0.002016170745163137,
+        0.0005678949335887751
+      ],
+      "finest_successive_difference_m": 0.0005678949335887751,
+      "claim_boundary": "finite mesh convergence is numerical evidence, not a continuous-surface proof"
+    }
+  ],
+  "claims": {
+    "formal_q5_result_modified": false,
+    "optimization_executed": false,
+    "continuous_surface_proved": false,
+    "independent_reference_path_used": true,
+    "geometry_audit_passed": true
+  }
+}

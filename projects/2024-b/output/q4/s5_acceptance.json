@@ -1,0 +1,197 @@
+{
+  "status": "pass",
+  "same_implementation_checks": 38,
+  "s6_independent_validation": "not_started",
+  "checks": [
+    {
+      "id": "A01_interval_count",
+      "status": "pass",
+      "evidence": "5组设置×3个显示率"
+    },
+    {
+      "id": "A02_interval_contiguity",
+      "status": "pass",
+      "evidence": "全部反演集合连续"
+    },
+    {
+      "id": "A03_full_census_limit",
+      "status": "pass",
+      "evidence": "通用函数保留n=N退化门；独立验证执行夹具"
+    },
+    {
+      "id": "A04_q2_counts",
+      "status": "pass",
+      "evidence": "问题二完整27组合与16策略"
+    },
+    {
+      "id": "A05_q3_counts",
+      "status": "pass",
+      "evidence": "问题三对称代表与完整有标签域"
+    },
+    {
+      "id": "A06_q2_nominal_N200_n100_1",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N200_n100_2",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N200_n100_3",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N200_n100_4",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N200_n100_5",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N200_n100_6",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n20_1",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n20_2",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n20_3",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n20_4",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n20_5",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n20_6",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n100_1",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n100_2",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n100_3",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n100_4",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n100_5",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n100_6",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n200_1",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n200_2",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n200_3",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n200_4",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n200_5",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N500_n200_6",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N1000_n100_1",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N1000_n100_2",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N1000_n100_3",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N1000_n100_4",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N1000_n100_5",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A06_q2_nominal_N1000_n100_6",
+      "status": "pass",
+      "evidence": "名义最优策略集合精确复现"
+    },
+    {
+      "id": "A07_q3_nominal_all_candidates",
+      "status": "pass",
+      "evidence": "NOMINAL全部65536候选逐字段回归"
+    },
+    {
+      "id": "A08_q3_nominal_optimum",
+      "status": "pass",
+      "evidence": "五组名义点均复现NOMINAL最优集合与利润"
+    },
+    {
+      "id": "A09_no_joint_claim",
+      "status": "pass",
+      "evidence": "输出身份固定为单率区间与确定性离散灵敏度"
+    }
+  ]
+}

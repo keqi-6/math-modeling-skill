@@ -1,0 +1,828 @@
+{
+  "baseline_integrity": {
+    "v10": {
+      "file_count": 61,
+      "tree_sha256": "9b5564d1c3817826e7e016a12a2befe11d1b0240bd5f1bb645476d96b967f7f4",
+      "unchanged": true
+    },
+    "v9": {
+      "file_count": 53,
+      "tree_sha256": "6e9c0a0edca30a50d1f1aaa2eb4ca2c9401dc3554c4393237f4ba40b534737b0",
+      "unchanged": true
+    }
+  },
+  "compatibility_boundary": {
+    "legacy_change_stack_is_v11_runtime": false,
+    "legacy_v10_only": [
+      "references/change-envelope.schema.json",
+      "scripts/analyze_rule_change.py",
+      "scripts/apply_rule_change.py",
+      "scripts/run_change_evals.py",
+      "scripts/run_transaction_tests.py"
+    ],
+    "v11_active_maintenance_gates": [
+      "scripts/run_maintenance_tests.py",
+      "scripts/run_forward_acceptance.py",
+      "scripts/validate_release.py"
+    ],
+    "v11_active_skill_maintenance_entry": [
+      "references/semantic-plan.schema.json",
+      "references/route-contract.json",
+      "scripts/resolve_route.py"
+    ]
+  },
+  "drivers": [
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/quick_validate.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills"
+      ],
+      "command_sha256": "0fd9a831662c03da3d4a17a50bd6aa385a4eb93c1e4064a5b28c3595dc491f2f",
+      "duration_ms": 2569,
+      "errors": [],
+      "executed_count": 10,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 10,
+      "finished_at": "2026-08-24T11:14:15.412836Z",
+      "fresh_subprocess": true,
+      "id": "quick_package",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T11:14:12.843304Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 1564,
+      "stdout_sha256": "81bc394451ae56e8ef7985ba32f13f365853d1d27a64abaaa7ba2900d6f131cb",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/validate_contracts.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills"
+      ],
+      "command_sha256": "4a9bc4fc1bf6082b5670c0f95965e06fe2dabdd333f9269ec1f9ef28f72292e4",
+      "duration_ms": 692,
+      "errors": [],
+      "executed_count": 4,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 4,
+      "finished_at": "2026-08-24T11:14:16.328925Z",
+      "fresh_subprocess": true,
+      "id": "contracts",
+      "missing_case_ids": [],
+      "observed_metrics": {
+        "active_rules": 206,
+        "behavior_cases": 15,
+        "known_events": 90,
+        "reachable_active_rules": 206,
+        "retired_rules": 0,
+        "route_witnesses": 30,
+        "routes": 30,
+        "rules": 206,
+        "test_ids": 472,
+        "trigger_events": 90
+      },
+      "started_at": "2026-08-24T11:14:15.636537Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 6291,
+      "stdout_sha256": "203fa46caeb2a8b08686c5f869c473205723d4ed2402f8973a6b8ca3a7eda4a1",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/validate_v10_corpus.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills",
+        "--v10-root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v10/skills"
+      ],
+      "command_sha256": "52a80c8861c1d8799f6c81366cd110d25625f8185413b815e4645461110ed282",
+      "duration_ms": 665,
+      "errors": [],
+      "executed_count": 3,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 3,
+      "finished_at": "2026-08-24T11:14:17.226555Z",
+      "fresh_subprocess": true,
+      "id": "v10_corpus",
+      "missing_case_ids": [],
+      "observed_metrics": {
+        "active_rules": 206,
+        "exact_files": 9,
+        "rule_files": 9,
+        "v10_active_rules": 206,
+        "v10_inventory_sha256": "be87e1a47dc4ec591f00322c495801670b456dc65ce2825e9fae0431665f394f",
+        "v10_manifest_sha256": "381aeecf62e13a5c1a8496fad9f04a659dc641693423f9aacefe9f03e0289ce3",
+        "v10_release_tree_sha256": "a0839f3feced0780d03e3f8931abdf2527001e3601c4c8674b38bf86603cd9b5"
+      },
+      "started_at": "2026-08-24T11:14:16.561166Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 499,
+      "stdout_sha256": "8906d66cd610bd705aaee8c533faf44ee89a93d551811c0963f071aebbc01e81",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/run_behavior_evals.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills"
+      ],
+      "command_sha256": "e72b16be69aa5e8ba0b489b03703646529678896a7134155ebdb660a88d06aac",
+      "duration_ms": 6360,
+      "errors": [],
+      "executed_count": 36,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 36,
+      "finished_at": "2026-08-24T11:14:24.735753Z",
+      "fresh_subprocess": true,
+      "id": "behavior",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T11:14:17.452095Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 17384,
+      "stdout_sha256": "f4a8faf0ea85390d09a44399474bfb5fd27dc79ac230fe7793bc176a986c377f",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 206,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/run_atomic_rule_evals.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills",
+        "--mutation-check"
+      ],
+      "command_sha256": "308d2269a6a5418d503c027bf7e732bfd0e3c46663f5dc152ba6149c1246886f",
+      "duration_ms": 478,
+      "errors": [],
+      "executed_count": 206,
+      "exit_code": 0,
+      "expected_auxiliary_count": 206,
+      "expected_count": 206,
+      "finished_at": "2026-08-24T11:14:25.449687Z",
+      "fresh_subprocess": true,
+      "id": "atomic",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T11:14:24.971302Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 59061,
+      "stdout_sha256": "c43c7b03fe30d2e6ecc142b930a0008c8c9ac7a86bd346cde004107bdf0ce189",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/run_scenario_tests.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills"
+      ],
+      "command_sha256": "45d07875e8b829b86e7fefe7be8ae6ef3643c6b72611177cf547d580d00f7068",
+      "duration_ms": 3509,
+      "errors": [],
+      "executed_count": 26,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 26,
+      "finished_at": "2026-08-24T11:14:29.190287Z",
+      "fresh_subprocess": true,
+      "id": "scenario",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T11:14:25.681239Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 3798,
+      "stdout_sha256": "eaa2d2aef754643e286bfce5185360758c4a2cb6ac66ea8ee004e2f85937cbd6",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/run_maintenance_tests.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills"
+      ],
+      "command_sha256": "afeb1b1db83c0af0bf474fd5019f5719ced35823977873ca0e8d07ddc9a36e8b",
+      "duration_ms": 287,
+      "errors": [],
+      "executed_count": 25,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 25,
+      "finished_at": "2026-08-24T11:14:29.684601Z",
+      "fresh_subprocess": true,
+      "id": "maintenance",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T11:14:29.396592Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 4252,
+      "stdout_sha256": "55b13f39dfd2a3eaef58b44a6a3fb24c1a75d91ad3993caf66023f8f748daf35",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/validate_migration.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills",
+        "--v9-root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v9/skills"
+      ],
+      "command_sha256": "04fa564beeba977c144c79e9a0e41a78d6a3bb55a4d3accc4430d8c696a74ab5",
+      "duration_ms": 532,
+      "errors": [],
+      "executed_count": 6,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 6,
+      "finished_at": "2026-08-24T11:14:30.451008Z",
+      "fresh_subprocess": true,
+      "id": "migration",
+      "missing_case_ids": [],
+      "observed_metrics": {
+        "atomic_test_bindings": 206,
+        "blocking_dispositions": 0,
+        "legacy_entries": 1859,
+        "native_entries": 14,
+        "reverse_atoms": 206,
+        "reviewed_active_atoms": 206,
+        "reviewed_source_clauses": 302,
+        "unwaived_strength_regressions": 0,
+        "v10_active_rules": 206,
+        "v9_capabilities": 51
+      },
+      "started_at": "2026-08-24T11:14:29.918700Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 810,
+      "stdout_sha256": "816d21f8b0e6d10ed0f68baea87a010a0af75f7ca14c545bb5a1b18dd75dfd89",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills/scripts/run_forward_acceptance.py",
+        "--root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v11/skills"
+      ],
+      "command_sha256": "8d0aa32fdc1e59a88d744bcf726244a157100537955e660067d27dd49f90c374",
+      "duration_ms": 3091,
+      "errors": [],
+      "executed_count": 19,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 19,
+      "finished_at": "2026-08-24T11:14:33.768074Z",
+      "fresh_subprocess": true,
+      "id": "forward",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T11:14:30.676271Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 5773,
+      "stdout_sha256": "15b9d7362a3889e2147a799041bb67ca9d93e320e245622aee988ad164697039",
+      "tree_after_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "tree_before_sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256",
+      "unexpected_case_ids": []
+    }
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "errors": [],
+  "fresh_process_policy": "one isolated python interpreter per declared driver",
+  "generated_at": "2026-08-24T11:14:11.605242Z",
+  "plan_sha256": "d29a31e7cad009b5f9211e1c6f73fc6e7397f49823a4e7abda41f7639ab5e787",
+  "release_id": "V11.0.0",
+  "report_sha256": "4f044e5ce6df5447b7694bfa111d4ade6d8d37be72519be453b017c5e9f87481",
+  "schema_version": "11.0",
+  "status": "pass",
+  "test_totals": {
+    "declared_assertions": 541,
+    "declared_drivers": 9,
+    "executed_assertions": 541,
+    "executed_drivers": 9
+  },
+  "tree": {
+    "file_count": 74,
+    "files": [
+      {
+        "path": "SKILL.md",
+        "sha256": "34af532bcc0a1af8f78e09b2c5526526394324a314f5cdcb85007a208c34b35f",
+        "size": 12458
+      },
+      {
+        "path": "agents/openai.yaml",
+        "sha256": "72de17746f9d1ff94ebb213c1756b804f751e34b2570c643846df9d80b706c10",
+        "size": 332
+      },
+      {
+        "path": "evals/atomic-rule-cases.json",
+        "sha256": "4d51ef39ddcef9ae7e2f05d9edf66bb8eb46919a84fa62b3cf30aa15409240ae",
+        "size": 179915
+      },
+      {
+        "path": "evals/behavior-cases.json",
+        "sha256": "b1809226d06adef410e7c7a9f82c60a6a1577eb098707473cac2f785457d2e56",
+        "size": 29928
+      },
+      {
+        "path": "evals/change-cases.json",
+        "sha256": "f1ca7e2544330672d13584a00fb971735c9daf790069be63db392b954fd76f30",
+        "size": 4579
+      },
+      {
+        "path": "evals/contract-cases.json",
+        "sha256": "4c4191740e0bd741a952723b3b3ea6f77bb4a99d53f132990e20176e7f9e3a2f",
+        "size": 3340
+      },
+      {
+        "path": "evals/forward-acceptance-cases.json",
+        "sha256": "51147d99c7027040bab098b649fa0bd200b852183d8039503d048e7732cc6d43",
+        "size": 18429
+      },
+      {
+        "path": "evals/manuscript-behavior-cases.json",
+        "sha256": "ea38c397f72b69b246368282c4353139d4132a41245fb8378583fb53edd20572",
+        "size": 71150
+      },
+      {
+        "path": "evals/release/release-plan.json",
+        "sha256": "d29a31e7cad009b5f9211e1c6f73fc6e7397f49823a4e7abda41f7639ab5e787",
+        "size": 4658
+      },
+      {
+        "path": "evals/release/release-state.json",
+        "sha256": "779b7f834f6876d20ec7cb13e88b53f97cae09f80bfa0a8500fd90f5a6a9d40a",
+        "size": 197
+      },
+      {
+        "path": "evals/runtime-policy-cases.json",
+        "sha256": "a75e04f114b865e976216300441430e8ae799d972a21ed56676259dc678d9836",
+        "size": 7211
+      },
+      {
+        "path": "evals/v10-behavior-oracles.json",
+        "sha256": "a1531073b733ec8cac230a216aefad2f0f69b4054cdc56f66bebf3267d6034d9",
+        "size": 34453
+      },
+      {
+        "path": "evals/v10-contract-oracles.json",
+        "sha256": "0a03ad6417935d022e83f9eecc1e4c2c02dbb5c3bd17634c2549c803405fda1f",
+        "size": 8756
+      },
+      {
+        "path": "references/artifact-contract.json",
+        "sha256": "5141e2232934527346e72db72e90622ab375c236b792105442af8e102e3f1937",
+        "size": 2909
+      },
+      {
+        "path": "references/change-envelope.schema.json",
+        "sha256": "4c407f43879669533cb3c1090d6cc744f7c0863a0af699b7a3d8017a05f9b252",
+        "size": 11173
+      },
+      {
+        "path": "references/data-method-notes.md",
+        "sha256": "00fc42dfea023d572aabf0544d4fc383509b9e90d053f3202f78edca75d23bf7",
+        "size": 2836
+      },
+      {
+        "path": "references/effect-target-registry.json",
+        "sha256": "7a8b1caeeb9ad276c11b282171be1fcc358bb5d297dade95d107edcca7a93b1a",
+        "size": 38963
+      },
+      {
+        "path": "references/evidence-method-notes.md",
+        "sha256": "c72dc04190a6176bbc1fb495c088f33047c031c40aef0bb3a894f653b46e1727",
+        "size": 4377
+      },
+      {
+        "path": "references/manuscript-change-closure.json",
+        "sha256": "7f15680d5b489633215d5dbcb5974cc24edc45e51c972dd05fd6c877207d46a6",
+        "size": 28406
+      },
+      {
+        "path": "references/manuscript-method-notes.md",
+        "sha256": "e6438c6d3d3a9a1262b0b5cd6ed9cda4471ef7ff357f855b4b86e803035961cd",
+        "size": 1872
+      },
+      {
+        "path": "references/migration/capability-crosswalk.json",
+        "sha256": "ecafb8499771f1e541aa7bd314b45a92cd5cc699253f8a077df3a2d999259500",
+        "size": 246831
+      },
+      {
+        "path": "references/migration/clause-preservation.json",
+        "sha256": "7b1f0bded158acb7c6c899f0c60a31dbc5dafb6ff86633b4358becd381092132",
+        "size": 358297
+      },
+      {
+        "path": "references/migration/legacy-coverage.json",
+        "sha256": "4ea0faae06ae8dd1581ba638a02645a999fdbe13d62451656d624396cbf57da4",
+        "size": 504908
+      },
+      {
+        "path": "references/migration/v9-capability-baseline.json",
+        "sha256": "e76f1fc34e86ac8b2db86a6089b4de3aa5181f0f203102fcf816ce01ee1533f1",
+        "size": 23136
+      },
+      {
+        "path": "references/modeling-method-notes.md",
+        "sha256": "72f34e942bcff20d3ac506246d8959fc7bad2ddb087bc1ad1264d8227f3db87e",
+        "size": 3893
+      },
+      {
+        "path": "references/ownership-contract.json",
+        "sha256": "93db814901d36ad9ff02e72c2dd31808a12508261cff7382856972268fb27f1c",
+        "size": 5355
+      },
+      {
+        "path": "references/project-method-notes.md",
+        "sha256": "cef28b74e77a6a86763209a4507c2b7ab1b5ddc9351a4727b6979cf2344a00be",
+        "size": 3252
+      },
+      {
+        "path": "references/receipt.schema.json",
+        "sha256": "858326abe3aa77413286e5f399fdfa1b9541196ece51349f511b0968ca8df8cc",
+        "size": 6454
+      },
+      {
+        "path": "references/release-manifest.schema.json",
+        "sha256": "7f58616666a708381e9e37482978719a104d0e7cef1fcf784068d4ab68fb188b",
+        "size": 5592
+      },
+      {
+        "path": "references/route-contract.json",
+        "sha256": "cce06f1e238ed465d5885eec5ffa8d75adce5ca3c22431d197b37b11bc623722",
+        "size": 41489
+      },
+      {
+        "path": "references/rule-atom.schema.json",
+        "sha256": "465d0110893f522bdba167be5b56576f9f66338bb49ca3b3ae8b17249d4135bc",
+        "size": 6715
+      },
+      {
+        "path": "references/runtime-policy.json",
+        "sha256": "1c445b9690c397c7febea7f8890274c8833c96793c97fa4892590f96a05defbf",
+        "size": 6469
+      },
+      {
+        "path": "references/semantic-plan.schema.json",
+        "sha256": "7f46d8099c8a22ce2686a18cd921220a8ba4680c4788d3f60356130ab5196a97",
+        "size": 4564
+      },
+      {
+        "path": "references/state-machine.json",
+        "sha256": "2feab34b9a7daf3d1994edd4d1c81734d4a7a01e26cf92c0cfba6a5123fd786e",
+        "size": 3978
+      },
+      {
+        "path": "references/state.schema.json",
+        "sha256": "8fd399dea244597ce3a9fc9bd8e2bcd1d022870bd1880aaaae9b226d86d46df8",
+        "size": 13267
+      },
+      {
+        "path": "references/v10-lineage-seal.json",
+        "sha256": "e7231fd9f4872d4d6e0d739ecbb1f60b6951af9e46587837fae0fe10223d5af7",
+        "size": 1055
+      },
+      {
+        "path": "references/verification-method-notes.md",
+        "sha256": "b3ffce3311440cc185905b7d0ede8e2f955013f7a89125b9ccd2321b163edf9e",
+        "size": 2774
+      },
+      {
+        "path": "references/visual-method-notes.md",
+        "sha256": "5d8e4d002d2196888906d94d5cd735b64a5b07c053eaf5e52ba930cd5513079d",
+        "size": 1091
+      },
+      {
+        "path": "rules/data.json",
+        "sha256": "bb674cf64bcf5cd877a6bc2ba03cd2f2a5e87790648911d25a3f620e607410a4",
+        "size": 38406
+      },
+      {
+        "path": "rules/evidence_delivery.json",
+        "sha256": "480cec0da739e40eae3ba5312ddf724ba9733a9140139ab1eea3c3a411a41c76",
+        "size": 41597
+      },
+      {
+        "path": "rules/governance.json",
+        "sha256": "77e07570b03c23a1d32a6c22cdb28f9f403b15747010759e8b43eaf64adb0ace",
+        "size": 76868
+      },
+      {
+        "path": "rules/maintenance.json",
+        "sha256": "66063323200cb867ebf5daea83b2ef1e0dd7895282fc69cd7ac48690b22ebf8d",
+        "size": 29643
+      },
+      {
+        "path": "rules/manuscript.json",
+        "sha256": "f07b14bd8c6a378249c71a69826f161d62a0aad1a9fb9ff1b639e4165d0724af",
+        "size": 54671
+      },
+      {
+        "path": "rules/modeling.json",
+        "sha256": "c27361d10d193b6e8fd3a7ac50324c272ab2fa0eb7466ab1d23af784c3643193",
+        "size": 57472
+      },
+      {
+        "path": "rules/project.json",
+        "sha256": "9d86eb8ac1ea0e1cba4162b254f5027c10db545684fee4538198f59e8dfc2717",
+        "size": 30492
+      },
+      {
+        "path": "rules/verification.json",
+        "sha256": "ecbfa5151ec9b68358bb3bca1fb47652323db12a195271cd1730514b7a1213d2",
+        "size": 70692
+      },
+      {
+        "path": "rules/visuals.json",
+        "sha256": "57b47fe76eb6524a8876412628bdcffa6ed2b8393489c938d8b95309f8f48c5b",
+        "size": 26498
+      },
+      {
+        "path": "scripts/analyze_rule_change.py",
+        "sha256": "996d16b83956a5108e6d91a550fd5c3f88dba93235c612364859bc641e679d5a",
+        "size": 12917
+      },
+      {
+        "path": "scripts/apply_rule_change.py",
+        "sha256": "d96eda53aec1786431f7d5c04f831f905032a1c7179c8f300a9556f98153a997",
+        "size": 73860
+      },
+      {
+        "path": "scripts/artifact_guard.py",
+        "sha256": "1b0ddc2dd5983c95d7009de1a9b251f8ab3e5d8408fe3a794453a68f16d32bcc",
+        "size": 1090
+      },
+      {
+        "path": "scripts/assess_recovery.py",
+        "sha256": "2828f86f9a4baea1b70cfe32b80e2cb86c4c05d2c9d2a5e1f1404f7c2eb23b16",
+        "size": 7592
+      },
+      {
+        "path": "scripts/build_atomic_rule_cases.py",
+        "sha256": "13d1c64af122c8aa448abac64a961cb549ce3b516db3a330e64f679a678407d0",
+        "size": 4796
+      },
+      {
+        "path": "scripts/build_clause_preservation.py",
+        "sha256": "9213249aee9d1c9c532320ca4a960c0c15e5be5ca2ef05b9ec895e709bac9581",
+        "size": 54290
+      },
+      {
+        "path": "scripts/build_migration_coverage.py",
+        "sha256": "f975639136eea7e5a25e6e6e4d83ac8cd76cc90316fc4c90f74f879d8f73f3ce",
+        "size": 32331
+      },
+      {
+        "path": "scripts/freeze_release.py",
+        "sha256": "98c7b57efe274a07272d158565d5bd843a46052d5cb589436feaf552bfcc29b6",
+        "size": 19492
+      },
+      {
+        "path": "scripts/lib_v10.py",
+        "sha256": "7b43e9d469ee3e8da1de9fb66683e8d03eed47268ba52faaaac955653fa17df1",
+        "size": 40375
+      },
+      {
+        "path": "scripts/lib_v11.py",
+        "sha256": "89224e67d923223daa7807dea46e87b6603785b44c54395e005c601af5f8f890",
+        "size": 47667
+      },
+      {
+        "path": "scripts/quick_validate.py",
+        "sha256": "fe7e8a5b0c44e45dd083c518f86889947a11768e861c0d6fe87d8601fa9bf04e",
+        "size": 22647
+      },
+      {
+        "path": "scripts/resolve_route.py",
+        "sha256": "375e0c0df3004f83d4c0724e1953d34b457017a99556d722955d0079f3ab1851",
+        "size": 3031
+      },
+      {
+        "path": "scripts/run_atomic_rule_evals.py",
+        "sha256": "4b574a9d64aed656aabf4df2eb8177c97c7c19c458d1c39d08d900f69ed52383",
+        "size": 5241
+      },
+      {
+        "path": "scripts/run_behavior_evals.py",
+        "sha256": "4bf837b3f3e8ff30b64a8de7909d454d7c53b97451785d45a8038deb74002d34",
+        "size": 24631
+      },
+      {
+        "path": "scripts/run_change_evals.py",
+        "sha256": "d0158fc0f9ad61f039e1eeb222a94090e0b3b621a72f59fda326329f6170df89",
+        "size": 14729
+      },
+      {
+        "path": "scripts/run_forward_acceptance.py",
+        "sha256": "c4328ea3b508e84f620e0a7eead766f9a4079fa09caf7ae1c174b6e122664cc4",
+        "size": 11848
+      },
+      {
+        "path": "scripts/run_maintenance_tests.py",
+        "sha256": "79c5d2b9c68e61d4249378410d30f343a3b0d0e2606c162f9a8bc564f3d81453",
+        "size": 9528
+      },
+      {
+        "path": "scripts/run_manuscript_behavior_evals.py",
+        "sha256": "ea1eab0556c162f9b0e3d686f7c55dd67043d09250612b1657ba6862c82a068c",
+        "size": 5955
+      },
+      {
+        "path": "scripts/run_scenario_tests.py",
+        "sha256": "247eccee2000f05499ea17b2a552632f7f15142364689d5ad1661a62ed50ca22",
+        "size": 50275
+      },
+      {
+        "path": "scripts/run_transaction_tests.py",
+        "sha256": "e88988ff533dc3aa524f0f2d6b70a974aff684c2118c7d4bd4b5dd8f7c338ae3",
+        "size": 10097
+      },
+      {
+        "path": "scripts/state_manager.py",
+        "sha256": "e3f8ac986538ab078659943bccd7cef278000a04c35db423336bc772eb2d7d47",
+        "size": 48598
+      },
+      {
+        "path": "scripts/state_v11.py",
+        "sha256": "3f9a486919c49c2a50f05e6e946163b7e1d13e3e9060bafec9f1d85fcce8f019",
+        "size": 34738
+      },
+      {
+        "path": "scripts/validate_contracts.py",
+        "sha256": "8b2495969227c774ba95347612da99ac48145158e2a22a0ad2b2fed3c9ac9e62",
+        "size": 36129
+      },
+      {
+        "path": "scripts/validate_migration.py",
+        "sha256": "b9e27be8a2900c7c08643f9b5f579c421e864f63021d4bc32e8bf3b092b732ed",
+        "size": 38318
+      },
+      {
+        "path": "scripts/validate_receipt.py",
+        "sha256": "4b9bec6cbd00b2078a10634678deef6003e939fd6379e4cb4cb5f292250ae276",
+        "size": 23993
+      },
+      {
+        "path": "scripts/validate_release.py",
+        "sha256": "e1d8ee22b02936432f655b37094148a990c15819db84e59e73100444f9d81de9",
+        "size": 35388
+      },
+      {
+        "path": "scripts/validate_v10_corpus.py",
+        "sha256": "31d9ec465639e9f6926bbea4230cdce4ea1faf4b03f6912310c029fd8eeab000",
+        "size": 10684
+      }
+    ],
+    "sha256": "e71f00c9f5ffd72b2219df58e220a74a82868097286b6f83c8774e51eb7ee256"
+  },
+  "tree_unchanged": true,
+  "unverified_boundaries": [
+    "The Agent, not a keyword parser, interprets natural language into a semantic plan; executable tests cover representative equivalent, negative, and mixed plans rather than proving every possible utterance.",
+    "No external signing key or third-party transparency log is available; a frozen manifest is tamper-evident and freshly re-gated on an exact mirror, not identity-signed or independently implemented.",
+    "External services, future dependency versions, and operating systems other than the release host remain outside this local gate.",
+    "V9-to-V10 lineage remains bounded by the reviewed V10 preservation seal; V11 additionally proves the inherited V10 rule files are byte-identical.",
+    "JSON Schema, compilation, and local scenarios establish structure and executed behavior, not arbitrary domain truth beyond the tested closure."
+  ],
+  "validator_hashes": {
+    "references/artifact-contract.json": "5141e2232934527346e72db72e90622ab375c236b792105442af8e102e3f1937",
+    "references/change-envelope.schema.json": "4c407f43879669533cb3c1090d6cc744f7c0863a0af699b7a3d8017a05f9b252",
+    "references/effect-target-registry.json": "7a8b1caeeb9ad276c11b282171be1fcc358bb5d297dade95d107edcca7a93b1a",
+    "references/manuscript-change-closure.json": "7f15680d5b489633215d5dbcb5974cc24edc45e51c972dd05fd6c877207d46a6",
+    "references/migration/capability-crosswalk.json": "ecafb8499771f1e541aa7bd314b45a92cd5cc699253f8a077df3a2d999259500",
+    "references/migration/clause-preservation.json": "7b1f0bded158acb7c6c899f0c60a31dbc5dafb6ff86633b4358becd381092132",
+    "references/migration/legacy-coverage.json": "4ea0faae06ae8dd1581ba638a02645a999fdbe13d62451656d624396cbf57da4",
+    "references/migration/v9-capability-baseline.json": "e76f1fc34e86ac8b2db86a6089b4de3aa5181f0f203102fcf816ce01ee1533f1",
+    "references/ownership-contract.json": "93db814901d36ad9ff02e72c2dd31808a12508261cff7382856972268fb27f1c",
+    "references/receipt.schema.json": "858326abe3aa77413286e5f399fdfa1b9541196ece51349f511b0968ca8df8cc",
+    "references/release-manifest.schema.json": "7f58616666a708381e9e37482978719a104d0e7cef1fcf784068d4ab68fb188b",
+    "references/route-contract.json": "cce06f1e238ed465d5885eec5ffa8d75adce5ca3c22431d197b37b11bc623722",
+    "references/rule-atom.schema.json": "465d0110893f522bdba167be5b56576f9f66338bb49ca3b3ae8b17249d4135bc",
+    "references/runtime-policy.json": "1c445b9690c397c7febea7f8890274c8833c96793c97fa4892590f96a05defbf",
+    "references/semantic-plan.schema.json": "7f46d8099c8a22ce2686a18cd921220a8ba4680c4788d3f60356130ab5196a97",
+    "references/state-machine.json": "2feab34b9a7daf3d1994edd4d1c81734d4a7a01e26cf92c0cfba6a5123fd786e",
+    "references/state.schema.json": "8fd399dea244597ce3a9fc9bd8e2bcd1d022870bd1880aaaae9b226d86d46df8",
+    "references/v10-lineage-seal.json": "e7231fd9f4872d4d6e0d739ecbb1f60b6951af9e46587837fae0fe10223d5af7",
+    "scripts/analyze_rule_change.py": "996d16b83956a5108e6d91a550fd5c3f88dba93235c612364859bc641e679d5a",
+    "scripts/apply_rule_change.py": "d96eda53aec1786431f7d5c04f831f905032a1c7179c8f300a9556f98153a997",
+    "scripts/artifact_guard.py": "1b0ddc2dd5983c95d7009de1a9b251f8ab3e5d8408fe3a794453a68f16d32bcc",
+    "scripts/assess_recovery.py": "2828f86f9a4baea1b70cfe32b80e2cb86c4c05d2c9d2a5e1f1404f7c2eb23b16",
+    "scripts/build_atomic_rule_cases.py": "13d1c64af122c8aa448abac64a961cb549ce3b516db3a330e64f679a678407d0",
+    "scripts/build_clause_preservation.py": "9213249aee9d1c9c532320ca4a960c0c15e5be5ca2ef05b9ec895e709bac9581",
+    "scripts/build_migration_coverage.py": "f975639136eea7e5a25e6e6e4d83ac8cd76cc90316fc4c90f74f879d8f73f3ce",
+    "scripts/freeze_release.py": "98c7b57efe274a07272d158565d5bd843a46052d5cb589436feaf552bfcc29b6",
+    "scripts/lib_v10.py": "7b43e9d469ee3e8da1de9fb66683e8d03eed47268ba52faaaac955653fa17df1",
+    "scripts/lib_v11.py": "89224e67d923223daa7807dea46e87b6603785b44c54395e005c601af5f8f890",
+    "scripts/quick_validate.py": "fe7e8a5b0c44e45dd083c518f86889947a11768e861c0d6fe87d8601fa9bf04e",
+    "scripts/resolve_route.py": "375e0c0df3004f83d4c0724e1953d34b457017a99556d722955d0079f3ab1851",
+    "scripts/run_atomic_rule_evals.py": "4b574a9d64aed656aabf4df2eb8177c97c7c19c458d1c39d08d900f69ed52383",
+    "scripts/run_behavior_evals.py": "4bf837b3f3e8ff30b64a8de7909d454d7c53b97451785d45a8038deb74002d34",
+    "scripts/run_change_evals.py": "d0158fc0f9ad61f039e1eeb222a94090e0b3b621a72f59fda326329f6170df89",
+    "scripts/run_forward_acceptance.py": "c4328ea3b508e84f620e0a7eead766f9a4079fa09caf7ae1c174b6e122664cc4",
+    "scripts/run_maintenance_tests.py": "79c5d2b9c68e61d4249378410d30f343a3b0d0e2606c162f9a8bc564f3d81453",
+    "scripts/run_manuscript_behavior_evals.py": "ea1eab0556c162f9b0e3d686f7c55dd67043d09250612b1657ba6862c82a068c",
+    "scripts/run_scenario_tests.py": "247eccee2000f05499ea17b2a552632f7f15142364689d5ad1661a62ed50ca22",
+    "scripts/run_transaction_tests.py": "e88988ff533dc3aa524f0f2d6b70a974aff684c2118c7d4bd4b5dd8f7c338ae3",
+    "scripts/state_manager.py": "e3f8ac986538ab078659943bccd7cef278000a04c35db423336bc772eb2d7d47",
+    "scripts/state_v11.py": "3f9a486919c49c2a50f05e6e946163b7e1d13e3e9060bafec9f1d85fcce8f019",
+    "scripts/validate_contracts.py": "8b2495969227c774ba95347612da99ac48145158e2a22a0ad2b2fed3c9ac9e62",
+    "scripts/validate_migration.py": "b9e27be8a2900c7c08643f9b5f579c421e864f63021d4bc32e8bf3b092b732ed",
+    "scripts/validate_receipt.py": "4b9bec6cbd00b2078a10634678deef6003e939fd6379e4cb4cb5f292250ae276",
+    "scripts/validate_release.py": "e1d8ee22b02936432f655b37094148a990c15819db84e59e73100444f9d81de9",
+    "scripts/validate_v10_corpus.py": "31d9ec465639e9f6926bbea4230cdce4ea1faf4b03f6912310c029fd8eeab000"
+  },
+  "validator_hashes_sha256": "7f94de65ffa1d22ab3f3a82d2bf41f3ff96b4de21861626b5395a47d0e58355e"
+}

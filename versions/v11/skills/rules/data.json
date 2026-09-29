@@ -1,0 +1,1534 @@
+{
+  "schema_version": "10.0",
+  "domain": "data",
+  "rules": [
+    {
+      "id": "DATA.IDENTITY.SOURCE",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-IDENTITY-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.IDENTITY.SOURCE",
+      "strength": "MUST",
+      "semantic_key": "data.identity.source",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "dataset_register"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "dataset_source",
+        "value": "origin_acquisition_time_terms"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "file"
+        ],
+        "fields": [
+          "origin",
+          "acquired_at",
+          "terms"
+        ]
+      },
+      "outcomes": {
+        "pass": "数据来源可重定位。",
+        "fail": "来源或使用条件未知。",
+        "not_applicable": "完全合成的测试数据。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "data.identity.source.exception.1",
+          "when": "合成测试数据",
+          "disposition": "记录生成器和参数"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-IDENTITY-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.TREAT",
+        "RT.DATA.FREEZE"
+      ],
+      "tests": [
+        "BEH.DATA.AUDIT",
+        "ATOM.DATA.IDENTITY.SOURCE"
+      ],
+      "instruction_gloss": "登记数据来源、获取时间和使用条件。",
+      "failure_example": "把来源未知数据作为正式证据。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.IDENTITY.RAW_IMMUTABLE",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-IDENTITY-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.IDENTITY.RAW_IMMUTABLE",
+      "strength": "MUST",
+      "semantic_key": "data.identity.raw_immutable",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_treatment"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "forbid",
+        "target": "raw_dataset_mutation",
+        "value": true
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "raw_path",
+          "raw_sha256"
+        ]
+      },
+      "outcomes": {
+        "pass": "原始哈希保持不变。",
+        "fail": "原始身份被改变。",
+        "not_applicable": "没有外部原始数据。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-IDENTITY-001"
+      ],
+      "routes": [
+        "RT.DATA.TREAT",
+        "RT.DATA.FREEZE"
+      ],
+      "tests": [
+        "BEH.DATA.TREAT",
+        "ATOM.DATA.IDENTITY.RAW_IMMUTABLE"
+      ],
+      "instruction_gloss": "把原始数据保持为不可变输入。",
+      "failure_example": "覆盖、原地清洗或静默替换原始文件。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.IDENTITY.CONTEXT",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-IDENTITY-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.IDENTITY.CONTEXT",
+      "strength": "MUST",
+      "semantic_key": "data.identity.context",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "dataset_register"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "dataset_context",
+        "value": "units_time_space_population"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "observation"
+        ],
+        "fields": [
+          "units",
+          "time_scope",
+          "space_scope",
+          "population"
+        ]
+      },
+      "outcomes": {
+        "pass": "口径足以支持建模。",
+        "fail": "至少一个关键口径未知。",
+        "not_applicable": "无量纲合成数据。"
+      },
+      "exceptions": [
+        {
+          "kind": "decision_required",
+          "condition_key": "data.identity.context.exception.1",
+          "when": "字段不适用",
+          "disposition": "逐字段记录 not_applicable 理由"
+        }
+      ],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-IDENTITY-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.FREEZE"
+      ],
+      "tests": [
+        "BEH.DATA.AUDIT",
+        "ATOM.DATA.IDENTITY.CONTEXT"
+      ],
+      "instruction_gloss": "登记变量单位、时间口径、空间口径和总体范围。",
+      "failure_example": "只凭列名推断数据含义。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.IDENTITY.BEFORE_USE",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-IDENTITY-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.IDENTITY.BEFORE_USE",
+      "strength": "MUST",
+      "semantic_key": "data.identity.before_use_gate",
+      "scope": {
+        "objects": [
+          "project",
+          "literature",
+          "data",
+          "model",
+          "verification",
+          "manuscript",
+          "visual",
+          "delivery"
+        ],
+        "component_types": [
+          "project",
+          "shared_data",
+          "question",
+          "artifact",
+          "none"
+        ],
+        "states": [
+          "*"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "route_execution"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "data_identity_readiness",
+        "value": "before_any_data_use_source_schema_units_time_space_raw_identity_ready"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "file",
+          "citation"
+        ],
+        "fields": [
+          "source",
+          "schema",
+          "units",
+          "time_scope",
+          "space_scope",
+          "raw_sha256"
+        ]
+      },
+      "outcomes": {
+        "pass": "任何数据消费开始前，身份要素均已有可核验证据。",
+        "fail": "在来源、结构、口径或原始身份未就绪时消费数据。",
+        "not_applicable": "该路由不读取、转换、建模或陈述任何数据。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-IDENTITY-001"
+      ],
+      "routes": [
+        "RT.PROJECT.ADVISE",
+        "RT.PROJECT.AUDIT",
+        "RT.PROJECT.INIT",
+        "RT.PROJECT.PLAN",
+        "RT.PROJECT.RECOVER.MISSING",
+        "RT.PROJECT.RESUME",
+        "RT.PROBLEM.DEFINE",
+        "RT.LITERATURE.SEARCH",
+        "RT.DATA.TREAT",
+        "RT.DATA.FREEZE",
+        "RT.MODEL.COMPARE",
+        "RT.MODEL.SPEC",
+        "RT.MODEL.IMPLEMENT",
+        "RT.MODEL.RESULTS",
+        "RT.VERIFY.IMPLEMENTATION",
+        "RT.VERIFY.MODEL",
+        "RT.VERIFY.S6.READINESS",
+        "RT.VERIFY.S6.CLOSE",
+        "RT.MANUSCRIPT.DRAFT",
+        "RT.MANUSCRIPT.RENDER",
+        "RT.MANUSCRIPT.LOCAL",
+        "RT.MANUSCRIPT.REOPEN",
+        "RT.MANUSCRIPT.AUDIT",
+        "RT.VISUAL.CREATE",
+        "RT.VISUAL.AUDIT",
+        "RT.DELIVERY.FINAL"
+      ],
+      "tests": [
+        "BEH.CLAUSE.DATA.IDENTITY.BEFORE_USE",
+        "ATOM.DATA.IDENTITY.BEFORE_USE"
+      ],
+      "instruction_gloss": "凡路由实际消费数据，先核销来源、schema、单位、时空口径和不可变原始身份；无数据消费时显式记为不适用。",
+      "failure_example": "先用数据拟合或出图，之后才补来源和原始哈希。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "DATA.IDENTITY.SOURCE",
+        "DATA.IDENTITY.CONTEXT",
+        "DATA.IDENTITY.RAW_IMMUTABLE",
+        "DATA.AUDIT.SCHEMA"
+      ]
+    },
+    {
+      "id": "DATA.AUDIT.SCHEMA",
+      "revision": 2,
+      "status": "active",
+      "capability": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.AUDIT.SCHEMA",
+      "strength": "MUST",
+      "semantic_key": "data.audit.schema",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "dataset_schema",
+        "value": "shape_types_keys_ranges"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "shape",
+          "dtypes",
+          "keys",
+          "ranges"
+        ]
+      },
+      "outcomes": {
+        "pass": "结构与预期一致。",
+        "fail": "结构异常未处置。",
+        "not_applicable": "无表格或数组数据。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-AUDIT-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.REAUDIT"
+      ],
+      "tests": [
+        "BEH.DATA.AUDIT",
+        "BEH.CLAUSE.DATA.AUDIT.D2",
+        "BEH.CLAUSE.DATA.AUDIT.D3",
+        "ATOM.DATA.AUDIT.SCHEMA"
+      ],
+      "instruction_gloss": "核验数据形状、类型、键和基本取值范围。",
+      "failure_example": "在未知结构上直接训练或求解。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.AUDIT.MISSING",
+      "revision": 2,
+      "status": "active",
+      "capability": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.AUDIT.MISSING",
+      "strength": "MUST",
+      "semantic_key": "data.audit.missingness",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "missingness_pattern",
+        "value": "rate_structure_mechanism"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "missing_rate",
+          "pattern",
+          "mechanism_assessment"
+        ]
+      },
+      "outcomes": {
+        "pass": "缺失风险已量化。",
+        "fail": "缺失未检查或被静默处理。",
+        "not_applicable": "数据确认无缺失。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-AUDIT-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.REAUDIT"
+      ],
+      "tests": [
+        "BEH.DATA.AUDIT",
+        "BEH.CLAUSE.DATA.AUDIT.D2",
+        "BEH.CLAUSE.DATA.AUDIT.D3",
+        "ATOM.DATA.AUDIT.MISSING"
+      ],
+      "instruction_gloss": "量化缺失率、分布结构和可能机制。",
+      "failure_example": "把空值统一填零而不说明含义。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.AUDIT.ANOMALY",
+      "revision": 2,
+      "status": "active",
+      "capability": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.AUDIT.ANOMALY",
+      "strength": "MUST",
+      "semantic_key": "data.audit.anomaly",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "anomaly_set",
+        "value": "statistical_and_domain_checks"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "method",
+          "candidates",
+          "domain_bounds"
+        ]
+      },
+      "outcomes": {
+        "pass": "异常候选有判据。",
+        "fail": "异常处置无依据。",
+        "not_applicable": "数据无连续或类别变量。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-AUDIT-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.REAUDIT"
+      ],
+      "tests": [
+        "BEH.DATA.AUDIT",
+        "BEH.CLAUSE.DATA.AUDIT.D2",
+        "BEH.CLAUSE.DATA.AUDIT.D3",
+        "ATOM.DATA.AUDIT.ANOMALY"
+      ],
+      "instruction_gloss": "用统计判据和领域边界识别异常候选。",
+      "failure_example": "把极端值自动等同于错误值。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.AUDIT.DUPLICATE",
+      "revision": 2,
+      "status": "active",
+      "capability": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.AUDIT.DUPLICATE",
+      "strength": "MUST",
+      "semantic_key": "data.audit.duplicate",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "duplicate_identity",
+        "value": "key_semantics"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "key_definition",
+          "duplicate_count"
+        ]
+      },
+      "outcomes": {
+        "pass": "重复判据与业务键一致。",
+        "fail": "重复风险未知。",
+        "not_applicable": "数据没有记录粒度。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-AUDIT-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.REAUDIT"
+      ],
+      "tests": [
+        "BEH.DATA.AUDIT",
+        "BEH.CLAUSE.DATA.AUDIT.D2",
+        "BEH.CLAUSE.DATA.AUDIT.D3",
+        "ATOM.DATA.AUDIT.DUPLICATE"
+      ],
+      "instruction_gloss": "按业务键和记录语义检查重复。",
+      "failure_example": "仅凭整行相等判断全部重复问题。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.AUDIT.LEAKAGE",
+      "revision": 2,
+      "status": "active",
+      "capability": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.AUDIT.LEAKAGE",
+      "strength": "MUST",
+      "semantic_key": "data.audit.leakage",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_audit"
+        ],
+        "predicates": [
+          {
+            "field": "predictive_or_evaluative_use",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "data_leakage",
+        "value": "time_group_target_boundaries"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "split_unit",
+          "time_boundary",
+          "leakage_checks"
+        ]
+      },
+      "outcomes": {
+        "pass": "评估边界无已知泄漏。",
+        "fail": "泄漏检查失败或缺失。",
+        "not_applicable": "不做预测或外部评估。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-AUDIT-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.REAUDIT"
+      ],
+      "tests": [
+        "BEH.DATA.LEAKAGE",
+        "BEH.CLAUSE.DATA.AUDIT.D2",
+        "BEH.CLAUSE.DATA.AUDIT.D3",
+        "ATOM.DATA.AUDIT.LEAKAGE"
+      ],
+      "instruction_gloss": "检查时间、分组和目标信息泄漏。",
+      "failure_example": "在划分后仍让同一实体跨训练与评估边界泄漏。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.AUDIT.COMPLETENESS",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.AUDIT.COMPLETENESS",
+      "strength": "MUST",
+      "semantic_key": "data.audit.completeness",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "dataset_completeness",
+        "value": "expected_population_time_space_and_required_field_coverage"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "expected_coverage",
+          "observed_coverage",
+          "coverage_gaps"
+        ]
+      },
+      "outcomes": {
+        "pass": "记录、字段、总体与时空覆盖均已对照预期并解释缺口。",
+        "fail": "只检查空值而未判断数据是否覆盖应有对象或时期。",
+        "not_applicable": "数据没有可定义的覆盖总体，且理由已登记。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-AUDIT-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.REAUDIT"
+      ],
+      "tests": [
+        "BEH.CLAUSE.DATA.AUDIT.D2",
+        "BEH.CLAUSE.DATA.AUDIT.D3",
+        "ATOM.DATA.AUDIT.COMPLETENESS"
+      ],
+      "instruction_gloss": "将完整性与缺失值分开核验：前者比较应有总体、时空范围、记录和必需字段覆盖，后者检查已存在记录中的空缺模式。",
+      "failure_example": "表中没有空值便宣称数据完整，却漏掉整个月份或整类对象。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "DATA.IDENTITY.CONTEXT"
+      ]
+    },
+    {
+      "id": "DATA.AUDIT.SEMANTIC_CONSISTENCY",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.AUDIT.SEMANTIC_CONSISTENCY",
+      "strength": "MUST",
+      "semantic_key": "data.audit.semantic_consistency",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D0",
+          "D1",
+          "D2",
+          "D3",
+          "S1",
+          "S2",
+          "S5",
+          "S6"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_audit"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "dataset_semantic_consistency",
+        "value": "definitions_units_codes_keys_and_time_space_meanings_agree"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "citation",
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "field_definition",
+          "unit_and_code_map",
+          "cross_field_checks"
+        ]
+      },
+      "outcomes": {
+        "pass": "字段定义、单位、编码、键和时空含义在来源与数据中一致。",
+        "fail": "结构合法但同名字段、编码或单位表达不同含义。",
+        "not_applicable": "单值合成夹具不承载领域语义。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-AUDIT-001"
+      ],
+      "routes": [
+        "RT.DATA.AUDIT",
+        "RT.DATA.REAUDIT"
+      ],
+      "tests": [
+        "BEH.CLAUSE.DATA.AUDIT.D2",
+        "BEH.CLAUSE.DATA.AUDIT.D3",
+        "ATOM.DATA.AUDIT.SEMANTIC_CONSISTENCY"
+      ],
+      "instruction_gloss": "除 schema 形状外，逐项核对字段定义、单位、编码、业务键和时空口径的语义一致性。",
+      "failure_example": "把摄氏温度与华氏温度拼接到同一列，因为两边类型都是浮点数。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "DATA.IDENTITY.CONTEXT",
+        "DATA.AUDIT.SCHEMA"
+      ]
+    },
+    {
+      "id": "DATA.AUDIT.BEFORE_TREATMENT",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-AUDIT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.AUDIT.BEFORE_TREATMENT",
+      "strength": "MUST",
+      "semantic_key": "data.audit.before_treatment_gate",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D1",
+          "D2",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_treatment"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "data_audit_readiness",
+        "value": "documented_audit_evidence_before_any_cleaning_or_transformation"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "command",
+          "observation"
+        ],
+        "fields": [
+          "audit_identity",
+          "audit_status",
+          "documented_findings"
+        ]
+      },
+      "outcomes": {
+        "pass": "处理开始前已有与输入身份绑定的审计证据。",
+        "fail": "先清洗、插补或变换，再补写原始问题证据。",
+        "not_applicable": "操作不读取或改变数据内容。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-AUDIT-001"
+      ],
+      "routes": [
+        "RT.DATA.TREAT"
+      ],
+      "tests": [
+        "BEH.CLAUSE.DATA.AUDIT.BEFORE_TREATMENT",
+        "ATOM.DATA.AUDIT.BEFORE_TREATMENT"
+      ],
+      "instruction_gloss": "清洗或变换只能消费已完成并绑定当前输入身份的审计证据；不能把处理后的结果倒填为原始审计。",
+      "failure_example": "先删除异常行，再用处理后的分布证明原始数据没有异常。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": [
+        "DATA.AUDIT.SCHEMA",
+        "DATA.AUDIT.COMPLETENESS",
+        "DATA.AUDIT.MISSING",
+        "DATA.AUDIT.ANOMALY",
+        "DATA.AUDIT.DUPLICATE",
+        "DATA.AUDIT.SEMANTIC_CONSISTENCY"
+      ]
+    },
+    {
+      "id": "DATA.TREAT.DECIDE",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-TREAT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.TREAT.DECIDE",
+      "strength": "MUST",
+      "semantic_key": "data.treatment.decide",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D1",
+          "D2",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_treatment"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "treatment_decision",
+        "value": "alternatives_effect_reason"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "decision",
+          "observation"
+        ],
+        "fields": [
+          "alternatives",
+          "selected",
+          "impact"
+        ]
+      },
+      "outcomes": {
+        "pass": "处理决定可复核。",
+        "fail": "处理方式无比较依据。",
+        "not_applicable": "不需要处理。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-TREAT-001"
+      ],
+      "routes": [
+        "RT.DATA.TREAT"
+      ],
+      "tests": [
+        "BEH.DATA.TREAT",
+        "ATOM.DATA.TREAT.DECIDE"
+      ],
+      "instruction_gloss": "记录处理备选、影响和选择理由。",
+      "failure_example": "把默认库参数当成处理决定。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.TREAT.COPY",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-TREAT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.TREAT.COPY",
+      "strength": "MUST",
+      "semantic_key": "data.treatment.copy",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D1",
+          "D2",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_treatment"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "require",
+        "target": "treatment_output",
+        "value": "new_candidate_identity"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "input_sha256",
+          "output_sha256"
+        ]
+      },
+      "outcomes": {
+        "pass": "输入和输出身份分离。",
+        "fail": "处理破坏原始身份。",
+        "not_applicable": "无文件型数据。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-TREAT-001"
+      ],
+      "routes": [
+        "RT.DATA.TREAT"
+      ],
+      "tests": [
+        "BEH.DATA.TREAT",
+        "ATOM.DATA.TREAT.COPY"
+      ],
+      "instruction_gloss": "把每次数据处理写入新的候选身份。",
+      "failure_example": "原地修改已登记数据集。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.TREAT.LINEAGE",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-TREAT-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.TREAT.LINEAGE",
+      "strength": "MUST",
+      "semantic_key": "data.treatment.lineage",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data",
+          "question"
+        ],
+        "states": [
+          "D1",
+          "D2",
+          "S2",
+          "S3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "data_treatment"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "transformation_lineage",
+        "value": "input_operation_parameters_output"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "command",
+          "file"
+        ],
+        "fields": [
+          "input",
+          "operation",
+          "parameters",
+          "output"
+        ]
+      },
+      "outcomes": {
+        "pass": "转换可复现。",
+        "fail": "无法从原始数据重建输出。",
+        "not_applicable": "没有数据转换。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-TREAT-001"
+      ],
+      "routes": [
+        "RT.DATA.TREAT"
+      ],
+      "tests": [
+        "BEH.DATA.TREAT",
+        "ATOM.DATA.TREAT.LINEAGE"
+      ],
+      "instruction_gloss": "记录处理输入、操作参数和输出身份。",
+      "failure_example": "只保留清洗后文件而丢失转换谱系。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.FREEZE.IDENTITY",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-FREEZE-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.FREEZE.IDENTITY",
+      "strength": "MUST",
+      "semantic_key": "data.freeze.identity",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data"
+        ],
+        "states": [
+          "D2"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "dataset_freeze"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "record",
+        "target": "frozen_dataset_identity",
+        "value": "path_sha256_schema"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "file",
+          "state"
+        ],
+        "fields": [
+          "path",
+          "sha256",
+          "schema_signature"
+        ]
+      },
+      "outcomes": {
+        "pass": "冻结身份可复算。",
+        "fail": "冻结身份不唯一。",
+        "not_applicable": "未提升数据集。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-FREEZE-001"
+      ],
+      "routes": [
+        "RT.DATA.FREEZE"
+      ],
+      "tests": [
+        "BEH.DATA.FREEZE",
+        "ATOM.DATA.FREEZE.IDENTITY"
+      ],
+      "instruction_gloss": "用路径、哈希和结构签名冻结数据身份。",
+      "failure_example": "只用文件名表示冻结版本。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.FREEZE.VALIDATE",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-FREEZE-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.FREEZE.VALIDATE",
+      "strength": "MUST",
+      "semantic_key": "data.freeze.validate",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data"
+        ],
+        "states": [
+          "D2"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "dataset_freeze"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "verify",
+        "target": "frozen_dataset",
+        "value": "audit_and_treatment_acceptance"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "command"
+        ],
+        "fields": [
+          "data_audit",
+          "treatment_decision",
+          "artifact_validation"
+        ]
+      },
+      "outcomes": {
+        "pass": "冻结门全部通过。",
+        "fail": "审计或验证未闭合。",
+        "not_applicable": "未冻结。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-FREEZE-001"
+      ],
+      "routes": [
+        "RT.DATA.FREEZE"
+      ],
+      "tests": [
+        "BEH.DATA.FREEZE",
+        "ATOM.DATA.FREEZE.VALIDATE"
+      ],
+      "instruction_gloss": "在冻结前复核审计结论和处理决定。",
+      "failure_example": "冻结仍有失败证据的数据候选。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    },
+    {
+      "id": "DATA.FREEZE.INVALIDATE",
+      "revision": 1,
+      "status": "active",
+      "capability": "DATA-FREEZE-001",
+      "domain": "data",
+      "owner": "rules/data.json#DATA.FREEZE.INVALIDATE",
+      "strength": "MUST",
+      "semantic_key": "data.freeze.invalidate_consumers",
+      "scope": {
+        "objects": [
+          "data"
+        ],
+        "component_types": [
+          "shared_data"
+        ],
+        "states": [
+          "D2",
+          "D3"
+        ]
+      },
+      "trigger": {
+        "events": [
+          "frozen_dataset_change"
+        ],
+        "predicates": []
+      },
+      "effect": {
+        "verb": "invalidate",
+        "target": "dataset_consumers",
+        "value": "transitive_dependency_closure"
+      },
+      "evidence": {
+        "required": true,
+        "kinds": [
+          "state",
+          "file"
+        ],
+        "fields": [
+          "old_sha256",
+          "new_sha256",
+          "affected_components"
+        ]
+      },
+      "outcomes": {
+        "pass": "消费者闭包已失效。",
+        "fail": "存在陈旧消费者。",
+        "not_applicable": "冻结身份未变化。"
+      },
+      "exceptions": [],
+      "conflicts_with": [],
+      "supersedes": [],
+      "legacy_refs": [
+        "DATA-FREEZE-001"
+      ],
+      "routes": [
+        "RT.DATA.FREEZE",
+        "RT.DATA.REAUDIT"
+      ],
+      "tests": [
+        "REC.R1.TRANSITIVE",
+        "ATOM.DATA.FREEZE.INVALIDATE"
+      ],
+      "instruction_gloss": "数据身份变化时失效全部传递消费者。",
+      "failure_example": "只更新数据组件而保留陈旧模型结论。",
+      "enforcement": {
+        "kind": "agent_obligation",
+        "assurance": "selection_verified",
+        "refs": [
+          "scripts/resolve_route.py",
+          "evals/atomic-rule-cases.json"
+        ]
+      },
+      "refines": [],
+      "depends_on": []
+    }
+  ]
+}

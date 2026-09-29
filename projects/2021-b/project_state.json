@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.2",
+  "current_stage": "CROSS_QUESTION_INTEGRATION",
+  "stage_status": "ai_usage_disclosure_draft_complete_pending_team_review",
+  "project_constraints_confirmed": true,
+  "source_inventory_complete": true,
+  "understanding_confirmed": true,
+  "method_plan_confirmed": true,
+  "question1_method_confirmed": true,
+  "verified_outputs_available": true,
+  "paper_compiled": false,
+  "final_audit_complete": false,
+  "last_completed_action": "完成全项目多载体恢复复核，核验gpt-5.6-sol（default）并生成7页AI工具使用详情待审稿",
+  "pause_point": "AI使用详情源文件与PDF已落入paper/support；等待参赛队逐项确认后移除待审标记",
+  "next_action": "参赛队复核关键交互、人工修改和独立完成表述，再将AI标注与工具参考文献接入最终论文",
+  "pending_user_decisions": [
+    "参赛队逐项确认AI工具使用详情中的关键交互、采纳和人工修改记录",
+    "在最终论文对应位置加入AI标注并加入工具参考文献条目",
+    "取得或建立最终可编辑论文入口后完成全文与支撑材料组装"
+  ],
+  "current_authority_audit": "paper/support/<未收录-AI工具使用详情>.",
+  "draft_compiled": true,
+  "draft_pages": 19,
+  "latest_verification": {
+    "data_audit": "23/23",
+    "eda": "10/10",
+    "question1": "19/19",
+    "question2_baseline": "5/5",
+    "question2_additive": "13/13",
+    "question2_robustness": "9/9",
+    "question3_s9": "formal outputs generated",
+    "question3_s10": "10/10",
+    "question3_s11": "8/8",
+    "question3_s12": "user confirmed; manuscript mapping compiled",
+    "question4_s9": "formal design outputs generated; no future responses populated",
+    "question4_s10": "12/12",
+    "question4_s11": "9/9",
+    "question4_s12": "user confirmed; manuscript mapping compiled; current integrated draft is 19 pages after terminology-neighbor explanations",
+    "question2_controlled_factor_candidate": "8/8; candidate only; user rejected manuscript inclusion",
+    "late_session_full_verification": "all current formal and candidate verification scripts passed"
+  },
+  "affected_files": [
+    "paper/support/<未收录-AI工具使用详情>.",
+    "paper/support/<未收录-AI工具使用详情>.",
+    "planning/ai_usage_log.md",
+    "project_state.json"
+  ],
+  "checkpoint_updated_at": "2026-07-31T14:27:04+08:00"
+}

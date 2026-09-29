@@ -1,0 +1,136 @@
+{
+  "schema_version": "2.0",
+  "release": "9.0.0",
+  "status": "stable",
+  "selector": ["mode", "object", "action", "state"],
+  "no_match_policy": "readonly_may_continue_only_outside_ambiguity; writes_must_stop",
+  "transitive_loading": false,
+  "catchalls_count_for_reachability": false,
+  "recovery_policy": {
+    "default": "if_project_state_exists",
+    "overrides": {
+      "RT-ADVISORY-PROJECT": "not_applicable",
+      "RT-PROJECT-INIT": "not_applicable",
+      "RT-PROJECT-RESUME": "required",
+      "RT-SKILL-AUDIT": "not_applicable",
+      "RT-SKILL-CHANGE": "not_applicable"
+    }
+  },
+  "routes": [
+    {
+      "id":"RT-ADVISORY-PROJECT","modes":["advisory_readonly"],"object":"project","actions":["advise","explain","review_plan"],"states":["UNINITIALIZED","P0","P1","P2"],
+      "modules":[],"optional_modules":[],"capabilities":["GOV-MODE-001","GOV-AUTH-001","GOV-ROUTE-001"],
+      "allowed_actions":["read","reason","respond"],"write_allowed":false,"expected_outputs":["advisory_response"],"exclusions":["project_file_creation"],"tests":["ROUTE-001","BEH-READONLY-001"]
+    },
+    {
+      "id":"RT-PROJECT-INIT","modes":["mutate"],"object":"project","actions":["initialize"],"states":["UNINITIALIZED"],
+      "modules":["references/modules/project-platform.md"],"optional_modules":[],"capabilities":["PRJ-SCOPE-001","PRJ-STRUCTURE-001","ART-LAZY-001","STATE-TYPED-001"],
+      "allowed_actions":["inspect_root","create_minimal_state"],"write_allowed":true,"expected_outputs":[".modeling/state.json"],"exclusions":["full_legacy_scaffold","placeholder_files"],"tests":["ROUTE-002","BEH-INIT-001"]
+    },
+    {
+      "id":"RT-PROJECT-PLAN","modes":["advisory_readonly","project_readonly","mutate"],"object":"project","actions":["plan","scope","replan"],"states":["UNINITIALIZED","P0","P1","S0","S1","S2","S3"],
+      "modules":["references/modules/project-platform.md","references/modules/orchestration-detail.md"],"optional_modules":[],"capabilities":["PRJ-SCOPE-001","PRJ-PLAN-001","GOV-DECISION-001"],
+      "allowed_actions":["read","analyze","write_authorized_plan"],"write_allowed":"mode_dependent","expected_outputs":["scope_or_plan"],"exclusions":["unrequested_scaffold"],"tests":["ROUTE-003"]
+    },
+    {
+      "id":"RT-PROJECT-RESUME","modes":["project_readonly","mutate","promote"],"object":"project","actions":["resume","recover","handoff"],"states":["P0","P1","P2"],
+      "modules":["references/recovery-governance.md"],"optional_modules":[],"capabilities":["REC-R0-001","REC-R1-001","REC-R2-001","DEL-HANDOFF-001","STATE-TYPED-001"],
+      "allowed_actions":["read_state","compare_artifacts","targeted_review","full_recovery_when_triggered","update_state_if_authorized"],"write_allowed":"mode_dependent","expected_outputs":["recovery_assessment","next_legal_action"],"exclusions":["unconditional_full_reread"],"tests":["ROUTE-004","BEH-REC-R0","BEH-REC-R1","BEH-REC-R2"]
+    },
+    {
+      "id":"RT-LITERATURE","modes":["advisory_readonly","project_readonly","mutate"],"object":"literature","actions":["search","review","cite"],"states":["S1","S2","S3","S4","S7","P0","P1"],
+      "modules":["references/modules/evidence-delivery.md"],"optional_modules":[],"capabilities":["EVD-LITERATURE-001","EVD-PROVENANCE-001"],
+      "allowed_actions":["search","read","evaluate_source","record_if_authorized"],"write_allowed":"mode_dependent","expected_outputs":["claim_source_map"],"exclusions":["unsupported_full_text_claim"],"tests":["ROUTE-005"]
+    },
+    {
+      "id":"RT-DATA-AUDIT","modes":["project_readonly","mutate"],"object":"data","actions":["audit","inspect"],"states":["D0","D1","S1","S2"],
+      "modules":["references/modules/data.md"],"optional_modules":["references/modules/evidence-delivery.md"],"capabilities":["DATA-IDENTITY-001","DATA-AUDIT-001","EVD-PROVENANCE-001"],
+      "allowed_actions":["read_data","profile","verify_identity","write_audit_if_authorized"],"write_allowed":"mode_dependent","expected_outputs":["data_audit"],"exclusions":["silent_cleaning"],"tests":["ROUTE-006","BEH-DATA-001"]
+    },
+    {
+      "id":"RT-DATA-TREAT","modes":["mutate"],"object":"data","actions":["clean","preprocess","treat"],"states":["D1","D2","S2","S3"],
+      "modules":["references/modules/data.md"],"optional_modules":[],"capabilities":["DATA-TREAT-001","DATA-IDENTITY-001","GOV-DECISION-001"],
+      "allowed_actions":["compare_treatments","transform_copy","record_lineage"],"write_allowed":true,"expected_outputs":["treatment_decision","processed_candidate"],"exclusions":["overwrite_raw"],"tests":["ROUTE-007"]
+    },
+    {
+      "id":"RT-DATA-FREEZE","modes":["promote"],"object":"data","actions":["freeze","promote"],"states":["D2"],
+      "modules":["references/modules/data.md"],"optional_modules":[],"capabilities":["DATA-FREEZE-001","ART-PROMOTE-001"],
+      "allowed_actions":["validate_dataset","record_hash","update_consumers"],"write_allowed":true,"expected_outputs":["frozen_dataset_identity"],"exclusions":["untracked_mutation"],"tests":["ROUTE-008"]
+    },
+    {
+      "id":"RT-MODEL-COMPARE","modes":["advisory_readonly","project_readonly","mutate"],"object":"model","actions":["compare","design","select"],"states":["S2","S3"],
+      "modules":["references/modules/modeling.md"],"optional_modules":["references/modules/evidence-delivery.md"],"capabilities":["MOD-RESTATE-001","MOD-COMPARE-001","GOV-DECISION-001"],
+      "allowed_actions":["formulate","compare_candidates","record_decision_if_authorized"],"write_allowed":"mode_dependent","expected_outputs":["candidate_comparison"],"exclusions":["unexamined_single_method"],"tests":["ROUTE-009","BEH-MODEL-001"]
+    },
+    {
+      "id":"RT-MODEL-SPEC","modes":["mutate","promote"],"object":"model","actions":["specify","freeze_spec"],"states":["S3","S4"],
+      "modules":["references/modules/modeling.md"],"optional_modules":[],"capabilities":["MOD-SPEC-001","GOV-DECISION-001"],
+      "allowed_actions":["write_specification","validate_units","freeze_decision"],"write_allowed":true,"expected_outputs":["frozen_specification"],"exclusions":["ambiguous_implementation"],"tests":["ROUTE-010"]
+    },
+    {
+      "id":"RT-MODEL-IMPLEMENT","modes":["mutate"],"object":"model","actions":["implement","solve","compute"],"states":["S4","S5"],
+      "modules":["references/modules/modeling.md"],"optional_modules":[],"capabilities":["MOD-IMPLEMENT-001","MOD-RESULTS-001","ART-LAZY-001"],
+      "allowed_actions":["write_code","execute","write_declared_outputs"],"write_allowed":true,"expected_outputs":["implementation_artifacts","model_outputs"],"exclusions":["change_frozen_spec_without_decision"],"tests":["ROUTE-011"]
+    },
+    {
+      "id":"RT-VERIFY-IMPLEMENTATION","modes":["project_readonly","mutate","promote"],"object":"verification","actions":["verify_implementation","verify_solution"],"states":["S5","S6"],
+      "modules":["references/modules/verification.md"],"optional_modules":[],"capabilities":["VER-E1-001","VER-E2-001"],
+      "allowed_actions":["run_checks","inspect_outputs","write_report_if_authorized"],"write_allowed":"mode_dependent","expected_outputs":["implementation_verification"],"exclusions":["claim_model_reasonableness"],"tests":["ROUTE-012","BEH-S6-AXIS1"]
+    },
+    {
+      "id":"RT-VERIFY-MODEL","modes":["advisory_readonly","project_readonly","mutate","promote"],"object":"verification","actions":["examine_model","validate_model"],"states":["S4","S5","S6"],
+      "modules":["references/modules/verification.md"],"optional_modules":["references/modules/modeling.md"],"capabilities":["VER-E3-001","VER-E4-001","VER-UNCERTAINTY-001","VER-ROBUST-001"],
+      "allowed_actions":["test_invariants","test_sensitivity","examine_assumptions","write_report_if_authorized"],"write_allowed":"mode_dependent","expected_outputs":["model_examination"],"exclusions":["implementation_only_closure"],"tests":["ROUTE-013","BEH-S6-AXIS2"]
+    },
+    {
+      "id":"RT-VERIFY-S6-AUDIT","modes":["project_readonly"],"object":"verification","actions":["audit_s6","assess_s6_readiness"],"states":["S5","S6"],
+      "modules":["references/modules/verification.md"],"optional_modules":["references/modules/modeling.md"],"capabilities":["VER-E1-001","VER-E2-001","VER-E3-001","VER-E4-001","VER-S6-DUAL-001","VER-UNCERTAINTY-001","VER-ROBUST-001"],
+      "allowed_actions":["run_checks","inspect_outputs","test_invariants","examine_assumptions","report_readiness"],"write_allowed":false,"expected_outputs":["s6_readiness_report"],"exclusions":["state_transition","single_axis_pass"],"tests":["ROUTE-014A","BEH-S6-READINESS"]
+    },
+    {
+      "id":"RT-VERIFY-S6","modes":["promote"],"object":"verification","actions":["close_s6"],"states":["S6"],
+      "modules":["references/modules/verification.md"],"optional_modules":[],"capabilities":["VER-E1-001","VER-E2-001","VER-E3-001","VER-E4-001","VER-S6-DUAL-001"],
+      "allowed_actions":["verify_both_axes","record_evidence","promote_question"],"write_allowed":true,"expected_outputs":["dual_axis_verification","state_transition"],"exclusions":["single_axis_pass"],"tests":["ROUTE-014","BEH-S6-DUAL"]
+    },
+    {
+      "id":"RT-MANUSCRIPT-DRAFT","modes":["mutate"],"object":"manuscript","actions":["draft","rewrite","structure"],"states":["S4","S5","S6","A0","A1"],
+      "modules":["references/modules/manuscript-content.md","references/modules/manuscript-acceptance.md"],"optional_modules":["references/modules/writing-profile.md"],"capabilities":["MAN-STRUCTURE-001","MAN-CONTENT-001","MAN-ACCEPT-001","MAN-PROFILE-001"],
+      "allowed_actions":["write_authorized_sections","crosscheck_claims"],"write_allowed":true,"expected_outputs":["manuscript_content"],"exclusions":["internal_meta_language","placeholder_sections"],"tests":["ROUTE-015"]
+    },
+    {
+      "id":"RT-MANUSCRIPT-LOCAL","modes":["mutate"],"object":"manuscript","actions":["local_edit","fix_typo","polish_paragraph"],"states":["A1","A2","A3","S5","S6","S7"],
+      "modules":["references/manuscript-local.md"],"optional_modules":["references/modules/writing-profile.md"],"capabilities":["MAN-LOCAL-001"],
+      "allowed_actions":["edit_local_scope","check_direct_dependencies"],"write_allowed":true,"expected_outputs":["localized_manuscript_change"],"exclusions":["automatic_full_project_audit"],"tests":["ROUTE-016","BEH-MAN-LOCAL"]
+    },
+    {
+      "id":"RT-MANUSCRIPT-AUDIT","modes":["project_readonly","promote"],"object":"manuscript","actions":["audit","final_audit"],"states":["A1","A2","A3","S6","S7"],
+      "modules":["references/modules/manuscript-content.md","references/modules/manuscript-acceptance.md","references/modules/visuals-layout.md","references/modules/evidence-delivery.md"],"optional_modules":[],"capabilities":["MAN-READER-001","MAN-ACCEPT-001","VIS-LAYOUT-001","EVD-PROVENANCE-001"],
+      "allowed_actions":["read_full_claimed_scope","audit","promote_if_authorized"],"write_allowed":"mode_dependent","expected_outputs":["scoped_manuscript_audit"],"exclusions":["claim_beyond_read_scope"],"tests":["ROUTE-017","BEH-MAN-AUDIT"]
+    },
+    {
+      "id":"RT-VISUAL-CREATE","modes":["mutate"],"object":"visual","actions":["create","revise","layout"],"states":["A0","A1","S5","S6"],
+      "modules":["references/modules/visuals-layout.md"],"optional_modules":[],"capabilities":["VIS-DESIGN-001","VIS-IDENTITY-001","VIS-LAYOUT-001","ART-LAZY-001"],
+      "allowed_actions":["design","generate","render","inspect"],"write_allowed":true,"expected_outputs":["declared_visual_artifact"],"exclusions":["decorative_unconsumed_visual"],"tests":["ROUTE-018"]
+    },
+    {
+      "id":"RT-VISUAL-AUDIT","modes":["project_readonly","promote"],"object":"visual","actions":["audit","verify"],"states":["A1","A2","A3","S6","S7"],
+      "modules":["references/modules/visuals-layout.md"],"optional_modules":[],"capabilities":["VIS-IDENTITY-001","VIS-LAYOUT-001"],
+      "allowed_actions":["inspect_rendered_output","verify_identity","promote_if_authorized"],"write_allowed":"mode_dependent","expected_outputs":["visual_audit"],"exclusions":["source_only_pass"],"tests":["ROUTE-019"]
+    },
+    {
+      "id":"RT-DELIVERY","modes":["promote"],"object":"delivery","actions":["finalize","package","deliver"],"states":["P0","P1","S7","A2","A3"],
+      "modules":["references/modules/evidence-delivery.md","references/modules/visuals-layout.md"],"optional_modules":["references/modules/manuscript-acceptance.md"],"capabilities":["DEL-FINAL-001","DEL-PROVENANCE-001","DEL-HANDOFF-001","ART-PROMOTE-001"],
+      "allowed_actions":["validate_delivery","package_declared_files","update_state"],"write_allowed":true,"expected_outputs":["validated_delivery","handoff_state"],"exclusions":["temporary_files","unverified_claims"],"tests":["ROUTE-020"]
+    },
+    {
+      "id":"RT-SKILL-AUDIT","modes":["advisory_readonly","project_readonly"],"object":"skill","actions":["audit","review"],"states":["V9"],
+      "modules":["references/maintenance-contract.md"],"optional_modules":[],"capabilities":["MNT-CLASSIFY-001","MNT-IMPACT-001","GOV-OWNER-001"],
+      "allowed_actions":["read","analyze","report"],"write_allowed":false,"expected_outputs":["skill_audit"],"exclusions":["skill_mutation"],"tests":["ROUTE-021","BEH-MNT-READONLY"]
+    },
+    {
+      "id":"RT-SKILL-CHANGE","modes":["skill_maintenance"],"object":"skill","actions":["add_rule","modify_rule","retire_rule","change_route","change_state","release"],"states":["V9"],
+      "modules":["references/maintenance-contract.md"],"optional_modules":[],"capabilities":["MNT-CLASSIFY-001","MNT-IMPACT-001","MNT-OWNER-001","MNT-EVAL-001","MNT-RELOAD-001","MNT-ROLLBACK-001"],
+      "allowed_actions":["analyze_change","edit_canonical_owner","update_contracts","add_evals","validate_release"],"write_allowed":true,"expected_outputs":["validated_skill_change"],"exclusions":["unrequested_project_mutation","self_certified_reload"],"tests":["ROUTE-022","BEH-MNT-CHANGE"]
+    }
+  ]
+}

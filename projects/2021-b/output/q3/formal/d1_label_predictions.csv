@@ -1,0 +1,12 @@
+catalyst_id,temperature_c,pchip_predicted_c4_yield_pct,lower_observed_temperature_c,upper_observed_temperature_c,within_own_observed_range,general_d1_eligible,strict_below_350_d1_eligible,evidence_status
+A7,325.0,6.551703373656117,300.0,350.0,True,True,True,candidate_prediction_not_observation
+A8,325.0,4.276946055555485,300.0,350.0,True,True,True,candidate_prediction_not_observation
+A6,325.0,3.3059104607439718,300.0,350.0,True,True,True,candidate_prediction_not_observation
+B1,325.0,2.332288945776773,300.0,350.0,True,True,True,candidate_prediction_not_observation
+A12,325.0,2.089982411629681,300.0,350.0,True,True,True,candidate_prediction_not_observation
+A9,325.0,1.959593761355046,300.0,350.0,True,True,True,candidate_prediction_not_observation
+B2,325.0,1.642532202412512,300.0,350.0,True,True,True,candidate_prediction_not_observation
+A13,325.0,1.5763140605186645,300.0,350.0,True,True,True,candidate_prediction_not_observation
+A14,325.0,1.122417307483869,300.0,350.0,True,True,True,candidate_prediction_not_observation
+A11,325.0,0.13141248738301176,300.0,350.0,True,True,True,candidate_prediction_not_observation
+A10,325.0,0.11563386230247209,300.0,350.0,True,True,True,candidate_prediction_not_observation

@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "question": "Q2",
+  "axes": [
+    "E3"
+  ],
+  "mode": "full_process",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T15:46:14.895242+00:00",
+  "passed": true,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q2\\model_spec.md": "10d2ce44107c11c835ccf173c820e4100648f7c48fd7955c3890038a20f688a4",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\solve.py": "ad7eaf29c960bd00b1937cebb64507de952a4185b767dfeb50a31d89d72cb5ce",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\verify.py": "8a4cd6c83b614f8eee62fe1f60d29f32c1ba713223ccf4d8c6dcf566ce789ae8"
+  },
+  "checks": [
+    {
+      "axis": "E3",
+      "name": "water_instantaneous_boundary_balance",
+      "passed": true,
+      "value": 2.178457217753523e-16,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "heat_power_instantaneous_boundary_balance",
+      "passed": true,
+      "value": 2.0170468265412762e-16,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "water_variance_dissipation_with_nonuniform_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "water_variance_dissipation_is_strict_here",
+      "passed": true
+    },
+    {
+      "axis": "E3",
+      "name": "zero_surface_flux_instantaneous_water",
+      "passed": true,
+      "value": 1.1882493915019217e-16,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "zero_surface_flux_instantaneous_heat_power",
+      "passed": true,
+      "value": 3.025570239811915e-16,
+      "limit": 5e-12
+    },
+    {
+      "axis": "E3",
+      "name": "constant_equilibrium",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E3",
+      "name": "rectangle_facets_have_inward_rhs",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E3",
+      "name": "maximum_C_Dini_derivative_after_constant_tail",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E3",
+      "name": "sensitivity_same_numerical_settings_rtol",
+      "passed": true
+    },
+    {
+      "axis": "E3",
+      "name": "sensitivity_same_numerical_settings_atol_temperature",
+      "passed": true
+    },
+    {
+      "axis": "E3",
+      "name": "sensitivity_same_numerical_settings_atol_moisture",
+      "passed": true
+    },
+    {
+      "axis": "E3",
+      "name": "sensitivity_same_numerical_settings_max_step_before_4h",
+      "passed": true
+    },
+    {
+      "axis": "E3",
+      "name": "sensitivity_same_numerical_settings_max_step_after_4h",
+      "passed": true
+    },
+    {
+      "axis": "E3",
+      "name": "mean_tail_n10240_nominal_constant_tail_maximum_nonincrease",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-09
+    },
+    {
+      "axis": "E3",
+      "name": "last_value_n10240_sensitivity_constant_tail_maximum_nonincrease",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-09
+    },
+    {
+      "axis": "E3",
+      "name": "unchanged_first_three_hours_temperature_C",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-09
+    },
+    {
+      "axis": "E3",
+      "name": "unchanged_first_three_hours_moisture_kg_kg",
+      "passed": true,
+      "value": 0.0,
+      "limit": 5e-11
+    }
+  ],
+  "details": {
+    "runs_config_identity": {
+      "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q2\\verification_inputs_structure.json",
+      "sha256": "6672020c656ead1c963c19c017fc48245f71a8ee7267f57ecfd93c9d19817aa7"
+    },
+    "reused_checks_reports": [
+      {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\checks_structure_startsafe.json",
+        "sha256": "507c15d21272ef8efba9a6e3e40e12c1ec12629fc0730d172cd8e79e97796331",
+        "details": {
+          "heat_capacity_boundary": "Only instantaneous sum(v*s(C)*theta_dot) equals heat input. No assertion that d(sum(v*s(C)*theta))/dt equals it, or that a variable-capacity temperature quadratic energy is monotonically decreasing.",
+          "coverage": "E3 instantaneous structure; full-process tail and scenario results remain separate."
+        }
+      }
+    ],
+    "run_identities": [
+      {
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.npz",
+        "result_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.json",
+        "metadata_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f"
+      },
+      {
+        "result": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_last_startsafe.npz",
+        "result_sha256": "5a15e36911a87bc085632cfb4beb914f2f204ee49209f929b6829d0c06c034cb",
+        "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_last_startsafe.json",
+        "metadata_sha256": "0be1e87fea665222d245b052e6b614653301ff1f9014b777821929308cc1ee36"
+      }
+    ],
+    "long_time_boundary_sensitivity": {
+      "common_comparison_end_s": 220000,
+      "field_differences": {
+        "temperature_C": {
+          "max_abs": 0.1690833333334325,
+          "time_s": 47139,
+          "radius_m": 0.004,
+          "first": 49.995916666666666,
+          "second": 50.1650000000001
+        },
+        "moisture_kg_kg": {
+          "max_abs": 0.0016536736625141213,
+          "time_s": 28720,
+          "radius_m": 0.0,
+          "first": 0.7444049940388735,
+          "second": 0.7427513203763594
+        }
+      },
+      "crossing_time_difference_s": -1116.6732927321573,
+      "integer_endpoint_difference_s": -1117,
+      "scope": "Only the two user-selected future environments; not statistical uncertainty or E4 validation."
+    },
+    "coverage": "E3 tail structure and two-scenario sensitivity; no E1/E2 auxiliary solver was executed by this entry point."
+  },
+  "claim_boundary": "E1 implementation, E2 numerical agreement and selected E3 structural properties of the fixed-grid Q2 model. No continuous-PDE global well-posedness, rigorous total error bound, per-cell correct rounding or E4 empirical validation is established by this report."
+}

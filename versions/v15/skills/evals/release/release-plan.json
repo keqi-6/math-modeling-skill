@@ -1,0 +1,207 @@
+{
+  "schema_version": "15.0",
+  "release_id": "V15.0.0",
+  "policy": "references/release-policy.json",
+  "required_drivers": ["package", "contracts", "scenarios"],
+  "drivers": [
+    {"id": "package", "script": "scripts/validate_v15_package.py"},
+    {"id": "contracts", "script": "scripts/validate_v15_contracts.py"},
+    {"id": "scenarios", "script": "scripts/run_v15_scenarios.py"}
+  ],
+  "required_case_ids": [
+    "SCENARIO.PLATFORM.INIT_CONTROL_ONLY",
+    "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
+    "SCENARIO.STATE.D0_D1_ROUNDTRIP",
+    "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
+    "SCENARIO.IDENTITY.DECLARED_ROUNDTRIP",
+    "SCENARIO.RECEIPT.CLOSED_WORLD_AND_REPLAY",
+    "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
+    "SCENARIO.RECOVERY.R2_BARRIER_ROUNDTRIP",
+    "SCENARIO.IDENTITY.WORKING_REFRESH_EXACT",
+    "SCENARIO.IDENTITY.PROTECTED_DOWNSTREAM_EXACT",
+    "SCENARIO.STATE.DELTA_REVALIDATION",
+    "SCENARIO.STATE.S6_JUSTIFIED_NA",
+    "SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES",
+    "SCENARIO.VISUAL.A0_ACCEPTANCE",
+    "SCENARIO.MODELING.ESTABLISH_SOLVE_VERIFY_HANDOFF",
+    "SCENARIO.MANUSCRIPT.CLOSURE_FACTS",
+    "SCENARIO.PLATFORM.ARTIFACT_ADMISSION_BOUNDARIES",
+    "SCENARIO.PROJECT.PAUSE_NO_VERIFICATION_REPLAY",
+    "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
+    "BEH.V15.DATA.TREATMENT.PROPOSAL",
+    "BEH.V15.MODEL.COMPARE.BASELINE",
+    "BEH.V15.MODEL.COMPARE.BASELINE.S6",
+    "BEH.V15.VISUAL.A0.ACCEPTANCE",
+    "BEH.V15.VISUAL.A0.DATA_IDENTITY",
+    "BEH.V15.VISUAL.CLASSIFICATION.REQUIRED",
+    "BEH.V15.VERIFY.E3.RISK_MATCH",
+    "BEH.V15.VERIFY.E3.UMBRELLA_ONLY.BLOCKED",
+    "BEH.V15.VERIFY.REALITY_ONLY",
+    "BEH.V15.MODEL.TEAMMATE_BRIEF",
+    "BEH.V15.MODEL.TEAMMATE_BRIEF.REQUIRES_QUESTION",
+    "BEH.V15.MODEL.AUXILIARY_VISIBILITY",
+    "BEH.V15.EVIDENCE.CONSUMER_BOUNDARY",
+    "BEH.V15.MANUSCRIPT.CLOSURE.FACTS_REQUIRED",
+    "BEH.V15.MANUSCRIPT.CLOSURE.FACT_TYPES",
+    "SCENARIO.STATE.ALL_EDGES_RESOLVE"
+  ],
+  "legacy_diagnostic_suites_are_active_drivers": false,
+  "change_review": {
+    "review_kind": "human_reviewed_release_change",
+    "review_status": "reviewed",
+    "risk": [
+      "Retiring callable legacy test surfaces can break undocumented consumers that invoked those paths directly.",
+      "Changing all rule evidence bindings requires current migration seals; stale pre-rebinding hashes must fail closed.",
+      "The focused scenario chain must retain positive and near-negative observability without restoring the full legacy suite.",
+      "Skill-only release paths must remain confined to the candidate without being mistaken for mathematical-modeling project artifacts."
+    ],
+    "old_behavior": [
+      "The V14 release gate hard-coded its release identity, driver IDs, driver count, scripts, and required scenario IDs.",
+      "Maintenance evidence depended on same-source atomic oracles, fixed-version corpus checks, and a V10 single-operation change envelope.",
+      "The release manifest schema still identified V12 even after later candidate generations.",
+      "The shared path preflight applied project-platform roles to a Skill release ChangeSet and blocked creation of the frozen manifest inside the candidate."
+    ],
+    "new_observable_effects": [
+      "The release gate reads active drivers, scripts, timeouts, and required case IDs from the current release policy and verifies an exact plan mirror.",
+      "The contracts driver directly checks current atom owners, route reachability, capability packets, runtime near-negatives, and reviewed migration strength.",
+      "The package, state, plan, manifest schema, gate report, and freeze output share the V15.0.0 identity.",
+      "Skill-only ChangeSets admit only relative paths contained by the candidate root, while project ChangeSets continue to use the project-platform role contract."
+    ],
+    "preserved": [
+      "The release control plane remains three focused drivers executed once each in fresh subprocesses.",
+      "All 51 inherited capabilities and nine grouped V11-V14 native control capabilities remain bound to current owners and evidence.",
+      "G0-G3 proportional activation, exact evidence invalidation, canonical platform admission, state lifecycle, Skill authorization, and R1 recovery remain active.",
+      "Project file creation remains fail-closed against canonical project-platform roles; the exemption is limited to isolated Skill maintenance.",
+      "The human-reviewed V15 regression case registry remains a current routing input to the active scenarios driver."
+    ],
+    "retired_or_merged": [
+      "The V10 change-envelope, generated atomic oracle, fixed-version corpus, superseded broad-harness executables, and superseded versioned release-driver stacks are retired.",
+      "Still-useful negative invariants and preservation checks are merged into the V15 contracts driver; observable project outcomes are merged into the V15 scenarios driver.",
+      "Historical prose and lineage stay available as audit evidence but do not remain callable compatibility interfaces."
+    ],
+    "unverified": [
+      "The local gate does not prove arbitrary mathematical or empirical correctness.",
+      "External services, unregistered downstream consumers, and operating systems other than the release host remain outside this gate.",
+      "Human judgment remains responsible for the truth and sufficiency of domain evidence and for the semantic accuracy of this review."
+    ],
+    "impact_surfaces": [
+      {
+        "surface": "release_identity_and_tools",
+        "effect": "Migrate candidate, plan, state, gate, freeze, and manifest schema to one V15 identity.",
+        "evidence_ids": ["PACKAGE.V15.IDENTITY_AND_LINKS", "CONTRACT.V15.RELEASE_BINDING"]
+      },
+      {
+        "surface": "rule_corpus_and_maintenance_evidence",
+        "effect": "Bind current rules directly to stable V15 inventory and preservation checks.",
+        "evidence_ids": ["CONTRACT.V15.ATOM_INVENTORY", "MIGRATION.V15.CLAUSE_PRESERVATION"]
+      },
+      {
+        "surface": "route_runtime_and_state_boundaries",
+        "effect": "Retain total action/tier/event witnesses and the lightweight near-negative runtime boundary set.",
+        "evidence_ids": [
+          "CONTRACT.V15.ROUTE_REACHABILITY",
+          "CONTRACT.V15.RUNTIME_NEAR_NEGATIVES",
+          "SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES",
+          "SCENARIO.STATE.DELTA_REVALIDATION"
+        ]
+      },
+      {
+        "surface": "skill_candidate_path_admission",
+        "effect": "Keep Skill release paths inside the isolated candidate without applying project artifact roles or weakening project path admission.",
+        "evidence_ids": [
+          "CONTRACT.V15.RUNTIME_NEAR_NEGATIVES",
+          "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
+          "SCENARIO.PLATFORM.PLAN_PREFLIGHT"
+        ]
+      },
+      {
+        "surface": "capability_procedure_reachability",
+        "effect": "Require every active capability to be reachable through a registered packet or explicit machine-contract boundary.",
+        "evidence_ids": ["CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY"]
+      },
+      {
+        "surface": "project_behavior_outcomes",
+        "effect": "Use curated disposable project cases for platform, identity, recovery, receipt, pause, manuscript, visual, and modeling outcomes.",
+        "evidence_ids": [
+          "SCENARIO.PLATFORM.ARTIFACT_ADMISSION_BOUNDARIES",
+          "SCENARIO.RECEIPT.CLOSED_WORLD_AND_REPLAY",
+          "SCENARIO.PROJECT.PAUSE_NO_VERIFICATION_REPLAY",
+          "SCENARIO.MANUSCRIPT.CLOSURE_FACTS",
+          "SCENARIO.MODELING.ESTABLISH_SOLVE_VERIFY_HANDOFF"
+        ]
+      },
+      {
+        "surface": "legacy_retirement_and_rollback",
+        "effect": "Retire obsolete executables while retaining one externally bound pre-release checkpoint identity.",
+        "evidence_ids": ["MIGRATION.V15.CLAUSE_PRESERVATION", "CONTRACT.V15.ATOM_INVENTORY"]
+      }
+    ],
+    "rollback_identity": {
+      "kind": "external_pre_release_candidate_checkpoint",
+      "tree_sha256": "d6d254266e4dc294f4f04073fd54bad8dbee28683b620d0899228e1a394003ed",
+      "binding_ref": "references/preservation/legacy-executable-retirement.json#rollback",
+      "strategy": "Publish only to a new destination; if release acceptance fails, keep the V15 destination absent and restore from the externally retained pre-release checkpoint."
+    },
+    "authorization": {
+      "quote": "把v15推进到正式可发布版本吧，把该修的都修了，退役旧测试链、补齐关键覆盖、最后迁移发布身份。由旧版本一层层迭代下来，所保留的始终是能够持续有用的部分，而不是机械保留，反而成了绊脚石",
+      "quote_sha256": "8a3092ef2d64ecb070f2c97939d72d252ca583f76460bd271cf5b9fc94fe804e"
+    },
+    "evidence": {
+      "case_ids": [
+        "SCENARIO.PLATFORM.INIT_CONTROL_ONLY",
+        "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
+        "SCENARIO.STATE.D0_D1_ROUNDTRIP",
+        "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
+        "SCENARIO.IDENTITY.DECLARED_ROUNDTRIP",
+        "SCENARIO.RECEIPT.CLOSED_WORLD_AND_REPLAY",
+        "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
+        "SCENARIO.RECOVERY.R2_BARRIER_ROUNDTRIP",
+        "SCENARIO.IDENTITY.WORKING_REFRESH_EXACT",
+        "SCENARIO.IDENTITY.PROTECTED_DOWNSTREAM_EXACT",
+        "SCENARIO.STATE.DELTA_REVALIDATION",
+        "SCENARIO.STATE.S6_JUSTIFIED_NA",
+        "SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES",
+        "SCENARIO.VISUAL.A0_ACCEPTANCE",
+        "SCENARIO.MODELING.ESTABLISH_SOLVE_VERIFY_HANDOFF",
+        "SCENARIO.MANUSCRIPT.CLOSURE_FACTS",
+        "SCENARIO.PLATFORM.ARTIFACT_ADMISSION_BOUNDARIES",
+        "SCENARIO.PROJECT.PAUSE_NO_VERIFICATION_REPLAY",
+        "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
+        "BEH.V15.DATA.TREATMENT.PROPOSAL",
+        "BEH.V15.MODEL.COMPARE.BASELINE",
+        "BEH.V15.MODEL.COMPARE.BASELINE.S6",
+        "BEH.V15.VISUAL.A0.ACCEPTANCE",
+        "BEH.V15.VISUAL.A0.DATA_IDENTITY",
+        "BEH.V15.VISUAL.CLASSIFICATION.REQUIRED",
+        "BEH.V15.VERIFY.E3.RISK_MATCH",
+        "BEH.V15.VERIFY.E3.UMBRELLA_ONLY.BLOCKED",
+        "BEH.V15.VERIFY.REALITY_ONLY",
+        "BEH.V15.MODEL.TEAMMATE_BRIEF",
+        "BEH.V15.MODEL.TEAMMATE_BRIEF.REQUIRES_QUESTION",
+        "BEH.V15.MODEL.AUXILIARY_VISIBILITY",
+        "BEH.V15.EVIDENCE.CONSUMER_BOUNDARY",
+        "BEH.V15.MANUSCRIPT.CLOSURE.FACTS_REQUIRED",
+        "BEH.V15.MANUSCRIPT.CLOSURE.FACT_TYPES",
+        "SCENARIO.STATE.ALL_EDGES_RESOLVE"
+      ],
+      "check_ids": [
+        "PACKAGE.V15.REQUIRED",
+        "PACKAGE.V15.JSON",
+        "PACKAGE.V15.PYTHON",
+        "PACKAGE.V15.IDENTITY_AND_LINKS",
+        "CONTRACT.V15.RELEASE_BINDING",
+        "CONTRACT.V15.CONTROL_BINDINGS",
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "CONTRACT.V15.RUNTIME_NEAR_NEGATIVES",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ]
+    }
+  },
+  "unverified_boundaries": [
+    "The gate proves declared local contracts and representative filesystem outcomes, not arbitrary mathematical correctness.",
+    "Natural-language intent and evidence truth remain human responsibilities and are not inferred from check counts.",
+    "External services and operating systems other than the release host are outside this local gate."
+  ]
+}

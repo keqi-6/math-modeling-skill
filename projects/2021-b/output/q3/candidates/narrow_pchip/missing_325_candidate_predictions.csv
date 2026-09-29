@@ -1,0 +1,12 @@
+catalyst_id,temperature_c,pchip_predicted_c4_yield_pct,status
+A7,325.0,6.551703373656117,candidate_prediction_not_observation
+A8,325.0,4.276946055555485,candidate_prediction_not_observation
+A6,325.0,3.3059104607439718,candidate_prediction_not_observation
+B1,325.0,2.332288945776773,candidate_prediction_not_observation
+A12,325.0,2.089982411629681,candidate_prediction_not_observation
+A9,325.0,1.959593761355046,candidate_prediction_not_observation
+B2,325.0,1.642532202412512,candidate_prediction_not_observation
+A13,325.0,1.5763140605186645,candidate_prediction_not_observation
+A14,325.0,1.122417307483869,candidate_prediction_not_observation
+A11,325.0,0.13141248738301176,candidate_prediction_not_observation
+A10,325.0,0.11563386230247209,candidate_prediction_not_observation

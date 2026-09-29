@@ -1,0 +1,603 @@
+{
+  "schema_version": "11.0",
+  "semantic_plan_schema": "references/semantic-plan.schema.json",
+  "selection_policy": {
+    "input": "agent_semantic_plan",
+    "raw_request_classification": false,
+    "single_global_mode": false,
+    "dependency_policy": "block_descendants_only",
+    "rule_delivery": "deduplicated_runtime_semantic_projections_once",
+    "dangerous_action_execution": "optional_step_runtime_actions_with_same_process_revalidation",
+    "unresolved_agent_obligation": {
+      "G0_ADVISORY": "defer",
+      "G1_WORKING": "defer",
+      "G2_CHECKPOINT": "block_step",
+      "G3_RELEASE": "block_step"
+    },
+    "unresolved_runtime_safety_guard": "block_step"
+  },
+  "action_contracts": {
+    "RT.PROJECT.ADVISE": {
+      "advise": {"required_all_events": []},
+      "explain": {"required_all_events": []}
+    },
+    "RT.PROJECT.AUDIT": {
+      "audit": {"required_any_events": ["scope_definition", "project_planning", "project_resume", "project_initialization"]},
+      "inspect": {"required_any_events": ["scope_definition", "project_planning", "project_resume", "project_initialization"]}
+    },
+    "RT.PROJECT.INIT": {
+      "initialize": {"required_all_events": ["project_initialization"]}
+    },
+    "RT.PROJECT.PLAN": {
+      "scope": {"required_all_events": ["scope_definition"]},
+      "plan": {"required_all_events": ["project_planning"]},
+      "replan": {"required_all_events": ["project_planning"]}
+    },
+    "RT.PROJECT.RECOVER.MISSING": {
+      "resume": {"required_all_events": ["recovery_assessment"], "maximum_tier": "G1_WORKING"},
+      "recover": {"required_all_events": ["recovery_assessment"], "maximum_tier": "G1_WORKING"},
+      "handoff": {"required_all_events": ["recovery_assessment"], "maximum_tier": "G1_WORKING"}
+    },
+    "RT.PROJECT.RESUME": {
+      "resume": {"required_all_events": ["project_resume"]},
+      "recover": {"required_all_events": ["recovery_assessment"]},
+      "handoff": {"required_all_events": ["handoff"], "maximum_tier": "G1_WORKING"},
+      "pause": {
+        "required_all_events": ["handoff"],
+        "minimum_tier": "G1_WORKING", "maximum_tier": "G1_WORKING",
+        "required_mode": "mutate", "component_id_must_be_null": true,
+        "allowed_change_path_prefixes": [".modeling/"]
+      }
+    },
+    "RT.STATE.TRANSITION": {
+      "transition": {
+        "required_all_events": ["state_transition"],
+        "minimum_tier": "G2_CHECKPOINT",
+        "required_mode": "promote",
+        "requires_state_effect": true
+      }
+    },
+    "RT.PROBLEM.DEFINE": {
+      "restate": {"required_all_events": ["problem_definition"]},
+      "define": {"required_all_events": ["problem_definition"]}
+    },
+    "RT.LITERATURE.SEARCH": {
+      "search": {"required_all_events": ["literature_search"]},
+      "review": {"required_any_events": ["literature_search", "source_selection", "source_claim"]},
+      "cite": {"required_all_events": ["source_claim"]},
+      "verify_policy": {"required_all_events": ["time_sensitive_policy_use"]}
+    },
+    "RT.DATA.AUDIT": {
+      "audit": {"required_all_events": ["data_audit"]},
+      "inspect": {"required_all_events": ["data_audit"]},
+      "profile": {"required_all_events": ["data_audit"]}
+    },
+    "RT.DATA.TREAT": {
+      "clean": {"required_all_events": ["data_treatment"]},
+      "preprocess": {"required_all_events": ["data_treatment"]},
+      "treat": {"required_all_events": ["data_treatment"]}
+    },
+    "RT.DATA.FREEZE": {
+      "freeze": {"required_all_events": ["dataset_freeze", "artifact_promotion"], "minimum_tier": "G2_CHECKPOINT", "required_mode": "promote"},
+      "promote": {"required_all_events": ["dataset_freeze", "artifact_promotion"], "minimum_tier": "G2_CHECKPOINT", "required_mode": "promote"}
+    },
+    "RT.DATA.REAUDIT": {
+      "reaudit": {"required_all_events": ["data_audit"]},
+      "reopen": {"required_all_events": ["data_audit"]}
+    },
+    "RT.MODEL.COMPARE": {
+      "compare": {"required_all_events": ["model_comparison"]},
+      "design": {"required_all_events": ["problem_definition"]},
+      "select": {"required_all_events": ["model_selection"]}
+    },
+    "RT.MODEL.SPEC": {
+      "specify": {"required_all_events": ["model_specification"]},
+      "freeze_spec": {"required_all_events": ["model_specification"], "minimum_tier": "G2_CHECKPOINT", "required_mode": "promote", "requires_state_effect": true}
+    },
+    "RT.MODEL.IMPLEMENT": {
+      "implement": {"required_all_events": ["model_implementation"]},
+      "solve": {"required_all_events": ["model_execution"]},
+      "compute": {"required_all_events": ["model_execution"]}
+    },
+    "RT.MODEL.RESULTS": {
+      "analyze_results": {"required_all_events": ["result_interpretation"]},
+      "interpret": {"required_all_events": ["result_interpretation"]}
+    },
+    "RT.VERIFY.IMPLEMENTATION": {
+      "verify_implementation": {"required_all_events": ["implementation_verification"]},
+      "verify_solution": {"required_all_events": ["numerical_verification"]}
+    },
+    "RT.VERIFY.MODEL": {
+      "validate_model": {"required_all_events": ["structural_verification", "reality_verification"]},
+      "robustness": {"required_all_events": ["robustness_analysis"]},
+      "uncertainty": {"required_all_events": ["uncertainty_analysis"]}
+    },
+    "RT.VERIFY.S6.READINESS": {
+      "audit_s6": {"required_all_events": ["s6_readiness"]},
+      "assess_s6_readiness": {"required_all_events": ["s6_readiness"]}
+    },
+    "RT.VERIFY.S6.CLOSE": {
+      "close_s6": {"required_all_events": ["s6_close"], "minimum_tier": "G2_CHECKPOINT", "required_mode": "promote", "requires_state_effect": true}
+    },
+    "RT.MANUSCRIPT.DRAFT": {
+      "draft": {"required_all_events": ["manuscript_write"]},
+      "rewrite": {"required_all_events": ["manuscript_write"]},
+      "structure": {"required_all_events": ["manuscript_structure"]}
+    },
+    "RT.MANUSCRIPT.RENDER": {
+      "render": {"required_all_events": ["visual_render"]},
+      "typeset": {"required_all_events": ["visual_render"]},
+      "layout_check": {"required_all_events": ["visual_audit"]}
+    },
+    "RT.MANUSCRIPT.LOCAL": {
+      "local_edit": {"required_all_events": ["local_manuscript_edit"]},
+      "fix_typo": {"required_all_events": ["local_manuscript_edit"]},
+      "polish_paragraph": {"required_all_events": ["local_manuscript_edit"]}
+    },
+    "RT.MANUSCRIPT.REOPEN": {
+      "reopen_published": {"required_all_events": ["published_manuscript_change"]}
+    },
+    "RT.MANUSCRIPT.AUDIT": {
+      "audit": {"required_all_events": ["manuscript_audit"]},
+      "final_audit": {"required_all_events": ["full_manuscript_audit", "manuscript_audit"]}
+    },
+    "RT.VISUAL.CREATE": {
+      "create": {"required_any_events": ["visual_generate", "visual_render"]},
+      "revise": {"required_any_events": ["visual_design", "visual_generate", "visual_render"]},
+      "layout": {"required_any_events": ["visual_design", "visual_render"]}
+    },
+    "RT.VISUAL.AUDIT": {
+      "audit": {"required_all_events": ["visual_audit"]},
+      "verify": {"required_all_events": ["visual_audit"]}
+    },
+    "RT.DELIVERY.FINAL": {
+      "finalize": {"required_all_events": ["final_delivery"], "minimum_tier": "G3_RELEASE", "required_mode": "promote"},
+      "package": {"required_all_events": ["delivery_package_build"], "minimum_tier": "G3_RELEASE", "required_mode": "promote"},
+      "deliver": {"required_all_events": ["final_delivery"], "minimum_tier": "G3_RELEASE", "required_mode": "promote"}
+    },
+    "RT.SKILL.AUDIT": {
+      "audit": {"required_all_events": ["rule_load"]},
+      "review": {"required_all_events": ["rule_load"]}
+    },
+    "RT.SKILL.CHANGE": {
+      "add_rule": {"required_all_events": ["rule_load", "rule_change_request", "rule_change_analysis", "rule_add", "rule_change", "normative_behavior_change"]},
+      "modify_rule": {"required_all_events": ["rule_load", "rule_change_request", "rule_change_analysis", "rule_modify", "rule_change", "normative_behavior_change"]},
+      "retire_rule": {"required_all_events": ["rule_load", "rule_change_request", "rule_change_analysis", "rule_change", "normative_behavior_change"]},
+      "change_route": {"required_all_events": ["rule_load", "rule_change_request", "rule_change_analysis", "rule_change", "normative_behavior_change"]},
+      "change_state": {"required_all_events": ["rule_load", "rule_change_request", "rule_change_analysis", "rule_change", "normative_behavior_change"]},
+      "release": {"required_all_events": ["release_candidate_validation", "release_report"], "minimum_tier": "G3_RELEASE"}
+    }
+  },
+  "event_prerequisites": {
+    "controller_only_events": ["request_received", "route_resolution", "route_execution", "before_write", "before_file_creation"],
+    "events": {
+      "artifact_promotion": {"minimum_tier": "G2_CHECKPOINT", "required_mode": "promote"},
+      "manuscript_promotion": {"minimum_tier": "G2_CHECKPOINT", "required_mode": "promote"},
+      "state_transition": {"minimum_tier": "G2_CHECKPOINT", "required_mode": "promote", "requires_state_effect": true},
+      "final_delivery": {"minimum_tier": "G3_RELEASE", "required_mode": "promote"},
+      "start_receipt_validation": {"minimum_tier": "G2_CHECKPOINT"},
+      "end_receipt_validation": {"minimum_tier": "G2_CHECKPOINT"},
+      "recovery_assessment": {"minimum_tier": "G1_WORKING"},
+      "writing_profile_apply": {"requires_profile_selection": true},
+      "before_frozen_change": {"minimum_tier": "G2_CHECKPOINT"}
+    }
+  },
+  "legacy_scope_adapters": {
+    "skill_state": {
+      "actual_state": "V11",
+      "frozen_scope_token": "V10",
+      "domain": "maintenance",
+      "provenance": "inherited_v10_maintenance_scope_compatibility"
+    }
+  },
+  "legacy_trigger_adapters": {
+    "DATA.IDENTITY.BEFORE_USE": {
+      "coarse_controller_event": "route_execution",
+      "when_fact_true": "consumes_data",
+      "when_any_actual_event": [
+        "data_treatment",
+        "dataset_freeze",
+        "frozen_dataset_change",
+        "model_execution",
+        "result_interpretation",
+        "numerical_comparison",
+        "numerical_verification",
+        "uncertain_result_visualization"
+      ],
+      "provenance": "frozen instruction_gloss narrows the coarse V10 route_execution token to actual data consumption"
+    }
+  },
+  "tier_policy": {
+    "G0_ADVISORY": ["advisory_readonly", "project_readonly"],
+    "G1_WORKING": ["advisory_readonly", "project_readonly", "mutate", "skill_maintenance"],
+    "G2_CHECKPOINT": ["advisory_readonly", "project_readonly", "mutate", "promote", "skill_maintenance"],
+    "G3_RELEASE": ["project_readonly", "mutate", "promote", "skill_maintenance"]
+  },
+  "event_policy": {
+    "source": "semantic_plan.steps[].events",
+    "broadcast": false,
+    "controller_events": {
+      "per_step": ["request_received", "route_resolution", "route_execution"],
+      "before_writable_step": ["before_write"],
+      "scope": "one_semantic_step",
+      "rule_domain": "all_domains_by_declared_trigger",
+      "purpose": "preserve governance applicability without creating a request-wide mode or broadcasting the V10 event bundle"
+    },
+    "known_events": [
+      "artifact_promotion", "artifact_refresh", "artifact_register", "authorized_stateful_execution",
+      "before_claim", "before_file_creation", "before_frozen_change", "before_write",
+      "conclusion_write", "data_audit", "data_treatment", "dataset_freeze", "dataset_register",
+      "delivery_package_build", "design_decision", "end_receipt_validation", "evidence_record",
+      "external_claim_record", "final_delivery", "frozen_dataset_change", "full_manuscript_audit",
+      "handoff", "high_impact_claim_review", "high_risk_change", "high_risk_release_validation",
+      "implementation_verification", "literature_search", "local_manuscript_edit", "major_release",
+      "manuscript_audit", "manuscript_promotion", "manuscript_structure", "manuscript_write",
+      "method_section_write", "model_comparison", "model_execution", "model_implementation",
+      "model_selection", "model_specification", "normative_behavior_change", "numerical_comparison",
+      "numerical_verification", "package_external_material", "planning_complete", "problem_definition",
+      "project_initialization", "project_planning", "project_resume", "provenance_record",
+      "published_manuscript_change", "reality_verification", "recovery_assessment",
+      "release_candidate_validation", "release_report", "request_received", "result_interpretation",
+      "result_record", "result_section_write", "result_summary", "robustness_analysis",
+      "route_execution", "route_resolution", "rule_add", "rule_change", "rule_change_analysis",
+      "rule_change_request", "rule_load", "rule_modify", "s6_close", "s6_readiness",
+      "scope_definition", "source_claim", "source_register", "source_selection",
+      "start_receipt_validation", "state_read", "state_transition", "state_write",
+      "structural_verification", "structure_design", "time_sensitive_policy_use",
+      "uncertain_result_visualization", "uncertainty_analysis", "visual_audit", "visual_design",
+      "visual_embed", "visual_generate", "visual_render", "visual_source_change",
+      "writing_profile_apply"
+    ],
+    "control_events": [
+      "artifact_promotion", "artifact_refresh", "artifact_register", "authorized_stateful_execution",
+      "before_claim", "before_file_creation", "before_frozen_change", "before_write",
+      "design_decision", "end_receipt_validation", "evidence_record", "recovery_assessment",
+      "start_receipt_validation",
+      "state_read", "state_transition", "state_write"
+    ],
+    "route_allowed_events": {
+      "RT.PROJECT.ADVISE": [],
+      "RT.PROJECT.AUDIT": ["project_initialization", "project_planning", "project_resume", "scope_definition"],
+      "RT.PROJECT.INIT": ["project_initialization", "scope_definition", "project_planning", "structure_design"],
+      "RT.PROJECT.PLAN": ["scope_definition", "project_planning", "structure_design", "planning_complete", "problem_definition", "handoff"],
+      "RT.PROJECT.RECOVER.MISSING": ["project_initialization", "project_resume", "handoff"],
+      "RT.PROJECT.RESUME": ["project_initialization", "project_resume", "project_planning", "planning_complete", "handoff"],
+      "RT.STATE.TRANSITION": ["state_transition"],
+      "RT.PROBLEM.DEFINE": ["scope_definition", "problem_definition"],
+      "RT.LITERATURE.SEARCH": ["literature_search", "source_selection", "source_claim", "high_impact_claim_review", "time_sensitive_policy_use", "external_claim_record", "source_register", "provenance_record"],
+      "RT.DATA.AUDIT": ["data_audit", "dataset_register", "source_register", "external_claim_record", "provenance_record"],
+      "RT.DATA.TREAT": ["data_treatment", "dataset_register"],
+      "RT.DATA.FREEZE": ["data_treatment", "dataset_freeze", "dataset_register", "frozen_dataset_change"],
+      "RT.DATA.REAUDIT": ["data_audit", "frozen_dataset_change"],
+      "RT.MODEL.COMPARE": ["problem_definition", "model_comparison", "model_selection", "high_impact_claim_review"],
+      "RT.MODEL.SPEC": ["model_specification"],
+      "RT.MODEL.IMPLEMENT": ["model_implementation", "model_execution", "result_record"],
+      "RT.MODEL.RESULTS": ["result_record", "result_interpretation", "result_summary"],
+      "RT.VERIFY.IMPLEMENTATION": ["implementation_verification", "numerical_verification", "numerical_comparison", "result_summary"],
+      "RT.VERIFY.MODEL": ["structural_verification", "reality_verification", "uncertainty_analysis", "robustness_analysis"],
+      "RT.VERIFY.S6.READINESS": ["s6_readiness", "implementation_verification", "numerical_verification", "numerical_comparison", "structural_verification", "reality_verification", "uncertainty_analysis", "robustness_analysis"],
+      "RT.VERIFY.S6.CLOSE": ["s6_readiness", "s6_close", "implementation_verification", "numerical_verification", "numerical_comparison", "structural_verification", "reality_verification"],
+      "RT.MANUSCRIPT.DRAFT": ["manuscript_structure", "manuscript_write", "manuscript_audit", "method_section_write", "result_section_write", "conclusion_write", "writing_profile_apply", "result_interpretation", "external_claim_record"],
+      "RT.MANUSCRIPT.RENDER": ["visual_render", "visual_audit", "visual_embed"],
+      "RT.MANUSCRIPT.LOCAL": ["local_manuscript_edit", "manuscript_write", "manuscript_audit", "writing_profile_apply"],
+      "RT.MANUSCRIPT.REOPEN": ["published_manuscript_change"],
+      "RT.MANUSCRIPT.AUDIT": ["full_manuscript_audit", "manuscript_audit", "manuscript_structure", "manuscript_write", "manuscript_promotion", "method_section_write", "result_section_write", "conclusion_write", "source_claim", "time_sensitive_policy_use", "external_claim_record", "result_interpretation", "visual_audit", "visual_design", "visual_render", "visual_embed"],
+      "RT.VISUAL.CREATE": ["visual_design", "visual_render", "visual_generate", "visual_embed", "visual_audit", "uncertain_result_visualization"],
+      "RT.VISUAL.AUDIT": ["visual_design", "visual_render", "visual_generate", "visual_embed", "visual_audit", "visual_source_change", "uncertain_result_visualization"],
+      "RT.DELIVERY.FINAL": ["final_delivery", "delivery_package_build", "handoff", "planning_complete", "package_external_material", "source_register", "external_claim_record", "time_sensitive_policy_use", "manuscript_promotion", "visual_audit", "visual_source_change"],
+      "RT.SKILL.AUDIT": ["rule_load", "rule_change_request", "rule_change_analysis", "rule_change"],
+      "RT.SKILL.CHANGE": ["rule_load", "rule_change_request", "rule_change_analysis", "rule_change", "rule_add", "rule_modify", "normative_behavior_change", "release_candidate_validation", "high_risk_release_validation", "high_risk_change", "major_release", "release_report"]
+    }
+  },
+  "semantic_plan_policy": {
+    "required_step_fields": [
+      "id", "tier", "mode", "object", "action", "component_id",
+      "events", "facts", "depends_on"
+    ],
+    "action_field": "routes[].intents",
+    "legacy_route_fields_ignored": [
+      "patterns", "exclude_patterns", "priority", "phase", "after_objects", "recovery"
+    ],
+    "change_set_fields": ["paths", "facets", "claim_refs"],
+    "working_context": {
+      "tiers": ["G0_ADVISORY", "G1_WORKING"],
+      "fields": ["component_type", "state"],
+      "checkpoint_disposition": "authoritative_state_required",
+      "missing_ambiguous_context": "block_step"
+    },
+    "event_validation": "known_and_route_or_control",
+    "recovery_activation": "explicit_recovery_assessment_event_only",
+    "invalid_state_recovery_binding": "recovery_actions_bind_only_to_RT.PROJECT.RECOVER.MISSING_and_ignore_working_context",
+    "window_context": {
+      "enum": ["same_window", "new_window", "unknown"],
+      "required_for_recovery_assessment": true,
+      "missing_or_unknown_default": "new_window",
+      "r0_allowed_only_for": "same_window"
+    }
+  },
+  "runtime_action_policy": {
+    "ordinary_work_requires_runtime_action": false,
+    "ordinary_work_examples": ["read", "edit", "multi_file_change", "compile", "render", "scoped_nonexecuting_audit"],
+    "guarded_kinds": [
+      "project_model_execution", "project_verification_execution",
+      "recompute_existing_result", "skill_targeted_validation",
+      "skill_package_validation", "full_project_audit"
+    ],
+    "kind_events": {
+      "project_model_execution": ["model_execution"],
+      "project_verification_execution": ["implementation_verification", "numerical_verification", "structural_verification", "reality_verification", "robustness_analysis", "uncertainty_analysis"],
+      "recompute_existing_result": ["model_execution", "implementation_verification", "numerical_verification", "structural_verification", "reality_verification", "robustness_analysis", "uncertainty_analysis"],
+      "skill_targeted_validation": ["rule_change_analysis", "normative_behavior_change"],
+      "skill_package_validation": ["release_candidate_validation"],
+      "full_project_audit": ["scope_definition", "project_planning", "project_resume"]
+    },
+    "direct_authorization_only_kinds": ["recompute_existing_result", "skill_package_validation", "full_project_audit"],
+    "non_derivation_actions": ["resume", "recover", "handoff", "pause", "audit_s6", "assess_s6_readiness", "close_s6", "finalize", "package", "deliver"],
+    "skill_package_boundary": {
+      "object": "skill", "tier": "G3_RELEASE", "mode": "skill_maintenance",
+      "scope_kind": "skill_candidate"
+    },
+    "grant_binding": [
+      "request_hash", "plan_hash", "step_id", "runtime_action_id", "event",
+      "scope", "command_hash", "project_root", "state_revision", "recovery_posture"
+    ],
+    "execution_entry": "scripts/run_authorized_action.py",
+    "g1_persistence": "none"
+  },
+  "routes": [
+    {
+      "id": "RT.PROJECT.ADVISE", "object": "project", "intents": ["advise", "explain"],
+      "patterns": ["项目.*(?:建议|解释|方案|怎么|如何)", "(?:建议|解释|方案).*(?:项目|建模)", "(?:工作|项目).*(?:是否.*完成|完成.*(?:了吗|么))", "project.*(?:advise|explain|how)"],
+      "exclude_patterns": ["skill|技能"], "modes": ["advisory_readonly"], "component_types": ["project", "none"],
+      "states": ["UNINITIALIZED", "P0", "P1", "P2"], "priority": 20, "write_policy": "never", "recovery": false,
+      "phase": 0, "after_objects": [], "expected_outputs": ["advisory_response"], "exclusions": ["project_file_creation"],
+      "context_refs": []
+    },
+    {
+      "id": "RT.PROJECT.AUDIT", "object": "project", "intents": ["audit", "inspect"],
+      "patterns": ["(?:项目|工程).*(?:审计|检查|核对|复核|评估)", "(?:审计|检查|核对|复核|评估).*(?:项目|工程)", "(?:audit|inspect|review).*project"],
+      "exclude_patterns": ["skill|技能"], "modes": ["project_readonly"], "component_types": ["project"],
+      "states": ["UNINITIALIZED", "P0", "P1", "P2"], "priority": 80, "write_policy": "never", "recovery": true,
+      "phase": 0, "after_objects": [], "expected_outputs": ["scoped_project_audit"], "exclusions": ["project_mutation", "claim_beyond_read_scope"],
+      "context_refs": [{"ref": "references/project-method-notes.md#recovery", "when_any": ["接手", "恢复", "resume", "recover"]}]
+    },
+    {
+      "id": "RT.PROJECT.INIT", "object": "project", "intents": ["initialize"],
+      "patterns": ["(?:创建|新建|初始化).*(?:项目|平台|工程)", "(?:项目|平台|工程).*(?:创建|新建|初始化)", "init(?:ialize)?.*project"],
+      "exclude_patterns": ["skill|技能|v10"], "modes": ["mutate"], "component_types": ["project"], "states": ["UNINITIALIZED"],
+      "priority": 100, "write_policy": "authorized", "recovery": false, "phase": 0, "after_objects": [],
+      "expected_outputs": ["minimal_project_state", "canonical_logical_platform_binding"], "exclusions": ["full_scaffold", "placeholder_files", "default_readme"],
+      "context_refs": [
+        {"ref": "references/project-platform-contract.json", "when_any": []},
+        {"ref": "references/project-method-notes.md#minimal-platform", "when_any": []}
+      ]
+    },
+    {
+      "id": "RT.PROJECT.PLAN", "object": "project", "intents": ["scope", "plan", "replan"],
+      "patterns": ["(?:项目|题目).*(?:范围|计划|规划|拆解|方案)", "(?:范围|计划|规划|拆解).*(?:项目|题目)", "(?:scope|plan|replan).*project"],
+      "exclude_patterns": ["skill|技能"], "modes": ["advisory_readonly", "project_readonly", "mutate"],
+      "component_types": ["project", "question", "none"], "states": ["UNINITIALIZED", "P0", "P1", "S0", "S1", "S2", "S3"],
+      "priority": 40, "write_policy": "mode_dependent", "recovery": false, "phase": 0, "after_objects": [],
+      "expected_outputs": ["scope_or_plan"], "exclusions": ["unrequested_scaffold"],
+      "context_refs": [{"ref": "references/project-method-notes.md#scope-and-decomposition", "when_any": []}]
+    },
+    {
+      "id": "RT.PROJECT.RECOVER.MISSING", "object": "project", "intents": ["resume", "recover", "handoff"],
+      "patterns": ["接手|恢复|续做|继续(?:项目|完成)|handoff|resume|recover"], "exclude_patterns": ["skill|技能"],
+      "modes": ["project_readonly", "mutate"], "component_types": ["project"], "states": ["UNINITIALIZED"],
+      "priority": 110, "write_policy": "recovery_only", "recovery": true, "phase": 0, "after_objects": [],
+      "expected_outputs": ["r2_recovery_assessment", "identity_inventory", "known_gap_map", "control_state_reconstruction"], "exclusions": ["silent_state_fabrication", "substantive_mutation_before_recovery", "model_execution", "verification_execution", "recomputation"],
+      "context_refs": [{"ref": "references/project-method-notes.md#recovery", "when_any": []}]
+    },
+    {
+      "id": "RT.PROJECT.RESUME", "object": "project", "intents": ["resume", "recover", "handoff", "pause"],
+      "patterns": ["接手|恢复|续做|继续(?:项目|完成)|交接|handoff|resume|recover"], "exclude_patterns": ["skill|技能"],
+      "modes": ["project_readonly", "mutate", "promote"], "component_types": ["project"], "states": ["P0", "P1", "P2"],
+      "priority": 100, "write_policy": "mode_dependent", "recovery": true, "phase": 0, "after_objects": [],
+      "expected_outputs": ["recovery_assessment_or_pause_state", "open_items", "next_legal_action"], "exclusions": ["unconditional_full_reread", "pause_as_checkpoint", "pause_as_final_delivery", "pause_triggered_recomputation", "pause_triggered_skill_validation"],
+      "context_refs": [{"ref": "references/project-method-notes.md#recovery", "when_any": []}]
+    },
+    {
+      "id": "RT.STATE.TRANSITION", "object": "state", "intents": ["transition"],
+      "patterns": [], "exclude_patterns": [], "modes": ["promote"],
+      "component_types": ["project", "question", "shared_data", "artifact"],
+      "states": ["P0", "P1", "P2", "S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "D0", "D1", "D2", "D3", "A0", "A1", "A2", "A3"],
+      "priority": 200, "write_policy": "promote", "recovery": true, "phase": 0,
+      "after_objects": [], "expected_outputs": ["state_transition"],
+      "exclusions": ["transition_without_state_machine_edge", "transition_without_required_evidence"],
+      "context_refs": [{"ref": "references/state-machine.json", "when_any": []}]
+    },
+    {
+      "id": "RT.PROBLEM.DEFINE", "object": "project", "intents": ["restate", "define"],
+      "patterns": ["(?:题意|问题).*(?:分析|重述|定义|拆解)", "(?:分析|重述|定义).*(?:题意|问题)", "restate|problem definition"],
+      "exclude_patterns": ["skill|规则"], "modes": ["advisory_readonly", "project_readonly", "mutate"],
+      "component_types": ["question"], "states": ["S0", "S1"], "priority": 70, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 0, "after_objects": [], "expected_outputs": ["problem_definition"], "exclusions": ["invented_requirements"],
+      "context_refs": [{"ref": "references/project-method-notes.md#scope-and-decomposition", "when_any": []}]
+    },
+    {
+      "id": "RT.LITERATURE.SEARCH", "object": "literature", "intents": ["search", "review", "cite", "verify_policy"],
+      "patterns": ["文献|论文检索|引用|参考文献|arxiv|政策|竞赛规则|官方.*规则|提交规则|literature|citation|reference|policy"],
+      "exclude_patterns": ["skill.*规则|规则.*skill"], "modes": ["advisory_readonly", "project_readonly", "mutate"],
+      "component_types": ["question", "artifact", "project", "none"], "states": ["UNINITIALIZED", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "A0", "A1", "A2", "P0", "P1"],
+      "priority": 60, "write_policy": "mode_dependent", "recovery": false, "phase": 1, "after_objects": ["project"],
+      "expected_outputs": ["claim_source_map"], "exclusions": ["unsupported_full_text_claim", "stale_policy_assumption"],
+      "context_refs": [{"ref": "references/evidence-method-notes.md", "when_any": []}]
+    },
+    {
+      "id": "RT.DATA.AUDIT", "object": "data", "intents": ["audit", "inspect", "profile"],
+      "patterns": ["(?:数据).*(?:审计|检查|核对|画像|质量|缺失|异常)", "(?:审计|检查|画像).*(?:数据)", "data.*(?:audit|inspect|profile|quality)"],
+      "exclude_patterns": ["清洗|预处理|冻结"], "modes": ["project_readonly", "mutate"], "component_types": ["shared_data", "question"],
+      "states": ["D0", "D1", "D2", "S1", "S2", "S5", "S6"], "priority": 70, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 1, "after_objects": ["project"], "expected_outputs": ["data_audit"], "exclusions": ["silent_cleaning"],
+      "context_refs": [{"ref": "references/data-method-notes.md", "when_any": []}]
+    },
+    {
+      "id": "RT.DATA.TREAT", "object": "data", "intents": ["clean", "preprocess", "treat"],
+      "patterns": ["数据.*(?:清洗|预处理|插补|转换|去重|异常处理)", "(?:清洗|预处理|插补).*(?:数据)", "data.*(?:clean|preprocess|impute|transform)"],
+      "exclude_patterns": ["只读|不要修改"], "modes": ["mutate"], "component_types": ["shared_data", "question"],
+      "states": ["D1", "D2", "S2", "S3"], "priority": 90, "write_policy": "authorized", "recovery": true,
+      "phase": 2, "after_objects": ["data"], "expected_outputs": ["treatment_decision", "processed_candidate"], "exclusions": ["overwrite_raw", "unrecorded_lineage"],
+      "context_refs": [{"ref": "references/data-method-notes.md#treatment", "when_any": []}]
+    },
+    {
+      "id": "RT.DATA.FREEZE", "object": "data", "intents": ["freeze", "promote"],
+      "patterns": ["(?:冻结|发布|提升).*(?:数据|数据集)", "(?:数据|数据集).*(?:冻结|发布|提升)", "freeze.*data"],
+      "exclude_patterns": [], "modes": ["promote"], "component_types": ["shared_data"], "states": ["D2"],
+      "priority": 100, "write_policy": "promote", "recovery": true, "phase": 3, "after_objects": ["data"],
+      "expected_outputs": ["frozen_dataset_identity", "consumer_invalidation_result"], "exclusions": ["untracked_mutation"],
+      "context_refs": [{"ref": "references/data-method-notes.md#freeze", "when_any": []}]
+    },
+    {
+      "id": "RT.DATA.REAUDIT", "object": "data", "intents": ["reaudit", "reopen"],
+      "patterns": ["(?:重审|复审|重新审计|发现新问题).*(?:数据|数据集)", "(?:数据|数据集).*(?:重审|复审|重新审计|新问题)", "re.?audit.*data"],
+      "exclude_patterns": [], "modes": ["project_readonly", "mutate"], "component_types": ["shared_data"], "states": ["D3"],
+      "priority": 120, "write_policy": "mode_dependent", "recovery": true, "phase": 1, "after_objects": [],
+      "expected_outputs": ["reaudit_finding", "reopen_decision"], "exclusions": ["silent_d3_mutation"],
+      "context_refs": [{"ref": "references/data-method-notes.md", "when_any": []}]
+    },
+    {
+      "id": "RT.MODEL.COMPARE", "object": "model", "intents": ["compare", "design", "select"],
+      "patterns": ["(?:模型|算法|方法).*(?:比较|选择|设计|候选|基线)", "(?:比较|选择|设计).*(?:模型|算法|方法)", "(?:如何|怎么).*(?:修改|改进).*(?:模型|算法|方法)", "(?:模型|算法|方法).*(?:如何|怎么).*(?:修改|改进)", "(?:compare|select|design).*(?:model|algorithm|method)", "how.*(?:modify|improve).*(?:model|algorithm|method)"],
+      "exclude_patterns": ["验证|检验|稳健|敏感"], "modes": ["advisory_readonly", "project_readonly", "mutate"],
+      "component_types": ["question"], "states": ["S2", "S3", "S4", "S5", "S6", "S7"], "priority": 80, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 2, "after_objects": ["data", "literature"], "expected_outputs": ["candidate_comparison"], "exclusions": ["unexamined_single_method"],
+      "context_refs": [{"ref": "references/modeling-method-notes.md", "when_any": []}]
+    },
+    {
+      "id": "RT.MODEL.SPEC", "object": "model", "intents": ["specify", "freeze_spec"],
+      "patterns": ["(?:模型|算法).*(?:规格|形式化|变量|目标函数|约束|冻结)", "(?:规格|形式化|冻结).*(?:模型|算法)", "(?:specify|freeze).*(?:model|spec)"],
+      "exclude_patterns": ["数据"], "modes": ["mutate", "promote"], "component_types": ["question"], "states": ["S3", "S4"],
+      "priority": 90, "write_policy": "authorized", "recovery": true, "phase": 3, "after_objects": ["model"],
+      "expected_outputs": ["frozen_specification"], "exclusions": ["ambiguous_implementation"],
+      "context_refs": [{"ref": "references/modeling-method-notes.md#specification", "when_any": []}]
+    },
+    {
+      "id": "RT.MODEL.IMPLEMENT", "object": "model", "intents": ["implement", "solve", "compute"],
+      "patterns": ["(?:实现|求解|计算|编程|写代码).*(?:模型|算法|问题)", "(?:模型|算法).*(?:实现|求解|计算|代码)", "(?:implement|solve|compute).*(?:model|algorithm|problem)"],
+      "exclude_patterns": ["只解释|只建议"], "modes": ["mutate"], "component_types": ["question"], "states": ["S4", "S5"],
+      "priority": 60, "write_policy": "authorized", "recovery": true, "phase": 4, "after_objects": ["model", "data"],
+      "expected_outputs": ["implementation_artifacts", "model_outputs"], "exclusions": ["silent_frozen_spec_change"],
+      "context_refs": [{"ref": "references/modeling-method-notes.md#implementation", "when_any": []}]
+    },
+    {
+      "id": "RT.MODEL.RESULTS", "object": "model", "intents": ["analyze_results", "interpret"],
+      "patterns": ["(?:结果|输出).*(?:分析|解释|汇总|指标)", "(?:分析|解释).*(?:结果|输出)", "(?:analy[sz]e|interpret).*(?:result|output)"],
+      "exclude_patterns": ["图|论文|不确定性|敏感性|稳健性|鲁棒性|验证|检验"], "modes": ["advisory_readonly", "project_readonly", "mutate"], "component_types": ["question"],
+      "states": ["S5", "S6", "S7"], "priority": 65, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 5, "after_objects": ["model", "verification"], "expected_outputs": ["traceable_result_interpretation"], "exclusions": ["unsupported_extrapolation"],
+      "context_refs": [{"ref": "references/modeling-method-notes.md#results", "when_any": []}]
+    },
+    {
+      "id": "RT.VERIFY.IMPLEMENTATION", "object": "verification", "intents": ["verify_implementation", "verify_solution"],
+      "patterns": ["(?:代码|实现|求解器|数值).*(?:验证|检查|复现|重算|误差)", "(?:验证|检查|复现|重算).*(?:代码|实现|数值)", "verify.*(?:implementation|code|numerical)"],
+      "exclude_patterns": ["现实|假设|敏感性|稳健性"], "modes": ["project_readonly", "mutate", "promote"], "component_types": ["question"],
+      "states": ["S5", "S6", "S7"], "priority": 90, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 5, "after_objects": ["model"], "expected_outputs": ["implementation_verification"], "exclusions": ["model_reasonableness_claim"],
+      "context_refs": [{"ref": "references/verification-method-notes.md#implementation-axis", "when_any": []}]
+    },
+    {
+      "id": "RT.VERIFY.MODEL", "object": "verification", "intents": ["validate_model", "robustness", "uncertainty"],
+      "patterns": ["(?:模型|结果).*(?:检验|验证|稳健|鲁棒|敏感性|不确定性|现实性|合理性)", "(?:稳健|鲁棒|敏感性|不确定性|现实性).*(?:模型|结果)", "(?:validate|robust|sensitivity|uncertainty).*(?:model|result)"],
+      "exclude_patterns": [], "modes": ["advisory_readonly", "project_readonly", "mutate", "promote"], "component_types": ["question"],
+      "states": ["S4", "S5", "S6", "S7"], "priority": 85, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 5, "after_objects": ["model", "data"], "expected_outputs": ["model_examination"], "exclusions": ["implementation_only_closure"],
+      "context_refs": [{"ref": "references/verification-method-notes.md#model-axis", "when_any": []}]
+    },
+    {
+      "id": "RT.VERIFY.S6.READINESS", "object": "verification", "intents": ["audit_s6", "assess_s6_readiness"],
+      "patterns": ["(?:s6|验证阶段).*(?:审计|检查|是否|就绪|条件)", "(?:是否|检查).*(?:关闭|通过)\\s*s6", "s6.*readiness"],
+      "exclude_patterns": ["实际关闭|关闭s6|close s6"], "modes": ["project_readonly", "advisory_readonly"], "component_types": ["question"],
+      "states": ["S5", "S6"], "priority": 120, "write_policy": "never", "recovery": true, "phase": 5, "after_objects": ["verification"],
+      "expected_outputs": ["s6_readiness_report"], "exclusions": ["state_transition", "single_axis_pass"],
+      "context_refs": [{"ref": "references/verification-method-notes.md", "when_any": []}]
+    },
+    {
+      "id": "RT.VERIFY.S6.CLOSE", "object": "verification", "intents": ["close_s6"],
+      "patterns": ["关闭\\s*s6|通过\\s*s6|实际关闭.*验证|close\\s+s6"], "exclude_patterns": ["是否|能否|条件"],
+      "modes": ["promote"], "component_types": ["question"], "states": ["S6"], "priority": 130, "write_policy": "promote", "recovery": true,
+      "phase": 6, "after_objects": ["verification"], "expected_outputs": ["dual_axis_verification", "state_transition"], "exclusions": ["single_axis_pass"],
+      "context_refs": [{"ref": "references/verification-method-notes.md#s6-closure", "when_any": []}]
+    },
+    {
+      "id": "RT.MANUSCRIPT.DRAFT", "object": "manuscript", "intents": ["draft", "rewrite", "structure"],
+      "patterns": ["(?:论文|正文|摘要|章节).*(?:撰写|编写|改写|重写|结构|完善)", "(?:撰写|改写|重写).*(?:论文|正文|摘要|章节)", "(?:draft|rewrite|structure).*(?:manuscript|paper|section)"],
+      "exclude_patterns": ["局部|错别字|一段"], "modes": ["mutate"], "component_types": ["artifact", "question"],
+      "states": ["S4", "S5", "S6", "S7", "A0", "A1"], "priority": 75, "write_policy": "authorized", "recovery": true,
+      "phase": 6, "after_objects": ["model", "verification", "literature"], "expected_outputs": ["manuscript_content"], "exclusions": ["placeholder_sections", "unsupported_claims"],
+      "context_refs": [{"ref": "references/manuscript-method-notes.md", "when_any": []}]
+    },
+    {
+      "id": "RT.MANUSCRIPT.RENDER", "object": "manuscript", "intents": ["render", "typeset", "layout_check"],
+      "patterns": ["(?:论文|稿件|pdf).*(?:排版|渲染|编译|分页|字体|版面)", "(?:排版|渲染|编译|检查分页|检查字体|检查版面).*(?:论文|稿件|pdf)", "(?:render|typeset|compile|layout).*(?:manuscript|paper|pdf)"],
+      "exclude_patterns": [], "modes": ["project_readonly", "mutate"], "component_types": ["artifact", "question"],
+      "states": ["S4", "S5", "S6", "S7", "A0", "A1", "A2", "A3"], "priority": 105, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 7, "after_objects": ["manuscript"], "expected_outputs": ["rendered_manuscript", "layout_audit"], "exclusions": ["source_only_layout_claim"],
+      "context_refs": [{"ref": "references/visual-method-notes.md#audit", "when_any": []}]
+    },
+    {
+      "id": "RT.MANUSCRIPT.LOCAL", "object": "manuscript", "intents": ["local_edit", "fix_typo", "polish_paragraph"],
+      "patterns": ["(?:局部|一段|一句|错别字|措辞).*(?:修改|润色|修复)", "(?:修改|润色|修复).*(?:一段|一句|错别字|局部)", "(?:local edit|fix typo|polish).*(?:paragraph|sentence|manuscript)"],
+      "exclude_patterns": ["全文|整体|最终"], "modes": ["mutate"], "component_types": ["artifact", "question"],
+      "states": ["A0", "A1", "A2", "S5", "S6", "S7"], "priority": 110, "write_policy": "authorized", "recovery": true,
+      "phase": 6, "after_objects": [], "expected_outputs": ["localized_manuscript_change"], "exclusions": ["automatic_full_project_audit"],
+      "context_refs": [{"ref": "references/manuscript-method-notes.md#local-edit", "when_any": []}]
+    },
+    {
+      "id": "RT.MANUSCRIPT.REOPEN", "object": "manuscript", "intents": ["reopen_published"],
+      "patterns": ["(?:修改|润色|修复|重写).*(?:已发布|定稿|a3|终稿)", "(?:已发布|定稿|a3|终稿).*(?:修改|润色|修复|重写)", "edit.*(?:published|final).*manuscript"],
+      "exclude_patterns": ["只读|审计"], "modes": ["mutate"], "component_types": ["artifact"], "states": ["A3"],
+      "priority": 140, "write_policy": "reopen_first", "recovery": true, "phase": 6, "after_objects": [],
+      "expected_outputs": ["reopen_decision", "A3_to_A1_transition"], "exclusions": ["silent_published_edit"],
+      "context_refs": [{"ref": "references/manuscript-method-notes.md#local-edit", "when_any": []}]
+    },
+    {
+      "id": "RT.MANUSCRIPT.AUDIT", "object": "manuscript", "intents": ["audit", "final_audit"],
+      "patterns": ["(?:论文|稿件|终稿).*(?:审计|检查|验收|复核|最终)", "(?:审计|检查|验收|复核).*(?:论文|稿件|终稿)", "audit.*(?:manuscript|paper)"],
+      "exclude_patterns": ["修改|重写"], "modes": ["project_readonly", "promote"], "component_types": ["artifact", "question"],
+      "states": ["A1", "A2", "A3", "S6", "S7"], "priority": 100, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 7, "after_objects": ["manuscript", "visual", "literature"], "expected_outputs": ["scoped_manuscript_audit"], "exclusions": ["claim_beyond_read_scope"],
+      "context_refs": [{"ref": "references/manuscript-method-notes.md#reader-audit", "when_any": []}, {"ref": "references/visual-method-notes.md#audit", "when_any": ["图", "表", "figure", "table"]}]
+    },
+    {
+      "id": "RT.VISUAL.CREATE", "object": "visual", "intents": ["create", "revise", "layout"],
+      "patterns": ["(?:图表|图片|流程图|示意图|工程图|表格).*(?:创建|生成|绘制|修改|排版)", "(?:创建|生成|绘制|修改).*(?:图表|图片|流程图|表格)", "(?:create|revise|draw).*(?:figure|plot|diagram|table)"],
+      "exclude_patterns": ["审计|检查"], "modes": ["mutate"], "component_types": ["artifact", "question"],
+      "states": ["A0", "A1", "S5", "S6"], "priority": 80, "write_policy": "authorized", "recovery": true,
+      "phase": 6, "after_objects": ["data", "model"], "expected_outputs": ["declared_visual_artifact"], "exclusions": ["decorative_unconsumed_visual"],
+      "context_refs": [{"ref": "references/visual-method-notes.md", "when_any": []}]
+    },
+    {
+      "id": "RT.VISUAL.AUDIT", "object": "visual", "intents": ["audit", "verify"],
+      "patterns": ["(?:图表|图片|流程图|示意图|表格).*(?:审计|检查|验证|验收)", "(?:审计|检查|验证|验收).*(?:图表|图片|流程图|表格)", "(?:audit|verify).*(?:figure|plot|diagram|table)"],
+      "exclude_patterns": ["创建|绘制"], "modes": ["project_readonly", "promote"], "component_types": ["artifact", "question"],
+      "states": ["A1", "A2", "A3", "S6", "S7"], "priority": 100, "write_policy": "mode_dependent", "recovery": true,
+      "phase": 7, "after_objects": ["visual"], "expected_outputs": ["visual_audit"], "exclusions": ["source_only_pass"],
+      "context_refs": [{"ref": "references/visual-method-notes.md#audit", "when_any": []}]
+    },
+    {
+      "id": "RT.DELIVERY.FINAL", "object": "delivery", "intents": ["finalize", "package", "deliver"],
+      "patterns": ["最终交付|打包交付|正式发布|提交材料|交付包|finali[sz]e|package|deliver"], "exclude_patterns": ["skill|技能"],
+      "modes": ["promote"], "component_types": ["project", "artifact", "question"], "states": ["P0", "P1", "S7", "A2", "A3"],
+      "priority": 100, "write_policy": "promote", "recovery": true, "phase": 8, "after_objects": ["verification", "manuscript", "visual", "literature"],
+      "expected_outputs": ["validated_delivery", "handoff_state"], "exclusions": ["temporary_files", "unverified_claims", "secret_material"],
+      "context_refs": [{"ref": "references/evidence-method-notes.md#delivery", "when_any": []}]
+    },
+    {
+      "id": "RT.SKILL.AUDIT", "object": "skill", "intents": ["audit", "review"],
+      "patterns": ["(?:skill|技能|v\\d+\\s*(?:skill|技能|规则版本)).*(?:审计|检查|评估|看看|意见|建议|方案|如何|怎么|需不需要|要不要|是否需要|只读)", "(?:审计|检查|评估|看看|意见|建议|如何|怎么|需不需要|要不要|是否需要).*(?:skill|技能|v\\d+\\s*(?:skill|技能|规则版本))"],
+      "exclude_patterns": [], "modes": ["advisory_readonly", "project_readonly"],
+      "component_types": ["skill"], "states": ["V11"], "priority": 130, "write_policy": "never", "recovery": false,
+      "phase": 0, "after_objects": [], "expected_outputs": ["skill_audit"], "exclusions": ["skill_mutation"],
+      "context_refs": []
+    },
+    {
+      "id": "RT.SKILL.CHANGE", "object": "skill", "intents": ["add_rule", "modify_rule", "retire_rule", "change_route", "change_state", "release"],
+      "patterns": ["(?:skill|技能|v10\\s*(?:skill|技能|规则版本)).*(?:新增|增加|修改|更新|删除|废弃|合并|发布|迭代|升级|去做|创建)", "(?:新增|增加|修改|更新|废弃|发布|迭代|升级|去做|创建).*(?:skill|技能|v10\\s*(?:skill|技能|规则版本))", "(?:审计|检查|评估).*(?:skill|技能|v10\\s*(?:skill|技能|规则版本))", "(?:add|modify|retire|release).*(?:skill|rule)"],
+      "exclude_patterns": ["只读|不要修改"], "modes": ["skill_maintenance"], "component_types": ["skill"], "states": ["V11"],
+      "priority": 150, "write_policy": "maintenance", "recovery": false, "phase": 0, "after_objects": [],
+      "expected_outputs": ["validated_skill_change"], "exclusions": ["unrequested_project_mutation", "self_certified_reload"],
+      "context_refs": []
+    }
+  ]
+}

@@ -1,0 +1,2156 @@
+{
+  "schema_version": "1.0",
+  "result_id": "Q2-SPEC-Q2-1.0-PILOT-SELECTION",
+  "status": "ok",
+  "claim_id": "A.Q2.SELECTION_PILOT.001",
+  "purpose": "internal_model_family_selection_not_formal_q2_solution",
+  "spec_identity": "262fd553e083d0ee19d737dcc2c09f48fcec77a147b27ae4f013e3f6053b2e8d",
+  "official_input_identity": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+  "budget": {
+    "seeds": [
+      250827,
+      250828,
+      250829
+    ],
+    "proposals_per_method_seed": 256,
+    "screen_calls_per_method_seed": 6,
+    "precise_calls_per_method_seed": 1,
+    "c3_attempt_limit": 4096,
+    "proxy": {
+      "time_count": 41,
+      "n_theta": 64,
+      "logistic_scale_m": 2.0
+    },
+    "screen": {
+      "scan_step_s": 0.02,
+      "n_theta": 128
+    },
+    "precise": {
+      "scan_step_s": 0.005,
+      "n_theta": 512
+    }
+  },
+  "records": [
+    {
+      "method": "C0",
+      "seed": 250827,
+      "status": "completed",
+      "generation": {
+        "attempts": 256,
+        "inverse_failures": 0
+      },
+      "proposal_count": 256,
+      "proxy_seconds": 0.9118432420000318,
+      "screen_calls": 6,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 114,
+          "proxy_score_s": 2.149161378045316e-10,
+          "decision": {
+            "heading_rad": 3.0233592262723428,
+            "speed_mps": 98.9444578724503,
+            "release_time_s": 2.5394551348882373,
+            "fuse_delay_s": 1.4741018396342995,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.9930185668912441,
+              0.11795815278843466,
+              0.0
+            ],
+            "release_point_m": [
+              17550.48917825822,
+              29.63875663022543,
+              1800.0
+            ],
+            "explosion_time_s": 4.013556974522537,
+            "explosion_point_m": [
+              17405.653242279215,
+              46.84344950817676,
+              1789.3524164552953
+            ],
+            "active_window_s": [
+              4.013556974522537,
+              24.013556974522537
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 47.29578675137266,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 173,
+          "proxy_score_s": 8.153627900677744e-11,
+          "decision": {
+            "heading_rad": 2.453350639424282,
+            "speed_mps": 79.78485323633984,
+            "release_time_s": 0.30766076209431836,
+            "fuse_delay_s": 1.0859560571990226,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.7723638459971139,
+              0.6351803597377256,
+              0.0
+            ],
+            "release_point_m": [
+              17781.04104051762,
+              15.591561887162879,
+              1800.0
+            ],
+            "explosion_time_s": 1.393616819293341,
+            "explosion_point_m": [
+              17714.12123979968,
+              70.62539511730762,
+              1794.2214272649805
+            ],
+            "active_window_s": [
+              1.393616819293341,
+              21.393616819293342
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 46.93707692522983,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 78,
+          "proxy_score_s": 1.0531967507084505e-29,
+          "decision": {
+            "heading_rad": 3.16509144782374,
+            "speed_mps": 133.9965337690149,
+            "release_time_s": 8.685840781083515,
+            "fuse_delay_s": 2.208052413453039,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.9997239160394362,
+              -0.023496631647414508,
+              0.0
+            ],
+            "release_point_m": [
+              16636.44876901053,
+              -27.347084768928127,
+              1800.0
+            ],
+            "explosion_time_s": 10.893893194536554,
+            "explosion_point_m": [
+              16340.659084567103,
+              -34.29906535973559,
+              1776.1100722432766
+            ],
+            "active_window_s": [
+              10.893893194536554,
+              30.893893194536552
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 131.61559711995113,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 202,
+          "proxy_score_s": 4.223901846614734e-39,
+          "decision": {
+            "heading_rad": 1.2475134895417008,
+            "speed_mps": 97.37824047052831,
+            "release_time_s": 1.6699697695564115,
+            "fuse_delay_s": 0.5030051669982147,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              0.31768104536785274,
+              0.9481976341533385,
+              0.0
+            ],
+            "release_point_m": [
+              17851.660884266566,
+              154.19468348547045,
+              1800.0
+            ],
+            "explosion_time_s": 2.1729749365546263,
+            "explosion_point_m": [
+              17867.221460386867,
+              200.63907064192068,
+              1798.7602304296681
+            ],
+            "active_window_s": [
+              2.1729749365546263,
+              22.172974936554628
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 176.22560659839615,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 65,
+          "proxy_score_s": 4.0363284521759777e-103,
+          "decision": {
+            "heading_rad": 2.9050790029864073,
+            "speed_mps": 100.80653319059346,
+            "release_time_s": 12.414832766981855,
+            "fuse_delay_s": 0.20522064675515322,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.9721607844595692,
+              0.2343147651321935,
+              0.0
+            ],
+            "release_point_m": [
+              16583.3444225098,
+              293.2440502060245,
+              1800.0
+            ],
+            "explosion_time_s": 12.620053413737008,
+            "explosion_point_m": [
+              16563.232766623874,
+              298.09145610910144,
+              1799.7936339821124
+            ],
+            "active_window_s": [
+              12.620053413737008,
+              32.62005341373701
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 468.7692694749365,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 26,
+          "proxy_score_s": 5.469663548723298e-110,
+          "decision": {
+            "heading_rad": 1.0800268821585473,
+            "speed_mps": 90.38185239572425,
+            "release_time_s": 0.0021597437130820296,
+            "fuse_delay_s": 6.016190668941336,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              0.4713046550738434,
+              0.8819704768900859,
+              0.0
+            ],
+            "release_point_m": [
+              17800.091999440425,
+              0.17216208130534638,
+              1800.0
+            ],
+            "explosion_time_s": 6.018350412654418,
+            "explosion_point_m": [
+              18056.36600625336,
+              479.7475398545686,
+              1622.6467041912217
+            ],
+            "active_window_s": [
+              6.018350412654418,
+              26.018350412654417
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 501.5098550957649,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        }
+      ],
+      "precise_calls": 1,
+      "precise_finalist": {
+        "decision": {
+          "heading_rad": 3.0233592262723428,
+          "speed_mps": 98.9444578724503,
+          "release_time_s": 2.5394551348882373,
+          "fuse_delay_s": 1.4741018396342995,
+          "source_domain": "full_domain",
+          "heading_unit": [
+            -0.9930185668912441,
+            0.11795815278843466,
+            0.0
+          ],
+          "release_point_m": [
+            17550.48917825822,
+            29.63875663022543,
+            1800.0
+          ],
+          "explosion_time_s": 4.013556974522537,
+          "explosion_point_m": [
+            17405.653242279215,
+            46.84344950817676,
+            1789.3524164552953
+          ],
+          "active_window_s": [
+            4.013556974522537,
+            24.013556974522537
+          ]
+        },
+        "proxy_score_s": 2.149161378045316e-10,
+        "screen_duration_s": 0.0,
+        "precise": {
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 47.295785248809665,
+          "root_residuals": [],
+          "settings": {
+            "scan_step_s": 0.005,
+            "n_theta": 512
+          }
+        }
+      },
+      "elapsed_seconds": 4.606599656999606
+    },
+    {
+      "method": "C2",
+      "seed": 250827,
+      "status": "completed",
+      "generation": {
+        "attempts": 256,
+        "inverse_failures": 0,
+        "domain_counts": {
+          "target": 115,
+          "missile": 115,
+          "guard": 26
+        },
+        "target_center_rad": 3.1303571713318306,
+        "missile_center_rad": 0.0,
+        "half_width_rad": 0.18
+      },
+      "proposal_count": 256,
+      "proxy_seconds": 0.9266317040001013,
+      "screen_calls": 6,
+      "first_positive_screen_call": 1,
+      "positive_screen_count": 1,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 189,
+          "proxy_score_s": 0.5238927701301579,
+          "decision": {
+            "heading_rad": 3.1942274044814294,
+            "speed_mps": 88.2049199612293,
+            "release_time_s": 0.7874199046716487,
+            "fuse_delay_s": 0.0910610525556385,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9986151112701882,
+              -0.05261045088981465,
+              0.0
+            ],
+            "release_point_m": [
+              17730.641876823254,
+              -3.6540225478449138,
+              1800.0
+            ],
+            "explosion_time_s": 0.8784809572272871,
+            "explosion_point_m": [
+              17722.620967442774,
+              -4.076591417763874,
+              1799.9593686350665
+            ],
+            "active_window_s": [
+              0.8784809572272871,
+              20.878480957227286
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.37317525565624265,
+            "intervals_s": [
+              [
+                7.271503172295628,
+                7.64467842795187
+              ]
+            ],
+            "minimum_scan_margin_m": -1.502626650601103,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 7.271503172295628,
+                "margin_m": 2.1181989495744347e-10,
+                "iterations": 26
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.64467842795187,
+                "margin_m": -4.0335004669600494e-08,
+                "iterations": 26
+              }
+            ],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 120,
+          "proxy_score_s": 1.6515517477158775e-09,
+          "decision": {
+            "heading_rad": 2.9832185880423725,
+            "speed_mps": 104.74913250925236,
+            "release_time_s": 1.5749278749608193,
+            "fuse_delay_s": 1.5042862069238845,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9874850192747917,
+              0.15771282987716734,
+              0.0
+            ],
+            "release_point_m": [
+              17637.092296846673,
+              26.01825280546497,
+              1800.0
+            ],
+            "explosion_time_s": 3.079214081884704,
+            "explosion_point_m": [
+              17481.49164061897,
+              50.869485325870585,
+              1788.9119027375268
+            ],
+            "active_window_s": [
+              3.079214081884704,
+              23.079214081884704
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 43.10334258170018,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 46,
+          "proxy_score_s": 5.418428096706487e-10,
+          "decision": {
+            "heading_rad": 6.210578596176234,
+            "speed_mps": 98.30435497719758,
+            "release_time_s": 0.3371200451993879,
+            "fuse_delay_s": 2.6306545573018183,
+            "source_domain": "missile",
+            "heading_unit": [
+              0.9973652905211929,
+              -0.07254293393278427,
+              0.0
+            ],
+            "release_point_m": [
+              17833.053053349944,
+              -2.4040995693653167,
+              1800.0
+            ],
+            "explosion_time_s": 2.967774602501206,
+            "explosion_point_m": [
+              18090.97650425702,
+              -21.164050448636537,
+              1766.0903173407212
+            ],
+            "active_window_s": [
+              2.967774602501206,
+              22.967774602501205
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 44.03808309667838,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 150,
+          "proxy_score_s": 9.810041432387601e-13,
+          "decision": {
+            "heading_rad": 3.0992643927719308,
+            "speed_mps": 90.74854288805982,
+            "release_time_s": 5.131267476096902,
+            "fuse_delay_s": 1.1421784055062187,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9991042929152122,
+              0.04231562215534348,
+              0.0
+            ],
+            "release_point_m": [
+              17334.762043899642,
+              19.704483007699068,
+              1800.0
+            ],
+            "explosion_time_s": 6.27344588160312,
+            "explosion_point_m": [
+              17231.203858840097,
+              24.09054066068607,
+              1793.6075996009768
+            ],
+            "active_window_s": [
+              6.27344588160312,
+              26.27344588160312
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 55.80726572497461,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 59,
+          "proxy_score_s": 4.6436015417674706e-14,
+          "decision": {
+            "heading_rad": 3.1072444938855597,
+            "speed_mps": 124.55432648991689,
+            "release_time_s": 4.405949626030425,
+            "fuse_delay_s": 2.4804488365305906,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9994101599568013,
+              0.0343414061319703,
+              0.0
+            ],
+            "release_point_m": [
+              17251.54360425222,
+              18.84587988665758,
+              1800.0
+            ],
+            "explosion_time_s": 6.886398462561016,
+            "explosion_point_m": [
+              16942.775201480894,
+              29.455679091368744,
+              1769.8521304898347
+            ],
+            "active_window_s": [
+              6.886398462561016,
+              26.886398462561015
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 61.5987052055108,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 153,
+          "proxy_score_s": 7.106983420027631e-18,
+          "decision": {
+            "heading_rad": 3.2726592262211067,
+            "speed_mps": 82.02128956099756,
+            "release_time_s": 2.9485191127406125,
+            "fuse_delay_s": 4.719429812227267,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9914230655233636,
+              -0.13069164146285858,
+              0.0
+            ],
+            "release_point_m": [
+              17560.23291740402,
+              -31.60664168801383,
+              1800.0
+            ],
+            "explosion_time_s": 7.667948924967879,
+            "explosion_point_m": [
+              17176.459275678346,
+              -82.19655524911342,
+              1690.8622130125564
+            ],
+            "active_window_s": [
+              7.667948924967879,
+              27.66794892496788
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 78.21566938136364,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        }
+      ],
+      "precise_calls": 1,
+      "precise_finalist": {
+        "decision": {
+          "heading_rad": 3.1942274044814294,
+          "speed_mps": 88.2049199612293,
+          "release_time_s": 0.7874199046716487,
+          "fuse_delay_s": 0.0910610525556385,
+          "source_domain": "target",
+          "heading_unit": [
+            -0.9986151112701882,
+            -0.05261045088981465,
+            0.0
+          ],
+          "release_point_m": [
+            17730.641876823254,
+            -3.6540225478449138,
+            1800.0
+          ],
+          "explosion_time_s": 0.8784809572272871,
+          "explosion_point_m": [
+            17722.620967442774,
+            -4.076591417763874,
+            1799.9593686350665
+          ],
+          "active_window_s": [
+            0.8784809572272871,
+            20.878480957227286
+          ]
+        },
+        "proxy_score_s": 0.5238927701301579,
+        "screen_duration_s": 0.37317525565624265,
+        "precise": {
+          "effective_duration_s": 0.37317525565624265,
+          "intervals_s": [
+            [
+              7.271503172295628,
+              7.64467842795187
+            ]
+          ],
+          "minimum_scan_margin_m": -1.5246638865790558,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 7.271503172295628,
+              "margin_m": 2.1196377986143489e-10,
+              "iterations": 24
+            },
+            {
+              "kind": "exit",
+              "time_s": 7.64467842795187,
+              "margin_m": -4.0335004669600494e-08,
+              "iterations": 24
+            }
+          ],
+          "settings": {
+            "scan_step_s": 0.005,
+            "n_theta": 512
+          }
+        }
+      },
+      "elapsed_seconds": 5.883414878999247
+    },
+    {
+      "method": "C3",
+      "seed": 250827,
+      "status": "disqualified",
+      "failure_code": "Q2_PILOT_INVERSE_INSUFFICIENT",
+      "generation": {
+        "attempts": 4096,
+        "inverse_failures": 4090,
+        "failure_reasons": {
+          "bad_height": 21,
+          "negative_release": 1468,
+          "bad_speed": 2601,
+          "zero_explosion_time": 0
+        },
+        "inverse_success_rate": 0.00146484375,
+        "status": "Q2_PILOT_INVERSE_INSUFFICIENT"
+      },
+      "proposal_count": 6,
+      "proxy_seconds": 0.0,
+      "screen_calls": 0,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [],
+      "precise_calls": 0,
+      "precise_finalist": null,
+      "elapsed_seconds": 0.030398631999560166
+    },
+    {
+      "method": "C0",
+      "seed": 250828,
+      "status": "completed",
+      "generation": {
+        "attempts": 256,
+        "inverse_failures": 0
+      },
+      "proposal_count": 256,
+      "proxy_seconds": 0.9196225840005354,
+      "screen_calls": 6,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 244,
+          "proxy_score_s": 5.122792097872225e-12,
+          "decision": {
+            "heading_rad": 3.046979693620628,
+            "speed_mps": 115.13893708374673,
+            "release_time_s": 1.6434474549824065,
+            "fuse_delay_s": 4.733964882183813,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.9955275317135421,
+              0.09447186671354803,
+              0.0
+            ],
+            "release_point_m": [
+              17611.621508766577,
+              17.876419434499503,
+              1800.0
+            ],
+            "explosion_time_s": 6.37741233716622,
+            "explosion_point_m": [
+              17068.995604084186,
+              69.36960320837004,
+              1690.188924821827
+            ],
+            "active_window_s": [
+              6.37741233716622,
+              26.37741233716622
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 50.87108469876658,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 165,
+          "proxy_score_s": 1.313269214997373e-25,
+          "decision": {
+            "heading_rad": 3.464370529950415,
+            "speed_mps": 70.59386872876206,
+            "release_time_s": 0.039024209889438666,
+            "fuse_delay_s": 4.683591062588118,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.9483579297624212,
+              -0.3172022021624922,
+              0.0
+            ],
+            "release_point_m": [
+              17797.387397237282,
+              -0.873850814867956,
+              1800.0
+            ],
+            "explosion_time_s": 4.722615272477556,
+            "explosion_point_m": [
+              17483.829147519533,
+              -105.75130709511794,
+              1692.513476316379
+            ],
+            "active_window_s": [
+              4.722615272477556,
+              24.722615272477555
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 115.0473612394511,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 235,
+          "proxy_score_s": 1.2643593656780897e-61,
+          "decision": {
+            "heading_rad": 2.952766531249085,
+            "speed_mps": 136.9488057185344,
+            "release_time_s": 3.710086884435322,
+            "fuse_delay_s": 7.201390080338724,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.9822252557086049,
+              0.18770601228561087,
+              0.0
+            ],
+            "release_point_m": [
+              17300.93923687115,
+              95.3719171755053,
+              1800.0
+            ],
+            "explosion_time_s": 10.911476964774046,
+            "explosion_point_m": [
+              16332.24730564987,
+              280.4916730421131,
+              1545.8859064629153
+            ],
+            "active_window_s": [
+              10.911476964774046,
+              30.911476964774046
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 279.0921381088904,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 67,
+          "proxy_score_s": 3.1356671190583424e-71,
+          "decision": {
+            "heading_rad": 0.7419321286159082,
+            "speed_mps": 121.59595446523045,
+            "release_time_s": 3.669717312589298,
+            "fuse_delay_s": 0.4618848539732473,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              0.7371643701749527,
+              0.6757134683758829,
+              0.0
+            ],
+            "release_point_m": [
+              18128.939534017554,
+              301.51874182985404,
+              1800.0
+            ],
+            "explosion_time_s": 4.131602166562545,
+            "explosion_point_m": [
+              18170.341139562075,
+              339.4690601179989,
+              1798.9546456701835
+            ],
+            "active_window_s": [
+              4.131602166562545,
+              24.131602166562544
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 323.8026188340422,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 144,
+          "proxy_score_s": 7.421219630947386e-132,
+          "decision": {
+            "heading_rad": 4.565762551781456,
+            "speed_mps": 123.05307389355615,
+            "release_time_s": 3.334042493891194,
+            "fuse_delay_s": 1.7024496360616466,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.14610159859867078,
+              -0.9892695906005162,
+              0.0
+            ],
+            "release_point_m": [
+              17740.059747839197,
+              -405.8618747799799,
+              1800.0
+            ],
+            "explosion_time_s": 5.0364921299528405,
+            "explosion_point_m": [
+              17709.452681293533,
+              -613.1056043594576,
+              1785.7981596597006
+            ],
+            "active_window_s": [
+              5.0364921299528405,
+              25.03649212995284
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 603.1466761601794,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 202,
+          "proxy_score_s": 4.4408007160471656e-151,
+          "decision": {
+            "heading_rad": 3.875097278691963,
+            "speed_mps": 89.31107151994595,
+            "release_time_s": 0.45899502852903673,
+            "fuse_delay_s": 9.519833566147836,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.7428327028071368,
+              -0.6694770911989775,
+              0.0
+            ],
+            "release_point_m": [
+              17769.548808069892,
+              -27.44410056244231,
+              1800.0
+            ],
+            "explosion_time_s": 9.978828594676873,
+            "explosion_point_m": [
+              17137.972731974976,
+              -596.6512890680735,
+              1355.9265674769404
+            ],
+            "active_window_s": [
+              9.978828594676873,
+              29.978828594676873
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 689.626440169873,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        }
+      ],
+      "precise_calls": 1,
+      "precise_finalist": {
+        "decision": {
+          "heading_rad": 3.046979693620628,
+          "speed_mps": 115.13893708374673,
+          "release_time_s": 1.6434474549824065,
+          "fuse_delay_s": 4.733964882183813,
+          "source_domain": "full_domain",
+          "heading_unit": [
+            -0.9955275317135421,
+            0.09447186671354803,
+            0.0
+          ],
+          "release_point_m": [
+            17611.621508766577,
+            17.876419434499503,
+            1800.0
+          ],
+          "explosion_time_s": 6.37741233716622,
+          "explosion_point_m": [
+            17068.995604084186,
+            69.36960320837004,
+            1690.188924821827
+          ],
+          "active_window_s": [
+            6.37741233716622,
+            26.37741233716622
+          ]
+        },
+        "proxy_score_s": 5.122792097872225e-12,
+        "screen_duration_s": 0.0,
+        "precise": {
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 50.8710846987666,
+          "root_residuals": [],
+          "settings": {
+            "scan_step_s": 0.005,
+            "n_theta": 512
+          }
+        }
+      },
+      "elapsed_seconds": 4.112060373001441
+    },
+    {
+      "method": "C2",
+      "seed": 250828,
+      "status": "completed",
+      "generation": {
+        "attempts": 256,
+        "inverse_failures": 0,
+        "domain_counts": {
+          "target": 115,
+          "missile": 115,
+          "guard": 26
+        },
+        "target_center_rad": 3.1303571713318306,
+        "missile_center_rad": 0.0,
+        "half_width_rad": 0.18
+      },
+      "proposal_count": 256,
+      "proxy_seconds": 0.9148265910007467,
+      "screen_calls": 6,
+      "first_positive_screen_call": 1,
+      "positive_screen_count": 1,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 14,
+          "proxy_score_s": 1.0418267955425906,
+          "decision": {
+            "heading_rad": 3.1161220826139093,
+            "speed_mps": 130.174999384586,
+            "release_time_s": 0.6629586604906567,
+            "fuse_delay_s": 0.005621026205188251,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9996756425432247,
+              0.025467817059788934,
+              0.0
+            ],
+            "release_point_m": [
+              17713.727349035777,
+              2.197888993704148,
+              1800.0
+            ],
+            "explosion_time_s": 0.6685796866958449,
+            "explosion_point_m": [
+              17712.995869290866,
+              2.2165242305084494,
+              1799.9998451799156
+            ],
+            "active_window_s": [
+              0.6685796866958449,
+              20.668579686695846
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.7886068236827839,
+            "intervals_s": [
+              [
+                6.890455724114689,
+                7.679062547797473
+              ]
+            ],
+            "minimum_scan_margin_m": -1.9755426509925709,
+            "root_residuals": [
+              {
+                "kind": "entry",
+                "time_s": 6.890455724114689,
+                "margin_m": -8.5078610823075e-10,
+                "iterations": 26
+              },
+              {
+                "kind": "exit",
+                "time_s": 7.679062547797473,
+                "margin_m": 2.5142083970308704e-08,
+                "iterations": 26
+              }
+            ],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 29,
+          "proxy_score_s": 2.3565451400383096e-12,
+          "decision": {
+            "heading_rad": 3.188271349288819,
+            "speed_mps": 135.9271060652054,
+            "release_time_s": 4.324290278888477,
+            "fuse_delay_s": 4.976980594321108,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9989107474865505,
+              -0.04666174617243672,
+              0.0
+            ],
+            "release_point_m": [
+              17212.85198644807,
+              -27.427226749684703,
+              1800.0
+            ],
+            "explosion_time_s": 9.301270873209585,
+            "explosion_point_m": [
+              16537.082303800104,
+              -58.99420456235665,
+              1678.6253544023805
+            ],
+            "active_window_s": [
+              9.301270873209585,
+              29.301270873209585
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 51.690018732079196,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 187,
+          "proxy_score_s": 8.411737618023823e-33,
+          "decision": {
+            "heading_rad": 2.964666918007071,
+            "speed_mps": 112.732710412365,
+            "release_time_s": 5.173118285151432,
+            "fuse_delay_s": 2.2147897771351235,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9843894269686484,
+              0.17600413652052652,
+              0.0
+            ],
+            "release_point_m": [
+              17225.924122878663,
+              102.64202995469859,
+              1800.0
+            ],
+            "explosion_time_s": 7.387908062286556,
+            "explosion_point_m": [
+              16980.142504546504,
+              146.58661156238725,
+              1775.964060591179
+            ],
+            "active_window_s": [
+              7.387908062286556,
+              27.387908062286556
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 148.15427637874114,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 56,
+          "proxy_score_s": 2.0417395170287263e-33,
+          "decision": {
+            "heading_rad": 0.08477309952954586,
+            "speed_mps": 74.59305241539816,
+            "release_time_s": 0.8960953077243845,
+            "fuse_delay_s": 5.104540013039872,
+            "source_domain": "missile",
+            "heading_unit": [
+              0.9964089121773185,
+              0.08467159933302708,
+              0.0
+            ],
+            "release_point_m": [
+              17866.60244702702,
+              5.659660045541029,
+              1800.0
+            ],
+            "explosion_time_s": 6.000635320764257,
+            "explosion_point_m": [
+              18245.998313610842,
+              37.89949091356858,
+              1672.323989150847
+            ],
+            "active_window_s": [
+              6.000635320764257,
+              26.000635320764257
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 147.77042311749506,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 227,
+          "proxy_score_s": 5.634531155483319e-60,
+          "decision": {
+            "heading_rad": 2.951931621572392,
+            "speed_mps": 107.62665101720832,
+            "release_time_s": 11.482667987791977,
+            "fuse_delay_s": 0.12741168380874274,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9820681958188746,
+              0.18852601613851727,
+              0.0
+            ],
+            "release_point_m": [
+              16586.319760340444,
+              232.9881992138729,
+              1800.0
+            ],
+            "explosion_time_s": 11.61007967160072,
+            "explosion_point_m": [
+              16572.85276442061,
+              235.5734362686207,
+              1799.9204546878623
+            ],
+            "active_window_s": [
+              11.61007967160072,
+              31.610079671600722
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 270.0797945534279,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 179,
+          "proxy_score_s": 6.246715169114673e-64,
+          "decision": {
+            "heading_rad": 3.013396383266009,
+            "speed_mps": 77.30647667873492,
+            "release_time_s": 0.07779096015175746,
+            "fuse_delay_s": 8.766566751192576,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.991794105544597,
+              0.12784542309755484,
+              0.0
+            ],
+            "release_point_m": [
+              17794.035603110347,
+              0.7688297799074667,
+              1800.0
+            ],
+            "explosion_time_s": 8.844357711344333,
+            "explosion_point_m": [
+              17121.884451334605,
+              87.41125677547186,
+              1423.4218062447358
+            ],
+            "active_window_s": [
+              8.844357711344333,
+              28.844357711344333
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 289.63353659372626,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        }
+      ],
+      "precise_calls": 1,
+      "precise_finalist": {
+        "decision": {
+          "heading_rad": 3.1161220826139093,
+          "speed_mps": 130.174999384586,
+          "release_time_s": 0.6629586604906567,
+          "fuse_delay_s": 0.005621026205188251,
+          "source_domain": "target",
+          "heading_unit": [
+            -0.9996756425432247,
+            0.025467817059788934,
+            0.0
+          ],
+          "release_point_m": [
+            17713.727349035777,
+            2.197888993704148,
+            1800.0
+          ],
+          "explosion_time_s": 0.6685796866958449,
+          "explosion_point_m": [
+            17712.995869290866,
+            2.2165242305084494,
+            1799.9998451799156
+          ],
+          "active_window_s": [
+            0.6685796866958449,
+            20.668579686695846
+          ]
+        },
+        "proxy_score_s": 1.0418267955425906,
+        "screen_duration_s": 0.7886068236827839,
+        "precise": {
+          "effective_duration_s": 0.7886068236827821,
+          "intervals_s": [
+            [
+              6.890455724114689,
+              7.679062547797471
+            ]
+          ],
+          "minimum_scan_margin_m": -1.995351178877831,
+          "root_residuals": [
+            {
+              "kind": "entry",
+              "time_s": 6.890455724114689,
+              "margin_m": -8.508145299401804e-10,
+              "iterations": 24
+            },
+            {
+              "kind": "exit",
+              "time_s": 7.679062547797471,
+              "margin_m": 2.5142083970308704e-08,
+              "iterations": 24
+            }
+          ],
+          "settings": {
+            "scan_step_s": 0.005,
+            "n_theta": 512
+          }
+        }
+      },
+      "elapsed_seconds": 5.394217817000026
+    },
+    {
+      "method": "C3",
+      "seed": 250828,
+      "status": "disqualified",
+      "failure_code": "Q2_PILOT_INVERSE_INSUFFICIENT",
+      "generation": {
+        "attempts": 4096,
+        "inverse_failures": 4094,
+        "failure_reasons": {
+          "bad_height": 28,
+          "negative_release": 1427,
+          "bad_speed": 2639,
+          "zero_explosion_time": 0
+        },
+        "inverse_success_rate": 0.00048828125,
+        "status": "Q2_PILOT_INVERSE_INSUFFICIENT"
+      },
+      "proposal_count": 2,
+      "proxy_seconds": 0.0,
+      "screen_calls": 0,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [],
+      "precise_calls": 0,
+      "precise_finalist": null,
+      "elapsed_seconds": 0.03075713500038546
+    },
+    {
+      "method": "C0",
+      "seed": 250829,
+      "status": "completed",
+      "generation": {
+        "attempts": 256,
+        "inverse_failures": 0
+      },
+      "proposal_count": 256,
+      "proxy_seconds": 0.9109634640008153,
+      "screen_calls": 6,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 11,
+          "proxy_score_s": 9.73510069299427e-40,
+          "decision": {
+            "heading_rad": 0.8682863890520881,
+            "speed_mps": 112.3389503916826,
+            "release_time_s": 0.12862832973815808,
+            "fuse_delay_s": 2.214870112640478,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              0.646135362279033,
+              0.7632228335240913,
+              0.0
+            ],
+            "release_point_m": [
+              17809.336637604592,
+              11.028548233343676,
+              1800.0
+            ],
+            "explosion_time_s": 2.3434984423786362,
+            "explosion_point_m": [
+              17970.105572605607,
+              200.93074098956782,
+              1775.9623168822466
+            ],
+            "active_window_s": [
+              2.3434984423786362,
+              22.343498442378635
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 178.8400549704993,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 20,
+          "proxy_score_s": 2.8659118549264846e-50,
+          "decision": {
+            "heading_rad": 2.6612873651757343,
+            "speed_mps": 112.84268833243732,
+            "release_time_s": 4.177458518257334,
+            "fuse_delay_s": 0.46826838479807603,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.886853905614914,
+              0.46204994329138627,
+              0.0
+            ],
+            "release_point_m": [
+              17381.94092706467,
+              217.8083331642838,
+              1800.0
+            ],
+            "explosion_time_s": 4.64572690305541,
+            "explosion_point_m": [
+              17335.078978351587,
+              242.22335869251998,
+              1798.9255511270133
+            ],
+            "active_window_s": [
+              4.64572690305541,
+              24.64572690305541
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 228.09625006085034,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 129,
+          "proxy_score_s": 2.97465744463779e-91,
+          "decision": {
+            "heading_rad": 3.3935560835958354,
+            "speed_mps": 131.46622635654933,
+            "release_time_s": 4.827048384663427,
+            "fuse_delay_s": 7.6626354327882025,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.9684247940596413,
+              -0.24930587287615458,
+              0.0
+            ],
+            "release_point_m": [
+              17185.443595474495,
+              -158.20797009914872,
+              1800.0
+            ],
+            "explosion_time_s": 12.48968381745163,
+            "explosion_point_m": [
+              16209.873991547189,
+              -409.35316294265533,
+              1512.2916892984758
+            ],
+            "active_window_s": [
+              12.48968381745163,
+              32.48968381745163
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 413.5850567533376,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 78,
+          "proxy_score_s": 1.3340668157851448e-104,
+          "decision": {
+            "heading_rad": 2.3657598799864794,
+            "speed_mps": 96.21034974147625,
+            "release_time_s": 3.943662763297653,
+            "fuse_delay_s": 3.3714851352616795,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.7138380813161996,
+              0.7003107836259604,
+              0.0
+            ],
+            "release_point_m": [
+              17529.154717341473,
+              265.71273949164737,
+              1800.0
+            ],
+            "explosion_time_s": 7.315147898559332,
+            "explosion_point_m": [
+              17297.6057996862,
+              492.87378373282627,
+              1744.3021311152768
+            ],
+            "active_window_s": [
+              7.315147898559332,
+              27.31514789855933
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 477.45648965978427,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 37,
+          "proxy_score_s": 1.2712516025083829e-123,
+          "decision": {
+            "heading_rad": 3.8461295394557444,
+            "speed_mps": 89.447323704549,
+            "release_time_s": 9.318040417386305,
+            "fuse_delay_s": 0.42361473485460477,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.7619115837039301,
+              -0.6476810469805097,
+              0.0
+            ],
+            "release_point_m": [
+              17164.96667420469,
+              -539.8251688459019,
+              1800.0
+            ],
+            "explosion_time_s": 9.74165515224091,
+            "explosion_point_m": [
+              17136.096926716935,
+              -564.3665837277063,
+              1799.120697726429
+            ],
+            "active_window_s": [
+              9.74165515224091,
+              29.74165515224091
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 563.1833406899077,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 250,
+          "proxy_score_s": 4.432991811868163e-157,
+          "decision": {
+            "heading_rad": 2.785266668764842,
+            "speed_mps": 85.35657155371796,
+            "release_time_s": 6.7058954885411035,
+            "fuse_delay_s": 6.188577506359207,
+            "source_domain": "full_domain",
+            "heading_unit": [
+              -0.9371847651031383,
+              0.34883336431393064,
+              0.0
+            ],
+            "release_point_m": [
+              17263.562705418095,
+              199.66951361173236,
+              1800.0
+            ],
+            "explosion_time_s": 12.89447299490031,
+            "explosion_point_m": [
+              16768.50819994682,
+              383.93577048297925,
+              1612.337391394146
+            ],
+            "active_window_s": [
+              12.89447299490031,
+              32.89447299490031
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 717.26098106054,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        }
+      ],
+      "precise_calls": 1,
+      "precise_finalist": {
+        "decision": {
+          "heading_rad": 0.8682863890520881,
+          "speed_mps": 112.3389503916826,
+          "release_time_s": 0.12862832973815808,
+          "fuse_delay_s": 2.214870112640478,
+          "source_domain": "full_domain",
+          "heading_unit": [
+            0.646135362279033,
+            0.7632228335240913,
+            0.0
+          ],
+          "release_point_m": [
+            17809.336637604592,
+            11.028548233343676,
+            1800.0
+          ],
+          "explosion_time_s": 2.3434984423786362,
+          "explosion_point_m": [
+            17970.105572605607,
+            200.93074098956782,
+            1775.9623168822466
+          ],
+          "active_window_s": [
+            2.3434984423786362,
+            22.343498442378635
+          ]
+        },
+        "proxy_score_s": 9.73510069299427e-40,
+        "screen_duration_s": 0.0,
+        "precise": {
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 178.84005497049927,
+          "root_residuals": [],
+          "settings": {
+            "scan_step_s": 0.005,
+            "n_theta": 512
+          }
+        }
+      },
+      "elapsed_seconds": 4.1366207110004325
+    },
+    {
+      "method": "C2",
+      "seed": 250829,
+      "status": "completed",
+      "generation": {
+        "attempts": 256,
+        "inverse_failures": 0,
+        "domain_counts": {
+          "target": 115,
+          "missile": 115,
+          "guard": 26
+        },
+        "target_center_rad": 3.1303571713318306,
+        "missile_center_rad": 0.0,
+        "half_width_rad": 0.18
+      },
+      "proposal_count": 256,
+      "proxy_seconds": 0.9069110100008402,
+      "screen_calls": 6,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [
+        {
+          "call_index": 1,
+          "proposal_index": 225,
+          "proxy_score_s": 0.006565795166500962,
+          "decision": {
+            "heading_rad": 3.136346802424976,
+            "speed_mps": 127.23210203534059,
+            "release_time_s": 5.691511539370295,
+            "fuse_delay_s": 6.206304470871957,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9999862405543322,
+              0.00524582710479393,
+              0.0
+            ],
+            "release_point_m": [
+              17075.866986893467,
+              3.7987288560336516,
+              1800.0
+            ],
+            "explosion_time_s": 11.897816010242252,
+            "explosion_point_m": [
+              16286.236688217785,
+              7.941049875634081,
+              1611.2607455926902
+            ],
+            "active_window_s": [
+              11.897816010242252,
+              31.897816010242252
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 8.389522500631063,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 2,
+          "proposal_index": 125,
+          "proxy_score_s": 4.3753451569566177e-11,
+          "decision": {
+            "heading_rad": 3.068450840190385,
+            "speed_mps": 120.39190352328302,
+            "release_time_s": 2.6237490072917895,
+            "fuse_delay_s": 4.85380670695308,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9973263298352016,
+              0.07307661607824059,
+              0.0
+            ],
+            "release_point_m": [
+              17484.966416596377,
+              23.083305371014436,
+              1800.0
+            ],
+            "explosion_time_s": 7.477555714244869,
+            "explosion_point_m": [
+              16902.169771113007,
+              65.78628576932799,
+              1684.5587462125327
+            ],
+            "active_window_s": [
+              7.477555714244869,
+              27.47755571424487
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 46.70376026450507,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 3,
+          "proposal_index": 29,
+          "proxy_score_s": 1.0783560974696525e-15,
+          "decision": {
+            "heading_rad": 3.026271741370987,
+            "speed_mps": 133.8716621187857,
+            "release_time_s": 2.0122490242962106,
+            "fuse_delay_s": 3.5716255981083953,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9933579095482671,
+              0.1150654750040028,
+              0.0
+            ],
+            "release_point_m": [
+              17532.406145579596,
+              30.99669683109258,
+              1800.0
+            ],
+            "explosion_time_s": 5.583874622404606,
+            "explosion_point_m": [
+              17057.44253580537,
+              86.01404037159014,
+              1737.4931038759905
+            ],
+            "active_window_s": [
+              5.583874622404606,
+              25.583874622404608
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 69.1879815897349,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 4,
+          "proposal_index": 230,
+          "proxy_score_s": 9.317149458117454e-23,
+          "decision": {
+            "heading_rad": 3.2487527395624696,
+            "speed_mps": 119.29201311600963,
+            "release_time_s": 2.919203193623048,
+            "fuse_delay_s": 5.391466605545704,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9942638502933009,
+              -0.10695511207951021,
+              0.0
+            ],
+            "release_point_m": [
+              17453.759917492323,
+              -37.245794282979354,
+              1800.0
+            ],
+            "explosion_time_s": 8.310669799168751,
+            "explosion_point_m": [
+              16814.29026823345,
+              -106.03492705467997,
+              1657.567230422299
+            ],
+            "active_window_s": [
+              8.310669799168751,
+              28.31066979916875
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 100.44792979297915,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 5,
+          "proposal_index": 71,
+          "proxy_score_s": 3.2511812543548944e-24,
+          "decision": {
+            "heading_rad": 3.261948930582422,
+            "speed_mps": 101.83382100520281,
+            "release_time_s": 5.563100213363244,
+            "fuse_delay_s": 2.1300477121794383,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9927659221393395,
+              -0.12006591455874188,
+              0.0
+            ],
+            "release_point_m": [
+              17237.58643875669,
+              -68.01875153550968,
+              1800.0
+            ],
+            "explosion_time_s": 7.693147925542682,
+            "explosion_point_m": [
+              17022.24469162308,
+              -94.06235681615641,
+              1777.7681940448117
+            ],
+            "active_window_s": [
+              7.693147925542682,
+              27.693147925542682
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 106.31591783523896,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        },
+        {
+          "call_index": 6,
+          "proposal_index": 14,
+          "proxy_score_s": 4.207304368980507e-28,
+          "decision": {
+            "heading_rad": 3.087605835700962,
+            "speed_mps": 111.7211919258427,
+            "release_time_s": 1.001283806900525,
+            "fuse_delay_s": 6.9695971410244795,
+            "source_domain": "target",
+            "heading_unit": [
+              -0.9985430656609092,
+              0.05396059692509977,
+              0.0
+            ],
+            "release_point_m": [
+              17688.298359043765,
+              6.036281689585638,
+              1800.0
+            ],
+            "explosion_time_s": 7.9708809479250045,
+            "explosion_point_m": [
+              16910.781103605248,
+              48.05279220959854,
+              1561.9811068899346
+            ],
+            "active_window_s": [
+              7.9708809479250045,
+              27.970880947925004
+            ]
+          },
+          "continuous_screen": {
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 124.97458839161465,
+            "root_residuals": [],
+            "settings": {
+              "scan_step_s": 0.02,
+              "n_theta": 128
+            }
+          }
+        }
+      ],
+      "precise_calls": 1,
+      "precise_finalist": {
+        "decision": {
+          "heading_rad": 3.136346802424976,
+          "speed_mps": 127.23210203534059,
+          "release_time_s": 5.691511539370295,
+          "fuse_delay_s": 6.206304470871957,
+          "source_domain": "target",
+          "heading_unit": [
+            -0.9999862405543322,
+            0.00524582710479393,
+            0.0
+          ],
+          "release_point_m": [
+            17075.866986893467,
+            3.7987288560336516,
+            1800.0
+          ],
+          "explosion_time_s": 11.897816010242252,
+          "explosion_point_m": [
+            16286.236688217785,
+            7.941049875634081,
+            1611.2607455926902
+          ],
+          "active_window_s": [
+            11.897816010242252,
+            31.897816010242252
+          ]
+        },
+        "proxy_score_s": 0.006565795166500962,
+        "screen_duration_s": 0.0,
+        "precise": {
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 8.389522500631074,
+          "root_residuals": [],
+          "settings": {
+            "scan_step_s": 0.005,
+            "n_theta": 512
+          }
+        }
+      },
+      "elapsed_seconds": 3.5309380920007243
+    },
+    {
+      "method": "C3",
+      "seed": 250829,
+      "status": "disqualified",
+      "failure_code": "Q2_PILOT_INVERSE_INSUFFICIENT",
+      "generation": {
+        "attempts": 4096,
+        "inverse_failures": 4096,
+        "failure_reasons": {
+          "bad_height": 33,
+          "negative_release": 1498,
+          "bad_speed": 2565,
+          "zero_explosion_time": 0
+        },
+        "inverse_success_rate": 0.0,
+        "status": "Q2_PILOT_INVERSE_INSUFFICIENT"
+      },
+      "proposal_count": 0,
+      "proxy_seconds": 0.0,
+      "screen_calls": 0,
+      "first_positive_screen_call": null,
+      "positive_screen_count": 0,
+      "screen_records": [],
+      "precise_calls": 0,
+      "precise_finalist": null,
+      "elapsed_seconds": 0.029250191000755876
+    }
+  ],
+  "aggregate": {
+    "C0": {
+      "positive_seed_count": 0,
+      "precise_duration_median_s": 0.0,
+      "precise_duration_best_s": 0.0,
+      "precise_duration_std_s": 0.0,
+      "precise_durations_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "completed_seed_count": 3,
+      "disqualified_seed_count": 0,
+      "positive_screen_count": 0,
+      "screen_call_count": 18,
+      "screen_positive_rate": 0.0,
+      "inverse_failures": 0,
+      "elapsed_seconds": 12.85528074100148
+    },
+    "C2": {
+      "positive_seed_count": 2,
+      "precise_duration_median_s": 0.37317525565624265,
+      "precise_duration_best_s": 0.7886068236827821,
+      "precise_duration_std_s": 0.32210141286145993,
+      "precise_durations_s": [
+        0.37317525565624265,
+        0.7886068236827821,
+        0.0
+      ],
+      "completed_seed_count": 3,
+      "disqualified_seed_count": 0,
+      "positive_screen_count": 2,
+      "screen_call_count": 18,
+      "screen_positive_rate": 0.1111111111111111,
+      "inverse_failures": 0,
+      "elapsed_seconds": 14.808570787999997
+    },
+    "C3": {
+      "positive_seed_count": 0,
+      "precise_duration_median_s": 0.0,
+      "precise_duration_best_s": 0.0,
+      "precise_duration_std_s": 0.0,
+      "precise_durations_s": [],
+      "completed_seed_count": 0,
+      "disqualified_seed_count": 3,
+      "positive_screen_count": 0,
+      "screen_call_count": 0,
+      "screen_positive_rate": 0.0,
+      "inverse_failures": 12280,
+      "elapsed_seconds": 0.0904059580007015
+    }
+  },
+  "recommendation": {
+    "method": "C2",
+    "status": "pass"
+  },
+  "limitations": [
+    "Small fixed budget supports model-family selection only.",
+    "No strict global-optimality claim is made.",
+    "External numerical results were neither loaded nor compared."
+  ],
+  "run_identity": {
+    "executed_at": "2026-08-27T04:29:27.351928+00:00",
+    "execution_kind": "declared_stochastic_repeated_fixed_seeds",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "seeds": [
+      250827,
+      250828,
+      250829
+    ],
+    "script_sha256": "e9e3e3f2bd41cfc7446c094cc8a5649feb83e64135701f0ffb53482a9fafa7e1",
+    "q1_model_sha256": "0b11d857b6409465ed57cc21033dbef1e8910431ab356adb5a6864c364d3212f",
+    "spec_sha256": "262fd553e083d0ee19d737dcc2c09f48fcec77a147b27ae4f013e3f6053b2e8d",
+    "official_input_sha256": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447"
+  },
+  "output_path": "/mnt/d/AI/AI_program/2025（第八题）/A题/docs/q2_selection_pilot.json"
+}

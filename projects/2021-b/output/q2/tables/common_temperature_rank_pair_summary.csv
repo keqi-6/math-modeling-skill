@@ -1,0 +1,7 @@
+response,response_cn,temperature_from_c,temperature_to_c,spearman_rank_correlation,mean_absolute_rank_change,max_absolute_rank_change,max_rank_change_catalyst
+ethanol_conversion_pct,乙醇转化率,250.0,275.0,0.9649350649350649,1.2380952380952381,3.0,A1
+ethanol_conversion_pct,乙醇转化率,275.0,300.0,0.9688311688311689,1.1428571428571428,3.0,A1
+ethanol_conversion_pct,乙醇转化率,300.0,350.0,0.9922077922077923,0.47619047619047616,2.0,A7
+c4_selectivity_pct,C4烯烃选择性,250.0,275.0,0.7833712657395148,2.9047619047619047,8.5,B4
+c4_selectivity_pct,C4烯烃选择性,275.0,300.0,0.8444300542797422,2.3333333333333335,7.0,A6
+c4_selectivity_pct,C4烯烃选择性,300.0,350.0,0.9506493506493506,1.4285714285714286,5.0,A4

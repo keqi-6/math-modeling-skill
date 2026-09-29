@@ -1,0 +1,134 @@
+{
+  "status": "pass",
+  "verification_identity": "independent_implementation_and_structural_examination",
+  "imports_q4_primary_modules": false,
+  "v4_external_validation_applicable": false,
+  "v4_reason": "题面未提供企业真实N,n,x、留出样本或实现后收益；禁止伪造经验验证",
+  "checks": [
+    {
+      "id": "interval_N200_n100_1/20",
+      "status": "pass",
+      "evidence": "D=5..19 by PMF recurrence"
+    },
+    {
+      "id": "interval_N200_n100_1/10",
+      "status": "pass",
+      "evidence": "D=13..30 by PMF recurrence"
+    },
+    {
+      "id": "interval_N200_n100_1/5",
+      "status": "pass",
+      "evidence": "D=30..53 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n20_1/20",
+      "status": "pass",
+      "evidence": "D=1..122 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n20_1/10",
+      "status": "pass",
+      "evidence": "D=7..156 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n20_1/5",
+      "status": "pass",
+      "evidence": "D=30..216 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n100_1/20",
+      "status": "pass",
+      "evidence": "D=10..53 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n100_1/10",
+      "status": "pass",
+      "evidence": "D=27..84 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n100_1/5",
+      "status": "pass",
+      "evidence": "D=67..141 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n200_1/20",
+      "status": "pass",
+      "evidence": "D=15..40 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n200_1/10",
+      "status": "pass",
+      "evidence": "D=35..69 by PMF recurrence"
+    },
+    {
+      "id": "interval_N500_n200_1/5",
+      "status": "pass",
+      "evidence": "D=80..124 by PMF recurrence"
+    },
+    {
+      "id": "interval_N1000_n100_1/20",
+      "status": "pass",
+      "evidence": "D=18..109 by PMF recurrence"
+    },
+    {
+      "id": "interval_N1000_n100_1/10",
+      "status": "pass",
+      "evidence": "D=52..172 by PMF recurrence"
+    },
+    {
+      "id": "interval_N1000_n100_1/5",
+      "status": "pass",
+      "evidence": "D=130..287 by PMF recurrence"
+    },
+    {
+      "id": "full_census_degeneracy",
+      "status": "pass",
+      "evidence": "N in {1,2,7,20}, every x gives singleton D=x"
+    },
+    {
+      "id": "finite_population_coverage_property",
+      "status": "pass",
+      "evidence": "exhaustive small-population minimum=20/21 at (10, 5, 4)"
+    },
+    {
+      "id": "q2_all_candidate_ledgers",
+      "status": "pass",
+      "evidence": "12960 candidates, 8100 feasible, independent closed forms"
+    },
+    {
+      "id": "q3_full_enumeration_N200_n100",
+      "status": "pass",
+      "evidence": "5 scenarios x 65536 policies; feasible counts=[17060]"
+    },
+    {
+      "id": "q3_full_enumeration_N500_n20",
+      "status": "pass",
+      "evidence": "5 scenarios x 65536 policies; feasible counts=[17060]"
+    },
+    {
+      "id": "q3_full_enumeration_N500_n100",
+      "status": "pass",
+      "evidence": "5 scenarios x 65536 policies; feasible counts=[17060]"
+    },
+    {
+      "id": "q3_full_enumeration_N500_n200",
+      "status": "pass",
+      "evidence": "5 scenarios x 65536 policies; feasible counts=[17060]"
+    },
+    {
+      "id": "q3_full_enumeration_N1000_n100",
+      "status": "pass",
+      "evidence": "5 scenarios x 65536 policies; feasible counts=[17060]"
+    },
+    {
+      "id": "q3_m1_m2_metamorphic_symmetry",
+      "status": "pass",
+      "evidence": "all five settings, full 65536-policy enumeration before and after labeled module swap"
+    },
+    {
+      "id": "q3_labeled_domain_completeness",
+      "status": "pass",
+      "evidence": "1,345,005 representatives expand losslessly to 2,657,205 labeled rate scenarios"
+    }
+  ]
+}

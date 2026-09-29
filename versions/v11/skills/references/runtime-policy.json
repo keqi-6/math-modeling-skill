@@ -1,0 +1,198 @@
+{
+  "schema_version": "11.0",
+  "owner": "references/runtime-policy.json",
+  "principle": "strong_rules_with_proportional_activation",
+  "rule_semantics": {
+    "source": "rules/*.json",
+    "strength_meaning": "A MUST rule blocks acceptance only when it is applicable to the actual action or claim.",
+    "evidence_required_meaning": "The rule needs adequate evidence before its effect is accepted; this does not by itself require persistent project-state evidence.",
+    "separate_dimensions": [
+      "semantic_strength",
+      "applicability",
+      "enforcement_timing",
+      "evidence_persistence",
+      "invalidation_scope"
+    ]
+  },
+  "activation": {
+    "authority": "agent_semantic_plan_then_contract_validation",
+    "request_text_role": "audit_input_only",
+    "selected_when_all": [
+      "the plan step resolves to the rule route selector",
+      "the actual component object type and state satisfy scope",
+      "an event that actually occurs in the step intersects the rule trigger",
+      "all available predicates pass and no applicable exception removes the rule"
+    ],
+    "forbidden_synthetic_events": [
+      "global_events_for_every_request",
+      "all_writable_events_for_every_write",
+      "all_possible_route_events_before_action"
+    ],
+    "legacy_event_normalization": "A declared facet may normalize to a frozen event token only when that facet is actually written or audited in the step; the mapping records provenance and never selects a rule directly.",
+    "missing_fact_policy": "block_only_the_affected_step_when_the_fact_is_needed_to_accept_a_MUST_effect",
+    "independent_step_policy": "unaffected ordered steps may continue",
+    "standard_vocabulary_role": "internal_only"
+  },
+  "decomposed_request_semantics": {
+    "raw_request": "The unchanged user request is the Agent's semantic source and is hash-preserved; deterministic scripts validate the resulting plan and do not keyword-classify the prose.",
+    "mode_uniqueness": "One execution mode is selected and held stable per plan step; a decomposed request may contain multiple step-local modes.",
+    "write_route_uniqueness": "Each writing step must have a conflict-free executable route; this does not limit the whole request to one writing step, one route, or one file.",
+    "authorization": "The union of step-local writes must remain inside the complete user request boundary.",
+    "multi_step_continuation": "A natural-language request may close one checkpoint and continue into later authorized steps without a second user command or standard phrase.",
+    "no_one_step_gate": "Step decomposition is an internal dependency model, not a requirement to stop after each step."
+  },
+  "window_recovery_policy": {
+    "owner": "references/runtime-policy.json",
+    "same_window_requires": [
+      "same_uninterrupted_session",
+      "current_context_has_direct_continuity"
+    ],
+    "new_window_minimum_level": "R1_TARGETED",
+    "unknown_default": "new_window",
+    "r0_allowed_only_when": "window_context=same_window and protected_registered_identities_consistent",
+    "new_window_does_not_imply_r2": true,
+    "source": "V8 R0_INCREMENTAL_CHECKPOINT requires same uninterrupted session; new window or context recovery must not use R0."
+  },
+  "natural_pause": {
+    "tier": "G1_WORKING",
+    "route": "RT.PROJECT.RESUME",
+    "action": "pause",
+    "events": ["handoff"],
+    "synchronizes_only": [
+      "actual_control_state_changes", "open_decisions", "next_legal_actions",
+      "registered_identity_changes_already_observed"
+    ],
+    "does_not_imply": [
+      "checkpoint", "final_delivery", "full_project_audit", "recovery_assessment",
+      "model_execution", "verification_execution", "skill_package_validation"
+    ],
+    "mixed_request": "An explicit checkpoint close followed by pause is one ordered G2 then G1 plan and needs no extra user confirmation."
+  },
+  "recovery_execution_barrier": {
+    "open_when": "a recovery-bearing plan observes missing or structurally invalid authoritative state, or an existing state file is structurally invalid",
+    "safe_readonly_routes": [
+      "RT.PROJECT.ADVISE", "RT.PROJECT.AUDIT", "RT.PROJECT.PLAN",
+      "RT.PROJECT.RECOVER.MISSING", "RT.SKILL.AUDIT", "RT.SKILL.CHANGE"
+    ],
+    "recovery_write_route": "RT.PROJECT.RECOVER.MISSING",
+    "allowed_write_paths": [".modeling/state.json"],
+    "allowed_write_prefixes": [".modeling/recovery/"],
+    "blocked_events": [
+      "data_treatment", "dataset_freeze", "frozen_dataset_change",
+      "model_execution", "model_implementation", "result_record", "result_interpretation",
+      "implementation_verification", "numerical_verification", "numerical_comparison",
+      "structural_verification", "reality_verification", "robustness_analysis",
+      "uncertainty_analysis", "s6_readiness", "s6_close", "state_transition",
+      "manuscript_write", "local_manuscript_edit", "manuscript_promotion",
+      "visual_generate", "visual_render", "delivery_package_build", "final_delivery"
+    ],
+    "identity_reconstruction": {
+      "allowed_actions": [
+        "read", "enumerate", "hash", "compare", "parse",
+        "reconstruct_control_metadata", "reuse_current_identity", "record_known_gap"
+      ],
+      "rebuild_command_meaning": "Commands that enumerate, hash, parse, or compare existing evidence; never an implicit solver or verifier run.",
+      "recomputation_authorized": false,
+      "missing_evidence_policy": "Record the exact gap and blocked or invalidated status; do not manufacture a pass by rerunning business computation."
+    },
+    "closure": "Fresh resolution against a structurally valid V11 state closes the barrier in the same user turn; no second confirmation or continuation phrase is required."
+  },
+  "dangerous_runtime_actions": {
+    "ordinary_g1_affected": false,
+    "guarded_only": [
+      "project_model_execution", "project_verification_execution",
+      "recompute_existing_result", "skill_targeted_validation",
+      "skill_package_validation", "full_project_audit"
+    ],
+    "plan_field": "semantic_plan.steps[].runtime_actions",
+    "execution_entry": "scripts/run_authorized_action.py",
+    "grant_persistence_at_g1": "none",
+    "direct_request_anchor": "Exact user-request excerpt is retained without keyword classification.",
+    "non_authorizing_actions": [
+      "resume", "recover", "handoff", "pause", "s6_readiness", "s6_close", "final_delivery"
+    ],
+    "purpose": "Prevent the Agent from turning control actions into undeclared solver, verifier, recomputation, full-audit, or Skill-package commands."
+  },
+  "tiers": {
+    "G0_ADVISORY": {
+      "purpose": "answer, explain, plan, or perform a non-state-dependent read-only review",
+      "project_state": "not_required",
+      "recovery": "not_applicable",
+      "receipt": "none",
+      "artifact_policy": "none",
+      "evidence_persistence": "none",
+      "identity_check_scope": "none"
+    },
+    "G1_WORKING": {
+      "purpose": "ordinary scoped project work, including a multi-file change set",
+      "project_state": "optional_current_facts_only",
+      "recovery": "only_if_the_action_depends_on_registered_existing_identity",
+      "receipt": "automatic_change_summary",
+      "artifact_policy": "batch_changeset_no_per_file_admission",
+      "evidence_persistence": "ephemeral_validation_results",
+      "identity_check_scope": "none",
+      "multi_file_changes": true
+    },
+    "G2_CHECKPOINT": {
+      "purpose": "state transition, frozen decision, milestone identity, or scoped acceptance claim",
+      "project_state": "required",
+      "recovery": "targeted_registered_identity_check",
+      "receipt": "checkpoint_receipt",
+      "artifact_policy": "register_milestone_and_final_artifacts",
+      "evidence_persistence": "typed_exact_bindings_for_required_checkpoint_claims",
+      "identity_check_scope": "registered_checkpoint_identities_only"
+    },
+    "G3_RELEASE": {
+      "purpose": "final delivery or Skill release",
+      "project_state": "required",
+      "recovery": "assess_registered_identities_in_declared_release_scope_without_promoting_the_tier_itself_to_R2",
+      "receipt": "sealed_release_receipt",
+      "artifact_policy": "formal_release_admission",
+      "evidence_persistence": "typed_exact_bindings_for_all_release_claims",
+      "identity_check_scope": "registered_identities_in_declared_release_scope"
+    }
+  },
+  "minimum_tiers": {
+    "advisory_readonly": "G0_ADVISORY",
+    "project_readonly": "G0_ADVISORY",
+    "mutate": "G1_WORKING",
+    "promote": "G2_CHECKPOINT",
+    "skill_maintenance": "G1_WORKING",
+    "final_delivery": "G3_RELEASE",
+    "skill_release": "G3_RELEASE"
+  },
+  "closure": {
+    "local": "changed semantic facets plus their direct claim, reference, terminology, figure, and layout consumers",
+    "component": "the affected component and evidence that explicitly binds changed identities",
+    "checkpoint": "the exact required evidence set for the requested transition or acceptance claim",
+    "release": "all declared deliverables and their registered reproducibility and provenance dependencies",
+    "full_project_scope_only_when": [
+      "the user explicitly requests a full-project audit",
+      "the declared G3 delivery scope is the whole project"
+    ],
+    "R2_full_recovery_only_when": [
+      "the user explicitly requests full recovery",
+      "authoritative project state is missing or corrupt and the requested action depends on it",
+      "a material registered identity conflict cannot be attributed"
+    ],
+    "G3_scope_audit": "G3 audits the exact declared release scope. G3 by itself neither expands that scope to the whole workspace nor classifies recovery as R2_FULL."
+  },
+  "hard_blocks": [
+    "the user has not authorized the affected mutation or promotion",
+    "an actual requested state transition is illegal",
+    "a frozen identity or decision would change without the required decision",
+    "an applicable MUST acceptance condition fails within the affected closure",
+    "a real same-dimension conflict cannot be resolved by scope, evidence, refinement, or supersession",
+    "a G2 or G3 claim lacks required current exact-bound evidence"
+  ],
+  "not_hard_blocks": [
+    "the user did not use internal standard vocabulary",
+    "one clause in a mixed request needs clarification while independent clauses are executable",
+    "an unrelated working file is unregistered or dirty",
+    "a G1 edit has no persistent execution ledger or start/end receipt",
+    "an atom evidence schema is not materialized during ordinary G1 work",
+    "a local change does not satisfy rules that are outside its actual semantic closure",
+    "an internal multi-step plan has completed one step and later already-authorized steps remain",
+    "ordinary reading, editing, compiling, rendering, or scoped checks have no dangerous runtime-action grant"
+  ]
+}

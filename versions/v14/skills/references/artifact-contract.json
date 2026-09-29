@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v12/artifact-contract.json",
+  "title": "V12 artifact admission proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["path", "platform_role", "purpose", "consumer_ids", "lifecycle", "identity_class", "class", "authorization_basis", "replaces"],
+  "properties": {
+    "path": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+"},
+    "platform_role": {
+      "enum": [
+        "official_input", "external_evidence", "planning", "code", "result",
+        "technical_documentation", "manuscript", "visual", "delivery", "control",
+        "skill_support", "navigation"
+      ]
+    },
+    "purpose": {"type": "string", "minLength": 8},
+    "consumer_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "lifecycle": {"enum": ["ephemeral", "working", "milestone", "final"]},
+    "identity_class": {
+      "enum": ["working", "milestone", "frozen", "final"],
+      "description": "Only milestone, frozen, and final identity changes may invalidate components; it must match lifecycle."
+    },
+    "class": {"enum": ["source", "code", "data", "result", "manuscript", "visual", "delivery", "control"]},
+    "authorization_basis": {"type": "string", "minLength": 4},
+    "replaces": {"type": ["string", "null"]},
+    "promotion_gate": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"lifecycle": {"enum": ["ephemeral", "working"]}}}, "then": {"properties": {"identity_class": {"const": "working"}}}},
+    {"if": {"properties": {"lifecycle": {"const": "milestone"}}}, "then": {"properties": {"identity_class": {"enum": ["milestone", "frozen"]}}}},
+    {"if": {"properties": {"lifecycle": {"const": "final"}}}, "then": {"properties": {"identity_class": {"const": "final"}}}}
+  ],
+  "policy": {
+    "default_control_artifacts": [".modeling/state.json"],
+    "platform_contract": "references/project-platform-contract.json",
+    "never_create_by_default": [],
+    "forbidden_patterns": [
+      "(^|/)placeholder", "(^|/)empty", "(^|/)todo(?:[._-]|$)",
+      "(?:^|/)receipts?/.*\\.json$", "(?:^|/)question_[0-9]+/solution_brief\\.md$"
+    ],
+    "duplicate_rule": "reject_only_same_purpose_consumer_and_class_without_replaces",
+    "registration_rule": "registering_a_new_identity_never_invalidates_prior_evidence",
+    "refresh_rule": "stale_only_evidence_that_exactly_references_the_old_identity",
+    "validation_rule": "clear_only_named_artifact_validations_whose_evidence_is_no_longer_current",
+    "propagation_rule": "component_invalidation_requires_a_changed_milestone_frozen_or_final_identity_and_flows_only_to_declared_consumers",
+    "recovery_rule": "default_recovery_checks_only_current_non_superseded_milestone_frozen_and_final_identities",
+    "temporary_rule": "ephemeral_outputs_use_system_temp_unless_existing_workflow_requires_project_path",
+    "directory_rule": "canonical_directories_are_created_only_as_parents_of_admitted_files"
+  }
+}

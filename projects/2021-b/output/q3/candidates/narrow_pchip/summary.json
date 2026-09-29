@@ -1,0 +1,42 @@
+{
+  "status": "s6_candidate_only_not_approved",
+  "candidate": "within_combination_pchip_interpolation",
+  "scope": "existing_combination_strictly_inside_own_observed_temperature_range",
+  "validation_metrics": {
+    "linear": {
+      "n": 72,
+      "mae": 1.5570410003985922,
+      "rmse": 2.787380179021031,
+      "median_ae": 0.809218541419311,
+      "max_ae": 14.15218846592203
+    },
+    "pchip": {
+      "n": 72,
+      "mae": 0.7152185718885238,
+      "rmse": 1.92033365547368,
+      "median_ae": 0.16268086556685651,
+      "max_ae": 13.490627137330009,
+      "points_beating_linear": 68
+    }
+  },
+  "pchip_top1_correct_temperature_blocks": 4,
+  "pchip_temperature_block_count": 5,
+  "missing_325_prediction_count": 11,
+  "highest_missing_325_prediction": {
+    "catalyst_id": "A7",
+    "c4_yield_pct": 6.551703373656117
+  },
+  "observed_low_temperature_d0_best": {
+    "catalyst_id": "A2",
+    "temperature_c": 325.0,
+    "c4_yield_pct": 17.264309323382783
+  },
+  "changes_low_temperature_recommendation": false,
+  "boundaries": [
+    "不跨组合预测",
+    "不在组合自身实测温度区间外外推",
+    "不创造新配方",
+    "候选验证通过不等于未测点已经成为观测",
+    "400摄氏度遮点个案误差仍大"
+  ]
+}

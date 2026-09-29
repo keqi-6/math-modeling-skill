@@ -1,0 +1,77 @@
+{
+  "status": "pass",
+  "input": "~\\AppData\\Local\\Temp\\cumcm-q1-export-input.json",
+  "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q1\\result1.xlsx",
+  "template": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件3\\result1.xlsx",
+  "preview_dir": "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview",
+  "input_sha256": "9e1fec289ff81bec9b9b53920fe497bc31a9fc0754c849bda72696b3984cce2f",
+  "template_sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4",
+  "exporter_sha256": "cb74024098a04858326a5ffc0bdb1a0497d51752af142232398204f4aad08d79",
+  "rounding": "Number(binary64_value.toFixed(4)); displayed with 0.0000",
+  "template_check": {
+    "status": "pass",
+    "sheets": [
+      "温度",
+      "水分浓度"
+    ]
+  },
+  "previews": [
+    "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview\\template_temperature.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview\\template_moisture.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview\\temperature_first.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview\\temperature_middle.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview\\temperature_last.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview\\moisture_first.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview\\moisture_middle.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q1-workbook-preview\\moisture_last.png"
+  ],
+  "operation_marker": "marked",
+  "in_memory_checks": [
+    {
+      "sheet": "温度",
+      "inspection": "{\"kind\":\"table\",\"sheet\":\"温度\",\"address\":\"A1:H5\",\"rows\":5,\"cols\":8,\"values\":[[\"时间\\\\到药材中心的距离\",0,0.1,0.2,0.3,0.4,0.5,0.6],[1,28,28,28,28,28,28,28],[2,28,28,28,28,28,28,28],[3,28,28,28,28,28,28,28],[4,28,28,28,28,28,28,28]]}"
+    },
+    {
+      "sheet": "水分浓度",
+      "inspection": "{\"kind\":\"table\",\"sheet\":\"水分浓度\",\"address\":\"A1:H5\",\"rows\":5,\"cols\":8,\"values\":[[\"时间\\\\到药材中心的距离\",0,0.1,0.2,0.3,0.4,0.5,0.6],[1,2.55,2.55,2.55,2.55,2.55,2.55,2.55],[2,2.55,2.55,2.55,2.55,2.55,2.55,2.55],[3,2.55,2.55,2.55,2.55,2.55,2.55,2.55],[4,2.55,2.55,2.55,2.55,2.55,2.55,2.55]]}"
+    }
+  ],
+  "formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "independent_xml": {
+    "status": "pass",
+    "errors": [],
+    "sheets": [
+      {
+        "sheet": "温度",
+        "rows": 1801,
+        "columns": 22,
+        "result_values": 37800,
+        "number_formats_checked": 37800
+      },
+      {
+        "sheet": "水分浓度",
+        "rows": 1801,
+        "columns": 22,
+        "result_values": 37800,
+        "number_formats_checked": 37800
+      }
+    ],
+    "result_values_checked": 75600,
+    "maximum_saved_vs_rounded_difference": 0,
+    "maximum_absolute_export_rounding": 4.9998305308829316e-05,
+    "xlsx_sha256": "8a94ff36cb51d8c06c09ff5caa0e9397f7b2846c90176100e3f7e2f426e69b0b",
+    "xlsx_bytes": 395133
+  },
+  "template_unchanged": true,
+  "input_unchanged": true,
+  "visual_review": {
+    "status": "pass",
+    "reviewer": "q1_data_audit",
+    "surfaces": "8 native rendered previews: original template, first/middle/last portions of each completed sheet",
+    "observations": "All labels and data legible; 1..1800 s and 0..2 cm; four decimals; no obscured or truncated cells. Units follow official statement."
+  },
+  "source_result": {
+    "path": "output/Q1/run_n5120.npz",
+    "sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e"
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "schema_version": "12.0",
+  "principle": "each_normative_fact_has_exactly_one_owner",
+  "classes": {
+    "controller_protocol": {
+      "owner": "SKILL.md",
+      "owns": [
+        "agent_semantic_planning_boundary",
+        "authorization_boundary",
+        "scoped_failure_protocol"
+      ],
+      "may_reference": [
+        "policy_atom",
+        "machine_contract"
+      ]
+    },
+    "policy_atom": {
+      "owner_pattern": "rules/*.json#RULE.ID",
+      "normative_field": "effect",
+      "non_normative_fields": [
+        "instruction_gloss",
+        "failure_example",
+        "outcomes"
+      ],
+      "selection_contract": "references/runtime-policy.json",
+      "selection_driver": "scripts/resolve_route.py"
+    },
+    "runtime_policy_contract": {
+      "owner": "references/runtime-policy.json",
+      "owns": [
+        "activation_semantics",
+        "execution_tiers",
+        "enforcement_timing",
+        "evidence_persistence",
+        "closure_and_invalidation_scope",
+        "recovery_classification_precedence",
+        "r0_and_r1_eligibility_semantics",
+        "workspace_baseline_trust_semantics",
+        "single_recovery_episode_lifecycle",
+        "r1_to_r2_same_episode_escalation",
+        "r2_execution_barrier_semantics"
+      ],
+      "shape_owner": "references/semantic-plan.schema.json",
+      "interpreter": "scripts/resolve_route.py"
+    },
+    "semantic_plan_contract": {
+      "owner": "references/semantic-plan.schema.json",
+      "owns": [
+        "internal_plan_shape",
+        "ordered_step_shape",
+        "changeset_shape"
+      ],
+      "interpreter": "scripts/resolve_route.py"
+    },
+    "route_machine_contract": {
+      "owner": "references/route-contract.json",
+      "owns": [
+        "route_vocabulary",
+        "structured_route_tuple",
+        "allowed_actual_action_events",
+        "route_write_policy"
+      ],
+      "interpreter": "scripts/resolve_route.py"
+    },
+    "state_machine_contract": {
+      "owner": "references/state-machine.json",
+      "owns": [
+        "component_state_sets",
+        "legal_transitions",
+        "transition_gate_identifiers"
+      ],
+      "shape_owner": "references/state.schema.json",
+      "interpreter": "scripts/state_manager.py"
+    },
+    "artifact_machine_contract": {
+      "owner": "references/artifact-contract.json",
+      "owns": [
+        "artifact_classes",
+        "admission_fields",
+        "promotion_requirements",
+        "default_file_policy"
+      ],
+      "interpreters": [
+        "scripts/artifact_guard.py",
+        "scripts/state_manager.py"
+      ]
+    },
+    "project_platform_contract": {
+      "owner": "references/project-platform-contract.json",
+      "owns": [
+        "canonical_logical_project_roles",
+        "role_to_path_and_class_mapping",
+        "new_project_layout_policy",
+        "existing_project_compatibility_policy",
+        "lazy_physical_materialization_boundary"
+      ],
+      "interpreters": [
+        "scripts/artifact_guard.py",
+        "scripts/state_manager.py"
+      ],
+      "boundary": "The platform is logically mandatory. Physical directories exist only when a validated artifact needs their parent chain."
+    },
+    "release_machine_contract": {
+      "owner": "references/release-policy.json",
+      "owns": [
+        "active_release_driver_set",
+        "behavioral_evidence_standard",
+        "legacy_test_stack_status",
+        "release_test_budget",
+        "required_release_scenario_ids",
+        "freeze_authorization_boundary"
+      ],
+      "interpreters": [
+        "scripts/validate_release.py",
+        "scripts/freeze_release.py"
+      ]
+    },
+    "receipt_machine_contract": {
+      "owner": "references/receipt.schema.json",
+      "owns": [
+        "receipt_shape",
+        "receipt_closed_world_fields"
+      ],
+      "semantic_interpreter": "scripts/validate_receipt.py"
+    },
+    "recovery_receipt_machine_contract": {
+      "owner": "references/recovery-receipt.schema.json",
+      "owns": [
+        "single_episode_recovery_receipt_shape",
+        "r1_targeted_read_receipt_shape",
+        "r2_full_manifest_receipt_shape",
+        "closed_ready_and_closed_blocked_conclusion_shape"
+      ],
+      "semantic_interpreters": [
+        "scripts/recovery_v14.py",
+        "scripts/state_manager.py"
+      ]
+    },
+    "recovery_state_shape_contract": {
+      "owner": "references/state.schema.json",
+      "owns": [
+        "workspace_baseline_manifest_and_meta_shape",
+        "recovery_episode_record_shape",
+        "r1_to_r2_escalation_record_shape",
+        "r2_full_manifest_binding_shape",
+        "formal_execution_change_provenance_shape",
+        "formal_execution_receipt_hash_binding_shape"
+      ],
+      "semantic_interpreters": [
+        "scripts/recovery_v16.py",
+        "scripts/state_v11.py",
+        "scripts/state_manager.py"
+      ]
+    },
+    "capability_preservation_contract": {
+      "owner": "references/migration/v15-preservation-ledger.json",
+      "owns": [
+        "historical_capability_disposition",
+        "current_owner_and_strength_binding",
+        "retired_executable_replacement_evidence"
+      ],
+      "interpreters": [
+        "scripts/validate_migration.py",
+        "scripts/validate_v15_contracts.py"
+      ],
+      "boundary": "Historical source text remains in preservation and migration records; retired executables and fixed-version oracles do not remain callable compatibility interfaces."
+    },
+    "v16_recovery_redesign_preservation_record": {
+      "owner": "references/preservation/v16-recovery-tier-redesign.md",
+      "owns": [
+        "user_approved_recovery_redesign_provenance",
+        "historical_r0_r1_r2_comparison",
+        "v16_recovery_disposition_and_non_goals"
+      ],
+      "boundary": "This record preserves why the active owners changed; it is not a runtime instruction or an alternate recovery contract."
+    }
+  },
+  "active_legacy_boundary": {
+    "v15_active_skill_maintenance_entry": [
+      "references/semantic-plan.schema.json",
+      "references/route-contract.json",
+      "scripts/resolve_route.py",
+      "scripts/run_authorized_action.py"
+    ],
+    "v15_active_maintenance_gates": [
+      "scripts/validate_v15_package.py",
+      "scripts/validate_v15_contracts.py",
+      "scripts/run_v15_scenarios.py",
+      "scripts/validate_release.py"
+    ],
+    "retired_executable_compatibility_interfaces": [],
+    "retired_history_location": "references/preservation/legacy-executable-retirement.json",
+    "legacy_change_stack_is_runtime": false,
+    "legacy_test_stack_is_release_gate": false
+  },
+  "interpreter_policy": {
+    "scripts_are_implementations_not_independent_normative_sources": true,
+    "implementation_must_be_checked_against_its_owner_contract": true,
+    "owner_restatement_outside_owner_must_be_referential_not_exhaustive": true
+  },
+  "atomicity_policy": {
+    "normative_unit": "one_independently_decidable_effect",
+    "required_effect_fields": [
+      "verb",
+      "target",
+      "value"
+    ],
+    "compound_value_allowed_only_for": [
+      "one_record_shape_whose_fields_share_scope_trigger_strength_exception_evidence_enforcement_and_outcome",
+      "one_conjunctive_gate_whose_members_share_scope_trigger_strength_exception_evidence_enforcement_and_outcome",
+      "one_closed_choice_set"
+    ],
+    "split_required_when": [
+      "a_member_can_change_without_the_others",
+      "a_member_can_pass_or_fail_without_the_others",
+      "scope_trigger_strength_exception_evidence_enforcement_or_outcome_differs"
+    ]
+  },
+  "context_policy": {
+    "method_notes_are_non_normative": true,
+    "imperative_language_in_method_notes_does_not_create_an_obligation": true,
+    "capability_packet_registry": "references/capability-packet-registry.json",
+    "capability_packets_are_non_normative_procedures": true,
+    "atom_instruction_gloss_is_not_a_complete_procedure": true,
+    "historical_audit_records_are_not_runtime_instructions": true
+  }
+}

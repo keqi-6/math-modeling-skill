@@ -1,0 +1,29 @@
+{
+  "schema_version": "12.0",
+  "cases": [
+    {
+      "id": "OUTCOME.PLATFORM.INIT_CONTROL_ONLY",
+      "claim": "initialization creates control state without eagerly scaffolding canonical work directories"
+    },
+    {
+      "id": "OUTCOME.PLATFORM.LAZY_CANONICAL",
+      "claim": "a canonical code artifact is admitted, remains uncreated by the guard, and can be registered with its role preserved"
+    },
+    {
+      "id": "OUTCOME.PLATFORM.REJECT_ARBITRARY_PATH",
+      "claim": "a new code artifact under an arbitrary top-level path is rejected"
+    },
+    {
+      "id": "OUTCOME.PLATFORM.REJECT_ROLE_CLASS_MISMATCH",
+      "claim": "a role and artifact class mismatch is rejected"
+    },
+    {
+      "id": "OUTCOME.PLATFORM.EXISTING_NO_AUTOMOVE",
+      "claim": "initialization preserves a pre-existing noncanonical file and does not create a canonical replacement"
+    },
+    {
+      "id": "OUTCOME.RELEASE.FREEZE_REQUIRES_AUTHORIZATION",
+      "claim": "the freeze entry point refuses to create a release destination when explicit authorization is absent"
+    }
+  ]
+}

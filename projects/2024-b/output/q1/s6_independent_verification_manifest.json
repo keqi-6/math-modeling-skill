@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s6_independent_verification_run_identity",
+  "producer": "src/q1/06_verify_independent.py",
+  "consumers": [
+    "project audit"
+  ],
+  "started_at": "2026-08-25T15:27:37.446081+08:00",
+  "finished_at": "2026-08-25T15:27:38.338436+08:00",
+  "command": [
+    "/usr/bin/python3",
+    "src/q1/06_verify_independent.py"
+  ],
+  "environment": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "random_seed": null
+  },
+  "inputs": {
+    "planning/analysis/2026-08-25_q1_s4_complete_action_specification.md": "f156e3c423ce0cedcfef23dea027afbd842a07892cdd0cb2229cdaa25584a8f6",
+    "output/q1/s5_results.json": "fb674e2b4f3cb425fff1de79ee461b8c24112fc6e499e9a8fd54ab61db87374f",
+    "output/q1/s5_finite_closure.json": "28bac9784cc8ab21d4e5455d2ee66909d901b18d85905699deb22f3265e6c2bc"
+  },
+  "sources": {
+    "src/q1/06_verify_independent.py": "07593a780606e6a20eec6873c6c08c63b5443deacd87d9e0aebc76c4935458d6"
+  },
+  "outputs": {
+    "output/q1/s6_independent_verification.json": "6094b1992798c118b20e59ee24692f8f21183057ccb844e17ee325b98922788c"
+  },
+  "claim_boundary": "Independent S6 verification of frozen S5 results; it does not itself prove non-threshold policy classes."
+}

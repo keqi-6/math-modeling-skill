@@ -1,0 +1,837 @@
+{
+  "baseline_integrity": {
+    "v10": {
+      "file_count": 61,
+      "tree_sha256": "9b5564d1c3817826e7e016a12a2befe11d1b0240bd5f1bb645476d96b967f7f4",
+      "unchanged": true
+    },
+    "v9": {
+      "file_count": 53,
+      "tree_sha256": "6e9c0a0edca30a50d1f1aaa2eb4ca2c9401dc3554c4393237f4ba40b534737b0",
+      "unchanged": true
+    }
+  },
+  "compatibility_boundary": {
+    "legacy_change_stack_is_v11_runtime": false,
+    "legacy_v10_only": [
+      "references/change-envelope.schema.json",
+      "scripts/analyze_rule_change.py",
+      "scripts/apply_rule_change.py",
+      "scripts/run_change_evals.py",
+      "scripts/run_transaction_tests.py"
+    ],
+    "v11_active_maintenance_gates": [
+      "scripts/run_maintenance_tests.py",
+      "scripts/run_forward_acceptance.py",
+      "scripts/validate_release.py"
+    ],
+    "v11_active_skill_maintenance_entry": [
+      "references/semantic-plan.schema.json",
+      "references/route-contract.json",
+      "scripts/resolve_route.py",
+      "scripts/run_authorized_action.py"
+    ]
+  },
+  "drivers": [
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/quick_validate.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills",
+        "--invocation-context",
+        "skill-release"
+      ],
+      "command_sha256": "c3847fe14fca879abcdff7cd08695224702a67eed1edc381b78f2da6cf5f97e9",
+      "duration_ms": 2809,
+      "errors": [],
+      "executed_count": 10,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 10,
+      "finished_at": "2026-08-24T14:39:42.504036Z",
+      "fresh_subprocess": true,
+      "id": "quick_package",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T14:39:39.694741Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 1564,
+      "stdout_sha256": "9ccad28d336edb017382c71d994b6b87d6cab2745f4f2e47c3722063f9aa3908",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/validate_contracts.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills"
+      ],
+      "command_sha256": "8739d889c16b7e4cf093002d471bc6d2d5e4baf7476678051f009f3f4c46303e",
+      "duration_ms": 874,
+      "errors": [],
+      "executed_count": 4,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 4,
+      "finished_at": "2026-08-24T14:39:43.649370Z",
+      "fresh_subprocess": true,
+      "id": "contracts",
+      "missing_case_ids": [],
+      "observed_metrics": {
+        "active_rules": 206,
+        "behavior_cases": 15,
+        "known_events": 90,
+        "reachable_active_rules": 206,
+        "retired_rules": 0,
+        "route_witnesses": 30,
+        "routes": 30,
+        "rules": 206,
+        "test_ids": 492,
+        "trigger_events": 90
+      },
+      "started_at": "2026-08-24T14:39:42.774492Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 6291,
+      "stdout_sha256": "e1da54b5d1e033941a2d2e22858e31a0660974ecdfb4a88b9500e1215a51de65",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/validate_v10_corpus.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills",
+        "--v10-root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v10/skills"
+      ],
+      "command_sha256": "2042b33c46d4e3ba6e30f57ba281663d01f13a926a6b969571c563574a1a2afa",
+      "duration_ms": 1142,
+      "errors": [],
+      "executed_count": 3,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 3,
+      "finished_at": "2026-08-24T14:39:45.076063Z",
+      "fresh_subprocess": true,
+      "id": "v10_corpus",
+      "missing_case_ids": [],
+      "observed_metrics": {
+        "active_rules": 206,
+        "exact_files": 9,
+        "rule_files": 9,
+        "v10_active_rules": 206,
+        "v10_inventory_sha256": "be87e1a47dc4ec591f00322c495801670b456dc65ce2825e9fae0431665f394f",
+        "v10_manifest_sha256": "381aeecf62e13a5c1a8496fad9f04a659dc641693423f9aacefe9f03e0289ce3",
+        "v10_release_tree_sha256": "a0839f3feced0780d03e3f8931abdf2527001e3601c4c8674b38bf86603cd9b5"
+      },
+      "started_at": "2026-08-24T14:39:43.933107Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 499,
+      "stdout_sha256": "8906d66cd610bd705aaee8c533faf44ee89a93d551811c0963f071aebbc01e81",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/run_behavior_evals.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills"
+      ],
+      "command_sha256": "e5b8f39b3b84d422ab0f7083defc940fdaffb17f2b2195089f619378e6dc9cbc",
+      "duration_ms": 8544,
+      "errors": [],
+      "executed_count": 36,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 36,
+      "finished_at": "2026-08-24T14:39:54.688667Z",
+      "fresh_subprocess": true,
+      "id": "behavior",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T14:39:45.393750Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 17384,
+      "stdout_sha256": "79e69d2e5da83aea147a9ecb63545419089286fe7ce0dee8be52396410b6223a",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 206,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/run_atomic_rule_evals.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills",
+        "--mutation-check"
+      ],
+      "command_sha256": "d126e3cf53a475f1b3f2923c3db0047ac55c6f3c1162607068efab5e87006218",
+      "duration_ms": 484,
+      "errors": [],
+      "executed_count": 206,
+      "exit_code": 0,
+      "expected_auxiliary_count": 206,
+      "expected_count": 206,
+      "finished_at": "2026-08-24T14:39:55.478988Z",
+      "fresh_subprocess": true,
+      "id": "atomic",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T14:39:54.994507Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 59061,
+      "stdout_sha256": "c43c7b03fe30d2e6ecc142b930a0008c8c9ac7a86bd346cde004107bdf0ce189",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/run_scenario_tests.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills"
+      ],
+      "command_sha256": "82642bf61248ccef6f1fb4fe3e6aa8700ba17d9ae1aedf4422f2711155652fd0",
+      "duration_ms": 5248,
+      "errors": [],
+      "executed_count": 35,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 35,
+      "finished_at": "2026-08-24T14:40:01.005277Z",
+      "fresh_subprocess": true,
+      "id": "scenario",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T14:39:55.757080Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 5144,
+      "stdout_sha256": "e5d6df70189dc9e13c66f17cb9124904c0f1511b5204c6728d4556403756f110",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/run_maintenance_tests.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills"
+      ],
+      "command_sha256": "5835103c1a586cb9ca773fa0d6d203b4ce9f03d712d50df58a68c0688f10f563",
+      "duration_ms": 398,
+      "errors": [],
+      "executed_count": 33,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 33,
+      "finished_at": "2026-08-24T14:40:01.680330Z",
+      "fresh_subprocess": true,
+      "id": "maintenance",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T14:40:01.281719Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 5586,
+      "stdout_sha256": "06f9a3ac9c03de788751dc102413baa8c853037514629b2c90c6548f9bee41d7",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/validate_migration.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills",
+        "--v9-root",
+        "/mnt/d/AI/AI_program/2021（第四题）/总skill/skills_v9/skills"
+      ],
+      "command_sha256": "73fccb18e41ab054cb4b26a4af94f6fb30abd9cbddab2ef660cececd167d265b",
+      "duration_ms": 711,
+      "errors": [],
+      "executed_count": 6,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 6,
+      "finished_at": "2026-08-24T14:40:02.696132Z",
+      "fresh_subprocess": true,
+      "id": "migration",
+      "missing_case_ids": [],
+      "observed_metrics": {
+        "atomic_test_bindings": 206,
+        "blocking_dispositions": 0,
+        "legacy_entries": 1859,
+        "native_entries": 14,
+        "reverse_atoms": 206,
+        "reviewed_active_atoms": 206,
+        "reviewed_source_clauses": 302,
+        "unwaived_strength_regressions": 0,
+        "v10_active_rules": 206,
+        "v9_capabilities": 51
+      },
+      "started_at": "2026-08-24T14:40:01.984981Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 810,
+      "stdout_sha256": "816d21f8b0e6d10ed0f68baea87a010a0af75f7ca14c545bb5a1b18dd75dfd89",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    },
+    {
+      "auxiliary_executed_count": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys;sys.path.insert(0,sys.argv[1]);target=sys.argv[2];sys.argv=[target,*sys.argv[3:]];runpy.run_path(target,run_name='__main__')",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills/scripts/run_forward_acceptance.py",
+        "--root",
+        "/mnt/c/Users/35190/v11-runtime-fix.jmXAt5/skills"
+      ],
+      "command_sha256": "1b25b4e8e80c2a942a16f5cda0c9148096c629798774353b15b3863a66568100",
+      "duration_ms": 4835,
+      "errors": [],
+      "executed_count": 22,
+      "exit_code": 0,
+      "expected_auxiliary_count": 0,
+      "expected_count": 22,
+      "finished_at": "2026-08-24T14:40:07.806890Z",
+      "fresh_subprocess": true,
+      "id": "forward",
+      "missing_case_ids": [],
+      "observed_metrics": {},
+      "started_at": "2026-08-24T14:40:02.971195Z",
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_bytes": 6732,
+      "stdout_sha256": "6b9e7e8111848575732063c07cd4f695998087be57dab81edf3363aa55c58de2",
+      "tree_after_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "tree_before_sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db",
+      "unexpected_case_ids": []
+    }
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "errors": [],
+  "fresh_process_policy": "one isolated python interpreter per declared driver",
+  "generated_at": "2026-08-24T14:39:37.675554Z",
+  "plan_sha256": "b7375771726544fb1bb70ee0efa0616612ec6e5391648da79f473720fdda6f63",
+  "release_id": "V11.0.0",
+  "report_sha256": "7d5e1dddfcf0cdd85a1e713e9970dafca64a558b685582baec4266363f01b136",
+  "schema_version": "11.0",
+  "status": "pass",
+  "test_totals": {
+    "declared_assertions": 561,
+    "declared_drivers": 9,
+    "executed_assertions": 561,
+    "executed_drivers": 9
+  },
+  "tree": {
+    "file_count": 75,
+    "files": [
+      {
+        "path": "SKILL.md",
+        "sha256": "d0104dea9dec713e1523532fb1d82ba95f78307d265e4795497844884c26dc75",
+        "size": 16451
+      },
+      {
+        "path": "agents/openai.yaml",
+        "sha256": "72de17746f9d1ff94ebb213c1756b804f751e34b2570c643846df9d80b706c10",
+        "size": 332
+      },
+      {
+        "path": "evals/atomic-rule-cases.json",
+        "sha256": "4d51ef39ddcef9ae7e2f05d9edf66bb8eb46919a84fa62b3cf30aa15409240ae",
+        "size": 179915
+      },
+      {
+        "path": "evals/behavior-cases.json",
+        "sha256": "b1809226d06adef410e7c7a9f82c60a6a1577eb098707473cac2f785457d2e56",
+        "size": 29928
+      },
+      {
+        "path": "evals/change-cases.json",
+        "sha256": "f1ca7e2544330672d13584a00fb971735c9daf790069be63db392b954fd76f30",
+        "size": 4579
+      },
+      {
+        "path": "evals/contract-cases.json",
+        "sha256": "ce6ae8f6a358823c33a96e58f728ce609cb59d1395c794ddc66fede507107cbf",
+        "size": 4551
+      },
+      {
+        "path": "evals/forward-acceptance-cases.json",
+        "sha256": "122ca4e2d85111d68ebb3abf216bdd8e72e6e822f31e66d2a1e58b743adaec38",
+        "size": 22236
+      },
+      {
+        "path": "evals/manuscript-behavior-cases.json",
+        "sha256": "ea38c397f72b69b246368282c4353139d4132a41245fb8378583fb53edd20572",
+        "size": 71150
+      },
+      {
+        "path": "evals/release/release-plan.json",
+        "sha256": "b7375771726544fb1bb70ee0efa0616612ec6e5391648da79f473720fdda6f63",
+        "size": 4874
+      },
+      {
+        "path": "evals/release/release-state.json",
+        "sha256": "779b7f834f6876d20ec7cb13e88b53f97cae09f80bfa0a8500fd90f5a6a9d40a",
+        "size": 197
+      },
+      {
+        "path": "evals/runtime-policy-cases.json",
+        "sha256": "e2977fc05d5d539f2cac702e3858f3a3704122c60427810e467ca876696b8c47",
+        "size": 9572
+      },
+      {
+        "path": "evals/v10-behavior-oracles.json",
+        "sha256": "a1531073b733ec8cac230a216aefad2f0f69b4054cdc56f66bebf3267d6034d9",
+        "size": 34453
+      },
+      {
+        "path": "evals/v10-contract-oracles.json",
+        "sha256": "0a03ad6417935d022e83f9eecc1e4c2c02dbb5c3bd17634c2549c803405fda1f",
+        "size": 8756
+      },
+      {
+        "path": "references/artifact-contract.json",
+        "sha256": "5141e2232934527346e72db72e90622ab375c236b792105442af8e102e3f1937",
+        "size": 2909
+      },
+      {
+        "path": "references/change-envelope.schema.json",
+        "sha256": "4c407f43879669533cb3c1090d6cc744f7c0863a0af699b7a3d8017a05f9b252",
+        "size": 11173
+      },
+      {
+        "path": "references/data-method-notes.md",
+        "sha256": "00fc42dfea023d572aabf0544d4fc383509b9e90d053f3202f78edca75d23bf7",
+        "size": 2836
+      },
+      {
+        "path": "references/effect-target-registry.json",
+        "sha256": "7a8b1caeeb9ad276c11b282171be1fcc358bb5d297dade95d107edcca7a93b1a",
+        "size": 38963
+      },
+      {
+        "path": "references/evidence-method-notes.md",
+        "sha256": "c72dc04190a6176bbc1fb495c088f33047c031c40aef0bb3a894f653b46e1727",
+        "size": 4377
+      },
+      {
+        "path": "references/manuscript-change-closure.json",
+        "sha256": "7f15680d5b489633215d5dbcb5974cc24edc45e51c972dd05fd6c877207d46a6",
+        "size": 28406
+      },
+      {
+        "path": "references/manuscript-method-notes.md",
+        "sha256": "e6438c6d3d3a9a1262b0b5cd6ed9cda4471ef7ff357f855b4b86e803035961cd",
+        "size": 1872
+      },
+      {
+        "path": "references/migration/capability-crosswalk.json",
+        "sha256": "ecafb8499771f1e541aa7bd314b45a92cd5cc699253f8a077df3a2d999259500",
+        "size": 246831
+      },
+      {
+        "path": "references/migration/clause-preservation.json",
+        "sha256": "7b1f0bded158acb7c6c899f0c60a31dbc5dafb6ff86633b4358becd381092132",
+        "size": 358297
+      },
+      {
+        "path": "references/migration/legacy-coverage.json",
+        "sha256": "4ea0faae06ae8dd1581ba638a02645a999fdbe13d62451656d624396cbf57da4",
+        "size": 504908
+      },
+      {
+        "path": "references/migration/v9-capability-baseline.json",
+        "sha256": "e76f1fc34e86ac8b2db86a6089b4de3aa5181f0f203102fcf816ce01ee1533f1",
+        "size": 23136
+      },
+      {
+        "path": "references/modeling-method-notes.md",
+        "sha256": "72f34e942bcff20d3ac506246d8959fc7bad2ddb087bc1ad1264d8227f3db87e",
+        "size": 3893
+      },
+      {
+        "path": "references/ownership-contract.json",
+        "sha256": "77de2d6445631008b155110ddb6d30b1a90bef2bcdeb9a9a05ac70e9b0d8ffc9",
+        "size": 5397
+      },
+      {
+        "path": "references/project-method-notes.md",
+        "sha256": "cef28b74e77a6a86763209a4507c2b7ab1b5ddc9351a4727b6979cf2344a00be",
+        "size": 3252
+      },
+      {
+        "path": "references/receipt.schema.json",
+        "sha256": "858326abe3aa77413286e5f399fdfa1b9541196ece51349f511b0968ca8df8cc",
+        "size": 6454
+      },
+      {
+        "path": "references/release-manifest.schema.json",
+        "sha256": "7f58616666a708381e9e37482978719a104d0e7cef1fcf784068d4ab68fb188b",
+        "size": 5592
+      },
+      {
+        "path": "references/route-contract.json",
+        "sha256": "49d287df3274ce2b1a3fc3ae1163ba37552b40f18e5306817df8cb9774855330",
+        "size": 44212
+      },
+      {
+        "path": "references/rule-atom.schema.json",
+        "sha256": "465d0110893f522bdba167be5b56576f9f66338bb49ca3b3ae8b17249d4135bc",
+        "size": 6715
+      },
+      {
+        "path": "references/runtime-policy.json",
+        "sha256": "9a0e8ee38e168ca63d9b1b2de59e5b7a9f1ff2712023c95dc7f83d62856ae7ae",
+        "size": 10305
+      },
+      {
+        "path": "references/semantic-plan.schema.json",
+        "sha256": "41908d73aeb10585f93c01e7a3f35253d4703ed3516c42722e166548d036057b",
+        "size": 7798
+      },
+      {
+        "path": "references/state-machine.json",
+        "sha256": "2feab34b9a7daf3d1994edd4d1c81734d4a7a01e26cf92c0cfba6a5123fd786e",
+        "size": 3978
+      },
+      {
+        "path": "references/state.schema.json",
+        "sha256": "8fd399dea244597ce3a9fc9bd8e2bcd1d022870bd1880aaaae9b226d86d46df8",
+        "size": 13267
+      },
+      {
+        "path": "references/v10-lineage-seal.json",
+        "sha256": "e7231fd9f4872d4d6e0d739ecbb1f60b6951af9e46587837fae0fe10223d5af7",
+        "size": 1055
+      },
+      {
+        "path": "references/verification-method-notes.md",
+        "sha256": "b3ffce3311440cc185905b7d0ede8e2f955013f7a89125b9ccd2321b163edf9e",
+        "size": 2774
+      },
+      {
+        "path": "references/visual-method-notes.md",
+        "sha256": "5d8e4d002d2196888906d94d5cd735b64a5b07c053eaf5e52ba930cd5513079d",
+        "size": 1091
+      },
+      {
+        "path": "rules/data.json",
+        "sha256": "bb674cf64bcf5cd877a6bc2ba03cd2f2a5e87790648911d25a3f620e607410a4",
+        "size": 38406
+      },
+      {
+        "path": "rules/evidence_delivery.json",
+        "sha256": "480cec0da739e40eae3ba5312ddf724ba9733a9140139ab1eea3c3a411a41c76",
+        "size": 41597
+      },
+      {
+        "path": "rules/governance.json",
+        "sha256": "77e07570b03c23a1d32a6c22cdb28f9f403b15747010759e8b43eaf64adb0ace",
+        "size": 76868
+      },
+      {
+        "path": "rules/maintenance.json",
+        "sha256": "66063323200cb867ebf5daea83b2ef1e0dd7895282fc69cd7ac48690b22ebf8d",
+        "size": 29643
+      },
+      {
+        "path": "rules/manuscript.json",
+        "sha256": "f07b14bd8c6a378249c71a69826f161d62a0aad1a9fb9ff1b639e4165d0724af",
+        "size": 54671
+      },
+      {
+        "path": "rules/modeling.json",
+        "sha256": "c27361d10d193b6e8fd3a7ac50324c272ab2fa0eb7466ab1d23af784c3643193",
+        "size": 57472
+      },
+      {
+        "path": "rules/project.json",
+        "sha256": "9d86eb8ac1ea0e1cba4162b254f5027c10db545684fee4538198f59e8dfc2717",
+        "size": 30492
+      },
+      {
+        "path": "rules/verification.json",
+        "sha256": "ecbfa5151ec9b68358bb3bca1fb47652323db12a195271cd1730514b7a1213d2",
+        "size": 70692
+      },
+      {
+        "path": "rules/visuals.json",
+        "sha256": "57b47fe76eb6524a8876412628bdcffa6ed2b8393489c938d8b95309f8f48c5b",
+        "size": 26498
+      },
+      {
+        "path": "scripts/analyze_rule_change.py",
+        "sha256": "996d16b83956a5108e6d91a550fd5c3f88dba93235c612364859bc641e679d5a",
+        "size": 12917
+      },
+      {
+        "path": "scripts/apply_rule_change.py",
+        "sha256": "459efcd5cee5b9bb7fab857d09c8f99fc5f0a703777b7cc82c37c948a0013488",
+        "size": 73995
+      },
+      {
+        "path": "scripts/artifact_guard.py",
+        "sha256": "1b0ddc2dd5983c95d7009de1a9b251f8ab3e5d8408fe3a794453a68f16d32bcc",
+        "size": 1090
+      },
+      {
+        "path": "scripts/assess_recovery.py",
+        "sha256": "27441fb9158d42c6f3e59de8dd3e51e18a379dc1d5f907be3e07371b8d206746",
+        "size": 10748
+      },
+      {
+        "path": "scripts/build_atomic_rule_cases.py",
+        "sha256": "13d1c64af122c8aa448abac64a961cb549ce3b516db3a330e64f679a678407d0",
+        "size": 4796
+      },
+      {
+        "path": "scripts/build_clause_preservation.py",
+        "sha256": "9213249aee9d1c9c532320ca4a960c0c15e5be5ca2ef05b9ec895e709bac9581",
+        "size": 54290
+      },
+      {
+        "path": "scripts/build_migration_coverage.py",
+        "sha256": "f975639136eea7e5a25e6e6e4d83ac8cd76cc90316fc4c90f74f879d8f73f3ce",
+        "size": 32331
+      },
+      {
+        "path": "scripts/freeze_release.py",
+        "sha256": "98c7b57efe274a07272d158565d5bd843a46052d5cb589436feaf552bfcc29b6",
+        "size": 19492
+      },
+      {
+        "path": "scripts/lib_v10.py",
+        "sha256": "7b43e9d469ee3e8da1de9fb66683e8d03eed47268ba52faaaac955653fa17df1",
+        "size": 40375
+      },
+      {
+        "path": "scripts/lib_v11.py",
+        "sha256": "781b7bf26550fd60087f714b41fd1f1d5a60a964a4c330369c8cc3f224591fb9",
+        "size": 62444
+      },
+      {
+        "path": "scripts/quick_validate.py",
+        "sha256": "7cd448bb5ffb54a5b1082b2b2ec963f7037a10f16f64e8e5cbc51478b10ebc1b",
+        "size": 24063
+      },
+      {
+        "path": "scripts/resolve_route.py",
+        "sha256": "375e0c0df3004f83d4c0724e1953d34b457017a99556d722955d0079f3ab1851",
+        "size": 3031
+      },
+      {
+        "path": "scripts/run_atomic_rule_evals.py",
+        "sha256": "4b574a9d64aed656aabf4df2eb8177c97c7c19c458d1c39d08d900f69ed52383",
+        "size": 5241
+      },
+      {
+        "path": "scripts/run_authorized_action.py",
+        "sha256": "01e298f0fe31be90febc59780fcadb08874523d391353a8aa71d24e166a56b9b",
+        "size": 5657
+      },
+      {
+        "path": "scripts/run_behavior_evals.py",
+        "sha256": "4bf837b3f3e8ff30b64a8de7909d454d7c53b97451785d45a8038deb74002d34",
+        "size": 24631
+      },
+      {
+        "path": "scripts/run_change_evals.py",
+        "sha256": "d0158fc0f9ad61f039e1eeb222a94090e0b3b621a72f59fda326329f6170df89",
+        "size": 14729
+      },
+      {
+        "path": "scripts/run_forward_acceptance.py",
+        "sha256": "0521e4ae3626c1d095dcd8316579dd224c77c976ee15f2b575a06ddb9613e905",
+        "size": 12990
+      },
+      {
+        "path": "scripts/run_maintenance_tests.py",
+        "sha256": "78e3766ab1c2be62bd88c7e5d633790f9001bc57e1e4f9bc484e731849b04eda",
+        "size": 12036
+      },
+      {
+        "path": "scripts/run_manuscript_behavior_evals.py",
+        "sha256": "ea1eab0556c162f9b0e3d686f7c55dd67043d09250612b1657ba6862c82a068c",
+        "size": 5955
+      },
+      {
+        "path": "scripts/run_scenario_tests.py",
+        "sha256": "508b76b47a06b98f0af0bc80003169d647c0bf8420665c19de39dc629ba2b471",
+        "size": 63909
+      },
+      {
+        "path": "scripts/run_transaction_tests.py",
+        "sha256": "e88988ff533dc3aa524f0f2d6b70a974aff684c2118c7d4bd4b5dd8f7c338ae3",
+        "size": 10097
+      },
+      {
+        "path": "scripts/state_manager.py",
+        "sha256": "e3f8ac986538ab078659943bccd7cef278000a04c35db423336bc772eb2d7d47",
+        "size": 48598
+      },
+      {
+        "path": "scripts/state_v11.py",
+        "sha256": "3f9a486919c49c2a50f05e6e946163b7e1d13e3e9060bafec9f1d85fcce8f019",
+        "size": 34738
+      },
+      {
+        "path": "scripts/validate_contracts.py",
+        "sha256": "9e1de88d4969b359c99cb0756f1237f72c25be7441596eab1deaf765a2180560",
+        "size": 40756
+      },
+      {
+        "path": "scripts/validate_migration.py",
+        "sha256": "b9e27be8a2900c7c08643f9b5f579c421e864f63021d4bc32e8bf3b092b732ed",
+        "size": 38318
+      },
+      {
+        "path": "scripts/validate_receipt.py",
+        "sha256": "4b9bec6cbd00b2078a10634678deef6003e939fd6379e4cb4cb5f292250ae276",
+        "size": 23993
+      },
+      {
+        "path": "scripts/validate_release.py",
+        "sha256": "25385bee495e2de38304c7deb08bd37f85d8829b952e7c112cd474c9f74631a0",
+        "size": 35608
+      },
+      {
+        "path": "scripts/validate_v10_corpus.py",
+        "sha256": "31d9ec465639e9f6926bbea4230cdce4ea1faf4b03f6912310c029fd8eeab000",
+        "size": 10684
+      }
+    ],
+    "sha256": "9b6d6100f7d88965766b62ae204a01357b4d577329bb18988ccd7306e0c7f4db"
+  },
+  "tree_unchanged": true,
+  "unverified_boundaries": [
+    "The Agent, not a keyword parser, interprets natural language into a semantic plan; exact request excerpts anchor dangerous-action grants but do not independently prove the Agent's semantic interpretation, so executable tests cover representative equivalent, negative, and mixed plans rather than every possible utterance.",
+    "No external signing key or third-party transparency log is available; a frozen manifest is tamper-evident and freshly re-gated on an exact mirror, not identity-signed or independently implemented.",
+    "External services, future dependency versions, and operating systems other than the release host remain outside this local gate.",
+    "V9-to-V10 lineage remains bounded by the reviewed V10 preservation seal; V11 additionally proves the inherited V10 rule files are byte-identical.",
+    "JSON Schema, compilation, and local scenarios establish structure and executed behavior, not arbitrary domain truth beyond the tested closure."
+  ],
+  "validator_hashes": {
+    "references/artifact-contract.json": "5141e2232934527346e72db72e90622ab375c236b792105442af8e102e3f1937",
+    "references/change-envelope.schema.json": "4c407f43879669533cb3c1090d6cc744f7c0863a0af699b7a3d8017a05f9b252",
+    "references/effect-target-registry.json": "7a8b1caeeb9ad276c11b282171be1fcc358bb5d297dade95d107edcca7a93b1a",
+    "references/manuscript-change-closure.json": "7f15680d5b489633215d5dbcb5974cc24edc45e51c972dd05fd6c877207d46a6",
+    "references/migration/capability-crosswalk.json": "ecafb8499771f1e541aa7bd314b45a92cd5cc699253f8a077df3a2d999259500",
+    "references/migration/clause-preservation.json": "7b1f0bded158acb7c6c899f0c60a31dbc5dafb6ff86633b4358becd381092132",
+    "references/migration/legacy-coverage.json": "4ea0faae06ae8dd1581ba638a02645a999fdbe13d62451656d624396cbf57da4",
+    "references/migration/v9-capability-baseline.json": "e76f1fc34e86ac8b2db86a6089b4de3aa5181f0f203102fcf816ce01ee1533f1",
+    "references/ownership-contract.json": "77de2d6445631008b155110ddb6d30b1a90bef2bcdeb9a9a05ac70e9b0d8ffc9",
+    "references/receipt.schema.json": "858326abe3aa77413286e5f399fdfa1b9541196ece51349f511b0968ca8df8cc",
+    "references/release-manifest.schema.json": "7f58616666a708381e9e37482978719a104d0e7cef1fcf784068d4ab68fb188b",
+    "references/route-contract.json": "49d287df3274ce2b1a3fc3ae1163ba37552b40f18e5306817df8cb9774855330",
+    "references/rule-atom.schema.json": "465d0110893f522bdba167be5b56576f9f66338bb49ca3b3ae8b17249d4135bc",
+    "references/runtime-policy.json": "9a0e8ee38e168ca63d9b1b2de59e5b7a9f1ff2712023c95dc7f83d62856ae7ae",
+    "references/semantic-plan.schema.json": "41908d73aeb10585f93c01e7a3f35253d4703ed3516c42722e166548d036057b",
+    "references/state-machine.json": "2feab34b9a7daf3d1994edd4d1c81734d4a7a01e26cf92c0cfba6a5123fd786e",
+    "references/state.schema.json": "8fd399dea244597ce3a9fc9bd8e2bcd1d022870bd1880aaaae9b226d86d46df8",
+    "references/v10-lineage-seal.json": "e7231fd9f4872d4d6e0d739ecbb1f60b6951af9e46587837fae0fe10223d5af7",
+    "scripts/analyze_rule_change.py": "996d16b83956a5108e6d91a550fd5c3f88dba93235c612364859bc641e679d5a",
+    "scripts/apply_rule_change.py": "459efcd5cee5b9bb7fab857d09c8f99fc5f0a703777b7cc82c37c948a0013488",
+    "scripts/artifact_guard.py": "1b0ddc2dd5983c95d7009de1a9b251f8ab3e5d8408fe3a794453a68f16d32bcc",
+    "scripts/assess_recovery.py": "27441fb9158d42c6f3e59de8dd3e51e18a379dc1d5f907be3e07371b8d206746",
+    "scripts/build_atomic_rule_cases.py": "13d1c64af122c8aa448abac64a961cb549ce3b516db3a330e64f679a678407d0",
+    "scripts/build_clause_preservation.py": "9213249aee9d1c9c532320ca4a960c0c15e5be5ca2ef05b9ec895e709bac9581",
+    "scripts/build_migration_coverage.py": "f975639136eea7e5a25e6e6e4d83ac8cd76cc90316fc4c90f74f879d8f73f3ce",
+    "scripts/freeze_release.py": "98c7b57efe274a07272d158565d5bd843a46052d5cb589436feaf552bfcc29b6",
+    "scripts/lib_v10.py": "7b43e9d469ee3e8da1de9fb66683e8d03eed47268ba52faaaac955653fa17df1",
+    "scripts/lib_v11.py": "781b7bf26550fd60087f714b41fd1f1d5a60a964a4c330369c8cc3f224591fb9",
+    "scripts/quick_validate.py": "7cd448bb5ffb54a5b1082b2b2ec963f7037a10f16f64e8e5cbc51478b10ebc1b",
+    "scripts/resolve_route.py": "375e0c0df3004f83d4c0724e1953d34b457017a99556d722955d0079f3ab1851",
+    "scripts/run_atomic_rule_evals.py": "4b574a9d64aed656aabf4df2eb8177c97c7c19c458d1c39d08d900f69ed52383",
+    "scripts/run_authorized_action.py": "01e298f0fe31be90febc59780fcadb08874523d391353a8aa71d24e166a56b9b",
+    "scripts/run_behavior_evals.py": "4bf837b3f3e8ff30b64a8de7909d454d7c53b97451785d45a8038deb74002d34",
+    "scripts/run_change_evals.py": "d0158fc0f9ad61f039e1eeb222a94090e0b3b621a72f59fda326329f6170df89",
+    "scripts/run_forward_acceptance.py": "0521e4ae3626c1d095dcd8316579dd224c77c976ee15f2b575a06ddb9613e905",
+    "scripts/run_maintenance_tests.py": "78e3766ab1c2be62bd88c7e5d633790f9001bc57e1e4f9bc484e731849b04eda",
+    "scripts/run_manuscript_behavior_evals.py": "ea1eab0556c162f9b0e3d686f7c55dd67043d09250612b1657ba6862c82a068c",
+    "scripts/run_scenario_tests.py": "508b76b47a06b98f0af0bc80003169d647c0bf8420665c19de39dc629ba2b471",
+    "scripts/run_transaction_tests.py": "e88988ff533dc3aa524f0f2d6b70a974aff684c2118c7d4bd4b5dd8f7c338ae3",
+    "scripts/state_manager.py": "e3f8ac986538ab078659943bccd7cef278000a04c35db423336bc772eb2d7d47",
+    "scripts/state_v11.py": "3f9a486919c49c2a50f05e6e946163b7e1d13e3e9060bafec9f1d85fcce8f019",
+    "scripts/validate_contracts.py": "9e1de88d4969b359c99cb0756f1237f72c25be7441596eab1deaf765a2180560",
+    "scripts/validate_migration.py": "b9e27be8a2900c7c08643f9b5f579c421e864f63021d4bc32e8bf3b092b732ed",
+    "scripts/validate_receipt.py": "4b9bec6cbd00b2078a10634678deef6003e939fd6379e4cb4cb5f292250ae276",
+    "scripts/validate_release.py": "25385bee495e2de38304c7deb08bd37f85d8829b952e7c112cd474c9f74631a0",
+    "scripts/validate_v10_corpus.py": "31d9ec465639e9f6926bbea4230cdce4ea1faf4b03f6912310c029fd8eeab000"
+  },
+  "validator_hashes_sha256": "aa8f707b4f00505711d462ad66c828cc86e6d0153a4d4cab2fa50699a48fdfa6"
+}

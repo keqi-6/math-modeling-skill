@@ -1,0 +1,97 @@
+{
+  "status": "pass",
+  "same_implementation_kernel": "src/q3/core.py",
+  "tests": [
+    {
+      "id": "T01",
+      "name": "input_completeness",
+      "status": "pass"
+    },
+    {
+      "id": "T02",
+      "name": "candidate_domain_completeness",
+      "status": "pass"
+    },
+    {
+      "id": "T03",
+      "name": "frontier_state_legality",
+      "status": "pass"
+    },
+    {
+      "id": "T04",
+      "name": "probability_conservation",
+      "status": "pass"
+    },
+    {
+      "id": "T05",
+      "name": "quality_logic",
+      "status": "pass"
+    },
+    {
+      "id": "T06",
+      "name": "disassembly_conservation",
+      "status": "pass"
+    },
+    {
+      "id": "T07",
+      "name": "knowledge_boundary",
+      "status": "pass"
+    },
+    {
+      "id": "T08",
+      "name": "fee_timing_and_single_revenue",
+      "status": "pass"
+    },
+    {
+      "id": "T09",
+      "name": "leaf_screening_geometric_fixture",
+      "status": "pass"
+    },
+    {
+      "id": "T10",
+      "name": "known_good_input_reassembly_fixture",
+      "status": "pass"
+    },
+    {
+      "id": "T11",
+      "name": "persistent_bad_child_closed_loop",
+      "status": "pass"
+    },
+    {
+      "id": "T12",
+      "name": "parent_failure_joint_posterior",
+      "status": "pass"
+    },
+    {
+      "id": "T13",
+      "name": "s2_all_zero_baseline",
+      "status": "pass"
+    },
+    {
+      "id": "T14",
+      "name": "atomic_macro_linear_equivalence",
+      "status": "pass"
+    },
+    {
+      "id": "T15",
+      "name": "cached_uncached_equivalence",
+      "status": "pass"
+    },
+    {
+      "id": "T16",
+      "name": "twelve_node_oat_scenario_contract",
+      "status": "pass"
+    },
+    {
+      "id": "T17",
+      "name": "exact_ranking_without_display_rounding",
+      "status": "pass"
+    },
+    {
+      "id": "T18",
+      "name": "independent_validation_interface_ready",
+      "status": "pass"
+    }
+  ],
+  "s6_independent_validation": "not_started"
+}

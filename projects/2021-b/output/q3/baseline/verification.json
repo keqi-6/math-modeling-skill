@@ -1,0 +1,41 @@
+{
+  "status": "s5_d0_baseline_independent_verification",
+  "passed": true,
+  "check_count": 7,
+  "checks": [
+    {
+      "check": "收率公式",
+      "passed": true,
+      "detail": "max_abs_error=3.553e-15"
+    },
+    {
+      "check": "两个情景候选数",
+      "passed": true,
+      "detail": "{'general': 114, 'strict_below_350': 73}"
+    },
+    {
+      "check": "严格低温约束",
+      "passed": true,
+      "detail": "[250.0, 275.0, 300.0, 325.0]"
+    },
+    {
+      "check": "最优与次优身份",
+      "passed": true
+    },
+    {
+      "check": "最优、次优和领先差距数值",
+      "passed": true,
+      "detail": "max_abs_error=0.000e+00"
+    },
+    {
+      "check": "前十排序",
+      "passed": true
+    },
+    {
+      "check": "D0边界",
+      "passed": true,
+      "detail": "rows=114, combinations=21, duplicate_keys=0"
+    }
+  ],
+  "note": "通过只证明D0枚举和输出一致，不批准D1、D2或最终推荐。"
+}

@@ -1,0 +1,324 @@
+{
+  "schema_version": "15.0",
+  "registry_kind": "v15_targeted_regressions",
+  "cases": [
+    {
+      "id": "BEH.V15.DATA.TREATMENT.PROPOSAL",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "只读提出数据处理备选，不修改数据。",
+        "steps": [{
+          "id": "propose", "tier": "G0_ADVISORY", "mode": "advisory_readonly",
+          "object": "data", "action": "propose_treatment", "component_id": null,
+          "working_context": {"component_type": "shared_data", "state": "D1"},
+          "events": ["data_treatment_proposal"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.DATA.TREAT.PROPOSE"],
+        "rule_ids_include": ["DATA.TREAT.OPTIONS"],
+        "rule_ids_exclude": ["DATA.TREAT.DECIDE", "DATA.TREAT.COPY", "DATA.TREAT.LINEAGE"]
+      }
+    },
+    {
+      "id": "BEH.V15.MODEL.COMPARE.BASELINE",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "只比较当前模型候选和基线，不做选择。",
+        "steps": [{
+          "id": "compare", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "model", "action": "compare", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S3"},
+          "events": ["model_comparison"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.MODEL.COMPARE"],
+        "rule_ids_include": ["MOD.COMPARE.BASELINE", "MOD.COMPARE.ASSUMPTIONS", "MOD.COMPARE.SAME_EVIDENCE"],
+        "rule_ids_exclude": ["MOD.COMPARE.RATIONALE"]
+      }
+    },
+    {
+      "id": "BEH.V15.MODEL.COMPARE.BASELINE.S6",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "在验证阶段只复核当前候选与基线，不重新做模型选择。",
+        "steps": [{
+          "id": "compare", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "model", "action": "compare", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S6"},
+          "events": ["model_comparison"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.MODEL.COMPARE"],
+        "rule_ids_include": ["MOD.COMPARE.BASELINE", "MOD.COMPARE.ASSUMPTIONS", "MOD.COMPARE.SAME_EVIDENCE"],
+        "rule_ids_exclude": ["MOD.COMPARE.RATIONALE"]
+      }
+    },
+    {
+      "id": "BEH.V15.VISUAL.A0.ACCEPTANCE",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "创建、渲染并审计新的工程示意图。",
+        "steps": [{
+          "id": "figure", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "visual", "action": "create", "component_id": null,
+          "working_context": {"component_type": "artifact", "state": "A0"},
+          "events": ["visual_design", "visual_generate", "visual_render", "visual_audit"],
+          "facts": {"data_driven_visual": false}, "depends_on": [],
+          "change_set": {"paths": ["figures/system.svg"], "facets": ["visual"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.VISUAL.CREATE"],
+        "rule_ids_include": [
+          "VIS.DESIGN.SOURCE_FIDELITY", "VIS.IDENTITY.RENDER", "VIS.IDENTITY.SYNC",
+          "VIS.LAYOUT.LABELS", "VIS.LAYOUT.LEGIBILITY", "VIS.LAYOUT.COLOR", "VIS.LAYOUT.FONTS"
+        ],
+        "rule_ids_exclude": [
+          "VIS.IDENTITY.DATA", "VIS.IDENTITY.NO_MANUAL_VALUES",
+          "VIS.LAYOUT.CAPTION", "VIS.LAYOUT.PLACEMENT"
+        ]
+      }
+    },
+    {
+      "id": "BEH.V15.VISUAL.A0.DATA_IDENTITY",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "从已登记结果数据创建、渲染并审计新图表。",
+        "steps": [{
+          "id": "figure", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "visual", "action": "create", "component_id": null,
+          "working_context": {"component_type": "artifact", "state": "A0"},
+          "events": ["visual_design", "visual_generate", "visual_render", "visual_audit"],
+          "facts": {"data_driven_visual": true}, "depends_on": [],
+          "change_set": {"paths": ["figures/results.svg"], "facets": ["visual"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.VISUAL.CREATE"],
+        "rule_ids_include": [
+          "VIS.DESIGN.SOURCE_FIDELITY", "VIS.IDENTITY.DATA", "VIS.IDENTITY.NO_MANUAL_VALUES",
+          "VIS.IDENTITY.RENDER", "VIS.IDENTITY.SYNC"
+        ],
+        "rule_ids_exclude": ["VIS.LAYOUT.CAPTION", "VIS.LAYOUT.PLACEMENT"]
+      }
+    },
+    {
+      "id": "BEH.V15.VISUAL.CLASSIFICATION.REQUIRED",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "创建一张尚未说明是否数据驱动的图。",
+        "steps": [{
+          "id": "figure", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "visual", "action": "create", "component_id": null,
+          "working_context": {"component_type": "artifact", "state": "A0"},
+          "events": ["visual_design", "visual_generate", "visual_render"],
+          "facts": {}, "depends_on": [],
+          "change_set": {"paths": ["figures/unclassified.svg"], "facets": ["visual"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "status": "blocked", "route_ids_exact": ["RT.VISUAL.CREATE"],
+        "rule_ids_include": [], "rule_ids_exclude": [],
+        "error_contains": ["event_boolean_fact_required:visual_generate:data_driven_visual"]
+      }
+    },
+    {
+      "id": "BEH.V15.VERIFY.E3.RISK_MATCH",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "只做模型结构和约束检验。",
+        "steps": [{
+          "id": "e3", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "verification", "action": "validate_structure", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S6"},
+          "events": ["structural_verification", "constraint_verification"],
+          "facts": {}, "depends_on": [],
+          "runtime_actions": [{
+            "id": "run-e3", "kind": "project_verification_execution",
+            "event": "constraint_verification", "repetition": "first_run",
+            "scope": {"kind": "component", "component_ids": ["q1"], "input_paths": [], "output_paths": []},
+            "command": {"argv": ["python3", "verify_structure.py"], "cwd": "."},
+            "authorization": {"source": "direct_user_request", "request_excerpt": "只做模型结构和约束检验"}
+          }]
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.VERIFY.MODEL"],
+        "rule_ids_include": ["VER.E3.RISK_MATCH", "VER.E3.CONSTRAINT"],
+        "action_grant_events_include": ["constraint_verification"],
+        "rule_ids_exclude": [
+          "VER.E3.INVARIANT", "VER.E3.LIMIT", "VER.E3.COUNTEREXAMPLE",
+          "VER.E3.SENSITIVITY", "VER.E4.ASSUMPTIONS"
+        ]
+      }
+    },
+    {
+      "id": "BEH.V15.VERIFY.E3.UMBRELLA_ONLY.BLOCKED",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "只声明模型结构检验但未选择任何专项检验。",
+        "steps": [{
+          "id": "e3", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "verification", "action": "validate_structure", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S6"},
+          "events": ["structural_verification"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "status": "blocked", "route_ids_exact": ["RT.VERIFY.MODEL"],
+        "rule_ids_include": [], "rule_ids_exclude": [],
+        "error_contains": ["action_required_any_event_missing:constraint_verification,counterexample_verification,invariant_verification,limit_verification,sensitivity_verification"]
+      }
+    },
+    {
+      "id": "BEH.V15.VERIFY.REALITY_ONLY",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "只做模型现实映射检验。",
+        "steps": [{
+          "id": "e4", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "verification", "action": "assess_reality", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S6"},
+          "events": ["reality_verification"], "facts": {}, "depends_on": [],
+          "runtime_actions": [{
+            "id": "run-e4", "kind": "project_verification_execution",
+            "event": "reality_verification", "repetition": "first_run",
+            "scope": {"kind": "component", "component_ids": ["q1"], "input_paths": [], "output_paths": []},
+            "command": {"argv": ["python3", "verify_reality.py"], "cwd": "."},
+            "authorization": {"source": "direct_user_request", "request_excerpt": "只做模型现实映射检验"}
+          }]
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.VERIFY.MODEL"],
+        "rule_ids_include": ["VER.E4.ASSUMPTIONS", "VER.E4.REALITY_FIT"],
+        "rule_ids_exclude": ["VER.E3.RISK_MATCH", "VER.E3.CONSTRAINT"]
+      }
+    },
+    {
+      "id": "BEH.V15.MODEL.TEAMMATE_BRIEF",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "为第一问写队友讲解稿。",
+        "steps": [{
+          "id": "brief", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "model", "action": "prepare_teammate_brief", "component_id": "q1",
+          "working_context": {"component_type": "question", "state": "S7"},
+          "events": ["teammate_brief_write"], "facts": {}, "depends_on": [],
+          "change_set": {"paths": ["docs/q1/solution_brief.md"], "facets": ["technical_handoff"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.MODEL.RESULTS"],
+        "rule_ids_include": ["MOD.RESULTS.TEAMMATE_BRIEF", "MOD.RESULTS.AUXILIARY_METHOD_VISIBILITY"],
+        "rule_ids_exclude": ["DEL.HANDOFF.STATE"],
+        "component_ids_by_step_exact": {"brief": ["q1"]}
+      }
+    },
+    {
+      "id": "BEH.V15.MODEL.TEAMMATE_BRIEF.REQUIRES_QUESTION",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "写一个不绑定具体问题的讲解稿。",
+        "steps": [{
+          "id": "brief", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "model", "action": "prepare_teammate_brief", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S7"},
+          "events": ["teammate_brief_write"], "facts": {}, "depends_on": [],
+          "change_set": {"paths": ["docs/brief.md"], "facets": ["technical_handoff"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "status": "blocked", "route_ids_exact": ["RT.MODEL.RESULTS"],
+        "rule_ids_include": [], "rule_ids_exclude": [],
+        "error_contains": ["action_component_id_required"]
+      }
+    },
+    {
+      "id": "BEH.V15.MODEL.AUXILIARY_VISIBILITY",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "解释结果并区分主方法与内部辅助验证器。",
+        "steps": [{
+          "id": "interpret", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "model", "action": "interpret", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S6"},
+          "events": ["result_interpretation"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.MODEL.RESULTS"],
+        "rule_ids_include": ["MOD.RESULTS.AUXILIARY_METHOD_VISIBILITY", "MOD.RESULTS.TRACE"],
+        "rule_ids_exclude": []
+      }
+    },
+    {
+      "id": "BEH.V15.EVIDENCE.CONSUMER_BOUNDARY",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "解释结果并核对外部数值的消费者边界。",
+        "steps": [{
+          "id": "interpret", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "model", "action": "interpret", "component_id": null,
+          "working_context": {"component_type": "question", "state": "S6"},
+          "events": ["result_interpretation"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "status": "resolved", "route_ids_exact": ["RT.MODEL.RESULTS"],
+        "rule_ids_include": ["EVD.PROV.CONSUMER_BOUNDARY"],
+        "rule_ids_exclude": []
+      }
+    },
+    {
+      "id": "BEH.V15.MANUSCRIPT.CLOSURE.FACTS_REQUIRED",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "审计稿件。",
+        "steps": [{
+          "id": "audit", "tier": "G0_ADVISORY", "mode": "project_readonly",
+          "object": "manuscript", "action": "audit", "component_id": null,
+          "working_context": {"component_type": "artifact", "state": "A2"},
+          "events": ["manuscript_audit"], "facts": {}, "depends_on": []
+        }]
+      },
+      "expected": {
+        "status": "blocked", "route_ids_exact": [],
+        "rule_ids_include": [], "rule_ids_exclude": [],
+        "error_contains": [
+          "change_class", "completion_scope", "profile_selected", "published_revision", "existing_paths_only"
+        ]
+      }
+    },
+    {
+      "id": "BEH.V15.MANUSCRIPT.CLOSURE.FACT_TYPES",
+      "plan": {
+        "schema_version": "11.0",
+        "request": "改写稿件方法段。",
+        "steps": [{
+          "id": "rewrite", "tier": "G1_WORKING", "mode": "mutate",
+          "object": "manuscript", "action": "rewrite", "component_id": null,
+          "working_context": {"component_type": "artifact", "state": "A1"},
+          "events": ["manuscript_write"],
+          "facts": {
+            "change_class": "section_substantive",
+            "completion_scope": "section_working_change_only",
+            "profile_selected": "false",
+            "published_revision": false,
+            "existing_paths_only": true
+          },
+          "depends_on": [],
+          "change_set": {"paths": ["paper.tex"], "facets": ["method"], "claim_refs": []}
+        }]
+      },
+      "expected": {
+        "status": "blocked", "route_ids_exact": [],
+        "rule_ids_include": [], "rule_ids_exclude": [],
+        "error_contains": ["profile_selected", "boolean"]
+      }
+    }
+  ]
+}

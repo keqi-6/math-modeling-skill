@@ -1,0 +1,182 @@
+{
+  "schema_version": "15.0",
+  "artifact_kind": "v15_current_preservation_index",
+  "release_id": "V15.0.0",
+  "review_basis": "human_reviewed_v1_v14_audit_plus_current_machine_contracts",
+  "claim_boundary": "This index binds current owners and release evidence to reviewed migration seals. It does not claim that archived prose is runtime-reachable unless the capability packet registry proves that reachability.",
+  "allowed_dispositions": ["preserve_verbatim", "preserve_semantics_rewrite", "merge"],
+  "source_seals": [
+    {
+      "path": "references/migration/v9-capability-baseline.json",
+      "seal_field": "payload_sha256",
+      "payload_sha256": "13532c00471661d64b0113a83d5277f39a1009a95f654423683e72dacc9349c1",
+      "role": "reviewed_v9_capability_strength_baseline"
+    },
+    {
+      "path": "references/migration/legacy-coverage.json",
+      "seal_field": "payload_sha256",
+      "payload_sha256": "4a3b53838203ec44f14d86fda65aa184c42a985f168bfd8a893e11a093a46ed2",
+      "role": "v1_v9_lineage_and_native_dispositions"
+    },
+    {
+      "path": "references/migration/capability-crosswalk.json",
+      "seal_field": "payload_sha256",
+      "payload_sha256": "d5cb7bee805d7a3c881fada7e1c31c701e1af96746cdf4de43c146c615436a21",
+      "role": "current_atom_and_strength_binding"
+    },
+    {
+      "path": "references/migration/clause-preservation.json",
+      "seal_field": "payload_sha256",
+      "payload_sha256": "da427f5808513b4696067a55fa676ccd7e8ea49e5be09f9692ef79dd3a3e26fb",
+      "role": "human_reviewed_clause_and_atom_semantic_binding"
+    }
+  ],
+  "inherited_capabilities": {
+    "expected_count": 51,
+    "expected_active_atom_count": 212,
+    "baseline_ref": "references/migration/v9-capability-baseline.json",
+    "owner_binding": {
+      "source": "rules/*.json",
+      "capability_field": "capability",
+      "owner_field": "owner",
+      "required_status": "active"
+    },
+    "packet_binding_ref": "references/capability-packet-registry.json",
+    "evidence_refs": [
+      "references/preservation/audit-v1-v5.md",
+      "references/preservation/audit-v6-v10.md",
+      "references/preservation/audit-v11-v14.md",
+      "references/preservation/v1-v14-audit.md"
+    ],
+    "evidence_check_ids": [
+      "CONTRACT.V15.ATOM_INVENTORY",
+      "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+      "MIGRATION.V15.CLAUSE_PRESERVATION"
+    ],
+    "strength_policy": "no_current_binding_may_be_weaker_than_its_reviewed_source_without_a_release_bound_waiver",
+    "dispositions": {
+      "preserve_verbatim": [
+        "ART-LAZY-001", "ART-PROMOTE-001", "GOV-AUTH-001", "GOV-DECISION-001",
+        "GOV-MODE-001", "GOV-OWNER-001", "GOV-RECEIPT-001", "REC-R0-001",
+        "REC-R2-001", "PRJ-SCOPE-001", "PRJ-PLAN-001", "PRJ-STRUCTURE-001",
+        "DATA-IDENTITY-001", "DATA-FREEZE-001", "VER-S6-DUAL-001", "MAN-LOCAL-001",
+        "MAN-PROFILE-001", "EVD-PROVENANCE-001", "DEL-PROVENANCE-001", "DEL-HANDOFF-001"
+      ],
+      "preserve_semantics_rewrite": [
+        "GOV-ROUTE-001", "REC-R1-001", "STATE-TYPED-001", "DATA-AUDIT-001",
+        "DATA-TREAT-001", "MOD-RESTATE-001", "MOD-COMPARE-001", "MOD-SPEC-001",
+        "MOD-IMPLEMENT-001", "MOD-RESULTS-001", "VER-E1-001", "VER-E2-001",
+        "VER-E3-001", "VER-E4-001", "VER-UNCERTAINTY-001", "VER-ROBUST-001",
+        "MAN-STRUCTURE-001", "MAN-CONTENT-001", "MAN-READER-001", "MAN-ACCEPT-001",
+        "VIS-DESIGN-001", "VIS-IDENTITY-001", "VIS-LAYOUT-001", "EVD-LITERATURE-001",
+        "DEL-FINAL-001", "MNT-ROLLBACK-001"
+      ],
+      "merge": [
+        "MNT-CLASSIFY-001", "MNT-IMPACT-001", "MNT-OWNER-001", "MNT-EVAL-001",
+        "MNT-RELOAD-001"
+      ]
+    }
+  },
+  "native_capabilities": [
+    {
+      "id": "NATIVE.V11.PROPORTIONAL_RUNTIME",
+      "introduced_in": "V11",
+      "disposition": "preserve_verbatim",
+      "owner_refs": ["references/runtime-policy.json", "references/route-contract.json"],
+      "evidence_case_ids": ["SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES"],
+      "evidence_check_ids": ["CONTRACT.V15.ROUTE_REACHABILITY", "CONTRACT.V15.RUNTIME_NEAR_NEGATIVES"]
+    },
+    {
+      "id": "NATIVE.V11.EXACT_EVIDENCE_AND_INVALIDATION",
+      "introduced_in": "V11",
+      "disposition": "preserve_verbatim",
+      "owner_refs": ["references/state.schema.json", "references/state-machine.json"],
+      "evidence_case_ids": [
+        "SCENARIO.IDENTITY.WORKING_REFRESH_EXACT",
+        "SCENARIO.IDENTITY.PROTECTED_DOWNSTREAM_EXACT",
+        "SCENARIO.STATE.DELTA_REVALIDATION"
+      ],
+      "evidence_check_ids": ["CONTRACT.V15.ATOM_INVENTORY"]
+    },
+    {
+      "id": "NATIVE.V11.MULTISTEP_SEMANTIC_PLAN",
+      "introduced_in": "V11",
+      "disposition": "preserve_verbatim",
+      "owner_refs": ["references/semantic-plan.schema.json", "references/route-contract.json"],
+      "evidence_case_ids": [
+        "SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES",
+        "SCENARIO.MODELING.ESTABLISH_SOLVE_VERIFY_HANDOFF"
+      ],
+      "evidence_check_ids": ["CONTRACT.V15.ROUTE_REACHABILITY"]
+    },
+    {
+      "id": "NATIVE.V12.CANONICAL_PLATFORM",
+      "introduced_in": "V12",
+      "disposition": "preserve_verbatim",
+      "owner_refs": ["references/project-platform-contract.json", "references/artifact-contract.json"],
+      "evidence_case_ids": [
+        "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
+        "SCENARIO.PLATFORM.ARTIFACT_ADMISSION_BOUNDARIES"
+      ],
+      "evidence_check_ids": ["CONTRACT.V15.ATOM_INVENTORY"]
+    },
+    {
+      "id": "NATIVE.V12.OUTCOME_RELEASE_EVIDENCE",
+      "introduced_in": "V12",
+      "disposition": "preserve_semantics_rewrite",
+      "owner_refs": ["references/release-policy.json", "scripts/validate_release.py"],
+      "evidence_case_ids": ["SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES"],
+      "evidence_check_ids": [
+        "CONTRACT.V15.ATOM_INVENTORY",
+        "CONTRACT.V15.ROUTE_REACHABILITY",
+        "CONTRACT.V15.CAPABILITY_PACKET_REACHABILITY",
+        "MIGRATION.V15.CLAUSE_PRESERVATION"
+      ]
+    },
+    {
+      "id": "NATIVE.V13.TOTAL_STATE_TRANSITION",
+      "introduced_in": "V13",
+      "disposition": "preserve_verbatim",
+      "owner_refs": ["references/state-machine.json", "references/route-contract.json"],
+      "evidence_case_ids": ["SCENARIO.STATE.ALL_EDGES_RESOLVE", "SCENARIO.STATE.DELTA_REVALIDATION"],
+      "evidence_check_ids": ["CONTRACT.V15.ROUTE_REACHABILITY"]
+    },
+    {
+      "id": "NATIVE.V13.IDENTITY_EXECUTION_LIFECYCLE",
+      "introduced_in": "V13",
+      "disposition": "preserve_verbatim",
+      "owner_refs": [
+        "references/artifact-contract.json", "references/semantic-plan.schema.json",
+        "references/state.schema.json", "references/receipt.schema.json"
+      ],
+      "evidence_case_ids": [
+        "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
+        "SCENARIO.RECEIPT.CLOSED_WORLD_AND_REPLAY"
+      ],
+      "evidence_check_ids": ["CONTRACT.V15.ATOM_INVENTORY"]
+    },
+    {
+      "id": "NATIVE.V13.ISOLATED_SKILL_AUTHORIZATION",
+      "introduced_in": "V13",
+      "disposition": "preserve_verbatim",
+      "owner_refs": ["references/semantic-plan.schema.json", "references/route-contract.json"],
+      "evidence_case_ids": ["SCENARIO.SKILL.EXPLICIT_AUTHORIZATION"],
+      "evidence_check_ids": ["CONTRACT.V15.RUNTIME_NEAR_NEGATIVES"]
+    },
+    {
+      "id": "NATIVE.V14.R1_RECEIPT_AND_BASELINE_BINDING",
+      "introduced_in": "V14",
+      "disposition": "preserve_verbatim",
+      "owner_refs": [
+        "references/runtime-policy.json", "references/recovery-receipt.schema.json",
+        "references/state.schema.json"
+      ],
+      "evidence_case_ids": [
+        "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
+        "SCENARIO.RECOVERY.R2_BARRIER_ROUNDTRIP"
+      ],
+      "evidence_check_ids": ["CONTRACT.V15.ROUTE_REACHABILITY"]
+    }
+  ],
+  "payload_sha256": "c618abbefe8a2ea9667565577e731ee40be491132cdf8f394bd7a3605f395088"
+}

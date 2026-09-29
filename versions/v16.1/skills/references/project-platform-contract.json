@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v15/project-platform-contract.json",
+  "schema_version": "15.0",
+  "owner": "references/project-platform-contract.json",
+  "principle": "g1_path_namespace_admission_is_lightweight_while_formal_artifact_role_and_identity_are_explicit",
+  "applicability": {
+    "object": "project",
+    "skill_candidate_packages": "excluded_and_governed_by_route_contract_skill_package_boundary"
+  },
+  "path_syntax": {
+    "form": "canonical_relative_posix",
+    "forbidden_aliases": ["absolute", "drive_prefixed", "backslash", "dot_segment", "dotdot_segment", "empty_segment", "trailing_slash"],
+    "comparison": "validate_raw_equals_PurePosixPath_raw_as_posix_before_containment_or_conflict_checks",
+    "lexical_conflict_key": "canonical_relative_posix_path",
+    "physical_conflict_key": "project_root_join_canonical_path_resolve_strict_false_then_relative_to_resolved_project_root",
+    "physical_alias_policy": {
+      "single_internal_symlink_path": "allowed_if_the_resolved_target_remains_inside_project_root",
+      "same_step_distinct_paths_one_target": "blocked",
+      "unordered_steps_distinct_paths_one_target": "blocked_for_both_steps",
+      "ordered_steps": "dependency_order_preserves_existing_sequential_write_semantics",
+      "external_symlink": "blocked_by_project_root_containment",
+      "inspection_scope": "only_declared_change_set_paths_no_project_wide_scan"
+    }
+  },
+  "new_project_policy": {
+    "layout": "canonical",
+    "eager_scaffold": false,
+    "directory_creation": "create_only_the_parent_chain_of_an_admitted_artifact",
+    "arbitrary_top_level_paths": "forbidden_without_a_separate_user_approved_platform_extension",
+    "unknown_namespace_disposition": "block_only_the_affected_change_set_pending_a_bounded_platform_extension_decision_not_the_whole_project"
+  },
+  "existing_project_policy": {
+    "inspect_before_change": true,
+    "automatic_move_or_rename": false,
+    "existing_files": "grandfathered_until_their_role_or_location_is_changed_except_repository_internals_controller_metadata_and_tool_transients_cannot_be_declared_as_retained_paths_outside_the_explicit_controller_allowlist",
+    "new_files": "use_a_canonical_semantic_or_project_support_namespace_or_an_already_established_nonreserved_top_level_directory",
+    "established_top_level_directory": "may_receive_new_children_without_assigning_them_a_formal_artifact_role",
+    "new_top_level_namespace": "requires_a_separate_user_approved_platform_extension_or_migration"
+  },
+  "path_namespaces": {
+    "canonical_semantic": {
+      "source": "roles.*.path_patterns",
+      "new_path_admission": "one_or_more_role_path_patterns",
+      "overlapping_patterns": "allowed_at_g1_and_resolved_only_when_a_formal_artifact_explicitly_selects_its_semantic_role",
+      "role_assignment_at_g1": false
+    },
+    "project_support": {
+      "path_patterns": [
+        "^(?:\\.gitignore|\\.gitattributes|\\.editorconfig|\\.dockerignore|\\.env\\.example|Makefile|Dockerfile|docker-compose(?:\\.[^/]+)?\\.ya?ml|pyproject\\.toml|requirements(?:[-_.][^/]*)?\\.txt|environment(?:[-_.][^/]*)?\\.ya?ml|uv\\.lock|poetry\\.lock|Pipfile(?:\\.lock)?|package\\.json|package-lock\\.json|pnpm-lock\\.yaml|yarn\\.lock|bun\\.lockb?|Cargo\\.(?:toml|lock)|go\\.(?:mod|sum)|CMakeLists\\.txt|pytest\\.ini|tox\\.ini|mypy\\.ini|ruff\\.toml|\\.pre-commit-config\\.ya?ml|CITATION\\.cff|LICENSE(?:\\.[^/]*)?)$",
+        "^(?:tests?|notebooks?|configs?|scripts|assets|templates|figures)/[^/].*"
+      ],
+      "responsibility": "retained project tooling, configuration, tests, exploratory notebooks, and reusable support assets that enable semantic artifacts without becoming those artifacts",
+      "formal_artifact_role_inferred": false
+    },
+    "established_project": {
+      "top_level_directory_must_already_exist": true,
+      "target_must_be_a_child_path": true,
+      "excluded_top_levels": [
+        ".modeling",
+        ".git",
+        ".hg",
+        ".svn",
+        ".codex",
+        ".agents"
+      ],
+      "responsibility": "continue an inspected existing project convention without treating every sibling as a formal artifact or opening a fresh arbitrary top-level namespace"
+    },
+    "manual_platform_extension": {
+      "trigger": "a_retained_path_requires_a_fresh_top_level_not_covered_by_canonical_semantic_or_project_support_namespaces",
+      "frequency": "rare_architecture_boundary_not_an_ordinary_per_file_gate",
+      "fact": "step.facts.platform_extension",
+      "fact_shape": {
+        "additional_properties": false,
+        "required": ["approval_quote", "top_level_namespaces", "purpose", "rollback"],
+        "approval_quote": "trimmed_length_at_least_2_contains_nonwhitespace_and_is_an_exact_substring_of_plan.request",
+        "top_level_namespaces": "nonempty_unique_canonical_single_POSIX_top_level_names_only",
+        "purpose": "trimmed_length_at_least_8",
+        "rollback": "trimmed_length_at_least_8"
+      },
+      "approval": "explicit_human_confirmation_after_scope_impact_and_rollback_review_bound_to_the_current_plan_request",
+      "effect": "admit_only_the_bounded_physical_namespace_needed_by_the_confirmed_project_workflow_without_inventing_a_new_semantic_role",
+      "scope": "only_unknown_paths_in_the_same_step_whose_first_path_component_exactly_equals_an_approved_top_level_namespace",
+      "unused_fact": "reject_to_prevent_stale_or_speculative_authorization",
+      "never_overrides": ["reserved", "tool_managed_transient", "noncanonical_path"],
+      "failure_disposition": "unknown_namespace_is_a_pending_architecture_decision_not_a_permanent_file_creation_ban"
+    },
+    "tool_managed_transient": {
+      "path_patterns": [
+        "^(?:.*/)?(?:__pycache__|\\.pytest_cache|\\.mypy_cache|\\.ruff_cache|\\.cache|node_modules|\\.venv|venv|\\.tox|\\.nox|\\.ipynb_checkpoints)(?:/.*)?$",
+        "^(?:build|dist|coverage)(?:/.*)?$",
+        "^(?:\\.coverage|coverage\\.xml)$"
+      ],
+      "retained_change_set": "forbidden",
+      "per_file_proposal_or_registration": "forbidden",
+      "runtime_action_output_paths": "exclude_unretained_cache_and_build_side_effects",
+      "promotion": "a_transient_path_that_becomes_consumed_evidence_or_delivery_must_enter_a_later_retained_change_set_and_pass_normal_admission"
+    },
+    "reserved": {
+      "repository_internal_patterns": [
+        "^(?:\\.git|\\.hg|\\.svn)(?:/.*)?$"
+      ],
+      "controller_metadata_patterns": [
+        "^(?:\\.modeling|\\.codex|\\.agents)(?:/.*)?$"
+      ],
+      "controller_path_allowlist": {
+        "always": [".modeling/state.json"],
+        "recovery_assessment_event_required_patterns": ["^\\.modeling/recovery/[^/].*"]
+      },
+      "established_namespace_admission": "forbidden",
+      "existing_path_grandfathering": "forbidden",
+      "note": "repository internals and controller metadata are checked before exact-path grandfathering; only the explicit controller allowlist can admit a .modeling path"
+    }
+  },
+  "roles": {
+    "official_input": {
+      "path_patterns": ["^data/[^/].*"],
+      "classes": ["source", "data"],
+      "responsibility": "immutable official statements, attachments, templates, and raw inputs"
+    },
+    "external_evidence": {
+      "path_patterns": ["^references/[^/].*"],
+      "classes": ["source", "data"],
+      "responsibility": "external literature, source records, notes, and legally obtained evidence"
+    },
+    "planning": {
+      "path_patterns": ["^planning/[^/].*"],
+      "classes": ["source", "control"],
+      "responsibility": "problem understanding, plans, alternatives, decisions, audits, and claim mappings"
+    },
+    "code": {
+      "path_patterns": ["^src/[^/].*"],
+      "classes": ["code"],
+      "responsibility": "executable project code, with task-specific code below src/<task-id>/ and shared utilities below src/_utils/"
+    },
+    "result": {
+      "path_patterns": ["^output/[^/].*"],
+      "classes": ["data", "result"],
+      "responsibility": "machine-produced results and frozen downstream inputs organized by real task or stable production stage"
+    },
+    "technical_documentation": {
+      "path_patterns": ["^docs/[^/].*"],
+      "classes": ["source", "result"],
+      "responsibility": "derivation, verification, reproduction, defense, and teammate-facing technical explanation; never the manuscript workspace"
+    },
+    "manuscript": {
+      "path_patterns": ["^paper/[^/].*"],
+      "classes": ["manuscript"],
+      "responsibility": "the sole evaluator-facing manuscript workspace"
+    },
+    "visual": {
+      "path_patterns": ["^(?:paper|output)/[^/].*"],
+      "classes": ["visual"],
+      "responsibility": "generated or publication visuals whose producer and consumer determine whether they live with results or manuscript assets"
+    },
+    "delivery": {
+      "path_patterns": ["^delivery/[^/].*"],
+      "classes": ["delivery"],
+      "responsibility": "explicit final-package staging or delivery mirrors; never the working authority"
+    },
+    "control": {
+      "path_patterns": ["^(?:\\.modeling/state\\.json|\\.modeling/recovery/[^/].*)$"],
+      "classes": ["control"],
+      "responsibility": "typed cross-session state and recovery control data"
+    },
+    "skill_support": {
+      "path_patterns": ["^skills/[^/].*"],
+      "classes": ["source", "code", "control"],
+      "responsibility": "cross-project workflow support only; never project-specific parameters, results, or answers"
+    },
+    "navigation": {
+      "path_patterns": ["^(?:README\\.md|HANDOFF\\.md)$"],
+      "classes": ["control"],
+      "responsibility": "optional human navigation that points to authorities without becoming one"
+    }
+  },
+  "cross_role_invariants": [
+    "g1 path admission does not assign a semantic platform_role",
+    "ordinary namespace admitted g1 creation does not activate formal artifact proposal consumer or no bypass atoms",
+    "role path patterns may overlap and one_or_more matches are valid at g1",
+    "one formally admitted artifact explicitly selects exactly one platform_role",
+    "a formal artifact proposal path remains canonical POSIX and contained rather than preserving a normalized alias",
+    "a formal artifact path and class must match its selected role",
+    "planning and technical documentation are not manuscript prose",
+    "working results do not become delivery artifacts by copying or renaming",
+    "navigation files do not become evidence or state authorities",
+    "tool managed transient side effects are neither retained change_set paths nor claim or delivery authorities",
+    "manual platform extension never overrides reserved transient or noncanonical path rejection",
+    "admission never authorizes moving existing inputs or inventing empty placeholders"
+  ]
+}

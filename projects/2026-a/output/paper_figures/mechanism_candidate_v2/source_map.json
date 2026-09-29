@@ -1,0 +1,858 @@
+{
+  "status": "working_candidate_for_user_review",
+  "data_driven_visual": true,
+  "source": {
+    "path": "output/Q2/run_n10240_startsafe.npz",
+    "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+    "snapshot_time_s": 1800,
+    "node_count": 10241
+  },
+  "representation": "Two views of the same material at the same instant; only exposed middle sections encode field values. Cylinder side color identifies material, not field magnitude. Geometry is schematic.",
+  "display": "64 midpoint-sampled rings from the stored 10241-node fields; no smoothing, re-solving, or external values.",
+  "fields": [
+    {
+      "quantity": "temperature_snapshots",
+      "unit": "degC",
+      "range": [
+        32.0,
+        36.0
+      ],
+      "colormap": "YlOrRd",
+      "center": 32.18924476096322,
+      "surface": 35.41302025049541,
+      "rings": [
+        {
+          "display_outer_r_m": 0.0003125,
+          "source_node": 80,
+          "source_r_m": 0.00015625,
+          "value": 32.189432727396515
+        },
+        {
+          "display_outer_r_m": 0.000625,
+          "source_node": 240,
+          "source_r_m": 0.00046875,
+          "value": 32.1909364852022
+        },
+        {
+          "display_outer_r_m": 0.0009375,
+          "source_node": 400,
+          "source_r_m": 0.00078125,
+          "value": 32.19394414136362
+        },
+        {
+          "display_outer_r_m": 0.00125,
+          "source_node": 560,
+          "source_r_m": 0.00109375,
+          "value": 32.19845597733691
+        },
+        {
+          "display_outer_r_m": 0.0015625,
+          "source_node": 720,
+          "source_r_m": 0.00140625,
+          "value": 32.2044724162015
+        },
+        {
+          "display_outer_r_m": 0.001875,
+          "source_node": 880,
+          "source_r_m": 0.00171875,
+          "value": 32.21199402374899
+        },
+        {
+          "display_outer_r_m": 0.0021875,
+          "source_node": 1040,
+          "source_r_m": 0.00203125,
+          "value": 32.221021509959165
+        },
+        {
+          "display_outer_r_m": 0.0025,
+          "source_node": 1200,
+          "source_r_m": 0.00234375,
+          "value": 32.23155573088344
+        },
+        {
+          "display_outer_r_m": 0.0028125,
+          "source_node": 1360,
+          "source_r_m": 0.00265625,
+          "value": 32.24359769096123
+        },
+        {
+          "display_outer_r_m": 0.003125,
+          "source_node": 1520,
+          "source_r_m": 0.00296875,
+          "value": 32.25714854579838
+        },
+        {
+          "display_outer_r_m": 0.0034375,
+          "source_node": 1680,
+          "source_r_m": 0.00328125,
+          "value": 32.272209605441866
+        },
+        {
+          "display_outer_r_m": 0.00375,
+          "source_node": 1840,
+          "source_r_m": 0.00359375,
+          "value": 32.28878233818775
+        },
+        {
+          "display_outer_r_m": 0.0040625,
+          "source_node": 2000,
+          "source_r_m": 0.00390625,
+          "value": 32.306868374962754
+        },
+        {
+          "display_outer_r_m": 0.004375,
+          "source_node": 2160,
+          "source_r_m": 0.00421875,
+          "value": 32.326469514321694
+        },
+        {
+          "display_outer_r_m": 0.0046875,
+          "source_node": 2320,
+          "source_r_m": 0.00453125,
+          "value": 32.34758772810475
+        },
+        {
+          "display_outer_r_m": 0.005,
+          "source_node": 2480,
+          "source_r_m": 0.00484375,
+          "value": 32.37022516779779
+        },
+        {
+          "display_outer_r_m": 0.0053125,
+          "source_node": 2640,
+          "source_r_m": 0.00515625,
+          "value": 32.39438417163804
+        },
+        {
+          "display_outer_r_m": 0.005625,
+          "source_node": 2800,
+          "source_r_m": 0.0054687500000000005,
+          "value": 32.42006727250391
+        },
+        {
+          "display_outer_r_m": 0.0059375,
+          "source_node": 2960,
+          "source_r_m": 0.00578125,
+          "value": 32.4472772066226
+        },
+        {
+          "display_outer_r_m": 0.00625,
+          "source_node": 3120,
+          "source_r_m": 0.00609375,
+          "value": 32.476016923121996
+        },
+        {
+          "display_outer_r_m": 0.0065625,
+          "source_node": 3280,
+          "source_r_m": 0.0064062500000000005,
+          "value": 32.50628959444223
+        },
+        {
+          "display_outer_r_m": 0.006875,
+          "source_node": 3440,
+          "source_r_m": 0.00671875,
+          "value": 32.53809862761071
+        },
+        {
+          "display_outer_r_m": 0.0071875,
+          "source_node": 3600,
+          "source_r_m": 0.00703125,
+          "value": 32.5714476763677
+        },
+        {
+          "display_outer_r_m": 0.0075,
+          "source_node": 3760,
+          "source_r_m": 0.0073437500000000005,
+          "value": 32.60634065411056
+        },
+        {
+          "display_outer_r_m": 0.0078125,
+          "source_node": 3920,
+          "source_r_m": 0.00765625,
+          "value": 32.64278174760369
+        },
+        {
+          "display_outer_r_m": 0.008125,
+          "source_node": 4080,
+          "source_r_m": 0.00796875,
+          "value": 32.680775431375615
+        },
+        {
+          "display_outer_r_m": 0.0084375,
+          "source_node": 4240,
+          "source_r_m": 0.00828125,
+          "value": 32.72032648269863
+        },
+        {
+          "display_outer_r_m": 0.00875,
+          "source_node": 4400,
+          "source_r_m": 0.00859375,
+          "value": 32.761439997017696
+        },
+        {
+          "display_outer_r_m": 0.0090625,
+          "source_node": 4560,
+          "source_r_m": 0.008906250000000001,
+          "value": 32.80412140366635
+        },
+        {
+          "display_outer_r_m": 0.009375,
+          "source_node": 4720,
+          "source_r_m": 0.00921875,
+          "value": 32.84837648167948
+        },
+        {
+          "display_outer_r_m": 0.0096875,
+          "source_node": 4880,
+          "source_r_m": 0.00953125,
+          "value": 32.89421137548699
+        },
+        {
+          "display_outer_r_m": 0.01,
+          "source_node": 5040,
+          "source_r_m": 0.00984375,
+          "value": 32.94163261025107
+        },
+        {
+          "display_outer_r_m": 0.0103125,
+          "source_node": 5200,
+          "source_r_m": 0.01015625,
+          "value": 32.990647106595254
+        },
+        {
+          "display_outer_r_m": 0.010625,
+          "source_node": 5360,
+          "source_r_m": 0.01046875,
+          "value": 33.041262194467805
+        },
+        {
+          "display_outer_r_m": 0.010937500000000001,
+          "source_node": 5520,
+          "source_r_m": 0.010781250000000001,
+          "value": 33.09348562588881
+        },
+        {
+          "display_outer_r_m": 0.01125,
+          "source_node": 5680,
+          "source_r_m": 0.01109375,
+          "value": 33.14732558635091
+        },
+        {
+          "display_outer_r_m": 0.0115625,
+          "source_node": 5840,
+          "source_r_m": 0.01140625,
+          "value": 33.202790704682585
+        },
+        {
+          "display_outer_r_m": 0.011875,
+          "source_node": 6000,
+          "source_r_m": 0.01171875,
+          "value": 33.259890061240505
+        },
+        {
+          "display_outer_r_m": 0.0121875,
+          "source_node": 6160,
+          "source_r_m": 0.01203125,
+          "value": 33.31863319437725
+        },
+        {
+          "display_outer_r_m": 0.0125,
+          "source_node": 6320,
+          "source_r_m": 0.01234375,
+          "value": 33.379030105232985
+        },
+        {
+          "display_outer_r_m": 0.012812500000000001,
+          "source_node": 6480,
+          "source_r_m": 0.01265625,
+          "value": 33.44109126102556
+        },
+        {
+          "display_outer_r_m": 0.013125,
+          "source_node": 6640,
+          "source_r_m": 0.012968750000000001,
+          "value": 33.5048275971624
+        },
+        {
+          "display_outer_r_m": 0.0134375,
+          "source_node": 6800,
+          "source_r_m": 0.01328125,
+          "value": 33.57025051866874
+        },
+        {
+          "display_outer_r_m": 0.01375,
+          "source_node": 6960,
+          "source_r_m": 0.01359375,
+          "value": 33.63737190161795
+        },
+        {
+          "display_outer_r_m": 0.0140625,
+          "source_node": 7120,
+          "source_r_m": 0.01390625,
+          "value": 33.706204095458205
+        },
+        {
+          "display_outer_r_m": 0.014375,
+          "source_node": 7280,
+          "source_r_m": 0.01421875,
+          "value": 33.77675992735106
+        },
+        {
+          "display_outer_r_m": 0.014687500000000001,
+          "source_node": 7440,
+          "source_r_m": 0.01453125,
+          "value": 33.84905270986882
+        },
+        {
+          "display_outer_r_m": 0.015,
+          "source_node": 7600,
+          "source_r_m": 0.014843750000000001,
+          "value": 33.923096253630675
+        },
+        {
+          "display_outer_r_m": 0.0153125,
+          "source_node": 7760,
+          "source_r_m": 0.01515625,
+          "value": 33.998904886689985
+        },
+        {
+          "display_outer_r_m": 0.015625,
+          "source_node": 7920,
+          "source_r_m": 0.01546875,
+          "value": 34.076493482708734
+        },
+        {
+          "display_outer_r_m": 0.0159375,
+          "source_node": 8080,
+          "source_r_m": 0.01578125,
+          "value": 34.15587750016302
+        },
+        {
+          "display_outer_r_m": 0.01625,
+          "source_node": 8240,
+          "source_r_m": 0.01609375,
+          "value": 34.2370730350088
+        },
+        {
+          "display_outer_r_m": 0.0165625,
+          "source_node": 8400,
+          "source_r_m": 0.01640625,
+          "value": 34.320096889390726
+        },
+        {
+          "display_outer_r_m": 0.016875,
+          "source_node": 8560,
+          "source_r_m": 0.01671875,
+          "value": 34.40496665908674
+        },
+        {
+          "display_outer_r_m": 0.0171875,
+          "source_node": 8720,
+          "source_r_m": 0.01703125,
+          "value": 34.491700842433175
+        },
+        {
+          "display_outer_r_m": 0.0175,
+          "source_node": 8880,
+          "source_r_m": 0.01734375,
+          "value": 34.58031897345135
+        },
+        {
+          "display_outer_r_m": 0.017812500000000002,
+          "source_node": 9040,
+          "source_r_m": 0.017656250000000002,
+          "value": 34.67084178177387
+        },
+        {
+          "display_outer_r_m": 0.018125,
+          "source_node": 9200,
+          "source_r_m": 0.017968750000000002,
+          "value": 34.763291381739464
+        },
+        {
+          "display_outer_r_m": 0.0184375,
+          "source_node": 9360,
+          "source_r_m": 0.01828125,
+          "value": 34.85769149268972
+        },
+        {
+          "display_outer_r_m": 0.01875,
+          "source_node": 9520,
+          "source_r_m": 0.01859375,
+          "value": 34.95406769212242
+        },
+        {
+          "display_outer_r_m": 0.0190625,
+          "source_node": 9680,
+          "source_r_m": 0.01890625,
+          "value": 35.05244770304
+        },
+        {
+          "display_outer_r_m": 0.019375,
+          "source_node": 9840,
+          "source_r_m": 0.01921875,
+          "value": 35.152861716738784
+        },
+        {
+          "display_outer_r_m": 0.0196875,
+          "source_node": 10000,
+          "source_r_m": 0.01953125,
+          "value": 35.255342752528726
+        },
+        {
+          "display_outer_r_m": 0.02,
+          "source_node": 10160,
+          "source_r_m": 0.01984375,
+          "value": 35.35992705641165
+        }
+      ]
+    },
+    {
+      "quantity": "moisture_snapshots",
+      "unit": "kg/kg dry basis",
+      "range": [
+        1.5,
+        2.6
+      ],
+      "colormap": "Blues",
+      "center": 2.54993409992138,
+      "surface": 1.6486177766658752,
+      "rings": [
+        {
+          "display_outer_r_m": 0.0003125,
+          "source_node": 80,
+          "source_r_m": 0.00015625,
+          "value": 2.5499337192443967
+        },
+        {
+          "display_outer_r_m": 0.000625,
+          "source_node": 240,
+          "source_r_m": 0.00046875,
+          "value": 2.549930641898045
+        },
+        {
+          "display_outer_r_m": 0.0009375,
+          "source_node": 400,
+          "source_r_m": 0.00078125,
+          "value": 2.549924315311693
+        },
+        {
+          "display_outer_r_m": 0.00125,
+          "source_node": 560,
+          "source_r_m": 0.00109375,
+          "value": 2.549914387987068
+        },
+        {
+          "display_outer_r_m": 0.0015625,
+          "source_node": 720,
+          "source_r_m": 0.00140625,
+          "value": 2.5499003132079134
+        },
+        {
+          "display_outer_r_m": 0.001875,
+          "source_node": 880,
+          "source_r_m": 0.00171875,
+          "value": 2.5498813251441144
+        },
+        {
+          "display_outer_r_m": 0.0021875,
+          "source_node": 1040,
+          "source_r_m": 0.00203125,
+          "value": 2.549856406110012
+        },
+        {
+          "display_outer_r_m": 0.0025,
+          "source_node": 1200,
+          "source_r_m": 0.00234375,
+          "value": 2.549824244239417
+        },
+        {
+          "display_outer_r_m": 0.0028125,
+          "source_node": 1360,
+          "source_r_m": 0.00265625,
+          "value": 2.5497831806787103
+        },
+        {
+          "display_outer_r_m": 0.003125,
+          "source_node": 1520,
+          "source_r_m": 0.00296875,
+          "value": 2.549731145256318
+        },
+        {
+          "display_outer_r_m": 0.0034375,
+          "source_node": 1680,
+          "source_r_m": 0.00328125,
+          "value": 2.5496655794677294
+        },
+        {
+          "display_outer_r_m": 0.00375,
+          "source_node": 1840,
+          "source_r_m": 0.00359375,
+          "value": 2.5495833455271573
+        },
+        {
+          "display_outer_r_m": 0.0040625,
+          "source_node": 2000,
+          "source_r_m": 0.00390625,
+          "value": 2.549480620188035
+        },
+        {
+          "display_outer_r_m": 0.004375,
+          "source_node": 2160,
+          "source_r_m": 0.00421875,
+          "value": 2.5493527720338722
+        },
+        {
+          "display_outer_r_m": 0.0046875,
+          "source_node": 2320,
+          "source_r_m": 0.00453125,
+          "value": 2.5491942209984653
+        },
+        {
+          "display_outer_r_m": 0.005,
+          "source_node": 2480,
+          "source_r_m": 0.00484375,
+          "value": 2.5489982790003984
+        },
+        {
+          "display_outer_r_m": 0.0053125,
+          "source_node": 2640,
+          "source_r_m": 0.00515625,
+          "value": 2.5487569707816204
+        },
+        {
+          "display_outer_r_m": 0.005625,
+          "source_node": 2800,
+          "source_r_m": 0.0054687500000000005,
+          "value": 2.5484608343334956
+        },
+        {
+          "display_outer_r_m": 0.0059375,
+          "source_node": 2960,
+          "source_r_m": 0.00578125,
+          "value": 2.5480987006848985
+        },
+        {
+          "display_outer_r_m": 0.00625,
+          "source_node": 3120,
+          "source_r_m": 0.00609375,
+          "value": 2.547657453322478
+        },
+        {
+          "display_outer_r_m": 0.0065625,
+          "source_node": 3280,
+          "source_r_m": 0.0064062500000000005,
+          "value": 2.5471217681172202
+        },
+        {
+          "display_outer_r_m": 0.006875,
+          "source_node": 3440,
+          "source_r_m": 0.00671875,
+          "value": 2.5464738353444156
+        },
+        {
+          "display_outer_r_m": 0.0071875,
+          "source_node": 3600,
+          "source_r_m": 0.00703125,
+          "value": 2.5456930662020425
+        },
+        {
+          "display_outer_r_m": 0.0075,
+          "source_node": 3760,
+          "source_r_m": 0.0073437500000000005,
+          "value": 2.5447557871462165
+        },
+        {
+          "display_outer_r_m": 0.0078125,
+          "source_node": 3920,
+          "source_r_m": 0.00765625,
+          "value": 2.543634926356423
+        },
+        {
+          "display_outer_r_m": 0.008125,
+          "source_node": 4080,
+          "source_r_m": 0.00796875,
+          "value": 2.5422996976963868
+        },
+        {
+          "display_outer_r_m": 0.0084375,
+          "source_node": 4240,
+          "source_r_m": 0.00828125,
+          "value": 2.540715288620243
+        },
+        {
+          "display_outer_r_m": 0.00875,
+          "source_node": 4400,
+          "source_r_m": 0.00859375,
+          "value": 2.538842559553811
+        },
+        {
+          "display_outer_r_m": 0.0090625,
+          "source_node": 4560,
+          "source_r_m": 0.008906250000000001,
+          "value": 2.5366377633166524
+        },
+        {
+          "display_outer_r_m": 0.009375,
+          "source_node": 4720,
+          "source_r_m": 0.00921875,
+          "value": 2.5340522940967523
+        },
+        {
+          "display_outer_r_m": 0.0096875,
+          "source_node": 4880,
+          "source_r_m": 0.00953125,
+          "value": 2.5310324762971015
+        },
+        {
+          "display_outer_r_m": 0.01,
+          "source_node": 5040,
+          "source_r_m": 0.00984375,
+          "value": 2.5275194041911253
+        },
+        {
+          "display_outer_r_m": 0.0103125,
+          "source_node": 5200,
+          "source_r_m": 0.01015625,
+          "value": 2.5234488437010736
+        },
+        {
+          "display_outer_r_m": 0.010625,
+          "source_node": 5360,
+          "source_r_m": 0.01046875,
+          "value": 2.518751207701874
+        },
+        {
+          "display_outer_r_m": 0.010937500000000001,
+          "source_node": 5520,
+          "source_r_m": 0.010781250000000001,
+          "value": 2.513351616009309
+        },
+        {
+          "display_outer_r_m": 0.01125,
+          "source_node": 5680,
+          "source_r_m": 0.01109375,
+          "value": 2.5071700505998002
+        },
+        {
+          "display_outer_r_m": 0.0115625,
+          "source_node": 5840,
+          "source_r_m": 0.01140625,
+          "value": 2.500121615603712
+        },
+        {
+          "display_outer_r_m": 0.011875,
+          "source_node": 6000,
+          "source_r_m": 0.01171875,
+          "value": 2.492116910200858
+        },
+        {
+          "display_outer_r_m": 0.0121875,
+          "source_node": 6160,
+          "source_r_m": 0.01203125,
+          "value": 2.4830625207254653
+        },
+        {
+          "display_outer_r_m": 0.0125,
+          "source_node": 6320,
+          "source_r_m": 0.01234375,
+          "value": 2.472861636073067
+        },
+        {
+          "display_outer_r_m": 0.012812500000000001,
+          "source_node": 6480,
+          "source_r_m": 0.01265625,
+          "value": 2.4614147879242543
+        },
+        {
+          "display_outer_r_m": 0.013125,
+          "source_node": 6640,
+          "source_r_m": 0.012968750000000001,
+          "value": 2.448620714406439
+        },
+        {
+          "display_outer_r_m": 0.0134375,
+          "source_node": 6800,
+          "source_r_m": 0.01328125,
+          "value": 2.4343773426673625
+        },
+        {
+          "display_outer_r_m": 0.01375,
+          "source_node": 6960,
+          "source_r_m": 0.01359375,
+          "value": 2.4185828825100115
+        },
+        {
+          "display_outer_r_m": 0.0140625,
+          "source_node": 7120,
+          "source_r_m": 0.01390625,
+          "value": 2.4011370198292448
+        },
+        {
+          "display_outer_r_m": 0.014375,
+          "source_node": 7280,
+          "source_r_m": 0.01421875,
+          "value": 2.3819421951994113
+        },
+        {
+          "display_outer_r_m": 0.014687500000000001,
+          "source_node": 7440,
+          "source_r_m": 0.01453125,
+          "value": 2.3609049497067773
+        },
+        {
+          "display_outer_r_m": 0.015,
+          "source_node": 7600,
+          "source_r_m": 0.014843750000000001,
+          "value": 2.337937317132177
+        },
+        {
+          "display_outer_r_m": 0.0153125,
+          "source_node": 7760,
+          "source_r_m": 0.01515625,
+          "value": 2.3129582390201735
+        },
+        {
+          "display_outer_r_m": 0.015625,
+          "source_node": 7920,
+          "source_r_m": 0.01546875,
+          "value": 2.2858949772022688
+        },
+        {
+          "display_outer_r_m": 0.0159375,
+          "source_node": 8080,
+          "source_r_m": 0.01578125,
+          "value": 2.25668449719627
+        },
+        {
+          "display_outer_r_m": 0.01625,
+          "source_node": 8240,
+          "source_r_m": 0.01609375,
+          "value": 2.225274795856122
+        },
+        {
+          "display_outer_r_m": 0.0165625,
+          "source_node": 8400,
+          "source_r_m": 0.01640625,
+          "value": 2.1916261480167565
+        },
+        {
+          "display_outer_r_m": 0.016875,
+          "source_node": 8560,
+          "source_r_m": 0.01671875,
+          "value": 2.155712249981982
+        },
+        {
+          "display_outer_r_m": 0.0171875,
+          "source_node": 8720,
+          "source_r_m": 0.01703125,
+          "value": 2.1175212427033157
+        },
+        {
+          "display_outer_r_m": 0.0175,
+          "source_node": 8880,
+          "source_r_m": 0.01734375,
+          "value": 2.0770566040979315
+        },
+        {
+          "display_outer_r_m": 0.017812500000000002,
+          "source_node": 9040,
+          "source_r_m": 0.017656250000000002,
+          "value": 2.0343379069132275
+        },
+        {
+          "display_outer_r_m": 0.018125,
+          "source_node": 9200,
+          "source_r_m": 0.017968750000000002,
+          "value": 1.9894014431720182
+        },
+        {
+          "display_outer_r_m": 0.0184375,
+          "source_node": 9360,
+          "source_r_m": 0.01828125,
+          "value": 1.9423007143922724
+        },
+        {
+          "display_outer_r_m": 0.01875,
+          "source_node": 9520,
+          "source_r_m": 0.01859375,
+          "value": 1.893106774306105
+        },
+        {
+          "display_outer_r_m": 0.0190625,
+          "source_node": 9680,
+          "source_r_m": 0.01890625,
+          "value": 1.8419083869654882
+        },
+        {
+          "display_outer_r_m": 0.019375,
+          "source_node": 9840,
+          "source_r_m": 0.01921875,
+          "value": 1.7888119350625369
+        },
+        {
+          "display_outer_r_m": 0.0196875,
+          "source_node": 10000,
+          "source_r_m": 0.01953125,
+          "value": 1.7339409976110292
+        },
+        {
+          "display_outer_r_m": 0.02,
+          "source_node": 10160,
+          "source_r_m": 0.01984375,
+          "value": 1.6774355330227413
+        }
+      ]
+    }
+  ],
+  "mapping": {
+    "heat_arrow": "inward, q_in=h(T_inf-theta_s)",
+    "moisture_arrow": "outward, j_C=h_m(C_s-C_eq); effective dry-basis concentration flux",
+    "scope": "Q2/Q3 fixed-radius model; C_eq:=Y_inf",
+    "symbolic_icons": "thermometer and water-drop are quantity legends, not internal structures",
+    "arrows": "Widths and lengths encode direction emphasis only, not flux magnitude.",
+    "internal_arrows": "Schematic radial heat transfer toward center and moisture diffusion toward surface, consistent with the selected snapshot; no axial flux is represented."
+  },
+  "boundary_check": {
+    "source": "output/ENV/q2_boundary.json",
+    "sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "T_inf": 41.513,
+    "C_eq": 0.03307,
+    "direction_conditions_satisfied": true
+  },
+  "review": {
+    "standalone_png": true,
+    "svg_render": true,
+    "without_text": true,
+    "grayscale": true,
+    "a4_page_width_mm": 160,
+    "pdf_size_mm": [
+      164,
+      105.5
+    ],
+    "png_pixels": [
+      1937,
+      1247
+    ],
+    "main_text_pt_at_final_width": 9.75609756097561,
+    "colorbar_text_pt_at_final_width": 8.292682926829269,
+    "fonts_embedded": true,
+    "type3": false,
+    "svg_raster_elements": 0,
+    "findings": "Colorbars, units, arrows, section labels and local boundary states inspected; initial unit/arrow overlap corrected."
+  },
+  "outputs": {
+    "field_colors.tex": "af9f365f0eb998ee3bb1b88373ddaffa2a41c1a5ec62a1bd19c9c427bad764c9",
+    "fig_mechanism_v2.pdf": "9b60113314cdf01ad3519fa3223658ea3e02440755145ab0ab091cab803c07c6",
+    "fig_mechanism_v2.png": "54e11167e007fce75ed03e7e6e605f695c9e669728f54aa54289d73d1bfb3f12",
+    "fig_mechanism_v2.svg": "5e4ebd83751ab6747789c379f4433940519a0a24ecbf4f8402be8f815ab6421e",
+    "fig_mechanism_v2.tex": "6cc1d316bb49077e5adecd683fba46b943765a7f855491794a0fa06e4c559282",
+    "page_preview.pdf": "b1a51e9ffbab6705ef46d3c723601a2f40421100f7f151b173662e57637afe04",
+    "page_preview.tex": "7c1e2f5ac7336626388682700aafb40cb6b0f4427716d088a0a5e7bdf4994b43",
+    "README.md": "f135f1b47246ad2d2fb292b39cc04cbdc54458d26f0d9fa211eecd2557eacec9"
+  },
+  "generator": {
+    "path": "scripts/build_mechanism_fields.py",
+    "sha256": "9473dbba2a827d46a3c429eba4cb43f2ad653d2a8fecb67bd20826eae075f274"
+  }
+}

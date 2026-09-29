@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s6_frontier_verification_run_identity",
+  "producer": "src/q1/05_verify_frontier_independent.py",
+  "started_at": "2026-08-23T17:53:44.252986+08:00",
+  "finished_at": "2026-08-23T17:54:07.077318+08:00",
+  "command": [
+    "/usr/bin/python3",
+    "src/q1/05_verify_frontier_independent.py",
+    "--node-limit",
+    "5000",
+    "--time-limit-seconds",
+    "35",
+    "--dual-iterations",
+    "20"
+  ],
+  "environment": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39"
+  },
+  "inputs": {
+    "output/q1/s5_finite_closure.json": "6eff3f3fc27122d8b4e9ab4b1798d3b40caae2ed5738c419b4fc97ac238e69c0"
+  },
+  "sources": {
+    "src/q1/05_verify_frontier_independent.py": "bd593fcff5f8d34fa0002c73c3c1d95cc07cdcbbd2dfc705b2737a0b5e8a3402"
+  },
+  "outputs": {
+    "output/q1/s6_frontier_verification.json": "3f92e4e1439b84774d95b908e68d7cc086216b8f122e48680d8d050bf2f3fc9c"
+  }
+}

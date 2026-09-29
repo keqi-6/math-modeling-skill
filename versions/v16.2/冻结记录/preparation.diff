@@ -1,0 +1,311 @@
+--- approved/SKILL.md
++++ release-source/SKILL.md
+@@ -6,9 +6,9 @@
+   release: "candidate"
+ ---
+ 
+-# 数学建模项目控制器 V16.2.0（候选）
+-
+-V16.2 延续 V16.1 的控制契约，依据完整项目回顾，澄清整题语境承接、证明对象、连续模型可计算化、队友稿表达、精度与归因、图件及交付故障的方法实例。规则强度、状态、权限、正式验收门和活跃发布驱动不变。候选差量与未纳入事项见[本次经验审计](references/preservation/v16-2-cumcm2026-lessons.md)，仅在维护审阅时读取。
++# 数学建模项目控制器 V16.2.0
++
++V16.2 延续 V16.1 的控制契约，依据完整项目回顾，澄清整题语境承接、证明对象、连续模型可计算化、队友稿表达、精度与归因、图件及交付故障的方法实例。规则强度、状态、权限、正式验收门和活跃发布驱动不变。本次差量与未纳入事项见[本次经验审计](references/preservation/v16-2-cumcm2026-lessons.md)，仅在维护审阅时读取。
+ 
+ ## 目标与不变量
+ 
+--- approved/evals/release/release-plan.json
++++ release-source/evals/release/release-plan.json
+@@ -99,7 +99,7 @@
+   "legacy_diagnostic_suites_are_active_drivers": false,
+   "change_review": {
+     "review_kind": "human_reviewed_release_change",
+-    "review_status": "pending_user_review",
++    "review_status": "reviewed",
+     "risk": [
+       "L1 method clarification; version identity literals updated without changing project runtime behavior or release strategy."
+     ],
+@@ -124,7 +124,7 @@
+       "No capability retired or merged. Only the copied prior frozen manifest is omitted from this unfrozen candidate."
+     ],
+     "unverified": [
+-      "Human review and release authorization pending. No full validate_release or freeze/install executed.",
++      "User approved freezing the reviewed candidate. Formal gate and frozen identity are bound by freeze_release; installation is outside this release authorization.",
+       "Method examples and independent walkthroughs do not establish future aesthetic quality or prevent every modeling error.",
+       "G0/G1 native manuscript content-audit closure is an observed inherited gap, not repaired in this method update.",
+       "Pure method-maintenance actions still require normative-change events; only this candidate release-identity change justifies that event here.",
+@@ -151,16 +151,102 @@
+     "rollback_identity": {
+       "kind": "unchanged_stable_v16_1_tree",
+       "tree_sha256": "6f4522ddd5ac5c24e9509e46852d9e07773e04031680d2ba1a70b8a3ef86c64b",
+-      "binding_ref": "references/preservation/v16-2-cumcm2026-lessons.md",
+-      "strategy": "Continue using unchanged skills_v16.1/skills; candidate is separate and uninstalled. Digest is the sorted relative-path to SHA256 map, not an old freeze manifest hash."
++      "binding_ref": "references/preservation/v16-2-release-lineage.json#base",
++      "strategy": "Retain the unchanged skills_v16.1/skills as the rollback version. V16.2 is an independent release. The digest is a canonical sorted relative-path to SHA256 map, not an old freeze manifest hash."
+     },
+     "authorization": {
+-      "quote": "D:\\AI\\AI\\_program\\2021（第四题）\\总skill   ok，我们这个项目应该差不多结了，积累下来的经验应该也可以增量更新这一组skill了，你看看，是不是 能够推出v16.2版本或者v17版本。",
+-      "quote_sha256": "9da57a6beb96e31a284f82db93ea97f82196384288c627c13380fc4d4109a55b"
++      "quote": "冻结吧",
++      "quote_sha256": "e0a9611bf8b3384660a7674c0a126956cd1ea304635c1896cf045b82f3e05d9d"
+     },
+     "evidence": {
+-      "case_ids": [],
+-      "check_ids": []
++      "case_ids": [
++        "SCENARIO.PLATFORM.INIT_CONTROL_ONLY",
++        "SCENARIO.PLATFORM.PLAN_PREFLIGHT",
++        "SCENARIO.STATE.D0_D1_ROUNDTRIP",
++        "SCENARIO.IDENTITY.PREFLIGHT_AND_VOID",
++        "SCENARIO.IDENTITY.DECLARED_ROUNDTRIP",
++        "SCENARIO.RECEIPT.CLOSED_WORLD_AND_REPLAY",
++        "SCENARIO.RECOVERY.R1_NEW_WINDOW_ROUNDTRIP",
++        "SCENARIO.RECOVERY.R2_BARRIER_ROUNDTRIP",
++        "SCENARIO.V16.RECOVERY.R0.SAME_WINDOW",
++        "SCENARIO.V16.RECOVERY.R0.OPEN_EXECUTION_CONTINUITY",
++        "SCENARIO.V16.RECOVERY.R1.CLEAN_NEW_WINDOW",
++        "SCENARIO.V16.RECOVERY.R2.BASELINE_MISSING",
++        "SCENARIO.V16.RECOVERY.R2.BASELINE_COVERAGE_INCOMPLETE",
++        "SCENARIO.V16.RECOVERY.R2.COMPONENT_GRAPH_DRIFT",
++        "SCENARIO.V16.RECOVERY.R2.RELEVANT_UNATTRIBUTED_CHANGE",
++        "SCENARIO.V16.RECOVERY.R2.EXPLICIT_BARRIER",
++        "SCENARIO.V16.RECOVERY.R2.FULL_ROUNDTRIP",
++        "SCENARIO.V16.RECOVERY.R2.INCOMPLETE_FULL_READ.REJECTED",
++        "SCENARIO.V16.RECOVERY.R2.CLOSED_BLOCKED.NO_RUNTIME_GRANT",
++        "SCENARIO.V16.RECOVERY.R1.RUNTIME_GRANT.EXACT_EXECUTION",
++        "SCENARIO.V16.RECOVERY.R1.ESCALATES_TO_R2",
++        "BEH.V16.RECOVERY.TRANSIENT_CACHE_IGNORED",
++        "SCENARIO.V16.RECOVERY.Q3_TO_Q1_Q2.SAME_WINDOW",
++        "SCENARIO.V16.RECOVERY.Q3_TO_Q1_Q2.NEW_WINDOW",
++        "SCENARIO.IDENTITY.WORKING_REFRESH_EXACT",
++        "SCENARIO.IDENTITY.PROTECTED_DOWNSTREAM_EXACT",
++        "SCENARIO.STATE.DELTA_REVALIDATION",
++        "SCENARIO.STATE.S6_JUSTIFIED_NA",
++        "SCENARIO.ROUTING.TIER_AND_BRANCH_BOUNDARIES",
++        "SCENARIO.VISUAL.A0_ACCEPTANCE",
++        "SCENARIO.MODELING.ESTABLISH_SOLVE_VERIFY_HANDOFF",
++        "SCENARIO.MANUSCRIPT.CLOSURE_FACTS",
++        "SCENARIO.PLATFORM.ARTIFACT_ADMISSION_BOUNDARIES",
++        "SCENARIO.PROJECT.PAUSE_NO_VERIFICATION_REPLAY",
++        "SCENARIO.SKILL.EXPLICIT_AUTHORIZATION",
++        "BEH.V15.DATA.TREATMENT.PROPOSAL",
++        "BEH.V15.MODEL.COMPARE.BASELINE",
++        "BEH.V15.MODEL.COMPARE.BASELINE.S6",
++        "BEH.V15.VISUAL.A0.ACCEPTANCE",
++        "BEH.V15.VISUAL.A0.DATA_IDENTITY",
++        "BEH.V15.VISUAL.CLASSIFICATION.REQUIRED",
++        "BEH.V15.VERIFY.E3.RISK_MATCH",
++        "BEH.V15.VERIFY.E3.UMBRELLA_ONLY.BLOCKED",
++        "BEH.V15.VERIFY.REALITY_ONLY",
++        "BEH.V15.MODEL.TEAMMATE_BRIEF",
++        "BEH.V15.MODEL.TEAMMATE_BRIEF.REQUIRES_QUESTION",
++        "BEH.V15.MODEL.AUXILIARY_VISIBILITY",
++        "BEH.V15.EVIDENCE.CONSUMER_BOUNDARY",
++        "BEH.V15.MANUSCRIPT.CLOSURE.FACTS_REQUIRED",
++        "BEH.V15.MANUSCRIPT.CLOSURE.FACT_TYPES",
++        "SCENARIO.STATE.ALL_EDGES_RESOLVE",
++        "BEH.V16.COMPATIBLE.G1.ONE_CHANGESET",
++        "SCENARIO.V16.COMPATIBLE.MISSING_R0_ATTESTATION.R1",
++        "BEH.V16.COMPATIBLE.MIXED.G1_G2",
++        "BEH.V16.COMPATIBLE.MODEL_CONTRACT.REJECTED",
++        "BEH.V16.COMPATIBLE.FACET_SMUGGLE.REJECTED",
++        "SCENARIO.V16.COMPATIBLE.ATOMIC_RECONCILIATION",
++        "SCENARIO.V16.COMPATIBLE.MISSING_EVIDENCE.NO_PARTIAL_COMMIT",
++        "SCENARIO.V16.COMPATIBLE.PREFIX_IDENTITY_CHANGE.REJECTED",
++        "SCENARIO.V16.COMPATIBLE.OMITTED_ARTIFACT_UPDATE.REJECTED",
++        "SCENARIO.V16.COMPATIBLE.UNREGISTERED_CONSUMER.REJECTED",
++        "SCENARIO.V16.COMPATIBLE.CLAIM_CONSUMER.REJECTED",
++        "SCENARIO.V16.COMPATIBLE.COMPONENT_DRIFT.REJECTED",
++        "SCENARIO.V16.COMPATIBLE.UNDECLARED_PATH_DELTA.REJECTED",
++        "BEH.V16.COMPATIBLE.UNRELATED_WORKING_DRIFT.IGNORED",
++        "SCENARIO.V16.COMPATIBLE.UNDECLARED_EXACT_CONSUMER.REJECTED",
++        "BEH.V16.COMPATIBLE.R1.TARGETED_READ_SET",
++        "BEH.V16.TEAMMATE_BRIEF.G1.CANONICAL_PATH",
++        "BEH.V16.TEAMMATE_BRIEF.G1.WRONG_PATH.REJECTED",
++        "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.TEN_SECTION",
++        "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.NINE_ITEM.REJECTED",
++        "BEH.V16.TEAMMATE_BRIEF.STRUCTURE.META_OR_SAFETY_HEADING.REJECTED",
++        "BEH.V16.TEAMMATE_BRIEF.S6.HUMAN_GATE_SELECTED"
++      ],
++      "check_ids": [
++        "PACKAGE.V16.REQUIRED",
++        "PACKAGE.V16.JSON",
++        "PACKAGE.V16.PYTHON",
++        "PACKAGE.V16.IDENTITY_AND_LINKS",
++        "CONTRACT.V16.RELEASE_BINDING",
++        "CONTRACT.V16.BASE_PRESERVATION",
++        "CONTRACT.V16.COMPATIBLE_CHANGE_BINDING",
++        "CONTRACT.V16.ATOMIC_RECONCILIATION",
++        "CONTRACT.V16.TARGETED_RECOVERY",
++        "CONTRACT.V16.RECOVERY_BOUNDARY",
++        "CONTRACT.V16.TEAMMATE_BRIEF_STANDARD"
++      ]
+     }
+   }
+-}+}
+--- approved/evals/release/release-state.json
++++ release-source/evals/release/release-state.json
+@@ -3,6 +3,6 @@
+   "release_id": "V16.2.0",
+   "status": "candidate",
+   "frozen_at": null,
+-  "manifest": null,
++  "manifest": "evals/release/frozen-manifest.json",
+   "gate_report_sha256": null
+ }
+--- approved/references/preservation/v16-2-cumcm2026-lessons.md
++++ release-source/references/preservation/v16-2-cumcm2026-lessons.md
+@@ -1,6 +1,6 @@
+ # V16.1 → V16.2：完整项目回顾后的方法维护
+ 
+-本文件仅供维护与兼容性审阅，不是普通项目启动必读包，不新增规范或门禁。V16.2.0仍为待人工审阅的候选，没有冻结、安装或覆盖稳定版。
++本文件仅供维护与兼容性审阅，不是普通项目启动必读包，不新增规范或门禁。用户于2026-09-13明确批准冻结V16.2.0。实际发布状态与完整性以 `evals/release/release-state.json` 和冻结清单为准；安装和覆盖旧版本不在此次批准范围内。
+ 
+ ## 依据与版本选择
+ 
+@@ -41,4 +41,4 @@
+ 
+ 早期input_visual_review仍残留已撤回的附件配对判断，历史Q2 audit的3小时批准归属也有后续勘误。主要主稿修正不等于所有旧解释已同步。本轮只维护skill，不顺手清理比赛项目或重算结果。
+ 
+-这些控制面问题须单独明确目标、兼容性与验证，不能在方法文字中假装修复；是否升主版本取决于真实架构变化。包/契约/场景与两个阶段的前向观察在候选外保存，旧新版均通过不证明新能力提升，小样本不保证审美。release-plan保持pending_user_review，旧发布授权与冻结清单不沿用；正式发布、冻结和安装仍分开处理。
++这些控制面问题须单独明确目标、兼容性与验证，不能在方法文字中假装修复；是否升主版本取决于真实架构变化。包/契约/场景与两个阶段的前向观察在候选外保存，旧新版均通过不证明新能力提升，小样本不保证审美。候选审阅结束后，release-plan绑定用户本次“冻结吧”原文及其摘要；旧发布授权与冻结清单不沿用。实际正式检查和冻结状态以release-state及新冻结清单为准，安装仍单独处理。
+--- approved/references/preservation/v16-2-release-lineage.json
++++ release-source/references/preservation/v16-2-release-lineage.json
+@@ -0,0 +1,138 @@
++{
++  "purpose": "Immutable V16.1 rollback identity verified against the live stable tree before V16.2 freeze.",
++  "base": {
++    "version": "16.1.0",
++    "relative_location_from_master": "skills_v16.1/skills",
++    "algorithm": "sha256 of UTF-8 json.dumps(relative-path-to-sha256-map, ensure_ascii=False, sort_keys=True, separators=(comma,colon))",
++    "tree_sha256": "6f4522ddd5ac5c24e9509e46852d9e07773e04031680d2ba1a70b8a3ef86c64b",
++    "file_count": 117,
++    "files": {
++      "agents/openai.yaml": "b9728ca59582e0f77a2dcbb733c929e5f6598cb7a13d0744b11a2065c841625e",
++      "evals/release/frozen-manifest.json": "abb2ab82a4f1a793643731238ea7fa040ef74969cbbbffb53ca2f4b4722b48ae",
++      "evals/release/release-plan.json": "d355cc75bfa49203e25df589a41448467c99b2cbf23e5d2688ba82835ee52a32",
++      "evals/release/release-state.json": "edeac158e7c3eac0e0007d123544e4743e2475a965d63b963ecf5c0a404a4c11",
++      "evals/v15-regression-cases.json": "c03d89965f74c421e0a11daa57c5e62a4f86c8bb8a4a78210107f9b3b3fdd150",
++      "references/artifact-contract.json": "7fcb3a569887b81a8b07b65dc474c9fab4575f2272df6cfc982f4ed9c7261c3f",
++      "references/capability-packet-registry.json": "71d4d0101b3edaf0beacd51ff548e82ccae76177cd37cb7a23ef0c1ccb92d296",
++      "references/capability-packets/data/identity-and-audit.md": "945e652dc68f0286056b3314354767ad0010128905af16081bf2684274283648",
++      "references/capability-packets/data/treatment-and-freeze.md": "0c6239df194589057b50d11d4db3b513e5a0b0eda0f2c1def697d6a19d3e5bf5",
++      "references/capability-packets/evidence/final-delivery-and-compliance.md": "4b02db8de63af5977776066d6b8fb39f5a901b83ac4b6955e8b8164b76cdb321",
++      "references/capability-packets/evidence/literature-and-source-evidence.md": "e880127fb7383a5e614c76a5b99ce176ee47627ebea4a2bc4010129ec95aebf4",
++      "references/capability-packets/evidence/provenance-and-handoff.md": "ed02c07b0e189a2af72b86e704b6f26c9789f24a9d0b2d79575694f3923271da",
++      "references/capability-packets/governance/skill-maintenance.md": "255fe9accf8201c3500055daaee09f94c3aee57a47964ed0c79553061f979008",
++      "references/capability-packets/manuscript/expression-and-argument.md": "b8695acf2eb141d1580f924f2d4ac375417270aee1e8cacc3a0b1ab7ebf81a61",
++      "references/capability-packets/manuscript/latex-and-finalization.md": "8d57029220042193ec267ef6fcc5f3791722deaff7b402d4f19ec82897d0defa",
++      "references/capability-packets/manuscript/reader-audit-and-local-edit.md": "d38ef4b3c28777fd77f4143171d29c9ffaff54335b0b31fe43fa90c362186511",
++      "references/capability-packets/manuscript/structure-and-section-contracts.md": "510265d8ec0f7ad8f4bda0d9a81534ef6dc944ee1b71fe78d0c1063c20401c6d",
++      "references/capability-packets/modeling/implementation-solving-and-results.md": "efea6e88448d5a55a9283ea5f242221f1e2fd9c1f37411e0db2e6cfaf9e5bf16",
++      "references/capability-packets/modeling/mathematical-specification.md": "83b379f81d7bcafc3f9bf7603891aa5ca05766026e44b742aa5eec21a1dedf0e",
++      "references/capability-packets/modeling/problem-and-candidates.md": "513154777abee68d47ae54d757d9e1117ff177c254b026ad97a7423da3aa5d38",
++      "references/capability-packets/project/platform-and-artifacts.md": "90b3b7c63123bd9d9035ddfac508bdb7e83bb090460533b8b6ca10f1f42e7baa",
++      "references/capability-packets/project/recovery-and-handoff.md": "624ffcb72a4210274fc73f7e18f18cf4fb19e57ab018e9f142511c171005f4a2",
++      "references/capability-packets/project/scope-and-plan.md": "905e3026993195a959e7721083a7f07a9f1be60d9a47238999357e4efa1c3ace",
++      "references/capability-packets/verification/implementation-axis.md": "76b68573c11e89c53556a381373e0d30472c84e196bec5cf77fdd184e029026c",
++      "references/capability-packets/verification/model-axis.md": "3702db75f3f7830156444631613730ae719d8b376efcf41a187c48f1961e32a0",
++      "references/capability-packets/verification/uncertainty-and-robustness.md": "e0e0a53a5833ee77c35faa9b754ca75a8b64e3766114276e2262a61c18c6e843",
++      "references/capability-packets/visual/figure-brief-and-data-charts.md": "313142dc0dd7d59c6d557647291319e0900adb2c90ae975bbe7f88dab570043b",
++      "references/capability-packets/visual/render-and-audit.md": "2301cfb6c0f78e45ea2ddc00da7b44af162c01d3f3ec480252b4d42a62a85590",
++      "references/capability-packets/visual/scientific-schematics.md": "ecefad6230ce7eed94f62ae275117ca19521f55ed62f3e7087e7de35ac186c7e",
++      "references/compatible-change-bundle.schema.json": "62f108d1bb8606d6e4a151a96d766e6d6590ee1c0a5312b331476b31f32c011a",
++      "references/data-method-notes.md": "6f09b17ecd48eaebbf9544499e2e66e0eb28b9bc332182a16f3838623ab49545",
++      "references/effect-target-registry.json": "f110897ebdf6fe6c9a628a0878e704577fe1043e91b14ac300e5d1719ff2b869",
++      "references/evidence-method-notes.md": "8b07abd1bbe6cc6c33ca5b6c9ce3af2fbd9750a05000d89957f7d7417555663d",
++      "references/maintenance-method-notes.md": "f8cc9c13e6314ff40ddda41d907104e4e2cad7f1a8ab04e5ba3eb70526e3bf7a",
++      "references/manuscript-change-closure.json": "f15feba3ef4a9ae91a26f32a03cdc773bf499217537999c3c8e58059d9d19b46",
++      "references/manuscript-method-notes.md": "b67abffbd90345824b69b5623f7cebb2578f64353848dec7d45b1eaf5de1b1bb",
++      "references/migration/capability-crosswalk.json": "61c748c48d532afe9b914ad85ccdc782144931347aa650b3fb4bb07f21a94c94",
++      "references/migration/clause-preservation.json": "3adbff68e30c5a3ad8e51bdc3edcb5c9d43cca66096a3f23ae166fc642a3b58a",
++      "references/migration/legacy-coverage.json": "3b0b195d6244402343cf402a2a6b0b21cfa9750fdaf1769d14c829852a96a748",
++      "references/migration/native-capabilities.json": "c160257539667dd727bd19653599de17c9343f7d3d6cd9185ebe6eab17873ce6",
++      "references/migration/platform-restoration.json": "815268d49eecb9aed275ca256d9b835de6501fbb483b365d18830fa087be4597",
++      "references/migration/v1-v9-capability-ledger.json": "c44427ba0829e71d37c4f6f6012c35760e70647b0022fee6b239190fab13166e",
++      "references/migration/v15-preservation-ledger.json": "7fdaf19541e967807c0ce4910ba77a30757a31faea75daf5b5f188d2f460e75c",
++      "references/migration/v9-capability-baseline.json": "e76f1fc34e86ac8b2db86a6089b4de3aa5181f0f203102fcf816ce01ee1533f1",
++      "references/modeling-method-notes.md": "7ce1c1f6c1b00d29e61557d958a7f0d05fb77f77c5f06cd264d830d96c6ec5a3",
++      "references/ownership-contract.json": "f4ec7406b2e5b53da2e83f7922ac563b754a135e9f86460e83d4f0d9ee834004",
++      "references/preservation/audit-v1-v5.md": "7a62d0330151a852ced85291e1febd72e011bc004ec22a438ddc373f9956f352",
++      "references/preservation/audit-v11-v14.md": "17bc68dd696e1a44bc0a8940affabe76791538aab04fcefa19d74bc3d15e0be7",
++      "references/preservation/audit-v6-v10.md": "919f59147e96552e3879fd7249f1e1442baba9cd05f21e18b2a65ab0d22538ec",
++      "references/preservation/forward-eval-data-model.md": "4eb592518daebdfc6d513b50c478363cdcb35444d7dd4fe11e09e82758b8f752",
++      "references/preservation/forward-eval-manuscript.md": "ecf8378d248bf3e5a371d105b13b885def70b50b95a45f64a96b55457b8c24d1",
++      "references/preservation/forward-eval-visual.md": "d73b316d56d62a96d7bd3a5210f7acdfbea8fba3f299d74eb3460ef065e120ff",
++      "references/preservation/legacy-executable-retirement.json": "e4c1c8920fd07ab0ca57cd02a9dff4cc2a5577360eef72d1a9b4d7f98c404ec4",
++      "references/preservation/module-source-manifest.json": "fb05efae818ef0fa73de07d9b0e0f0739e93d978f67655ee0b3a1785b3ecc099",
++      "references/preservation/real-project-2025-a-rule-extraction.md": "c0cfa2f1ee043b6a54393baaea2d5e690092a5a03068179f161712fa157b3dad",
++      "references/preservation/rule-disposition.json": "3d4e67bc3a499539fa5c016f6b9844fdd75e76cc7597450e957bdb5a4090fbe9",
++      "references/preservation/v1-v14-audit.md": "1ff8e7fae4e35ef4ae9a9822d5d57cdc97b597ee5677596939ef3bbfb7da60b8",
++      "references/preservation/v15-0-1-platform-hotfix.json": "b032db7efe16a43a01fa0b7292e4708629781487984af928b232c91147ed02a5",
++      "references/preservation/v15-real-project-backfill-and-state-repair.md": "a4d32664e1da57292d69c7e6793c5ba2d1ad7d8d7dbfea66cd5a1809624ad604",
++      "references/preservation/v16-compatible-change-fast-path.json": "189d8cabdcc3fc5160f12462800614401b214ef0a827d592173169f377f19143",
++      "references/preservation/v16-real-project-2024-b-teammate-brief.md": "94e4f547c3c38ced9566bc7c025e0b462f1cf714a1c496ec125a4ad7f7822098",
++      "references/preservation/v16-real-project-2025-a-live-window-rule-extraction.md": "f1860d28d57ed60978fe261e24b222f2ae5421f0528506209465ec98782164f4",
++      "references/preservation/v16-recovery-tier-redesign.md": "c6196a8250b0d3ac084945c3f7c8db745285184eeaf9bd73bb427a4cbe55357d",
++      "references/preservation/v16-small-patch-20260910.json": "3e594e1a4bd60e5f0e55d7a4f8b95a5489611270ffa6010a17426efb6eb369af",
++      "references/project-method-notes.md": "72e6ae22c5629f66ebed55236e51ecdb817785101f425f2505f809b707c5ac99",
++      "references/project-platform-contract.json": "945ec90327873ae46f5e7cd4f7259d3caa05939d475cf772177094a1325ec278",
++      "references/receipt.schema.json": "858326abe3aa77413286e5f399fdfa1b9541196ece51349f511b0968ca8df8cc",
++      "references/recovery-receipt.schema.json": "72009f98ba0548ac0c55e021d149045cea6829f2d9fdc3b508e3cf222d155ae2",
++      "references/release-manifest.schema.json": "72eaf8df4a2222786f125fdb7e67c7505368c31d6d9aeeadb2b92671af703ca2",
++      "references/release-policy.json": "be57b0a4103157878f847a6889373609dae68d757b8229744408b07bcb6b3efb",
++      "references/route-contract.json": "f05298c897a48a09117d9cadb8fb3bfe1c4dd7f88cd65b9aa18e7a79235e289c",
++      "references/rule-atom.schema.json": "465d0110893f522bdba167be5b56576f9f66338bb49ca3b3ae8b17249d4135bc",
++      "references/runtime-policy.json": "8d15a661b27114ae87591d492a1960fc859b5f8055208e0e1657917a2d334610",
++      "references/semantic-plan.schema.json": "37d3dcb246286f7af90bc6ab5c2b1adeb49dc8b1c45f78ed08d88e6a3aad6244",
++      "references/state-machine.json": "68b5179e9467a692f6eb868fb3db21a36d4ea732e05080468a370054bd0c638b",
++      "references/state.schema.json": "989576b575d321a4a5f116e4edb4b71e7642a1e51d8a6723eee88236d38ebcd2",
++      "references/verification-method-notes.md": "6b226db6894119ac366364da7a9d90c2f7a8daaccbff364927375ca481465e12",
++      "references/visual-method-notes.md": "38b7b2256c583ffbea3a8680be57d3b1d5a317e6c13ae0de128bdce97003e15e",
++      "rules/data.json": "0567d1040bb6da657ab2ba83018a1c2cd787974eaf6e6752c321e245537793b6",
++      "rules/evidence_delivery.json": "b482cc2f0356488c293deb0330df3e3f1756b24b6f7f40942534dff62e7eb66b",
++      "rules/governance.json": "3413c7a3276d1aee413d55ed374eed51bf5afc00b01adea375b7240378c5a281",
++      "rules/maintenance.json": "45767a3c6a30a3623a3271e0d723967e306b8a49795a9067112e48f6ddb3a2e7",
++      "rules/manuscript.json": "211eaa9933c8e41e0723f9f865c58ad875f97602262efb2666e3123b9e2679fb",
++      "rules/modeling.json": "ab5c53e214929f562993a92bd316775ba423b0dc917c08abcb4f7df2059d3e76",
++      "rules/project.json": "2dced0e858953e6a708917a718886ebcdf689b363ef6eb4b98fb4516e6f3412f",
++      "rules/verification.json": "36dc5d144f2bdcaf7776d1adc04e5c9d115fea6af13ef7240680c3bb3878c181",
++      "rules/visuals.json": "d190dbb9aa44c60866fb6b085cfbb2226729a91eb2b576e353d48bcce5dc9f3c",
++      "scripts/artifact_guard.py": "a619b4190b44e1662884d85ccfdec9bd1308c618b8093775382edeb83bc920bc",
++      "scripts/assess_recovery.py": "4b253103a91d42c222d2982df5f441bf3bb55ab122d182f2d871687d19043318",
++      "scripts/build_clause_preservation.py": "f4678852f0b16ce23fd0b298977d7c1f65b4ef446e46f78e455215586638eb3f",
++      "scripts/build_migration_coverage.py": "8d6df02b2399add30981620526c8098cb8b68f0e105239c745c26fc2bb0168a3",
++      "scripts/freeze_release.py": "12e946b04264f79de9ae049fdc53d83bd87570ebce9c5e558e141d13f3fbd82d",
++      "scripts/lib_v10.py": "7b43e9d469ee3e8da1de9fb66683e8d03eed47268ba52faaaac955653fa17df1",
++      "scripts/lib_v11.py": "aeff22e96af62da9fe59bed14e6464eb661172d5a8484771169661bb6ce4904c",
++      "scripts/recovery_manifest.py": "8884bdd59880fd2e07a634a0770d611f2d66fedf46f5b686b8577f64fc817cac",
++      "scripts/recovery_v14.py": "e2c28ef657610543b59fed85e0ca284254a50bb8acecb08e38c9993fe511283b",
++      "scripts/recovery_v16.py": "21fc511f06a49882d9fe48c9be1c383c3974c42a33ee64e9a3e4da08142e8f05",
++      "scripts/resolve_route.py": "375e0c0df3004f83d4c0724e1953d34b457017a99556d722955d0079f3ab1851",
++      "scripts/run_authorized_action.py": "fc92139e5ca1389439ed5afb5537bfe3f8101e1f1933ca9533c0c88b05d216dc",
++      "scripts/run_v15_scenarios.py": "f36b1799e96d0858adbb0b6e088a0a67a06b5df5c599b2b37cc097e5ab2030c8",
++      "scripts/run_v16_gate_scenarios.py": "e052d7478ac626d0d613bd490ddfcb8e13d56f36b4dbd9a02190d2100547b7c4",
++      "scripts/run_v16_recovery_scenarios.py": "43f3290bb99d30e2c8cdd5fa77f86de0b48616f9fe1875f6b1d9def7f0fc20db",
++      "scripts/run_v16_scenarios.py": "9a52aebdeda2e8b19c67199e48e84b63af93a3c4edd81d4f5028c6da80eef32f",
++      "scripts/run_v16_teammate_brief_scenarios.py": "94d54e9f1503a3a5b1f73c407a9bb47d6fd7e5b3e2d1c9c0760c682b2b4f4cbf",
++      "scripts/state_manager.py": "66bfd05e45615ecb48ef9366cff00f064c38c7a6844cfd21decef3b696eacdf8",
++      "scripts/state_v11.py": "13036608158246f1dda704a8a4fdd0b2eb7ab1af8fad48381d3c62599b74db5f",
++      "scripts/validate_capability_packets.py": "9dde625fced74664795824f11896011d43db2622f7b3f35affee77cf68b8bd7e",
++      "scripts/validate_figure_assets.py": "f5b9bea63cc3f06018bf17044a74d9603d14bfe3908dcd027a6ff8bc4a453407",
++      "scripts/validate_migration.py": "f013d417192807a9188d27320997698cc136a8dd74aaf47e5fbf65773ca864a2",
++      "scripts/validate_receipt.py": "86dbce3c41d9c2f49add32a6c17d2269b834f5dff7e4722ffdd96dddc45159d9",
++      "scripts/validate_release.py": "bad2c7a29a6afbde1cb81f9a0fe4bb205f1b964b5ffd900f64f75374437c0890",
++      "scripts/validate_teammate_brief.py": "317c4c57c32178027442f9d2c8f0ce8a519515ba9417da7ae594bbaa99c19356",
++      "scripts/validate_v15_contracts.py": "93f61febad20cc52a05dc79e5949ce31bd7b93375b462738ff0d5f22e87116e9",
++      "scripts/validate_v15_package.py": "8354fdf727f40c578c2c2012f89184ac36e27b6518f61239d22a6da9a856e7cb",
++      "scripts/validate_v16_contracts.py": "171800c9f9fabc04b8fe96a6c379e0b45afa72c9ad90d7f0d8d072cfe43c1295",
++      "scripts/validate_v16_package.py": "4f445d3318e6d0c24e241f7eecad9dccb9728ee33b8fae7450c0b5fb804ea711",
++      "SKILL.md": "3c42c557efa522fe06525bfcf2c89dacc4fb99d17c7ced7126de49eedeaeced1"
++    }
++  },
++  "approved_candidate": {
++    "directory": "skills_v16.2_candidate_20260913",
++    "tree_sha256": "632ad9db38cd8fc7b8ec424c6d5ec07ef08950d28a167fbbcfa5e91040d6d38f",
++    "file_count": 117
++  },
++  "freeze_authorization": {
++    "quote": "冻结吧",
++    "quote_sha256": "e0a9611bf8b3384660a7674c0a126956cd1ea304635c1896cf045b82f3e05d9d"
++  }
++}

@@ -1,0 +1,17 @@
+pair,method_i_catalyst,method_ii_catalyst,response,response_cn,temperature_c,method_ii_minus_i_pct_point
+A12-B1,A12,B1,ethanol_conversion_pct,乙醇转化率,250.0,-0.03352751635958007
+A12-B1,A12,B1,ethanol_conversion_pct,乙醇转化率,275.0,-0.05571648352015979
+A12-B1,A12,B1,ethanol_conversion_pct,乙醇转化率,300.0,-0.19066184565276068
+A12-B1,A12,B1,ethanol_conversion_pct,乙醇转化率,350.0,-0.6030350333748977
+A12-B1,A12,B1,c4_selectivity_pct,C4烯烃选择性,250.0,0.15000000000000036
+A12-B1,A12,B1,c4_selectivity_pct,C4烯烃选择性,275.0,0.14000000000000057
+A12-B1,A12,B1,c4_selectivity_pct,C4烯烃选择性,300.0,1.0599999999999987
+A12-B1,A12,B1,c4_selectivity_pct,C4烯烃选择性,350.0,3.7099999999999973
+A9-B5,A9,B5,ethanol_conversion_pct,乙醇转化率,250.0,0.06808528560766991
+A9-B5,A9,B5,ethanol_conversion_pct,乙醇转化率,275.0,0.8309989016385897
+A9-B5,A9,B5,ethanol_conversion_pct,乙醇转化率,300.0,1.0829197357211902
+A9-B5,A9,B5,ethanol_conversion_pct,乙醇转化率,350.0,2.4705165176208013
+A9-B5,A9,B5,c4_selectivity_pct,C4烯烃选择性,250.0,-1.1000000000000005
+A9-B5,A9,B5,c4_selectivity_pct,C4烯烃选择性,275.0,-4.62
+A9-B5,A9,B5,c4_selectivity_pct,C4烯烃选择性,300.0,-8.180000000000001
+A9-B5,A9,B5,c4_selectivity_pct,C4烯烃选择性,350.0,-15.7

@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "status": "computed",
+  "grid_n": 10240,
+  "scenario": "mean_tail",
+  "tight": false,
+  "t_cross_s": 206926.13864059298,
+  "n_end": 206927,
+  "common_end_s": 206927,
+  "requested_common_end_s": null,
+  "rtol": 2e-09,
+  "atol_temperature": 2e-09,
+  "atol_moisture": 2e-11,
+  "max_step_observed_s": 5.0,
+  "max_step_tail_s": 300.0,
+  "explicit_initial_step_s": 0.001,
+  "output_sample_block_size": 64,
+  "tail_segment_s": 3600,
+  "work_limit_s": 1048575,
+  "threshold_kg_kg": 0.15,
+  "snapshot_roles": {
+    "initial": 0,
+    "summary_1800s": 1,
+    "summary_3600s": 2,
+    "summary_5400s": 3,
+    "summary_7200s": 4,
+    "summary_9000s": 5,
+    "summary_10800s": 6,
+    "observed_end": 7,
+    "threshold_crossing": 9,
+    "before_n_end": 8,
+    "n_end": 10,
+    "common_end": 10
+  },
+  "observed_extrema": {
+    "temperature_min_C": 28.0,
+    "temperature_max_C": 50.03986673257936,
+    "moisture_min_kg_kg": 0.05264949793874387,
+    "moisture_max_kg_kg": 2.5500000000000007
+  },
+  "extrema_scope": "all nodes at accepted steps and integer-second dense samples",
+  "invariant_bounds": {
+    "temperature_min_C": 28.0,
+    "temperature_max_C": 50.246,
+    "moisture_min_kg_kg": 0.01963,
+    "moisture_max_kg_kg": 2.55
+  },
+  "invariant_allowances": {
+    "temperature_C": 1e-07,
+    "moisture_kg_kg": 1e-08
+  },
+  "work": {
+    "nfev": 22693,
+    "njev": 307,
+    "nlu": 3492,
+    "accepted_steps": 10968,
+    "segments": 295
+  },
+  "elapsed_s": 159.71664820000296,
+  "numpy": "2.5.3",
+  "scipy": "1.18.1"
+}

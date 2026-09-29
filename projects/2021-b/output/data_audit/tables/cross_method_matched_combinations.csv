@@ -1,0 +1,5 @@
+﻿catalyst_id,catalyst_description,loading_method,cosio2_mass_mg,co_loading_wt_pct,hap_mass_mg,quartz_mass_mg,has_hap,active_catalyst_mass_mg,total_packed_mass_mg,cosio2_to_hap_ratio,hap_mass_fraction,ethanol_condition_ml_min
+A12,50mg 1wt%Co/SiO2- 50mg HAP-乙醇浓度1.68ml/min,I,50.0,1.0,50.0,0.0,True,100.0,100.0,1.0,0.5,1.68
+B1,50mg 1wt%Co/SiO2- 50mg HAP-乙醇浓度1.68ml/min,II,50.0,1.0,50.0,0.0,True,100.0,100.0,1.0,0.5,1.68
+A9,50mg 1wt%Co/SiO2- 50mg HAP-乙醇浓度2.1ml/min,I,50.0,1.0,50.0,0.0,True,100.0,100.0,1.0,0.5,2.1
+B5,50mg 1wt%Co/SiO2- 50mg HAP-乙醇浓度2.1ml/min,II,50.0,1.0,50.0,0.0,True,100.0,100.0,1.0,0.5,2.1

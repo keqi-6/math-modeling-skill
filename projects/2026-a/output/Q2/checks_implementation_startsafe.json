@@ -1,0 +1,317 @@
+{
+  "schema_version": "1.0",
+  "question": "Q2",
+  "axes": [
+    "E1",
+    "E2"
+  ],
+  "mode": "checks_only",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T15:38:48.305035+00:00",
+  "passed": true,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q2\\model_spec.md": "10d2ce44107c11c835ccf173c820e4100648f7c48fd7955c3890038a20f688a4",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\solve.py": "ad7eaf29c960bd00b1937cebb64507de952a4185b767dfeb50a31d89d72cb5ce",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\verify.py": "8a4cd6c83b614f8eee62fe1f60d29f32c1ba713223ccf4d8c6dcf566ce789ae8"
+  },
+  "checks": [
+    {
+      "axis": "E1",
+      "name": "raw_workbook_identity",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "all_frozen_nodes_equal_authoritative_worksheet",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "last_hour_integral_temperature",
+      "passed": true,
+      "value": 0.0,
+      "limit": 2e-13
+    },
+    {
+      "axis": "E1",
+      "name": "last_hour_integral_moisture",
+      "passed": true,
+      "value": 6.938893903907228e-18,
+      "limit": 2e-16
+    },
+    {
+      "axis": "E1",
+      "name": "full_boundary_interpolation_temperature",
+      "passed": true,
+      "value": 7.105427357601002e-15,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "full_boundary_interpolation_moisture",
+      "passed": true,
+      "value": 6.938893903907228e-18,
+      "limit": 2e-14
+    },
+    {
+      "axis": "E1",
+      "name": "boundary_rejects_negative",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "boundary_rejects_nan",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "boundary_rejects_inf",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "last_value_boundary_extension",
+      "passed": true,
+      "value": 0.0,
+      "limit": 2e-12
+    },
+    {
+      "axis": "E1",
+      "name": "independent_radius_geometry",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-15
+    },
+    {
+      "axis": "E1",
+      "name": "independent_volume_geometry",
+      "passed": true,
+      "value": 4.573977915173222e-20,
+      "limit": 1e-18
+    },
+    {
+      "axis": "E1",
+      "name": "independent_face_factors",
+      "passed": true,
+      "value": 7.105427357601002e-15,
+      "limit": 1e-12
+    },
+    {
+      "axis": "E1",
+      "name": "unchanged_surface_transfer_coefficients",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "interleaved_rhs_shape",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "temperature_rhs_independent_faces",
+      "passed": true,
+      "value": 1.8665252972381503e-15,
+      "limit": 2e-11
+    },
+    {
+      "axis": "E1",
+      "name": "moisture_rhs_independent_faces",
+      "passed": true,
+      "value": 1.728629616419131e-15,
+      "limit": 2e-11
+    },
+    {
+      "axis": "E1",
+      "name": "jacobian_sparse_CSC",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "complete_jac_theta_by_theta",
+      "passed": true,
+      "value": 3.0098009492383764e-15,
+      "limit": 2e-10,
+      "oracle": "complex step of independent face assembly"
+    },
+    {
+      "axis": "E1",
+      "name": "complete_jac_C_by_theta",
+      "passed": true,
+      "value": 2.523476868351077e-15,
+      "limit": 2e-10,
+      "oracle": "complex step of independent face assembly"
+    },
+    {
+      "axis": "E1",
+      "name": "complete_jac_theta_by_C",
+      "passed": true,
+      "value": 1.747665230932113e-15,
+      "limit": 2e-10,
+      "oracle": "complex step of independent face assembly"
+    },
+    {
+      "axis": "E1",
+      "name": "complete_jac_C_by_C",
+      "passed": true,
+      "value": 2.2864581778311607e-15,
+      "limit": 2e-10,
+      "oracle": "complex step of independent face assembly"
+    },
+    {
+      "axis": "E1",
+      "name": "chosen_state_exercises_all_coupling_derivatives",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "exact_quadratic_all_shells_including_axis_surface",
+      "passed": true,
+      "value": 1.4487154232009493e-12,
+      "limit": 5e-10
+    },
+    {
+      "axis": "E1",
+      "name": "quadratic_temperature_has_zero_moisture_rhs",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-14
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_zero_C",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_negative_C",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_absolute_zero_temperature",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_nan",
+      "passed": true
+    },
+    {
+      "axis": "E1",
+      "name": "rhs_rejects_infinity",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_series_truncation_difference",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-09,
+      "modes": 256,
+      "excludes_initial_robin_corner": true
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_C_remains_uniform_n160",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-11
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_C_remains_uniform_n320",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-11
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_C_remains_uniform_n640",
+      "passed": true,
+      "value": 0.0,
+      "limit": 1e-11
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_finest_temperature",
+      "passed": true,
+      "value": 2.5559569916566716e-05,
+      "limit": 5e-05,
+      "grids": [
+        160,
+        320,
+        640
+      ],
+      "grid_errors": [
+        0.00040907119608135645,
+        0.00010223937918141246,
+        2.5559569916566716e-05
+      ]
+    },
+    {
+      "axis": "E2",
+      "name": "bessel_spatial_error_decreases",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "manufactured_temperature_fine_error",
+      "passed": true,
+      "value": 5.6968382274646956e-05,
+      "limit": 0.0005,
+      "grids": [
+        20,
+        40,
+        80
+      ],
+      "errors": [
+        0.0009114079396113084,
+        0.00022786717554623692,
+        5.6968382274646956e-05
+      ],
+      "observed_order": 1.9999597743261646,
+      "source": "independent continuous radial divergence, not DUT residual"
+    },
+    {
+      "axis": "E2",
+      "name": "manufactured_temperature_convergence",
+      "passed": true
+    },
+    {
+      "axis": "E2",
+      "name": "manufactured_moisture_fine_error",
+      "passed": true,
+      "value": 2.6038065632505436e-06,
+      "limit": 5e-06,
+      "grids": [
+        20,
+        40,
+        80
+      ],
+      "errors": [
+        4.064916508284e-05,
+        1.039150992809823e-05,
+        2.6038065632505436e-06
+      ],
+      "observed_order": 1.9967111190484501,
+      "source": "independent continuous radial divergence, not DUT residual"
+    },
+    {
+      "axis": "E2",
+      "name": "manufactured_moisture_convergence",
+      "passed": true
+    }
+  ],
+  "details": {
+    "derivative_omission_signals": {
+      "s_prime": 0.31890010991946466,
+      "k_prime": 0.15313568544629835,
+      "D_C": 0.0028278332626710465,
+      "D_theta": 7.889437184079011e-05
+    },
+    "coverage": "E1 implementation and E2 independent small examples; full-process refinement remains separate."
+  },
+  "claim_boundary": "E1 implementation, E2 numerical agreement and selected E3 structural properties of the fixed-grid Q2 model. No continuous-PDE global well-posedness, rigorous total error bound, per-cell correct rounding or E4 empirical validation is established by this report."
+}

@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "scope": "Q1_environment_0_to_1800s",
+  "source": {
+    "path": "附件/附件1.xlsx",
+    "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "sheet": "Sheet1",
+    "range": "A2:C32"
+  },
+  "units": {
+    "time_s": "s",
+    "temperature_C": "degC",
+    "air_moisture_kg_kg": "kg/kg (air; per official statement)"
+  },
+  "interpolation": "piecewise_linear",
+  "valid_time_s": [
+    0,
+    1800
+  ],
+  "extrapolation": "error",
+  "rounding": "none",
+  "nodes": [
+    {
+      "time_s": 0,
+      "temperature_C": 28,
+      "air_moisture_kg_kg": 0.01963,
+      "source_row": 2
+    },
+    {
+      "time_s": 60,
+      "temperature_C": 28.528,
+      "air_moisture_kg_kg": 0.02002,
+      "source_row": 3
+    },
+    {
+      "time_s": 120,
+      "temperature_C": 29.192,
+      "air_moisture_kg_kg": 0.02053,
+      "source_row": 4
+    },
+    {
+      "time_s": 180,
+      "temperature_C": 29.684,
+      "air_moisture_kg_kg": 0.021,
+      "source_row": 5
+    },
+    {
+      "time_s": 240,
+      "temperature_C": 30.037,
+      "air_moisture_kg_kg": 0.02151,
+      "source_row": 6
+    },
+    {
+      "time_s": 300,
+      "temperature_C": 30.834,
+      "air_moisture_kg_kg": 0.02191,
+      "source_row": 7
+    },
+    {
+      "time_s": 360,
+      "temperature_C": 31.293,
+      "air_moisture_kg_kg": 0.02233,
+      "source_row": 8
+    },
+    {
+      "time_s": 420,
+      "temperature_C": 31.82,
+      "air_moisture_kg_kg": 0.02278,
+      "source_row": 9
+    },
+    {
+      "time_s": 480,
+      "temperature_C": 32.121,
+      "air_moisture_kg_kg": 0.02325,
+      "source_row": 10
+    },
+    {
+      "time_s": 540,
+      "temperature_C": 32.73,
+      "air_moisture_kg_kg": 0.02377,
+      "source_row": 11
+    },
+    {
+      "time_s": 600,
+      "temperature_C": 33.202,
+      "air_moisture_kg_kg": 0.02428,
+      "source_row": 12
+    },
+    {
+      "time_s": 660,
+      "temperature_C": 33.879,
+      "air_moisture_kg_kg": 0.02465,
+      "source_row": 13
+    },
+    {
+      "time_s": 720,
+      "temperature_C": 34.268,
+      "air_moisture_kg_kg": 0.02506,
+      "source_row": 14
+    },
+    {
+      "time_s": 780,
+      "temperature_C": 34.806,
+      "air_moisture_kg_kg": 0.02552,
+      "source_row": 15
+    },
+    {
+      "time_s": 840,
+      "temperature_C": 35.142,
+      "air_moisture_kg_kg": 0.02612,
+      "source_row": 16
+    },
+    {
+      "time_s": 900,
+      "temperature_C": 35.524,
+      "air_moisture_kg_kg": 0.0266,
+      "source_row": 17
+    },
+    {
+      "time_s": 960,
+      "temperature_C": 36.091,
+      "air_moisture_kg_kg": 0.02687,
+      "source_row": 18
+    },
+    {
+      "time_s": 1020,
+      "temperature_C": 36.354,
+      "air_moisture_kg_kg": 0.02732,
+      "source_row": 19
+    },
+    {
+      "time_s": 1080,
+      "temperature_C": 37.067,
+      "air_moisture_kg_kg": 0.02793,
+      "source_row": 20
+    },
+    {
+      "time_s": 1140,
+      "temperature_C": 37.419,
+      "air_moisture_kg_kg": 0.02826,
+      "source_row": 21
+    },
+    {
+      "time_s": 1200,
+      "temperature_C": 37.882,
+      "air_moisture_kg_kg": 0.02891,
+      "source_row": 22
+    },
+    {
+      "time_s": 1260,
+      "temperature_C": 38.134,
+      "air_moisture_kg_kg": 0.02921,
+      "source_row": 23
+    },
+    {
+      "time_s": 1320,
+      "temperature_C": 38.767,
+      "air_moisture_kg_kg": 0.02961,
+      "source_row": 24
+    },
+    {
+      "time_s": 1380,
+      "temperature_C": 39.125,
+      "air_moisture_kg_kg": 0.03029,
+      "source_row": 25
+    },
+    {
+      "time_s": 1440,
+      "temperature_C": 39.458,
+      "air_moisture_kg_kg": 0.03051,
+      "source_row": 26
+    },
+    {
+      "time_s": 1500,
+      "temperature_C": 39.595,
+      "air_moisture_kg_kg": 0.03098,
+      "source_row": 27
+    },
+    {
+      "time_s": 1560,
+      "temperature_C": 40.061,
+      "air_moisture_kg_kg": 0.03137,
+      "source_row": 28
+    },
+    {
+      "time_s": 1620,
+      "temperature_C": 40.238,
+      "air_moisture_kg_kg": 0.03179,
+      "source_row": 29
+    },
+    {
+      "time_s": 1680,
+      "temperature_C": 40.621,
+      "air_moisture_kg_kg": 0.03219,
+      "source_row": 30
+    },
+    {
+      "time_s": 1740,
+      "temperature_C": 41.166,
+      "air_moisture_kg_kg": 0.03262,
+      "source_row": 31
+    },
+    {
+      "time_s": 1800,
+      "temperature_C": 41.513,
+      "air_moisture_kg_kg": 0.03307,
+      "source_row": 32
+    }
+  ],
+  "approval": "用户于2026-09-10确认上一轮成组呈现的原始31节点分段线性方案。",
+  "generator_sha256": "c47fedfc247e9a9debdcc869207dddae472e1393dbe2bd7354e974e4923be8f2"
+}

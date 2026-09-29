@@ -1,0 +1,6 @@
+interface:
+  display_name: "数学建模项目控制器 V10"
+  short_description: "以原子规则、真实状态、可验证路由和回归门禁管理数学建模项目"
+  default_prompt: "使用 $mathematical-modeling-project-controller 管理或审计这个数学建模项目。"
+policy:
+  allow_implicit_invocation: true

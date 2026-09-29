@@ -1,0 +1,16 @@
+{
+  "source_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "node_count": 10241,
+  "time_count": 220001,
+  "all_node_first_strict_second": 206927,
+  "recrossings": 0,
+  "surface_first_strict_second": 45187,
+  "independent_fixed_baseline_checks": "passed",
+  "visual_review": [
+    "all three final PNGs and actual PDF renders inspected",
+    "all three text-hidden drawings inspected",
+    "all three grayscale drawings inspected; annotation arrow conversion corrected"
+  ],
+  "layout": "15.8 cm width; 300 dpi PNG; embedded TrueType fonts in all three PDFs; no Type 3 fonts",
+  "scope": "new three figures only"
+}

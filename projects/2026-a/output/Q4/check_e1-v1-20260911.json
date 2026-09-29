@@ -1,0 +1,601 @@
+{
+  "schema_version": "1.0",
+  "question": "Q4",
+  "axes": [
+    "E1"
+  ],
+  "mode": "implementation",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T20:16:50.390915+00:00",
+  "passed": true,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\verify.py": "6a87551fe3aec7a199c4203211cdb17ce981da33035464e7cee662ca854466f0",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\solve.py": "8a075fa2890c0f6265c33df8b75664f62b05e6ba4b765b8fa32cce69041dc0ef",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q4\\model_spec.md": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\GEOMETRY\\q4_radius.json": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件2.xlsx": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q2\\solve.py": "ad7eaf29c960bd00b1937cebb64507de952a4185b767dfeb50a31d89d72cb5ce"
+  },
+  "checks": [
+    {
+      "axis": "E1",
+      "id": "face_loop_appendix4_900s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 2.220446049250313e-16
+      },
+      "target": {
+        "atol": 2e-13,
+        "rtol": 2e-11
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix4_900s_TT",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 6.938893903907228e-18
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix4_900s_TC",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.3877787807814457e-17
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix4_900s_CT",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 4.658681209898652e-21
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix4_900s_CC",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 4.336808689942018e-19
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "face_loop_appendix4_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.3877787807814457e-16
+      },
+      "target": {
+        "atol": 2e-13,
+        "rtol": 2e-11
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix4_21600s_TT",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 6.938893903907228e-18
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix4_21600s_TC",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.3877787807814457e-17
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix4_21600s_CT",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 8.470329472543003e-21
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix4_21600s_CC",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 6.505213034913027e-19
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "face_loop_appendix3_900s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 3.3306690738754696e-16
+      },
+      "target": {
+        "atol": 2e-13,
+        "rtol": 2e-11
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix3_900s_TT",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 2.0816681711721685e-17
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix3_900s_TC",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.3877787807814457e-17
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix3_900s_CT",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 2.202285662861181e-20
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix3_900s_CC",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.734723475976807e-18
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "face_loop_appendix3_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 3.885780586188048e-16
+      },
+      "target": {
+        "atol": 2e-13,
+        "rtol": 2e-11
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix3_21600s_TT",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 2.7755575615628914e-17
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix3_21600s_TC",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.3877787807814457e-17
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix3_21600s_CT",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 4.404571325722362e-20
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "jacobian_appendix3_21600s_CC",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 5.204170427930421e-18
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-09
+      },
+      "note": "Complex-step of RHS is independent of the assembled analytical Jacobian."
+    },
+    {
+      "axis": "E1",
+      "id": "fixed_appendix3_rhs_0s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 5.551115123125783e-17
+      },
+      "target": {
+        "atol": 2e-13,
+        "rtol": 3e-11
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "fixed_appendix3_jac_0s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 4.163336342344337e-17
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-10
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "fixed_appendix3_rhs_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 2.7755575615628914e-17
+      },
+      "target": {
+        "atol": 2e-13,
+        "rtol": 3e-11
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "fixed_appendix3_jac_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 4.163336342344337e-17
+      },
+      "target": {
+        "atol": 3e-12,
+        "rtol": 3e-10
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_reject_unknown_method",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_reject_unknown_tail",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_reject_nonpositive_constant",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_reject_wrong_identity",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_reject_negative_time",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_reject_nonfinite_time",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_default_reject_beyond_72h",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_explicit_hold_last",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 0,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_tail_activation_metadata",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_linear_original_nodes",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-17,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_linear_positive_monotone",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Checks input reconstruction, not physical field accuracy."
+    },
+    {
+      "axis": "E1",
+      "id": "radius_pchip_original_nodes",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-17,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "radius_pchip_positive_monotone",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Checks input reconstruction, not physical field accuracy."
+    },
+    {
+      "axis": "E1",
+      "id": "radius_semantic_reject_negative_node",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Correct fixture SHA bypasses the identity guard so the semantic consumer check is exercised."
+    },
+    {
+      "axis": "E1",
+      "id": "radius_semantic_reject_duplicate_time",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Correct fixture SHA bypasses the identity guard so the semantic consumer check is exercised."
+    },
+    {
+      "axis": "E1",
+      "id": "radius_semantic_reject_wrong_source_row",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Correct fixture SHA bypasses the identity guard so the semantic consumer check is exercised."
+    },
+    {
+      "axis": "E1",
+      "id": "radius_semantic_reject_wrong_unit",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Correct fixture SHA bypasses the identity guard so the semantic consumer check is exercised."
+    },
+    {
+      "axis": "E1",
+      "id": "radius_linear_midpoint_rule",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 3.469446951953614e-18
+      },
+      "target": {
+        "atol": 2e-17,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "recorder_unique_endpoint_and_common_tail",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": "Synthetic fixture verifies storage/selection only, not event accuracy."
+    },
+    {
+      "axis": "E1",
+      "id": "recorder_moving_surface_and_outside_blank_contract",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "recorder_complete_endpoint_roles",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "recorder_reject_equality_at_endpoint",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "recorder_reject_preceding_already_strict",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "physical_projection_nonuniform_T_900s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-13,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "physical_projection_nonuniform_C_900s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.1102230246251565e-16
+      },
+      "target": {
+        "atol": 3e-15,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "physical_projection_nonuniform_T_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 0.0
+      },
+      "target": {
+        "atol": 2e-13,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "physical_projection_nonuniform_C_21600s",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 1.1102230246251565e-16
+      },
+      "target": {
+        "atol": 3e-15,
+        "rtol": 0
+      },
+      "note": null
+    },
+    {
+      "axis": "E1",
+      "id": "recorder_partial_horizon_not_official_answer",
+      "passed": true,
+      "observed": null,
+      "target": null,
+      "note": null
+    }
+  ],
+  "details": {},
+  "claim_boundary": "Only the actually executed axes/checks are reported. No E4 observation is supplied; no continuum strong-solution theorem, arbitrary-step BDF positivity, per-cell correct rounding proof, or cross-grid integer certainty is inferred."
+}

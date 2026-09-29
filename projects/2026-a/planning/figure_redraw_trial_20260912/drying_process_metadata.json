@@ -1,0 +1,145 @@
+{
+  "status": "internal candidate; not selected for briefs or official files",
+  "data_driven_visual": true,
+  "question": "How do moisture gradients persist while radial temperature differences subside?",
+  "source": "output/Q2/run_n10240_startsafe.npz",
+  "source_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "information_design": "Main row of moisture cross sections; complementary radial temperature-difference map and center/surface/area-mean range plot.",
+  "time_h": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "center_moisture": [
+    2.55,
+    2.54993409992138,
+    2.52573759862776,
+    2.170851540514741,
+    1.7661771073155368
+  ],
+  "surface_moisture": [
+    2.55,
+    1.6486177766658752,
+    1.471093601451303,
+    1.231092625853831,
+    1.0081231261700119
+  ],
+  "area_mean_moisture": [
+    2.5500000000000003,
+    2.282640624996464,
+    2.0649642248816114,
+    1.6900860833825275,
+    1.3825270577525866
+  ],
+  "area_mean_definition": "2/R^2 integral_0^R C(r) r dr, trapezoid integration of all 10241 nodes",
+  "circle_contour": "C=2.0 kg/kg when within the snapshot range; not a physical front",
+  "contour_radius_ratio": [
+    null,
+    0.8948199650304406,
+    0.7625200580707725,
+    0.4147406641191708,
+    null
+  ],
+  "temperature_difference_definition": "theta(r,t)-theta(0,t)",
+  "heatmap_source_sampling": "21 stored requested radii, every 30 seconds through 3 h; bilinear display interpolation only",
+  "disk_source_sampling": "10241 nodes at exact stored times; radial display interpolation only",
+  "color_scales": {
+    "C_kg_kg": [
+      0,
+      2.55
+    ],
+    "delta_theta_C": [
+      0,
+      3.5
+    ]
+  },
+  "range_panel_axis": [
+    0.8,
+    2.6
+  ],
+  "range_panel_axis_rationale": "Point positions and interval differences, not bars measured from zero; the displayed lower bound is explicitly ticked 0.8.",
+  "thermal_contour_levels_C": [
+    1,
+    2,
+    3
+  ],
+  "target_size_mm": [
+    170,
+    112.625
+  ],
+  "svg_structure": "Editable text, guides and markers; embedded numerical image fields.",
+  "export_records": [
+    {
+      "renderer": "Inkscape 1.4.4 (dcaf3e7, 2026-05-05)",
+      "input": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\drying_process.svg",
+      "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\drying_process.png",
+      "bytes": 369130,
+      "dpi": 300,
+      "text_to_path": false,
+      "warnings": ""
+    },
+    {
+      "renderer": "Inkscape 1.4.4 (dcaf3e7, 2026-05-05)",
+      "input": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\drying_process.svg",
+      "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\drying_process.pdf",
+      "bytes": 199540,
+      "dpi": 300,
+      "text_to_path": false,
+      "warnings": ""
+    },
+    {
+      "renderer": "Inkscape 1.4.4 (dcaf3e7, 2026-05-05)",
+      "input": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\drying_process_no_text.svg",
+      "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\figure_redraw_trial_20260912\\drying_process_no_text.png",
+      "bytes": 122182,
+      "dpi": 160,
+      "text_to_path": false,
+      "warnings": ""
+    }
+  ],
+  "generator_sha256": "526c5af0c24e9279b986f76212909b92f57283db89a8f07cc3b159b0fcee5950",
+  "review": {
+    "views": [
+      "drying_process.png",
+      "drying_process_page_width.png",
+      "drying_process_no_text.png",
+      "drying_process_grayscale.png",
+      "drying_process_pdf_check.png"
+    ],
+    "revisions": [
+      "Added a visible C=2.0 isoline key.",
+      "Added sparse labelled temperature-difference contours.",
+      "Renamed panel c around its information task and narrowed its position scale to explicitly labelled 0.8–2.6."
+    ],
+    "font_check": {
+      "pages": 1,
+      "fonts": {
+        "/GHVGIB+MicrosoftYaHei-Bold": {
+          "subtype": "/TrueType",
+          "embedded": true
+        },
+        "/YIXVNY+MicrosoftYaHei-Bold": {
+          "subtype": "/Type0",
+          "embedded": true
+        },
+        "/QJJDLV+MicrosoftYaHei": {
+          "subtype": "/TrueType",
+          "embedded": true
+        },
+        "/MQUJNH+MicrosoftYaHei": {
+          "subtype": "/Type0",
+          "embedded": true
+        }
+      },
+      "width_mm": 170.0
+    },
+    "status": "Internal sample awaiting user judgement; not added to briefs."
+  },
+  "outputs": {
+    "svg": "453d8b7352fe93604e7e42b5da28a748d33fcd0aa1acd846ddefa3f22a6c9dde",
+    "png": "7a6fa5577a1537436c74ff45a70e10dcf452faa58cabea607d8ea4540a5917b5",
+    "pdf": "d8b75998cbfcf3f51eb78e87bceef36c9a79fa17cb1d387f4df1723ef7df5e09"
+  }
+}

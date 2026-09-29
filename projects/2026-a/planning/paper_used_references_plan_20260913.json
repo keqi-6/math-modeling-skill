@@ -1,0 +1,80 @@
+{
+  "schema_version": "11.0",
+  "plan_id": "paper_used_references_20260913",
+  "window_context": "same_window",
+  "request": "然后还要整理一份真正用上，在论文里体现的参考文献表，以及文献的关键词，关键词就放在文献旁边",
+  "steps": [
+    {
+      "id": "assemble_used_references",
+      "tier": "G1_WORKING",
+      "mode": "mutate",
+      "object": "manuscript",
+      "action": "draft",
+      "component_id": "PAPER_USED_REFERENCES",
+      "events": [
+        "manuscript_write"
+      ],
+      "facts": {
+        "change_class": "section_substantive",
+        "completion_scope": "section_working_change_only",
+        "profile_selected": false,
+        "published_revision": false,
+        "existing_paths_only": false
+      },
+      "working_context": {
+        "component_type": "artifact",
+        "state": "A1"
+      },
+      "depends_on": [],
+      "change_set": {
+        "paths": [
+          "docs/paper_references",
+          "planning/paper_used_references_20260913",
+          "scripts/build_paper_used_references.py"
+        ],
+        "facets": [
+          "explanation",
+          "source_identity",
+          "format",
+          "notation"
+        ],
+        "claim_refs": []
+      }
+    },
+    {
+      "id": "render_used_references",
+      "tier": "G1_WORKING",
+      "mode": "mutate",
+      "object": "manuscript",
+      "action": "render",
+      "component_id": "PAPER_USED_REFERENCES",
+      "events": [
+        "visual_render"
+      ],
+      "facts": {
+        "change_class": "render_output",
+        "completion_scope": "render_attempt_and_output_only",
+        "profile_selected": false,
+        "published_revision": false,
+        "existing_paths_only": false
+      },
+      "working_context": {
+        "component_type": "artifact",
+        "state": "A1"
+      },
+      "depends_on": [
+        "assemble_used_references"
+      ],
+      "change_set": {
+        "paths": [
+          "docs/paper_references/论文参考文献表_附关键词.pdf",
+          "planning/paper_used_references_20260913/validation.json"
+        ],
+        "facets": [
+          "render"
+        ],
+        "claim_refs": []
+      }
+    }
+  ]
+}

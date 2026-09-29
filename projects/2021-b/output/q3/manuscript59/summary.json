@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "status": "manuscript59_q3_component_pchip",
+  "missing_325_count": 11,
+  "interior_holdout_count": 72,
+  "observed_low_best_yield_pct": 17.264309323382783,
+  "table15": [
+    {
+      "method": "分量PCHIP后重构",
+      "highest_missing_prediction_pct": 6.456217098391277,
+      "catalyst_id": "A7",
+      "a2_observed_lead_pct_point": 10.808092224991505
+    },
+    {
+      "method": "直接收率PCHIP",
+      "highest_missing_prediction_pct": 6.551703373656117,
+      "catalyst_id": "A7",
+      "a2_observed_lead_pct_point": 10.712605949726665
+    },
+    {
+      "method": "局部直线插值",
+      "highest_missing_prediction_pct": 7.229294685464113,
+      "catalyst_id": "A7",
+      "a2_observed_lead_pct_point": 10.03501463791867
+    }
+  ],
+  "table16": [
+    {
+      "method": "分量PCHIP后重构",
+      "mae_pct_point": 0.5365074522705273,
+      "median_ae_pct_point": 0.08042949669707161,
+      "rmse_pct_point": 1.7048005190133668,
+      "max_ae_pct_point": 13.033827265728263,
+      "q90_ae_pct_point": 1.0863578064954615
+    },
+    {
+      "method": "直接收率PCHIP",
+      "mae_pct_point": 0.7152185718885238,
+      "median_ae_pct_point": 0.16268086556685651,
+      "rmse_pct_point": 1.92033365547368,
+      "max_ae_pct_point": 13.490627137330009,
+      "q90_ae_pct_point": 1.8011993000297142
+    },
+    {
+      "method": "局部直线插值",
+      "mae_pct_point": 1.5570410003985922,
+      "median_ae_pct_point": 0.809218541419311,
+      "rmse_pct_point": 2.787380179021031,
+      "max_ae_pct_point": 14.15218846592203,
+      "q90_ae_pct_point": 4.067943872340321
+    }
+  ],
+  "boundaries": [
+    "只插值组合自身温度范围内的325摄氏度标签缺口",
+    "插值结果不是实测观测，不替代两情景实测枚举推荐",
+    "遮点误差是预测误差，不是重复实验测量误差"
+  ]
+}

@@ -1,0 +1,1243 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "Q5-CANDIDATE-PILOT-1.0",
+  "result_id": "Q5-TRAJECTORY-CONDITIONED-LABEL-PILOT-WORKING-001",
+  "status": "working_selection_evidence",
+  "generated_at": "2026-08-28T13:40:01.374707+00:00",
+  "objective": "sum of per-missile strict complete-obscuration interval-union durations",
+  "pilot_role": "structure diagnostic, not formal Q5 result",
+  "budget": {
+    "proxy_step_s": 0.25,
+    "strict_step_s": 0.1,
+    "surface_n_theta": 64,
+    "surface_n_levels": 7,
+    "track_limit": 15,
+    "events_per_label": 8,
+    "plans_per_platform": 6,
+    "strict_combination_limit": 10
+  },
+  "generation": {
+    "tracks": [
+      {
+        "platform": "FY1",
+        "raw_anchor_count": 2,
+        "guard_track_count": 21,
+        "unique_track_count": 23,
+        "selected_track_count": 15
+      },
+      {
+        "platform": "FY2",
+        "raw_anchor_count": 494,
+        "guard_track_count": 0,
+        "unique_track_count": 493,
+        "selected_track_count": 15
+      },
+      {
+        "platform": "FY3",
+        "raw_anchor_count": 3449,
+        "guard_track_count": 0,
+        "unique_track_count": 3375,
+        "selected_track_count": 15
+      },
+      {
+        "platform": "FY4",
+        "raw_anchor_count": 731,
+        "guard_track_count": 0,
+        "unique_track_count": 731,
+        "selected_track_count": 15
+      },
+      {
+        "platform": "FY5",
+        "raw_anchor_count": 134,
+        "guard_track_count": 0,
+        "unique_track_count": 134,
+        "selected_track_count": 15
+      }
+    ],
+    "plans": [
+      {
+        "platform": "FY1",
+        "raw_same": 72,
+        "raw_mixed": 72,
+        "selected_same": 6,
+        "selected_mixed": 6,
+        "events": [
+          {
+            "raw_event_count": 8,
+            "unique_event_count": 7,
+            "selected_event_count": 7
+          },
+          {
+            "raw_event_count": 8,
+            "unique_event_count": 7,
+            "selected_event_count": 7
+          },
+          {
+            "raw_event_count": 8,
+            "unique_event_count": 7,
+            "selected_event_count": 7
+          },
+          {
+            "raw_event_count": 8,
+            "unique_event_count": 7,
+            "selected_event_count": 7
+          },
+          {
+            "raw_event_count": 8,
+            "unique_event_count": 7,
+            "selected_event_count": 7
+          },
+          {
+            "raw_event_count": 7,
+            "unique_event_count": 6,
+            "selected_event_count": 6
+          },
+          {
+            "raw_event_count": 7,
+            "unique_event_count": 6,
+            "selected_event_count": 6
+          },
+          {
+            "raw_event_count": 7,
+            "unique_event_count": 6,
+            "selected_event_count": 6
+          },
+          {
+            "raw_event_count": 10,
+            "unique_event_count": 9,
+            "selected_event_count": 8
+          },
+          {
+            "raw_event_count": 6,
+            "unique_event_count": 5,
+            "selected_event_count": 5
+          },
+          {
+            "raw_event_count": 3,
+            "unique_event_count": 2,
+            "selected_event_count": 2
+          },
+          {
+            "raw_event_count": 2,
+            "unique_event_count": 1,
+            "selected_event_count": 1
+          },
+          {
+            "raw_event_count": 2,
+            "unique_event_count": 1,
+            "selected_event_count": 1
+          },
+          {
+            "raw_event_count": 2,
+            "unique_event_count": 1,
+            "selected_event_count": 1
+          },
+          {
+            "raw_event_count": 2,
+            "unique_event_count": 1,
+            "selected_event_count": 1
+          }
+        ]
+      },
+      {
+        "platform": "FY2",
+        "raw_same": 120,
+        "raw_mixed": 180,
+        "selected_same": 6,
+        "selected_mixed": 6,
+        "events": [
+          {
+            "raw_event_count": 32,
+            "unique_event_count": 31,
+            "selected_event_count": 14
+          },
+          {
+            "raw_event_count": 28,
+            "unique_event_count": 27,
+            "selected_event_count": 13
+          },
+          {
+            "raw_event_count": 44,
+            "unique_event_count": 43,
+            "selected_event_count": 18
+          },
+          {
+            "raw_event_count": 52,
+            "unique_event_count": 50,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 33,
+            "unique_event_count": 33,
+            "selected_event_count": 16
+          },
+          {
+            "raw_event_count": 47,
+            "unique_event_count": 45,
+            "selected_event_count": 16
+          },
+          {
+            "raw_event_count": 68,
+            "unique_event_count": 67,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 46,
+            "unique_event_count": 45,
+            "selected_event_count": 16
+          },
+          {
+            "raw_event_count": 79,
+            "unique_event_count": 73,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 79,
+            "unique_event_count": 72,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 78,
+            "unique_event_count": 72,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 73,
+            "unique_event_count": 70,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 70,
+            "unique_event_count": 66,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 51,
+            "unique_event_count": 50,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 70,
+            "unique_event_count": 65,
+            "selected_event_count": 24
+          }
+        ]
+      },
+      {
+        "platform": "FY3",
+        "raw_same": 120,
+        "raw_mixed": 180,
+        "selected_same": 6,
+        "selected_mixed": 6,
+        "events": [
+          {
+            "raw_event_count": 31,
+            "unique_event_count": 30,
+            "selected_event_count": 12
+          },
+          {
+            "raw_event_count": 51,
+            "unique_event_count": 50,
+            "selected_event_count": 16
+          },
+          {
+            "raw_event_count": 51,
+            "unique_event_count": 50,
+            "selected_event_count": 16
+          },
+          {
+            "raw_event_count": 66,
+            "unique_event_count": 65,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 107,
+            "unique_event_count": 101,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 117,
+            "unique_event_count": 106,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 117,
+            "unique_event_count": 111,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 115,
+            "unique_event_count": 99,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 112,
+            "unique_event_count": 106,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 116,
+            "unique_event_count": 106,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 115,
+            "unique_event_count": 96,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 118,
+            "unique_event_count": 107,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 65,
+            "unique_event_count": 63,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 85,
+            "unique_event_count": 82,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 87,
+            "unique_event_count": 84,
+            "selected_event_count": 24
+          }
+        ]
+      },
+      {
+        "platform": "FY4",
+        "raw_same": 120,
+        "raw_mixed": 180,
+        "selected_same": 6,
+        "selected_mixed": 6,
+        "events": [
+          {
+            "raw_event_count": 50,
+            "unique_event_count": 35,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 49,
+            "unique_event_count": 33,
+            "selected_event_count": 18
+          },
+          {
+            "raw_event_count": 50,
+            "unique_event_count": 36,
+            "selected_event_count": 18
+          },
+          {
+            "raw_event_count": 68,
+            "unique_event_count": 47,
+            "selected_event_count": 22
+          },
+          {
+            "raw_event_count": 48,
+            "unique_event_count": 37,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 48,
+            "unique_event_count": 34,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 23,
+            "unique_event_count": 19,
+            "selected_event_count": 15
+          },
+          {
+            "raw_event_count": 46,
+            "unique_event_count": 34,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 69,
+            "unique_event_count": 46,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 89,
+            "unique_event_count": 57,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 68,
+            "unique_event_count": 47,
+            "selected_event_count": 23
+          },
+          {
+            "raw_event_count": 87,
+            "unique_event_count": 62,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 30,
+            "unique_event_count": 25,
+            "selected_event_count": 16
+          },
+          {
+            "raw_event_count": 47,
+            "unique_event_count": 36,
+            "selected_event_count": 17
+          },
+          {
+            "raw_event_count": 66,
+            "unique_event_count": 42,
+            "selected_event_count": 22
+          }
+        ]
+      },
+      {
+        "platform": "FY5",
+        "raw_same": 120,
+        "raw_mixed": 156,
+        "selected_same": 6,
+        "selected_mixed": 6,
+        "events": [
+          {
+            "raw_event_count": 14,
+            "unique_event_count": 14,
+            "selected_event_count": 8
+          },
+          {
+            "raw_event_count": 16,
+            "unique_event_count": 16,
+            "selected_event_count": 8
+          },
+          {
+            "raw_event_count": 14,
+            "unique_event_count": 13,
+            "selected_event_count": 8
+          },
+          {
+            "raw_event_count": 20,
+            "unique_event_count": 19,
+            "selected_event_count": 8
+          },
+          {
+            "raw_event_count": 45,
+            "unique_event_count": 42,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 43,
+            "unique_event_count": 38,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 43,
+            "unique_event_count": 36,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 39,
+            "unique_event_count": 36,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 45,
+            "unique_event_count": 41,
+            "selected_event_count": 24
+          },
+          {
+            "raw_event_count": 34,
+            "unique_event_count": 32,
+            "selected_event_count": 22
+          },
+          {
+            "raw_event_count": 33,
+            "unique_event_count": 27,
+            "selected_event_count": 21
+          },
+          {
+            "raw_event_count": 34,
+            "unique_event_count": 27,
+            "selected_event_count": 21
+          },
+          {
+            "raw_event_count": 14,
+            "unique_event_count": 11,
+            "selected_event_count": 8
+          },
+          {
+            "raw_event_count": 20,
+            "unique_event_count": 18,
+            "selected_event_count": 8
+          },
+          {
+            "raw_event_count": 20,
+            "unique_event_count": 17,
+            "selected_event_count": 14
+          }
+        ]
+      }
+    ],
+    "same_strict_count": 10,
+    "mixed_strict_count": 11
+  },
+  "same_primary_best": {
+    "objective_s": 21.27331677332107,
+    "durations_s": [
+      14.528169973943097,
+      6.745146799377974,
+      0.0
+    ],
+    "by_missile": [
+      {
+        "intervals_s": [
+          [
+            1.4886310604096944,
+            6.067543001568107
+          ],
+          [
+            16.619810080953528,
+            23.480461354828073
+          ],
+          [
+            23.97227409129455,
+            27.06088085020469
+          ]
+        ],
+        "duration_s": 14.528169973943097,
+        "scan_count": 414,
+        "minimum_margin_m": -9.391985362578628
+      },
+      {
+        "intervals_s": [
+          [
+            9.462084233705927,
+            16.2072310330839
+          ]
+        ],
+        "duration_s": 6.745146799377974,
+        "scan_count": 414,
+        "minimum_margin_m": -8.633944972606272
+      },
+      {
+        "intervals_s": [],
+        "duration_s": 0.0,
+        "scan_count": 414,
+        "minimum_margin_m": 219.33621148842883
+      }
+    ],
+    "proxy_score_s": 21.5,
+    "active_bomb_count": 6,
+    "minimum_release_gap_s": 1.179354456527916,
+    "label_only_durations_s": [
+      14.528169973943097,
+      6.745146548049105,
+      0.0
+    ],
+    "cross_label_gain_raw_s": 2.5132887060408393e-07,
+    "cross_label_gain_s": 2.5132887060408393e-07,
+    "cross_label_monotonicity_within_tolerance": true,
+    "platforms": [
+      {
+        "platform": "FY1",
+        "heading_rad": 0.09999999999999998,
+        "heading_deg": 5.729577951308231,
+        "speed_mps": 80.0,
+        "label_pattern": [
+          "M1"
+        ],
+        "events": [
+          {
+            "platform": "FY1",
+            "label": "M1",
+            "heading": 0.09999999999999998,
+            "speed": 80.0,
+            "observation": 3.75,
+            "age": 2.453661496306326,
+            "fraction": 0.05176716078183056,
+            "release": 0.6477478776581259,
+            "fuse": 0.648590626035548,
+            "explosion": 1.2963385036936739,
+            "height": 1797.9387179791122,
+            "source": "curve",
+            "heading_deg": 5.729577951308231,
+            "release_point_m": [
+              17851.560946905585,
+              5.173350700187387,
+              1800.0
+            ],
+            "explosion_point_m": [
+              17903.18897686284,
+              10.353432156366102,
+              1797.9387179791122
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY2",
+        "heading_rad": 5.209233461800433,
+        "heading_deg": 298.46709185948816,
+        "speed_mps": 115.96547871888642,
+        "label_pattern": [
+          "M2",
+          "M2"
+        ],
+        "events": [
+          {
+            "platform": "FY2",
+            "label": "M2",
+            "heading": 5.209233461800433,
+            "speed": 115.96547871888642,
+            "observation": 11.25,
+            "age": 1.7879162100343766,
+            "fraction": 0.19965761182834646,
+            "release": 8.068611574323644,
+            "fuse": 1.3934722156419799,
+            "explosion": 9.462083789965623,
+            "height": 1390.4853524027458,
+            "source": "curve",
+            "heading_deg": 298.46709185948816,
+            "release_point_m": [
+              12445.995740042788,
+              577.4517534249447,
+              1400.0
+            ],
+            "explosion_point_m": [
+              12523.020475503103,
+              435.395326855241,
+              1390.4853524027458
+            ]
+          },
+          {
+            "platform": "FY2",
+            "label": "M2",
+            "heading": 5.209233461800433,
+            "speed": 115.96547871888642,
+            "observation": 14.25,
+            "age": 4.693676779082461,
+            "fraction": 0.15079929632430097,
+            "release": 9.24796603085156,
+            "fuse": 0.3083571900659794,
+            "explosion": 9.55632322091754,
+            "height": 1399.5340876323396,
+            "source": "curve",
+            "heading_deg": 298.46709185948816,
+            "release_point_m": [
+              12511.185030513252,
+              457.22339302220314,
+              1400.0
+            ],
+            "explosion_point_m": [
+              12528.229597836165,
+              425.7881623544233,
+              1399.5340876323396
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY3",
+        "heading_rad": 1.429071364211157,
+        "heading_deg": 81.87975779230221,
+        "speed_mps": 138.99357509071405,
+        "label_pattern": [
+          "M1"
+        ],
+        "events": [
+          {
+            "platform": "FY3",
+            "label": "M1",
+            "heading": 1.429071364211157,
+            "speed": 138.99357509071405,
+            "observation": 25.5,
+            "age": 3.0,
+            "fraction": 0.48,
+            "release": 19.48893895352168,
+            "fuse": 3.0110610464783205,
+            "explosion": 22.5,
+            "height": 655.5742057344663,
+            "source": "anchor",
+            "heading_deg": 81.87975779230221,
+            "release_point_m": [
+              6382.625955057476,
+              -318.3219999954172,
+              700.0
+            ],
+            "explosion_point_m": [
+              6441.742057344663,
+              95.99999999999955,
+              655.5742057344663
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY4",
+        "heading_rad": 5.130059105138109,
+        "heading_deg": 293.9307353770735,
+        "speed_mps": 138.6264974151891,
+        "label_pattern": [
+          "M1"
+        ],
+        "events": [
+          {
+            "platform": "FY4",
+            "label": "M1",
+            "heading": 5.130059105138109,
+            "speed": 138.6264974151891,
+            "observation": 18.5,
+            "age": 3.0,
+            "fraction": 0.18,
+            "release": 4.407242432011943,
+            "fuse": 11.092757567988057,
+            "explosion": 15.5,
+            "height": 1197.058574735434,
+            "source": "anchor",
+            "heading_deg": 293.9307353770735,
+            "release_point_m": [
+              11247.825141217863,
+              1441.5597331308738,
+              1800.0
+            ],
+            "explosion_point_m": [
+              11871.58574735434,
+              36.0,
+              1197.058574735434
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY5",
+        "heading_rad": 1.8160320633588345,
+        "heading_deg": 104.05097269089573,
+        "speed_mps": 112.33399270950287,
+        "label_pattern": [
+          "M1"
+        ],
+        "events": [
+          {
+            "platform": "FY5",
+            "label": "M1",
+            "heading": 1.8160320633588345,
+            "speed": 112.33399270950287,
+            "observation": 21.5,
+            "age": 3.0,
+            "fraction": 0.08,
+            "release": 15.605421370392385,
+            "fuse": 2.8945786296076155,
+            "explosion": 18.5,
+            "height": 1258.9449313293926,
+            "source": "anchor",
+            "heading_deg": 104.05097269089573,
+            "release_point_m": [
+              12574.39318547194,
+              -299.43083877237586,
+              1300.0
+            ],
+            "explosion_point_m": [
+              12495.449313293926,
+              15.999999999999773,
+              1258.9449313293926
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "mixed_primary_best": {
+    "objective_s": 42.043507172432136,
+    "durations_s": [
+      16.5915544916716,
+      13.941707183030502,
+      11.510245497730034
+    ],
+    "by_missile": [
+      {
+        "intervals_s": [
+          [
+            1.4886313370762028,
+            6.0675432746484965
+          ],
+          [
+            14.86489127592621,
+            20.078874497660607
+          ],
+          [
+            20.77222550971789,
+            24.59646500604387
+          ],
+          [
+            28.27707436200481,
+            31.251494198043744
+          ]
+        ],
+        "duration_s": 16.5915544916716,
+        "scan_count": 462,
+        "minimum_margin_m": -9.444763633960521
+      },
+      {
+        "intervals_s": [
+          [
+            8.841402740347263,
+            12.703882072769114
+          ],
+          [
+            13.452046156665086,
+            17.085234216640657
+          ],
+          [
+            19.990887537899987,
+            23.5399695869866
+          ],
+          [
+            27.813447192833202,
+            30.710404934379667
+          ]
+        ],
+        "duration_s": 13.941707183030502,
+        "scan_count": 462,
+        "minimum_margin_m": -9.332535948062265
+      },
+      {
+        "intervals_s": [
+          [
+            13.6011519686132,
+            22.200909713483156
+          ],
+          [
+            24.30686062001022,
+            27.217348372870298
+          ]
+        ],
+        "duration_s": 11.510245497730034,
+        "scan_count": 462,
+        "minimum_margin_m": -9.06354292303154
+      }
+    ],
+    "proxy_score_s": 41.75,
+    "active_bomb_count": 13,
+    "minimum_release_gap_s": 1.002713510639473,
+    "label_only_durations_s": [
+      16.58353701991814,
+      13.941707517917362,
+      11.51024486588488
+    ],
+    "cross_label_gain_raw_s": 0.008017768711752638,
+    "cross_label_gain_s": 0.008017768711752638,
+    "cross_label_monotonicity_within_tolerance": true,
+    "platforms": [
+      {
+        "platform": "FY1",
+        "heading_rad": 0.09999999999999998,
+        "heading_deg": 5.729577951308231,
+        "speed_mps": 70.0,
+        "label_pattern": [
+          "M1"
+        ],
+        "events": [
+          {
+            "platform": "FY1",
+            "label": "M1",
+            "heading": 0.09999999999999998,
+            "speed": 70.0,
+            "observation": 3.75,
+            "age": 2.2684702814929443,
+            "fraction": 0.05176716078183056,
+            "release": 0.7507409825528323,
+            "fuse": 0.7307887359542237,
+            "explosion": 1.481529718507056,
+            "height": 1797.383144334672,
+            "source": "curve",
+            "heading_deg": 5.729577951308231,
+            "release_point_m": [
+              17852.289328327948,
+              5.246432611353222,
+              1800.0
+            ],
+            "explosion_point_m": [
+              17903.18897686284,
+              10.353432156366102,
+              1797.383144334672
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY2",
+        "heading_rad": 4.428763840873607,
+        "heading_deg": 253.7494765422058,
+        "speed_mps": 118.73294400999629,
+        "label_pattern": [
+          "M2",
+          "M1",
+          "M3"
+        ],
+        "events": [
+          {
+            "platform": "FY2",
+            "label": "M2",
+            "heading": 4.428763840873607,
+            "speed": 118.73294400999629,
+            "observation": 10.75,
+            "age": 2.1668754663005796,
+            "fraction": 0.2583726870532209,
+            "release": 4.124427428306653,
+            "fuse": 4.458697105392767,
+            "explosion": 8.58312453369942,
+            "height": 1302.5880985995746,
+            "source": "curve",
+            "heading_deg": 253.7494765422058,
+            "release_point_m": [
+              11862.961922459888,
+              929.8596435245155,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11714.817412639395,
+              421.61613991504623,
+              1302.5880985995746
+            ]
+          },
+          {
+            "platform": "FY2",
+            "label": "M1",
+            "heading": 4.428763840873607,
+            "speed": 118.73294400999629,
+            "observation": 16.75,
+            "age": 4.865233424457678,
+            "fraction": 0.2263223300944,
+            "release": 5.127140938946126,
+            "fuse": 6.757625636596196,
+            "explosion": 11.884766575542322,
+            "height": 1176.2390292025275,
+            "source": "curve",
+            "heading_deg": 253.7494765422058,
+            "release_point_m": [
+              11829.645799383396,
+              815.561090445507,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11605.117172786824,
+              45.264466018880285,
+              1176.2390292025275
+            ]
+          },
+          {
+            "platform": "FY2",
+            "label": "M3",
+            "heading": 4.428763840873607,
+            "speed": 118.73294400999629,
+            "observation": 18.5,
+            "age": 3.0,
+            "fraction": 0.08,
+            "release": 9.467863235648945,
+            "fuse": 6.032136764351056,
+            "explosion": 15.5,
+            "height": 1221.7052976752054,
+            "source": "anchor",
+            "heading_deg": 253.7494765422058,
+            "release_point_m": [
+              11685.421116317539,
+              320.7654458605307,
+              1400.0
+            ],
+            "explosion_point_m": [
+              11484.997556922995,
+              -366.8332518974328,
+              1221.7052976752054
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY3",
+        "heading_rad": 1.5284152420002775,
+        "heading_deg": 87.57174271008226,
+        "speed_mps": 119.18394355511182,
+        "label_pattern": [
+          "M3",
+          "M1",
+          "M2"
+        ],
+        "events": [
+          {
+            "platform": "FY3",
+            "label": "M3",
+            "heading": 1.5284152420002775,
+            "speed": 119.18394355511182,
+            "observation": 25.75,
+            "age": 1.5865367772868382,
+            "fraction": 0.40689036014295205,
+            "release": 21.066622413774102,
+            "fuse": 3.09684080893906,
+            "explosion": 24.163463222713162,
+            "height": 653.0069273200394,
+            "source": "curve",
+            "heading_deg": 87.57174271008226,
+            "release_point_m": [
+              6106.378708497423,
+              -491.45142334443744,
+              700.0
+            ],
+            "explosion_point_m": [
+              6122.016617565449,
+              -122.68914855692492,
+              653.0069273200394
+            ]
+          },
+          {
+            "platform": "FY3",
+            "label": "M1",
+            "heading": 1.5284152420002775,
+            "speed": 119.18394355511182,
+            "observation": 29.75,
+            "age": 3.802715764588065,
+            "fraction": 0.44861384477602995,
+            "release": 22.080989336345567,
+            "fuse": 3.8662948990663666,
+            "explosion": 25.947284235411935,
+            "height": 626.7536423919216,
+            "source": "curve",
+            "heading_deg": 87.57174271008226,
+            "release_point_m": [
+              6111.500889027659,
+              -370.6637313336205,
+              700.0
+            ],
+            "explosion_point_m": [
+              6131.024258742775,
+              89.72276895520599,
+              626.7536423919216
+            ]
+          },
+          {
+            "platform": "FY3",
+            "label": "M2",
+            "heading": 1.5284152420002775,
+            "speed": 119.18394355511182,
+            "observation": 29.25,
+            "age": 1.7513588677772276,
+            "fraction": 0.40297449913670835,
+            "release": 25.794762698007126,
+            "fuse": 1.703878434215645,
+            "explosion": 27.498641132222772,
+            "height": 685.7743115789327,
+            "source": "curve",
+            "heading_deg": 87.57174271008226,
+            "release_point_m": [
+              6130.254080977754,
+              71.56097357807948,
+              700.0
+            ],
+            "explosion_point_m": [
+              6138.858041484967,
+              274.453574821604,
+              685.7743115789327
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY4",
+        "heading_rad": 4.2117358126751325,
+        "heading_deg": 241.31468649038698,
+        "speed_mps": 137.323293838021,
+        "label_pattern": [
+          "M2",
+          "M1",
+          "M3"
+        ],
+        "events": [
+          {
+            "platform": "FY4",
+            "label": "M2",
+            "heading": 4.2117358126751325,
+            "speed": 137.323293838021,
+            "observation": 15.25,
+            "age": 1.7979543169857841,
+            "fraction": 0.30035572110715913,
+            "release": 1.7123725652133093,
+            "fuse": 11.739673117800907,
+            "explosion": 13.452045683014216,
+            "height": 1124.6823679271954,
+            "source": "curve",
+            "heading_deg": 241.31468649038698,
+            "release_point_m": [
+              10887.128971005126,
+              1793.7113329669967,
+              1800.0
+            ],
+            "explosion_point_m": [
+              10113.308476687305,
+              379.4387803273464,
+              1124.6823679271954
+            ]
+          },
+          {
+            "platform": "FY4",
+            "label": "M1",
+            "heading": 4.2117358126751325,
+            "speed": 137.323293838021,
+            "observation": 18.25,
+            "age": 2.174419788452468,
+            "fraction": 0.3169144350044839,
+            "release": 3.3151955065813556,
+            "fuse": 12.760384704966176,
+            "explosion": 16.075580211547532,
+            "height": 1002.1456526881997,
+            "source": "curve",
+            "heading_deg": 241.31468649038698,
+            "release_point_m": [
+              10781.478904913192,
+              1600.6200543622474,
+              1800.0
+            ],
+            "explosion_point_m": [
+              9940.378211478199,
+              63.38288700089697,
+              1002.1456526881997
+            ]
+          },
+          {
+            "platform": "FY4",
+            "label": "M3",
+            "heading": 4.2117358126751325,
+            "speed": 137.323293838021,
+            "observation": 20.5,
+            "age": 1.5,
+            "fraction": 0.18,
+            "release": 6.499509616046167,
+            "fuse": 12.500490383953833,
+            "explosion": 19.0,
+            "height": 1034.314926787321,
+            "source": "anchor",
+            "heading_deg": 241.31468649038698,
+            "release_point_m": [
+              10571.584856456855,
+              1217.007325216442,
+              1800.0
+            ],
+            "explosion_point_m": [
+              9747.615095879883,
+              -288.920503195995,
+              1034.314926787321
+            ]
+          }
+        ]
+      },
+      {
+        "platform": "FY5",
+        "heading_rad": 2.1069070783397588,
+        "heading_deg": 120.71688341510729,
+        "speed_mps": 138.52689558737737,
+        "label_pattern": [
+          "M3",
+          "M1",
+          "M2"
+        ],
+        "events": [
+          {
+            "platform": "FY5",
+            "label": "M3",
+            "heading": 2.1069070783397588,
+            "speed": 138.52689558737737,
+            "observation": 15.25,
+            "age": 1.6488474959555948,
+            "fraction": 0.10519601410564018,
+            "release": 11.392987245026891,
+            "fuse": 2.2081652590175134,
+            "explosion": 13.601152504044405,
+            "height": 1276.1076303254538,
+            "source": "curve",
+            "heading_deg": 120.71688341510729,
+            "release_point_m": [
+              12193.843370790708,
+              -643.1884094889256,
+              1300.0
+            ],
+            "explosion_point_m": [
+              12037.59575779319,
+              -380.2139891053116,
+              1276.1076303254538
+            ]
+          },
+          {
+            "platform": "FY5",
+            "label": "M1",
+            "heading": 2.1069070783397588,
+            "speed": 138.52689558737737,
+            "observation": 22.75,
+            "age": 5.77698506458621,
+            "fraction": 0.10673622949037789,
+            "release": 12.40527632417691,
+            "fuse": 4.567738611236879,
+            "explosion": 16.97301493541379,
+            "height": 1197.7652434991373,
+            "source": "curve",
+            "heading_deg": 120.71688341510729,
+            "release_point_m": [
+              12122.214786093646,
+              -522.6330603079577,
+              1300.0
+            ],
+            "explosion_point_m": [
+              11799.006071579266,
+              21.34724589807547,
+              1197.7652434991373
+            ]
+          },
+          {
+            "platform": "FY5",
+            "label": "M2",
+            "heading": 2.1069070783397588,
+            "speed": 138.52689558737737,
+            "observation": 21.75,
+            "age": 1.7591120356719543,
+            "fraction": 0.07447235141289708,
+            "release": 18.30956116012751,
+            "fuse": 1.681326804200535,
+            "explosion": 19.990887964328046,
+            "height": 1286.1483868696364,
+            "source": "curve",
+            "heading_deg": 120.71688341510729,
+            "release_point_m": [
+              11704.433368553733,
+              180.51896881358834,
+              1300.0
+            ],
+            "explosion_point_m": [
+              11585.46432909789,
+              380.7512385698815,
+              1286.1483868696364
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "comparison": {
+    "mixed_minus_same_objective_s": 20.770190399111065,
+    "finite_library_dominance_pass": true,
+    "selected_architecture": "trajectory-conditioned mixed-primary event scheduling",
+    "single_primary_role": "embedded allocation baseline and seed",
+    "direct_40d_role": "coverage guard and post-selection refinement only"
+  },
+  "identity": {
+    "data/A题.pdf": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "data/附件/result3.xlsx": "b648c82d63e459ba6e6b3711ae79875e373521cd543b45571c4d8ff1ad5ec54a",
+    "planning/28_q5_scope_problem_and_evidence_plan.md": "3debeb5f008d22de4348b3ac2b946fd2f0edef2d847ca51562ecc1921a4af9c8",
+    "planning/29_q5_candidate_set.md": "7bd9e9bf826e8f2dfb6adc208c39de28a82ce2feba0d7972eb22f1946686698f"
+  },
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.4.6"
+  },
+  "elapsed_s": 10.37114041899622,
+  "claims": {
+    "formal_solution": false,
+    "global_optimality": false,
+    "labels_filter_physical_clouds": false,
+    "all_three_missiles_positive_required": false
+  }
+}

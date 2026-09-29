@@ -1,0 +1,192 @@
+{
+  "schema_version": "12.0",
+  "principle": "each_normative_fact_has_exactly_one_owner",
+  "classes": {
+    "controller_protocol": {
+      "owner": "SKILL.md",
+      "owns": [
+        "agent_semantic_planning_boundary",
+        "authorization_boundary",
+        "scoped_failure_protocol"
+      ],
+      "may_reference": [
+        "policy_atom",
+        "machine_contract"
+      ]
+    },
+    "policy_atom": {
+      "owner_pattern": "rules/*.json#RULE.ID",
+      "normative_field": "effect",
+      "non_normative_fields": [
+        "instruction_gloss",
+        "failure_example",
+        "outcomes"
+      ],
+      "selection_contract": "references/runtime-policy.json",
+      "selection_driver": "scripts/resolve_route.py"
+    },
+    "runtime_policy_contract": {
+      "owner": "references/runtime-policy.json",
+      "owns": [
+        "activation_semantics",
+        "execution_tiers",
+        "enforcement_timing",
+        "evidence_persistence",
+        "closure_and_invalidation_scope"
+      ],
+      "shape_owner": "references/semantic-plan.schema.json",
+      "interpreter": "scripts/resolve_route.py"
+    },
+    "semantic_plan_contract": {
+      "owner": "references/semantic-plan.schema.json",
+      "owns": [
+        "internal_plan_shape",
+        "ordered_step_shape",
+        "changeset_shape"
+      ],
+      "interpreter": "scripts/resolve_route.py"
+    },
+    "route_machine_contract": {
+      "owner": "references/route-contract.json",
+      "owns": [
+        "route_vocabulary",
+        "structured_route_tuple",
+        "allowed_actual_action_events",
+        "route_write_policy"
+      ],
+      "interpreter": "scripts/resolve_route.py"
+    },
+    "state_machine_contract": {
+      "owner": "references/state-machine.json",
+      "owns": [
+        "component_state_sets",
+        "legal_transitions",
+        "transition_gate_identifiers"
+      ],
+      "shape_owner": "references/state.schema.json",
+      "interpreter": "scripts/state_manager.py"
+    },
+    "artifact_machine_contract": {
+      "owner": "references/artifact-contract.json",
+      "owns": [
+        "artifact_classes",
+        "admission_fields",
+        "promotion_requirements",
+        "default_file_policy"
+      ],
+      "interpreters": [
+        "scripts/artifact_guard.py",
+        "scripts/state_manager.py"
+      ]
+    },
+    "project_platform_contract": {
+      "owner": "references/project-platform-contract.json",
+      "owns": [
+        "canonical_logical_project_roles",
+        "role_to_path_and_class_mapping",
+        "new_project_layout_policy",
+        "existing_project_compatibility_policy",
+        "lazy_physical_materialization_boundary"
+      ],
+      "interpreters": [
+        "scripts/artifact_guard.py",
+        "scripts/state_manager.py"
+      ],
+      "boundary": "The platform is logically mandatory. Physical directories exist only when a validated artifact needs their parent chain."
+    },
+    "release_machine_contract": {
+      "owner": "references/release-policy.json",
+      "owns": [
+        "active_release_driver_set",
+        "behavioral_evidence_standard",
+        "legacy_test_stack_status",
+        "release_test_budget",
+        "freeze_authorization_boundary"
+      ],
+      "interpreters": [
+        "scripts/validate_release.py",
+        "scripts/freeze_release.py"
+      ]
+    },
+    "receipt_machine_contract": {
+      "owner": "references/receipt.schema.json",
+      "owns": [
+        "receipt_shape",
+        "receipt_closed_world_fields"
+      ],
+      "semantic_interpreter": "scripts/validate_receipt.py"
+    },
+    "v10_lineage_identity": {
+      "owner": "references/v10-lineage-seal.json",
+      "owns": [
+        "official_frozen_v10_manifest_identity",
+        "official_frozen_v10_release_tree_identity",
+        "official_frozen_v10_rule_inventory_identity"
+      ],
+      "interpreter": "scripts/validate_v10_corpus.py"
+    },
+    "change_machine_contract": {
+      "owner": "references/change-envelope.schema.json",
+      "runtime_status": "legacy_v10_compatibility_only",
+      "owns": [
+        "legacy_v10_change_envelope_shape",
+        "legacy_v10_declared_change_fields"
+      ],
+      "legacy_v10_tools": [
+        "scripts/analyze_rule_change.py",
+        "scripts/apply_rule_change.py",
+        "scripts/run_change_evals.py",
+        "scripts/run_transaction_tests.py"
+      ],
+      "v12_runtime_interpreter": null,
+      "boundary": "These files are retained for V10 compatibility and historical regression only. They do not classify V12 requests, constrain V12 to one operation, or serve as V12 active semantic interpreters."
+    }
+  },
+  "active_legacy_boundary": {
+    "v12_active_skill_maintenance_entry": [
+      "references/semantic-plan.schema.json",
+      "references/route-contract.json",
+      "scripts/resolve_route.py",
+      "scripts/run_authorized_action.py"
+    ],
+    "v12_active_maintenance_gates": [
+      "scripts/validate_release.py"
+    ],
+    "legacy_v10_only": [
+      "references/change-envelope.schema.json",
+      "scripts/analyze_rule_change.py",
+      "scripts/apply_rule_change.py",
+      "scripts/run_change_evals.py",
+      "scripts/run_transaction_tests.py"
+    ],
+    "legacy_change_stack_is_v12_runtime": false,
+    "legacy_v10_v11_test_stack_is_v12_release_gate": false
+  },
+  "interpreter_policy": {
+    "scripts_are_implementations_not_independent_normative_sources": true,
+    "implementation_must_be_checked_against_its_owner_contract": true,
+    "owner_restatement_outside_owner_must_be_referential_not_exhaustive": true
+  },
+  "atomicity_policy": {
+    "normative_unit": "one_independently_decidable_effect",
+    "required_effect_fields": [
+      "verb",
+      "target",
+      "value"
+    ],
+    "compound_value_allowed_only_for": [
+      "one_record_shape_whose_fields_share_scope_trigger_strength_exception_evidence_enforcement_and_outcome",
+      "one_conjunctive_gate_whose_members_share_scope_trigger_strength_exception_evidence_enforcement_and_outcome",
+      "one_closed_choice_set"
+    ],
+    "split_required_when": [
+      "a_member_can_change_without_the_others",
+      "a_member_can_pass_or_fail_without_the_others",
+      "scope_trigger_strength_exception_evidence_enforcement_or_outcome_differs"
+    ]
+  },
+  "context_policy": {
+    "method_notes_are_non_normative": true,
+    "imperative_language_in_method_notes_does_not_create_an_obligation": true
+  }
+}

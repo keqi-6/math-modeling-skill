@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s6_frontier_verification",
+  "claim_status": "all_reported_frontier_bounds_independently_verified",
+  "producer": "src/q1/05_verify_frontier_independent.py",
+  "independence_contract": {
+    "imports_main_core_or_brancher": false,
+    "verification_target": "prove each reported lower bound or return a weaker achieved bound"
+  },
+  "resource_contract": {
+    "node_limit_per_case": 5000,
+    "time_limit_seconds_per_case": 35.0,
+    "dual_iterations": 20
+  },
+  "results": [
+    {
+      "N": 23,
+      "scenarios": {
+        "R": {
+          "status": "independently_verified",
+          "stop_reason": "target_bound_verified",
+          "reported_bound": {
+            "numerator": 147998,
+            "denominator": 8855,
+            "decimal": "16.7134952004517221908526"
+          },
+          "independently_achieved_bound": {
+            "numerator": 147998,
+            "denominator": 8855,
+            "decimal": "16.7134952004517221908526"
+          },
+          "nodes_evaluated": 961,
+          "risk_prunes": 572,
+          "bound_prunes": 168,
+          "leaves": 24,
+          "dual_points": 10104,
+          "frontier_nodes": 0,
+          "elapsed_seconds": 16.7380582400001
+        },
+        "A": {
+          "status": "independently_verified",
+          "stop_reason": "target_bound_verified",
+          "reported_bound": {
+            "numerator": 20663,
+            "denominator": 1012,
+            "decimal": "20.4179841897233201581028"
+          },
+          "independently_achieved_bound": {
+            "numerator": 20663,
+            "denominator": 1012,
+            "decimal": "20.4179841897233201581028"
+          },
+          "nodes_evaluated": 276,
+          "risk_prunes": 212,
+          "bound_prunes": 6,
+          "leaves": 0,
+          "dual_points": 1791,
+          "frontier_nodes": 0,
+          "elapsed_seconds": 3.08766337400084
+        }
+      }
+    },
+    {
+      "N": 50,
+      "scenarios": {
+        "R": {
+          "status": "independently_verified",
+          "stop_reason": "target_bound_verified",
+          "reported_bound": {
+            "numerator": 53921276,
+            "denominator": 1324225,
+            "decimal": "40.7191194849817817969001"
+          },
+          "independently_achieved_bound": {
+            "numerator": 53921276,
+            "denominator": 1324225,
+            "decimal": "40.7191194849817817969001"
+          },
+          "nodes_evaluated": 6,
+          "risk_prunes": 2,
+          "bound_prunes": 3,
+          "leaves": 0,
+          "dual_points": 116,
+          "frontier_nodes": 0,
+          "elapsed_seconds": 1.0848110949991678
+        },
+        "A": {
+          "status": "independently_verified",
+          "stop_reason": "target_bound_verified",
+          "reported_bound": {
+            "numerator": 59645309965,
+            "denominator": 1335560366,
+            "decimal": "44.6593890350591610772613"
+          },
+          "independently_achieved_bound": {
+            "numerator": 59645309965,
+            "denominator": 1335560366,
+            "decimal": "44.6593890350591610772613"
+          },
+          "nodes_evaluated": 1,
+          "risk_prunes": 0,
+          "bound_prunes": 1,
+          "leaves": 0,
+          "dual_points": 29,
+          "frontier_nodes": 0,
+          "elapsed_seconds": 0.2695384130020102
+        }
+      }
+    }
+  ]
+}

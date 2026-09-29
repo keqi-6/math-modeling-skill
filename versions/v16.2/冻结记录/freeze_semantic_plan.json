@@ -1,0 +1,82 @@
+{
+  "schema_version": "11.0",
+  "plan_id": "v16-2-freeze-20260913",
+  "request": "冻结吧",
+  "skill_authorization": {
+    "source": "current_request",
+    "quote": "冻结吧",
+    "target": "skill"
+  },
+  "steps": [
+    {
+      "id": "freeze",
+      "tier": "G3_RELEASE",
+      "mode": "skill_maintenance",
+      "object": "skill",
+      "action": "release",
+      "component_id": null,
+      "events": [
+        "release_candidate_validation",
+        "release_report"
+      ],
+      "facts": {
+        "scope": "Freeze the explicitly approved V16.2.0 candidate as a new independent release; no installation or project work.",
+        "approval_context": "User answered the prior question asking whether to formally freeze the delivered V16.2 candidate.",
+        "destination": "~\\AppData\\Local\\Temp\\cumcm-v16_2-freeze-20260913\\release\\skills",
+        "source": "~\\AppData\\Local\\Temp\\cumcm-v16_2-freeze-20260913\\source\\skills"
+      },
+      "depends_on": [],
+      "change_set": {
+        "paths": [
+          "SKILL.md",
+          "evals/release/release-plan.json",
+          "evals/release/release-state.json",
+          "references/preservation/v16-2-cumcm2026-lessons.md",
+          "references/preservation/v16-2-release-lineage.json",
+          "evals/release/frozen-manifest.json"
+        ],
+        "facets": [
+          "release_identity"
+        ],
+        "claim_refs": []
+      },
+      "runtime_actions": [
+        {
+          "id": "formal_freeze",
+          "kind": "skill_package_validation",
+          "event": "release_candidate_validation",
+          "repetition": "first_run",
+          "scope": {
+            "kind": "skill_candidate",
+            "component_ids": [],
+            "input_paths": [
+              "SKILL.md",
+              "references/release-policy.json",
+              "evals/release/release-plan.json",
+              "scripts/freeze_release.py"
+            ],
+            "output_paths": []
+          },
+          "command": {
+            "argv": [
+              "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\.venv\\Scripts\\python.exe",
+              "-B",
+              "scripts/freeze_release.py",
+              "--root",
+              ".",
+              "--destination",
+              "~\\AppData\\Local\\Temp\\cumcm-v16_2-freeze-20260913\\release\\skills",
+              "--authorization",
+              "冻结吧"
+            ],
+            "cwd": "."
+          },
+          "authorization": {
+            "source": "direct_user_request",
+            "request_excerpt": "冻结吧"
+          }
+        }
+      ]
+    }
+  ]
+}

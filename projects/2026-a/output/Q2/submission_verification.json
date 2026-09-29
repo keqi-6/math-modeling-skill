@@ -1,0 +1,1169 @@
+{
+  "schema_version": "1.0",
+  "question": "Q2",
+  "status": "pass",
+  "output_start_s": 1,
+  "output_end_s": 10800,
+  "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "created_at": "2026-09-10T18:21:21.646052+00:00",
+  "checks": [
+    {
+      "name": "same_model_source_spec_sha256",
+      "passed": true,
+      "sha256": "10d2ce44107c11c835ccf173c820e4100648f7c48fd7955c3890038a20f688a4"
+    },
+    {
+      "name": "same_model_source_boundary_sha256",
+      "passed": true,
+      "sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f"
+    },
+    {
+      "name": "same_model_source_solver_sha256",
+      "passed": true,
+      "sha256": "ad7eaf29c960bd00b1937cebb64507de952a4185b767dfeb50a31d89d72cb5ce"
+    },
+    {
+      "name": "same_model_source_raw_environment_sha256",
+      "passed": true,
+      "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7"
+    },
+    {
+      "name": "space_same_settings_rtol",
+      "passed": true
+    },
+    {
+      "name": "space_same_settings_atol_temperature",
+      "passed": true
+    },
+    {
+      "name": "space_same_settings_atol_moisture",
+      "passed": true
+    },
+    {
+      "name": "space_same_settings_max_step_observed_s",
+      "passed": true
+    },
+    {
+      "name": "space_same_settings_explicit_initial_step_s",
+      "passed": true
+    },
+    {
+      "name": "time_tenfold_tighter_rtol",
+      "passed": true,
+      "nominal": 2e-09,
+      "tight": 2.0000000000000003e-10
+    },
+    {
+      "name": "time_tenfold_tighter_atol_temperature",
+      "passed": true,
+      "nominal": 2e-09,
+      "tight": 2.0000000000000003e-10
+    },
+    {
+      "name": "time_tenfold_tighter_atol_moisture",
+      "passed": true,
+      "nominal": 2e-11,
+      "tight": 2e-12
+    },
+    {
+      "name": "time_half_maximum_observed_step",
+      "passed": true
+    },
+    {
+      "name": "spatial_temperature_C",
+      "passed": true,
+      "max_abs": 3.120367679798619e-07,
+      "limit": 2.5e-05,
+      "units": "degC",
+      "at_time_s": 9250,
+      "at_radius_m": 0.02,
+      "samples_compared": 226821,
+      "shape": [
+        10801,
+        21
+      ]
+    },
+    {
+      "name": "spatial_moisture_kg_kg",
+      "passed": true,
+      "max_abs": 3.7495047067181986e-06,
+      "limit": 2.5e-05,
+      "units": "kg water/kg dry solid",
+      "at_time_s": 1,
+      "at_radius_m": 0.02,
+      "samples_compared": 226821,
+      "shape": [
+        10801,
+        21
+      ]
+    },
+    {
+      "name": "temporal_temperature_C",
+      "passed": true,
+      "max_abs": 7.070228988936833e-07,
+      "limit": 5e-06,
+      "units": "degC",
+      "at_time_s": 8161,
+      "at_radius_m": 0.02,
+      "samples_compared": 226821,
+      "shape": [
+        10801,
+        21
+      ]
+    },
+    {
+      "name": "temporal_moisture_kg_kg",
+      "passed": true,
+      "max_abs": 7.93786294472909e-08,
+      "limit": 5e-06,
+      "units": "kg water/kg dry solid",
+      "at_time_s": 1,
+      "at_radius_m": 0.02,
+      "samples_compared": 226821,
+      "shape": [
+        10801,
+        21
+      ]
+    },
+    {
+      "name": "prior_summary_raw_values_temperature_C",
+      "passed": true,
+      "values_checked": 30
+    },
+    {
+      "name": "prior_summary_4dp_temperature_C",
+      "passed": true,
+      "values_checked": 30
+    },
+    {
+      "name": "prior_summary_raw_values_moisture_kg_kg",
+      "passed": true,
+      "values_checked": 30
+    },
+    {
+      "name": "prior_summary_4dp_moisture_kg_kg",
+      "passed": true,
+      "values_checked": 30
+    },
+    {
+      "name": "manuscript_tables_3_and_4_all_60_values",
+      "passed": true,
+      "values_checked": 60
+    }
+  ],
+  "coverage": {
+    "comparison_time_s": [
+      0,
+      10800
+    ],
+    "integer_seconds": 10801,
+    "radii": 21,
+    "sample_pairs_per_field_per_comparison": 226821,
+    "comparison_count": 2,
+    "field_count": 2,
+    "total_scalar_differences": 907284
+  },
+  "claim_boundary": "Observed spatial/time refinement differences on the prescribed samples; not a rigorous continuous-solution error bound or per-cell correct-rounding guarantee. No model or original verifier is executed.",
+  "sources": {
+    "runs": {
+      "nominal": {
+        "npz": {
+          "path": "output/Q2/run_n10240_startsafe.npz",
+          "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+          "size": 38314283
+        },
+        "metadata": {
+          "path": "output/Q2/run_n10240_startsafe.json",
+          "sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+          "size": 2477
+        },
+        "grid_n": 10240,
+        "binding": "individually frozen validated NPZ and frozen report binding"
+      },
+      "coarse": {
+        "npz": {
+          "path": "output/Q2/run_n5120_startsafe.npz",
+          "sha256": "1a4c436af2032829e20ad9ad976ff7eafadd70aff1747901844402ebfd5b4414",
+          "size": 37768492
+        },
+        "metadata": {
+          "path": "output/Q2/run_n5120_startsafe.json",
+          "sha256": "56d260115f23fd8435fb5d7ff6426c6ab22501baa23d9e6f4032df903b4d756c",
+          "size": 2473
+        },
+        "grid_n": 5120,
+        "binding": "exact NPZ/metadata pair bound by frozen passing implementation report; not claimed individually registered"
+      },
+      "tight": {
+        "npz": {
+          "path": "output/Q2/run_n10240_tight_startsafe.npz",
+          "sha256": "2b5fd0e7c819a97721d3063091a6f251d441af086dcf63d9bfa64f74fe20fadf",
+          "size": 38317655
+        },
+        "metadata": {
+          "path": "output/Q2/run_n10240_tight_startsafe.json",
+          "sha256": "0e324fa21adf3eae8a7ff214604b48c6c673ad2ba089892569b6e62a2674ed32",
+          "size": 2529
+        },
+        "grid_n": 10240,
+        "binding": "exact NPZ/metadata pair bound by frozen passing implementation report; not claimed individually registered"
+      }
+    },
+    "prior_reports": [
+      {
+        "path": "output/Q2/verification_implementation.json",
+        "sha256": "8365797324c7ceaadc7ca2cf27515d6ea14b325dba4f0a2ea2dd494b33b436f7",
+        "size": 119791,
+        "passed_check_count": 640,
+        "axes": [
+          "E1",
+          "E2"
+        ],
+        "reuse": "Identity and existing checks only; no prior verifier execution"
+      },
+      {
+        "path": "output/Q2/verification_structure.json",
+        "sha256": "ff82989f40157cebb12a03bdb18e02d8411ede05c1cadf4e7f84c44898ac5fd8",
+        "size": 6945,
+        "passed_check_count": 18,
+        "axes": [
+          "E3"
+        ],
+        "reuse": "Identity and existing checks only; no prior verifier execution"
+      }
+    ],
+    "generator": {
+      "path": "src/Q2/review_submission.py",
+      "sha256": "0029c17a0c63d14bb75592163da7f035cae490e0f9e7952a747e35d664bfdf95",
+      "size": 23830
+    },
+    "boundary": {
+      "path": "output/ENV/q2_boundary.json",
+      "sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+      "size": 10560
+    },
+    "prior_summary": {
+      "path": "output/Q2/summary_values.json",
+      "sha256": "9138ad6e7d3b46ff31b87a40900b32315bc091f30dd6014b282f66aabf39ea84",
+      "size": 10450
+    },
+    "brief_table_snapshot": {
+      "path": "docs/Q2/solution_brief.md",
+      "sha256": "2b33534cc0c88f51f6a12fd6e1c7724cbf47c138da112b7e8345902f71441d26",
+      "size": 25921
+    }
+  },
+  "checked_state_revision": 315,
+  "at_3h_full_mesh": {
+    "temperature_C": {
+      "center": 49.8494955728103,
+      "surface": 49.96641284498236,
+      "minimum": 49.8494955728103,
+      "maximum": 49.96641284498236,
+      "radius_at_minimum_m": 0.0,
+      "radius_at_maximum_m": 0.02,
+      "area_weighted_mean": 49.9043286287385,
+      "node_count": 10241,
+      "units": "degC"
+    },
+    "moisture_kg_kg": {
+      "center": 1.7661771073155368,
+      "surface": 1.0081231261700119,
+      "minimum": 1.0081231261700119,
+      "maximum": 1.7661771073155368,
+      "radius_at_minimum_m": 0.02,
+      "radius_at_maximum_m": 0.0,
+      "area_weighted_mean": 1.3825270595599282,
+      "node_count": 10241,
+      "units": "kg water/kg dry solid"
+    }
+  },
+  "spatial": {
+    "temperature_C": {
+      "max_abs": 3.120367679798619e-07,
+      "limit": 2.5e-05,
+      "units": "degC",
+      "passed": true,
+      "at_time_s": 9250,
+      "at_radius_m": 0.02,
+      "samples_compared": 226821,
+      "shape": [
+        10801,
+        21
+      ]
+    },
+    "moisture_kg_kg": {
+      "max_abs": 3.7495047067181986e-06,
+      "limit": 2.5e-05,
+      "units": "kg water/kg dry solid",
+      "passed": true,
+      "at_time_s": 1,
+      "at_radius_m": 0.02,
+      "samples_compared": 226821,
+      "shape": [
+        10801,
+        21
+      ]
+    }
+  },
+  "temporal": {
+    "temperature_C": {
+      "max_abs": 7.070228988936833e-07,
+      "limit": 5e-06,
+      "units": "degC",
+      "passed": true,
+      "at_time_s": 8161,
+      "at_radius_m": 0.02,
+      "samples_compared": 226821,
+      "shape": [
+        10801,
+        21
+      ]
+    },
+    "moisture_kg_kg": {
+      "max_abs": 7.93786294472909e-08,
+      "limit": 5e-06,
+      "units": "kg water/kg dry solid",
+      "passed": true,
+      "at_time_s": 1,
+      "at_radius_m": 0.02,
+      "samples_compared": 226821,
+      "shape": [
+        10801,
+        21
+      ]
+    }
+  },
+  "tables": {
+    "temperature_C": {
+      "time_s": [
+        1800,
+        3600,
+        5400,
+        7200,
+        9000,
+        10800
+      ],
+      "radius_cm": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "values": [
+        [
+          32.18924476096322,
+          32.3821143205545,
+          32.96594025235285,
+          33.96077901758181,
+          35.41302025049541
+        ],
+        [
+          40.381566592517956,
+          40.553565856446426,
+          41.06048363005975,
+          41.878218219576084,
+          42.99760875151683
+        ],
+        [
+          45.846754892043116,
+          45.93480593482586,
+          46.19295337299874,
+          46.6050740476785,
+          47.140049889985484
+        ],
+        [
+          48.45023528359425,
+          48.48806027832122,
+          48.59844458443306,
+          48.773550204745376,
+          49.00332430355365
+        ],
+        [
+          49.46698054932305,
+          49.47921998025711,
+          49.5136495977806,
+          49.56533151789049,
+          49.660910332037474
+        ],
+        [
+          49.8494955728103,
+          49.85534069144885,
+          49.874612205662004,
+          49.910147808623364,
+          49.96641284498236
+        ]
+      ],
+      "display_4dp": [
+        [
+          "32.1892",
+          "32.3821",
+          "32.9659",
+          "33.9608",
+          "35.4130"
+        ],
+        [
+          "40.3816",
+          "40.5536",
+          "41.0605",
+          "41.8782",
+          "42.9976"
+        ],
+        [
+          "45.8468",
+          "45.9348",
+          "46.1930",
+          "46.6051",
+          "47.1400"
+        ],
+        [
+          "48.4502",
+          "48.4881",
+          "48.5984",
+          "48.7736",
+          "49.0033"
+        ],
+        [
+          "49.4670",
+          "49.4792",
+          "49.5136",
+          "49.5653",
+          "49.6609"
+        ],
+        [
+          "49.8495",
+          "49.8553",
+          "49.8746",
+          "49.9101",
+          "49.9664"
+        ]
+      ],
+      "units": "degC"
+    },
+    "moisture_kg_kg": {
+      "time_s": [
+        1800,
+        3600,
+        5400,
+        7200,
+        9000,
+        10800
+      ],
+      "radius_cm": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "values": [
+        [
+          2.54993409992138,
+          2.548883849718512,
+          2.525558033990259,
+          2.3257039663301535,
+          1.6486177766658752
+        ],
+        [
+          2.52573759862776,
+          2.494786927644416,
+          2.357819159203117,
+          2.0229636211217383,
+          1.471093601451303
+        ],
+        [
+          2.3860642508797416,
+          2.325636564252469,
+          2.134408807955023,
+          1.8020169983127208,
+          1.347567290457406
+        ],
+        [
+          2.170851540514741,
+          2.108433902463974,
+          1.9236284225336848,
+          1.6259387456974683,
+          1.231092625853831
+        ],
+        [
+          1.9566417595734875,
+          1.9005972904433384,
+          1.7359800644304004,
+          1.4719871934432642,
+          1.116647634017113
+        ],
+        [
+          1.7661771073155368,
+          1.716533020761038,
+          1.5701980027784763,
+          1.3332634304086353,
+          1.0081231261700119
+        ]
+      ],
+      "display_4dp": [
+        [
+          "2.5499",
+          "2.5489",
+          "2.5256",
+          "2.3257",
+          "1.6486"
+        ],
+        [
+          "2.5257",
+          "2.4948",
+          "2.3578",
+          "2.0230",
+          "1.4711"
+        ],
+        [
+          "2.3861",
+          "2.3256",
+          "2.1344",
+          "1.8020",
+          "1.3476"
+        ],
+        [
+          "2.1709",
+          "2.1084",
+          "1.9236",
+          "1.6259",
+          "1.2311"
+        ],
+        [
+          "1.9566",
+          "1.9006",
+          "1.7360",
+          "1.4720",
+          "1.1166"
+        ],
+        [
+          "1.7662",
+          "1.7165",
+          "1.5702",
+          "1.3333",
+          "1.0081"
+        ]
+      ],
+      "units": "kg water/kg dry solid"
+    }
+  },
+  "summary_audit": {
+    "values_checked": 60,
+    "cells": [
+      {
+        "table": 3,
+        "time_s": 1800,
+        "radius_cm": 0.0,
+        "source_float64": 32.18924476096322,
+        "expected_4dp": "32.1892",
+        "manuscript_4dp": "32.1892",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 1800,
+        "radius_cm": 0.5,
+        "source_float64": 32.3821143205545,
+        "expected_4dp": "32.3821",
+        "manuscript_4dp": "32.3821",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 1800,
+        "radius_cm": 1.0,
+        "source_float64": 32.96594025235285,
+        "expected_4dp": "32.9659",
+        "manuscript_4dp": "32.9659",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 1800,
+        "radius_cm": 1.5,
+        "source_float64": 33.96077901758181,
+        "expected_4dp": "33.9608",
+        "manuscript_4dp": "33.9608",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 1800,
+        "radius_cm": 2.0,
+        "source_float64": 35.41302025049541,
+        "expected_4dp": "35.4130",
+        "manuscript_4dp": "35.4130",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 3600,
+        "radius_cm": 0.0,
+        "source_float64": 40.381566592517956,
+        "expected_4dp": "40.3816",
+        "manuscript_4dp": "40.3816",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 3600,
+        "radius_cm": 0.5,
+        "source_float64": 40.553565856446426,
+        "expected_4dp": "40.5536",
+        "manuscript_4dp": "40.5536",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 3600,
+        "radius_cm": 1.0,
+        "source_float64": 41.06048363005975,
+        "expected_4dp": "41.0605",
+        "manuscript_4dp": "41.0605",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 3600,
+        "radius_cm": 1.5,
+        "source_float64": 41.878218219576084,
+        "expected_4dp": "41.8782",
+        "manuscript_4dp": "41.8782",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 3600,
+        "radius_cm": 2.0,
+        "source_float64": 42.99760875151683,
+        "expected_4dp": "42.9976",
+        "manuscript_4dp": "42.9976",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 5400,
+        "radius_cm": 0.0,
+        "source_float64": 45.846754892043116,
+        "expected_4dp": "45.8468",
+        "manuscript_4dp": "45.8468",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 5400,
+        "radius_cm": 0.5,
+        "source_float64": 45.93480593482586,
+        "expected_4dp": "45.9348",
+        "manuscript_4dp": "45.9348",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 5400,
+        "radius_cm": 1.0,
+        "source_float64": 46.19295337299874,
+        "expected_4dp": "46.1930",
+        "manuscript_4dp": "46.1930",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 5400,
+        "radius_cm": 1.5,
+        "source_float64": 46.6050740476785,
+        "expected_4dp": "46.6051",
+        "manuscript_4dp": "46.6051",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 5400,
+        "radius_cm": 2.0,
+        "source_float64": 47.140049889985484,
+        "expected_4dp": "47.1400",
+        "manuscript_4dp": "47.1400",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 7200,
+        "radius_cm": 0.0,
+        "source_float64": 48.45023528359425,
+        "expected_4dp": "48.4502",
+        "manuscript_4dp": "48.4502",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 7200,
+        "radius_cm": 0.5,
+        "source_float64": 48.48806027832122,
+        "expected_4dp": "48.4881",
+        "manuscript_4dp": "48.4881",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 7200,
+        "radius_cm": 1.0,
+        "source_float64": 48.59844458443306,
+        "expected_4dp": "48.5984",
+        "manuscript_4dp": "48.5984",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 7200,
+        "radius_cm": 1.5,
+        "source_float64": 48.773550204745376,
+        "expected_4dp": "48.7736",
+        "manuscript_4dp": "48.7736",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 7200,
+        "radius_cm": 2.0,
+        "source_float64": 49.00332430355365,
+        "expected_4dp": "49.0033",
+        "manuscript_4dp": "49.0033",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 9000,
+        "radius_cm": 0.0,
+        "source_float64": 49.46698054932305,
+        "expected_4dp": "49.4670",
+        "manuscript_4dp": "49.4670",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 9000,
+        "radius_cm": 0.5,
+        "source_float64": 49.47921998025711,
+        "expected_4dp": "49.4792",
+        "manuscript_4dp": "49.4792",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 9000,
+        "radius_cm": 1.0,
+        "source_float64": 49.5136495977806,
+        "expected_4dp": "49.5136",
+        "manuscript_4dp": "49.5136",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 9000,
+        "radius_cm": 1.5,
+        "source_float64": 49.56533151789049,
+        "expected_4dp": "49.5653",
+        "manuscript_4dp": "49.5653",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 9000,
+        "radius_cm": 2.0,
+        "source_float64": 49.660910332037474,
+        "expected_4dp": "49.6609",
+        "manuscript_4dp": "49.6609",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 10800,
+        "radius_cm": 0.0,
+        "source_float64": 49.8494955728103,
+        "expected_4dp": "49.8495",
+        "manuscript_4dp": "49.8495",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 10800,
+        "radius_cm": 0.5,
+        "source_float64": 49.85534069144885,
+        "expected_4dp": "49.8553",
+        "manuscript_4dp": "49.8553",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 10800,
+        "radius_cm": 1.0,
+        "source_float64": 49.874612205662004,
+        "expected_4dp": "49.8746",
+        "manuscript_4dp": "49.8746",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 10800,
+        "radius_cm": 1.5,
+        "source_float64": 49.910147808623364,
+        "expected_4dp": "49.9101",
+        "manuscript_4dp": "49.9101",
+        "passed": true
+      },
+      {
+        "table": 3,
+        "time_s": 10800,
+        "radius_cm": 2.0,
+        "source_float64": 49.96641284498236,
+        "expected_4dp": "49.9664",
+        "manuscript_4dp": "49.9664",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 1800,
+        "radius_cm": 0.0,
+        "source_float64": 2.54993409992138,
+        "expected_4dp": "2.5499",
+        "manuscript_4dp": "2.5499",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 1800,
+        "radius_cm": 0.5,
+        "source_float64": 2.548883849718512,
+        "expected_4dp": "2.5489",
+        "manuscript_4dp": "2.5489",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 1800,
+        "radius_cm": 1.0,
+        "source_float64": 2.525558033990259,
+        "expected_4dp": "2.5256",
+        "manuscript_4dp": "2.5256",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 1800,
+        "radius_cm": 1.5,
+        "source_float64": 2.3257039663301535,
+        "expected_4dp": "2.3257",
+        "manuscript_4dp": "2.3257",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 1800,
+        "radius_cm": 2.0,
+        "source_float64": 1.6486177766658752,
+        "expected_4dp": "1.6486",
+        "manuscript_4dp": "1.6486",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 3600,
+        "radius_cm": 0.0,
+        "source_float64": 2.52573759862776,
+        "expected_4dp": "2.5257",
+        "manuscript_4dp": "2.5257",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 3600,
+        "radius_cm": 0.5,
+        "source_float64": 2.494786927644416,
+        "expected_4dp": "2.4948",
+        "manuscript_4dp": "2.4948",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 3600,
+        "radius_cm": 1.0,
+        "source_float64": 2.357819159203117,
+        "expected_4dp": "2.3578",
+        "manuscript_4dp": "2.3578",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 3600,
+        "radius_cm": 1.5,
+        "source_float64": 2.0229636211217383,
+        "expected_4dp": "2.0230",
+        "manuscript_4dp": "2.0230",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 3600,
+        "radius_cm": 2.0,
+        "source_float64": 1.471093601451303,
+        "expected_4dp": "1.4711",
+        "manuscript_4dp": "1.4711",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 5400,
+        "radius_cm": 0.0,
+        "source_float64": 2.3860642508797416,
+        "expected_4dp": "2.3861",
+        "manuscript_4dp": "2.3861",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 5400,
+        "radius_cm": 0.5,
+        "source_float64": 2.325636564252469,
+        "expected_4dp": "2.3256",
+        "manuscript_4dp": "2.3256",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 5400,
+        "radius_cm": 1.0,
+        "source_float64": 2.134408807955023,
+        "expected_4dp": "2.1344",
+        "manuscript_4dp": "2.1344",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 5400,
+        "radius_cm": 1.5,
+        "source_float64": 1.8020169983127208,
+        "expected_4dp": "1.8020",
+        "manuscript_4dp": "1.8020",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 5400,
+        "radius_cm": 2.0,
+        "source_float64": 1.347567290457406,
+        "expected_4dp": "1.3476",
+        "manuscript_4dp": "1.3476",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 7200,
+        "radius_cm": 0.0,
+        "source_float64": 2.170851540514741,
+        "expected_4dp": "2.1709",
+        "manuscript_4dp": "2.1709",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 7200,
+        "radius_cm": 0.5,
+        "source_float64": 2.108433902463974,
+        "expected_4dp": "2.1084",
+        "manuscript_4dp": "2.1084",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 7200,
+        "radius_cm": 1.0,
+        "source_float64": 1.9236284225336848,
+        "expected_4dp": "1.9236",
+        "manuscript_4dp": "1.9236",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 7200,
+        "radius_cm": 1.5,
+        "source_float64": 1.6259387456974683,
+        "expected_4dp": "1.6259",
+        "manuscript_4dp": "1.6259",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 7200,
+        "radius_cm": 2.0,
+        "source_float64": 1.231092625853831,
+        "expected_4dp": "1.2311",
+        "manuscript_4dp": "1.2311",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 9000,
+        "radius_cm": 0.0,
+        "source_float64": 1.9566417595734875,
+        "expected_4dp": "1.9566",
+        "manuscript_4dp": "1.9566",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 9000,
+        "radius_cm": 0.5,
+        "source_float64": 1.9005972904433384,
+        "expected_4dp": "1.9006",
+        "manuscript_4dp": "1.9006",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 9000,
+        "radius_cm": 1.0,
+        "source_float64": 1.7359800644304004,
+        "expected_4dp": "1.7360",
+        "manuscript_4dp": "1.7360",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 9000,
+        "radius_cm": 1.5,
+        "source_float64": 1.4719871934432642,
+        "expected_4dp": "1.4720",
+        "manuscript_4dp": "1.4720",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 9000,
+        "radius_cm": 2.0,
+        "source_float64": 1.116647634017113,
+        "expected_4dp": "1.1166",
+        "manuscript_4dp": "1.1166",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 10800,
+        "radius_cm": 0.0,
+        "source_float64": 1.7661771073155368,
+        "expected_4dp": "1.7662",
+        "manuscript_4dp": "1.7662",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 10800,
+        "radius_cm": 0.5,
+        "source_float64": 1.716533020761038,
+        "expected_4dp": "1.7165",
+        "manuscript_4dp": "1.7165",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 10800,
+        "radius_cm": 1.0,
+        "source_float64": 1.5701980027784763,
+        "expected_4dp": "1.5702",
+        "manuscript_4dp": "1.5702",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 10800,
+        "radius_cm": 1.5,
+        "source_float64": 1.3332634304086353,
+        "expected_4dp": "1.3333",
+        "manuscript_4dp": "1.3333",
+        "passed": true
+      },
+      {
+        "table": 4,
+        "time_s": 10800,
+        "radius_cm": 2.0,
+        "source_float64": 1.0081231261700119,
+        "expected_4dp": "1.0081",
+        "manuscript_4dp": "1.0081",
+        "passed": true
+      }
+    ],
+    "table_content_sha256": "e31666f405df23ca8476a71529a7ca42ebf72e2ba44220e468e664cc47399cb4",
+    "rounding": "Decimal.from_float(binary64).quantize(0.0001, ROUND_HALF_UP)",
+    "scope": "The supplied brief snapshot tables only; prose/placeholder edits after this run have a different whole-document identity"
+  },
+  "figure": {
+    "png": {
+      "path": "output/Q2/field_evolution.png",
+      "sha256": "842f434c5235e2542fc89ab22546f4e6d1d231ef02835e3f70f86bc81b42856a",
+      "size": 183649
+    },
+    "manifest": {
+      "path": "output/Q2/figure_manifest.json",
+      "sha256": "66b31f5e8b6abe7508cddb131cf8df30ce90a906fb8f047e5ee1cf6013067587",
+      "size": 9660
+    },
+    "visual_review": "pass for original PNG and recorded grayscale view; final manuscript page review deferred",
+    "manifest_before_visual_review": {
+      "path": "output/Q2/figure_manifest.json",
+      "sha256": "4549757d5d806cad6a33149472621058c08d60f13537e9ba45d3aefc33e1ec52",
+      "size": 7343
+    }
+  },
+  "elapsed_s": 2.202999999994063,
+  "post_generation_review": {
+    "reviewed_at": "2026-09-10T18:30:52.626963+00:00",
+    "reviewer": "q1_model_review",
+    "original_generated_report_sha256": "5ed5969132dae89984a93aa8188ec31fd54322819a4d1758640c99f5708577f2",
+    "original_generated_manifest_sha256": "4549757d5d806cad6a33149472621058c08d60f13537e9ba45d3aefc33e1ec52",
+    "scope": "Append actual visual review and unchanged-table linkage after prose edits; do not alter or rerun any numerical check.",
+    "current_brief": {
+      "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\docs\\Q2\\solution_brief.md",
+      "sha256": "a22c4d0722ab98f89612d177b179bb66afb12c7c430f2d54a3da07d4deca9d49",
+      "size": 26722
+    },
+    "table_content_sha256": "e31666f405df23ca8476a71529a7ca42ebf72e2ba44220e468e664cc47399cb4",
+    "table_values_unchanged": true,
+    "figure_review": {
+      "status": "pass",
+      "reviewed_at": "2026-09-10T18:30:52.626963+00:00",
+      "png_identity": {
+        "path": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\field_evolution.png",
+        "sha256": "842f434c5235e2542fc89ab22546f4e6d1d231ef02835e3f70f86bc81b42856a",
+        "size": 183649
+      },
+      "original_pixels": [
+        1800,
+        888
+      ],
+      "reviewers": [
+        "root",
+        "q1_model_review"
+      ],
+      "findings": [
+        "Both panels cover 0..3 h; temperature and dry-basis moisture units and all Chinese labels readable.",
+        "Five radius colors, line styles and markers are consistent between panels and global legend; environmental temperature is separately labelled.",
+        "Observed radial temperature convergence and remaining moisture separation agree with the tables; no scientific data or image pixels changed."
+      ],
+      "grayscale": {
+        "status": "pass",
+        "reviewer": "root",
+        "view": {
+          "path": "~\\AppData\\Local\\Temp\\cumcm-q2-field-grayscale-1200.png",
+          "sha256": "e168b0d65f548cb689541be47f90864c1e607302ccf981754ee6b0634a5520ec",
+          "size": 55066
+        },
+        "pixels": [
+          1200,
+          600
+        ],
+        "scope": "Actual slightly rescaled grayscale PNG inspection; five radii distinguishable by line styles and circle/square/triangle/diamond/inverted-triangle markers."
+      },
+      "final_manuscript_page_review": "not performed; deferred until actual final-page placement"
+    }
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.1",
+  "status": "q3_s3_method_orientation_complete_method_approved",
+  "updated_at": "2026-08-24",
+  "scope": "project_multiquestion",
+  "entries": [
+    {
+      "id": "nist-las-definition",
+      "title": "What is Acceptance Sampling?",
+      "authors_or_institution": ["NIST/SEMATECH"],
+      "year": null,
+      "source_type": "official_technical_handbook",
+      "doi": null,
+      "original_url": "https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc21.htm",
+      "accessed_at": "2026-08-23",
+      "reading_status": "relevant_webpage_full",
+      "supports": [
+        "属性型批次验收抽样依据随机样本决定批次接收或拒收",
+        "该任务重在批次处置而不只是估计质量"
+      ],
+      "limitations": ["不是本题事实来源", "未提供本题的批量、质量点或风险参数"],
+      "target_sections": ["问题背景", "问题分析"],
+      "open_access_license": "not_stated",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/nist-las-definition.md"
+    },
+    {
+      "id": "nist-las-oc",
+      "title": "Choosing a Sampling Plan with a given OC Curve",
+      "authors_or_institution": ["NIST/SEMATECH"],
+      "year": null,
+      "source_type": "official_technical_handbook",
+      "doi": null,
+      "original_url": "https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc222.htm",
+      "accessed_at": "2026-08-23",
+      "reading_status": "relevant_webpage_full",
+      "supports": [
+        "大批量相对样本量足够大时缺陷计数可用二项分布近似",
+        "给定 OC 曲线的单次抽样设计需要两个质量点以及生产者和消费者风险"
+      ],
+      "limitations": ["采用大批量近似", "页面示例参数不属于本题"],
+      "target_sections": ["模型假设", "候选方法比较", "模型评价"],
+      "open_access_license": "not_stated",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/nist-las-oc.md"
+    },
+    {
+      "id": "nist-las-sequential",
+      "title": "What is a Sequential Sampling Plan?",
+      "authors_or_institution": ["NIST/SEMATECH"],
+      "year": null,
+      "source_type": "official_technical_handbook",
+      "doi": null,
+      "original_url": "https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc26.htm",
+      "accessed_at": "2026-08-23",
+      "reading_status": "relevant_webpage_full",
+      "supports": [
+        "顺序抽样的总样本量取决于观测路径",
+        "经典顺序边界以两个质量点和两类错误率为输入",
+        "顺序抽样效率用随来料缺陷率变化的平均样本数衡量"
+      ],
+      "limitations": ["页面边界是经典近似表达", "经验截尾规则不能直接证明本题风险满足或最优"],
+      "target_sections": ["候选方法比较", "样本效率", "适用边界"],
+      "open_access_license": "not_stated",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/nist-las-sequential.md"
+    },
+    {
+      "id": "nist-exact-binomial",
+      "title": "Exact Binomial Confidence Limits",
+      "authors_or_institution": ["National Institute of Standards and Technology"],
+      "year": 2010,
+      "source_type": "official_method_software_documentation",
+      "doi": null,
+      "original_url": "https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/exacbici.htm",
+      "accessed_at": "2026-08-23",
+      "reading_status": "relevant_webpage_full",
+      "supports": [
+        "小样本或小计数时可基于二项分布构造精确置信限",
+        "精确二项限可构造为单侧形式"
+      ],
+      "limitations": ["软件方法页不证明该区间在所有评价准则下最优"],
+      "target_sections": ["简单基线", "模型求解"],
+      "open_access_license": "not_stated",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/nist-exact-binomial.md"
+    },
+    {
+      "id": "howard-2021-confidence-sequences",
+      "title": "Time-uniform, nonparametric, nonasymptotic confidence sequences",
+      "authors_or_institution": ["Steven R. Howard", "Aaditya Ramdas", "Jon McAuliffe", "Jasjeet Sekhon"],
+      "year": 2021,
+      "source_type": "peer_reviewed_primary_research",
+      "doi": "10.1214/20-AOS1991",
+      "original_url": "https://doi.org/10.1214/20-AOS1991",
+      "accessed_at": "2026-08-23",
+      "reading_status": "abstract_and_front_matter_only",
+      "supports": ["置信序列可在不定时间范围内提供统一有效的覆盖保证"],
+      "limitations": ["未阅读全文", "不能据此声称某一具体边界在本题中最省样本"],
+      "target_sections": ["候选方法比较", "顺序有效性", "方法边界"],
+      "open_access_license": "not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/howard-2021-confidence-sequences.md"
+    },
+    {
+      "id": "neyman-pearson-1933",
+      "title": "On the Problem of the Most Efficient Tests of Statistical Hypotheses",
+      "authors_or_institution": ["Jerzy Neyman", "Egon S. Pearson"],
+      "year": 1933,
+      "source_type": "peer_reviewed_primary_research",
+      "doi": "10.1098/rsta.1933.0009",
+      "original_url": "https://royalsocietypublishing.org/doi/10.1098/rsta.1933.0009",
+      "accessed_at": "2026-08-23",
+      "reading_status": "bibliographic_record_and_relevant_full_text_passages",
+      "supports": [
+        "给定错误概率约束时，简单假设之间可由似然比构造最强检验",
+        "临界层随机化属于离散最强检验前沿的一部分"
+      ],
+      "limitations": [
+        "一般定理不替代本题超几何似然比单调性的推导",
+        "不直接处理本题复合有限总体假设或最坏平均检测数"
+      ],
+      "target_sections": ["问题一最大检测上限证明", "最优性边界"],
+      "open_access_license": "not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-proof-primary-sources.md"
+    },
+    {
+      "id": "arrow-blackwell-girshick-1949",
+      "title": "Bayes and Minimax Solutions of Sequential Decision Problems",
+      "authors_or_institution": ["Kenneth J. Arrow", "David Blackwell", "Meyer A. Girshick"],
+      "year": 1949,
+      "source_type": "peer_reviewed_primary_research",
+      "doi": "10.2307/1905525",
+      "original_url": "https://doi.org/10.2307/1905525",
+      "accessed_at": "2026-08-23",
+      "reading_status": "abstract_and_bibliographic_record",
+      "supports": [
+        "序贯决策的一般结构是在每阶段比较停止采取动作与继续取样",
+        "Bayes与minimax序贯解需要单独的决策优化论证"
+      ],
+      "limitations": [
+        "未据此采用论文中的具体分布、成本或边界",
+        "本题有限总体递推和证书结构仍由项目自行推导"
+      ],
+      "target_sections": ["问题一Bellman结构", "最小最大证明谱系"],
+      "open_access_license": "not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-proof-primary-sources.md"
+    },
+    {
+      "id": "kiefer-weiss-1957",
+      "title": "Some Properties of Generalized Sequential Probability Ratio Tests",
+      "authors_or_institution": ["Jack Kiefer", "Lionel Weiss"],
+      "year": 1957,
+      "source_type": "peer_reviewed_primary_research",
+      "doi": "10.1214/aoms/1177707037",
+      "original_url": "https://doi.org/10.1214/aoms/1177707037",
+      "accessed_at": "2026-08-23",
+      "reading_status": "abstract_and_bibliographic_record",
+      "supports": [
+        "序贯检验的错误概率、样本量分布和可容许性是需要分别证明的性能维度",
+        "一般序贯最优性不能由固定样本最强检验自动推出"
+      ],
+      "limitations": [
+        "未阅读全文",
+        "不把经典GSPRT的独立同分布假设或结论搬入本题"
+      ],
+      "target_sections": ["问题一最坏ASN证明责任", "方法边界"],
+      "open_access_license": "not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-proof-primary-sources.md"
+    },
+    {
+      "id": "waudby-smith-ramdas-2020-wor",
+      "title": "Confidence Sequences for Sampling Without Replacement",
+      "authors_or_institution": ["Ian Waudby-Smith", "Aaditya Ramdas"],
+      "year": 2020,
+      "source_type": "peer_reviewed_primary_research",
+      "doi": null,
+      "original_url": "https://proceedings.neurips.cc/paper/2020/hash/e96c7de8f6390b1e6c71556e4e0a4959-Abstract.html",
+      "accessed_at": "2026-08-23",
+      "reading_status": "abstract_introduction_and_problem_definition",
+      "supports": [
+        "有限总体无放回的序贯推断需要显式利用有限总体结构",
+        "数据依赖停止需要覆盖整个观察过程的有效性保证"
+      ],
+      "limitations": [
+        "论文目标是置信序列而非本题词典序最少检测次数",
+        "不据此声称其边界在本题中ASN最优"
+      ],
+      "target_sections": ["有限总体接口", "顺序有效性边界"],
+      "open_access_license": "paper_publicly_accessible_license_not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-proof-primary-sources.md"
+    },
+    {
+      "id": "xue-2024-cumcm-b-lecture",
+      "title": "2024全国大学生数学建模竞赛B题讲评：生产过程中的决策问题",
+      "authors_or_institution": ["薛毅", "中国大学生在线"],
+      "year": 2024,
+      "source_type": "official_competition_problem_commentary",
+      "doi": null,
+      "original_url": "https://dxs.moe.gov.cn/zx/a/hd_sxjm_sxjmstjp_2024sxjmstjp/241127/1980968.shtml",
+      "accessed_at": "2026-08-23",
+      "reading_status": "q1_slides_full_with_key_image_manual_verification",
+      "supports": [
+        "问题一可用单侧假设检验、区间估计、SPRT、截尾SPRT、DQL和AQL/OC解释",
+        "OC设计需要alpha、beta、p0和p1四个参数，p1大于p0形成过渡区",
+        "示例取p0=0.10、p1=0.20、alpha=0.05、beta=0.10时固定抽样方案为(109,16)",
+        "普通SPRT没有确定最大抽检数，应考虑截尾；讲评示例ASN为54",
+        "有限总体与大抽样比时用超几何，大总体小抽样比时可用二项近似"
+      ],
+      "limitations": [
+        "讲评展示多种可选方法而非唯一规定答案",
+        "幻灯片受版权保护，项目仅作事实性方法摘要且不转载"
+      ],
+      "target_sections": ["问题一题意解释", "候选方法比较", "参数充分性", "模型评价"],
+      "open_access_license": "not_stated",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-2024-excellent-paper-audit.md"
+    },
+    {
+      "id": "xue-2025-cumcm-b-analysis",
+      "title": "“生产过程中的决策问题”的问题解析",
+      "authors_or_institution": ["薛毅"],
+      "year": 2025,
+      "source_type": "peer_reviewed_problem_review",
+      "doi": "10.19943/j.2095-3070.jmmia.2025.01.08",
+      "original_url": "https://qxyy.cbpt.cnki.net/portal/journal/portal/client/paper/0cf3cda99776170d122dce0bf777965a",
+      "accessed_at": "2026-08-23",
+      "reading_status": "abstract_keywords_references_and_metadata_only",
+      "supports": [
+        "该文专门求解2024 CUMCM B题并点评参赛论文",
+        "其问题一方法谱系包括假设检验、区间估计、序贯概率比检验、声称质量水平和操作特性曲线"
+      ],
+      "limitations": ["未获得正文全文", "不得从摘要推断具体公式或数值"],
+      "target_sections": ["问题一文献导向", "方法谱系"],
+      "open_access_license": "not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-2024-excellent-paper-audit.md"
+    },
+    {
+      "id": "gu-etal-2024-cumcm-b-public-project",
+      "title": "CUMCM24-ProblemB-SimulationApproach",
+      "authors_or_institution": ["顾国勤", "杨子慧", "吕阳"],
+      "year": 2024,
+      "source_type": "award_team_public_repository",
+      "doi": null,
+      "original_url": "https://github.com/BoNing-Gu/CUMCM24-ProblemB-SimulationApproach",
+      "accessed_at": "2026-08-23",
+      "reading_status": "repository_readme_full",
+      "supports": [
+        "作者自报全国二等奖并明确问题一选择序贯抽样",
+        "团队成员与学校身份可由2024官方获奖名单交叉核验"
+      ],
+      "limitations": [
+        "奖项等级来自仓库作者自报",
+        "仓库未公开问题一完整推导，不能核验风险边界、截尾或最优性"
+      ],
+      "target_sections": ["优秀论文方法比较"],
+      "open_access_license": "not_stated",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-2024-excellent-paper-audit.md"
+    },
+    {
+      "id": "cumcm-2024-official-award-list",
+      "title": "2024高教社杯全国大学生数学建模竞赛获奖名单",
+      "authors_or_institution": ["全国大学生数学建模竞赛组委会"],
+      "year": 2024,
+      "source_type": "official_award_list",
+      "doi": null,
+      "original_url": "https://www.mcm.edu.cn/html_cn/node/3aa4e9fc4c5a755da53b343660cdaf59.html",
+      "accessed_at": "2026-08-23",
+      "reading_status": "relevant_entry_verified",
+      "supports": ["厦门大学顾国勤、杨子慧、吕阳团队出现在2024官方获奖名单"],
+      "limitations": ["只核验团队获奖身份，不支撑其问题一模型正确性"],
+      "target_sections": ["来源身份核验"],
+      "open_access_license": "not_stated",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-2024-excellent-paper-audit.md"
+    },
+    {
+      "id": "henryers-2024-cumcm-b-provincial-first",
+      "title": "2024全国大学生数学建模竞赛B题（省一）",
+      "authors_or_institution": ["Henryers公开团队"],
+      "year": 2024,
+      "source_type": "self_reported_award_repository_with_full_paper",
+      "doi": null,
+      "original_url": "https://github.com/Henryers/mathmodel-24B",
+      "accessed_at": "2026-08-23",
+      "reading_status": "repository_readme_and_q1_paper_section_full",
+      "supports": [
+        "该公开论文使用Cochran样本量公式并自行设允许误差E=5%",
+        "其大总体结果为95%对应98次、90%对应60次，说明常数样本数由额外精度参数驱动"
+      ],
+      "limitations": [
+        "奖项为作者自报",
+        "E=5%不是题面参数",
+        "Cochran估计精度公式不自动构成完整OC验收风险合同"
+      ],
+      "target_sections": ["优秀论文方法比较", "额外假设审计"],
+      "open_access_license": "not_stated",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-2024-excellent-paper-audit.md"
+    },
+    {
+      "id": "rxw2023-2024-cumcm-b-provincial-second",
+      "title": "2024高教社杯数学建模国赛B题方案",
+      "authors_or_institution": ["rxw2023公开团队"],
+      "year": 2024,
+      "source_type": "self_reported_award_repository",
+      "doi": null,
+      "original_url": "https://github.com/rxw2023/CUMCM-2024B",
+      "accessed_at": "2026-08-23",
+      "reading_status": "repository_readme_full",
+      "supports": ["问题一采用正态近似单尾检验确定样本容量，显示参赛方案并不统一"],
+      "limitations": ["奖项为作者自报", "未从README核验完整公式、第四参数和离散尾部误差"],
+      "target_sections": ["优秀论文方法比较"],
+      "open_access_license": "MIT_repository_code_license_paper_status_not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q1-2024-excellent-paper-audit.md"
+    },
+    {
+      "id": "bertsekas-tsitsiklis-1991-ssp",
+      "title": "An Analysis of Stochastic Shortest Path Problems",
+      "authors_or_institution": ["Dimitri P. Bertsekas", "John N. Tsitsiklis"],
+      "year": 1991,
+      "source_type": "peer_reviewed_primary_research",
+      "doi": "10.1287/moor.16.3.580",
+      "original_url": "https://web.mit.edu/dimitrib/www/Stochasticsp.pdf",
+      "accessed_at": "2026-08-24",
+      "reading_status": "publisher_abstract_author_manuscript_front_and_problem_definition",
+      "supports": [
+        "有限状态无折扣累计成本与到终止状态的随机最短路方法谱系",
+        "终止与总期望成本必须作为模型条件审查"
+      ],
+      "limitations": [
+        "不替本题定义状态、质量机制或固定策略域",
+        "未据此采用论文中的一般控制算法"
+      ],
+      "target_sections": ["问题三候选方法比较", "终止硬门", "模型评价"],
+      "open_access_license": "not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q3-method-orientation.md"
+    },
+    {
+      "id": "bertsekas-2011-dp-vol2-ch6",
+      "title": "Dynamic Programming and Optimal Control, Volume II, Chapter 6",
+      "authors_or_institution": ["Dimitri P. Bertsekas"],
+      "year": 2011,
+      "source_type": "author_public_book_chapter",
+      "doi": null,
+      "original_url": "https://web.mit.edu/dimitrib/www/dpchapter.pdf",
+      "accessed_at": "2026-08-24",
+      "reading_status": "front_matter_contents_and_relevant_pages_171_172",
+      "supports": [
+        "固定策略无折扣总成本可写成线性固定点方程",
+        "次随机转移矩阵缺失行概率可解释为进入吸收状态"
+      ],
+      "limitations": [
+        "只阅读并使用与固定策略吸收方程直接相关的段落",
+        "不采用章节中的近似动态规划方法"
+      ],
+      "target_sections": ["问题三状态评价", "吸收线性方程", "终止条件"],
+      "open_access_license": "author_public_copy_license_not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q3-method-orientation.md"
+    },
+    {
+      "id": "nilim-elghaoui-2005-robust-mdp",
+      "title": "Robust Control of Markov Decision Processes with Uncertain Transition Matrices",
+      "authors_or_institution": ["Arnab Nilim", "Laurent El Ghaoui"],
+      "year": 2005,
+      "source_type": "peer_reviewed_primary_research",
+      "doi": "10.1287/opre.1050.0216",
+      "original_url": "https://pubsonline.informs.org/doi/abs/10.1287/opre.1050.0216",
+      "accessed_at": "2026-08-24",
+      "reading_status": "abstract_and_bibliographic_record",
+      "supports": [
+        "稳健Markov决策需要显式描述转移矩阵的不确定集合",
+        "不同不确定集合会对应不同的稳健递推"
+      ],
+      "limitations": [
+        "未阅读全文",
+        "不能从本题边际次品率推出唯一联合质量集合或任意相关性稳健结论"
+      ],
+      "target_sections": ["问题三相关性边界", "候选方法排除", "结构压力检查"],
+      "open_access_license": "not_verified",
+      "local_file": null,
+      "local_sha256": null,
+      "note": "references/notes/q3-method-orientation.md"
+    }
+  ]
+}

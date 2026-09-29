@@ -1,0 +1,198 @@
+{
+  "schema_version": "15.0",
+  "owner": "references/capability-packet-registry.json",
+  "status": "candidate",
+  "purpose": "Keep normative atomic rules small while preserving complete task procedures through selectively loaded capability packets.",
+  "normative_boundary": {
+    "rules": "rules/*.json own what is required, when it applies, and what counts as acceptance.",
+    "controller": "SKILL.md and machine contracts own authorization, routing, state, evidence persistence, and execution boundaries.",
+    "packets": "Capability packets are non-normative implementations of how to perform an already-selected capability; they cannot add permission, strengthen an atom, or broaden scope.",
+    "archive": "Preservation and migration records support audit and recovery of meaning but are not runtime instructions."
+  },
+  "loading_policy": {
+    "selection_unit": "route_step",
+    "router_first": true,
+    "read_selected_packet_completely": true,
+    "never_execute_from_atom_gloss_alone": true,
+    "default_packet_limit_per_step": 3,
+    "overflow_policy": "Split only at a real task phase boundary, retain a short continuation capsule, and read the next required packet completely before that phase starts.",
+    "no_global_preload": true
+  },
+  "routers": [
+    "references/project-method-notes.md",
+    "references/data-method-notes.md",
+    "references/modeling-method-notes.md",
+    "references/verification-method-notes.md",
+    "references/manuscript-method-notes.md",
+    "references/visual-method-notes.md",
+    "references/evidence-method-notes.md",
+    "references/maintenance-method-notes.md"
+  ],
+  "packets": [
+    {
+      "id": "PKT.PROJECT.SCOPE_PLAN",
+      "path": "references/capability-packets/project/scope-and-plan.md",
+      "router": "references/project-method-notes.md",
+      "capabilities": ["PRJ-SCOPE-001", "PRJ-PLAN-001"]
+    },
+    {
+      "id": "PKT.PROJECT.PLATFORM_ARTIFACTS",
+      "path": "references/capability-packets/project/platform-and-artifacts.md",
+      "router": "references/project-method-notes.md",
+      "capabilities": ["PRJ-STRUCTURE-001", "ART-LAZY-001", "ART-PROMOTE-001"]
+    },
+    {
+      "id": "PKT.PROJECT.RECOVERY_HANDOFF",
+      "path": "references/capability-packets/project/recovery-and-handoff.md",
+      "router": "references/project-method-notes.md",
+      "capabilities": ["REC-R0-001", "REC-R1-001", "REC-R2-001", "DEL-HANDOFF-001"]
+    },
+    {
+      "id": "PKT.DATA.IDENTITY_AUDIT",
+      "path": "references/capability-packets/data/identity-and-audit.md",
+      "router": "references/data-method-notes.md",
+      "capabilities": ["DATA-IDENTITY-001", "DATA-AUDIT-001"]
+    },
+    {
+      "id": "PKT.DATA.TREAT_FREEZE",
+      "path": "references/capability-packets/data/treatment-and-freeze.md",
+      "router": "references/data-method-notes.md",
+      "capabilities": ["DATA-TREAT-001", "DATA-FREEZE-001"]
+    },
+    {
+      "id": "PKT.MODEL.PROBLEM_CANDIDATES",
+      "path": "references/capability-packets/modeling/problem-and-candidates.md",
+      "router": "references/modeling-method-notes.md",
+      "capabilities": ["MOD-RESTATE-001", "MOD-COMPARE-001"]
+    },
+    {
+      "id": "PKT.MODEL.SPECIFICATION",
+      "path": "references/capability-packets/modeling/mathematical-specification.md",
+      "router": "references/modeling-method-notes.md",
+      "capabilities": ["MOD-SPEC-001"]
+    },
+    {
+      "id": "PKT.MODEL.IMPLEMENT_RESULTS",
+      "path": "references/capability-packets/modeling/implementation-solving-and-results.md",
+      "router": "references/modeling-method-notes.md",
+      "capabilities": ["MOD-IMPLEMENT-001", "MOD-RESULTS-001"]
+    },
+    {
+      "id": "PKT.VERIFY.IMPLEMENTATION",
+      "path": "references/capability-packets/verification/implementation-axis.md",
+      "router": "references/verification-method-notes.md",
+      "capabilities": ["VER-E1-001", "VER-E2-001", "VER-S6-DUAL-001"]
+    },
+    {
+      "id": "PKT.VERIFY.MODEL",
+      "path": "references/capability-packets/verification/model-axis.md",
+      "router": "references/verification-method-notes.md",
+      "capabilities": ["VER-E3-001", "VER-E4-001", "VER-S6-DUAL-001"]
+    },
+    {
+      "id": "PKT.VERIFY.UNCERTAINTY",
+      "path": "references/capability-packets/verification/uncertainty-and-robustness.md",
+      "router": "references/verification-method-notes.md",
+      "capabilities": ["VER-UNCERTAINTY-001", "VER-ROBUST-001"]
+    },
+    {
+      "id": "PKT.MANUSCRIPT.STRUCTURE",
+      "path": "references/capability-packets/manuscript/structure-and-section-contracts.md",
+      "router": "references/manuscript-method-notes.md",
+      "capabilities": ["MAN-STRUCTURE-001"]
+    },
+    {
+      "id": "PKT.MANUSCRIPT.EXPRESSION",
+      "path": "references/capability-packets/manuscript/expression-and-argument.md",
+      "router": "references/manuscript-method-notes.md",
+      "capabilities": ["MAN-CONTENT-001", "MAN-PROFILE-001"]
+    },
+    {
+      "id": "PKT.MANUSCRIPT.READER_LOCAL",
+      "path": "references/capability-packets/manuscript/reader-audit-and-local-edit.md",
+      "router": "references/manuscript-method-notes.md",
+      "capabilities": ["MAN-READER-001", "MAN-LOCAL-001"]
+    },
+    {
+      "id": "PKT.MANUSCRIPT.FINALIZATION",
+      "path": "references/capability-packets/manuscript/latex-and-finalization.md",
+      "router": "references/manuscript-method-notes.md",
+      "capabilities": ["MAN-ACCEPT-001"]
+    },
+    {
+      "id": "PKT.VISUAL.BRIEF_CHARTS",
+      "path": "references/capability-packets/visual/figure-brief-and-data-charts.md",
+      "router": "references/visual-method-notes.md",
+      "capabilities": ["VIS-DESIGN-001", "VIS-IDENTITY-001"]
+    },
+    {
+      "id": "PKT.VISUAL.SCHEMATICS",
+      "path": "references/capability-packets/visual/scientific-schematics.md",
+      "router": "references/visual-method-notes.md",
+      "capabilities": ["VIS-DESIGN-001", "VIS-IDENTITY-001"]
+    },
+    {
+      "id": "PKT.VISUAL.RENDER_AUDIT",
+      "path": "references/capability-packets/visual/render-and-audit.md",
+      "router": "references/visual-method-notes.md",
+      "capabilities": ["VIS-LAYOUT-001", "VIS-IDENTITY-001"]
+    },
+    {
+      "id": "PKT.EVIDENCE.LITERATURE",
+      "path": "references/capability-packets/evidence/literature-and-source-evidence.md",
+      "router": "references/evidence-method-notes.md",
+      "capabilities": ["EVD-LITERATURE-001"]
+    },
+    {
+      "id": "PKT.EVIDENCE.PROVENANCE_HANDOFF",
+      "path": "references/capability-packets/evidence/provenance-and-handoff.md",
+      "router": "references/evidence-method-notes.md",
+      "capabilities": ["EVD-PROVENANCE-001", "DEL-PROVENANCE-001", "DEL-HANDOFF-001"]
+    },
+    {
+      "id": "PKT.EVIDENCE.FINAL_DELIVERY",
+      "path": "references/capability-packets/evidence/final-delivery-and-compliance.md",
+      "router": "references/evidence-method-notes.md",
+      "capabilities": ["DEL-FINAL-001", "DEL-PROVENANCE-001"]
+    },
+    {
+      "id": "PKT.MAINTENANCE.SKILL",
+      "path": "references/capability-packets/governance/skill-maintenance.md",
+      "router": "references/maintenance-method-notes.md",
+      "capabilities": ["MNT-CLASSIFY-001", "MNT-IMPACT-001", "MNT-OWNER-001", "MNT-EVAL-001", "MNT-RELOAD-001", "MNT-ROLLBACK-001"]
+    }
+  ],
+  "contract_coverage": [
+    {
+      "id": "CONTROL.RUNTIME_AND_STATE",
+      "capabilities": ["GOV-MODE-001", "GOV-AUTH-001", "GOV-ROUTE-001", "GOV-OWNER-001", "GOV-RECEIPT-001", "GOV-DECISION-001", "STATE-TYPED-001"],
+      "resources": [
+        "SKILL.md",
+        "references/runtime-policy.json",
+        "references/semantic-plan.schema.json",
+        "references/route-contract.json",
+        "references/ownership-contract.json",
+        "references/state-machine.json",
+        "references/state.schema.json",
+        "references/receipt.schema.json"
+      ],
+      "reason": "These capabilities are executable controller contracts rather than domain procedures; duplicating them in prose packets would create a second normative source."
+    }
+  ],
+  "historical_sources": [
+    {
+      "path": "references/migration/v1-v9-capability-ledger.json",
+      "sha256": "c44427ba0829e71d37c4f6f6012c35760e70647b0022fee6b239190fab13166e",
+      "role": "verbatim_span_and_lineage_archive"
+    },
+    {
+      "path": "references/migration/native-capabilities.json",
+      "sha256": "c160257539667dd727bd19653599de17c9343f7d3d6cd9185ebe6eab17873ce6",
+      "role": "v7_v8_native_capability_archive"
+    },
+    {
+      "path": "references/preservation/v1-v14-audit.md",
+      "role": "human_readable_disposition_overview"
+    }
+  ]
+}

@@ -1,0 +1,5591 @@
+{
+  "schema_version": "1.0",
+  "result_id": "Q2-RESOURCE-BRIDGE-SENSITIVITY-20260827",
+  "question_id": "Q2",
+  "status": "pass",
+  "analysis_kind": "fixed_q2_baseline_resource_increment_scenario_analysis",
+  "probability_interpretation": false,
+  "reoptimization_of_q2_baseline": false,
+  "formal_q3_or_q4_solution": false,
+  "settings": {
+    "screen": {
+      "scan_step_s": 0.05,
+      "n_theta": 64,
+      "n_levels": 9
+    },
+    "precise_best_rescore": {
+      "scan_step_s": 0.005,
+      "n_theta": 512,
+      "n_levels": 33
+    },
+    "second_bomb_gap_grid_s": [
+      1.0,
+      8.0,
+      29
+    ],
+    "opportunity_dense_step_s": 0.05,
+    "opportunity_evaluations_per_platform_max": 31
+  },
+  "identities": {
+    "official_input_sha256": "a37f6aad30b16ea09da9cb320ce194b12d3a28874008cf9ff19549f6c6079447",
+    "parameter_registry_sha256": "10df8537e0bc7f4ec3353c2bce3e5e324752644354ebe5c29a3eb04709661d67",
+    "q1_model_sha256": "a7dd496204e30e90000fc8554919309da36fde3a6c45e3a3f4fdca46a55c8669",
+    "q2_formal_result_sha256": "721537914e17404145fa25131bf489776dbc2820444b1b7ae70003ba2069eb88",
+    "q2_decision_sensitivity_sha256": "1d8e0ac14be8937dab9a119992f5100b1628c8af18940454850727bca41746fe"
+  },
+  "baseline": {
+    "result_id": "Q2-SPEC-Q2-3.1-FORMAL-SOLVER",
+    "decision": {
+      "heading_rad": 0.10700711450221934,
+      "speed_mps": 89.48702874013804,
+      "release_time_s": 0.4683560670671222,
+      "fuse_delay_s": 0.6909391553755698,
+      "explosion_time_s": 1.159295222442692
+    },
+    "effective_duration_s": 4.581608247160911,
+    "intervals_s": [
+      [
+        1.2486668628268893,
+        5.8302751099878005
+      ]
+    ]
+  },
+  "same_uav_second_bomb": {
+    "design": {
+      "fixed": [
+        "FY1 heading",
+        "FY1 speed",
+        "first Q2 bomb",
+        "second-bomb fuse delay"
+      ],
+      "varied": "second release gap only",
+      "range_s": [
+        1.0,
+        8.0,
+        29
+      ],
+      "official_minimum_release_gap_s": 1.0,
+      "metric": "union of independently complete-cylinder intervals",
+      "joint_partial_target_synergy_included": false
+    },
+    "records": [
+      {
+        "release_gap_s": 1.0,
+        "second_release_time_s": 1.468356067067122,
+        "second_explosion_time_s": 2.159295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.7150341894477603,
+          "intervals_s": [
+            [
+              2.159295222442692,
+              2.8743294118904523
+            ]
+          ],
+          "minimum_scan_margin_m": -2.6099039159688857,
+          "kinematics": {
+            "release_point_m": [
+              17930.647246560715,
+              14.03379055146226,
+              1800.0
+            ],
+            "explosion_time_s": 2.159295222442692,
+            "explosion_point_m": [
+              17992.123682838945,
+              20.637430913511952,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              2.159295222442692,
+              22.159295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.7150341894477603,
+        "overlap_loss_s": 0.7150341894477599,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 1.25,
+        "second_release_time_s": 1.718356067067122,
+        "second_explosion_time_s": 2.409295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 1.2462951372148598,
+          "kinematics": {
+            "release_point_m": [
+              17952.89104176321,
+              16.42316171051178,
+              1800.0
+            ],
+            "explosion_time_s": 2.409295222442692,
+            "explosion_point_m": [
+              18014.36747804144,
+              23.026802072561473,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              2.409295222442692,
+              22.409295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 1.5,
+        "second_release_time_s": 1.968356067067122,
+        "second_explosion_time_s": 2.659295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 5.15773913233274,
+          "kinematics": {
+            "release_point_m": [
+              17975.134836965703,
+              18.812532869561302,
+              1800.0
+            ],
+            "explosion_time_s": 2.659295222442692,
+            "explosion_point_m": [
+              18036.611273243932,
+              25.416173231610994,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              2.659295222442692,
+              22.659295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 1.75,
+        "second_release_time_s": 2.218356067067122,
+        "second_explosion_time_s": 2.909295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 9.094009448408546,
+          "kinematics": {
+            "release_point_m": [
+              17997.378632168195,
+              21.201904028610823,
+              1800.0
+            ],
+            "explosion_time_s": 2.909295222442692,
+            "explosion_point_m": [
+              18058.855068446424,
+              27.805544390660515,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              2.909295222442692,
+              22.909295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 2.0,
+        "second_release_time_s": 2.468356067067122,
+        "second_explosion_time_s": 3.159295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 13.045460516425216,
+          "kinematics": {
+            "release_point_m": [
+              18019.622427370687,
+              23.591275187660344,
+              1800.0
+            ],
+            "explosion_time_s": 3.159295222442692,
+            "explosion_point_m": [
+              18081.098863648916,
+              30.194915549710032,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              3.159295222442692,
+              23.159295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 2.25,
+        "second_release_time_s": 2.718356067067122,
+        "second_explosion_time_s": 3.409295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 17.008099473620774,
+          "kinematics": {
+            "release_point_m": [
+              18041.86622257318,
+              25.980646346709865,
+              1800.0
+            ],
+            "explosion_time_s": 3.409295222442692,
+            "explosion_point_m": [
+              18103.342658851412,
+              32.58428670875956,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              3.409295222442692,
+              23.409295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 2.5,
+        "second_release_time_s": 2.968356067067122,
+        "second_explosion_time_s": 3.659295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 20.980002950773645,
+          "kinematics": {
+            "release_point_m": [
+              18064.110017775674,
+              28.370017505759385,
+              1800.0
+            ],
+            "explosion_time_s": 3.659295222442692,
+            "explosion_point_m": [
+              18125.586454053904,
+              34.973657867809074,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              3.659295222442692,
+              23.659295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 2.75,
+        "second_release_time_s": 3.218356067067122,
+        "second_explosion_time_s": 3.909295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 24.960151260769514,
+          "kinematics": {
+            "release_point_m": [
+              18086.353812978166,
+              30.75938866480891,
+              1800.0
+            ],
+            "explosion_time_s": 3.909295222442692,
+            "explosion_point_m": [
+              18147.830249256396,
+              37.3630290268586,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              3.909295222442692,
+              23.909295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 3.0,
+        "second_release_time_s": 3.468356067067122,
+        "second_explosion_time_s": 4.159295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 28.947970791422776,
+          "kinematics": {
+            "release_point_m": [
+              18108.59760818066,
+              33.14875982385843,
+              1800.0
+            ],
+            "explosion_time_s": 4.159295222442692,
+            "explosion_point_m": [
+              18170.07404445889,
+              39.752400185908115,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              4.159295222442692,
+              24.159295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 3.25,
+        "second_release_time_s": 3.718356067067122,
+        "second_explosion_time_s": 4.409295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 32.94312909165887,
+          "kinematics": {
+            "release_point_m": [
+              18130.84140338315,
+              35.53813098290795,
+              1800.0
+            ],
+            "explosion_time_s": 4.409295222442692,
+            "explosion_point_m": [
+              18192.317839661384,
+              42.14177134495764,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              4.409295222442692,
+              24.409295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 3.5,
+        "second_release_time_s": 3.968356067067122,
+        "second_explosion_time_s": 4.659295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 36.945433653455396,
+          "kinematics": {
+            "release_point_m": [
+              18153.085198585646,
+              37.92750214195747,
+              1800.0
+            ],
+            "explosion_time_s": 4.659295222442692,
+            "explosion_point_m": [
+              18214.561634863876,
+              44.53114250400716,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              4.659295222442692,
+              24.659295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 3.75,
+        "second_release_time_s": 4.2183560670671225,
+        "second_explosion_time_s": 4.909295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 40.95477796016102,
+          "kinematics": {
+            "release_point_m": [
+              18175.328993788138,
+              40.31687330100699,
+              1800.0
+            ],
+            "explosion_time_s": 4.909295222442692,
+            "explosion_point_m": [
+              18236.805430066368,
+              46.92051366305668,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              4.909295222442692,
+              24.909295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 4.0,
+        "second_release_time_s": 4.4683560670671225,
+        "second_explosion_time_s": 5.159295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 44.97111092414828,
+          "kinematics": {
+            "release_point_m": [
+              18197.57278899063,
+              42.70624446005652,
+              1800.0
+            ],
+            "explosion_time_s": 5.159295222442692,
+            "explosion_point_m": [
+              18259.04922526886,
+              49.3098848221062,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              5.159295222442692,
+              25.159295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 4.25,
+        "second_release_time_s": 4.7183560670671225,
+        "second_explosion_time_s": 5.409295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 48.99441869013257,
+          "kinematics": {
+            "release_point_m": [
+              18219.816584193122,
+              45.095615619106034,
+              1800.0
+            ],
+            "explosion_time_s": 5.409295222442692,
+            "explosion_point_m": [
+              18281.293020471352,
+              51.69925598115572,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              5.409295222442692,
+              25.409295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 4.5,
+        "second_release_time_s": 4.9683560670671225,
+        "second_explosion_time_s": 5.659295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 53.02471334246276,
+          "kinematics": {
+            "release_point_m": [
+              18242.060379395618,
+              47.48498677815556,
+              1800.0
+            ],
+            "explosion_time_s": 5.659295222442692,
+            "explosion_point_m": [
+              18303.536815673848,
+              54.08862714020524,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              5.659295222442692,
+              25.659295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 4.75,
+        "second_release_time_s": 5.2183560670671225,
+        "second_explosion_time_s": 5.909295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 99.18571250148027,
+          "kinematics": {
+            "release_point_m": [
+              18264.30417459811,
+              49.874357937205076,
+              1800.0
+            ],
+            "explosion_time_s": 5.909295222442692,
+            "explosion_point_m": [
+              18325.78061087634,
+              56.477998299254764,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              5.909295222442692,
+              25.909295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 5.0,
+        "second_release_time_s": 5.4683560670671225,
+        "second_explosion_time_s": 6.159295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 186.57644282521596,
+          "kinematics": {
+            "release_point_m": [
+              18286.547969800602,
+              52.2637290962546,
+              1800.0
+            ],
+            "explosion_time_s": 6.159295222442692,
+            "explosion_point_m": [
+              18348.02440607883,
+              58.86736945830429,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              6.159295222442692,
+              26.159295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 5.25,
+        "second_release_time_s": 5.7183560670671225,
+        "second_explosion_time_s": 6.409295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 280.2655474141485,
+          "kinematics": {
+            "release_point_m": [
+              18308.791765003094,
+              54.65310025530412,
+              1800.0
+            ],
+            "explosion_time_s": 6.409295222442692,
+            "explosion_point_m": [
+              18370.268201281324,
+              61.2567406173538,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              6.409295222442692,
+              26.409295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 5.5,
+        "second_release_time_s": 5.9683560670671225,
+        "second_explosion_time_s": 6.659295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 375.6901479684416,
+          "kinematics": {
+            "release_point_m": [
+              18331.035560205586,
+              57.04247141435364,
+              1800.0
+            ],
+            "explosion_time_s": 6.659295222442692,
+            "explosion_point_m": [
+              18392.51199648382,
+              63.64611177640332,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              6.659295222442692,
+              26.659295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 5.75,
+        "second_release_time_s": 6.2183560670671225,
+        "second_explosion_time_s": 6.909295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 471.8201993966833,
+          "kinematics": {
+            "release_point_m": [
+              18353.27935540808,
+              59.431842573403166,
+              1800.0
+            ],
+            "explosion_time_s": 6.909295222442692,
+            "explosion_point_m": [
+              18414.75579168631,
+              66.03548293545285,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              6.909295222442692,
+              26.909295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 6.0,
+        "second_release_time_s": 6.4683560670671225,
+        "second_explosion_time_s": 7.159295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 568.304012553831,
+          "kinematics": {
+            "release_point_m": [
+              18375.523150610574,
+              61.82121373245268,
+              1800.0
+            ],
+            "explosion_time_s": 7.159295222442692,
+            "explosion_point_m": [
+              18436.999586888804,
+              68.42485409450238,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              7.159295222442692,
+              27.159295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 6.25,
+        "second_release_time_s": 6.7183560670671225,
+        "second_explosion_time_s": 7.409295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 664.9899031893169,
+          "kinematics": {
+            "release_point_m": [
+              18397.766945813066,
+              64.21058489150221,
+              1800.0
+            ],
+            "explosion_time_s": 7.409295222442692,
+            "explosion_point_m": [
+              18459.243382091296,
+              70.81422525355188,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              7.409295222442692,
+              27.409295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 6.5,
+        "second_release_time_s": 6.9683560670671225,
+        "second_explosion_time_s": 7.659295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 761.8019305246985,
+          "kinematics": {
+            "release_point_m": [
+              18420.010741015558,
+              66.59995605055173,
+              1800.0
+            ],
+            "explosion_time_s": 7.659295222442692,
+            "explosion_point_m": [
+              18481.48717729379,
+              73.20359641260141,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              7.659295222442692,
+              27.659295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 6.75,
+        "second_release_time_s": 7.2183560670671225,
+        "second_explosion_time_s": 7.909295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 858.6979236755635,
+          "kinematics": {
+            "release_point_m": [
+              18442.254536218054,
+              68.98932720960124,
+              1800.0
+            ],
+            "explosion_time_s": 7.909295222442692,
+            "explosion_point_m": [
+              18503.730972496283,
+              75.59296757165093,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              7.909295222442692,
+              27.909295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 7.0,
+        "second_release_time_s": 7.4683560670671225,
+        "second_explosion_time_s": 8.159295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 955.6526069541153,
+          "kinematics": {
+            "release_point_m": [
+              18464.498331420546,
+              71.37869836865076,
+              1800.0
+            ],
+            "explosion_time_s": 8.159295222442692,
+            "explosion_point_m": [
+              18525.974767698775,
+              77.98233873070046,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              8.159295222442692,
+              28.159295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 7.25,
+        "second_release_time_s": 7.7183560670671225,
+        "second_explosion_time_s": 8.409295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 1052.649916067744,
+          "kinematics": {
+            "release_point_m": [
+              18486.742126623038,
+              73.76806952770029,
+              1800.0
+            ],
+            "explosion_time_s": 8.409295222442692,
+            "explosion_point_m": [
+              18548.218562901267,
+              80.37170988974997,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              8.409295222442692,
+              28.409295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 7.5,
+        "second_release_time_s": 7.9683560670671225,
+        "second_explosion_time_s": 8.659295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 1149.6791551988629,
+          "kinematics": {
+            "release_point_m": [
+              18508.98592182553,
+              76.15744068674981,
+              1800.0
+            ],
+            "explosion_time_s": 8.659295222442692,
+            "explosion_point_m": [
+              18570.46235810376,
+              82.7610810487995,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              8.659295222442692,
+              28.659295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 7.75,
+        "second_release_time_s": 8.218356067067122,
+        "second_explosion_time_s": 8.909295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 1246.7329286563563,
+          "kinematics": {
+            "release_point_m": [
+              18531.229717028025,
+              78.54681184579933,
+              1800.0
+            ],
+            "explosion_time_s": 8.909295222442692,
+            "explosion_point_m": [
+              18592.706153306255,
+              85.15045220784901,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              8.909295222442692,
+              28.909295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      },
+      {
+        "release_gap_s": 8.0,
+        "second_release_time_s": 8.468356067067122,
+        "second_explosion_time_s": 9.159295222442692,
+        "second_single_cloud": {
+          "feasible": true,
+          "effective_duration_s": 0.0,
+          "intervals_s": [],
+          "minimum_scan_margin_m": 1343.8059598842362,
+          "kinematics": {
+            "release_point_m": [
+              18553.473512230517,
+              80.93618300484884,
+              1800.0
+            ],
+            "explosion_time_s": 9.159295222442692,
+            "explosion_point_m": [
+              18614.949948508747,
+              87.53982336689855,
+              1797.6607551094876
+            ],
+            "missile_arrival_time_s": 66.99917080747261,
+            "active_window_s": [
+              9.159295222442692,
+              29.159295222442694
+            ]
+          }
+        },
+        "conservative_union_intervals_s": [
+          [
+            1.2486668628268893,
+            5.8302751099878005
+          ]
+        ],
+        "conservative_union_duration_s": 4.581608247160911,
+        "added_single_cloud_duration_s": 0.0,
+        "overlap_loss_s": 0.0,
+        "marginal_union_gain_s": 0.0,
+        "marginal_capture_ratio": 0.0
+      }
+    ],
+    "screen_best": {
+      "release_gap_s": 1.0,
+      "second_release_time_s": 1.468356067067122,
+      "second_explosion_time_s": 2.159295222442692,
+      "second_single_cloud": {
+        "feasible": true,
+        "effective_duration_s": 0.7150341894477603,
+        "intervals_s": [
+          [
+            2.159295222442692,
+            2.8743294118904523
+          ]
+        ],
+        "minimum_scan_margin_m": -2.6099039159688857,
+        "kinematics": {
+          "release_point_m": [
+            17930.647246560715,
+            14.03379055146226,
+            1800.0
+          ],
+          "explosion_time_s": 2.159295222442692,
+          "explosion_point_m": [
+            17992.123682838945,
+            20.637430913511952,
+            1797.6607551094876
+          ],
+          "missile_arrival_time_s": 66.99917080747261,
+          "active_window_s": [
+            2.159295222442692,
+            22.159295222442694
+          ]
+        }
+      },
+      "conservative_union_intervals_s": [
+        [
+          1.2486668628268893,
+          5.8302751099878005
+        ]
+      ],
+      "conservative_union_duration_s": 4.581608247160911,
+      "added_single_cloud_duration_s": 0.7150341894477603,
+      "overlap_loss_s": 0.7150341894477599,
+      "marginal_union_gain_s": 0.0,
+      "marginal_capture_ratio": 0.0
+    },
+    "precise_best": {
+      "release_gap_s": 1.0,
+      "second_release_time_s": 1.468356067067122,
+      "second_explosion_time_s": 2.159295222442692,
+      "second_single_cloud": {
+        "feasible": true,
+        "effective_duration_s": 0.7149487599730486,
+        "intervals_s": [
+          [
+            2.159295222442692,
+            2.8742439824157406
+          ]
+        ],
+        "minimum_scan_margin_m": -2.609505483317318,
+        "kinematics": {
+          "release_point_m": [
+            17930.647246560715,
+            14.03379055146226,
+            1800.0
+          ],
+          "explosion_time_s": 2.159295222442692,
+          "explosion_point_m": [
+            17992.123682838945,
+            20.637430913511952,
+            1797.6607551094876
+          ],
+          "missile_arrival_time_s": 66.99917080747261,
+          "active_window_s": [
+            2.159295222442692,
+            22.159295222442694
+          ]
+        }
+      },
+      "conservative_union_intervals_s": [
+        [
+          1.2486668628268893,
+          5.8302751099878005
+        ]
+      ],
+      "conservative_union_duration_s": 4.581608247160911,
+      "added_single_cloud_duration_s": 0.7149487599730486,
+      "overlap_loss_s": 0.7149487599730486,
+      "marginal_union_gain_s": 0.0,
+      "marginal_capture_ratio": 0.0
+    }
+  },
+  "additional_uav": {
+    "design": {
+      "fixed_geometry_from_q2": {
+        "observation_time_s": 3.539470986407345,
+        "smoke_age_s": 2.380175763964653,
+        "line_parameter_q": 0.054915495827621924,
+        "baseline_cloud_center_m": [
+          17903.148502028977,
+          11.07994627731387,
+          1790.5202278175936
+        ],
+        "projected_line_point_m": [
+          17903.140656072195,
+          10.983099165524385,
+          1790.5886430863577
+        ],
+        "baseline_perpendicular_residual_m": 0.11883421687307094,
+        "target_center_m": [
+          0.0,
+          200.0,
+          5.0
+        ]
+      },
+      "varied": "observation time only",
+      "platforms_tested_separately": [
+        "FY2",
+        "FY3"
+      ],
+      "joint_multi_uav_optimization": false,
+      "all_three_uav_combination_reported": false,
+      "metric": "union of frozen Q2 interval and one independently complete additional-cloud interval"
+    },
+    "platforms": {
+      "FY2": {
+        "uav_initial_m": [
+          12000.0,
+          1400.0,
+          1400.0
+        ],
+        "direct_q2_decision_transfer": {
+          "single_cloud": {
+            "feasible": true,
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 1339.9830059175906,
+            "kinematics": {
+              "release_point_m": [
+                12041.672065750745,
+                1404.4763059152642,
+                1400.0
+              ],
+              "explosion_time_s": 1.159295222442692,
+              "explosion_point_m": [
+                12103.148502028975,
+                1411.0799462773139,
+                1397.6607551094876
+              ],
+              "missile_arrival_time_s": 66.99917080747261,
+              "active_window_s": [
+                1.159295222442692,
+                21.159295222442694
+              ]
+            }
+          },
+          "union_with_q2": {
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ]
+            ],
+            "conservative_union_duration_s": 4.581608247160911,
+            "added_single_cloud_duration_s": 0.0,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.0,
+            "marginal_capture_ratio": 0.0
+          }
+        },
+        "opportunity_feasibility": {
+          "dense_step_s": 0.05,
+          "dense_feasible_count": 420,
+          "feasible_observation_time_range_s": [
+            18.330175763964597,
+            45.03017576396451
+          ],
+          "evaluated_count": 31
+        },
+        "opportunity_records": [
+          {
+            "observation_time_s": 18.330175763964597,
+            "heading_rad": 5.606795029975181,
+            "speed_mps": 139.11851074888395,
+            "release_time_s": 13.952877972095289,
+            "fuse_delay_s": 1.9971220279046555,
+            "explosion_time_s": 15.949999999999944,
+            "desired_cloud_at_observation_m": [
+              13730.412628966922,
+              10.983099165524385,
+              1373.3158403758302
+            ],
+            "explosion_point_m": [
+              13730.412628966922,
+              10.983099165524385,
+              1380.4563676677242
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.9398367621004553,
+              "intervals_s": [
+                [
+                  16.377815904840773,
+                  20.31765266694123
+                ]
+              ],
+              "minimum_scan_margin_m": -9.435035598282521,
+              "kinematics": {
+                "release_point_m": [
+                  13513.745219645652,
+                  184.90386717733554,
+                  1400.0
+                ],
+                "explosion_time_s": 15.949999999999944,
+                "explosion_point_m": [
+                  13730.412628966922,
+                  10.983099165523754,
+                  1380.4563676677242
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  15.949999999999944,
+                  35.949999999999946
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                16.377815904840773,
+                20.31765266694123
+              ]
+            ],
+            "conservative_union_duration_s": 8.521445009261367,
+            "added_single_cloud_duration_s": 3.9398367621004553,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.9398367621004553,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 19.030175763964593,
+            "heading_rad": 5.546999793324259,
+            "speed_mps": 124.24221291425717,
+            "release_time_s": 13.818258949321702,
+            "fuse_delay_s": 2.8317410506782403,
+            "explosion_time_s": 16.64999999999994,
+            "desired_cloud_at_observation_m": [
+              13532.92984076296,
+              10.983099165524385,
+              1353.5675615554342
+            ],
+            "explosion_point_m": [
+              13532.92984076296,
+              10.983099165524385,
+              1360.708088847328
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.9037036471068873,
+              "intervals_s": [
+                [
+                  17.09528336189682,
+                  20.998987009003706
+                ]
+              ],
+              "minimum_scan_margin_m": -9.434190870489605,
+              "kinematics": {
+                "release_point_m": [
+                  13272.217506955263,
+                  247.21950626335342,
+                  1400.0
+                ],
+                "explosion_time_s": 16.64999999999994,
+                "explosion_point_m": [
+                  13532.92984076296,
+                  10.983099165523754,
+                  1360.708088847328
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  16.64999999999994,
+                  36.64999999999994
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                17.09528336189682,
+                20.998987009003706
+              ]
+            ],
+            "conservative_union_duration_s": 8.485311894267799,
+            "added_single_cloud_duration_s": 3.9037036471068873,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.9037036471068873,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 19.730175763964592,
+            "heading_rad": 5.47812714931823,
+            "speed_mps": 111.05817319476822,
+            "release_time_s": 13.878830404337597,
+            "fuse_delay_s": 3.47116959566234,
+            "explosion_time_s": 17.349999999999937,
+            "desired_cloud_at_observation_m": [
+              13335.447052558997,
+              10.983099165524385,
+              1333.8192827350379
+            ],
+            "explosion_point_m": [
+              13335.447052558997,
+              10.983099165524385,
+              1340.9598100269318
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.8669950686395325,
+              "intervals_s": [
+                [
+                  17.813032063469223,
+                  21.680027132108755
+                ]
+              ],
+              "minimum_scan_margin_m": -9.43332027026046,
+              "kinematics": {
+                "release_point_m": [
+                  13068.267617085816,
+                  288.88011553657793,
+                  1400.0
+                ],
+                "explosion_time_s": 17.349999999999937,
+                "explosion_point_m": [
+                  13335.447052558997,
+                  10.983099165524209,
+                  1340.9598100269318
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  17.349999999999937,
+                  37.34999999999994
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                17.813032063469223,
+                21.680027132108755
+              ]
+            ],
+            "conservative_union_duration_s": 8.448603315800444,
+            "added_single_cloud_duration_s": 3.8669950686395325,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.8669950686395325,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 20.430175763964588,
+            "heading_rad": 5.398763249945268,
+            "speed_mps": 99.48155781197005,
+            "release_time_s": 14.040102327289947,
+            "fuse_delay_s": 4.009897672709985,
+            "explosion_time_s": 18.049999999999933,
+            "desired_cloud_at_observation_m": [
+              13137.964264355034,
+              10.983099165524385,
+              1314.0710039146418
+            ],
+            "explosion_point_m": [
+              13137.964264355034,
+              10.983099165524385,
+              1321.2115312065357
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.8297044128179536,
+              "intervals_s": [
+                [
+                  18.531065736338427,
+                  22.36077014915638
+                ]
+              ],
+              "minimum_scan_margin_m": -9.43242259615969,
+              "kinematics": {
+                "release_point_m": [
+                  12885.159818079997,
+                  319.5601428226448,
+                  1400.0
+                ],
+                "explosion_time_s": 18.049999999999933,
+                "explosion_point_m": [
+                  13137.964264355034,
+                  10.983099165524436,
+                  1321.2115312065357
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  18.049999999999933,
+                  38.04999999999993
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                18.531065736338427,
+                22.36077014915638
+              ]
+            ],
+            "conservative_union_duration_s": 8.411312659978865,
+            "added_single_cloud_duration_s": 3.8297044128179536,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.8297044128179536,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 21.130175763964584,
+            "heading_rad": 5.307569127468979,
+            "speed_mps": 89.46455409785403,
+            "release_time_s": 14.265633787327356,
+            "fuse_delay_s": 4.4843662126725725,
+            "explosion_time_s": 18.74999999999993,
+            "desired_cloud_at_observation_m": [
+              12940.481476151073,
+              10.983099165524385,
+              1294.3227250942452
+            ],
+            "explosion_point_m": [
+              12940.481476151073,
+              10.983099165524385,
+              1301.4632523861392
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.7918251901865077,
+              "intervals_s": [
+                [
+                  19.249388073757217,
+                  23.041213263943725
+                ]
+              ],
+              "minimum_scan_margin_m": -9.43149657150699,
+              "kinematics": {
+                "release_point_m": [
+                  12715.550097201936,
+                  343.1889903086344,
+                  1400.0
+                ],
+                "explosion_time_s": 18.74999999999993,
+                "explosion_point_m": [
+                  12940.481476151073,
+                  10.983099165524209,
+                  1301.4632523861392
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  18.74999999999993,
+                  38.74999999999993
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                19.249388073757217,
+                23.041213263943725
+              ]
+            ],
+            "conservative_union_duration_s": 8.373433437347419,
+            "added_single_cloud_duration_s": 3.7918251901865077,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.7918251901865077,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 21.830175763964583,
+            "heading_rad": 5.203572819876341,
+            "speed_mps": 80.98975701974682,
+            "release_time_s": 14.53677282093385,
+            "fuse_delay_s": 4.913227179066082,
+            "explosion_time_s": 19.449999999999932,
+            "desired_cloud_at_observation_m": [
+              12742.998687947109,
+              10.983099165524385,
+              1274.5744462738492
+            ],
+            "explosion_point_m": [
+              12742.998687947109,
+              10.983099165524385,
+              1281.714973565743
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.753351044654849,
+              "intervals_s": [
+                [
+                  19.968002731725498,
+                  23.721353776380347
+                ]
+              ],
+              "minimum_scan_margin_m": -9.430540838416984,
+              "kinematics": {
+                "release_point_m": [
+                  12555.311215061134,
+                  361.8599932201312,
+                  1400.0
+                ],
+                "explosion_time_s": 19.449999999999932,
+                "explosion_point_m": [
+                  12742.998687947109,
+                  10.983099165523981,
+                  1281.714973565743
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  19.449999999999932,
+                  39.44999999999993
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                19.968002731725498,
+                23.721353776380347
+              ]
+            ],
+            "conservative_union_duration_s": 8.33495929181576,
+            "added_single_cloud_duration_s": 3.753351044654849,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.753351044654849,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 22.530175763964582,
+            "heading_rad": 5.086616996394233,
+            "speed_mps": 74.05949112266505,
+            "release_time_s": 14.842452327404981,
+            "fuse_delay_s": 5.307547672594947,
+            "explosion_time_s": 20.149999999999928,
+            "desired_cloud_at_observation_m": [
+              12545.515899743144,
+              10.983099165524385,
+              1254.8261674534526
+            ],
+            "explosion_point_m": [
+              12545.515899743144,
+              10.983099165524385,
+              1261.9666947453466
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.7142757706344085,
+              "intervals_s": [
+                [
+                  20.68691332079463,
+                  24.40118909142904
+                ]
+              ],
+              "minimum_scan_margin_m": -9.42955395126111,
+              "kinematics": {
+                "release_point_m": [
+                  12401.825991850079,
+                  376.8527477620054,
+                  1400.0
+                ],
+                "explosion_time_s": 20.149999999999928,
+                "explosion_point_m": [
+                  12545.515899743144,
+                  10.983099165524436,
+                  1261.9666947453466
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  20.149999999999928,
+                  40.14999999999993
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                20.68691332079463,
+                24.40118909142904
+              ]
+            ],
+            "conservative_union_duration_s": 8.29588401779532,
+            "added_single_cloud_duration_s": 3.7142757706344085,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.7142757706344085,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 28.980175763964557,
+            "heading_rad": 3.970096993116985,
+            "speed_mps": 70.86060658608568,
+            "release_time_s": 18.518784837394794,
+            "fuse_delay_s": 8.081215162605108,
+            "explosion_time_s": 26.599999999999902,
+            "desired_cloud_at_observation_m": [
+              10725.853065578061,
+              10.983099165524385,
+              1072.8598840369443
+            ],
+            "explosion_point_m": [
+              10725.853065578061,
+              10.983099165524385,
+              1080.0004113288383
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.324947279691692,
+              "intervals_s": [
+                [
+                  27.325687533989452,
+                  30.650634813681144
+                ]
+              ],
+              "minimum_scan_margin_m": -9.418681229984456,
+              "kinematics": {
+                "release_point_m": [
+                  11112.945378579469,
+                  432.97349165192895,
+                  1400.0
+                ],
+                "explosion_time_s": 26.599999999999902,
+                "explosion_point_m": [
+                  10725.853065578061,
+                  10.983099165524436,
+                  1080.0004113288383
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  26.599999999999902,
+                  46.5999999999999
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                27.325687533989452,
+                30.650634813681144
+              ]
+            ],
+            "conservative_union_duration_s": 7.906555526852603,
+            "added_single_cloud_duration_s": 3.324947279691692,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.324947279691692,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 29.680175763964556,
+            "heading_rad": 3.8981197686682805,
+            "speed_mps": 74.12549272654431,
+            "release_time_s": 18.973157892209393,
+            "fuse_delay_s": 8.32684210779051,
+            "explosion_time_s": 27.299999999999905,
+            "desired_cloud_at_observation_m": [
+              10528.370277374097,
+              10.983099165524385,
+              1053.1116052165478
+            ],
+            "explosion_point_m": [
+              10528.370277374097,
+              10.983099165524385,
+              1060.2521325084417
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.279423368722206,
+              "intervals_s": [
+                [
+                  28.047811351343896,
+                  31.3272347200661
+                ]
+              ],
+              "minimum_scan_margin_m": -9.417266141315402,
+              "kinematics": {
+                "release_point_m": [
+                  10977.23578438646,
+                  434.6506602754598,
+                  1400.0
+                ],
+                "explosion_time_s": 27.299999999999905,
+                "explosion_point_m": [
+                  10528.370277374097,
+                  10.98309916552489,
+                  1060.2521325084417
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  27.299999999999905,
+                  47.299999999999905
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                28.047811351343896,
+                31.3272347200661
+              ]
+            ],
+            "conservative_union_duration_s": 7.8610316158831175,
+            "added_single_cloud_duration_s": 3.279423368722206,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.279423368722206,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 30.38017576396455,
+            "heading_rad": 3.8356551450059966,
+            "speed_mps": 77.5526855530851,
+            "release_time_s": 19.434571787013265,
+            "fuse_delay_s": 8.565428212986635,
+            "explosion_time_s": 27.9999999999999,
+            "desired_cloud_at_observation_m": [
+              10330.887489170134,
+              10.983099165524385,
+              1033.3633263961517
+            ],
+            "explosion_point_m": [
+              10330.887489170134,
+              10.983099165524385,
+              1040.5038536880456
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.2332437701523347,
+              "intervals_s": [
+                [
+                  28.770266168191924,
+                  32.00350993834426
+                ]
+              ],
+              "minimum_scan_margin_m": -9.415794817886201,
+              "kinematics": {
+                "release_point_m": [
+                  10841.482610274103,
+                  435.894690262772,
+                  1400.0
+                ],
+                "explosion_time_s": 27.9999999999999,
+                "explosion_point_m": [
+                  10330.887489170134,
+                  10.983099165525118,
+                  1040.5038536880456
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  27.9999999999999,
+                  47.9999999999999
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                28.770266168191924,
+                32.00350993834426
+              ]
+            ],
+            "conservative_union_duration_s": 7.814852017313246,
+            "added_single_cloud_duration_s": 3.2332437701523347,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.2332437701523347,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 31.08017576396455,
+            "heading_rad": 3.781335792392554,
+            "speed_mps": 81.06978428399627,
+            "release_time_s": 19.902453668460524,
+            "fuse_delay_s": 8.79754633153937,
+            "explosion_time_s": 28.699999999999896,
+            "desired_cloud_at_observation_m": [
+              10133.40470096617,
+              10.983099165524385,
+              1013.615047575755
+            ],
+            "explosion_point_m": [
+              10133.40470096617,
+              10.983099165524385,
+              1020.755574867649
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.1864054262638106,
+              "intervals_s": [
+                [
+                  29.493054387345808,
+                  32.67945981360962
+                ]
+              ],
+              "minimum_scan_margin_m": -9.414263862953918,
+              "kinematics": {
+                "release_point_m": [
+                  10705.580959693827,
+                  436.7649995272867,
+                  1400.0
+                ],
+                "explosion_time_s": 28.699999999999896,
+                "explosion_point_m": [
+                  10133.40470096617,
+                  10.98309916552489,
+                  1020.7555748676489
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  28.699999999999896,
+                  48.699999999999896
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                29.493054387345808,
+                32.67945981360962
+              ]
+            ],
+            "conservative_union_duration_s": 7.768013673424722,
+            "added_single_cloud_duration_s": 3.1864054262638106,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.1864054262638106,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 31.780175763964547,
+            "heading_rad": 3.7339311681728016,
+            "speed_mps": 84.62340524211108,
+            "release_time_s": 20.376304391251992,
+            "fuse_delay_s": 9.0236956087479,
+            "explosion_time_s": 29.399999999999892,
+            "desired_cloud_at_observation_m": [
+              9935.92191276221,
+              10.983099165524385,
+              993.866768755359
+            ],
+            "explosion_point_m": [
+              9935.92191276221,
+              10.983099165524385,
+              1001.0072960472529
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.1389056608081063,
+              "intervals_s": [
+                [
+                  30.21617824770499,
+                  33.355083908513095
+                ]
+              ],
+              "minimum_scan_margin_m": -9.412669602223641,
+              "kinematics": {
+                "release_point_m": [
+                  10569.44614309964,
+                  437.3118647620116,
+                  1400.0
+                ],
+                "explosion_time_s": 29.399999999999892,
+                "explosion_point_m": [
+                  9935.92191276221,
+                  10.98309916552489,
+                  1001.0072960472529
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  29.399999999999892,
+                  49.39999999999989
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                30.21617824770499,
+                33.355083908513095
+              ]
+            ],
+            "conservative_union_duration_s": 7.720513907969018,
+            "added_single_cloud_duration_s": 3.1389056608081063,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.1389056608081063,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 32.480175763964546,
+            "heading_rad": 3.692377106092177,
+            "speed_mps": 88.17469487999058,
+            "release_time_s": 20.855685886822513,
+            "fuse_delay_s": 9.24431411317738,
+            "explosion_time_s": 30.099999999999895,
+            "desired_cloud_at_observation_m": [
+              9738.439124558245,
+              10.983099165524385,
+              974.1184899349627
+            ],
+            "explosion_point_m": [
+              9738.439124558245,
+              10.983099165524385,
+              981.2590172268566
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.0907421924173804,
+              "intervals_s": [
+                [
+                  30.939639815315502,
+                  34.03038200773288
+                ]
+              ],
+              "minimum_scan_margin_m": -9.411008055054236,
+              "kinematics": {
+                "release_point_m": [
+                  10433.009859397316,
+                  437.5780672660593,
+                  1400.0
+                ],
+                "explosion_time_s": 30.099999999999895,
+                "explosion_point_m": [
+                  9738.439124558245,
+                  10.983099165524663,
+                  981.2590172268566
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  30.099999999999895,
+                  50.099999999999895
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                30.939639815315502,
+                34.03038200773288
+              ]
+            ],
+            "conservative_union_duration_s": 7.672350439578292,
+            "added_single_cloud_duration_s": 3.0907421924173804,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.0907421924173804,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 33.18017576396454,
+            "heading_rad": 3.6557735270972853,
+            "speed_mps": 91.69571367950347,
+            "release_time_s": 21.34021118592773,
+            "fuse_delay_s": 9.459788814072164,
+            "explosion_time_s": 30.79999999999989,
+            "desired_cloud_at_observation_m": [
+              9540.956336354282,
+              10.983099165524385,
+              954.3702111145664
+            ],
+            "explosion_point_m": [
+              9540.956336354282,
+              10.983099165524385,
+              961.5107384064603
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 3.041913162171845,
+              "intervals_s": [
+                [
+                  31.663440968468677,
+                  34.70535413064052
+                ]
+              ],
+              "minimum_scan_margin_m": -9.409274902018723,
+              "kinematics": {
+                "release_point_m": [
+                  10296.217172155284,
+                  437.60019465484925,
+                  1400.0
+                ],
+                "explosion_time_s": 30.79999999999989,
+                "explosion_point_m": [
+                  9540.956336354282,
+                  10.983099165524436,
+                  961.5107384064602
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  30.79999999999989,
+                  50.79999999999989
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                31.663440968468677,
+                34.70535413064052
+              ]
+            ],
+            "conservative_union_duration_s": 7.623521409332756,
+            "added_single_cloud_duration_s": 3.041913162171845,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 3.041913162171845,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 33.880175763964544,
+            "heading_rad": 3.623368101186048,
+            "speed_mps": 95.16664378008593,
+            "release_time_s": 21.829536443861585,
+            "fuse_delay_s": 9.67046355613831,
+            "explosion_time_s": 31.499999999999893,
+            "desired_cloud_at_observation_m": [
+              9343.473548150318,
+              10.983099165524385,
+              934.6219322941699
+            ],
+            "explosion_point_m": [
+              9343.473548150318,
+              10.983099165524385,
+              941.7624595860639
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.9924171477556527,
+              "intervals_s": [
+                [
+                  32.387583389505615,
+                  35.38000053726127
+                ]
+              ],
+              "minimum_scan_margin_m": -9.40746544827389,
+              "kinematics": {
+                "release_point_m": [
+                  10159.024095405233,
+                  437.40968070139843,
+                  1400.0
+                ],
+                "explosion_time_s": 31.499999999999893,
+                "explosion_point_m": [
+                  9343.473548150318,
+                  10.98309916552489,
+                  941.7624595860639
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  31.499999999999893,
+                  51.49999999999989
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                32.387583389505615,
+                35.38000053726127
+              ]
+            ],
+            "conservative_union_duration_s": 7.574025394916564,
+            "added_single_cloud_duration_s": 2.9924171477556527,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.9924171477556527,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 34.58017576396454,
+            "heading_rad": 3.5945354355477592,
+            "speed_mps": 98.57368236412673,
+            "release_time_s": 22.323354497889696,
+            "fuse_delay_s": 9.876645502110193,
+            "explosion_time_s": 32.19999999999989,
+            "desired_cloud_at_observation_m": [
+              9145.990759946357,
+              10.983099165524385,
+              914.8736534737739
+            ],
+            "explosion_point_m": [
+              9145.990759946357,
+              10.983099165524385,
+              922.0141807656678
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.942253186553728,
+              "intervals_s": [
+                [
+                  33.11206854991603,
+                  36.05432173646976
+                ]
+              ],
+              "minimum_scan_margin_m": -9.405574582094596,
+              "kinematics": {
+                "release_point_m": [
+                  10021.395651988494,
+                  437.0336434506777,
+                  1400.0
+                ],
+                "explosion_time_s": 32.19999999999989,
+                "explosion_point_m": [
+                  9145.990759946357,
+                  10.983099165525573,
+                  922.0141807656678
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  32.19999999999989,
+                  52.19999999999989
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                33.11206854991603,
+                36.05432173646976
+              ]
+            ],
+            "conservative_union_duration_s": 7.5238614337146394,
+            "added_single_cloud_duration_s": 2.942253186553728,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.942253186553728,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 35.23017576396454,
+            "heading_rad": 3.5705061615837925,
+            "speed_mps": 101.67191806007459,
+            "release_time_s": 22.78568126629744,
+            "fuse_delay_s": 10.064318733702446,
+            "explosion_time_s": 32.84999999999989,
+            "desired_cloud_at_observation_m": [
+              8962.613885185532,
+              10.983099165524385,
+              896.5359659976914
+            ],
+            "explosion_point_m": [
+              8962.613885185532,
+              10.983099165524385,
+              903.6764932895853
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.8950738511979495,
+              "intervals_s": [
+                [
+                  33.78511275760818,
+                  36.68018660880613
+                ]
+              ],
+              "minimum_scan_margin_m": -9.403741014679824,
+              "kinematics": {
+                "release_point_m": [
+                  9893.183808376249,
+                  436.5389231076183,
+                  1400.0
+                ],
+                "explosion_time_s": 32.84999999999989,
+                "explosion_point_m": [
+                  8962.613885185532,
+                  10.98309916552489,
+                  903.6764932895853
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  32.84999999999989,
+                  52.84999999999989
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                33.78511275760818,
+                36.68018660880613
+              ]
+            ],
+            "conservative_union_duration_s": 7.476682098358861,
+            "added_single_cloud_duration_s": 2.8950738511979495,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.8950738511979495,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 35.930175763964534,
+            "heading_rad": 3.547174884170093,
+            "speed_mps": 104.93219306674665,
+            "release_time_s": 23.28740907191022,
+            "fuse_delay_s": 10.262590928089667,
+            "explosion_time_s": 33.54999999999988,
+            "desired_cloud_at_observation_m": [
+              8765.131096981571,
+              10.983099165524385,
+              876.7876871772953
+            ],
+            "explosion_point_m": [
+              8765.131096981571,
+              10.983099165524385,
+              883.9282144691892
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.8436207801103492,
+              "intervals_s": [
+                [
+                  34.51026224009682,
+                  37.35388302020717
+                ]
+              ],
+              "minimum_scan_margin_m": -9.401676941817957,
+              "kinematics": {
+                "release_point_m": [
+                  9754.64335503452,
+                  435.8687100587341,
+                  1400.0
+                ],
+                "explosion_time_s": 33.54999999999988,
+                "explosion_point_m": [
+                  8765.131096981571,
+                  10.983099165525573,
+                  883.9282144691891
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  33.54999999999988,
+                  53.54999999999988
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                34.51026224009682,
+                37.35388302020717
+              ]
+            ],
+            "conservative_union_duration_s": 7.425229027271261,
+            "added_single_cloud_duration_s": 2.8436207801103492,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.8436207801103492,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 36.63017576396453,
+            "heading_rad": 3.5261302003994848,
+            "speed_mps": 108.10968034903316,
+            "release_time_s": 23.792895546994608,
+            "fuse_delay_s": 10.457104453005273,
+            "explosion_time_s": 34.24999999999988,
+            "desired_cloud_at_observation_m": [
+              8567.648308777607,
+              10.983099165524385,
+              857.0394083568988
+            ],
+            "explosion_point_m": [
+              8567.648308777607,
+              10.983099165524385,
+              864.1799356487927
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.791499774157998,
+              "intervals_s": [
+                [
+                  35.235757450386764,
+                  38.02725722454476
+                ]
+              ],
+              "minimum_scan_margin_m": -9.399513613097868,
+              "kinematics": {
+                "release_point_m": [
+                  9615.603349786716,
+                  435.07345884481913,
+                  1400.0
+                ],
+                "explosion_time_s": 34.24999999999988,
+                "explosion_point_m": [
+                  8567.648308777607,
+                  10.983099165525118,
+                  864.1799356487926
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  34.24999999999988,
+                  54.24999999999988
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                35.235757450386764,
+                38.02725722454476
+              ]
+            ],
+            "conservative_union_duration_s": 7.3731080213189095,
+            "added_single_cloud_duration_s": 2.791499774157998,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.791499774157998,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 37.33017576396453,
+            "heading_rad": 3.5070678431041657,
+            "speed_mps": 111.20239421730248,
+            "release_time_s": 24.30193470508283,
+            "fuse_delay_s": 10.648065294917055,
+            "explosion_time_s": 34.94999999999988,
+            "desired_cloud_at_observation_m": [
+              8370.165520573644,
+              10.983099165524385,
+              837.2911295365025
+            ],
+            "explosion_point_m": [
+              8370.165520573644,
+              10.983099165524385,
+              844.4316568283964
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.7387118726968893,
+              "intervals_s": [
+                [
+                  35.961598915979145,
+                  38.700310788676035
+                ]
+              ],
+              "minimum_scan_margin_m": -9.397243757063787,
+              "kinematics": {
+                "release_point_m": [
+                  9476.051487574308,
+                  434.1688690032613,
+                  1400.0
+                ],
+                "explosion_time_s": 34.94999999999988,
+                "explosion_point_m": [
+                  8370.165520573644,
+                  10.9830991655258,
+                  844.4316568283965
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  34.94999999999988,
+                  54.94999999999988
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                35.961598915979145,
+                38.700310788676035
+              ]
+            ],
+            "conservative_union_duration_s": 7.320320119857801,
+            "added_single_cloud_duration_s": 2.7387118726968893,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.7387118726968893,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 38.03017576396453,
+            "heading_rad": 3.4897324081096777,
+            "speed_mps": 114.20968581498816,
+            "release_time_s": 24.81433871383135,
+            "fuse_delay_s": 10.835661286168527,
+            "explosion_time_s": 35.64999999999988,
+            "desired_cloud_at_observation_m": [
+              8172.682732369682,
+              10.983099165524385,
+              817.5428507161062
+            ],
+            "explosion_point_m": [
+              8172.682732369682,
+              10.983099165524385,
+              824.6833780080001
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.6852586671710057,
+              "intervals_s": [
+                [
+                  36.687786895409104,
+                  39.37304556258011
+                ]
+              ],
+              "minimum_scan_margin_m": -9.394859379564299,
+              "kinematics": {
+                "release_point_m": [
+                  9335.979045041386,
+                  433.1686996762114,
+                  1400.0
+                ],
+                "explosion_time_s": 35.64999999999988,
+                "explosion_point_m": [
+                  8172.682732369682,
+                  10.983099165525573,
+                  824.6833780080002
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  35.64999999999988,
+                  55.64999999999988
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                36.687786895409104,
+                39.37304556258011
+              ]
+            ],
+            "conservative_union_duration_s": 7.266866914331917,
+            "added_single_cloud_duration_s": 2.6852586671710057,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.6852586671710057,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 38.730175763964525,
+            "heading_rad": 3.473908531258247,
+            "speed_mps": 117.13188274674081,
+            "release_time_s": 25.3299357310255,
+            "fuse_delay_s": 11.020064268974373,
+            "explosion_time_s": 36.34999999999987,
+            "desired_cloud_at_observation_m": [
+              7975.199944165718,
+              10.983099165524385,
+              797.7945718957101
+            ],
+            "explosion_point_m": [
+              7975.199944165718,
+              10.983099165524385,
+              804.935099187604
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.6311423301696806,
+              "intervals_s": [
+                [
+                  37.41432136185455,
+                  40.04546369202423
+                ]
+              ],
+              "minimum_scan_margin_m": -9.392351672244136,
+              "kinematics": {
+                "release_point_m": [
+                  9195.380282131759,
+                  432.0850391349222,
+                  1400.0
+                ],
+                "explosion_time_s": 36.34999999999987,
+                "explosion_point_m": [
+                  7975.199944165717,
+                  10.983099165525573,
+                  804.9350991876041
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  36.34999999999987,
+                  56.34999999999987
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                37.41432136185455,
+                40.04546369202423
+              ]
+            ],
+            "conservative_union_duration_s": 7.212750577330592,
+            "added_single_cloud_duration_s": 2.6311423301696806,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.6311423301696806,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 39.43017576396453,
+            "heading_rad": 3.459413755365708,
+            "speed_mps": 119.97002000335819,
+            "release_time_s": 25.8485680613556,
+            "fuse_delay_s": 11.201431938644275,
+            "explosion_time_s": 37.049999999999876,
+            "desired_cloud_at_observation_m": [
+              7777.717155961755,
+              10.983099165524385,
+              778.0462930753138
+            ],
+            "explosion_point_m": [
+              7777.717155961755,
+              10.983099165524385,
+              785.1868203672077
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.5763656288385306,
+              "intervals_s": [
+                [
+                  38.1412019934504,
+                  40.71756762228893
+                ]
+              ],
+              "minimum_scan_margin_m": -9.389710906858065,
+              "kinematics": {
+                "release_point_m": [
+                  9054.25194417228,
+                  430.92853172487787,
+                  1400.0
+                ],
+                "explosion_time_s": 37.049999999999876,
+                "explosion_point_m": [
+                  7777.717155961755,
+                  10.983099165524663,
+                  785.1868203672078
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  37.049999999999876,
+                  57.049999999999876
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                38.1412019934504,
+                40.71756762228893
+              ]
+            ],
+            "conservative_union_duration_s": 7.157973875999442,
+            "added_single_cloud_duration_s": 2.5763656288385306,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.5763656288385306,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 40.13017576396452,
+            "heading_rad": 3.4460927677451845,
+            "speed_mps": 122.72563851115028,
+            "release_time_s": 26.370090577696264,
+            "fuse_delay_s": 11.379909422303609,
+            "explosion_time_s": 37.74999999999987,
+            "desired_cloud_at_observation_m": [
+              7580.234367757791,
+              10.983099165524385,
+              758.2980142549172
+            ],
+            "explosion_point_m": [
+              7580.234367757791,
+              10.983099165524385,
+              765.4385415468112
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.5209319457411894,
+              "intervals_s": [
+                [
+                  38.868428156897295,
+                  41.389360102638484
+                ]
+              ],
+              "minimum_scan_margin_m": -9.386926312766034,
+              "kinematics": {
+                "release_point_m": [
+                  8912.592846240625,
+                  429.7085698289752,
+                  1400.0
+                ],
+                "explosion_time_s": 37.74999999999987,
+                "explosion_point_m": [
+                  7580.234367757791,
+                  10.983099165524663,
+                  765.4385415468112
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  37.74999999999987,
+                  57.74999999999987
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                38.868428156897295,
+                41.389360102638484
+              ]
+            ],
+            "conservative_union_duration_s": 7.102540192902101,
+            "added_single_cloud_duration_s": 2.5209319457411894,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.5209319457411894,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 40.83017576396452,
+            "heading_rad": 3.433812739576316,
+            "speed_mps": 125.40063398052881,
+            "release_time_s": 26.894369361926117,
+            "fuse_delay_s": 11.555630638073751,
+            "explosion_time_s": 38.44999999999987,
+            "desired_cloud_at_observation_m": [
+              7382.75157955383,
+              10.983099165524385,
+              738.549735434521
+            ],
+            "explosion_point_m": [
+              7382.75157955383,
+              10.983099165524385,
+              745.690262726415
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.4648452945053734,
+              "intervals_s": [
+                [
+                  39.5959989007561,
+                  42.060844195261474
+                ]
+              ],
+              "minimum_scan_margin_m": -9.383985934432186,
+              "kinematics": {
+                "release_point_m": [
+                  8770.403525221074,
+                  428.43345693106994,
+                  1400.0
+                ],
+                "explosion_time_s": 38.44999999999987,
+                "explosion_point_m": [
+                  7382.75157955383,
+                  10.983099165526482,
+                  745.690262726415
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  38.44999999999987,
+                  58.44999999999987
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                39.5959989007561,
+                42.060844195261474
+              ]
+            ],
+            "conservative_union_duration_s": 7.046453541666285,
+            "added_single_cloud_duration_s": 2.4648452945053734,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.4648452945053734,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 41.530175763964515,
+            "heading_rad": 3.4224595473717927,
+            "speed_mps": 127.99714333340495,
+            "release_time_s": 27.421280529088172,
+            "fuse_delay_s": 11.728719470911694,
+            "explosion_time_s": 39.149999999999864,
+            "desired_cloud_at_observation_m": [
+              7185.268791349868,
+              10.983099165524385,
+              718.801456614125
+            ],
+            "explosion_point_m": [
+              7185.268791349868,
+              10.983099165524385,
+              725.9419839060189
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.408110339939597,
+              "intervals_s": [
+                [
+                  40.32391293682144,
+                  42.73202327676104
+                ]
+              ],
+              "minimum_scan_margin_m": -9.3808764650267,
+              "kinematics": {
+                "release_point_m": [
+                  8627.685947776463,
+                  427.11054668130487,
+                  1400.0
+                ],
+                "explosion_time_s": 39.149999999999864,
+                "explosion_point_m": [
+                  7185.268791349868,
+                  10.983099165525118,
+                  725.9419839060189
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  39.149999999999864,
+                  59.149999999999864
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                40.32391293682144,
+                42.73202327676104
+              ]
+            ],
+            "conservative_union_duration_s": 6.9897185871005085,
+            "added_single_cloud_duration_s": 2.408110339939597,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.408110339939597,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 42.23017576396451,
+            "heading_rad": 3.4119346997238043,
+            "speed_mps": 130.51745933059996,
+            "release_time_s": 27.95070920554083,
+            "fuse_delay_s": 11.89929079445903,
+            "explosion_time_s": 39.84999999999986,
+            "desired_cloud_at_observation_m": [
+              6987.786003145906,
+              10.983099165524385,
+              699.0531777937287
+            ],
+            "explosion_point_m": [
+              6987.786003145906,
+              10.983099165524385,
+              706.1937050856226
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.3507324151694746,
+              "intervals_s": [
+                [
+                  41.05216863118099,
+                  43.402901046350465
+                ]
+              ],
+              "minimum_scan_margin_m": -9.377583051320741,
+              "kinematics": {
+                "release_point_m": [
+                  8484.443264692325,
+                  425.74636193711217,
+                  1400.0
+                ],
+                "explosion_time_s": 39.84999999999986,
+                "explosion_point_m": [
+                  6987.786003145905,
+                  10.983099165525346,
+                  706.1937050856226
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  39.84999999999986,
+                  59.84999999999986
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                41.05216863118099,
+                43.402901046350465
+              ]
+            ],
+            "conservative_union_duration_s": 6.932340662330386,
+            "added_single_cloud_duration_s": 2.3507324151694746,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.3507324151694746,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 42.93017576396451,
+            "heading_rad": 3.402152828329137,
+            "speed_mps": 132.96396645125148,
+            "release_time_s": 28.482548637145655,
+            "fuse_delay_s": 12.067451362854205,
+            "explosion_time_s": 40.54999999999986,
+            "desired_cloud_at_observation_m": [
+              6790.30321494194,
+              10.983099165524385,
+              679.3048989733321
+            ],
+            "explosion_point_m": [
+              6790.30321494194,
+              10.983099165524385,
+              686.445426265226
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.2927175343036623,
+              "intervals_s": [
+                [
+                  41.78076399303959,
+                  44.073481527343255
+                ]
+              ],
+              "minimum_scan_margin_m": -9.37408906400878,
+              "kinematics": {
+                "release_point_m": [
+                  8340.679603817556,
+                  424.3466970200892,
+                  1400.0
+                ],
+                "explosion_time_s": 40.54999999999986,
+                "explosion_point_m": [
+                  6790.303214941939,
+                  10.983099165525118,
+                  686.4454262652259
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  40.54999999999986,
+                  60.54999999999986
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                41.78076399303959,
+                44.073481527343255
+              ]
+            ],
+            "conservative_union_duration_s": 6.874325781464574,
+            "added_single_cloud_duration_s": 2.2927175343036623,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.2927175343036623,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 43.63017576396451,
+            "heading_rad": 3.393039631360527,
+            "speed_mps": 135.3390928510074,
+            "release_time_s": 29.016699407820894,
+            "fuse_delay_s": 12.233300592178962,
+            "explosion_time_s": 41.24999999999986,
+            "desired_cloud_at_observation_m": [
+              6592.820426737979,
+              10.983099165524385,
+              659.556620152936
+            ],
+            "explosion_point_m": [
+              6592.820426737979,
+              10.983099165524385,
+              666.69714744483
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.2340724110603247,
+              "intervals_s": [
+                [
+                  42.50969665907311,
+                  44.74376907013343
+                ]
+              ],
+              "minimum_scan_margin_m": -9.370375826064393,
+              "kinematics": {
+                "release_point_m": [
+                  8196.399895237482,
+                  422.9167058449209,
+                  1400.0
+                ],
+                "explosion_time_s": 41.24999999999986,
+                "explosion_point_m": [
+                  6592.820426737978,
+                  10.98309916552671,
+                  666.6971474448299
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  41.24999999999986,
+                  61.24999999999986
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                42.50969665907311,
+                44.74376907013343
+              ]
+            ],
+            "conservative_union_duration_s": 6.815680658221236,
+            "added_single_cloud_duration_s": 2.2340724110603247,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.2340724110603247,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 44.330175763964505,
+            "heading_rad": 3.3845301804736234,
+            "speed_mps": 137.64527452758668,
+            "release_time_s": 29.553068752212745,
+            "fuse_delay_s": 12.39693124778711,
+            "explosion_time_s": 41.949999999999854,
+            "desired_cloud_at_observation_m": [
+              6395.337638534014,
+              10.983099165524385,
+              639.8083413325396
+            ],
+            "explosion_point_m": [
+              6395.337638534014,
+              10.983099165524385,
+              646.9488686244335
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.174804469943034,
+              "intervals_s": [
+                [
+                  43.23896388821289,
+                  45.41376835815593
+                ]
+              ],
+              "minimum_scan_margin_m": -9.366422290004515,
+              "kinematics": {
+                "release_point_m": [
+                  8051.609723448299,
+                  421.4609781085377,
+                  1400.0
+                ],
+                "explosion_time_s": 41.949999999999854,
+                "explosion_point_m": [
+                  6395.337638534014,
+                  10.983099165525346,
+                  646.9488686244335
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  41.949999999999854,
+                  61.949999999999854
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                43.23896388821289,
+                45.41376835815593
+              ]
+            ],
+            "conservative_union_duration_s": 6.756412717103945,
+            "added_single_cloud_duration_s": 2.174804469943034,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.174804469943034,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 45.03017576396451,
+            "heading_rad": 3.3765675211236386,
+            "speed_mps": 139.88492878193193,
+            "release_time_s": 30.091569948989704,
+            "fuse_delay_s": 12.558430051010152,
+            "explosion_time_s": 42.64999999999986,
+            "desired_cloud_at_observation_m": [
+              6197.854850330052,
+              10.983099165524385,
+              620.0600625121433
+            ],
+            "explosion_point_m": [
+              6197.854850330052,
+              10.983099165524385,
+              627.2005898040372
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.1149218648672274,
+              "intervals_s": [
+                [
+                  43.968562543764556,
+                  46.08348440863178
+                ]
+              ],
+              "minimum_scan_margin_m": -9.362204652491636,
+              "kinematics": {
+                "release_point_m": [
+                  7906.315202216057,
+                  419.9836053507713,
+                  1400.0
+                ],
+                "explosion_time_s": 42.64999999999986,
+                "explosion_point_m": [
+                  6197.854850330051,
+                  10.983099165526255,
+                  627.2005898040372
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  42.64999999999986,
+                  62.64999999999986
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                43.968562543764556,
+                46.08348440863178
+              ]
+            ],
+            "conservative_union_duration_s": 6.696530112028139,
+            "added_single_cloud_duration_s": 2.1149218648672274,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.1149218648672274,
+            "marginal_capture_ratio": 1.0
+          }
+        ],
+        "screen_best": {
+          "observation_time_s": 18.330175763964597,
+          "heading_rad": 5.606795029975181,
+          "speed_mps": 139.11851074888395,
+          "release_time_s": 13.952877972095289,
+          "fuse_delay_s": 1.9971220279046555,
+          "explosion_time_s": 15.949999999999944,
+          "desired_cloud_at_observation_m": [
+            13730.412628966922,
+            10.983099165524385,
+            1373.3158403758302
+          ],
+          "explosion_point_m": [
+            13730.412628966922,
+            10.983099165524385,
+            1380.4563676677242
+          ],
+          "single_cloud": {
+            "feasible": true,
+            "effective_duration_s": 3.9398367621004553,
+            "intervals_s": [
+              [
+                16.377815904840773,
+                20.31765266694123
+              ]
+            ],
+            "minimum_scan_margin_m": -9.435035598282521,
+            "kinematics": {
+              "release_point_m": [
+                13513.745219645652,
+                184.90386717733554,
+                1400.0
+              ],
+              "explosion_time_s": 15.949999999999944,
+              "explosion_point_m": [
+                13730.412628966922,
+                10.983099165523754,
+                1380.4563676677242
+              ],
+              "missile_arrival_time_s": 66.99917080747261,
+              "active_window_s": [
+                15.949999999999944,
+                35.949999999999946
+              ]
+            }
+          },
+          "conservative_union_intervals_s": [
+            [
+              1.2486668628268893,
+              5.8302751099878005
+            ],
+            [
+              16.377815904840773,
+              20.31765266694123
+            ]
+          ],
+          "conservative_union_duration_s": 8.521445009261367,
+          "added_single_cloud_duration_s": 3.9398367621004553,
+          "overlap_loss_s": 0.0,
+          "marginal_union_gain_s": 3.9398367621004553,
+          "marginal_capture_ratio": 1.0
+        },
+        "precise_best": {
+          "observation_time_s": 18.330175763964597,
+          "heading_rad": 5.606795029975181,
+          "speed_mps": 139.11851074888395,
+          "release_time_s": 13.952877972095289,
+          "fuse_delay_s": 1.9971220279046555,
+          "explosion_time_s": 15.949999999999944,
+          "desired_cloud_at_observation_m": [
+            13730.412628966922,
+            10.983099165524385,
+            1373.3158403758302
+          ],
+          "explosion_point_m": [
+            13730.412628966922,
+            10.983099165524385,
+            1380.4563676677242
+          ],
+          "single_cloud": {
+            "feasible": true,
+            "effective_duration_s": 3.9398324930667883,
+            "intervals_s": [
+              [
+                16.37781848520035,
+                20.31765097826714
+              ]
+            ],
+            "minimum_scan_margin_m": -9.526719695773236,
+            "kinematics": {
+              "release_point_m": [
+                13513.745219645652,
+                184.90386717733554,
+                1400.0
+              ],
+              "explosion_time_s": 15.949999999999944,
+              "explosion_point_m": [
+                13730.412628966922,
+                10.983099165523754,
+                1380.4563676677242
+              ],
+              "missile_arrival_time_s": 66.99917080747261,
+              "active_window_s": [
+                15.949999999999944,
+                35.949999999999946
+              ]
+            }
+          },
+          "conservative_union_intervals_s": [
+            [
+              1.2486668628268893,
+              5.8302751099878005
+            ],
+            [
+              16.37781848520035,
+              20.31765097826714
+            ]
+          ],
+          "conservative_union_duration_s": 8.5214407402277,
+          "added_single_cloud_duration_s": 3.9398324930667883,
+          "overlap_loss_s": 0.0,
+          "marginal_union_gain_s": 3.9398324930667883,
+          "marginal_capture_ratio": 1.0
+        }
+      },
+      "FY3": {
+        "uav_initial_m": [
+          6000.0,
+          -3000.0,
+          700.0
+        ],
+        "direct_q2_decision_transfer": {
+          "single_cloud": {
+            "feasible": true,
+            "effective_duration_s": 0.0,
+            "intervals_s": [],
+            "minimum_scan_margin_m": 3093.321649353286,
+            "kinematics": {
+              "release_point_m": [
+                6041.672065750744,
+                -2995.523694084736,
+                700.0
+              ],
+              "explosion_time_s": 1.159295222442692,
+              "explosion_point_m": [
+                6103.148502028975,
+                -2988.920053722686,
+                697.6607551094876
+              ],
+              "missile_arrival_time_s": 66.99917080747261,
+              "active_window_s": [
+                1.159295222442692,
+                21.159295222442694
+              ]
+            }
+          },
+          "union_with_q2": {
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ]
+            ],
+            "conservative_union_duration_s": 4.581608247160911,
+            "added_single_cloud_duration_s": 0.0,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.0,
+            "marginal_capture_ratio": 0.0
+          }
+        },
+        "opportunity_feasibility": {
+          "dense_step_s": 0.05,
+          "dense_feasible_count": 364,
+          "feasible_observation_time_range_s": [
+            42.48017576396451,
+            66.98017576396443
+          ],
+          "evaluated_count": 31
+        },
+        "opportunity_records": [
+          {
+            "observation_time_s": 42.48017576396451,
+            "heading_rad": 1.2750909801921821,
+            "speed_mps": 78.49373719372058,
+            "release_time_s": 39.68124293829942,
+            "fuse_delay_s": 0.4187570617004429,
+            "explosion_time_s": 40.09999999999986,
+            "desired_cloud_at_observation_m": [
+              6917.256435930205,
+              10.983099165524385,
+              692.0002210721585
+            ],
+            "explosion_point_m": [
+              6917.256435930205,
+              10.983099165524385,
+              699.1407483640525
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.330085601657636,
+              "intervals_s": [
+                [
+                  41.31234238259481,
+                  43.64242798425244
+                ]
+              ],
+              "minimum_scan_margin_m": -9.376359146994286,
+              "kinematics": {
+                "release_point_m": [
+                  6907.677692540281,
+                  -20.460053837873147,
+                  700.0
+                ],
+                "explosion_time_s": 40.09999999999986,
+                "explosion_point_m": [
+                  6917.256435930205,
+                  10.983099165524436,
+                  699.1407483640525
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  40.09999999999986,
+                  60.09999999999986
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                41.31234238259481,
+                43.64242798425244
+              ]
+            ],
+            "conservative_union_duration_s": 6.9116938488185475,
+            "added_single_cloud_duration_s": 2.330085601657636,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.330085601657636,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 43.08017576396451,
+            "heading_rad": 1.3273061962589756,
+            "speed_mps": 76.22848239487938,
+            "release_time_s": 38.79477904395024,
+            "fuse_delay_s": 1.9052209560496185,
+            "explosion_time_s": 40.69999999999986,
+            "desired_cloud_at_observation_m": [
+              6747.98547461252,
+              10.983099165524385,
+              675.07312494039
+            ],
+            "explosion_point_m": [
+              6747.98547461252,
+              10.983099165524385,
+              682.213652232284
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.2802035361528397,
+              "intervals_s": [
+                [
+                  41.93693554215119,
+                  44.21713907830403
+                ]
+              ],
+              "minimum_scan_margin_m": -9.373312506226615,
+              "kinematics": {
+                "release_point_m": [
+                  6712.971282940469,
+                  -129.96501137111954,
+                  700.0
+                ],
+                "explosion_time_s": 40.69999999999986,
+                "explosion_point_m": [
+                  6747.98547461252,
+                  10.983099165524436,
+                  682.213652232284
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  40.69999999999986,
+                  60.69999999999986
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                41.93693554215119,
+                44.21713907830403
+              ]
+            ],
+            "conservative_union_duration_s": 6.861811783313751,
+            "added_single_cloud_duration_s": 2.2802035361528397,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.2802035361528397,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 43.680175763964506,
+            "heading_rad": 1.3809107518494474,
+            "speed_mps": 74.23955348201285,
+            "release_time_s": 38.638350829651294,
+            "fuse_delay_s": 2.6616491703485616,
+            "explosion_time_s": 41.299999999999855,
+            "desired_cloud_at_observation_m": [
+              6578.714513294838,
+              10.983099165524385,
+              658.1460288086218
+            ],
+            "explosion_point_m": [
+              6578.714513294838,
+              10.983099165524385,
+              665.2865561005158
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.229859548807134,
+              "intervals_s": [
+                [
+                  42.56177611537264,
+                  44.79163566417977
+                ]
+              ],
+              "minimum_scan_margin_m": -9.370101664896193,
+              "kinematics": {
+                "release_point_m": [
+                  6541.418266220265,
+                  -183.06485889325222,
+                  700.0
+                ],
+                "explosion_time_s": 41.299999999999855,
+                "explosion_point_m": [
+                  6578.714513294839,
+                  10.98309916552489,
+                  665.2865561005158
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  41.299999999999855,
+                  61.299999999999855
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                42.56177611537264,
+                44.79163566417977
+              ]
+            ],
+            "conservative_union_duration_s": 6.811467795968046,
+            "added_single_cloud_duration_s": 2.229859548807134,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.229859548807134,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 44.28017576396451,
+            "heading_rad": 1.4356419812427341,
+            "speed_mps": 72.52253776593808,
+            "release_time_s": 38.65363499885416,
+            "fuse_delay_s": 3.2463650011457013,
+            "explosion_time_s": 41.89999999999986,
+            "desired_cloud_at_observation_m": [
+              6409.443551977155,
+              10.983099165524385,
+              641.2189326768538
+            ],
+            "explosion_point_m": [
+              6409.443551977155,
+              10.983099165524385,
+              648.3594599687477
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.1790583796799368,
+              "intervals_s": [
+                [
+                  43.18686234094188,
+                  45.365920720621816
+                ]
+              ],
+              "minimum_scan_margin_m": -9.3667131447926,
+              "kinematics": {
+                "release_point_m": [
+                  6377.720324839126,
+                  -222.3044939650772,
+                  700.0
+                ],
+                "explosion_time_s": 41.899999999999864,
+                "explosion_point_m": [
+                  6409.443551977155,
+                  10.98309916552489,
+                  648.3594599687477
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  41.899999999999864,
+                  61.899999999999864
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                43.18686234094188,
+                45.365920720621816
+              ]
+            ],
+            "conservative_union_duration_s": 6.760666626840848,
+            "added_single_cloud_duration_s": 2.1790583796799368,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.1790583796799368,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 44.8801757639645,
+            "heading_rad": 1.491199348138899,
+            "speed_mps": 71.0716860067494,
+            "release_time_s": 38.75922532951911,
+            "fuse_delay_s": 3.7407746704807403,
+            "explosion_time_s": 42.49999999999985,
+            "desired_cloud_at_observation_m": [
+              6240.172590659473,
+              10.983099165524385,
+              624.2918365450856
+            ],
+            "explosion_point_m": [
+              6240.172590659473,
+              10.983099165524385,
+              631.4323638369796
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 2.1278051622211933,
+              "intervals_s": [
+                [
+                  43.812192245200116,
+                  45.93999740742131
+                ]
+              ],
+              "minimum_scan_margin_m": -9.363131965678809,
+              "kinematics": {
+                "release_point_m": [
+                  6219.033024925762,
+                  -254.0382963780994,
+                  700.0
+                ],
+                "explosion_time_s": 42.49999999999985,
+                "explosion_point_m": [
+                  6240.172590659473,
+                  10.983099165524436,
+                  631.4323638369796
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  42.49999999999985,
+                  62.49999999999985
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                43.812192245200116,
+                45.93999740742131
+              ]
+            ],
+            "conservative_union_duration_s": 6.709413409382105,
+            "added_single_cloud_duration_s": 2.1278051622211933,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 2.1278051622211933,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 51.830175763964476,
+            "heading_rad": 2.0899393382531497,
+            "speed_mps": 70.12936235955519,
+            "release_time_s": 42.100977671261134,
+            "fuse_delay_s": 7.349022328738692,
+            "explosion_time_s": 49.449999999999825,
+            "desired_cloud_at_observation_m": [
+              4279.4506220629855,
+              10.983099165524385,
+              428.21963968543673
+            ],
+            "explosion_point_m": [
+              4279.4506220629855,
+              10.983099165524385,
+              435.36016697733066
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.503364254904909,
+              "intervals_s": [
+                [
+                  51.07243135949008,
+                  52.57579561439499
+                ]
+              ],
+              "minimum_scan_margin_m": -9.301051284261542,
+              "kinematics": {
+                "release_point_m": [
+                  4535.150435938752,
+                  -436.4947982504982,
+                  700.0
+                ],
+                "explosion_time_s": 49.449999999999825,
+                "explosion_point_m": [
+                  4279.4506220629855,
+                  10.98309916552489,
+                  435.3601669773306
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  49.449999999999825,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                51.07243135949008,
+                52.57579561439499
+              ]
+            ],
+            "conservative_union_duration_s": 6.0849725020658205,
+            "added_single_cloud_duration_s": 1.503364254904909,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.503364254904909,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 52.480175763964475,
+            "heading_rad": 2.1346472355010193,
+            "speed_mps": 71.10651859831404,
+            "release_time_s": 42.500624079077085,
+            "fuse_delay_s": 7.599375920922742,
+            "explosion_time_s": 50.099999999999824,
+            "desired_cloud_at_observation_m": [
+              4096.073747302162,
+              10.983099165524385,
+              409.88195220935427
+            ],
+            "explosion_point_m": [
+              4096.073747302162,
+              10.983099165524385,
+              417.0224795012482
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.4423235173182718,
+              "intervals_s": [
+                [
+                  51.7529162100832,
+                  53.19523972740147
+                ]
+              ],
+              "minimum_scan_margin_m": -9.29195082594798,
+              "kinematics": {
+                "release_point_m": [
+                  4384.869182830398,
+                  -445.73531325171916,
+                  700.0
+                ],
+                "explosion_time_s": 50.099999999999824,
+                "explosion_point_m": [
+                  4096.073747302162,
+                  10.983099165523981,
+                  417.02247950124814
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  50.099999999999824,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                51.7529162100832,
+                53.19523972740147
+              ]
+            ],
+            "conservative_union_duration_s": 6.023931764479183,
+            "added_single_cloud_duration_s": 1.4423235173182718,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.4423235173182718,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 53.080175763964476,
+            "heading_rad": 2.173792896477861,
+            "speed_mps": 72.1045996734288,
+            "release_time_s": 42.87663603031601,
+            "fuse_delay_s": 7.823363969683819,
+            "explosion_time_s": 50.699999999999825,
+            "desired_cloud_at_observation_m": [
+              3926.8027859844783,
+              10.983099165524385,
+              392.95485607758593
+            ],
+            "explosion_point_m": [
+              3926.8027859844783,
+              10.983099165524385,
+              400.09538336947986
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.3856239946443338,
+              "intervals_s": [
+                [
+                  52.381257269981646,
+                  53.76688126462598
+                ]
+              ],
+              "minimum_scan_margin_m": -9.282761748612707,
+              "kinematics": {
+                "release_point_m": [
+                  4246.711590445582,
+                  -453.6326146675833,
+                  700.0
+                ],
+                "explosion_time_s": 50.699999999999825,
+                "explosion_point_m": [
+                  3926.8027859844783,
+                  10.983099165524436,
+                  400.09538336947986
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  50.699999999999825,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                52.381257269981646,
+                53.76688126462598
+              ]
+            ],
+            "conservative_union_duration_s": 5.967232241805245,
+            "added_single_cloud_duration_s": 1.3856239946443338,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.3856239946443338,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 53.68017576396447,
+            "heading_rad": 2.210937186980504,
+            "speed_mps": 73.18301325256805,
+            "release_time_s": 43.25888482753813,
+            "fuse_delay_s": 8.041115172461685,
+            "explosion_time_s": 51.29999999999982,
+            "desired_cloud_at_observation_m": [
+              3757.5318246667985,
+              10.983099165524385,
+              376.0277599458178
+            ],
+            "explosion_point_m": [
+              3757.5318246667985,
+              10.983099165524385,
+              383.16828723771175
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.3285962567007772,
+              "intervals_s": [
+                [
+                  53.00978569969142,
+                  54.3383819563922
+                ]
+              ],
+              "minimum_scan_margin_m": -9.272707549072932,
+              "kinematics": {
+                "release_point_m": [
+                  4109.031724636278,
+                  -460.9791207706494,
+                  700.0
+                ],
+                "explosion_time_s": 51.29999999999982,
+                "explosion_point_m": [
+                  3757.531824666798,
+                  10.983099165523981,
+                  383.16828723771175
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  51.29999999999982,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                53.00978569969142,
+                54.3383819563922
+              ]
+            ],
+            "conservative_union_duration_s": 5.910204503861689,
+            "added_single_cloud_duration_s": 1.3285962567007772,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.3285962567007772,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 54.28017576396447,
+            "heading_rad": 2.246134927560651,
+            "speed_mps": 74.33111698554177,
+            "release_time_s": 43.646876795331174,
+            "fuse_delay_s": 8.253123204668647,
+            "explosion_time_s": 51.89999999999982,
+            "desired_cloud_at_observation_m": [
+              3588.260863349115,
+              10.983099165524385,
+              359.1006638140497
+            ],
+            "explosion_point_m": [
+              3588.260863349115,
+              10.983099165524385,
+              366.24119110594364
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.2712523460860723,
+              "intervals_s": [
+                [
+                  53.63849557056642,
+                  54.90974791665249
+                ]
+              ],
+              "minimum_scan_margin_m": -9.261662605834202,
+              "kinematics": {
+                "release_point_m": [
+                  3971.774933335647,
+                  -467.8225749113194,
+                  700.0
+                ],
+                "explosion_time_s": 51.89999999999982,
+                "explosion_point_m": [
+                  3588.2608633491145,
+                  10.983099165524436,
+                  366.24119110594364
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  51.89999999999982,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                53.63849557056642,
+                54.90974791665249
+              ]
+            ],
+            "conservative_union_duration_s": 5.852860593246984,
+            "added_single_cloud_duration_s": 1.2712523460860723,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.2712523460860723,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 54.880175763964466,
+            "heading_rad": 2.279454655718691,
+            "speed_mps": 75.53919821428872,
+            "release_time_s": 44.04018014103789,
+            "fuse_delay_s": 8.45981985896193,
+            "explosion_time_s": 52.499999999999815,
+            "desired_cloud_at_observation_m": [
+              3418.9899020314315,
+              10.983099165524385,
+              342.1735676822814
+            ],
+            "explosion_point_m": [
+              3418.9899020314315,
+              10.983099165524385,
+              349.3140949741753
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.213604842463738,
+              "intervals_s": [
+                [
+                  54.267380637960244,
+                  55.48098548042398
+                ]
+              ],
+              "minimum_scan_margin_m": -9.2494761075297,
+              "kinematics": {
+                "release_point_m": [
+                  3834.892387421447,
+                  -474.20498878341505,
+                  700.0
+                ],
+                "explosion_time_s": 52.499999999999815,
+                "explosion_point_m": [
+                  3418.9899020314306,
+                  10.983099165524436,
+                  349.31409497417536
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  52.499999999999815,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                54.267380637960244,
+                55.48098548042398
+              ]
+            ],
+            "conservative_union_duration_s": 5.795213089624649,
+            "added_single_cloud_duration_s": 1.213604842463738,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.213604842463738,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 55.48017576396447,
+            "heading_rad": 2.310974498566486,
+            "speed_mps": 76.79844983399025,
+            "release_time_s": 44.43841461043439,
+            "fuse_delay_s": 8.661585389565428,
+            "explosion_time_s": 53.09999999999982,
+            "desired_cloud_at_observation_m": [
+              3249.718940713748,
+              10.983099165524385,
+              325.246471550513
+            ],
+            "explosion_point_m": [
+              3249.718940713748,
+              10.983099165524385,
+              332.3869988424069
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.1556668992024015,
+              "intervals_s": [
+                [
+                  54.89643432336803,
+                  56.05210122257043
+                ]
+              ],
+              "minimum_scan_margin_m": -9.235965475128184,
+              "kinematics": {
+                "release_point_m": [
+                  3698.3403011716086,
+                  -480.1635528111351,
+                  700.0
+                ],
+                "explosion_time_s": 53.099999999999824,
+                "explosion_point_m": [
+                  3249.7189407137475,
+                  10.98309916552489,
+                  332.3869988424069
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  53.099999999999824,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                54.89643432336803,
+                56.05210122257043
+              ]
+            ],
+            "conservative_union_duration_s": 5.737275146363313,
+            "added_single_cloud_duration_s": 1.1556668992024015,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.1556668992024015,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 56.08017576396446,
+            "heading_rad": 2.3407787083367326,
+            "speed_mps": 78.10092990890507,
+            "release_time_s": 44.8412432658198,
+            "fuse_delay_s": 8.858756734180016,
+            "explosion_time_s": 53.69999999999981,
+            "desired_cloud_at_observation_m": [
+              3080.447979396068,
+              10.983099165524385,
+              308.3193754187451
+            ],
+            "explosion_point_m": [
+              3080.447979396068,
+              10.983099165524385,
+              315.459902710639
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.097452297187047,
+              "intervals_s": [
+                [
+                  55.52564968425108,
+                  56.623101981438126
+                ]
+              ],
+              "minimum_scan_margin_m": -9.220907626049597,
+              "kinematics": {
+                "release_point_m": [
+                  3562.079285230594,
+                  -485.73136649992966,
+                  700.0
+                ],
+                "explosion_time_s": 53.69999999999982,
+                "explosion_point_m": [
+                  3080.4479793960677,
+                  10.983099165525346,
+                  315.459902710639
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  53.69999999999982,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                55.52564968425108,
+                56.623101981438126
+              ]
+            ],
+            "conservative_union_duration_s": 5.6790605443479585,
+            "added_single_cloud_duration_s": 1.097452297187047,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.097452297187047,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 56.68017576396446,
+            "heading_rad": 2.3689548397635316,
+            "speed_mps": 79.43951050681785,
+            "release_time_s": 45.24836587736613,
+            "fuse_delay_s": 9.05163412263368,
+            "explosion_time_s": 54.29999999999981,
+            "desired_cloud_at_observation_m": [
+              2911.1770180783847,
+              10.983099165524385,
+              291.39227928697676
+            ],
+            "explosion_point_m": [
+              2911.1770180783847,
+              10.983099165524385,
+              298.5328065788707
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 1.0389755083629026,
+              "intervals_s": [
+                [
+                  56.15501938184311,
+                  57.193994890206014
+                ]
+              ],
+              "minimum_scan_margin_m": -9.204027211376207,
+              "kinematics": {
+                "release_point_m": [
+                  3426.073804486063,
+                  -490.93803090961455,
+                  700.0
+                ],
+                "explosion_time_s": 54.29999999999981,
+                "explosion_point_m": [
+                  2911.1770180783856,
+                  10.98309916552489,
+                  298.53280657887075
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  54.29999999999981,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                56.15501938184311,
+                57.193994890206014
+              ]
+            ],
+            "conservative_union_duration_s": 5.620583755523814,
+            "added_single_cloud_duration_s": 1.0389755083629026,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 1.0389755083629026,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 57.28017576396446,
+            "heading_rad": 2.3955915146912674,
+            "speed_mps": 80.8078201952616,
+            "release_time_s": 45.65951355692372,
+            "fuse_delay_s": 9.240486443076088,
+            "explosion_time_s": 54.89999999999981,
+            "desired_cloud_at_observation_m": [
+              2741.906056760701,
+              10.983099165524385,
+              274.4651831552084
+            ],
+            "explosion_point_m": [
+              2741.906056760701,
+              10.983099165524385,
+              281.60571044710235
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.9802518032979535,
+              "intervals_s": [
+                [
+                  56.7845356236602,
+                  57.76478742695815
+                ]
+              ],
+              "minimum_scan_margin_m": -9.18498053521072,
+              "kinematics": {
+                "release_point_m": [
+                  3290.291720017007,
+                  -495.81013413448136,
+                  700.0
+                ],
+                "explosion_time_s": 54.89999999999981,
+                "explosion_point_m": [
+                  2741.9060567607016,
+                  10.98309916552489,
+                  281.60571044710235
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  54.89999999999981,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                56.7845356236602,
+                57.76478742695815
+              ]
+            ],
+            "conservative_union_duration_s": 5.561860050458865,
+            "added_single_cloud_duration_s": 0.9802518032979535,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.9802518032979535,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 57.930175763964456,
+            "heading_rad": 2.422812664259809,
+            "speed_mps": 82.31713742346896,
+            "release_time_s": 46.10918568639987,
+            "fuse_delay_s": 9.440814313599939,
+            "explosion_time_s": 55.549999999999805,
+            "desired_cloud_at_observation_m": [
+              2558.5291819998793,
+              10.983099165524385,
+              256.12749567912596
+            ],
+            "explosion_point_m": [
+              2558.5291819998793,
+              10.983099165524385,
+              263.2680229710199
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.9163746388742169,
+              "intervals_s": [
+                [
+                  57.466667264500934,
+                  58.38304190337515
+                ]
+              ],
+              "minimum_scan_margin_m": -9.161395466585635,
+              "kinematics": {
+                "release_point_m": [
+                  3143.412835616659,
+                  -500.73845512087473,
+                  700.0
+                ],
+                "explosion_time_s": 55.549999999999805,
+                "explosion_point_m": [
+                  2558.5291819998793,
+                  10.983099165524436,
+                  263.2680229710199
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  55.549999999999805,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                57.466667264500934,
+                58.38304190337515
+              ]
+            ],
+            "conservative_union_duration_s": 5.497982886035128,
+            "added_single_cloud_duration_s": 0.9163746388742169,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.9163746388742169,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 58.53017576396446,
+            "heading_rad": 2.4465224082109605,
+            "speed_mps": 83.72989023686043,
+            "release_time_s": 46.527968804949566,
+            "fuse_delay_s": 9.622031195050244,
+            "explosion_time_s": 56.14999999999981,
+            "desired_cloud_at_observation_m": [
+              2389.2582206821958,
+              10.983099165524385,
+              239.20039954735785
+            ],
+            "explosion_point_m": [
+              2389.2582206821958,
+              10.983099165524385,
+              246.3409268392518
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.8571899080575989,
+              "intervals_s": [
+                [
+                  58.09646136144182,
+                  58.95365126949942
+                ]
+              ],
+              "minimum_scan_margin_m": -9.136297585951407,
+              "kinematics": {
+                "release_point_m": [
+                  3008.0056835115324,
+                  -504.987930361453,
+                  700.0
+                ],
+                "explosion_time_s": 56.14999999999981,
+                "explosion_point_m": [
+                  2389.2582206821958,
+                  10.98309916552489,
+                  246.34092683925178
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  56.14999999999981,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                58.09646136144182,
+                58.95365126949942
+              ]
+            ],
+            "conservative_union_duration_s": 5.43879815521851,
+            "added_single_cloud_duration_s": 0.8571899080575989,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.8571899080575989,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 59.13017576396445,
+            "heading_rad": 2.468956655094376,
+            "speed_mps": 85.15684555067119,
+            "release_time_s": 46.950102361087104,
+            "fuse_delay_s": 9.799897638912693,
+            "explosion_time_s": 56.7499999999998,
+            "desired_cloud_at_observation_m": [
+              2219.987259364516,
+              10.983099165524385,
+              222.27330341558974
+            ],
+            "explosion_point_m": [
+              2219.987259364516,
+              10.983099165524385,
+              229.4138307074837
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.7978122563812633,
+              "intervals_s": [
+                [
+                  58.72637414902749,
+                  59.524186405408756
+                ]
+              ],
+              "minimum_scan_margin_m": -9.107247388689279,
+              "kinematics": {
+                "release_point_m": [
+                  2872.7403506775327,
+                  -508.9697847872221,
+                  700.0
+                ],
+                "explosion_time_s": 56.7499999999998,
+                "explosion_point_m": [
+                  2219.9872593645155,
+                  10.983099165524436,
+                  229.41383070748378
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  56.7499999999998,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                58.72637414902749,
+                59.524186405408756
+              ]
+            ],
+            "conservative_union_duration_s": 5.379420503542175,
+            "added_single_cloud_duration_s": 0.7978122563812633,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.7978122563812633,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 59.73017576396445,
+            "heading_rad": 2.490194784795422,
+            "speed_mps": 86.59410048048703,
+            "release_time_s": 47.375407118693154,
+            "fuse_delay_s": 9.974592881306647,
+            "explosion_time_s": 57.3499999999998,
+            "desired_cloud_at_observation_m": [
+              2050.716298046829,
+              10.983099165524385,
+              205.34620728382117
+            ],
+            "explosion_point_m": [
+              2050.716298046829,
+              10.983099165524385,
+              212.48673457571513
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.7382625749051357,
+              "intervals_s": [
+                [
+                  59.35639476509445,
+                  60.094657339999586
+                ]
+              ],
+              "minimum_scan_margin_m": -9.07326014515239,
+              "kinematics": {
+                "release_point_m": [
+                  2737.5950617741632,
+                  -512.7018282393783,
+                  700.0
+                ],
+                "explosion_time_s": 57.3499999999998,
+                "explosion_point_m": [
+                  2050.7162980468293,
+                  10.983099165524436,
+                  212.4867345757151
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  57.3499999999998,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                59.35639476509445,
+                60.094657339999586
+              ]
+            ],
+            "conservative_union_duration_s": 5.319870822066047,
+            "added_single_cloud_duration_s": 0.7382625749051357,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.7382625749051357,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 60.33017576396445,
+            "heading_rad": 2.510312269377394,
+            "speed_mps": 88.03821489994155,
+            "release_time_s": 47.80371927441075,
+            "fuse_delay_s": 10.146280725589044,
+            "explosion_time_s": 57.9499999999998,
+            "desired_cloud_at_observation_m": [
+              1881.445336729149,
+              10.983099165524385,
+              188.41911115205326
+            ],
+            "explosion_point_m": [
+              1881.445336729149,
+              10.983099165524385,
+              195.55963844394722
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.6785644344395081,
+              "intervals_s": [
+                [
+                  59.9865109225408,
+                  60.66507535698031
+                ]
+              ],
+              "minimum_scan_margin_m": -9.033000938234874,
+              "kinematics": {
+                "release_point_m": [
+                  2602.549940650289,
+                  -516.2003311043231,
+                  700.0
+                ],
+                "explosion_time_s": 57.9499999999998,
+                "explosion_point_m": [
+                  1881.445336729149,
+                  10.983099165523981,
+                  195.55963844394728
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  57.9499999999998,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                59.9865109225408,
+                60.66507535698031
+              ]
+            ],
+            "conservative_union_duration_s": 5.2601726816004195,
+            "added_single_cloud_duration_s": 0.6785644344395081,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.6785644344395081,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 60.93017576396445,
+            "heading_rad": 2.529380466942109,
+            "speed_mps": 89.48616284756989,
+            "release_time_s": 48.234888659005634,
+            "fuse_delay_s": 10.31511134099416,
+            "explosion_time_s": 58.5499999999998,
+            "desired_cloud_at_observation_m": [
+              1712.1743754114657,
+              10.983099165524385,
+              171.49201502028492
+            ],
+            "explosion_point_m": [
+              1712.1743754114657,
+              10.983099165524385,
+              178.63254231217888
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.6187452651387559,
+              "intervals_s": [
+                [
+                  60.61670830251761,
+                  61.235453567656364
+                ]
+              ],
+              "minimum_scan_margin_m": -8.984616045246112,
+              "kinematics": {
+                "release_point_m": [
+                  2467.5868216693434,
+                  -519.4801956892011,
+                  700.0
+                ],
+                "explosion_time_s": 58.5499999999998,
+                "explosion_point_m": [
+                  1712.174375411466,
+                  10.983099165524436,
+                  178.63254231217877
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  58.5499999999998,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                60.61670830251761,
+                61.235453567656364
+              ]
+            ],
+            "conservative_union_duration_s": 5.200353512299667,
+            "added_single_cloud_duration_s": 0.6187452651387559,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.6187452651387559,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 61.53017576396444,
+            "heading_rad": 2.5474665480575256,
+            "speed_mps": 90.93528803739237,
+            "release_time_s": 48.66877719959368,
+            "fuse_delay_s": 10.481222800406112,
+            "explosion_time_s": 59.14999999999979,
+            "desired_cloud_at_observation_m": [
+              1542.9034140937856,
+              10.983099165524385,
+              154.5649188885166
+            ],
+            "explosion_point_m": [
+              1542.9034140937856,
+              10.983099165524385,
+              161.70544618041055
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.5588382855587994,
+              "intervals_s": [
+                [
+                  61.24696955904858,
+                  61.80580784460738
+                ]
+              ],
+              "minimum_scan_margin_m": -8.925457691523897,
+              "kinematics": {
+                "release_point_m": [
+                  2332.6890837440405,
+                  -522.5551038879212,
+                  700.0
+                ],
+                "explosion_time_s": 59.14999999999979,
+                "explosion_point_m": [
+                  1542.9034140937847,
+                  10.983099165523981,
+                  161.7054461804106
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  59.14999999999979,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                61.24696955904858,
+                61.80580784460738
+              ]
+            ],
+            "conservative_union_duration_s": 5.140446532719711,
+            "added_single_cloud_duration_s": 0.5588382855587994,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.5588382855587994,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 62.130175763964445,
+            "heading_rad": 2.5646335203075417,
+            "speed_mps": 92.38326343985386,
+            "release_time_s": 49.105257597931086,
+            "fuse_delay_s": 10.64474240206871,
+            "explosion_time_s": 59.749999999999794,
+            "desired_cloud_at_observation_m": [
+              1373.6324527761021,
+              10.983099165524385,
+              137.63782275674825
+            ],
+            "explosion_point_m": [
+              1373.6324527761021,
+              10.983099165524385,
+              144.7783500486422
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.49888584385416834,
+              "intervals_s": [
+                [
+                  61.87727259964537,
+                  62.37615844349954
+                ]
+              ],
+              "minimum_scan_margin_m": -8.851316436678298,
+              "kinematics": {
+                "release_point_m": [
+                  2197.841503780103,
+                  -525.4376450620839,
+                  700.0
+                ],
+                "explosion_time_s": 59.749999999999794,
+                "explosion_point_m": [
+                  1373.6324527761026,
+                  10.983099165525346,
+                  144.7783500486422
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  59.749999999999794,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                61.87727259964537,
+                62.37615844349954
+              ]
+            ],
+            "conservative_union_duration_s": 5.08049409101508,
+            "added_single_cloud_duration_s": 0.49888584385416834,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.49888584385416834,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 62.73017576396444,
+            "heading_rad": 2.580940323492319,
+            "speed_mps": 93.82805478349603,
+            "release_time_s": 49.54421218878278,
+            "fuse_delay_s": 10.805787811217009,
+            "explosion_time_s": 60.34999999999979,
+            "desired_cloud_at_observation_m": [
+              1204.3614914584223,
+              10.983099165524385,
+              120.71072662498034
+            ],
+            "explosion_point_m": [
+              1204.3614914584223,
+              10.983099165524385,
+              127.8512539168743
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.43892113965689816,
+              "intervals_s": [
+                [
+                  62.507610684959914,
+                  62.94653182461681
+                ]
+              ],
+              "minimum_scan_margin_m": -8.75624895394871,
+              "kinematics": {
+                "release_point_m": [
+                  2063.03012679565,
+                  -528.1394273090955,
+                  700.0
+                ],
+                "explosion_time_s": 60.34999999999979,
+                "explosion_point_m": [
+                  1204.3614914584232,
+                  10.983099165525346,
+                  127.85125391687427
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  60.34999999999979,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                62.507610684959914,
+                62.94653182461681
+              ]
+            ],
+            "conservative_union_duration_s": 5.02052938681781,
+            "added_single_cloud_duration_s": 0.43892113965689816,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.43892113965689816,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 63.33017576396444,
+            "heading_rad": 2.5964419739084343,
+            "speed_mps": 95.26788775487235,
+            "release_time_s": 49.98553194926004,
+            "fuse_delay_s": 10.964468050739747,
+            "explosion_time_s": 60.94999999999979,
+            "desired_cloud_at_observation_m": [
+              1035.0905301407388,
+              10.983099165524385,
+              103.783630493212
+            ],
+            "explosion_point_m": [
+              1035.0905301407388,
+              10.983099165524385,
+              110.92415778510596
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.3790451142732252,
+              "intervals_s": [
+                [
+                  63.13792409921879,
+                  63.51696921349202
+                ]
+              ],
+              "minimum_scan_margin_m": -8.630590261295612,
+              "kinematics": {
+                "release_point_m": [
+                  1928.2421504374947,
+                  -530.6711747002319,
+                  700.0
+                ],
+                "explosion_time_s": 60.94999999999979,
+                "explosion_point_m": [
+                  1035.0905301407392,
+                  10.983099165524436,
+                  110.92415778510588
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  60.94999999999979,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                63.13792409921879,
+                63.51696921349202
+              ]
+            ],
+            "conservative_union_duration_s": 4.960653361434137,
+            "added_single_cloud_duration_s": 0.3790451142732252,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.3790451142732252,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 63.930175763964435,
+            "heading_rad": 2.6111897410196216,
+            "speed_mps": 96.70121863309058,
+            "release_time_s": 50.429115635420715,
+            "fuse_delay_s": 11.120884364579071,
+            "explosion_time_s": 61.549999999999784,
+            "desired_cloud_at_observation_m": [
+              865.8195688230555,
+              10.983099165524385,
+              86.85653436144366
+            ],
+            "explosion_point_m": [
+              865.8195688230555,
+              10.983099165524385,
+              93.99706165333762
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.31940197217207356,
+              "intervals_s": [
+                [
+                  63.768134935079814,
+                  64.08753690725189
+                ]
+              ],
+              "minimum_scan_margin_m": -8.457570862970446,
+              "kinematics": {
+                "release_point_m": [
+                  1793.465821983149,
+                  -533.0428126057473,
+                  700.0
+                ],
+                "explosion_time_s": 61.549999999999784,
+                "explosion_point_m": [
+                  865.8195688230562,
+                  10.983099165525346,
+                  93.9970616533376
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  61.549999999999784,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                63.768134935079814,
+                64.08753690725189
+              ]
+            ],
+            "conservative_union_duration_s": 4.901010219332985,
+            "added_single_cloud_duration_s": 0.31940197217207356,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.31940197217207356,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 64.58017576396443,
+            "heading_rad": 2.626371015975735,
+            "speed_mps": 98.24510739631154,
+            "release_time_s": 50.91211028360284,
+            "fuse_delay_s": 11.287889716396936,
+            "explosion_time_s": 62.19999999999978,
+            "desired_cloud_at_observation_m": [
+              682.4426940622333,
+              10.983099165524385,
+              68.51884688536144
+            ],
+            "explosion_point_m": [
+              682.4426940622333,
+              10.983099165524385,
+              75.6593741772554
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.25519716293266015,
+              "intervals_s": [
+                [
+                  64.45072996858892,
+                  64.70592713152158
+                ]
+              ],
+              "minimum_scan_margin_m": -8.175334747214547,
+              "kinematics": {
+                "release_point_m": [
+                  1647.4587781465825,
+                  -535.4420641996794,
+                  700.0
+                ],
+                "explosion_time_s": 62.199999999999775,
+                "explosion_point_m": [
+                  682.4426940622334,
+                  10.983099165523072,
+                  75.65937417725536
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  62.199999999999775,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                64.45072996858892,
+                64.70592713152158
+              ]
+            ],
+            "conservative_union_duration_s": 4.836805410093572,
+            "added_single_cloud_duration_s": 0.25519716293266015,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.25519716293266015,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 65.18017576396443,
+            "heading_rad": 2.639697583503141,
+            "speed_mps": 99.66079999800917,
+            "release_time_s": 51.36011522504744,
+            "fuse_delay_s": 11.439884774952336,
+            "explosion_time_s": 62.79999999999978,
+            "desired_cloud_at_observation_m": [
+              513.1717327445533,
+              10.983099165524385,
+              51.59175075359331
+            ],
+            "explosion_point_m": [
+              513.1717327445533,
+              10.983099165524385,
+              58.73227804548727
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.1969404347785968,
+              "intervals_s": [
+                [
+                  65.08035009206196,
+                  65.27729052684056
+                ]
+              ],
+              "minimum_scan_margin_m": -7.756266617750306,
+              "kinematics": {
+                "release_point_m": [
+                  1512.6730569062393,
+                  -537.5089344934349,
+                  700.0
+                ],
+                "explosion_time_s": 62.79999999999977,
+                "explosion_point_m": [
+                  513.1717327445531,
+                  10.983099165523072,
+                  58.732278045487305
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  62.79999999999977,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                65.08035009206196,
+                65.27729052684056
+              ]
+            ],
+            "conservative_union_duration_s": 4.778548681939508,
+            "added_single_cloud_duration_s": 0.1969404347785968,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.1969404347785968,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 65.78017576396442,
+            "heading_rad": 2.6524069037930764,
+            "speed_mps": 101.06641830246612,
+            "release_time_s": 51.810113327610225,
+            "fuse_delay_s": 11.589886672389547,
+            "explosion_time_s": 63.39999999999977,
+            "desired_cloud_at_observation_m": [
+              343.9007714268699,
+              10.983099165524385,
+              34.66465462182497
+            ],
+            "explosion_point_m": [
+              343.9007714268699,
+              10.983099165524385,
+              41.80518191371893
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.14112839382698894,
+              "intervals_s": [
+                [
+                  65.70873636520179,
+                  65.84986475902878
+                ]
+              ],
+              "minimum_scan_margin_m": -7.026520930788957,
+              "kinematics": {
+                "release_point_m": [
+                  1377.8684223251794,
+                  -539.4420253109547,
+                  700.0
+                ],
+                "explosion_time_s": 63.39999999999977,
+                "explosion_point_m": [
+                  343.90077142687005,
+                  10.98309916552489,
+                  41.80518191371914
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  63.39999999999977,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                65.70873636520179,
+                65.84986475902878
+              ]
+            ],
+            "conservative_union_duration_s": 4.7227366409879,
+            "added_single_cloud_duration_s": 0.14112839382698894,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.14112839382698894,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 66.38017576396443,
+            "heading_rad": 2.6645370555746033,
+            "speed_mps": 102.46111718761561,
+            "release_time_s": 52.262028178024764,
+            "fuse_delay_s": 11.737971821975018,
+            "explosion_time_s": 63.99999999999978,
+            "desired_cloud_at_observation_m": [
+              174.62981010918307,
+              10.983099165524385,
+              17.737558490056415
+            ],
+            "explosion_point_m": [
+              174.62981010918307,
+              10.983099165524385,
+              24.878085781950375
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.09232802107398186,
+              "intervals_s": [
+                [
+                  66.33358795913314,
+                  66.42591598020712
+                ]
+              ],
+              "minimum_scan_margin_m": -5.653727226990086,
+              "kinematics": {
+                "release_point_m": [
+                  1243.0365466953053,
+                  -541.2486941852271,
+                  700.0
+                ],
+                "explosion_time_s": 63.99999999999978,
+                "explosion_point_m": [
+                  174.62981010918247,
+                  10.983099165523072,
+                  24.878085781950404
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  63.99999999999978,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                66.33358795913314,
+                66.42591598020712
+              ]
+            ],
+            "conservative_union_duration_s": 4.673936268234893,
+            "added_single_cloud_duration_s": 0.09232802107398186,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.09232802107398186,
+            "marginal_capture_ratio": 1.0
+          },
+          {
+            "observation_time_s": 66.98017576396443,
+            "heading_rad": 2.676123409026798,
+            "speed_mps": 103.84417575870702,
+            "release_time_s": 52.715788124232574,
+            "fuse_delay_s": 11.884211875767194,
+            "explosion_time_s": 64.59999999999977,
+            "desired_cloud_at_observation_m": [
+              5.3588487915031155,
+              10.983099165524385,
+              0.8104623582885071
+            ],
+            "explosion_point_m": [
+              5.3588487915031155,
+              10.983099165524385,
+              7.950989650182466
+            ],
+            "single_cloud": {
+              "feasible": true,
+              "effective_duration_s": 0.05287893571491509,
+              "intervals_s": [
+                [
+                  66.9462918717577,
+                  66.99917080747261
+                ]
+              ],
+              "minimum_scan_margin_m": -4.211012634202446,
+              "kinematics": {
+                "release_point_m": [
+                  1108.1697707753265,
+                  -542.9358033861367,
+                  700.0
+                ],
+                "explosion_time_s": 64.59999999999977,
+                "explosion_point_m": [
+                  5.358848791503078,
+                  10.98309916552489,
+                  7.950989650182464
+                ],
+                "missile_arrival_time_s": 66.99917080747261,
+                "active_window_s": [
+                  64.59999999999977,
+                  66.99917080747261
+                ]
+              }
+            },
+            "conservative_union_intervals_s": [
+              [
+                1.2486668628268893,
+                5.8302751099878005
+              ],
+              [
+                66.9462918717577,
+                66.99917080747261
+              ]
+            ],
+            "conservative_union_duration_s": 4.6344871828758265,
+            "added_single_cloud_duration_s": 0.05287893571491509,
+            "overlap_loss_s": 0.0,
+            "marginal_union_gain_s": 0.05287893571491509,
+            "marginal_capture_ratio": 1.0
+          }
+        ],
+        "screen_best": {
+          "observation_time_s": 42.48017576396451,
+          "heading_rad": 1.2750909801921821,
+          "speed_mps": 78.49373719372058,
+          "release_time_s": 39.68124293829942,
+          "fuse_delay_s": 0.4187570617004429,
+          "explosion_time_s": 40.09999999999986,
+          "desired_cloud_at_observation_m": [
+            6917.256435930205,
+            10.983099165524385,
+            692.0002210721585
+          ],
+          "explosion_point_m": [
+            6917.256435930205,
+            10.983099165524385,
+            699.1407483640525
+          ],
+          "single_cloud": {
+            "feasible": true,
+            "effective_duration_s": 2.330085601657636,
+            "intervals_s": [
+              [
+                41.31234238259481,
+                43.64242798425244
+              ]
+            ],
+            "minimum_scan_margin_m": -9.376359146994286,
+            "kinematics": {
+              "release_point_m": [
+                6907.677692540281,
+                -20.460053837873147,
+                700.0
+              ],
+              "explosion_time_s": 40.09999999999986,
+              "explosion_point_m": [
+                6917.256435930205,
+                10.983099165524436,
+                699.1407483640525
+              ],
+              "missile_arrival_time_s": 66.99917080747261,
+              "active_window_s": [
+                40.09999999999986,
+                60.09999999999986
+              ]
+            }
+          },
+          "conservative_union_intervals_s": [
+            [
+              1.2486668628268893,
+              5.8302751099878005
+            ],
+            [
+              41.31234238259481,
+              43.64242798425244
+            ]
+          ],
+          "conservative_union_duration_s": 6.9116938488185475,
+          "added_single_cloud_duration_s": 2.330085601657636,
+          "overlap_loss_s": 0.0,
+          "marginal_union_gain_s": 2.330085601657636,
+          "marginal_capture_ratio": 1.0
+        },
+        "precise_best": {
+          "observation_time_s": 42.48017576396451,
+          "heading_rad": 1.2750909801921821,
+          "speed_mps": 78.49373719372058,
+          "release_time_s": 39.68124293829942,
+          "fuse_delay_s": 0.4187570617004429,
+          "explosion_time_s": 40.09999999999986,
+          "desired_cloud_at_observation_m": [
+            6917.256435930205,
+            10.983099165524385,
+            692.0002210721585
+          ],
+          "explosion_point_m": [
+            6917.256435930205,
+            10.983099165524385,
+            699.1407483640525
+          ],
+          "single_cloud": {
+            "feasible": true,
+            "effective_duration_s": 2.3300436174869503,
+            "intervals_s": [
+              [
+                41.31238019376979,
+                43.64242381125674
+              ]
+            ],
+            "minimum_scan_margin_m": -9.526157029264983,
+            "kinematics": {
+              "release_point_m": [
+                6907.677692540281,
+                -20.460053837873147,
+                700.0
+              ],
+              "explosion_time_s": 40.09999999999986,
+              "explosion_point_m": [
+                6917.256435930205,
+                10.983099165524436,
+                699.1407483640525
+              ],
+              "missile_arrival_time_s": 66.99917080747261,
+              "active_window_s": [
+                40.09999999999986,
+                60.09999999999986
+              ]
+            }
+          },
+          "conservative_union_intervals_s": [
+            [
+              1.2486668628268893,
+              5.8302751099878005
+            ],
+            [
+              41.31238019376979,
+              43.64242381125674
+            ]
+          ],
+          "conservative_union_duration_s": 6.911651864647862,
+          "added_single_cloud_duration_s": 2.3300436174869503,
+          "overlap_loss_s": 0.0,
+          "marginal_union_gain_s": 2.3300436174869503,
+          "marginal_capture_ratio": 1.0
+        }
+      }
+    }
+  },
+  "checks": {
+    "formal_result_identity_matches_existing_decision_sensitivity": true,
+    "q2_formal_result_unchanged": true,
+    "same_uav_release_gap_respects_official_minimum": true,
+    "additional_uav_opportunity_candidates_exist": true,
+    "no_q3_or_q4_joint_optimization_performed": true
+  },
+  "claim_boundary": {
+    "supports": [
+      "local Q2 decision-response interpretation from the existing decision-axis artifact",
+      "same-track temporal complementarity under a one-parameter second-bomb shift",
+      "platform-specific reachability and separated opportunity windows for FY2/FY3"
+    ],
+    "does_not_support": [
+      "Q3 three-bomb optimality",
+      "Q4 three-UAV joint optimality",
+      "cross-cloud partial-target geometric synergy",
+      "global optimality or empirical reliability"
+    ]
+  },
+  "created_at": "2026-08-28T02:41:26.589039+00:00"
+}

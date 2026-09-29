@@ -1,0 +1,13 @@
+{
+  "common_end_s": 259200,
+  "runs": {
+    "main": "output/Q4/run_n10240-v1-20260911.npz",
+    "pchip": "output/Q4/run_n10240-pchip-v1-20260911.npz",
+    "last_value": "output/Q4/run_n10240-last-v1-20260911.npz"
+  },
+  "main": "main",
+  "sensitivities": {
+    "pchip": "pchip",
+    "last_value": "last_value"
+  }
+}

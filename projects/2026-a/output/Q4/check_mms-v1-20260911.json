@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "question": "Q4",
+  "axes": [
+    "E2"
+  ],
+  "mode": "implementation",
+  "method_role": "auxiliary_validator",
+  "created_at": "2026-09-10T20:17:09.765521+00:00",
+  "passed": true,
+  "identities": {
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\verify.py": "6a87551fe3aec7a199c4203211cdb17ce981da33035464e7cee662ca854466f0",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\src\\Q4\\solve.py": "8a075fa2890c0f6265c33df8b75664f62b05e6ba4b765b8fa32cce69041dc0ef",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\planning\\Q4\\model_spec.md": "e24e6a2cfd45978d8de72e34abb499790b0184018a0ce610d0642e2299a97532",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\GEOMETRY\\q4_radius.json": "f690e19faf8b055eb5fe3f029de829cb6b3e7cd773d601b931bb4ad2e9e5a989",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\ENV\\q2_boundary.json": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件1.xlsx": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+    "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件2.xlsx": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af"
+  },
+  "checks": [
+    {
+      "axis": "E2",
+      "id": "mms_temperature_absolute",
+      "passed": true,
+      "observed": 2.1836682151388231e-07,
+      "target": 0.002,
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "mms_temperature_refinement",
+      "passed": true,
+      "observed": {
+        "errors": [
+          3.4867492857415527e-06,
+          8.728664582235979e-07,
+          2.1836682151388231e-07
+        ],
+        "last_ratio": 3.997248538822125
+      },
+      "target": "decreasing with last ratio >=1.5; measured convergence, not a formal order proof",
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "mms_moisture_absolute",
+      "passed": true,
+      "observed": 2.1960948171084738e-08,
+      "target": 0.0002,
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "mms_moisture_refinement",
+      "passed": true,
+      "observed": {
+        "errors": [
+          3.143188758158999e-07,
+          8.605399104411049e-08,
+          2.1960948171084738e-08
+        ],
+        "last_ratio": 3.918500711978136
+      },
+      "target": "decreasing with last ratio >=1.5; measured convergence, not a formal order proof",
+      "note": null
+    },
+    {
+      "axis": "E2",
+      "id": "mms_independent_time_tightening",
+      "passed": true,
+      "observed": {
+        "max_abs_difference": 7.142162417039799e-10
+      },
+      "target": {
+        "atol": 1e-07,
+        "rtol": 0
+      },
+      "note": null
+    }
+  ],
+  "details": {
+    "manufactured_solution": {
+      "duration_s": 120.0,
+      "formula": "Theta=b0(t)+b(t)xi^2; C=a0(t)+a(t)xi^2; R=.02(1-.15t/120)",
+      "refinements": [
+        {
+          "n": 40,
+          "temperature": 3.4867492857415527e-06,
+          "moisture": 3.143188758158999e-07
+        },
+        {
+          "n": 80,
+          "temperature": 8.728664582235979e-07,
+          "moisture": 8.605399104411049e-08
+        },
+        {
+          "n": 160,
+          "temperature": 2.1836682151388231e-07,
+          "moisture": 2.1960948171084738e-08
+        }
+      ],
+      "tightened_errors": {
+        "temperature": 2.1824786955448872e-07,
+        "moisture": 2.193869352851152e-08
+      },
+      "role": "independently differentiated continuous source and Robin forcing; not a new production model"
+    }
+  },
+  "claim_boundary": "Only the actually executed axes/checks are reported. No E4 observation is supplied; no continuum strong-solution theorem, arbitrary-step BDF positivity, per-cell correct rounding proof, or cross-grid integer certainty is inferred."
+}

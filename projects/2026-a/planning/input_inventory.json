@@ -1,0 +1,282 @@
+{
+  "scope": "official_inputs_only",
+  "kind": "working_structure_snapshot",
+  "note": "Not a data-quality acceptance or recovery baseline.",
+  "files": [
+    {
+      "path": "A题.pdf",
+      "sha256": "052d8014bff5727c019b72e44fdffaf5c145ce04050dd938baaf3527db331736",
+      "bytes": 553320,
+      "pages": 4
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+      "bytes": 16586,
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "rows": 242,
+          "columns": 3,
+          "header": [
+            "时间",
+            "温度",
+            "水分浓度"
+          ],
+          "first_data_row": [
+            0,
+            28,
+            0.01963
+          ],
+          "last_row": [
+            14400,
+            50.165,
+            0.04986
+          ],
+          "formula_cells": 0,
+          "data_rows": 241,
+          "time_start_s": 0,
+          "time_end_s": 14400,
+          "time_strictly_increasing": true
+        }
+      ]
+    },
+    {
+      "path": "附件/附件2.xlsx",
+      "sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+      "bytes": 11485,
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "rows": 146,
+          "columns": 2,
+          "header": [
+            "时间",
+            "半径"
+          ],
+          "first_data_row": [
+            0,
+            2
+          ],
+          "last_row": [
+            259200,
+            1.198
+          ],
+          "formula_cells": 0,
+          "data_rows": 145,
+          "time_start_s": 0,
+          "time_end_s": 259200,
+          "time_strictly_increasing": true
+        }
+      ]
+    },
+    {
+      "path": "附件/附件3/result1.xlsx",
+      "sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4",
+      "bytes": 10073,
+      "sheets": [
+        {
+          "name": "温度",
+          "rows": 5,
+          "columns": 6,
+          "header": [
+            "时间\\到药材中心的距离",
+            0,
+            0.1,
+            0.2,
+            "…",
+            2
+          ],
+          "first_data_row": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "last_row": [
+            "…",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "formula_cells": 0
+        },
+        {
+          "name": "水分浓度",
+          "rows": 5,
+          "columns": 6,
+          "header": [
+            "时间\\到药材中心的距离",
+            0,
+            0.1,
+            0.2,
+            "…",
+            2
+          ],
+          "first_data_row": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "last_row": [
+            "…",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "formula_cells": 0
+        }
+      ]
+    },
+    {
+      "path": "附件/附件3/result2.xlsx",
+      "sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4",
+      "bytes": 10073,
+      "sheets": [
+        {
+          "name": "温度",
+          "rows": 5,
+          "columns": 6,
+          "header": [
+            "时间\\到药材中心的距离",
+            0,
+            0.1,
+            0.2,
+            "…",
+            2
+          ],
+          "first_data_row": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "last_row": [
+            "…",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "formula_cells": 0
+        },
+        {
+          "name": "水分浓度",
+          "rows": 5,
+          "columns": 6,
+          "header": [
+            "时间\\到药材中心的距离",
+            0,
+            0.1,
+            0.2,
+            "…",
+            2
+          ],
+          "first_data_row": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "last_row": [
+            "…",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "formula_cells": 0
+        }
+      ]
+    },
+    {
+      "path": "附件/附件3/result3.xlsx",
+      "sha256": "07e4793d620a7f899804c0298d49a16a197960440fd47f8bb780c57ec27e2859",
+      "bytes": 9345,
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "rows": 5,
+          "columns": 6,
+          "header": [
+            "时间\\到药材中心的距离",
+            0,
+            0.1,
+            0.2,
+            "…",
+            2
+          ],
+          "first_data_row": [
+            60,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "last_row": [
+            "…",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "formula_cells": 0
+        }
+      ]
+    },
+    {
+      "path": "附件/附件3/result4.xlsx",
+      "sha256": "86e9300ffa3d30c43de895ea6723da943e85b8740b137bcae5af7107f076eeac",
+      "bytes": 9351,
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "rows": 5,
+          "columns": 6,
+          "header": [
+            "时间\\到药材中心的距离",
+            0,
+            0.1,
+            0.2,
+            "…",
+            "药材表面"
+          ],
+          "first_data_row": [
+            60,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "last_row": [
+            "…",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "formula_cells": 0
+        }
+      ]
+    }
+  ]
+}

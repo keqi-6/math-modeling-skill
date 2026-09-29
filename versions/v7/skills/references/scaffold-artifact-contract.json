@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "claim": "Every file created by bootstrap_project.py has an owner, consumer, and activation condition.",
+  "directories": [
+    "data", "references", "references/notes", "references/refs", "planning",
+    "planning/analysis", "planning/audits", "planning/archive", "src", "src/_utils",
+    "output", "docs", "paper", "paper/figures"
+  ],
+  "files": {
+    "README.md": {"owner": "bootstrap", "consumer": "all participants", "activation": "always"},
+    "planning/README.md": {"owner": "bootstrap", "consumer": "all artifact writers", "activation": "always"},
+    "planning/project_plan.md": {"owner": "project controller", "consumer": "stage routing and closure audit", "activation": "always"},
+    "planning/source_inventory.md": {"owner": "S0 recovery", "consumer": "S1 interpretation and provenance audit", "activation": "always"},
+    "planning/understanding.md": {"owner": "S1 interpretation", "consumer": "all question components", "activation": "always"},
+    "planning/task_matrix.md": {"owner": "S1 cross-question navigation", "consumer": "controller and paper mapping", "activation": "after task extraction"},
+    "planning/inspiration.md": {"owner": "literature guidance", "consumer": "S2/S3 method assessment", "activation": "literature trigger; otherwise explicitly inactive"},
+    "planning/method_plan.md": {"owner": "S3 decision", "consumer": "S4 specification", "activation": "S3; otherwise explicitly inactive"},
+    "planning/interaction_log.md": {"owner": "human-decision recorder", "consumer": "recovery and semantic audit", "activation": "when a material user decision occurs"},
+    "planning/ai_usage_log.md": {"owner": "AI-use recorder", "consumer": "final disclosure and provenance audit", "activation": "AI use; otherwise mark not applicable"},
+    "planning/work_log.md": {"owner": "execution recorder", "consumer": "recovery and verification audit", "activation": "when execution begins"},
+    "references/README.md": {"owner": "literature evidence", "consumer": "human evidence audit", "activation": "literature trigger; otherwise explicitly inactive"},
+    "references/literature.json": {"owner": "literature evidence", "consumer": "machine provenance checks", "activation": "literature trigger; otherwise status not_triggered"},
+    "references/references.bib": {"owner": "verified citation registry", "consumer": "paper build and citation audit", "activation": "first verified cited source"},
+    "project_state.json": {"owner": "project controller", "consumer": "recovery, routing, and checkpoint tools", "activation": "always"}
+  }
+}

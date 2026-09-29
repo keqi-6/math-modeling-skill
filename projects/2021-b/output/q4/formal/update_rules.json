@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "status": "pre_observation_rules_no_future_responses",
+  "yield_formula": "ethanol_conversion_pct * c4_selectivity_pct / 100",
+  "future_response_fields_must_remain_null": [
+    "future_ethanol_conversion_pct",
+    "future_c4_selectivity_pct",
+    "future_c4_yield_pct"
+  ],
+  "replicate_condition": {
+    "catalyst_id": "A3",
+    "temperature_c": 400.0,
+    "original_c4_yield_pct": 44.72805977609709,
+    "updated_condition_value": "(original_yield + E4_yield) / 2",
+    "also_report": [
+      "E4_yield - original_yield",
+      "absolute_difference"
+    ],
+    "allowed_claim": "local_descriptive_replication_only",
+    "forbidden_claims": [
+      "global_error_distribution",
+      "significance_test",
+      "proof_that_previous_answers_are_correct"
+    ]
+  },
+  "general_scenario": {
+    "eligible": "all_observed_conditions_after_experiment",
+    "a3_400_representation": "mean_of_original_and_E4",
+    "selection": "descending_enumeration_by_observed_c4_yield",
+    "predictions_allowed_in_ranking": false
+  },
+  "strict_below_350_scenario": {
+    "eligible": "observed_conditions_with_temperature_c < 350",
+    "selection": "descending_enumeration_by_observed_c4_yield",
+    "E3_eligible": true,
+    "temperature_350_eligible": false
+  },
+  "question2_supplement": {
+    "comparison": "E1_A3_375_vs_E5_A4_375",
+    "responses": [
+      "ethanol_conversion_pct",
+      "c4_selectivity_pct",
+      "c4_yield_pct"
+    ],
+    "scope": "375C_only_no_replacement_of_four_common_temperature_model"
+  },
+  "question1_supplement": {
+    "affected_combinations": [
+      "A2",
+      "A3",
+      "A4"
+    ],
+    "scope": "local_interval_update_only"
+  },
+  "observed_anchors": [
+    {
+      "catalyst_id": "A3",
+      "temperature_c": 350.0,
+      "ethanol_conversion_pct": 48.9370446484212,
+      "c4_selectivity_pct": 36.85,
+      "c4_yield_pct": 18.03330095294321,
+      "source_excel_row": 16
+    },
+    {
+      "catalyst_id": "A3",
+      "temperature_c": 400.0,
+      "ethanol_conversion_pct": 83.7133815760754,
+      "c4_selectivity_pct": 53.43,
+      "c4_yield_pct": 44.72805977609709,
+      "source_excel_row": 17
+    },
+    {
+      "catalyst_id": "A3",
+      "temperature_c": 450.0,
+      "ethanol_conversion_pct": 86.4097027402944,
+      "c4_selectivity_pct": 49.9,
+      "c4_yield_pct": 43.118441667406906,
+      "source_excel_row": 18
+    },
+    {
+      "catalyst_id": "A2",
+      "temperature_c": 325.0,
+      "ethanol_conversion_pct": 56.3824602331247,
+      "c4_selectivity_pct": 30.62,
+      "c4_yield_pct": 17.264309323382783,
+      "source_excel_row": 10
+    },
+    {
+      "catalyst_id": "A2",
+      "temperature_c": 350.0,
+      "ethanol_conversion_pct": 67.8792957456246,
+      "c4_selectivity_pct": 39.1,
+      "c4_yield_pct": 26.54080463653922,
+      "source_excel_row": 11
+    },
+    {
+      "catalyst_id": "A4",
+      "temperature_c": 400.0,
+      "ethanol_conversion_pct": 88.4393444439815,
+      "c4_selectivity_pct": 41.02,
+      "c4_yield_pct": 36.27781909092121,
+      "source_excel_row": 24
+    }
+  ]
+}

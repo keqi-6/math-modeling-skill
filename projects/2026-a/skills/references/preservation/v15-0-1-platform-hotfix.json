@@ -1,0 +1,31 @@
+{
+  "schema_version": "15.0",
+  "decision_id": "HOTFIX.V15.0.1.PROJECT_PLATFORM_ADMISSION",
+  "effective_release": "V15.0.1",
+  "authorization": {
+    "quote": "修吧",
+    "quote_sha256": "17103548fd27c8eb1ec3c5b24a4d213643e68131c09d99aadffbc7695b7d86a7"
+  },
+  "issue": "V15.0.0 used global unique semantic-role inference as the precondition for every new project path, still selected formal proposal atoms for ordinary first creation, and normalized some artifact aliases before formal registration. Legitimate manuscript, result, visual, toolchain, test, notebook, configuration, and established project-local paths could therefore be blocked or burdened, while one-path identity and conflict checks remained inconsistent.",
+  "decision": [
+    "Use path namespaces for lightweight G1 creation preflight and allow overlapping canonical semantic placements.",
+    "Require one explicitly selected semantic role and class only when an artifact is proposed for formal registration or promotion.",
+    "Activate proposal, consumer, and formal-admission no-bypass atoms only for a declared first artifact registration rather than for every ordinary file creation; later refresh and promotion retain their dedicated identity controls.",
+    "Admit a genuinely new physical top-level only through a step-local platform extension bound to a verbatim approval in the current request, an exact namespace scope, a purpose, and a rollback.",
+    "Require one canonical POSIX spelling for planned ChangeSet and formal artifact-proposal paths, and check repository, controller, environment, and cache boundaries before existing-path grandfathering.",
+    "Use both canonical lexical keys and contained resolved physical keys for declared ChangeSet conflict detection so internal symlink aliases cannot hide same-step or unordered writes to one target.",
+    "Keep tool-managed transient side effects outside retained ChangeSets; promote them through a later ChangeSet before they become evidence, consumers, or delivery artifacts.",
+    "Keep containment, reserved control namespaces, and unknown fresh top-level paths fail-closed."
+  ],
+  "preserved": [
+    "Human review remains responsible for formal artifact role, class, lifecycle, consumers, and technical truth.",
+    "Ordinary canonical, support, and established project paths do not acquire a new per-file approval or registration gate.",
+    "The Skill-maintenance candidate boundary remains isolated from project-platform roles.",
+    "V15.0.0 legacy executable retirement and capability-preservation evidence remain active and are not mechanically revived."
+  ],
+  "rollback": {
+    "kind": "external_pre_release_candidate_checkpoint",
+    "tree_sha256": "8133d506c70271bdc82f094aec2bb63e6559993acfb8ff28a911a9411168a8dc",
+    "location_shipped": false
+  }
+}

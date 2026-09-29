@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "question": "Q1",
+  "specification": "Q1-v1",
+  "spec_sha256": "c9aa1d7771b729e4659a6ae7d92bf5523b3fefca4ea28c95630ed62dd350285a",
+  "boundary_sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+  "solver_sha256": "4147376673ba8446d16302b6d1fa96c7ef76e680aa3137387fd54926696a7141",
+  "n": 5120,
+  "rtol": 2e-09,
+  "atol_scale": 1.0,
+  "atol_temperature": 2e-09,
+  "atol_moisture": 2e-11,
+  "max_step_s": 5.0,
+  "method": "nodal_finite_volume_segmented_BDF",
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "status": "computed_pending_independent_verification",
+  "fields": {
+    "temperature": {
+      "nfev": 2670,
+      "njev": 30,
+      "nlu": 387,
+      "elapsed_s": 1.129549400007818
+    },
+    "moisture": {
+      "nfev": 1848,
+      "njev": 30,
+      "nlu": 301,
+      "elapsed_s": 0.8762949999945704
+    }
+  },
+  "result_sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e"
+}

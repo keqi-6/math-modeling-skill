@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-31T09:56:54.907656+08:00",
+  "verifier": "src/data_audit/02_verify_audit.py",
+  "independence": "未导入或调用主审计脚本，独立读取官方工作簿与冻结产物",
+  "source_sha256": {
+    "data/附件1.xlsx": "de8e67e2c3fafb703553cb20e46f1a6db7109c5039bd50fd450c1e093a7080a3",
+    "data/附件2.xlsx": "9aa92011182076833ced7cc47b57c57875a85ed8fb2b8edd2b1f66dd3c10ac82"
+  },
+  "checks": [
+    {
+      "check": "附件1有效记录数",
+      "passed": true,
+      "observed": {
+        "raw": 114,
+        "clean": 114
+      },
+      "expected": 114
+    },
+    {
+      "check": "附件1组合数",
+      "passed": true,
+      "observed": 21,
+      "expected": 21
+    },
+    {
+      "check": "附件2有效记录数",
+      "passed": true,
+      "observed": {
+        "raw": 7,
+        "clean": 7
+      },
+      "expected": 7
+    },
+    {
+      "check": "附件1组合温度键无重复",
+      "passed": true,
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "check": "正式模型接口只含获批字段",
+      "passed": true,
+      "observed": [
+        "source_excel_row",
+        "catalyst_id",
+        "temperature_c",
+        "ethanol_conversion_pct",
+        "c4_selectivity_pct",
+        "c4_yield_pct",
+        "temperature_level",
+        "temperature_order"
+      ],
+      "expected": "批准的8个接口字段"
+    },
+    {
+      "check": "催化剂域为21种完整组合",
+      "passed": true,
+      "observed": 21,
+      "expected": 21
+    },
+    {
+      "check": "温度域为7个有序离散标签",
+      "passed": true,
+      "observed": [
+        250.0,
+        275.0,
+        300.0,
+        325.0,
+        350.0,
+        400.0,
+        450.0
+      ],
+      "expected": [
+        250,
+        275,
+        300,
+        325,
+        350,
+        400,
+        450
+      ]
+    },
+    {
+      "check": "附件1原表与清洁表行键一致",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "C4收率公式最大误差",
+      "passed": true,
+      "observed": 3.552713678800501e-15,
+      "expected": "< 1e-12"
+    },
+    {
+      "check": "附件1选择性闭合最大误差",
+      "passed": true,
+      "observed": 1.4210854715202004e-14,
+      "expected": "< 1e-10个百分点"
+    },
+    {
+      "check": "附件2选择性闭合最大误差",
+      "passed": true,
+      "observed": 0.0,
+      "expected": "< 1e-10个百分点"
+    },
+    {
+      "check": "独立逐字段原始—清洁对账",
+      "passed": true,
+      "observed": 0.0,
+      "expected": "< 1e-12"
+    },
+    {
+      "check": "主脚本对账表无不一致",
+      "passed": true,
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "check": "全部定义域无违规",
+      "passed": true,
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "check": "21种配方说明全部进入解析复核表",
+      "passed": true,
+      "observed": {
+        "rows": 21,
+        "combinations": 21
+      },
+      "expected": 21
+    },
+    {
+      "check": "21乘7覆盖矩阵与114条记录一致",
+      "passed": true,
+      "observed": {
+        "shape": [
+          21,
+          8
+        ],
+        "observed_cells": 114
+      },
+      "expected": {
+        "shape": [
+          21,
+          8
+        ],
+        "observed_cells": 114
+      }
+    },
+    {
+      "check": "辅助诊断未标为正式模型输入",
+      "passed": true,
+      "observed": [
+        "audit",
+        "auxiliary_diagnostic",
+        "clean_data",
+        "figure",
+        "model_input"
+      ],
+      "expected": "辅助诊断全部status=auxiliary"
+    },
+    {
+      "check": "首行手算收率A1-250°C",
+      "passed": true,
+      "observed": 0.7038711975827424,
+      "expected": 0.7038711975827424
+    },
+    {
+      "check": "A11为50mg Co/SiO2、无HAP且含90mg石英砂",
+      "passed": true,
+      "observed": {
+        "cosio2_mass_mg": 50.0,
+        "hap_mass_mg": 0.0,
+        "quartz_mass_mg": 90.0
+      },
+      "expected": {
+        "cosio2_mass_mg": 50,
+        "hap_mass_mg": 0,
+        "quartz_mass_mg": 90
+      }
+    },
+    {
+      "check": "A12与B1配方数值相同但装料方式不同",
+      "passed": true,
+      "observed": "A12/B1",
+      "expected": "数值配方相同、装料方式不同"
+    },
+    {
+      "check": "A9与B5配方数值相同但装料方式不同",
+      "passed": true,
+      "observed": "A9/B5",
+      "expected": "数值配方相同、装料方式不同"
+    },
+    {
+      "check": "产物清单路径完整",
+      "passed": true,
+      "observed": [],
+      "expected": []
+    },
+    {
+      "check": "产物清单SHA-256一致",
+      "passed": true,
+      "observed": [],
+      "expected": []
+    }
+  ],
+  "passed_count": 23,
+  "check_count": 23,
+  "all_passed": true
+}

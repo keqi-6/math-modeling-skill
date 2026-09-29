@@ -1,0 +1,81 @@
+{
+  "title": "问题1环境观测与分段线性重建",
+  "caption": "(a)烘房温度；(b)空气水分浓度。圆点为0～1800 s的31个原始观测，实线连接相邻观测；嵌图放大120～240 s的三个原始节点及其连接线。只表示本问使用的环境输入，未平滑、拟合或外推。",
+  "sources": [
+    {
+      "path": "output/ENV/q1_boundary.json",
+      "sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d",
+      "bytes": 4801
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+      "bytes": 16586
+    }
+  ],
+  "checks": {
+    "all_31_rows_equal_original_attachment": true
+  },
+  "data": {
+    "time_s": [
+      0,
+      1800
+    ],
+    "node_count": 31,
+    "time_unit_main": "min",
+    "time_unit_insets": "s",
+    "inset_time_s": [
+      120,
+      180,
+      240
+    ],
+    "interpolation": "piecewise linear between original observations"
+  },
+  "claim_boundary": "Q1 observed environment only; no Q2/Q3 extrapolation or internal material state is shown.",
+  "schema_version": "1.0",
+  "data_driven_visual": true,
+  "generator": {
+    "path": "scripts/build_brief_data_figures.py",
+    "sha256": "ec0b1be3a3e38287cb18b8e27eed77d289af743d4b4871da823c642fbc28b52a",
+    "bytes": 13948
+  },
+  "outputs": {
+    "png": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig02_q1_environment.png",
+      "sha256": "42143f7c92176342be03a33f38b8f266e1c7068e2cafc5d3fda5a6413e531abe",
+      "bytes": 146764
+    },
+    "pdf": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig02_q1_environment.pdf",
+      "sha256": "e89d7efd6d4f9616235dd3e0c6c686c131e7dc02a6310cc0adaf9ad0cadc70f2",
+      "bytes": 33125
+    },
+    "svg": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig02_q1_environment.svg",
+      "sha256": "14d37624fd6b5bced41d5cf4bb30e660f372f9d17361849f62855a8706be6734",
+      "bytes": 38501
+    },
+    "no_text_png": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig02_q1_environment_no_text.png",
+      "sha256": "58e4ffa11a876bcd3c3ec845f87153b0701e637ef992f464856663707d179f33",
+      "bytes": 64946
+    },
+    "gray_png": {
+      "path": "output/paper_figures/brief_refresh_20260911/fig02_q1_environment_gray.png",
+      "sha256": "5191aae383c879eb350d242358bc40fa84e483780cf7c912c0115dec7cdda1be",
+      "bytes": 136041
+    }
+  },
+  "display": {
+    "width_cm": 15.8,
+    "height_cm": 7.6000000000000005,
+    "dpi": 300,
+    "font": "Microsoft YaHei",
+    "font_size_pt": 8.5,
+    "main_linewidth_pt": 1.8,
+    "textfree": "same artist positions, all Text hidden",
+    "grayscale": "same artists with luminance-mapped line colors",
+    "extra_fit": false,
+    "solver_executed": false
+  }
+}

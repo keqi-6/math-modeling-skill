@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_version": "9.0.0",
+  "authority": "This file is the sole machine-readable owner of project component states.",
+  "state_file": ".modeling/state.json",
+  "component_types": {
+    "question": {
+      "states": ["S0", "S1", "S2", "S3", "S4", "S5", "S6", "S7"],
+      "terminal": "S7",
+      "transitions": {
+        "S0": ["S1"],
+        "S1": ["S0", "S2"],
+        "S2": ["S1", "S3"],
+        "S3": ["S2", "S4"],
+        "S4": ["S3", "S5"],
+        "S5": ["S4", "S6"],
+        "S6": ["S3", "S4", "S5", "S7"],
+        "S7": ["S3", "S4", "S5", "S6"]
+      },
+      "entry_evidence": {
+        "S1": ["problem_scope"],
+        "S2": ["evidence_inventory", "data_identity"],
+        "S3": ["candidate_comparison"],
+        "S4": ["frozen_specification"],
+        "S5": ["implementation_artifacts"],
+        "S6": ["E1_IMPLEMENTATION", "E2_NUMERICAL", "E3_STRUCTURAL", "E4_REALITY"],
+        "S7": ["delivery_acceptance"]
+      }
+    },
+    "shared_data": {
+      "states": ["D0", "D1", "D2", "D3"],
+      "terminal": "D3",
+      "transitions": {"D0": ["D1"], "D1": ["D0", "D2"], "D2": ["D1", "D3"], "D3": ["D1", "D2"]},
+      "entry_evidence": {"D1": ["data_audit"], "D2": ["treatment_decision"], "D3": ["frozen_dataset_identity"]}
+    },
+    "artifact": {
+      "states": ["A0", "A1", "A2", "A3"],
+      "terminal": "A3",
+      "transitions": {"A0": ["A1"], "A1": ["A0", "A2"], "A2": ["A1", "A3"], "A3": ["A1", "A2"]},
+      "entry_evidence": {"A1": ["artifact_created"], "A2": ["artifact_validation"], "A3": ["release_identity"]}
+    },
+    "project": {
+      "states": ["P0", "P1", "P2"],
+      "terminal": "P2",
+      "transitions": {"P0": ["P1"], "P1": ["P0", "P2"], "P2": ["P0"]},
+      "entry_evidence": {"P1": ["required_components_terminal"], "P2": ["final_delivery", "handoff_closed"]}
+    }
+  },
+  "execution_modes": {
+    "advisory_readonly": {"writes": false},
+    "project_readonly": {"writes": false},
+    "mutate": {"writes": true, "requires_user_scope": true},
+    "promote": {"writes": true, "requires_validation": true},
+    "skill_maintenance": {"writes": true, "target": "skill_only"}
+  },
+  "recovery_levels": {
+    "R0_CONTINUE": ["state_valid", "registered_artifacts_match", "no_unexplained_changes"],
+    "R1_TARGETED": ["state_valid", "changes_localizable"],
+    "R2_FULL": ["state_missing_or_invalid", "identity_conflict", "changes_not_localizable", "explicit_full_recovery", "milestone_or_final_closure"]
+  },
+  "project_state_required_fields": ["schema_version", "project_id", "components", "artifacts", "open_decisions", "next_actions", "last_route", "updated_at"]
+}
+

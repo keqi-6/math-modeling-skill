@@ -1,0 +1,275 @@
+{
+  "note": "本机全部 Skill 关联项目的登记表。位置一律用占位符（<AI_ROOT>=AI 项目父目录、<WORKSPACE>=2021 题工作根、~=用户主目录），不公开本机目录布局；维护者可在本地保留完整路径。public=true 的项目收录了文件，其余仅登记元数据。",
+  "generated_from": "本机全盘扫描（内嵌 skills 副本 + 目录约定 + .modeling/state.json）",
+  "placeholders": {
+    "<AI_ROOT>": "AI 建模项目父目录",
+    "<WORKSPACE>": "2021 B 题工作根（含中央技能版本树）",
+    "~": "用户主目录"
+  },
+  "version_lineage": {
+    "V1": "math-modeling-project-bootstrap（无版本号）",
+    "V2": "math-modeling-project-bootstrap",
+    "V3": "math-modeling-project-bootstrap（标题 Bootstrap V3）",
+    "V4+": "math-modeling-project-controller / mathematical-modeling-project-controller"
+  },
+  "projects": [
+    {
+      "id": "2011-b",
+      "skill_version": "V1",
+      "skill_name": "math-modeling-project-bootstrap",
+      "location": "<AI_ROOT>/2011B（第三题）",
+      "title": "2011 国赛 B 题：交巡警服务平台的设置与调度",
+      "scale": {
+        "files": 245,
+        "mb": 32
+      },
+      "skill_copy": "skills/（V1 原样副本）",
+      "last_activity": "2026-07-27",
+      "authority_state": false,
+      "extra": "含队友交付副本；output/q2 有 2.7 MB 网络数据",
+      "public": false
+    },
+    {
+      "id": "2021-b",
+      "skill_version": "V1",
+      "skill_name": "math-modeling-project-bootstrap",
+      "location": "<WORKSPACE>/B",
+      "title": "2021 国赛 B 题：催化剂组合与温度关系（四问）",
+      "scale": {
+        "files": 516,
+        "mb": 26.7
+      },
+      "skill_copy": "skills/（与中央 skills/ 哈希一致）",
+      "last_activity": "2026-08-04",
+      "authority_state": false,
+      "public": true,
+      "public_path": "projects/2021-b",
+      "extra": "首条证据链"
+    },
+    {
+      "id": "2021-b-restart",
+      "skill_version": "V5",
+      "location": "<WORKSPACE>/B_V2",
+      "title": "2021 B 题重启（V5 重做）",
+      "scale": {
+        "files": 858,
+        "mb": 43.9
+      },
+      "skill_copy": "skills_v5/（V5 修订副本）",
+      "last_activity": "2026-07-31",
+      "authority_state": false,
+      "public": false
+    },
+    {
+      "id": "2022-a",
+      "skill_version": "V6",
+      "location": "<AI_ROOT>/2022（第五题）/A题",
+      "title": "2022 国赛 A 题：波浪能最大输出功率设计",
+      "scale": {
+        "files": 640,
+        "mb": 55.7
+      },
+      "skill_copy": "skills/（V6）",
+      "last_activity": "2026-08-04",
+      "authority_state": false,
+      "extra": "父目录另有 skills_v5/ 版本暂存",
+      "public": false
+    },
+    {
+      "id": "2022-51mcm-b",
+      "skill_version": null,
+      "location": "<AI_ROOT>/2022-51MCM-Problem B",
+      "title": "2022 51MCM B 题",
+      "scale": {
+        "files": 559,
+        "mb": 72.7
+      },
+      "skill_copy": null,
+      "last_activity": "2026-07-19",
+      "authority_state": false,
+      "extra": "沿用同一目录约定，项目内无 skill 副本",
+      "public": false
+    },
+    {
+      "id": "camp-06",
+      "skill_version": "V6",
+      "location": "<AI_ROOT>/集训第六题",
+      "title": "暑期集训第六题",
+      "scale": {
+        "files": 2069,
+        "mb": 281.7
+      },
+      "skill_copy": "skills/（V6）+ B题/skills/（V7 暂存）",
+      "last_activity": "2026-08-21",
+      "authority_state": false,
+      "public": false
+    },
+    {
+      "id": "camp-06-b",
+      "skill_version": "V7",
+      "location": "<AI_ROOT>/集训第六题/B题",
+      "title": "集训第六题 B 题",
+      "scale": {
+        "files": 1993,
+        "mb": 158.3
+      },
+      "skill_copy": "skills/（标题 V7，内容与中央 v8 一致）",
+      "last_activity": "2026-08-21",
+      "authority_state": false,
+      "extra": "含 vendor 第三方二进制",
+      "public": false
+    },
+    {
+      "id": "2024-main",
+      "skill_version": "V7",
+      "location": "<AI_ROOT>/2024（第七题）/CUMCM2024Problems",
+      "title": "2024 国赛（题组主目录）",
+      "scale": {
+        "files": 400,
+        "mb": 578.4
+      },
+      "skill_copy": "skills/（标题 V7，内容与中央 v8 一致）",
+      "last_activity": "2026-08-25",
+      "authority_state": false,
+      "extra": "E 题附件单文件 468 MB",
+      "public": false
+    },
+    {
+      "id": "2024-b",
+      "skill_version": "V11",
+      "location": "<AI_ROOT>/2024（第七题）/CUMCM2024Problems/B题",
+      "title": "2024 国赛 B 题（Q1–Q4）",
+      "scale": {
+        "files": 294,
+        "mb": 57.7
+      },
+      "skill_copy": "skills/（V11）",
+      "last_activity": "2026-08-25",
+      "authority_state": true,
+      "state_revision": 124,
+      "public": true,
+      "public_path": "projects/2024-b",
+      "extra": "第 2 条证据链；收录 276 文件 / 8.2 MB"
+    },
+    {
+      "id": "2025-main",
+      "skill_version": "V11",
+      "location": "<AI_ROOT>/2025（第八题）",
+      "title": "2025 国赛（题组主目录）",
+      "scale": {
+        "files": 546,
+        "mb": 105.7
+      },
+      "skill_copy": "skills/（V11）",
+      "last_activity": "2026-08-29",
+      "authority_state": false,
+      "public": false
+    },
+    {
+      "id": "2025-a",
+      "skill_version": "V16.0.0",
+      "location": "<AI_ROOT>/2025（第八题）/A题",
+      "title": "2025 国赛 A 题（INPUTS + Q1–Q5）",
+      "scale": {
+        "files": 375,
+        "mb": 28.7
+      },
+      "skill_copy": "skills/（V16.0.0）",
+      "last_activity": "2026-08-29",
+      "authority_state": true,
+      "state_revision": 620,
+      "public": true,
+      "public_path": "projects/2025-a",
+      "extra": "第 3 条证据链；收录 355 文件 / 22.3 MB"
+    },
+    {
+      "id": "2026-a",
+      "skill_version": "V16.1.0",
+      "location": "<AI_ROOT>/数模国赛2026/CUMCM2026Problems/A题",
+      "title": "2026 国赛 A 题（ENV/GEOMETRY + Q1–Q4）",
+      "scale": {
+        "files": 17658,
+        "mb": 1914.8
+      },
+      "skill_copy": "skills/（V16.1.0）",
+      "last_activity": "2026-09-13",
+      "authority_state": true,
+      "state_revision": 524,
+      "public": true,
+      "public_path": "projects/2026-a",
+      "extra": "第 4 条证据链；收录 705 文件 / 100.1 MB（已剔环境、缓存、队友材料、个人对话与 >5 MB 中间产物）"
+    },
+    {
+      "id": "zh-problems",
+      "skill_version": "V16.2.0",
+      "location": "<AI_ROOT>/中文题目",
+      "title": "中文题目（冻结版试用）",
+      "scale": {
+        "files": 2170,
+        "mb": 4564.4
+      },
+      "skill_copy": "skills_v16.2/skills/（与中央 v16.2 哈希一致）",
+      "last_activity": "2026-09-23",
+      "authority_state": false,
+      "public": false,
+      "extra": "含 1.8 GB 数据压缩包"
+    },
+    {
+      "id": "mathorcup-2026-c",
+      "skill_version": null,
+      "location": "<AI_ROOT>/mathorcup_2026_C_v2",
+      "title": "MathorCup 2026 C 题",
+      "scale": {
+        "files": 57,
+        "mb": 5.2
+      },
+      "skill_copy": null,
+      "last_activity": "2026-06-06",
+      "authority_state": false,
+      "public": false
+    },
+    {
+      "id": "sim-2",
+      "skill_version": null,
+      "location": "<AI_ROOT>/数模模拟题二",
+      "title": "数模模拟题二（2016 国赛 A 题）",
+      "scale": {
+        "files": 300,
+        "mb": 41.2
+      },
+      "skill_copy": null,
+      "last_activity": "2026-07-23",
+      "authority_state": false,
+      "extra": "含 给队友_v6 / 给队友_v7",
+      "public": false
+    },
+    {
+      "id": "finance-replication",
+      "skill_version": null,
+      "location": "<AI_ROOT>/金融题答案",
+      "title": "资本结构复现（金融题）",
+      "scale": {
+        "files": 15,
+        "mb": 0.05
+      },
+      "skill_copy": null,
+      "last_activity": "2026-06-07",
+      "authority_state": false,
+      "public": false
+    },
+    {
+      "id": "capital-structure",
+      "skill_version": null,
+      "location": "<AI_ROOT>/capital_structure_replication",
+      "title": "资本结构论文复现",
+      "scale": {
+        "files": 2,
+        "mb": 0.02
+      },
+      "skill_copy": null,
+      "last_activity": "2026-06-06",
+      "authority_state": false,
+      "public": false
+    }
+  ]
+}

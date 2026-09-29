@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "tests": [
+    {
+      "test_id": "T-PRESERVE-EXACT",
+      "kind": "migration_invariant",
+      "command": "python3 scripts/test_capability_ledger.py",
+      "proves": "A preserve-treated V6 capability remains present verbatim in its declared V7 owner; deletion and stale source coverage are rejected."
+    },
+    {
+      "test_id": "T-V7-REWRITE-CONTRACT",
+      "kind": "behavioral_regression",
+      "command": "python3 scripts/test_v7_rewrite_contracts.py",
+      "proves": "Every approved V7 rewrite family retains its purpose while enforcing the repaired controller, recovery, artifact, assumption, path, and governance boundaries."
+    }
+  ]
+}

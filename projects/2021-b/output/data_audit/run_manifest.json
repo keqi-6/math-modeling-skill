@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "producer": "src/data_audit/01_audit_and_visualize.py",
+  "started_at": "2026-07-31T09:56:30+08:00",
+  "finished_at": "2026-07-31T09:56:53+08:00",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "packages": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.0",
+    "seaborn": "0.13.2"
+  },
+  "inputs": {
+    "data/附件1.xlsx": "de8e67e2c3fafb703553cb20e46f1a6db7109c5039bd50fd450c1e093a7080a3",
+    "data/附件2.xlsx": "9aa92011182076833ced7cc47b57c57875a85ed8fb2b8edd2b1f66dd3c10ac82"
+  },
+  "random_seed": null,
+  "notes": "确定性审计与制图，不使用随机算法。"
+}

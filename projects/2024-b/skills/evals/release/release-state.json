@@ -1,0 +1,8 @@
+{
+  "frozen_at": null,
+  "manifest": "evals/release/frozen-manifest.json",
+  "pre_freeze_gate_report_sha256": null,
+  "release_id": "V11.0.0",
+  "schema_version": "11.0",
+  "status": "candidate"
+}

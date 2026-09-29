@@ -1,0 +1,3910 @@
+{
+  "status": "s5_implemented_not_s6_validated",
+  "decision_bit_order": [
+    "iP1",
+    "iP2",
+    "iP3",
+    "iP4",
+    "iP5",
+    "iP6",
+    "iP7",
+    "iP8",
+    "iS1",
+    "iS2",
+    "iS3",
+    "iF",
+    "dS1",
+    "dS2",
+    "dS3",
+    "dF"
+  ],
+  "event_order": [
+    "purchase_P1",
+    "purchase_P2",
+    "purchase_P3",
+    "purchase_P4",
+    "purchase_P5",
+    "purchase_P6",
+    "purchase_P7",
+    "purchase_P8",
+    "inspect_P1",
+    "inspect_P2",
+    "inspect_P3",
+    "inspect_P4",
+    "inspect_P5",
+    "inspect_P6",
+    "inspect_P7",
+    "inspect_P8",
+    "inspect_S1",
+    "inspect_S2",
+    "inspect_S3",
+    "inspect_F",
+    "assemble_S1",
+    "assemble_S2",
+    "assemble_S3",
+    "assemble_F",
+    "disassemble_S1",
+    "disassemble_S2",
+    "disassemble_S3",
+    "disassemble_F",
+    "root_attempts",
+    "market_bad_products_and_exchanges",
+    "atomic_steps"
+  ],
+  "atomic_step_definition": "one step per charged/action event, including root-attempt and market-return events",
+  "sensitivity_design": {
+    "method": "one_factor_at_a_time",
+    "nodes": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "S1",
+      "S2",
+      "S3",
+      "F"
+    ],
+    "nominal_rate": "1/10",
+    "low_rate": "1/20",
+    "high_rate": "3/20",
+    "interpretation": "plus_or_minus_five_percentage_points",
+    "scenario_count": 25,
+    "full_reoptimization_per_scenario": 65536
+  },
+  "scenarios": {
+    "NOMINAL": {
+      "changed_node": null,
+      "direction": "nominal",
+      "changed_rate_exact": null,
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "173/3",
+      "best_profit_decimal": "57.666666667",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "NOMINAL",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "256/9"
+          },
+          "total_cost": "427/3",
+          "profit": "173/3",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "173/3",
+          "profit_decimal": "57.666666667",
+          "total_cost_decimal": "142.333333333"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "4522/81",
+          "profit_decimal": "55.827160494",
+          "total_cost_decimal": "144.172839506"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "4502/81",
+          "profit_decimal": "55.580246914",
+          "total_cost_decimal": "144.419753086"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "4501/81",
+          "profit_decimal": "55.567901235",
+          "total_cost_decimal": "144.432098765"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "4501/81",
+          "profit_decimal": "55.567901235",
+          "total_cost_decimal": "144.432098765"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "499/9",
+          "profit_decimal": "55.444444444",
+          "total_cost_decimal": "144.555555556"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1101111111100111",
+          "profit_exact": "13343/243",
+          "profit_decimal": "54.909465021",
+          "total_cost_decimal": "145.090534979"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111101111101011",
+          "profit_exact": "13343/243",
+          "profit_decimal": "54.909465021",
+          "total_cost_decimal": "145.090534979"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111100101",
+          "profit_exact": "4352/81",
+          "profit_decimal": "53.728395062",
+          "total_cost_decimal": "146.271604938"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111101001",
+          "profit_exact": "4352/81",
+          "profit_decimal": "53.728395062",
+          "total_cost_decimal": "146.271604938"
+        }
+      ],
+      "profit_change_from_nominal_exact": "0",
+      "profit_change_from_nominal_decimal": "0.000000000",
+      "policy_switch_from_nominal": false
+    },
+    "P1_LOW": {
+      "changed_node": "P1",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/20",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "1099/19",
+      "best_profit_decimal": "57.842105263",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P1_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "20/19",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "199/171",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4844/171"
+          },
+          "total_cost": "2701/19",
+          "profit": "1099/19",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "1099/19",
+          "profit_decimal": "57.842105263",
+          "total_cost_decimal": "142.157894737"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "86188/1539",
+          "profit_decimal": "56.002599090",
+          "total_cost_decimal": "143.997400910"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111100111",
+          "profit_exact": "85819/1539",
+          "profit_decimal": "55.762833008",
+          "total_cost_decimal": "144.237166992"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111011101101",
+          "profit_exact": "85808/1539",
+          "profit_decimal": "55.755685510",
+          "total_cost_decimal": "144.244314490"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "85789/1539",
+          "profit_decimal": "55.743339831",
+          "total_cost_decimal": "144.256660169"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "9511/171",
+          "profit_decimal": "55.619883041",
+          "total_cost_decimal": "144.380116959"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1101111111100111",
+          "profit_exact": "84839/1539",
+          "profit_decimal": "55.126055880",
+          "total_cost_decimal": "144.873944120"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111101111101011",
+          "profit_exact": "254327/4617",
+          "profit_decimal": "55.084903617",
+          "total_cost_decimal": "144.915096383"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "0111111111100111",
+          "profit_exact": "84239/1539",
+          "profit_decimal": "54.736192333",
+          "total_cost_decimal": "145.263807667"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "0101111111100111",
+          "profit_exact": "9271/171",
+          "profit_decimal": "54.216374269",
+          "total_cost_decimal": "145.783625731"
+        }
+      ],
+      "profit_change_from_nominal_exact": "10/57",
+      "profit_change_from_nominal_decimal": "0.175438596",
+      "policy_switch_from_nominal": false
+    },
+    "P1_HIGH": {
+      "changed_node": "P1",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "3/20",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "977/17",
+      "best_profit_decimal": "57.470588235",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P1_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "20/17",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "197/153",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4372/153"
+          },
+          "total_cost": "2423/17",
+          "profit": "977/17",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "977/17",
+          "profit_decimal": "57.470588235",
+          "total_cost_decimal": "142.529411765"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "76604/1377",
+          "profit_decimal": "55.631082062",
+          "total_cost_decimal": "144.368917938"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "76264/1377",
+          "profit_decimal": "55.384168482",
+          "total_cost_decimal": "144.615831518"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101011",
+          "profit_exact": "76247/1377",
+          "profit_decimal": "55.371822803",
+          "total_cost_decimal": "144.628177197"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111100111",
+          "profit_exact": "76217/1377",
+          "profit_decimal": "55.350036311",
+          "total_cost_decimal": "144.649963689"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8453/153",
+          "profit_decimal": "55.248366013",
+          "total_cost_decimal": "144.751633987"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111101111101011",
+          "profit_exact": "226021/4131",
+          "profit_decimal": "54.713386589",
+          "total_cost_decimal": "145.286613411"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1101111111100111",
+          "profit_exact": "75277/1377",
+          "profit_decimal": "54.667392883",
+          "total_cost_decimal": "145.332607117"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111101001",
+          "profit_exact": "73714/1377",
+          "profit_decimal": "53.532316630",
+          "total_cost_decimal": "146.467683370"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111100101",
+          "profit_exact": "73684/1377",
+          "profit_decimal": "53.510530138",
+          "total_cost_decimal": "146.489469862"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-10/51",
+      "profit_change_from_nominal_decimal": "-0.196078431",
+      "policy_switch_from_nominal": false
+    },
+    "P2_LOW": {
+      "changed_node": "P2",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/20",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "3317/57",
+      "best_profit_decimal": "58.192982456",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P2_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "20/19",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "199/171",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4844/171"
+          },
+          "total_cost": "8083/57",
+          "profit": "3317/57",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "3317/57",
+          "profit_decimal": "58.192982456",
+          "total_cost_decimal": "141.807017544"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "86728/1539",
+          "profit_decimal": "56.353476283",
+          "total_cost_decimal": "143.646523717"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111100111",
+          "profit_exact": "86419/1539",
+          "profit_decimal": "56.152696556",
+          "total_cost_decimal": "143.847303444"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111011101101",
+          "profit_exact": "86348/1539",
+          "profit_decimal": "56.106562703",
+          "total_cost_decimal": "143.893437297"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "86329/1539",
+          "profit_decimal": "56.094217024",
+          "total_cost_decimal": "143.905782976"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "9571/171",
+          "profit_decimal": "55.970760234",
+          "total_cost_decimal": "144.029239766"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1101111111100111",
+          "profit_exact": "256517/4617",
+          "profit_decimal": "55.559237600",
+          "total_cost_decimal": "144.440762400"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1011111111100111",
+          "profit_exact": "85439/1539",
+          "profit_decimal": "55.515919428",
+          "total_cost_decimal": "144.484080572"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111101111101011",
+          "profit_exact": "255947/4617",
+          "profit_decimal": "55.435780810",
+          "total_cost_decimal": "144.564219190"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1001111111100111",
+          "profit_exact": "254317/4617",
+          "profit_decimal": "55.082737708",
+          "total_cost_decimal": "144.917262292"
+        }
+      ],
+      "profit_change_from_nominal_exact": "10/19",
+      "profit_change_from_nominal_decimal": "0.526315789",
+      "policy_switch_from_nominal": false
+    },
+    "P2_HIGH": {
+      "changed_node": "P2",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "3/20",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "2911/51",
+      "best_profit_decimal": "57.078431373",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P2_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "20/17",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "197/153",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4372/153"
+          },
+          "total_cost": "7289/51",
+          "profit": "2911/51",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "2911/51",
+          "profit_decimal": "57.078431373",
+          "total_cost_decimal": "142.921568627"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "76064/1377",
+          "profit_decimal": "55.238925200",
+          "total_cost_decimal": "144.761074800"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "75724/1377",
+          "profit_decimal": "54.992011619",
+          "total_cost_decimal": "145.007988381"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101011",
+          "profit_exact": "75707/1377",
+          "profit_decimal": "54.979665940",
+          "total_cost_decimal": "145.020334060"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111100111",
+          "profit_exact": "75617/1377",
+          "profit_decimal": "54.914306463",
+          "total_cost_decimal": "145.085693537"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8393/153",
+          "profit_decimal": "54.856209150",
+          "total_cost_decimal": "145.143790850"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111101111101011",
+          "profit_exact": "224401/4131",
+          "profit_decimal": "54.321229726",
+          "total_cost_decimal": "145.678770274"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1101111111100111",
+          "profit_exact": "223831/4131",
+          "profit_decimal": "54.183248608",
+          "total_cost_decimal": "145.816751392"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111101001",
+          "profit_exact": "73174/1377",
+          "profit_decimal": "53.140159768",
+          "total_cost_decimal": "146.859840232"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111100101",
+          "profit_exact": "73084/1377",
+          "profit_decimal": "53.074800290",
+          "total_cost_decimal": "146.925199710"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-10/17",
+      "profit_change_from_nominal_decimal": "-0.588235294",
+      "policy_switch_from_nominal": false
+    },
+    "P3_LOW": {
+      "changed_node": "P3",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/20",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "10001/171",
+      "best_profit_decimal": "58.485380117",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P3_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "20/19",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "199/171",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4844/171"
+          },
+          "total_cost": "24199/171",
+          "profit": "10001/171",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "10001/171",
+          "profit_decimal": "58.485380117",
+          "total_cost_decimal": "141.514619883"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1101111111100111",
+          "profit_exact": "29413/513",
+          "profit_decimal": "57.335282651",
+          "total_cost_decimal": "142.664717349"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111101101",
+          "profit_exact": "87178/1539",
+          "profit_decimal": "56.645873944",
+          "total_cost_decimal": "143.354126056"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "28973/513",
+          "profit_decimal": "56.477582846",
+          "total_cost_decimal": "143.522417154"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111011101101",
+          "profit_exact": "86798/1539",
+          "profit_decimal": "56.398960364",
+          "total_cost_decimal": "143.601039636"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111101011",
+          "profit_exact": "86779/1539",
+          "profit_decimal": "56.386614685",
+          "total_cost_decimal": "143.613385315"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111111111111111",
+          "profit_exact": "1069/19",
+          "profit_decimal": "56.263157895",
+          "total_cost_decimal": "143.736842105"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111101111101011",
+          "profit_exact": "257297/4617",
+          "profit_decimal": "55.728178471",
+          "total_cost_decimal": "144.271821529"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1101111111100101",
+          "profit_exact": "85408/1539",
+          "profit_decimal": "55.495776478",
+          "total_cost_decimal": "144.504223522"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1101111011100101",
+          "profit_exact": "85028/1539",
+          "profit_decimal": "55.248862898",
+          "total_cost_decimal": "144.751137102"
+        }
+      ],
+      "profit_change_from_nominal_exact": "140/171",
+      "profit_change_from_nominal_decimal": "0.818713450",
+      "policy_switch_from_nominal": false
+    },
+    "P3_HIGH": {
+      "changed_node": "P3",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "3/20",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "8683/153",
+      "best_profit_decimal": "56.751633987",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P3_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "20/17",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "197/153",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4372/153"
+          },
+          "total_cost": "21917/153",
+          "profit": "8683/153",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "8683/153",
+          "profit_decimal": "56.751633987",
+          "total_cost_decimal": "143.248366013"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "75614/1377",
+          "profit_decimal": "54.912127814",
+          "total_cost_decimal": "145.087872186"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "75274/1377",
+          "profit_decimal": "54.665214234",
+          "total_cost_decimal": "145.334785766"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101011",
+          "profit_exact": "75257/1377",
+          "profit_decimal": "54.652868555",
+          "total_cost_decimal": "145.347131445"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111100111",
+          "profit_exact": "25039/459",
+          "profit_decimal": "54.551198257",
+          "total_cost_decimal": "145.448801743"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "927/17",
+          "profit_decimal": "54.529411765",
+          "total_cost_decimal": "145.470588235"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111101111101011",
+          "profit_exact": "223051/4131",
+          "profit_decimal": "53.994432341",
+          "total_cost_decimal": "146.005567659"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111111111101001",
+          "profit_exact": "72724/1377",
+          "profit_decimal": "52.813362382",
+          "total_cost_decimal": "147.186637618"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111110011101101",
+          "profit_exact": "653666/12393",
+          "profit_decimal": "52.744775276",
+          "total_cost_decimal": "147.255224724"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111110111101101",
+          "profit_exact": "653666/12393",
+          "profit_decimal": "52.744775276",
+          "total_cost_decimal": "147.255224724"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-140/153",
+      "profit_change_from_nominal_decimal": "-0.915032680",
+      "policy_switch_from_nominal": false
+    },
+    "P4_LOW": {
+      "changed_node": "P4",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/20",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "1099/19",
+      "best_profit_decimal": "57.842105263",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P4_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "20/19",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "199/171",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4844/171"
+          },
+          "total_cost": "2701/19",
+          "profit": "1099/19",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "1099/19",
+          "profit_decimal": "57.842105263",
+          "total_cost_decimal": "142.157894737"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "86188/1539",
+          "profit_decimal": "56.002599090",
+          "total_cost_decimal": "143.997400910"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111101011",
+          "profit_exact": "85819/1539",
+          "profit_decimal": "55.762833008",
+          "total_cost_decimal": "144.237166992"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111011101101",
+          "profit_exact": "85808/1539",
+          "profit_decimal": "55.755685510",
+          "total_cost_decimal": "144.244314490"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111100111",
+          "profit_exact": "85789/1539",
+          "profit_decimal": "55.743339831",
+          "total_cost_decimal": "144.256660169"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "9511/171",
+          "profit_decimal": "55.619883041",
+          "total_cost_decimal": "144.380116959"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111101111101011",
+          "profit_exact": "84839/1539",
+          "profit_decimal": "55.126055880",
+          "total_cost_decimal": "144.873944120"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1101111111100111",
+          "profit_exact": "254327/4617",
+          "profit_decimal": "55.084903617",
+          "total_cost_decimal": "144.915096383"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1110111111101011",
+          "profit_exact": "84239/1539",
+          "profit_decimal": "54.736192333",
+          "total_cost_decimal": "145.263807667"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1110101111101011",
+          "profit_exact": "9271/171",
+          "profit_decimal": "54.216374269",
+          "total_cost_decimal": "145.783625731"
+        }
+      ],
+      "profit_change_from_nominal_exact": "10/57",
+      "profit_change_from_nominal_decimal": "0.175438596",
+      "policy_switch_from_nominal": false
+    },
+    "P4_HIGH": {
+      "changed_node": "P4",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "3/20",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "977/17",
+      "best_profit_decimal": "57.470588235",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P4_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "20/17",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "197/153",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4372/153"
+          },
+          "total_cost": "2423/17",
+          "profit": "977/17",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "977/17",
+          "profit_decimal": "57.470588235",
+          "total_cost_decimal": "142.529411765"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "76604/1377",
+          "profit_decimal": "55.631082062",
+          "total_cost_decimal": "144.368917938"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "76264/1377",
+          "profit_decimal": "55.384168482",
+          "total_cost_decimal": "144.615831518"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "76247/1377",
+          "profit_decimal": "55.371822803",
+          "total_cost_decimal": "144.628177197"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "76217/1377",
+          "profit_decimal": "55.350036311",
+          "total_cost_decimal": "144.649963689"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8453/153",
+          "profit_decimal": "55.248366013",
+          "total_cost_decimal": "144.751633987"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1101111111100111",
+          "profit_exact": "226021/4131",
+          "profit_decimal": "54.713386589",
+          "total_cost_decimal": "145.286613411"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111101111101011",
+          "profit_exact": "75277/1377",
+          "profit_decimal": "54.667392883",
+          "total_cost_decimal": "145.332607117"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111100101",
+          "profit_exact": "73714/1377",
+          "profit_decimal": "53.532316630",
+          "total_cost_decimal": "146.467683370"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111101001",
+          "profit_exact": "73684/1377",
+          "profit_decimal": "53.510530138",
+          "total_cost_decimal": "146.489469862"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-10/51",
+      "profit_change_from_nominal_decimal": "-0.196078431",
+      "policy_switch_from_nominal": false
+    },
+    "P5_LOW": {
+      "changed_node": "P5",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/20",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "3317/57",
+      "best_profit_decimal": "58.192982456",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P5_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "20/19",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "199/171",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4844/171"
+          },
+          "total_cost": "8083/57",
+          "profit": "3317/57",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "3317/57",
+          "profit_decimal": "58.192982456",
+          "total_cost_decimal": "141.807017544"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "86728/1539",
+          "profit_decimal": "56.353476283",
+          "total_cost_decimal": "143.646523717"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111101011",
+          "profit_exact": "86419/1539",
+          "profit_decimal": "56.152696556",
+          "total_cost_decimal": "143.847303444"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111011101101",
+          "profit_exact": "86348/1539",
+          "profit_decimal": "56.106562703",
+          "total_cost_decimal": "143.893437297"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111100111",
+          "profit_exact": "86329/1539",
+          "profit_decimal": "56.094217024",
+          "total_cost_decimal": "143.905782976"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "9571/171",
+          "profit_decimal": "55.970760234",
+          "total_cost_decimal": "144.029239766"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111101111101011",
+          "profit_exact": "256517/4617",
+          "profit_decimal": "55.559237600",
+          "total_cost_decimal": "144.440762400"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111011111101011",
+          "profit_exact": "85439/1539",
+          "profit_decimal": "55.515919428",
+          "total_cost_decimal": "144.484080572"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1101111111100111",
+          "profit_exact": "255947/4617",
+          "profit_decimal": "55.435780810",
+          "total_cost_decimal": "144.564219190"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111001111101011",
+          "profit_exact": "254317/4617",
+          "profit_decimal": "55.082737708",
+          "total_cost_decimal": "144.917262292"
+        }
+      ],
+      "profit_change_from_nominal_exact": "10/19",
+      "profit_change_from_nominal_decimal": "0.526315789",
+      "policy_switch_from_nominal": false
+    },
+    "P5_HIGH": {
+      "changed_node": "P5",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "3/20",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "2911/51",
+      "best_profit_decimal": "57.078431373",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P5_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "20/17",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "197/153",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4372/153"
+          },
+          "total_cost": "7289/51",
+          "profit": "2911/51",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "2911/51",
+          "profit_decimal": "57.078431373",
+          "total_cost_decimal": "142.921568627"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "76064/1377",
+          "profit_decimal": "55.238925200",
+          "total_cost_decimal": "144.761074800"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "75724/1377",
+          "profit_decimal": "54.992011619",
+          "total_cost_decimal": "145.007988381"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "75707/1377",
+          "profit_decimal": "54.979665940",
+          "total_cost_decimal": "145.020334060"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "75617/1377",
+          "profit_decimal": "54.914306463",
+          "total_cost_decimal": "145.085693537"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8393/153",
+          "profit_decimal": "54.856209150",
+          "total_cost_decimal": "145.143790850"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1101111111100111",
+          "profit_exact": "224401/4131",
+          "profit_decimal": "54.321229726",
+          "total_cost_decimal": "145.678770274"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111101111101011",
+          "profit_exact": "223831/4131",
+          "profit_decimal": "54.183248608",
+          "total_cost_decimal": "145.816751392"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111100101",
+          "profit_exact": "73174/1377",
+          "profit_decimal": "53.140159768",
+          "total_cost_decimal": "146.859840232"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111101001",
+          "profit_exact": "73084/1377",
+          "profit_decimal": "53.074800290",
+          "total_cost_decimal": "146.925199710"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-10/17",
+      "profit_change_from_nominal_decimal": "-0.588235294",
+      "policy_switch_from_nominal": false
+    },
+    "P6_LOW": {
+      "changed_node": "P6",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/20",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "10001/171",
+      "best_profit_decimal": "58.485380117",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P6_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "20/19",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "199/171",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4844/171"
+          },
+          "total_cost": "24199/171",
+          "profit": "10001/171",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "10001/171",
+          "profit_decimal": "58.485380117",
+          "total_cost_decimal": "141.514619883"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111101111101011",
+          "profit_exact": "29413/513",
+          "profit_decimal": "57.335282651",
+          "total_cost_decimal": "142.664717349"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111101101",
+          "profit_exact": "87178/1539",
+          "profit_decimal": "56.645873944",
+          "total_cost_decimal": "143.354126056"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101011",
+          "profit_exact": "28973/513",
+          "profit_decimal": "56.477582846",
+          "total_cost_decimal": "143.522417154"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111011101101",
+          "profit_exact": "86798/1539",
+          "profit_decimal": "56.398960364",
+          "total_cost_decimal": "143.601039636"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111100111",
+          "profit_exact": "86779/1539",
+          "profit_decimal": "56.386614685",
+          "total_cost_decimal": "143.613385315"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111111111111111",
+          "profit_exact": "1069/19",
+          "profit_decimal": "56.263157895",
+          "total_cost_decimal": "143.736842105"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1101111111100111",
+          "profit_exact": "257297/4617",
+          "profit_decimal": "55.728178471",
+          "total_cost_decimal": "144.271821529"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111101111101001",
+          "profit_exact": "85408/1539",
+          "profit_decimal": "55.495776478",
+          "total_cost_decimal": "144.504223522"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111101011101001",
+          "profit_exact": "85028/1539",
+          "profit_decimal": "55.248862898",
+          "total_cost_decimal": "144.751137102"
+        }
+      ],
+      "profit_change_from_nominal_exact": "140/171",
+      "profit_change_from_nominal_decimal": "0.818713450",
+      "policy_switch_from_nominal": false
+    },
+    "P6_HIGH": {
+      "changed_node": "P6",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "3/20",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "8683/153",
+      "best_profit_decimal": "56.751633987",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P6_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "20/17",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "197/153",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4372/153"
+          },
+          "total_cost": "21917/153",
+          "profit": "8683/153",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "8683/153",
+          "profit_decimal": "56.751633987",
+          "total_cost_decimal": "143.248366013"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "75614/1377",
+          "profit_decimal": "54.912127814",
+          "total_cost_decimal": "145.087872186"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "75274/1377",
+          "profit_decimal": "54.665214234",
+          "total_cost_decimal": "145.334785766"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "75257/1377",
+          "profit_decimal": "54.652868555",
+          "total_cost_decimal": "145.347131445"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "25039/459",
+          "profit_decimal": "54.551198257",
+          "total_cost_decimal": "145.448801743"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "927/17",
+          "profit_decimal": "54.529411765",
+          "total_cost_decimal": "145.470588235"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1101111111100111",
+          "profit_exact": "223051/4131",
+          "profit_decimal": "53.994432341",
+          "total_cost_decimal": "146.005567659"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111111111100101",
+          "profit_exact": "72724/1377",
+          "profit_decimal": "52.813362382",
+          "total_cost_decimal": "147.186637618"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111110011101101",
+          "profit_exact": "653666/12393",
+          "profit_decimal": "52.744775276",
+          "total_cost_decimal": "147.255224724"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111110111101101",
+          "profit_exact": "653666/12393",
+          "profit_decimal": "52.744775276",
+          "total_cost_decimal": "147.255224724"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-140/153",
+      "profit_change_from_nominal_decimal": "-0.915032680",
+      "policy_switch_from_nominal": false
+    },
+    "P7_LOW": {
+      "changed_node": "P7",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/20",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "3317/57",
+      "best_profit_decimal": "58.192982456",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P7_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "20/19",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "199/171",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4844/171"
+          },
+          "total_cost": "8083/57",
+          "profit": "3317/57",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "3317/57",
+          "profit_decimal": "58.192982456",
+          "total_cost_decimal": "141.807017544"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "86818/1539",
+          "profit_decimal": "56.411955815",
+          "total_cost_decimal": "143.588044185"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "28846/513",
+          "profit_decimal": "56.230019493",
+          "total_cost_decimal": "143.769980507"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "86329/1539",
+          "profit_decimal": "56.094217024",
+          "total_cost_decimal": "143.905782976"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "86329/1539",
+          "profit_decimal": "56.094217024",
+          "total_cost_decimal": "143.905782976"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "9571/171",
+          "profit_decimal": "55.970760234",
+          "total_cost_decimal": "144.029239766"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111110011101101",
+          "profit_exact": "86138/1539",
+          "profit_decimal": "55.970110461",
+          "total_cost_decimal": "144.029889539"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111110111101101",
+          "profit_exact": "86138/1539",
+          "profit_decimal": "55.970110461",
+          "total_cost_decimal": "144.029889539"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1101111111100111",
+          "profit_exact": "255947/4617",
+          "profit_decimal": "55.435780810",
+          "total_cost_decimal": "144.564219190"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111101111101011",
+          "profit_exact": "255947/4617",
+          "profit_decimal": "55.435780810",
+          "total_cost_decimal": "144.564219190"
+        }
+      ],
+      "profit_change_from_nominal_exact": "10/19",
+      "profit_change_from_nominal_decimal": "0.526315789",
+      "policy_switch_from_nominal": false
+    },
+    "P7_HIGH": {
+      "changed_node": "P7",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "3/20",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "2911/51",
+      "best_profit_decimal": "57.078431373",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P7_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "20/17",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "197/153",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4372/153"
+          },
+          "total_cost": "7289/51",
+          "profit": "2911/51",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "2911/51",
+          "profit_decimal": "57.078431373",
+          "total_cost_decimal": "142.921568627"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "75974/1377",
+          "profit_decimal": "55.173565723",
+          "total_cost_decimal": "144.826434277"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111100111",
+          "profit_exact": "75707/1377",
+          "profit_decimal": "54.979665940",
+          "total_cost_decimal": "145.020334060"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101011",
+          "profit_exact": "75707/1377",
+          "profit_decimal": "54.979665940",
+          "total_cost_decimal": "145.020334060"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8393/153",
+          "profit_decimal": "54.856209150",
+          "total_cost_decimal": "145.143790850"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111011101101",
+          "profit_exact": "25178/459",
+          "profit_decimal": "54.854030501",
+          "total_cost_decimal": "145.145969499"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1101111111100111",
+          "profit_exact": "224401/4131",
+          "profit_decimal": "54.321229726",
+          "total_cost_decimal": "145.678770274"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111101111101011",
+          "profit_exact": "224401/4131",
+          "profit_decimal": "54.321229726",
+          "total_cost_decimal": "145.678770274"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111100101",
+          "profit_exact": "73084/1377",
+          "profit_decimal": "53.074800290",
+          "total_cost_decimal": "146.925199710"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111101001",
+          "profit_exact": "73084/1377",
+          "profit_decimal": "53.074800290",
+          "total_cost_decimal": "146.925199710"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-10/17",
+      "profit_change_from_nominal_decimal": "-0.588235294",
+      "policy_switch_from_nominal": false
+    },
+    "P8_LOW": {
+      "changed_node": "P8",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/20",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "10001/171",
+      "best_profit_decimal": "58.485380117",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P8_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "20/19",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "199/171",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4844/171"
+          },
+          "total_cost": "24199/171",
+          "profit": "10001/171",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "10001/171",
+          "profit_decimal": "58.485380117",
+          "total_cost_decimal": "141.514619883"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111011101101",
+          "profit_exact": "1098/19",
+          "profit_decimal": "57.789473684",
+          "total_cost_decimal": "142.210526316"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111101101",
+          "profit_exact": "1078/19",
+          "profit_decimal": "56.736842105",
+          "total_cost_decimal": "143.263157895"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "86779/1539",
+          "profit_decimal": "56.386614685",
+          "total_cost_decimal": "143.613385315"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "86779/1539",
+          "profit_decimal": "56.386614685",
+          "total_cost_decimal": "143.613385315"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "1069/19",
+          "profit_decimal": "56.263157895",
+          "total_cost_decimal": "143.736842105"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111110011101101",
+          "profit_exact": "86138/1539",
+          "profit_decimal": "55.970110461",
+          "total_cost_decimal": "144.029889539"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1101111111100111",
+          "profit_exact": "257297/4617",
+          "profit_decimal": "55.728178471",
+          "total_cost_decimal": "144.271821529"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111101111101011",
+          "profit_exact": "257297/4617",
+          "profit_decimal": "55.728178471",
+          "total_cost_decimal": "144.271821529"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111011100101",
+          "profit_exact": "85708/1539",
+          "profit_decimal": "55.690708252",
+          "total_cost_decimal": "144.309291748"
+        }
+      ],
+      "profit_change_from_nominal_exact": "140/171",
+      "profit_change_from_nominal_decimal": "0.818713450",
+      "policy_switch_from_nominal": false
+    },
+    "P8_HIGH": {
+      "changed_node": "P8",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "3/20",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "8683/153",
+      "best_profit_decimal": "56.751633987",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "P8_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "20/17",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "197/153",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4372/153"
+          },
+          "total_cost": "21917/153",
+          "profit": "8683/153",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "8683/153",
+          "profit_decimal": "56.751633987",
+          "total_cost_decimal": "143.248366013"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "8386/153",
+          "profit_decimal": "54.810457516",
+          "total_cost_decimal": "145.189542484"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111100111",
+          "profit_exact": "75257/1377",
+          "profit_decimal": "54.652868555",
+          "total_cost_decimal": "145.347131445"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101011",
+          "profit_exact": "75257/1377",
+          "profit_decimal": "54.652868555",
+          "total_cost_decimal": "145.347131445"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111111111",
+          "profit_exact": "927/17",
+          "profit_decimal": "54.529411765",
+          "total_cost_decimal": "145.470588235"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1101111111100111",
+          "profit_exact": "223051/4131",
+          "profit_decimal": "53.994432341",
+          "total_cost_decimal": "146.005567659"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111101111101011",
+          "profit_exact": "223051/4131",
+          "profit_decimal": "53.994432341",
+          "total_cost_decimal": "146.005567659"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111111011101101",
+          "profit_exact": "478/9",
+          "profit_decimal": "53.111111111",
+          "total_cost_decimal": "146.888888889"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111100101",
+          "profit_exact": "72584/1377",
+          "profit_decimal": "52.711692084",
+          "total_cost_decimal": "147.288307916"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111101001",
+          "profit_exact": "72584/1377",
+          "profit_decimal": "52.711692084",
+          "total_cost_decimal": "147.288307916"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-140/153",
+      "profit_change_from_nominal_decimal": "-0.915032680",
+      "policy_switch_from_nominal": false
+    },
+    "S1_LOW": {
+      "changed_node": "S1",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/20",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "10081/171",
+      "best_profit_decimal": "58.953216374",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "S1_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "199/171",
+            "inspect_P2": "199/171",
+            "inspect_P3": "199/171",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "199/171",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "20/19",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/19",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4804/171"
+          },
+          "total_cost": "24119/171",
+          "profit": "10081/171",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "10081/171",
+          "profit_decimal": "58.953216374",
+          "total_cost_decimal": "141.046783626"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111100111",
+          "profit_exact": "9911/171",
+          "profit_decimal": "57.959064327",
+          "total_cost_decimal": "142.040935673"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1101111111100111",
+          "profit_exact": "29413/513",
+          "profit_decimal": "57.335282651",
+          "total_cost_decimal": "142.664717349"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101101",
+          "profit_exact": "87898/1539",
+          "profit_decimal": "57.113710201",
+          "total_cost_decimal": "142.886289799"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111011101101",
+          "profit_exact": "87518/1539",
+          "profit_decimal": "56.866796621",
+          "total_cost_decimal": "143.133203379"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111101011",
+          "profit_exact": "87499/1539",
+          "profit_decimal": "56.854450942",
+          "total_cost_decimal": "143.145549058"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111111111111111",
+          "profit_exact": "9701/171",
+          "profit_decimal": "56.730994152",
+          "total_cost_decimal": "143.269005848"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111101111101011",
+          "profit_exact": "259457/4617",
+          "profit_decimal": "56.196014728",
+          "total_cost_decimal": "143.803985272"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111100101",
+          "profit_exact": "86368/1539",
+          "profit_decimal": "56.119558155",
+          "total_cost_decimal": "143.880441845"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111011100101",
+          "profit_exact": "85988/1539",
+          "profit_decimal": "55.872644574",
+          "total_cost_decimal": "144.127355426"
+        }
+      ],
+      "profit_change_from_nominal_exact": "220/171",
+      "profit_change_from_nominal_decimal": "1.286549708",
+      "policy_switch_from_nominal": false
+    },
+    "S1_HIGH": {
+      "changed_node": "S1",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "3/20",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "8603/153",
+      "best_profit_decimal": "56.228758170",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "S1_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "197/153",
+            "inspect_P2": "197/153",
+            "inspect_P3": "197/153",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "197/153",
+            "inspect_S2": "11/9",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "20/17",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "3/17",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4412/153"
+          },
+          "total_cost": "21997/153",
+          "profit": "8603/153",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "8603/153",
+          "profit_decimal": "56.228758170",
+          "total_cost_decimal": "143.771241830"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "74894/1377",
+          "profit_decimal": "54.389251997",
+          "total_cost_decimal": "145.610748003"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "74554/1377",
+          "profit_decimal": "54.142338417",
+          "total_cost_decimal": "145.857661583"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101011",
+          "profit_exact": "74537/1377",
+          "profit_decimal": "54.129992738",
+          "total_cost_decimal": "145.870007262"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8263/153",
+          "profit_decimal": "54.006535948",
+          "total_cost_decimal": "145.993464052"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111101111101011",
+          "profit_exact": "220891/4131",
+          "profit_decimal": "53.471556524",
+          "total_cost_decimal": "146.528443476"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111111111100111",
+          "profit_exact": "8093/153",
+          "profit_decimal": "52.895424837",
+          "total_cost_decimal": "147.104575163"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111111111101001",
+          "profit_exact": "72004/1377",
+          "profit_decimal": "52.290486565",
+          "total_cost_decimal": "147.709513435"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111110011101101",
+          "profit_exact": "647186/12393",
+          "profit_decimal": "52.221899459",
+          "total_cost_decimal": "147.778100541"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111110111101101",
+          "profit_exact": "647186/12393",
+          "profit_decimal": "52.221899459",
+          "total_cost_decimal": "147.778100541"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-220/153",
+      "profit_change_from_nominal_decimal": "-1.437908497",
+      "policy_switch_from_nominal": false
+    },
+    "S2_LOW": {
+      "changed_node": "S2",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/20",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "10081/171",
+      "best_profit_decimal": "58.953216374",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "S2_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "199/171",
+            "inspect_P5": "199/171",
+            "inspect_P6": "199/171",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "199/171",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "20/19",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/19",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4804/171"
+          },
+          "total_cost": "24119/171",
+          "profit": "10081/171",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "10081/171",
+          "profit_decimal": "58.953216374",
+          "total_cost_decimal": "141.046783626"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101011",
+          "profit_exact": "9911/171",
+          "profit_decimal": "57.959064327",
+          "total_cost_decimal": "142.040935673"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111101111101011",
+          "profit_exact": "29413/513",
+          "profit_decimal": "57.335282651",
+          "total_cost_decimal": "142.664717349"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111101101",
+          "profit_exact": "87898/1539",
+          "profit_decimal": "57.113710201",
+          "total_cost_decimal": "142.886289799"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111011101101",
+          "profit_exact": "87518/1539",
+          "profit_decimal": "56.866796621",
+          "total_cost_decimal": "143.133203379"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111100111",
+          "profit_exact": "87499/1539",
+          "profit_decimal": "56.854450942",
+          "total_cost_decimal": "143.145549058"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111111111111111",
+          "profit_exact": "9701/171",
+          "profit_decimal": "56.730994152",
+          "total_cost_decimal": "143.269005848"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1101111111100111",
+          "profit_exact": "259457/4617",
+          "profit_decimal": "56.196014728",
+          "total_cost_decimal": "143.803985272"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111101001",
+          "profit_exact": "86368/1539",
+          "profit_decimal": "56.119558155",
+          "total_cost_decimal": "143.880441845"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111011101001",
+          "profit_exact": "85988/1539",
+          "profit_decimal": "55.872644574",
+          "total_cost_decimal": "144.127355426"
+        }
+      ],
+      "profit_change_from_nominal_exact": "220/171",
+      "profit_change_from_nominal_decimal": "1.286549708",
+      "policy_switch_from_nominal": false
+    },
+    "S2_HIGH": {
+      "changed_node": "S2",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "3/20",
+        "S3": "1/10",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "8603/153",
+      "best_profit_decimal": "56.228758170",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "S2_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "197/153",
+            "inspect_P5": "197/153",
+            "inspect_P6": "197/153",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "11/9",
+            "inspect_S2": "197/153",
+            "inspect_S3": "11/9",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "20/17",
+            "assemble_S3": "10/9",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "3/17",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4412/153"
+          },
+          "total_cost": "21997/153",
+          "profit": "8603/153",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "8603/153",
+          "profit_decimal": "56.228758170",
+          "total_cost_decimal": "143.771241830"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "74894/1377",
+          "profit_decimal": "54.389251997",
+          "total_cost_decimal": "145.610748003"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "74554/1377",
+          "profit_decimal": "54.142338417",
+          "total_cost_decimal": "145.857661583"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "74537/1377",
+          "profit_decimal": "54.129992738",
+          "total_cost_decimal": "145.870007262"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8263/153",
+          "profit_decimal": "54.006535948",
+          "total_cost_decimal": "145.993464052"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1101111111100111",
+          "profit_exact": "220891/4131",
+          "profit_decimal": "53.471556524",
+          "total_cost_decimal": "146.528443476"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111111111101011",
+          "profit_exact": "8093/153",
+          "profit_decimal": "52.895424837",
+          "total_cost_decimal": "147.104575163"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111111111100101",
+          "profit_exact": "72004/1377",
+          "profit_decimal": "52.290486565",
+          "total_cost_decimal": "147.709513435"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111110011101101",
+          "profit_exact": "647186/12393",
+          "profit_decimal": "52.221899459",
+          "total_cost_decimal": "147.778100541"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111110111101101",
+          "profit_exact": "647186/12393",
+          "profit_decimal": "52.221899459",
+          "total_cost_decimal": "147.778100541"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-220/153",
+      "profit_change_from_nominal_decimal": "-1.437908497",
+      "policy_switch_from_nominal": false
+    },
+    "S3_LOW": {
+      "changed_node": "S3",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/20",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "1119/19",
+      "best_profit_decimal": "58.894736842",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "S3_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "199/171",
+            "inspect_P8": "199/171",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "199/171",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "20/19",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/19",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4814/171"
+          },
+          "total_cost": "2681/19",
+          "profit": "1119/19",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "1119/19",
+          "profit_decimal": "58.894736842",
+          "total_cost_decimal": "141.105263158"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "9922/171",
+          "profit_decimal": "58.023391813",
+          "total_cost_decimal": "141.976608187"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "1098/19",
+          "profit_decimal": "57.789473684",
+          "total_cost_decimal": "142.210526316"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "87409/1539",
+          "profit_decimal": "56.795971410",
+          "total_cost_decimal": "143.204028590"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "87409/1539",
+          "profit_decimal": "56.795971410",
+          "total_cost_decimal": "143.204028590"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111111111111",
+          "profit_exact": "9691/171",
+          "profit_decimal": "56.672514620",
+          "total_cost_decimal": "143.327485380"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1101111111100111",
+          "profit_exact": "259187/4617",
+          "profit_decimal": "56.137535196",
+          "total_cost_decimal": "143.862464804"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111101111101011",
+          "profit_exact": "259187/4617",
+          "profit_decimal": "56.137535196",
+          "total_cost_decimal": "143.862464804"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111110011101101",
+          "profit_exact": "86138/1539",
+          "profit_decimal": "55.970110461",
+          "total_cost_decimal": "144.029889539"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111110111101101",
+          "profit_exact": "86138/1539",
+          "profit_decimal": "55.970110461",
+          "total_cost_decimal": "144.029889539"
+        }
+      ],
+      "profit_change_from_nominal_exact": "70/57",
+      "profit_change_from_nominal_decimal": "1.228070175",
+      "policy_switch_from_nominal": false
+    },
+    "S3_HIGH": {
+      "changed_node": "S3",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "3/20",
+        "F": "1/10"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "957/17",
+      "best_profit_decimal": "56.294117647",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "S3_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "197/153",
+            "inspect_P8": "197/153",
+            "inspect_S1": "11/9",
+            "inspect_S2": "11/9",
+            "inspect_S3": "197/153",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "20/17",
+            "assemble_F": "10/9",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "3/17",
+            "disassemble_F": "1/9",
+            "root_attempts": "10/9",
+            "market_bad_products_and_exchanges": "1/9",
+            "atomic_steps": "4402/153"
+          },
+          "total_cost": "2443/17",
+          "profit": "957/17",
+          "first_root_attempt_success_probability": "9/10",
+          "at_least_one_market_bad_probability": "1/10"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "957/17",
+          "profit_decimal": "56.294117647",
+          "total_cost_decimal": "143.705882353"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111100111",
+          "profit_exact": "74627/1377",
+          "profit_decimal": "54.195352215",
+          "total_cost_decimal": "145.804647785"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111101011",
+          "profit_exact": "74627/1377",
+          "profit_decimal": "54.195352215",
+          "total_cost_decimal": "145.804647785"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8273/153",
+          "profit_decimal": "54.071895425",
+          "total_cost_decimal": "145.928104575"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1101111111100111",
+          "profit_exact": "221161/4131",
+          "profit_decimal": "53.536916001",
+          "total_cost_decimal": "146.463083999"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111101111101011",
+          "profit_exact": "221161/4131",
+          "profit_decimal": "53.536916001",
+          "total_cost_decimal": "146.463083999"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111111111101101",
+          "profit_exact": "2722/51",
+          "profit_decimal": "53.372549020",
+          "total_cost_decimal": "146.627450980"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111111011101101",
+          "profit_exact": "478/9",
+          "profit_decimal": "53.111111111",
+          "total_cost_decimal": "146.888888889"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111100011",
+          "profit_exact": "71737/1377",
+          "profit_decimal": "52.096586783",
+          "total_cost_decimal": "147.903413217"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111110111",
+          "profit_exact": "71567/1377",
+          "profit_decimal": "51.973129993",
+          "total_cost_decimal": "148.026870007"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-70/51",
+      "profit_change_from_nominal_decimal": "-1.372549020",
+      "policy_switch_from_nominal": false
+    },
+    "F_LOW": {
+      "changed_node": "F",
+      "direction": "low",
+      "changed_rate_exact": "1/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "1/20"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "10561/171",
+      "best_profit_decimal": "61.760233918",
+      "best_policy_ids": [
+        "1111111111101111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "F_LOW",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "199/171",
+            "inspect_S2": "199/171",
+            "inspect_S3": "199/171",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "20/19",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "1/19",
+            "root_attempts": "20/19",
+            "market_bad_products_and_exchanges": "1/19",
+            "atomic_steps": "1598/57"
+          },
+          "total_cost": "23639/171",
+          "profit": "10561/171",
+          "first_root_attempt_success_probability": "19/20",
+          "at_least_one_market_bad_probability": "1/20"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "10561/171",
+          "profit_decimal": "61.760233918",
+          "total_cost_decimal": "138.239766082"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111101101",
+          "profit_exact": "92218/1539",
+          "profit_decimal": "59.920727745",
+          "total_cost_decimal": "140.079272255"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111011101101",
+          "profit_exact": "91838/1539",
+          "profit_decimal": "59.673814165",
+          "total_cost_decimal": "140.326185835"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111100111",
+          "profit_exact": "91819/1539",
+          "profit_decimal": "59.661468486",
+          "total_cost_decimal": "140.338531514"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111111101011",
+          "profit_exact": "91819/1539",
+          "profit_decimal": "59.661468486",
+          "total_cost_decimal": "140.338531514"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1101111111100111",
+          "profit_exact": "272417/4617",
+          "profit_decimal": "59.003032272",
+          "total_cost_decimal": "140.996967728"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111101111101011",
+          "profit_exact": "272417/4617",
+          "profit_decimal": "59.003032272",
+          "total_cost_decimal": "140.996967728"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111111111100101",
+          "profit_exact": "88988/1539",
+          "profit_decimal": "57.821962313",
+          "total_cost_decimal": "142.178037687"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111101001",
+          "profit_exact": "88988/1539",
+          "profit_decimal": "57.821962313",
+          "total_cost_decimal": "142.178037687"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111110011101101",
+          "profit_exact": "799942/13851",
+          "profit_decimal": "57.753375208",
+          "total_cost_decimal": "142.246624792"
+        }
+      ],
+      "profit_change_from_nominal_exact": "700/171",
+      "profit_change_from_nominal_decimal": "4.093567251",
+      "policy_switch_from_nominal": false
+    },
+    "F_HIGH": {
+      "changed_node": "F",
+      "direction": "high",
+      "changed_rate_exact": "3/20",
+      "defect_rates": {
+        "P1": "1/10",
+        "P2": "1/10",
+        "P3": "1/10",
+        "P4": "1/10",
+        "P5": "1/10",
+        "P6": "1/10",
+        "P7": "1/10",
+        "P8": "1/10",
+        "S1": "1/10",
+        "S2": "1/10",
+        "S3": "1/10",
+        "F": "3/20"
+      },
+      "candidate_count": 65536,
+      "feasible_count": 17060,
+      "infeasible_count": 48476,
+      "best_profit_exact": "8123/153",
+      "best_profit_decimal": "53.091503268",
+      "best_policy_ids": [
+        "1111111111101111",
+        "1111111111111111"
+      ],
+      "best_solutions": [
+        {
+          "scenario": "F_HIGH",
+          "policy_id": "1111111111101111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "197/153",
+            "inspect_S2": "197/153",
+            "inspect_S3": "197/153",
+            "inspect_F": "0",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "20/17",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "3/17",
+            "root_attempts": "20/17",
+            "market_bad_products_and_exchanges": "3/17",
+            "atomic_steps": "1474/51"
+          },
+          "total_cost": "22477/153",
+          "profit": "8123/153",
+          "first_root_attempt_success_probability": "17/20",
+          "at_least_one_market_bad_probability": "3/20"
+        },
+        {
+          "scenario": "F_HIGH",
+          "policy_id": "1111111111111111",
+          "feasible": true,
+          "gate_status": "feasible",
+          "gate_reason": "two_state_root_kernel_absorbs_with_probability_one",
+          "graph_closed_class_check": "pass",
+          "equation_absorption_check": "pass",
+          "absorption_probability": "1",
+          "expected_events": {
+            "purchase_P1": "10/9",
+            "purchase_P2": "10/9",
+            "purchase_P3": "10/9",
+            "purchase_P4": "10/9",
+            "purchase_P5": "10/9",
+            "purchase_P6": "10/9",
+            "purchase_P7": "10/9",
+            "purchase_P8": "10/9",
+            "inspect_P1": "11/9",
+            "inspect_P2": "11/9",
+            "inspect_P3": "11/9",
+            "inspect_P4": "11/9",
+            "inspect_P5": "11/9",
+            "inspect_P6": "11/9",
+            "inspect_P7": "11/9",
+            "inspect_P8": "11/9",
+            "inspect_S1": "197/153",
+            "inspect_S2": "197/153",
+            "inspect_S3": "197/153",
+            "inspect_F": "20/17",
+            "assemble_S1": "10/9",
+            "assemble_S2": "10/9",
+            "assemble_S3": "10/9",
+            "assemble_F": "20/17",
+            "disassemble_S1": "1/9",
+            "disassemble_S2": "1/9",
+            "disassemble_S3": "1/9",
+            "disassemble_F": "3/17",
+            "root_attempts": "20/17",
+            "market_bad_products_and_exchanges": "0",
+            "atomic_steps": "1525/51"
+          },
+          "total_cost": "22477/153",
+          "profit": "8123/153",
+          "first_root_attempt_success_probability": "17/20",
+          "at_least_one_market_bad_probability": "0"
+        }
+      ],
+      "top10": [
+        {
+          "rank_key": 1,
+          "policy_id": "1111111111101111",
+          "profit_exact": "8123/153",
+          "profit_decimal": "53.091503268",
+          "total_cost_decimal": "146.908496732"
+        },
+        {
+          "rank_key": 2,
+          "policy_id": "1111111111111111",
+          "profit_exact": "8123/153",
+          "profit_decimal": "53.091503268",
+          "total_cost_decimal": "146.908496732"
+        },
+        {
+          "rank_key": 3,
+          "policy_id": "1111111111101101",
+          "profit_exact": "70574/1377",
+          "profit_decimal": "51.251997095",
+          "total_cost_decimal": "148.748002905"
+        },
+        {
+          "rank_key": 4,
+          "policy_id": "1111111111111101",
+          "profit_exact": "70574/1377",
+          "profit_decimal": "51.251997095",
+          "total_cost_decimal": "148.748002905"
+        },
+        {
+          "rank_key": 5,
+          "policy_id": "1111111011101101",
+          "profit_exact": "70234/1377",
+          "profit_decimal": "51.005083515",
+          "total_cost_decimal": "148.994916485"
+        },
+        {
+          "rank_key": 6,
+          "policy_id": "1111111011111101",
+          "profit_exact": "70234/1377",
+          "profit_decimal": "51.005083515",
+          "total_cost_decimal": "148.994916485"
+        },
+        {
+          "rank_key": 7,
+          "policy_id": "1111111111100111",
+          "profit_exact": "70217/1377",
+          "profit_decimal": "50.992737836",
+          "total_cost_decimal": "149.007262164"
+        },
+        {
+          "rank_key": 8,
+          "policy_id": "1111111111101011",
+          "profit_exact": "70217/1377",
+          "profit_decimal": "50.992737836",
+          "total_cost_decimal": "149.007262164"
+        },
+        {
+          "rank_key": 9,
+          "policy_id": "1111111111110111",
+          "profit_exact": "70217/1377",
+          "profit_decimal": "50.992737836",
+          "total_cost_decimal": "149.007262164"
+        },
+        {
+          "rank_key": 10,
+          "policy_id": "1111111111111011",
+          "profit_exact": "70217/1377",
+          "profit_decimal": "50.992737836",
+          "total_cost_decimal": "149.007262164"
+        }
+      ],
+      "profit_change_from_nominal_exact": "-700/153",
+      "profit_change_from_nominal_decimal": "-4.575163399",
+      "policy_switch_from_nominal": true
+    }
+  },
+  "candidate_file": "s5_candidates.jsonl.gz",
+  "candidate_record_count": 1638400,
+  "acceptance": {
+    "passed": 18,
+    "total": 18,
+    "file": "s5_acceptance.json"
+  }
+}

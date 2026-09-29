@@ -1,0 +1,407 @@
+{
+  "status": "candidate_only_not_approved",
+  "input": "output/data_audit/tables/cleaned_attachment1.csv",
+  "input_sha256": "b99a4d3c23ebc1dbc366a49235924860cc9e982b11eb859bfb6893086d627834",
+  "target": "c4_yield_pct",
+  "outer_tasks": {
+    "interior_cell": "已有组合内遮住一个中间温度",
+    "leave_combination_out": "整组遮住一种催化剂组合",
+    "leave_temperature_out": "整块遮住一个温度"
+  },
+  "model_boundaries": {
+    "local_baseline": "透明任务基线",
+    "temperature_only": "只共享温度信息",
+    "shared_combination_curve": "只适用于训练中出现过的完整组合",
+    "factor_surface": "配方描述的预测候选，不作因果解释"
+  },
+  "metrics": [
+    {
+      "task": "interior_cell",
+      "model": "shared_combination_curve",
+      "n": 72,
+      "mae": 1.5107869980638793,
+      "rmse": 2.848985896457245,
+      "median_ae": 0.9192888745850958,
+      "max_ae": 18.39663120107217,
+      "mae_change_vs_baseline_pct": -2.9706348338208284
+    },
+    {
+      "task": "interior_cell",
+      "model": "local_baseline",
+      "n": 72,
+      "mae": 1.5570410003985922,
+      "rmse": 2.787380179021031,
+      "median_ae": 0.809218541419311,
+      "max_ae": 14.15218846592203,
+      "mae_change_vs_baseline_pct": 0.0
+    },
+    {
+      "task": "interior_cell",
+      "model": "factor_surface",
+      "n": 72,
+      "mae": 1.7525345115083353,
+      "rmse": 2.995374992823696,
+      "median_ae": 1.0488805783869792,
+      "max_ae": 14.469466244680468,
+      "mae_change_vs_baseline_pct": 12.555450438344145
+    },
+    {
+      "task": "interior_cell",
+      "model": "temperature_only",
+      "n": 72,
+      "mae": 2.81388595998992,
+      "rmse": 4.846466700510136,
+      "median_ae": 1.4657740419488778,
+      "max_ae": 26.518265176198007,
+      "mae_change_vs_baseline_pct": 80.72009402896802
+    },
+    {
+      "task": "leave_combination_out",
+      "model": "factor_surface",
+      "n": 114,
+      "mae": 2.5627805421276846,
+      "rmse": 3.9679426270153706,
+      "median_ae": 1.3407884439861555,
+      "max_ae": 12.531120510152386,
+      "mae_change_vs_baseline_pct": -33.407251735440745
+    },
+    {
+      "task": "leave_combination_out",
+      "model": "temperature_only",
+      "n": 114,
+      "mae": 3.6432195897176216,
+      "rmse": 6.175462235813703,
+      "median_ae": 1.4036793374748386,
+      "max_ae": 27.592765399750725,
+      "mae_change_vs_baseline_pct": -5.33250856932375
+    },
+    {
+      "task": "leave_combination_out",
+      "model": "local_baseline",
+      "n": 114,
+      "mae": 3.8484378688596634,
+      "rmse": 7.024860898935303,
+      "median_ae": 1.3740087254965099,
+      "max_ae": 38.02162581057075,
+      "mae_change_vs_baseline_pct": 0.0
+    },
+    {
+      "task": "leave_combination_out",
+      "model": "shared_combination_curve",
+      "n": 114,
+      "mae": 5.006229005220979,
+      "rmse": 6.79501686964553,
+      "median_ae": 3.7659027576332944,
+      "max_ae": 30.182831822772016,
+      "mae_change_vs_baseline_pct": 30.084703867244244
+    },
+    {
+      "task": "leave_temperature_out",
+      "model": "factor_surface",
+      "n": 114,
+      "mae": 2.469459191812203,
+      "rmse": 4.2260723645609435,
+      "median_ae": 1.1130807460174816,
+      "max_ae": 17.71896878346486,
+      "mae_change_vs_baseline_pct": -6.306415450887037
+    },
+    {
+      "task": "leave_temperature_out",
+      "model": "shared_combination_curve",
+      "n": 114,
+      "mae": 2.6172060289528982,
+      "rmse": 4.641454230831684,
+      "median_ae": 1.4107032180116077,
+      "max_ae": 24.916327213310147,
+      "mae_change_vs_baseline_pct": -0.7007626733867282
+    },
+    {
+      "task": "leave_temperature_out",
+      "model": "local_baseline",
+      "n": 114,
+      "mae": 2.6356758615823312,
+      "rmse": 5.04153685274794,
+      "median_ae": 0.9197184825456683,
+      "max_ae": 28.304376931844068,
+      "mae_change_vs_baseline_pct": 0.0
+    },
+    {
+      "task": "leave_temperature_out",
+      "model": "temperature_only",
+      "n": 114,
+      "mae": 3.9402401354463765,
+      "rmse": 6.033078181461525,
+      "median_ae": 2.549275737350256,
+      "max_ae": 23.50746567503552,
+      "mae_change_vs_baseline_pct": 49.49638507827926
+    }
+  ],
+  "fold_stability": [
+    {
+      "task": "interior_cell",
+      "model": "factor_surface",
+      "fold_count": 72,
+      "folds_beating_baseline": 25,
+      "win_rate": 0.3472222222222222,
+      "median_fold_mae_change": 0.20368988950058037
+    },
+    {
+      "task": "interior_cell",
+      "model": "local_baseline",
+      "fold_count": 72,
+      "folds_beating_baseline": 0,
+      "win_rate": 0.0,
+      "median_fold_mae_change": 0.0
+    },
+    {
+      "task": "interior_cell",
+      "model": "shared_combination_curve",
+      "fold_count": 72,
+      "folds_beating_baseline": 36,
+      "win_rate": 0.5,
+      "median_fold_mae_change": 0.04795114139420501
+    },
+    {
+      "task": "interior_cell",
+      "model": "temperature_only",
+      "fold_count": 72,
+      "folds_beating_baseline": 23,
+      "win_rate": 0.3194444444444444,
+      "median_fold_mae_change": 0.2850359214092035
+    },
+    {
+      "task": "leave_combination_out",
+      "model": "factor_surface",
+      "fold_count": 21,
+      "folds_beating_baseline": 14,
+      "win_rate": 0.6666666666666666,
+      "median_fold_mae_change": -0.48138108720969197
+    },
+    {
+      "task": "leave_combination_out",
+      "model": "local_baseline",
+      "fold_count": 21,
+      "folds_beating_baseline": 0,
+      "win_rate": 0.0,
+      "median_fold_mae_change": 0.0
+    },
+    {
+      "task": "leave_combination_out",
+      "model": "shared_combination_curve",
+      "fold_count": 21,
+      "folds_beating_baseline": 1,
+      "win_rate": 0.047619047619047616,
+      "median_fold_mae_change": 1.2569975377445024
+    },
+    {
+      "task": "leave_combination_out",
+      "model": "temperature_only",
+      "fold_count": 21,
+      "folds_beating_baseline": 10,
+      "win_rate": 0.47619047619047616,
+      "median_fold_mae_change": 0.14998985588364278
+    },
+    {
+      "task": "leave_temperature_out",
+      "model": "factor_surface",
+      "fold_count": 7,
+      "folds_beating_baseline": 3,
+      "win_rate": 0.42857142857142855,
+      "median_fold_mae_change": 0.39927498913051035
+    },
+    {
+      "task": "leave_temperature_out",
+      "model": "local_baseline",
+      "fold_count": 7,
+      "folds_beating_baseline": 0,
+      "win_rate": 0.0,
+      "median_fold_mae_change": 0.0
+    },
+    {
+      "task": "leave_temperature_out",
+      "model": "shared_combination_curve",
+      "fold_count": 7,
+      "folds_beating_baseline": 3,
+      "win_rate": 0.42857142857142855,
+      "median_fold_mae_change": 0.14783764672829142
+    },
+    {
+      "task": "leave_temperature_out",
+      "model": "temperature_only",
+      "fold_count": 7,
+      "folds_beating_baseline": 1,
+      "win_rate": 0.14285714285714285,
+      "median_fold_mae_change": 1.5170498554368415
+    }
+  ],
+  "leave_temperature_ranking": [
+    {
+      "temperature_c": 250.0,
+      "model": "factor_surface",
+      "top1_correct": false,
+      "top3_overlap": 1,
+      "rank_correlation": -0.5103896103896104
+    },
+    {
+      "temperature_c": 250.0,
+      "model": "local_baseline",
+      "top1_correct": true,
+      "top3_overlap": 1,
+      "rank_correlation": -0.5311688311688312
+    },
+    {
+      "temperature_c": 250.0,
+      "model": "shared_combination_curve",
+      "top1_correct": false,
+      "top3_overlap": 0,
+      "rank_correlation": -0.6688311688311688
+    },
+    {
+      "temperature_c": 250.0,
+      "model": "temperature_only",
+      "top1_correct": false,
+      "top3_overlap": 2,
+      "rank_correlation": NaN
+    },
+    {
+      "temperature_c": 275.0,
+      "model": "factor_surface",
+      "top1_correct": false,
+      "top3_overlap": 0,
+      "rank_correlation": 0.8064935064935065
+    },
+    {
+      "temperature_c": 275.0,
+      "model": "local_baseline",
+      "top1_correct": true,
+      "top3_overlap": 2,
+      "rank_correlation": 0.9948051948051948
+    },
+    {
+      "temperature_c": 275.0,
+      "model": "shared_combination_curve",
+      "top1_correct": true,
+      "top3_overlap": 2,
+      "rank_correlation": 0.6454545454545455
+    },
+    {
+      "temperature_c": 275.0,
+      "model": "temperature_only",
+      "top1_correct": false,
+      "top3_overlap": 2,
+      "rank_correlation": NaN
+    },
+    {
+      "temperature_c": 300.0,
+      "model": "factor_surface",
+      "top1_correct": false,
+      "top3_overlap": 1,
+      "rank_correlation": 0.8987012987012987
+    },
+    {
+      "temperature_c": 300.0,
+      "model": "local_baseline",
+      "top1_correct": true,
+      "top3_overlap": 3,
+      "rank_correlation": 0.9831168831168832
+    },
+    {
+      "temperature_c": 300.0,
+      "model": "shared_combination_curve",
+      "top1_correct": true,
+      "top3_overlap": 3,
+      "rank_correlation": 0.9883116883116884
+    },
+    {
+      "temperature_c": 300.0,
+      "model": "temperature_only",
+      "top1_correct": false,
+      "top3_overlap": 3,
+      "rank_correlation": NaN
+    },
+    {
+      "temperature_c": 325.0,
+      "model": "factor_surface",
+      "top1_correct": false,
+      "top3_overlap": 1,
+      "rank_correlation": 0.8303030303030303
+    },
+    {
+      "temperature_c": 325.0,
+      "model": "local_baseline",
+      "top1_correct": true,
+      "top3_overlap": 3,
+      "rank_correlation": 0.9757575757575757
+    },
+    {
+      "temperature_c": 325.0,
+      "model": "shared_combination_curve",
+      "top1_correct": true,
+      "top3_overlap": 2,
+      "rank_correlation": 0.9878787878787879
+    },
+    {
+      "temperature_c": 325.0,
+      "model": "temperature_only",
+      "top1_correct": false,
+      "top3_overlap": 3,
+      "rank_correlation": NaN
+    },
+    {
+      "temperature_c": 350.0,
+      "model": "factor_surface",
+      "top1_correct": false,
+      "top3_overlap": 1,
+      "rank_correlation": 0.8727272727272727
+    },
+    {
+      "temperature_c": 350.0,
+      "model": "local_baseline",
+      "top1_correct": true,
+      "top3_overlap": 2,
+      "rank_correlation": 0.9402597402597402
+    },
+    {
+      "temperature_c": 350.0,
+      "model": "shared_combination_curve",
+      "top1_correct": true,
+      "top3_overlap": 2,
+      "rank_correlation": 0.9506493506493506
+    },
+    {
+      "temperature_c": 350.0,
+      "model": "temperature_only",
+      "top1_correct": false,
+      "top3_overlap": 3,
+      "rank_correlation": NaN
+    },
+    {
+      "temperature_c": 400.0,
+      "model": "factor_surface",
+      "top1_correct": false,
+      "top3_overlap": 2,
+      "rank_correlation": 0.7824561403508772
+    },
+    {
+      "temperature_c": 400.0,
+      "model": "local_baseline",
+      "top1_correct": false,
+      "top3_overlap": 2,
+      "rank_correlation": 0.9368421052631579
+    },
+    {
+      "temperature_c": 400.0,
+      "model": "shared_combination_curve",
+      "top1_correct": true,
+      "top3_overlap": 2,
+      "rank_correlation": 0.9526315789473684
+    },
+    {
+      "temperature_c": 400.0,
+      "model": "temperature_only",
+      "top1_correct": true,
+      "top3_overlap": 2,
+      "rank_correlation": NaN
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "schema_version": "11.0",
+  "cases": [
+    {
+      "id": "FWD.G0.STATELESS.ADVICE",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "fwd-g0-advice",
+        "request": "先帮我解释一下这个项目下一步怎么安排。",
+        "steps": [
+          {"id": "advise", "tier": "G0_ADVISORY", "mode": "advisory_readonly", "object": "project", "action": "advise", "component_id": null, "events": [], "facts": {}, "depends_on": []}
+        ]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"advise": "resolved"}, "route_ids": ["RT.PROJECT.ADVISE"], "recovery": {"advise": "not_applicable"}, "machine_keyword_classification": false}
+    },
+    {
+      "id": "FWD.G1.MULTIFILE.NO_PER_FILE_GATE",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "fwd-multifile",
+        "request": "把正文、摘要和结论里同一个数值口径一起改一致。",
+        "steps": [
+          {
+            "id": "edit-related-files", "tier": "G1_WORKING", "mode": "mutate", "object": "manuscript", "action": "local_edit", "component_id": "paper",
+            "events": ["local_manuscript_edit", "manuscript_write"],
+            "facts": {"change_class": "multi_file_substantive", "completion_scope": "one_coherent_multi_file_change_set", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "working_context": {"component_type": "artifact", "state": "A1"},
+            "depends_on": [],
+            "change_set": {"paths": ["paper/abstract.tex", "paper/body.tex", "paper/conclusion.tex"], "facets": ["claim", "cross_reference", "explanation"], "claim_refs": ["claim.metric.primary"]}
+          }
+        ]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"edit-related-files": "resolved"}, "route_ids": ["RT.MANUSCRIPT.LOCAL"], "path_count": {"edit-related-files": 3}, "excluded_rule_prefixes": ["REC.", "ART.ADMIT."], "recovery": {"edit-related-files": "not_applicable"}}
+    },
+    {
+      "id": "FWD.PARTIAL.BRANCH_LOCAL",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "fwd-branch-local",
+        "request": "解释项目；如果那个无效步骤成功再规划；同时独立比较模型。",
+        "steps": [
+          {"id": "bad", "tier": "G0_ADVISORY", "mode": "advisory_readonly", "object": "project", "action": "advise", "component_id": null, "events": ["unknown_global_gate"], "facts": {}, "depends_on": []},
+          {"id": "child", "tier": "G0_ADVISORY", "mode": "advisory_readonly", "object": "project", "action": "plan", "component_id": null, "events": ["project_planning"], "facts": {}, "working_context": {"component_type": "project", "state": "P0"}, "depends_on": ["bad"]},
+          {"id": "independent", "tier": "G0_ADVISORY", "mode": "advisory_readonly", "object": "model", "action": "compare", "component_id": "q1", "events": ["model_comparison"], "facts": {}, "working_context": {"component_type": "question", "state": "S3"}, "depends_on": []}
+        ]
+      },
+      "expected": {"status": "partial", "step_statuses": {"bad": "blocked", "child": "dependency_blocked", "independent": "resolved"}, "route_ids": ["RT.PROJECT.ADVISE", "RT.MODEL.COMPARE"], "machine_keyword_classification": false}
+    },
+    {
+      "id": "FWD.G2.WORKING_CONTEXT.REJECTED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "fwd-g2-context-reject",
+        "request": "关闭 S6。",
+        "steps": [
+          {"id": "close", "tier": "G2_CHECKPOINT", "mode": "promote", "object": "verification", "action": "close_s6", "component_id": "q1", "events": ["s6_close"], "facts": {}, "working_context": {"component_type": "question", "state": "S6"}, "depends_on": [], "change_set": {"paths": [], "facets": ["question_state"], "claim_refs": []}, "state_effect": {"component_id": "q1", "from": "S6", "to": "S7"}}
+        ]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"close": "blocked"}, "reason_contains": {"close": "working_context_cannot_replace_authoritative_checkpoint_state"}}
+    },
+    {
+      "id": "FWD.RAW.REQUEST.CLI.REJECTED",
+      "kind": "forward_acceptance",
+      "type": "raw_cli",
+      "request": "检查通过了，往下做。",
+      "expected": {"status": "blocked", "error": "semantic_plan_required", "exit_code": 2}
+    },
+    {
+      "id": "FWD.COLLOQUIAL.CLOSE.THEN.WRITE",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "fixture": {
+        "project_state": "P0",
+        "components": [
+          {"id": "q1", "type": "question", "state": "S6", "dependencies": []},
+          {"id": "paper", "type": "artifact", "state": "A1", "dependencies": ["q1"]}
+        ],
+        "evidence": [{"component_id": "q1", "level": "E1_IMPLEMENTATION"}, {"component_id": "q1", "level": "E2_NUMERICAL"}, {"component_id": "q1", "level": "E3_STRUCTURAL"}, {"component_id": "q1", "level": "E4_REALITY"}]
+      },
+      "plan": {
+        "schema_version": "11.0",
+        "plan_id": "fwd-colloquial-composed",
+        "request": "前面的检查我认可，就按这个结果往下走：把验证阶段收好，然后接着改论文相关段落，不用等我再说一遍。",
+        "steps": [
+          {"id": "close-s6", "tier": "G2_CHECKPOINT", "mode": "promote", "object": "verification", "action": "close_s6", "component_id": "q1", "events": ["s6_close"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["question_state"], "claim_refs": []}, "state_effect": {"component_id": "q1", "from": "S6", "to": "S7"}},
+          {
+            "id": "write-paper", "tier": "G1_WORKING", "mode": "mutate", "object": "manuscript", "action": "local_edit", "component_id": "paper", "events": ["local_manuscript_edit", "manuscript_write"],
+            "facts": {"change_class": "local_substantive", "completion_scope": "changed_scope_and_direct_dependencies_only", "profile_selected": false, "published_revision": false, "existing_paths_only": true},
+            "depends_on": ["close-s6"],
+            "change_set": {"paths": ["paper/body.tex", "paper/conclusion.tex"], "facets": ["claim", "explanation"], "claim_refs": ["claim.q1.result"]}
+          }
+        ]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"close-s6": "resolved", "write-paper": "resolved"}, "route_ids": ["RT.VERIFY.S6.CLOSE", "RT.MANUSCRIPT.LOCAL"], "step_modes": {"close-s6": "promote", "write-paper": "mutate"}, "dependency": {"from": "close-s6", "to": "write-paper"}, "request_preserved": true, "recovery": {"close-s6": "not_applicable", "write-paper": "not_applicable"}}
+    },
+    {
+      "id": "FWD.ACTION.IMPLEMENT.WEAK_EVENT.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0", "request": "实现模型，但错误地只登记输出。",
+        "steps": [{"id": "implement", "tier": "G1_WORKING", "mode": "mutate", "object": "model", "action": "implement", "component_id": "q1", "working_context": {"component_type": "question", "state": "S4"}, "events": ["result_record"], "facts": {}, "depends_on": [], "change_set": {"paths": ["src/q1/model.py"], "facets": ["implementation"], "claim_refs": []}}]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"implement": "blocked"}, "route_ids": ["RT.MODEL.IMPLEMENT"], "reason_contains": {"implement": "action_required_event_missing:model_implementation"}}
+    },
+    {
+      "id": "FWD.ACTION.IMPLEMENT.CORE_WITHOUT_RUN",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0", "request": "只实现模型，本步不运行。",
+        "steps": [{"id": "implement", "tier": "G1_WORKING", "mode": "mutate", "object": "model", "action": "implement", "component_id": "q1", "working_context": {"component_type": "question", "state": "S4"}, "events": ["model_implementation"], "facts": {}, "depends_on": [], "change_set": {"paths": ["src/q1/model.py"], "facets": ["implementation"], "claim_refs": []}}]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"implement": "resolved"}, "route_ids": ["RT.MODEL.IMPLEMENT"], "required_rule_ids": ["MOD.IMPLEMENT.SPEC_BIND"], "excluded_rule_ids": ["DATA.IDENTITY.BEFORE_USE"]}
+    },
+    {
+      "id": "FWD.TIER.DELIVERY.G2.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "fixture": {"components": [{"id": "q1", "type": "question", "state": "S7", "dependencies": []}]},
+      "plan": {
+        "schema_version": "11.0", "request": "在 G2 交付（应被拒绝）。",
+        "steps": [{"id": "deliver", "tier": "G2_CHECKPOINT", "mode": "promote", "object": "delivery", "action": "deliver", "component_id": "q1", "events": ["final_delivery"], "facts": {}, "depends_on": [], "change_set": {"paths": ["delivery.zip"], "facets": ["delivery"], "claim_refs": []}}]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"deliver": "blocked"}, "route_ids": ["RT.DELIVERY.FINAL"], "reason_contains": {"deliver": "action_minimum_tier:G2_CHECKPOINT:requires=G3_RELEASE"}}
+    },
+    {
+      "id": "FWD.TIER.SKILL_RELEASE.G1.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0", "request": "在 G1 发布 Skill（应被拒绝）。",
+        "steps": [{"id": "release", "tier": "G1_WORKING", "mode": "skill_maintenance", "object": "skill", "action": "release", "component_id": null, "events": ["release_candidate_validation", "release_report"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["skill_release"], "claim_refs": []}}]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"release": "blocked"}, "route_ids": ["RT.SKILL.CHANGE"], "reason_contains": {"release": "action_minimum_tier:G1_WORKING:requires=G3_RELEASE"}}
+    },
+    {
+      "id": "FWD.REACH.MAINTENANCE.V10_SCOPE_ADAPTER",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0", "request": "验证 V11 Skill 候选发布接口，但不执行冻结安装。",
+        "steps": [{"id": "release-audit", "tier": "G3_RELEASE", "mode": "skill_maintenance", "object": "skill", "action": "release", "component_id": null, "events": ["release_candidate_validation", "release_report"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["release_audit"], "claim_refs": []}, "runtime_actions": [{"id": "validate-skill", "kind": "skill_package_validation", "event": "release_candidate_validation", "repetition": "first_run", "scope": {"kind": "skill_candidate", "component_ids": [], "input_paths": [], "output_paths": []}, "command": {"argv": ["python3", "-B", "skills/scripts/quick_validate.py", "--root", "skills", "--invocation-context", "skill-release"], "cwd": "."}, "authorization": {"source": "direct_user_request", "request_excerpt": "验证 V11 Skill 候选发布接口"}}]}]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"release-audit": "resolved"}, "route_ids": ["RT.SKILL.CHANGE"], "required_rule_ids": ["MNT.RELOAD.ISOLATED", "MNT.ROLLBACK.COMPATIBILITY"]}
+    },
+    {
+      "id": "FWD.REACH.DATA.IDENTITY.ACTUAL_USE",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0", "request": "运行已实现模型。",
+        "steps": [{"id": "solve", "tier": "G1_WORKING", "mode": "mutate", "object": "model", "action": "solve", "component_id": "q1", "working_context": {"component_type": "question", "state": "S4"}, "events": ["model_execution"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["computation"], "claim_refs": []}, "runtime_actions": [{"id": "run-solve", "kind": "project_model_execution", "event": "model_execution", "repetition": "first_run", "scope": {"kind": "component", "component_ids": ["q1"], "input_paths": [], "output_paths": []}, "command": {"argv": ["python3", "-c", "print('run')"], "cwd": "."}, "authorization": {"source": "direct_user_request", "request_excerpt": "运行已实现模型"}}]}]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"solve": "resolved"}, "route_ids": ["RT.MODEL.IMPLEMENT"], "required_rule_ids": ["DATA.IDENTITY.BEFORE_USE"]}
+    },
+    {
+      "id": "FWD.CONTROLLER.EVENT.MANUAL.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0", "request": "只解释项目。",
+        "steps": [{"id": "advise", "tier": "G0_ADVISORY", "mode": "advisory_readonly", "object": "project", "action": "advise", "component_id": null, "events": ["before_write"], "facts": {}, "depends_on": []}]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"advise": "blocked"}, "route_ids": ["RT.PROJECT.ADVISE"], "reason_contains": {"advise": "controller_event_must_not_be_declared:before_write"}}
+    },
+    {
+      "id": "FWD.CHANGESET.EMPTY.WRITE.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "invalid_plan": {
+        "schema_version": "11.0", "request": "实现模型但没有声明改动边界。",
+        "steps": [{"id": "implement", "tier": "G1_WORKING", "mode": "mutate", "object": "model", "action": "implement", "component_id": "q1", "working_context": {"component_type": "question", "state": "S4"}, "events": ["model_implementation"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": [], "claim_refs": []}}]
+      },
+      "expected": {"status": "blocked"}
+    },
+    {
+      "id": "FWD.CHANGESET.UNORDERED.OVERLAP.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0", "request": "两个无依赖步骤同时改同一文件（应拒绝）。",
+        "steps": [
+          {"id": "left", "tier": "G1_WORKING", "mode": "mutate", "object": "model", "action": "implement", "component_id": "q1", "working_context": {"component_type": "question", "state": "S4"}, "events": ["model_implementation"], "facts": {}, "depends_on": [], "change_set": {"paths": ["src/shared.py"], "facets": ["implementation"], "claim_refs": []}},
+          {"id": "right", "tier": "G1_WORKING", "mode": "mutate", "object": "model", "action": "implement", "component_id": "q2", "working_context": {"component_type": "question", "state": "S4"}, "events": ["model_implementation"], "facts": {}, "depends_on": [], "change_set": {"paths": ["src/shared.py"], "facets": ["implementation"], "claim_refs": []}}
+        ]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"left": "blocked", "right": "blocked"}, "route_ids": [], "reason_contains": {"left": "unordered_change_set_overlap", "right": "unordered_change_set_overlap"}}
+    },
+    {
+      "id": "FWD.MANUSCRIPT.MULTIFILE.ONE_PATH.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "plan": {
+        "schema_version": "11.0", "request": "声称多文件修改但只声明一个文件。",
+        "steps": [{"id": "edit", "tier": "G1_WORKING", "mode": "mutate", "object": "manuscript", "action": "local_edit", "component_id": "paper", "working_context": {"component_type": "artifact", "state": "A1"}, "events": ["local_manuscript_edit", "manuscript_write"], "facts": {"change_class": "multi_file_substantive", "completion_scope": "one_coherent_multi_file_change_set", "profile_selected": false, "published_revision": false, "existing_paths_only": true}, "depends_on": [], "change_set": {"paths": ["paper.tex"], "facets": ["claim", "explanation"], "claim_refs": ["claim:one"]}}]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"edit": "blocked"}, "route_ids": ["RT.MANUSCRIPT.LOCAL"], "reason_contains": {"edit": "manuscript_change_set_minimum_paths:1:requires=2"}}
+    },
+    {
+      "id": "FWD.STATE.PROJECTION.CLOSE.THEN.DELIVER",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "fixture": {"components": [{"id": "q1", "type": "question", "state": "S6", "dependencies": []}], "evidence": [{"component_id": "q1", "level": "E1_IMPLEMENTATION"}, {"component_id": "q1", "level": "E2_NUMERICAL"}, {"component_id": "q1", "level": "E3_STRUCTURAL"}, {"component_id": "q1", "level": "E4_REALITY"}]},
+      "plan": {
+        "schema_version": "11.0", "request": "关闭 S6 后在同一请求里交付第一问。",
+        "steps": [
+          {"id": "close", "tier": "G2_CHECKPOINT", "mode": "promote", "object": "verification", "action": "close_s6", "component_id": "q1", "events": ["s6_close"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["question_state"], "claim_refs": []}, "state_effect": {"component_id": "q1", "from": "S6", "to": "S7"}},
+          {"id": "deliver", "tier": "G3_RELEASE", "mode": "promote", "object": "delivery", "action": "deliver", "component_id": "q1", "events": ["final_delivery"], "facts": {}, "depends_on": ["close"], "change_set": {"paths": ["delivery/q1.zip"], "facets": ["delivery"], "claim_refs": []}}
+        ]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"close": "resolved", "deliver": "resolved"}, "route_ids": ["RT.VERIFY.S6.CLOSE", "RT.DELIVERY.FINAL"], "state_source_by_step": {"deliver": "planned_dependency_effect"}, "execution_order": ["close", "deliver"]}
+    },
+    {
+      "id": "FWD.S6.CLOSE.MISSING.EVIDENCE.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "fixture": {"components": [{"id": "q1", "type": "question", "state": "S6", "dependencies": []}]},
+      "plan": {
+        "schema_version": "11.0", "request": "没有 E1-E4 就尝试关闭 S6。",
+        "steps": [{"id": "close", "tier": "G2_CHECKPOINT", "mode": "promote", "object": "verification", "action": "close_s6", "component_id": "q1", "events": ["s6_close"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["question_state"], "claim_refs": []}, "state_effect": {"component_id": "q1", "from": "S6", "to": "S7"}}]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"close": "blocked"}, "route_ids": ["RT.VERIFY.S6.CLOSE"], "reason_contains": {"close": "required_state_evidence_missing:VER.S6.DUAL_AXIS:E1_IMPLEMENTATION"}}
+    },
+    {
+      "id": "FWD.ARTIFACT.NEW_PATH.BATCH_ADMISSION",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "fixture": {"components": [{"id": "q1", "type": "question", "state": "S4", "dependencies": []}]},
+      "plan": {
+        "schema_version": "11.0", "request": "实现模型并新增两个必要文件。",
+        "steps": [{"id": "implement", "tier": "G1_WORKING", "mode": "mutate", "object": "model", "action": "implement", "component_id": "q1", "events": ["model_implementation"], "facts": {}, "depends_on": [], "change_set": {"paths": ["src/q1/model.py", "src/q1/check.py"], "facets": ["implementation"], "claim_refs": []}}]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"implement": "resolved"}, "route_ids": ["RT.MODEL.IMPLEMENT"], "controller_events_by_step": {"implement": ["before_file_creation"]}, "required_rule_ids": ["ART.ADMIT.CONSUMER", "ART.ADMIT.PROPOSAL_FIELDS", "ART.ADMIT.NO_SPECULATION"]}
+    },
+    {
+      "id": "FWD.PAUSE.COLLOQUIAL.G1.ONLY",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "fixture": {"components": [{"id": "q3", "type": "question", "state": "S6", "dependencies": []}, {"id": "q4", "type": "question", "state": "S4", "dependencies": []}]},
+      "plan": {
+        "schema_version": "11.0", "request": "今天先到这里，做收尾整理，记下下次从哪继续。",
+        "steps": [{"id": "pause", "tier": "G1_WORKING", "mode": "mutate", "object": "project", "action": "pause", "component_id": null, "events": ["handoff"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["open_decisions", "next_actions"], "claim_refs": []}}]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"pause": "resolved"}, "route_ids": ["RT.PROJECT.RESUME"], "events_by_step": {"pause": ["handoff"]}, "component_ids_by_step": {"pause": []}, "forbidden_events": ["model_execution", "implementation_verification", "numerical_verification", "structural_verification", "reality_verification", "recovery_assessment", "final_delivery"], "action_grant_count": 0}
+    },
+    {
+      "id": "FWD.PAUSE.G2.OVERCLASSIFICATION.BLOCKED",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "fixture": {"components": [{"id": "q3", "type": "question", "state": "S6", "dependencies": []}]},
+      "plan": {
+        "schema_version": "11.0", "request": "今天先到这里，做收尾整理。",
+        "steps": [{"id": "pause", "tier": "G2_CHECKPOINT", "mode": "mutate", "object": "project", "action": "pause", "component_id": null, "events": ["handoff"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["next_actions"], "claim_refs": []}}]
+      },
+      "expected": {"status": "blocked", "step_statuses": {"pause": "blocked"}, "route_ids": ["RT.PROJECT.RESUME"], "reason_contains": {"pause": "action_maximum_tier:G2_CHECKPOINT:allows_at_most=G1_WORKING"}, "action_grant_count": 0}
+    },
+    {
+      "id": "FWD.CLOSE.Q3.THEN.PAUSE.NO.Q4.REPLAY",
+      "kind": "forward_acceptance",
+      "type": "plan",
+      "fixture": {"components": [{"id": "q3", "type": "question", "state": "S6", "dependencies": []}, {"id": "q4", "type": "question", "state": "S4", "dependencies": []}], "evidence": [{"component_id": "q3", "level": "E1_IMPLEMENTATION"}, {"component_id": "q3", "level": "E2_NUMERICAL"}, {"component_id": "q3", "level": "E3_STRUCTURAL"}, {"component_id": "q3", "level": "E4_REALITY"}]},
+      "plan": {
+        "schema_version": "11.0", "request": "确认关闭第三问 S6，今天先到这里，做收尾整理。",
+        "steps": [
+          {"id": "close-q3", "tier": "G2_CHECKPOINT", "mode": "promote", "object": "verification", "action": "close_s6", "component_id": "q3", "events": ["s6_close"], "facts": {}, "depends_on": [], "change_set": {"paths": [], "facets": ["question_state"], "claim_refs": []}, "state_effect": {"component_id": "q3", "from": "S6", "to": "S7"}},
+          {"id": "pause", "tier": "G1_WORKING", "mode": "mutate", "object": "project", "action": "pause", "component_id": null, "events": ["handoff"], "facts": {}, "depends_on": ["close-q3"], "change_set": {"paths": [], "facets": ["next_actions"], "claim_refs": []}}
+        ]
+      },
+      "expected": {"status": "resolved", "step_statuses": {"close-q3": "resolved", "pause": "resolved"}, "route_ids": ["RT.VERIFY.S6.CLOSE", "RT.PROJECT.RESUME"], "events_by_step": {"close-q3": ["s6_close"], "pause": ["handoff"]}, "component_ids_by_step": {"close-q3": ["q3"], "pause": []}, "forbidden_events": ["model_execution", "implementation_verification", "numerical_verification", "structural_verification", "reality_verification", "recovery_assessment", "final_delivery"], "execution_order": ["close-q3", "pause"], "action_grant_count": 0}
+    }
+  ]
+}

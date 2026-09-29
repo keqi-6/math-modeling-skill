@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "passed": true,
+  "checks_passed": 4,
+  "checks_total": 4,
+  "checks": [
+    {
+      "check": "预测行数为114个观测乘2个响应",
+      "passed": true,
+      "detail": "rows=228"
+    },
+    {
+      "check": "逐点预测独立复算",
+      "passed": true,
+      "detail": "max_abs_difference=8.571e-14"
+    },
+    {
+      "check": "组合层指标独立复算",
+      "passed": true,
+      "detail": "rows=42, max_abs_difference=4.974e-14"
+    },
+    {
+      "check": "底稿表3显示值",
+      "passed": true,
+      "detail": "ethanol_conversion_pct=(7.803, 9.41, 22.77); c4_selectivity_pct=(3.819, 4.399, 14.43)"
+    }
+  ]
+}

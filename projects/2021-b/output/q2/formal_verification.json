@@ -1,0 +1,80 @@
+{
+  "status": "q2_revised_s10_independent_verification",
+  "passed": true,
+  "check_count": 13,
+  "checks": [
+    {
+      "check": "1 主体域覆盖",
+      "passed": true,
+      "detail": "cells=84, temperatures={250.0: 21, 275.0: 21, 300.0: 21, 350.0: 21}, combinations=21"
+    },
+    {
+      "check": "2 均值独立复算",
+      "passed": true,
+      "detail": "max_abs_error=3.553e-15"
+    },
+    {
+      "check": "3 和为零约束",
+      "passed": true,
+      "detail": "max_abs_sum=8.105e-14"
+    },
+    {
+      "check": "4 单元重构",
+      "passed": true,
+      "detail": "rows=168, max_abs_error=3.553e-15"
+    },
+    {
+      "check": "5 平方和独立复算与闭合",
+      "passed": true,
+      "detail": "max_abs_error=1.046e-11"
+    },
+    {
+      "check": "6 占比复算与闭合",
+      "passed": true,
+      "detail": "max_abs_error=6.661e-16"
+    },
+    {
+      "check": "7 S6同口径结果一致",
+      "passed": true,
+      "detail": "max_abs_error=0.000e+00"
+    },
+    {
+      "check": "8 A层既有验证",
+      "passed": true,
+      "detail": "passed=True, checks=5"
+    },
+    {
+      "check": "9 非平衡温度排除",
+      "passed": true,
+      "detail": "effect_temperatures=[250.0, 275.0, 300.0, 350.0], cell_temperatures=[250.0, 275.0, 300.0, 350.0]"
+    },
+    {
+      "check": "10 调整后组合画像独立拼接",
+      "passed": true,
+      "detail": "rows=42, max_abs_error=0.000e+00"
+    },
+    {
+      "check": "11 非加和组合汇总独立复算",
+      "passed": true,
+      "detail": "rows=42, max_abs_error=1.776e-15"
+    },
+    {
+      "check": "12 题目直接回答表与摘要复算",
+      "passed": true,
+      "detail": "rows=10, max_abs_error=1.110e-16, summary_has_answers=True"
+    },
+    {
+      "check": "13 输出合同、哈希与声明边界",
+      "passed": true,
+      "detail": "expected_files=14/14, hashes=30/30, boundaries=5/5"
+    }
+  ],
+  "tolerances": {
+    "effect_sum": 1e-10,
+    "cell_reconstruction": 1e-10,
+    "sum_of_squares": 1e-09,
+    "share_closure": 1e-12,
+    "candidate_consistency": 1e-09
+  },
+  "note": "数值容差只用于浮点计算一致性，不代表实验测量精度。"
+}

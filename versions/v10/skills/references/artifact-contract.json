@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v10/artifact-contract.json",
+  "title": "V10 artifact admission proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["path", "purpose", "consumer_ids", "lifecycle", "class", "authorization_basis", "replaces"],
+  "properties": {
+    "path": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+"},
+    "purpose": {"type": "string", "minLength": 8},
+    "consumer_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "lifecycle": {"enum": ["ephemeral", "working", "milestone", "final"]},
+    "class": {"enum": ["source", "code", "data", "result", "manuscript", "visual", "delivery", "control"]},
+    "authorization_basis": {"type": "string", "minLength": 4},
+    "replaces": {"type": ["string", "null"]},
+    "promotion_gate": {"type": "array", "items": {"type": "string"}}
+  },
+  "policy": {
+    "default_control_artifacts": [".modeling/state.json"],
+    "never_create_by_default": [
+      "README.md", "solution_brief.md", "start_receipt.json", "end_receipt.json",
+      "audit_report.md", "handoff.md", "references.json", "notes.md"
+    ],
+    "forbidden_patterns": [
+      "(^|/)placeholder", "(^|/)empty", "(^|/)todo(?:[._-]|$)",
+      "(?:^|/)receipts?/.*\\.json$", "(?:^|/)question_[0-9]+/solution_brief\\.md$"
+    ],
+    "duplicate_rule": "reject_same_purpose_and_consumer_without_replaces",
+    "temporary_rule": "ephemeral_outputs_use_system_temp_unless_existing_workflow_requires_project_path",
+    "directory_rule": "directories_are_created_only_as_parents_of_admitted_files"
+  }
+}

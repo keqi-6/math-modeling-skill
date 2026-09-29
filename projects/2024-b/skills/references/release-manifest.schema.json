@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v11/release-manifest.schema.json",
+  "title": "V11 frozen release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "release_id",
+    "status",
+    "generated_at",
+    "source_status",
+    "manifest_policy",
+    "release_tree",
+    "validator_hashes",
+    "pre_freeze_gate",
+    "inherited_v10_rule_corpus",
+    "compatibility_boundary",
+    "unverified_boundaries",
+    "attestation",
+    "manifest_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "11.0"},
+    "release_id": {"const": "V11.0.0"},
+    "status": {"const": "stable"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "source_status": {"const": "candidate"},
+    "manifest_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "excluded_paths"],
+      "properties": {
+        "algorithm": {"const": "sha256-canonical-file-list-v1"},
+        "excluded_paths": {
+          "const": ["evals/release/frozen-manifest.json"]
+        }
+      }
+    },
+    "release_tree": {"$ref": "#/$defs/tree"},
+    "validator_hashes": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {"pattern": "^(scripts|references)/.+"},
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "pre_freeze_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["report_sha256", "tree_sha256", "validator_hashes_sha256", "drivers"],
+      "properties": {
+        "report_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "validator_hashes_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "drivers": {
+          "type": "array",
+          "minItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "command_sha256", "exit_code", "executed_count", "auxiliary_executed_count", "stdout_sha256"],
+            "properties": {
+              "id": {"type": "string"},
+              "command_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "exit_code": {"type": "integer"},
+              "executed_count": {"type": "integer", "minimum": 1},
+              "auxiliary_executed_count": {"type": "integer", "minimum": 0},
+              "stdout_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "inherited_v10_rule_corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule_files", "exact_files", "active_rules", "v10_active_rules", "v10_inventory_sha256", "v10_manifest_sha256", "v10_release_tree_sha256", "driver_stdout_sha256"],
+      "properties": {
+        "rule_files": {"type": "integer", "minimum": 1},
+        "exact_files": {"type": "integer", "minimum": 1},
+        "active_rules": {"type": "integer", "minimum": 1},
+        "v10_active_rules": {"type": "integer", "minimum": 1},
+        "v10_inventory_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "v10_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "v10_release_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "driver_stdout_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "compatibility_boundary": {
+      "const": {
+        "v11_active_skill_maintenance_entry": [
+          "references/semantic-plan.schema.json",
+          "references/route-contract.json",
+          "scripts/resolve_route.py"
+        ],
+        "v11_active_maintenance_gates": [
+          "scripts/run_maintenance_tests.py",
+          "scripts/run_forward_acceptance.py",
+          "scripts/validate_release.py"
+        ],
+        "legacy_v10_only": [
+          "references/change-envelope.schema.json",
+          "scripts/analyze_rule_change.py",
+          "scripts/apply_rule_change.py",
+          "scripts/run_change_evals.py",
+          "scripts/run_transaction_tests.py"
+        ],
+        "legacy_change_stack_is_v11_runtime": false
+      }
+    },
+    "unverified_boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 8}
+    },
+    "attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "digest_algorithm", "external_signature"],
+      "properties": {
+        "kind": {"const": "self_hash_plus_fresh_mirrored_regate"},
+        "digest_algorithm": {"const": "sha256"},
+        "external_signature": {"const": null}
+      }
+    },
+    "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "tree": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256", "file_count", "files"],
+      "properties": {
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "file_count": {"type": "integer", "minimum": 1},
+        "files": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256", "size"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "size": {"type": "integer", "minimum": 0}
+            }
+          }
+        }
+      }
+    }
+  }
+}

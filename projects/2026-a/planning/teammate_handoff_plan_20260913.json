@@ -1,0 +1,81 @@
+{
+  "schema_version": "11.0",
+  "plan_id": "teammate_handoff_20260913",
+  "window_context": "same_window",
+  "request": "你帮我整理一个队友交付包，也放到队友意见文件夹下，作为我们的完整交付队友内容，只传重要内容，包括讲解稿等，且尽量让文件夹整体简明易懂，方便搜寻文件读取。代码什么的也可以传，总而言之就是把我们所有工作都再交付一次。",
+  "steps": [
+    {
+      "id": "refresh_q4_brief",
+      "tier": "G1_WORKING",
+      "mode": "mutate",
+      "object": "model",
+      "action": "interpret",
+      "component_id": "Q4",
+      "events": [
+        "result_interpretation",
+        "teammate_brief_write"
+      ],
+      "facts": {},
+      "depends_on": [],
+      "change_set": {
+        "paths": [
+          "docs/Q4/solution_brief.md"
+        ],
+        "facets": [
+          "expression",
+          "result_interpretation"
+        ],
+        "claim_refs": []
+      }
+    },
+    {
+      "id": "assemble_teammate_reading_materials",
+      "tier": "G1_WORKING",
+      "mode": "mutate",
+      "object": "manuscript",
+      "action": "draft",
+      "component_id": "TEAMMATE_HANDOFF",
+      "events": [
+        "manuscript_structure",
+        "manuscript_write",
+        "method_section_write",
+        "result_section_write",
+        "conclusion_write"
+      ],
+      "facts": {
+        "change_class": "full_draft",
+        "completion_scope": "working_draft_only",
+        "profile_selected": false,
+        "published_revision": false,
+        "existing_paths_only": false
+      },
+      "working_context": {
+        "component_type": "artifact",
+        "state": "A1"
+      },
+      "depends_on": [
+        "refresh_q4_brief"
+      ],
+      "change_set": {
+        "paths": [
+          "<未收录-队友交付包_20260913>",
+          "<未收录-队友交付包_20260913>.zip",
+          "scripts/build_teammate_handoff.py",
+          "planning/teammate_handoff_check_20260913.json",
+          "output/teammate_briefs",
+          "README.md"
+        ],
+        "facets": [
+          "structure",
+          "method",
+          "result",
+          "conclusion",
+          "format",
+          "navigation",
+          "consumer_binding"
+        ],
+        "claim_refs": []
+      }
+    }
+  ]
+}

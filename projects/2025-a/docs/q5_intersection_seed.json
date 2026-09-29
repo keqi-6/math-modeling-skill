@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "seed_id": "Q5-INTERSECTION-WORKING-003-SEED",
+  "source_result_path": "docs/q5_result.json",
+  "source_result_sha256": "08827605e195f557302be6b67f94103a0c414e017b1d06e13b25172d04875fdb",
+  "source_spec_id": "SPEC-Q5-WORKING-3.0",
+  "role": "read-only historical incumbent; must be rescored by SPEC-Q5-WORKING-4.0",
+  "decision": {
+    "headings_rad": [
+      0.09789999999999999,
+      4.287008023812072,
+      1.6240004483011845,
+      4.745469394950402,
+      2.105207078339758
+    ],
+    "speeds_mps": [
+      140.0,
+      116.7749664710228,
+      110.7564131685066,
+      129.2675849601,
+      138.5268955873774
+    ],
+    "bombs": [
+      {"platform": 0, "label": 0, "release_s": 0.46302634217840494, "fuse_s": 0.4060711513214376},
+      {"platform": 1, "label": 1, "release_s": 4.669232920364355, "fuse_s": 4.643851925741743},
+      {"platform": 1, "label": 0, "release_s": 5.672103525786559, "fuse_s": 7.041286008645829},
+      {"platform": 1, "label": 2, "release_s": 9.872766702636778, "fuse_s": 6.588834226174665},
+      {"platform": 2, "label": 2, "release_s": 22.27659126070578, "fuse_s": 3.6898582356794094},
+      {"platform": 2, "label": 0, "release_s": 23.312836071190215, "fuse_s": 4.64507105774765},
+      {"platform": 2, "label": 1, "release_s": 26.30442084764938, "fuse_s": 3.2106479587611254},
+      {"platform": 3, "label": 1, "release_s": 1.8208704544187655, "fuse_s": 10.67912954558123},
+      {"platform": 3, "label": 0, "release_s": 3.398124999845491, "fuse_s": 11.747958459281808},
+      {"platform": 3, "label": 2, "release_s": 6.990613292571973, "fuse_s": 11.289500291265194},
+      {"platform": 4, "label": 2, "release_s": 11.456346482904353, "fuse_s": 2.131467420086423},
+      {"platform": 4, "label": 0, "release_s": 12.45842906406513, "fuse_s": 4.452454083418179},
+      {"platform": 4, "label": 1, "release_s": 18.2935611601275, "fuse_s": 1.6413268042005313}
+    ]
+  }
+}

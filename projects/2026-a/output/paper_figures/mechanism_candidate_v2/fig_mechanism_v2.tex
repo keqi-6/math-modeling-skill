@@ -1,0 +1,129 @@
+% Editable layout. The cut-face color data are generated separately.
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{ctex,amsmath,lmodern}
+\setCJKmainfont{Microsoft YaHei}
+\setCJKsansfont{Microsoft YaHei}
+\usetikzlibrary{arrows.meta,calc}
+\definecolor{ink}{HTML}{41382E}
+\definecolor{heat}{HTML}{DB4A21}
+\definecolor{moist}{HTML}{0072BD}
+\definecolor{herb}{HTML}{EBC98F}
+\definecolor{endface}{HTML}{DDB477}
+\definecolor{guide}{HTML}{8B8B8B}
+\input{field_colors.tex}
+\begin{document}
+\begin{tikzpicture}[
+ x=1cm,y=1cm,font=\sffamily\fontsize{10}{12}\selectfont,text=ink,
+ every node/.style={inner sep=1.5pt},
+ body/.style={draw=ink,line width=1.05pt},
+ heatflow/.style={draw=heat,line width=2.7pt,-{Stealth[length=3.7mm,width=3mm]}},
+ moistflow/.style={draw=moist,line width=2.7pt,-{Stealth[length=3.7mm,width=3mm]}},
+ normal/.style={draw=ink,line width=.9pt,-{Stealth[length=2mm,width=1.3mm]}},
+ leader/.style={draw=guide,densely dashed,line width=.7pt}
+]
+\path[use as bounding box] (0,0) rectangle (16,10.15);
+
+% Quantity icons function as legends. They do not depict internal pores/drops.
+\draw[heat,line width=1.1pt,fill=white,rounded corners=2pt]
+ (.35,9.58) rectangle (.49,10.01);
+\draw[heat,line width=2.4pt] (.42,9.57)--(.42,9.88);
+\fill[heat] (.42,9.54) circle[radius=.12];
+\node[anchor=west,font=\sffamily\bfseries] at (.76,9.72) {(a) 温度};
+\path[fill=moist,draw=moist] (.42,5.12)
+ .. controls (.32,4.94) and (.20,4.82) .. (.29,4.72)
+ .. controls (.39,4.60) and (.59,4.67) .. (.58,4.82)
+ .. controls (.57,4.91) and (.47,5.03) .. (.42,5.12);
+\node[anchor=west,font=\sffamily\bfseries] at (.76,4.88) {(b) 干基含水率};
+
+% Two matched views: the same midsection at the same instant.
+\foreach \yy/\field in {7.65/Heat,2.80/Moisture}{
+ \begin{scope}[shift={(0,\yy)}]
+  % A short perspective offset makes the exposed section and material visible.
+  \path[fill=herb] (2.35,1.08)--(8.50,1.38)--(8.50,-.78)--(2.35,-1.08)--cycle;
+  \filldraw[body,fill=endface] (8.50,.30) ellipse[x radius=.27,y radius=1.08];
+  \draw[body] (2.35,1.08)--(8.50,1.38);
+  \draw[body] (2.35,-1.08)--(8.50,-.78);
+  \begin{scope}[shift={(2.35,0)},xscale=.74,yscale=1.08]
+   \csname \field Section\endcsname
+   \draw[body] (0,0) circle[radius=1];
+  \end{scope}
+  % The extension describes the radial approximation; no axial flux is drawn.
+  \draw[guide,dash pattern=on 3pt off 2pt,line width=.6pt]
+      (3.12,.04)--(8.9,.32);
+  \fill[ink] (2.35,0) circle[radius=1pt];
+  \draw[leader] (7.78,1.345)--(9.53,1.345)--(11.42,.75);
+  \filldraw[draw=ink,line width=.8pt,fill=white]
+      (7.78,1.345) circle[radius=1.8pt];
+  % The boundary detail uses its own outward normal.
+  \fill[herb] (11.42,-.80) rectangle (12.52,.80);
+  \draw[ink,line width=1.2pt] (12.52,-.80)--(12.52,.80);
+  \draw[normal] (12.52,-.52)--(13.60,-.52);
+  \node[above] at (13.32,-.50) {$\boldsymbol n$};
+ \end{scope}
+}
+
+% Large arrows convey the opposite exchange directions without a paragraph.
+\foreach \xx/\top/\bot in {4.00/8.82/6.66,5.65/8.90/6.74,7.30/8.98/6.82}{
+ \draw[heatflow] (\xx,9.60)--(\xx,\top);
+ \draw[heatflow] (\xx,5.96)--(\xx,\bot);
+}
+\node[text=heat] at (5.65,9.97) {热量传入};
+\foreach \xx/\top/\bot in {4.00/3.97/1.81,5.65/4.05/1.89,7.30/4.13/1.97}{
+ \draw[moistflow] (\xx,\top)--(\xx,4.61);
+ \draw[moistflow] (\xx,\bot)--(\xx,1.11);
+}
+\node[text=moist] at (5.65,4.96) {水分传出};
+
+% The thinner arrows continue the radial transport inside the material:
+% heat converges toward the core, while moisture diffuses toward the surface.
+\foreach \xx/\axis in {4.75/7.767,6.85/7.870}{
+ \draw[heatflow,line width=1.3pt,-{Stealth[length=2.4mm,width=1.8mm]}]
+     (\xx,{\axis+.77})--(\xx,{\axis+.17});
+ \draw[heatflow,line width=1.3pt,-{Stealth[length=2.4mm,width=1.8mm]}]
+     (\xx,{\axis-.77})--(\xx,{\axis-.17});
+}
+\foreach \xx/\axis in {4.75/2.917,6.85/3.020}{
+ \draw[moistflow,line width=1.3pt,-{Stealth[length=2.4mm,width=1.8mm]}]
+     (\xx,{\axis+.17})--(\xx,{\axis+.77});
+ \draw[moistflow,line width=1.3pt,-{Stealth[length=2.4mm,width=1.8mm]}]
+     (\xx,{\axis-.17})--(\xx,{\axis-.77});
+}
+
+% Local surface states and the single relevant exchange relation in each row.
+\node at (11.98,8.20) {$\theta_s$};
+\draw[ink,line width=.6pt] (12.17,8.20)--(12.52,8.20);
+\fill[ink] (12.52,8.20) circle[radius=.9pt];
+\node at (14.35,8.20) {$T_\infty$};
+\draw[heatflow] (15.18,7.68)--(11.79,7.68);
+\node at (13.75,6.34) {$q_{\rm in}=h(T_\infty-\theta_s)$};
+\node at (11.98,3.35) {$C_s$};
+\draw[ink,line width=.6pt] (12.17,3.35)--(12.52,3.35);
+\fill[ink] (12.52,3.35) circle[radius=.9pt];
+\node at (14.35,3.35) {$C_{\rm eq}$};
+\draw[moistflow] (11.79,2.83)--(15.18,2.83);
+\node at (13.75,1.49) {$j_C=h_m(C_s-C_{\rm eq})$};
+\node at (13.75,.91) {$C_{\rm eq}:=Y_\infty$};
+
+% Compact quantitative color keys; only the exposed cross-sections use these.
+\begin{scope}[shift={(1.10,6.12)},xscale=2.5,yscale=.13]
+ \HeatScale
+\end{scope}
+\draw[ink,line width=.45pt] (1.10,6.12) rectangle (3.60,6.25);
+\foreach \xx/\lab in {1.10/32,2.35/34,3.60/36}{
+ \draw[ink,line width=.5pt] (\xx,6.12)--(\xx,6.04);
+ \node[below,font=\fontsize{8.5}{10}\selectfont] at (\xx,6.04) {$\lab$};
+}
+\node[font=\fontsize{9}{11}\selectfont] at (2.35,5.58) {$^\circ\mathrm C$};
+\begin{scope}[shift={(1.10,1.27)},xscale=2.5,yscale=.13]
+ \MoistureScale
+\end{scope}
+\draw[ink,line width=.45pt] (1.10,1.27) rectangle (3.60,1.40);
+\foreach \xx/\lab in {1.10/1.5,2.35/2.05,3.60/2.6}{
+ \draw[ink,line width=.5pt] (\xx,1.27)--(\xx,1.19);
+ \node[below,font=\fontsize{8.5}{10}\selectfont] at (\xx,1.19) {$\lab$};
+}
+\node[font=\fontsize{9}{11}\selectfont] at (2.35,.73) {$\mathrm{kg/kg}$};
+\node[text=guide,font=\fontsize{9}{11}\selectfont] at (2.35,.23) {中部剖切示意};
+\node[font=\fontsize{9}{11}\selectfont] at (8.0,.23) {$t=1800\,\mathrm{s}$};
+\end{tikzpicture}
+\end{document}

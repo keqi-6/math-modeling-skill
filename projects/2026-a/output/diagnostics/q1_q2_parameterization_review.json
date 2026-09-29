@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Internal post-processing evidence for self-contained Q1/Q2 explanations",
+  "method": "Read existing unrounded observations; evaluate appendix-3 formulas directly",
+  "solver_executed": false,
+  "sources": {
+    "q1_fields": {
+      "path": "output/Q1/run_n5120.npz",
+      "sha256": "c3eb65e2b2f1ccea870986401c5f1ae42346562be1fe11ace3e61104dc79cc7e"
+    },
+    "q2_fields": {
+      "path": "output/Q2/run_n10240_startsafe.npz",
+      "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b"
+    },
+    "q1_boundary": {
+      "path": "output/ENV/q1_boundary.json",
+      "sha256": "4c80135753189b839bcbe3ccc667a65118364a07471135695180fe7e8c6f923d"
+    },
+    "q2_boundary": {
+      "path": "output/ENV/q2_boundary.json",
+      "sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f"
+    }
+  },
+  "script": {
+    "path": "scripts/analyze_q1_q2_existing_results.py",
+    "sha256": "afc129e38c605c9230f34eeea1501111aa9de09659408f230673fe0661cc8e9f"
+  },
+  "alignment": {
+    "same_first_31_environment_nodes": true,
+    "same_piecewise_linear_reconstruction": true,
+    "same_uniform_initial_state": true,
+    "physical_radius_alignment_tolerance_m": 2e-16,
+    "maximum_radius_roundoff_difference_m": 0.0
+  },
+  "q1_q2_comparison": {
+    "range_s": [
+      0,
+      1800
+    ],
+    "time_spacing_s": 1,
+    "radius_range_m": [
+      0,
+      0.02
+    ],
+    "radius_spacing_m": 0.001,
+    "observations_per_field": 37821,
+    "difference_direction": "Q2 minus Q1",
+    "maxima": {
+      "temperature_C": {
+        "unit": "degC",
+        "max_absolute_difference": 1.4019735564839664,
+        "at_time_s": 1800,
+        "at_radius_m": 0.014,
+        "q1_value": 35.1291628232685,
+        "q2_value": 33.727189266784535,
+        "signed_q2_minus_q1": -1.4019735564839664
+      },
+      "moisture_kg_kg": {
+        "unit": "kg water/kg dry matter",
+        "max_absolute_difference": 0.138383178617131,
+        "at_time_s": 1800,
+        "at_radius_m": 0.02,
+        "q1_value": 1.5102345980487442,
+        "q2_value": 1.6486177766658752,
+        "signed_q2_minus_q1": 0.138383178617131
+      }
+    },
+    "endpoint_comparisons": [
+      {
+        "field": "temperature_C",
+        "unit": "degC",
+        "time_s": 1800,
+        "position": "center",
+        "radius_m": 0.0,
+        "q1_value": 33.57534490607055,
+        "q2_value": 32.18924476096322,
+        "signed_q2_minus_q1": -1.3861001451073278
+      },
+      {
+        "field": "temperature_C",
+        "unit": "degC",
+        "time_s": 1800,
+        "position": "surface",
+        "radius_m": 0.02,
+        "q1_value": 36.785560475221004,
+        "q2_value": 35.41302025049541,
+        "signed_q2_minus_q1": -1.3725402247255971
+      },
+      {
+        "field": "moisture_kg_kg",
+        "unit": "kg water/kg dry matter",
+        "time_s": 1800,
+        "position": "center",
+        "radius_m": 0.0,
+        "q1_value": 2.5499924032280714,
+        "q2_value": 2.54993409992138,
+        "signed_q2_minus_q1": -5.83033066914318e-05
+      },
+      {
+        "field": "moisture_kg_kg",
+        "unit": "kg water/kg dry matter",
+        "time_s": 1800,
+        "position": "surface",
+        "radius_m": 0.02,
+        "q1_value": 1.5102345980487442,
+        "q2_value": 1.6486177766658752,
+        "signed_q2_minus_q1": 0.138383178617131
+      }
+    ],
+    "interpretation_limit": "Comparison of complete appendix-2 and appendix-3 parameterizations on their respective accepted grids. It does not isolate one coefficient/coupling effect, validate against internal measurements, or designate either question as truth."
+  },
+  "q2_local_properties": {
+    "formula_source": "Original problem appendix 3",
+    "formulas": {
+      "rho": "650+128*C",
+      "cp": "1450+2736*C/(1+C)",
+      "k": "0.21+0.38*C/(1+C)",
+      "s": "rho*cp",
+      "D": "2.4e-3*exp(-0.45/C-3850/(temperature_C+273.15))"
+    },
+    "initial_properties": {
+      "k_W_mK": 0.48295774647887324,
+      "s_J_m3K": 3334694.7943661967,
+      "D_m2_s": 5.641680373025668e-09
+    },
+    "rows": [
+      {
+        "time_s": 0,
+        "position": "center",
+        "radius_m": 0.0,
+        "temperature_C": 28.0,
+        "moisture_kg_kg": 2.55,
+        "k_W_mK": 0.48295774647887324,
+        "s_J_m3K": 3334694.7943661967,
+        "D_m2_s": 5.641680373025668e-09,
+        "ratio_to_initial": {
+          "k_W_mK": 1.0,
+          "s_J_m3K": 1.0,
+          "D_m2_s": 1.0
+        }
+      },
+      {
+        "time_s": 0,
+        "position": "surface",
+        "radius_m": 0.02,
+        "temperature_C": 28.0,
+        "moisture_kg_kg": 2.55,
+        "k_W_mK": 0.48295774647887324,
+        "s_J_m3K": 3334694.7943661967,
+        "D_m2_s": 5.641680373025668e-09,
+        "ratio_to_initial": {
+          "k_W_mK": 1.0,
+          "s_J_m3K": 1.0,
+          "D_m2_s": 1.0
+        }
+      },
+      {
+        "time_s": 1800,
+        "position": "center",
+        "radius_m": 0.0,
+        "temperature_C": 32.18924476096322,
+        "moisture_kg_kg": 2.54993409992138,
+        "k_W_mK": 0.48295575937355684,
+        "s_J_m3K": 3334652.016240251,
+        "D_m2_s": 6.72329227701888e-09,
+        "ratio_to_initial": {
+          "k_W_mK": 0.9999958855503801,
+          "s_J_m3K": 0.9999871718017438,
+          "D_m2_s": 1.19171804010108
+        }
+      },
+      {
+        "time_s": 1800,
+        "position": "surface",
+        "radius_m": 0.02,
+        "temperature_C": 35.41302025049541,
+        "moisture_kg_kg": 1.6486177766658752,
+        "k_W_mK": 0.44652893998229126,
+        "s_J_m3K": 2714812.9617092325,
+        "D_m2_s": 6.9645397118862375e-09,
+        "ratio_to_initial": {
+          "k_W_mK": 0.9245714417831052,
+          "s_J_m3K": 0.8141113742390386,
+          "D_m2_s": 1.2344796676510603
+        }
+      },
+      {
+        "time_s": 3600,
+        "position": "center",
+        "radius_m": 0.0,
+        "temperature_C": 40.381566592517956,
+        "moisture_kg_kg": 2.52573759862776,
+        "k_W_mK": 0.4822211340549284,
+        "s_J_m3K": 3318926.321477586,
+        "D_m2_s": 9.331056029182132e-09,
+        "ratio_to_initial": {
+          "k_W_mK": 0.9984747890901112,
+          "s_J_m3K": 0.9952713894791059,
+          "D_m2_s": 1.6539497830817076
+        }
+      },
+      {
+        "time_s": 3600,
+        "position": "surface",
+        "radius_m": 0.02,
+        "temperature_C": 42.99760875151683,
+        "moisture_kg_kg": 1.471093601451303,
+        "k_W_mK": 0.4362219319507681,
+        "s_J_m3K": 2580956.2294501867,
+        "D_m2_s": 9.090487953216252e-09,
+        "ratio_to_initial": {
+          "k_W_mK": 0.9032300136630077,
+          "s_J_m3K": 0.7739707495302376,
+          "D_m2_s": 1.6113085733605583
+        }
+      },
+      {
+        "time_s": 5400,
+        "position": "center",
+        "radius_m": 0.0,
+        "temperature_C": 45.846754892043116,
+        "moisture_kg_kg": 2.3860642508797416,
+        "k_W_mK": 0.4777753132117114,
+        "s_J_m3K": 3227379.0513102687,
+        "D_m2_s": 1.139638173243343e-08,
+        "ratio_to_initial": {
+          "k_W_mK": 0.9892693857693645,
+          "s_J_m3K": 0.9678184212728455,
+          "D_m2_s": 2.0200332133175207
+        }
+      },
+      {
+        "time_s": 5400,
+        "position": "surface",
+        "radius_m": 0.02,
+        "temperature_C": 47.140049889985484,
+        "moisture_kg_kg": 1.347567290457406,
+        "k_W_mK": 0.4281303055530477,
+        "s_J_m3K": 2484358.2751559764,
+        "D_m2_s": 1.0346926603314024e-08,
+        "ratio_to_initial": {
+          "k_W_mK": 0.8864756982871504,
+          "s_J_m3K": 0.7450031947011097,
+          "D_m2_s": 1.8340150308382153
+        }
+      },
+      {
+        "time_s": 7200,
+        "position": "center",
+        "radius_m": 0.0,
+        "temperature_C": 48.45023528359425,
+        "moisture_kg_kg": 2.170851540514741,
+        "k_W_mK": 0.47015837539391303,
+        "s_J_m3K": 3083438.860300605,
+        "D_m2_s": 1.2333302097829279e-08,
+        "ratio_to_initial": {
+          "k_W_mK": 0.9734979484680031,
+          "s_J_m3K": 0.9246539939756777,
+          "D_m2_s": 2.1861043664930015
+        }
+      },
+      {
+        "time_s": 7200,
+        "position": "surface",
+        "radius_m": 0.02,
+        "temperature_C": 49.00332430355365,
+        "moisture_kg_kg": 1.231092625853831,
+        "k_W_mK": 0.4196798637597686,
+        "s_J_m3K": 2390190.077628204,
+        "D_m2_s": 1.0746919322972352e-08,
+        "ratio_to_initial": {
+          "k_W_mK": 0.8689784288989085,
+          "s_J_m3K": 0.7167642693017403,
+          "D_m2_s": 1.90491460210262
+        }
+      },
+      {
+        "time_s": 9000,
+        "position": "center",
+        "radius_m": 0.0,
+        "temperature_C": 49.46698054932305,
+        "moisture_kg_kg": 1.9566417595734875,
+        "k_W_mK": 0.4614758056942221,
+        "s_J_m3K": 2936030.9760347162,
+        "D_m2_s": 1.25201282216585e-08,
+        "ratio_to_initial": {
+          "k_W_mK": 0.9555200409533324,
+          "s_J_m3K": 0.8804496834297989,
+          "D_m2_s": 2.2192196994215534
+        }
+      },
+      {
+        "time_s": 9000,
+        "position": "surface",
+        "radius_m": 0.02,
+        "temperature_C": 49.660910332037474,
+        "moisture_kg_kg": 1.116647634017113,
+        "k_W_mK": 0.4104708266539334,
+        "s_J_m3K": 2294258.290383585,
+        "D_m2_s": 1.0606857659073907e-08,
+        "ratio_to_initial": {
+          "k_W_mK": 0.8499104313919298,
+          "s_J_m3K": 0.6879964829943722,
+          "D_m2_s": 1.8800883704415503
+        }
+      },
+      {
+        "time_s": 10800,
+        "position": "center",
+        "radius_m": 0.0,
+        "temperature_C": 49.8494955728103,
+        "moisture_kg_kg": 1.7661771073155368,
+        "k_W_mK": 0.4526262942473793,
+        "s_J_m3K": 2800718.487815873,
+        "D_m2_s": 1.2387259089849455e-08,
+        "ratio_to_initial": {
+          "k_W_mK": 0.9371964681121007,
+          "s_J_m3K": 0.839872510236184,
+          "D_m2_s": 2.1956683595682134
+        }
+      },
+      {
+        "time_s": 10800,
+        "position": "surface",
+        "radius_m": 0.02,
+        "temperature_C": 49.96641284498236,
+        "moisture_kg_kg": 1.0081231261700119,
+        "k_W_mK": 0.40076857536880517,
+        "s_J_m3K": 2199645.049653019,
+        "D_m2_s": 1.0271725056690614e-08,
+        "ratio_to_initial": {
+          "k_W_mK": 0.829821197176587,
+          "s_J_m3K": 0.6596240991437091,
+          "D_m2_s": 1.8206853946924015
+        }
+      }
+    ],
+    "interpretation_limit": "Local states at the specified times and two endpoint radii only"
+  }
+}

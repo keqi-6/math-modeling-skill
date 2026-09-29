@@ -1,0 +1,1005 @@
+{
+  "schema_version": "1.0",
+  "artifact_status": "s5_finite_closure_unverified",
+  "claim_status": "valid_reported_gaps_at_resource_limits",
+  "producer": "src/q1/03_finite_closure.py",
+  "consumers": [
+    "future S6 independent verifier",
+    "planning/analysis/2026-08-25_q1_s5_complete_action_implementation.md"
+  ],
+  "input_identity": {
+    "input_path": "output/q1/s5_results.json",
+    "input_sha256": "fb674e2b4f3cb425fff1de79ee461b8c24112fc6e499e9a8fd54ab61db87374f",
+    "specification_path": "planning/analysis/2026-08-25_q1_s4_complete_action_specification.md",
+    "specification_sha256": "f156e3c423ce0cedcfef23dea027afbd842a07892cdd0cb2229cdaa25584a8f6",
+    "n_values": [
+      10,
+      23,
+      50
+    ]
+  },
+  "parameters": {
+    "node_limit": 3000,
+    "time_limit_seconds": 60.0,
+    "dual_bisection_iterations": 20
+  },
+  "arithmetic": {
+    "probability_and_dynamic_programming": "fractions.Fraction exact rational arithmetic",
+    "branch_and_bound_bounds": "exact Lagrangian dual lower bounds"
+  },
+  "results": [
+    {
+      "N": 10,
+      "D0": 1,
+      "D1": 2,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "null_boundary_D": 1,
+          "target_boundary_D": 2,
+          "thresholds": [
+            {
+              "t": 1,
+              "threshold": 2
+            },
+            {
+              "t": 2,
+              "threshold": 3
+            },
+            {
+              "t": 3,
+              "threshold": 4
+            },
+            {
+              "t": 4,
+              "threshold": 5
+            },
+            {
+              "t": 5,
+              "threshold": 6
+            },
+            {
+              "t": 6,
+              "threshold": 7
+            },
+            {
+              "t": 7,
+              "threshold": 8
+            },
+            {
+              "t": 8,
+              "threshold": 9
+            },
+            {
+              "t": 9,
+              "threshold": 10
+            }
+          ],
+          "risk_at_composite_worst_point": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "ASN_upper_bound": {
+            "numerator": 22,
+            "denominator": 3,
+            "decimal": "7.33333333333333333333333"
+          },
+          "input_wide_class_lower_bound": {
+            "numerator": 41,
+            "denominator": 6,
+            "decimal": "6.83333333333333333333333"
+          },
+          "deterministic_threshold_lower_bound": {
+            "numerator": 22,
+            "denominator": 3,
+            "decimal": "7.33333333333333333333333"
+          },
+          "deterministic_threshold_certified_gap": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "relative_gap_upper_bound": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "status": "proved_deterministic_threshold_optimal",
+          "stop_reason": "frontier_exhausted",
+          "search_resources": {
+            "nodes_evaluated": 28,
+            "nodes_expanded": 9,
+            "nodes_pruned_by_risk": 18,
+            "nodes_pruned_by_bound": 1,
+            "leaves_evaluated": 0,
+            "feasible_completions_evaluated": 10,
+            "incumbent_updates": 0,
+            "dual_points_evaluated": 224,
+            "frontier_nodes": 0,
+            "elapsed_seconds": 0.09074559300006513
+          }
+        },
+        "A": {
+          "scenario": "A",
+          "null_boundary_D": 2,
+          "target_boundary_D": 1,
+          "thresholds": [
+            {
+              "t": 1,
+              "threshold": -1
+            },
+            {
+              "t": 2,
+              "threshold": -1
+            },
+            {
+              "t": 3,
+              "threshold": -1
+            },
+            {
+              "t": 4,
+              "threshold": -1
+            },
+            {
+              "t": 5,
+              "threshold": -1
+            },
+            {
+              "t": 6,
+              "threshold": -1
+            },
+            {
+              "t": 7,
+              "threshold": 0
+            },
+            {
+              "t": 8,
+              "threshold": -1
+            },
+            {
+              "t": 9,
+              "threshold": -1
+            }
+          ],
+          "risk_at_composite_worst_point": {
+            "numerator": 1,
+            "denominator": 15,
+            "decimal": "0.0666666666666666666666667"
+          },
+          "ASN_upper_bound": {
+            "numerator": 91,
+            "denominator": 10,
+            "decimal": "9.1"
+          },
+          "input_wide_class_lower_bound": {
+            "numerator": 35,
+            "denominator": 4,
+            "decimal": "8.75"
+          },
+          "deterministic_threshold_lower_bound": {
+            "numerator": 91,
+            "denominator": 10,
+            "decimal": "9.1"
+          },
+          "deterministic_threshold_certified_gap": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "relative_gap_upper_bound": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "status": "proved_deterministic_threshold_optimal",
+          "stop_reason": "frontier_exhausted",
+          "search_resources": {
+            "nodes_evaluated": 47,
+            "nodes_expanded": 16,
+            "nodes_pruned_by_risk": 28,
+            "nodes_pruned_by_bound": 3,
+            "leaves_evaluated": 0,
+            "feasible_completions_evaluated": 19,
+            "incumbent_updates": 0,
+            "dual_points_evaluated": 446,
+            "frontier_nodes": 0,
+            "elapsed_seconds": 0.16073357499999474
+          }
+        }
+      }
+    },
+    {
+      "N": 23,
+      "D0": 2,
+      "D1": 3,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "null_boundary_D": 2,
+          "target_boundary_D": 3,
+          "thresholds": [
+            {
+              "t": 1,
+              "threshold": 2
+            },
+            {
+              "t": 2,
+              "threshold": 2
+            },
+            {
+              "t": 3,
+              "threshold": 2
+            },
+            {
+              "t": 4,
+              "threshold": 2
+            },
+            {
+              "t": 5,
+              "threshold": 2
+            },
+            {
+              "t": 6,
+              "threshold": 7
+            },
+            {
+              "t": 7,
+              "threshold": 8
+            },
+            {
+              "t": 8,
+              "threshold": 9
+            },
+            {
+              "t": 9,
+              "threshold": 10
+            },
+            {
+              "t": 10,
+              "threshold": 11
+            },
+            {
+              "t": 11,
+              "threshold": 12
+            },
+            {
+              "t": 12,
+              "threshold": 13
+            },
+            {
+              "t": 13,
+              "threshold": 14
+            },
+            {
+              "t": 14,
+              "threshold": 15
+            },
+            {
+              "t": 15,
+              "threshold": 16
+            },
+            {
+              "t": 16,
+              "threshold": 17
+            },
+            {
+              "t": 17,
+              "threshold": 18
+            },
+            {
+              "t": 18,
+              "threshold": 19
+            },
+            {
+              "t": 19,
+              "threshold": 20
+            },
+            {
+              "t": 20,
+              "threshold": 21
+            },
+            {
+              "t": 21,
+              "threshold": 22
+            },
+            {
+              "t": 22,
+              "threshold": 23
+            }
+          ],
+          "risk_at_composite_worst_point": {
+            "numerator": 10,
+            "denominator": 253,
+            "decimal": "0.0395256916996047430830040"
+          },
+          "ASN_upper_bound": {
+            "numerator": 29973,
+            "denominator": 1771,
+            "decimal": "16.9243365330321852060982"
+          },
+          "input_wide_class_lower_bound": {
+            "numerator": 2080631361910289175,
+            "denominator": 124623045938642944,
+            "decimal": "16.6953980801806886500587"
+          },
+          "deterministic_threshold_lower_bound": {
+            "numerator": 29973,
+            "denominator": 1771,
+            "decimal": "16.9243365330321852060982"
+          },
+          "deterministic_threshold_certified_gap": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "relative_gap_upper_bound": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "status": "proved_deterministic_threshold_optimal",
+          "stop_reason": "frontier_exhausted",
+          "search_resources": {
+            "nodes_evaluated": 537,
+            "nodes_expanded": 138,
+            "nodes_pruned_by_risk": 383,
+            "nodes_pruned_by_bound": 16,
+            "leaves_evaluated": 0,
+            "feasible_completions_evaluated": 154,
+            "incumbent_updates": 0,
+            "dual_points_evaluated": 4109,
+            "frontier_nodes": 0,
+            "elapsed_seconds": 7.778707130999919
+          }
+        },
+        "A": {
+          "scenario": "A",
+          "null_boundary_D": 3,
+          "target_boundary_D": 2,
+          "thresholds": [
+            {
+              "t": 1,
+              "threshold": -1
+            },
+            {
+              "t": 2,
+              "threshold": -1
+            },
+            {
+              "t": 3,
+              "threshold": -1
+            },
+            {
+              "t": 4,
+              "threshold": -1
+            },
+            {
+              "t": 5,
+              "threshold": -1
+            },
+            {
+              "t": 6,
+              "threshold": -1
+            },
+            {
+              "t": 7,
+              "threshold": -1
+            },
+            {
+              "t": 8,
+              "threshold": -1
+            },
+            {
+              "t": 9,
+              "threshold": -1
+            },
+            {
+              "t": 10,
+              "threshold": -1
+            },
+            {
+              "t": 11,
+              "threshold": -1
+            },
+            {
+              "t": 12,
+              "threshold": 0
+            },
+            {
+              "t": 13,
+              "threshold": -1
+            },
+            {
+              "t": 14,
+              "threshold": -1
+            },
+            {
+              "t": 15,
+              "threshold": -1
+            },
+            {
+              "t": 16,
+              "threshold": -1
+            },
+            {
+              "t": 17,
+              "threshold": -1
+            },
+            {
+              "t": 18,
+              "threshold": -1
+            },
+            {
+              "t": 19,
+              "threshold": -1
+            },
+            {
+              "t": 20,
+              "threshold": -1
+            },
+            {
+              "t": 21,
+              "threshold": 1
+            },
+            {
+              "t": 22,
+              "threshold": -1
+            }
+          ],
+          "risk_at_composite_worst_point": {
+            "numerator": 177,
+            "denominator": 1771,
+            "decimal": "0.0999435347261434217955957"
+          },
+          "ASN_upper_bound": {
+            "numerator": 5166,
+            "denominator": 253,
+            "decimal": "20.4189723320158102766798"
+          },
+          "input_wide_class_lower_bound": {
+            "numerator": 6355627568508017021,
+            "denominator": 311557614846607360,
+            "decimal": "20.3995256916996046512862"
+          },
+          "deterministic_threshold_lower_bound": {
+            "numerator": 5166,
+            "denominator": 253,
+            "decimal": "20.4189723320158102766798"
+          },
+          "deterministic_threshold_certified_gap": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "relative_gap_upper_bound": {
+            "numerator": 0,
+            "denominator": 1,
+            "decimal": "0"
+          },
+          "status": "proved_deterministic_threshold_optimal",
+          "stop_reason": "frontier_exhausted",
+          "search_resources": {
+            "nodes_evaluated": 1672,
+            "nodes_expanded": 547,
+            "nodes_pruned_by_risk": 866,
+            "nodes_pruned_by_bound": 259,
+            "leaves_evaluated": 0,
+            "feasible_completions_evaluated": 806,
+            "incumbent_updates": 0,
+            "dual_points_evaluated": 14633,
+            "frontier_nodes": 0,
+            "elapsed_seconds": 25.20504012800029
+          }
+        }
+      }
+    },
+    {
+      "N": 50,
+      "D0": 5,
+      "D1": 6,
+      "scenarios": {
+        "R": {
+          "scenario": "R",
+          "null_boundary_D": 5,
+          "target_boundary_D": 6,
+          "thresholds": [
+            {
+              "t": 1,
+              "threshold": 2
+            },
+            {
+              "t": 2,
+              "threshold": 2
+            },
+            {
+              "t": 3,
+              "threshold": 3
+            },
+            {
+              "t": 4,
+              "threshold": 3
+            },
+            {
+              "t": 5,
+              "threshold": 3
+            },
+            {
+              "t": 6,
+              "threshold": 3
+            },
+            {
+              "t": 7,
+              "threshold": 3
+            },
+            {
+              "t": 8,
+              "threshold": 3
+            },
+            {
+              "t": 9,
+              "threshold": 4
+            },
+            {
+              "t": 10,
+              "threshold": 4
+            },
+            {
+              "t": 11,
+              "threshold": 4
+            },
+            {
+              "t": 12,
+              "threshold": 4
+            },
+            {
+              "t": 13,
+              "threshold": 4
+            },
+            {
+              "t": 14,
+              "threshold": 4
+            },
+            {
+              "t": 15,
+              "threshold": 4
+            },
+            {
+              "t": 16,
+              "threshold": 17
+            },
+            {
+              "t": 17,
+              "threshold": 5
+            },
+            {
+              "t": 18,
+              "threshold": 5
+            },
+            {
+              "t": 19,
+              "threshold": 5
+            },
+            {
+              "t": 20,
+              "threshold": 5
+            },
+            {
+              "t": 21,
+              "threshold": 5
+            },
+            {
+              "t": 22,
+              "threshold": 23
+            },
+            {
+              "t": 23,
+              "threshold": 24
+            },
+            {
+              "t": 24,
+              "threshold": 25
+            },
+            {
+              "t": 25,
+              "threshold": 26
+            },
+            {
+              "t": 26,
+              "threshold": 27
+            },
+            {
+              "t": 27,
+              "threshold": 28
+            },
+            {
+              "t": 28,
+              "threshold": 29
+            },
+            {
+              "t": 29,
+              "threshold": 30
+            },
+            {
+              "t": 30,
+              "threshold": 31
+            },
+            {
+              "t": 31,
+              "threshold": 32
+            },
+            {
+              "t": 32,
+              "threshold": 33
+            },
+            {
+              "t": 33,
+              "threshold": 34
+            },
+            {
+              "t": 34,
+              "threshold": 35
+            },
+            {
+              "t": 35,
+              "threshold": 36
+            },
+            {
+              "t": 36,
+              "threshold": 37
+            },
+            {
+              "t": 37,
+              "threshold": 38
+            },
+            {
+              "t": 38,
+              "threshold": 39
+            },
+            {
+              "t": 39,
+              "threshold": 40
+            },
+            {
+              "t": 40,
+              "threshold": 41
+            },
+            {
+              "t": 41,
+              "threshold": 42
+            },
+            {
+              "t": 42,
+              "threshold": 43
+            },
+            {
+              "t": 43,
+              "threshold": 44
+            },
+            {
+              "t": 44,
+              "threshold": 45
+            },
+            {
+              "t": 45,
+              "threshold": 46
+            },
+            {
+              "t": 46,
+              "threshold": 47
+            },
+            {
+              "t": 47,
+              "threshold": 48
+            },
+            {
+              "t": 48,
+              "threshold": 49
+            },
+            {
+              "t": 49,
+              "threshold": 50
+            }
+          ],
+          "risk_at_composite_worst_point": {
+            "numerator": 102999,
+            "denominator": 2118760,
+            "decimal": "0.0486128679038683003266061"
+          },
+          "ASN_upper_bound": {
+            "numerator": 4321833,
+            "denominator": 105938,
+            "decimal": "40.7958711699295814533029"
+          },
+          "input_wide_class_lower_bound": {
+            "numerator": 3705009228223418713,
+            "denominator": 91000049080729600,
+            "decimal": "40.7143651640952885536210"
+          },
+          "deterministic_threshold_lower_bound": {
+            "numerator": 161770429,
+            "denominator": 3972675,
+            "decimal": "40.7207810857923187776498"
+          },
+          "deterministic_threshold_certified_gap": {
+            "numerator": 85231,
+            "denominator": 1135050,
+            "decimal": "0.0750900841372626756530549"
+          },
+          "relative_gap_upper_bound": {
+            "numerator": 596617,
+            "denominator": 324137475,
+            "decimal": "0.00184062950450268053701597"
+          },
+          "status": "resource_limited_valid_gap",
+          "stop_reason": "time_limit",
+          "search_resources": {
+            "nodes_evaluated": 459,
+            "nodes_expanded": 69,
+            "nodes_pruned_by_risk": 258,
+            "nodes_pruned_by_bound": 8,
+            "leaves_evaluated": 0,
+            "feasible_completions_evaluated": 201,
+            "incumbent_updates": 2,
+            "dual_points_evaluated": 5837,
+            "frontier_nodes": 124,
+            "elapsed_seconds": 60.8838140859998
+          }
+        },
+        "A": {
+          "scenario": "A",
+          "null_boundary_D": 6,
+          "target_boundary_D": 5,
+          "thresholds": [
+            {
+              "t": 1,
+              "threshold": -1
+            },
+            {
+              "t": 2,
+              "threshold": -1
+            },
+            {
+              "t": 3,
+              "threshold": -1
+            },
+            {
+              "t": 4,
+              "threshold": -1
+            },
+            {
+              "t": 5,
+              "threshold": -1
+            },
+            {
+              "t": 6,
+              "threshold": -1
+            },
+            {
+              "t": 7,
+              "threshold": -1
+            },
+            {
+              "t": 8,
+              "threshold": -1
+            },
+            {
+              "t": 9,
+              "threshold": -1
+            },
+            {
+              "t": 10,
+              "threshold": -1
+            },
+            {
+              "t": 11,
+              "threshold": -1
+            },
+            {
+              "t": 12,
+              "threshold": -1
+            },
+            {
+              "t": 13,
+              "threshold": -1
+            },
+            {
+              "t": 14,
+              "threshold": -1
+            },
+            {
+              "t": 15,
+              "threshold": -1
+            },
+            {
+              "t": 16,
+              "threshold": 0
+            },
+            {
+              "t": 17,
+              "threshold": -1
+            },
+            {
+              "t": 18,
+              "threshold": -1
+            },
+            {
+              "t": 19,
+              "threshold": -1
+            },
+            {
+              "t": 20,
+              "threshold": -1
+            },
+            {
+              "t": 21,
+              "threshold": -1
+            },
+            {
+              "t": 22,
+              "threshold": -1
+            },
+            {
+              "t": 23,
+              "threshold": -1
+            },
+            {
+              "t": 24,
+              "threshold": -1
+            },
+            {
+              "t": 25,
+              "threshold": -1
+            },
+            {
+              "t": 26,
+              "threshold": -1
+            },
+            {
+              "t": 27,
+              "threshold": -1
+            },
+            {
+              "t": 28,
+              "threshold": -1
+            },
+            {
+              "t": 29,
+              "threshold": -1
+            },
+            {
+              "t": 30,
+              "threshold": -1
+            },
+            {
+              "t": 31,
+              "threshold": 1
+            },
+            {
+              "t": 32,
+              "threshold": -1
+            },
+            {
+              "t": 33,
+              "threshold": -1
+            },
+            {
+              "t": 34,
+              "threshold": -1
+            },
+            {
+              "t": 35,
+              "threshold": -1
+            },
+            {
+              "t": 36,
+              "threshold": -1
+            },
+            {
+              "t": 37,
+              "threshold": -1
+            },
+            {
+              "t": 38,
+              "threshold": -1
+            },
+            {
+              "t": 39,
+              "threshold": -1
+            },
+            {
+              "t": 40,
+              "threshold": -1
+            },
+            {
+              "t": 41,
+              "threshold": 2
+            },
+            {
+              "t": 42,
+              "threshold": -1
+            },
+            {
+              "t": 43,
+              "threshold": -1
+            },
+            {
+              "t": 44,
+              "threshold": -1
+            },
+            {
+              "t": 45,
+              "threshold": -1
+            },
+            {
+              "t": 46,
+              "threshold": -1
+            },
+            {
+              "t": 47,
+              "threshold": 3
+            },
+            {
+              "t": 48,
+              "threshold": -1
+            },
+            {
+              "t": 49,
+              "threshold": -1
+            }
+          ],
+          "risk_at_composite_worst_point": {
+            "numerator": 131996,
+            "denominator": 1324225,
+            "decimal": "0.0996779248239536332571882"
+          },
+          "ASN_upper_bound": {
+            "numerator": 23706383,
+            "denominator": 529690,
+            "decimal": "44.7552020993411240536918"
+          },
+          "input_wide_class_lower_bound": {
+            "numerator": 52019284404553996477,
+            "denominator": 1164800628233338880,
+            "decimal": "44.6593890350591609211212"
+          },
+          "deterministic_threshold_lower_bound": {
+            "numerator": 463601786677,
+            "denominator": 10380773816,
+            "decimal": "44.6596559075822946338242"
+          },
+          "deterministic_threshold_certified_gap": {
+            "numerator": 34714519197,
+            "denominator": 363327083560,
+            "decimal": "0.0955461917588294198675399"
+          },
+          "relative_gap_upper_bound": {
+            "numerator": 34714519197,
+            "denominator": 16260777052892,
+            "decimal": "0.00213486225683329065465774"
+          },
+          "status": "resource_limited_valid_gap",
+          "stop_reason": "time_limit",
+          "search_resources": {
+            "nodes_evaluated": 1097,
+            "nodes_expanded": 177,
+            "nodes_pruned_by_risk": 884,
+            "nodes_pruned_by_bound": 11,
+            "leaves_evaluated": 0,
+            "feasible_completions_evaluated": 213,
+            "incumbent_updates": 0,
+            "dual_points_evaluated": 6177,
+            "frontier_nodes": 25,
+            "elapsed_seconds": 60.253198996000265
+          }
+        }
+      }
+    }
+  ],
+  "total_nodes_evaluated": 3840,
+  "unresolved": [
+    "S6 independent verification has not started",
+    "threshold-class certificates do not cover non-threshold action classes",
+    "fixture N values are not an official or user-selected business batch size"
+  ]
+}

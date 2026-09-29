@@ -1,0 +1,47 @@
+{
+  "status": "working_candidate",
+  "renderer": "Three.js 0.180.0; headless Edge/SwiftShader; orthographic camera",
+  "source": {
+    "path": "output/Q2/run_n10240_startsafe.npz",
+    "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b"
+  },
+  "time_s": 1800,
+  "representation": "A short middle segment with a 90-degree sector removed for viewing; cylinder height is illustrative. No axial solution or time evolution of length is implied.",
+  "encoding": "Only the exposed cross-sections encode C. Neutral outer wall identifies material. Arrows indicate exchange direction, not magnitude.",
+  "palette": [
+    "#eaf3f7",
+    "#d6eff5",
+    "#99d3e1",
+    "#469dbf",
+    "#155c88"
+  ],
+  "C_range": [
+    0,
+    2.55
+  ],
+  "mesh": {
+    "radial_subdivisions": 128,
+    "angular_subdivisions": 180,
+    "interpolation": "linear sampling of the stored 10241-node radial field for display only"
+  },
+  "export": "Hybrid scientific image: high-resolution 3D raster inside SVG/PDF, with vector text and colorbar. Editable geometry in cutaway_scene.html.",
+  "three_source": "https://registry.npmjs.org/three/-/three-0.180.0.tgz",
+  "files": {
+    "fig_mechanism_cutaway.svg": {
+      "sha256": "1a261e9cad6ff80832a6f78e9ea5712889e8400e7b8a10f87b70b8f9c5bf36ac",
+      "bytes": 304178
+    },
+    "fig_mechanism_cutaway.png": {
+      "sha256": "74e625177551503d1e98cb250c7dfe0c2760ef601d3457134da189beace6ac60",
+      "bytes": 136320
+    },
+    "fig_mechanism_cutaway.pdf": {
+      "sha256": "a1193ebd2263f2a9e09fc7a6f18f0a337a78cc97d8d3c538b29ac78385e71f63",
+      "bytes": 94875
+    },
+    "cutaway_textfree.png": {
+      "sha256": "698066d086fc69ceb635066f58a366490fa0d85a8209212ecfb16384efb6c96f",
+      "bytes": 92204
+    }
+  }
+}

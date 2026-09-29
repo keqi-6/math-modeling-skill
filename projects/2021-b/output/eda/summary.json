@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "stage": "技术主线第3步",
+  "scope": "21种完整组合、7级有序离散温度、三个核心响应",
+  "continuous_temperature_fitting": false,
+  "missing_cell_imputation": false,
+  "artificial_stability_threshold": false,
+  "record_count": 114,
+  "combination_count": 21,
+  "temperature_levels_c": [
+    250,
+    275,
+    300,
+    325,
+    350,
+    400,
+    450
+  ],
+  "full_coverage_temperatures_c": [
+    250,
+    275,
+    300,
+    350
+  ],
+  "attachment2_record_count": 7,
+  "table_count": 8,
+  "figure_file_count": 12
+}

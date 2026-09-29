@@ -1,0 +1,57 @@
+{
+  "status": "candidate_verification",
+  "passed": true,
+  "check_count": 7,
+  "checks": [
+    {
+      "check": "模型与任务覆盖",
+      "passed": true
+    },
+    {
+      "check": "逐预测记录唯一",
+      "passed": true
+    },
+    {
+      "check": "正则强度仅来自预设网格",
+      "passed": true
+    },
+    {
+      "check": "汇总误差独立复算",
+      "passed": true,
+      "detail": "max_abs_error=3.553e-15"
+    },
+    {
+      "check": "整组合外层测试块",
+      "passed": true
+    },
+    {
+      "check": "整温度外层测试块",
+      "passed": true
+    },
+    {
+      "check": "预测有限且非缺失",
+      "passed": true
+    }
+  ],
+  "note": "通过只证明候选比较产物内部一致，不批准模型或预测范围。",
+  "artifacts": [
+    {
+      "path": "output/q3/candidates/unified_model_audit/predictions.csv",
+      "sha256": "66e49108813a52771bac1e9dab8dd57866fc5e361c7d9b20437d6029917b3d4c",
+      "producer": "src/q3/candidates/01_unified_model_feasibility.py",
+      "consumer": "本验证与统一模型可行性审计报告"
+    },
+    {
+      "path": "output/q3/candidates/unified_model_audit/fold_settings.csv",
+      "sha256": "d49f85047bdda4bd84930959d45c3393dc65e44f2c8cd006a9da27c2edf56ad7",
+      "producer": "src/q3/candidates/01_unified_model_feasibility.py",
+      "consumer": "本验证与统一模型可行性审计报告"
+    },
+    {
+      "path": "output/q3/candidates/unified_model_audit/summary.json",
+      "sha256": "e900f64207aa3c4a30443b20ee276c55ff0771ab891e9a11bd30b15466bd526e",
+      "producer": "src/q3/candidates/01_unified_model_feasibility.py",
+      "consumer": "本验证与统一模型可行性审计报告"
+    }
+  ]
+}

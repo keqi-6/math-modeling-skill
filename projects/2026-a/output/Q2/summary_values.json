@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.0",
+  "question": "Q2",
+  "scenario": "mean_tail",
+  "grid_n": 10240,
+  "created_at": "2026-09-10T15:53:34.463063+00:00",
+  "checked_state_revision": 217,
+  "sources": {
+    "result": {
+      "path": "output/Q2/run_n10240_startsafe.npz",
+      "sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+      "size": 38314283
+    },
+    "metadata": {
+      "path": "output/Q2/run_n10240_startsafe.json",
+      "sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+      "size": 2477
+    },
+    "boundary": {
+      "path": "output/ENV/q2_boundary.json",
+      "sha256": "f30996b8fc3a132164ae1a8b688f683bd15120fa38d54155221d8839085f178f",
+      "size": 10560
+    },
+    "verification": [
+      {
+        "path": "output/Q2/verification_implementation.json",
+        "sha256": "8365797324c7ceaadc7ca2cf27515d6ea14b325dba4f0a2ea2dd494b33b436f7",
+        "size": 119791
+      },
+      {
+        "path": "output/Q2/verification_structure.json",
+        "sha256": "ff82989f40157cebb12a03bdb18e02d8411ede05c1cadf4e7f84c44898ac5fd8",
+        "size": 6945
+      }
+    ],
+    "generator": {
+      "path": "src/Q2/plot_results.py",
+      "sha256": "7070fbe8925a19e7a1082b62b116bab32f5fa4dcca8a4112f5c3567f54d0d1c7",
+      "size": 21819
+    }
+  },
+  "tables": {
+    "temperature_C": {
+      "time_s": [
+        1800,
+        3600,
+        5400,
+        7200,
+        9000,
+        10800
+      ],
+      "time_h": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "radius_m": [
+        0.0,
+        0.005,
+        0.01,
+        0.015,
+        0.02
+      ],
+      "radius_cm": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "values": [
+        [
+          32.18924476096322,
+          32.3821143205545,
+          32.96594025235285,
+          33.96077901758181,
+          35.41302025049541
+        ],
+        [
+          40.381566592517956,
+          40.553565856446426,
+          41.06048363005975,
+          41.878218219576084,
+          42.99760875151683
+        ],
+        [
+          45.846754892043116,
+          45.93480593482586,
+          46.19295337299874,
+          46.6050740476785,
+          47.140049889985484
+        ],
+        [
+          48.45023528359425,
+          48.48806027832122,
+          48.59844458443306,
+          48.773550204745376,
+          49.00332430355365
+        ],
+        [
+          49.46698054932305,
+          49.47921998025711,
+          49.5136495977806,
+          49.56533151789049,
+          49.660910332037474
+        ],
+        [
+          49.8494955728103,
+          49.85534069144885,
+          49.874612205662004,
+          49.910147808623364,
+          49.96641284498236
+        ]
+      ],
+      "display_4dp": [
+        [
+          "32.1892",
+          "32.3821",
+          "32.9659",
+          "33.9608",
+          "35.4130"
+        ],
+        [
+          "40.3816",
+          "40.5536",
+          "41.0605",
+          "41.8782",
+          "42.9976"
+        ],
+        [
+          "45.8468",
+          "45.9348",
+          "46.1930",
+          "46.6051",
+          "47.1400"
+        ],
+        [
+          "48.4502",
+          "48.4881",
+          "48.5984",
+          "48.7736",
+          "49.0033"
+        ],
+        [
+          "49.4670",
+          "49.4792",
+          "49.5136",
+          "49.5653",
+          "49.6609"
+        ],
+        [
+          "49.8495",
+          "49.8553",
+          "49.8746",
+          "49.9101",
+          "49.9664"
+        ]
+      ],
+      "units": "degC",
+      "source_selector": "field[np.ix_([1800,3600,5400,7200,9000,10800],[0,5,10,15,20])]"
+    },
+    "moisture_kg_kg": {
+      "time_s": [
+        1800,
+        3600,
+        5400,
+        7200,
+        9000,
+        10800
+      ],
+      "time_h": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "radius_m": [
+        0.0,
+        0.005,
+        0.01,
+        0.015,
+        0.02
+      ],
+      "radius_cm": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0
+      ],
+      "values": [
+        [
+          2.54993409992138,
+          2.548883849718512,
+          2.525558033990259,
+          2.3257039663301535,
+          1.6486177766658752
+        ],
+        [
+          2.52573759862776,
+          2.494786927644416,
+          2.357819159203117,
+          2.0229636211217383,
+          1.471093601451303
+        ],
+        [
+          2.3860642508797416,
+          2.325636564252469,
+          2.134408807955023,
+          1.8020169983127208,
+          1.347567290457406
+        ],
+        [
+          2.170851540514741,
+          2.108433902463974,
+          1.9236284225336848,
+          1.6259387456974683,
+          1.231092625853831
+        ],
+        [
+          1.9566417595734875,
+          1.9005972904433384,
+          1.7359800644304004,
+          1.4719871934432642,
+          1.116647634017113
+        ],
+        [
+          1.7661771073155368,
+          1.716533020761038,
+          1.5701980027784763,
+          1.3332634304086353,
+          1.0081231261700119
+        ]
+      ],
+      "display_4dp": [
+        [
+          "2.5499",
+          "2.5489",
+          "2.5256",
+          "2.3257",
+          "1.6486"
+        ],
+        [
+          "2.5257",
+          "2.4948",
+          "2.3578",
+          "2.0230",
+          "1.4711"
+        ],
+        [
+          "2.3861",
+          "2.3256",
+          "2.1344",
+          "1.8020",
+          "1.3476"
+        ],
+        [
+          "2.1709",
+          "2.1084",
+          "1.9236",
+          "1.6259",
+          "1.2311"
+        ],
+        [
+          "1.9566",
+          "1.9006",
+          "1.7360",
+          "1.4720",
+          "1.1166"
+        ],
+        [
+          "1.7662",
+          "1.7165",
+          "1.5702",
+          "1.3333",
+          "1.0081"
+        ]
+      ],
+      "units": "kg/kg dry basis",
+      "source_selector": "field[np.ix_([1800,3600,5400,7200,9000,10800],[0,5,10,15,20])]"
+    }
+  },
+  "endpoint": {
+    "threshold_kg_kg": 0.15,
+    "t_cross_s": 206926.13864059298,
+    "n_end": 206927,
+    "n_end_h": 57.47972222222222,
+    "n_end_days": 2.3949884259259258,
+    "common_end_s": 220000,
+    "criterion": "First positive integer n with max over all N+1 mesh nodes C(n) < 0.15; raw float64 values",
+    "before": {
+      "time_s": 206926,
+      "max_moisture_kg_kg": 0.15000004037842476,
+      "max_node": 0,
+      "max_radius_m": 0.0,
+      "strict_below_threshold": false
+    },
+    "at": {
+      "time_s": 206927,
+      "max_moisture_kg_kg": 0.1499997491345901,
+      "max_node": 0,
+      "max_radius_m": 0.0,
+      "strict_below_threshold": true
+    },
+    "crossing_snapshot": {
+      "time_s": 206926.13864059298,
+      "max_moisture_kg_kg": 0.15,
+      "max_radius_m": 0.0
+    }
+  },
+  "fields": {
+    "temperature_C": {
+      "units": "degC",
+      "minimum": {
+        "value": 28.0,
+        "time_s": 0,
+        "radius_m": 0.0,
+        "scope": "21 output radii at integer-second samples through n_end"
+      },
+      "maximum": {
+        "value": 50.03986666337229,
+        "time_s": 14100,
+        "radius_m": 0.02,
+        "scope": "21 output radii at integer-second samples through n_end"
+      },
+      "first_3h_maximum_radial_spread": {
+        "maximum": 3.293771577326382,
+        "time_s": 2050,
+        "radius_at_maximum_m": 0.02,
+        "radius_at_minimum_m": 0.0,
+        "scope": "21 output radii; not a claim about every continuous radius"
+      },
+      "full_process_maximum_radial_spread": {
+        "maximum": 3.293771577326382,
+        "time_s": 2050,
+        "radius_at_maximum_m": 0.02,
+        "radius_at_minimum_m": 0.0,
+        "scope": "21 output radii; not a claim about every continuous radius"
+      },
+      "at_3h": {
+        "center": 49.8494955728103,
+        "surface": 49.96641284498236,
+        "surface_minus_center": 0.11691727217205994
+      },
+      "at_n_end": {
+        "center": 49.995916666666666,
+        "surface": 49.995916666666666,
+        "surface_minus_center": 0.0
+      }
+    },
+    "moisture_kg_kg": {
+      "units": "kg/kg dry basis",
+      "minimum": {
+        "value": 0.05264949793874387,
+        "time_s": 206927,
+        "radius_m": 0.02,
+        "scope": "21 output radii at integer-second samples through n_end"
+      },
+      "maximum": {
+        "value": 2.5500000000000003,
+        "time_s": 318,
+        "radius_m": 0.005,
+        "scope": "21 output radii at integer-second samples through n_end"
+      },
+      "first_3h_maximum_radial_spread": {
+        "maximum": 1.0656804116116487,
+        "time_s": 4255,
+        "radius_at_maximum_m": 0.0,
+        "radius_at_minimum_m": 0.02,
+        "scope": "21 output radii; not a claim about every continuous radius"
+      },
+      "full_process_maximum_radial_spread": {
+        "maximum": 1.0656804116116487,
+        "time_s": 4255,
+        "radius_at_maximum_m": 0.0,
+        "radius_at_minimum_m": 0.02,
+        "scope": "21 output radii; not a claim about every continuous radius"
+      },
+      "at_3h": {
+        "center": 1.7661771073155368,
+        "surface": 1.0081231261700119,
+        "surface_minus_center": -0.7580539811455249
+      },
+      "at_n_end": {
+        "center": 0.1499997491345901,
+        "surface": 0.05264949793874387,
+        "surface_minus_center": -0.09735025119584623
+      }
+    }
+  },
+  "trajectory_extrema_as_recorded": {
+    "values": {
+      "temperature_min_C": 28.0,
+      "temperature_max_C": 50.03986673257936,
+      "moisture_min_kg_kg": 0.052367108147394356,
+      "moisture_max_kg_kg": 2.5500000000000007
+    },
+    "scope": "all nodes at accepted steps and integer-second dense samples"
+  },
+  "interpretation_limits": [
+    "Conditional prediction of Q2-v1 under the chosen continuation.",
+    "No E4 empirical accuracy or per-cell correct-rounding guarantee.",
+    "Field extrema/spreads here use 21 radii; endpoint maxima use every mesh node.",
+    "n_end is the Q2 workbook endpoint; this file does not promote or deliver Q3."
+  ]
+}

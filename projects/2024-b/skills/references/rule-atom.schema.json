@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v10/rule-atom.schema.json",
+  "title": "V10 atomic rule bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "domain", "rules"],
+  "properties": {
+    "schema_version": {"const": "10.0"},
+    "domain": {
+      "enum": ["governance", "project", "evidence_delivery", "data", "modeling", "verification", "manuscript", "visuals", "maintenance"]
+    },
+    "rules": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/rule"}
+    }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "revision", "status", "capability", "domain", "owner", "strength",
+        "semantic_key", "scope", "trigger", "effect", "instruction_gloss", "failure_example",
+        "evidence", "outcomes", "exceptions", "conflicts_with", "refines", "depends_on",
+        "supersedes", "legacy_refs", "routes", "tests", "enforcement"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*(\\.[A-Z0-9_]+)+$"},
+        "revision": {"type": "integer", "minimum": 1},
+        "status": {"enum": ["active", "retired"]},
+        "capability": {"type": "string", "pattern": "^[A-Z0-9]+(?:-[A-Z0-9]+)+$"},
+        "domain": {"type": "string"},
+        "owner": {"type": "string", "pattern": "^rules/[a-z_]+\\.json#[A-Z0-9._]+$"},
+        "strength": {"enum": ["MUST", "SHOULD", "MAY"]},
+        "semantic_key": {"type": "string", "pattern": "^[a-z0-9_.-]+$"},
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["objects", "component_types", "states"],
+          "properties": {
+            "objects": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "component_types": {"type": "array", "items": {"enum": ["project", "question", "shared_data", "artifact", "skill", "none"]}},
+            "states": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+          }
+        },
+        "trigger": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["events", "predicates"],
+          "properties": {
+            "events": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "predicates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["field", "op", "value"],
+                "properties": {
+                  "field": {"type": "string"},
+                  "op": {"enum": ["eq", "ne", "in", "exists", "changed", "matches"]},
+                  "value": {}
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["verb", "target", "value"],
+          "properties": {
+            "verb": {"enum": ["require", "forbid", "allow", "select", "record", "verify", "invalidate", "transition", "limit"]},
+            "target": {"type": "string", "minLength": 1},
+            "value": {}
+          }
+        },
+        "instruction_gloss": {"type": "string", "minLength": 8, "maxLength": 220},
+        "failure_example": {"type": "string", "minLength": 4, "maxLength": 180},
+        "enforcement": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "assurance", "refs"],
+          "properties": {
+            "kind": {"enum": ["runtime_guard", "agent_obligation"]},
+            "assurance": {"enum": ["behavior_verified", "selection_verified"]},
+            "refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^(scripts|references|evals)/[^#]+(?:#.+)?$"}}
+          }
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["required", "kinds", "fields"],
+          "properties": {
+            "required": {"type": "boolean"},
+            "kinds": {"type": "array", "items": {"enum": ["file", "command", "citation", "observation", "decision", "route", "state", "receipt", "none"]}},
+            "fields": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "outcomes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["pass", "fail", "not_applicable"],
+          "properties": {
+            "pass": {"type": "string", "minLength": 3},
+            "fail": {"type": "string", "minLength": 3},
+            "not_applicable": {"type": "string", "minLength": 3}
+          }
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kind", "when", "disposition"],
+                "properties": {
+                  "kind": {"const": "runtime_condition"},
+                  "when": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["field", "op", "value"],
+                    "properties": {
+                      "field": {"type": "string"},
+                      "op": {"enum": ["eq", "ne", "in", "exists", "changed", "matches"]},
+                      "value": {}
+                    }
+                  },
+                  "disposition": {"const": "override_applicability"}
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kind", "condition_key", "when", "disposition"],
+                "properties": {
+                  "kind": {"const": "decision_required"},
+                  "condition_key": {"type": "string", "pattern": "^[a-z0-9_.-]+$"},
+                  "when": {"type": "string", "minLength": 2},
+                  "disposition": {"type": "string", "minLength": 2}
+                }
+              }
+            ]
+          }
+        },
+        "conflicts_with": {"type": "array", "items": {"type": "string"}},
+        "refines": {"type": "array", "items": {"type": "string"}},
+        "depends_on": {"type": "array", "items": {"type": "string"}},
+        "supersedes": {"type": "array", "items": {"type": "string"}},
+        "legacy_refs": {"type": "array", "items": {"type": "string"}},
+        "routes": {"type": "array", "items": {"type": "string"}},
+        "tests": {"type": "array", "items": {"type": "string"}},
+        "context_ref": {"type": "string"}
+      }
+    }
+  }
+}

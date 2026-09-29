@@ -1,0 +1,54 @@
+{
+  "drying_process": {
+    "pages": 1,
+    "fonts": {
+      "/GHVGIB+MicrosoftYaHei-Bold": {
+        "subtype": "/TrueType",
+        "embedded": true
+      },
+      "/YIXVNY+MicrosoftYaHei-Bold": {
+        "subtype": "/Type0",
+        "embedded": true
+      },
+      "/QJJDLV+MicrosoftYaHei": {
+        "subtype": "/TrueType",
+        "embedded": true
+      },
+      "/MQUJNH+MicrosoftYaHei": {
+        "subtype": "/Type0",
+        "embedded": true
+      }
+    },
+    "width_mm": 170.0
+  },
+  "property_editorial": {
+    "pages": 1,
+    "fonts": {
+      "/GHVGIB+MicrosoftYaHei-Bold": {
+        "subtype": "/TrueType",
+        "embedded": true
+      },
+      "/KBWWGV+MicrosoftYaHei": {
+        "subtype": "/TrueType",
+        "embedded": true
+      },
+      "/EHQVCW+MicrosoftYaHei": {
+        "subtype": "/Type0",
+        "embedded": true
+      },
+      "/NIERGC+Verdana": {
+        "subtype": "/Type0",
+        "embedded": true
+      },
+      "/FGDQGH+LucidaSansUnicode": {
+        "subtype": "/Type0",
+        "embedded": true
+      },
+      "/KDTUUS+ArialMT": {
+        "subtype": "/Type0",
+        "embedded": true
+      }
+    },
+    "width_mm": 170.0
+  }
+}

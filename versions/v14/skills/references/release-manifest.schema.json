@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/modeling-controller-v12/release-manifest.schema.json",
+  "title": "V12 frozen release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "release_id", "status", "generated_at", "authorization_sha256",
+    "source_gate", "release_tree", "external_signature", "manifest_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "12.0"},
+    "release_id": {"const": "V12.0.0"},
+    "status": {"const": "stable"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "authorization_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["report_sha256", "candidate_tree_sha256"],
+      "properties": {
+        "report_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "candidate_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "release_tree": {
+      "type": "object",
+      "required": ["algorithm", "file_count", "sha256", "files"],
+      "properties": {
+        "algorithm": {"const": "sha256-canonical-file-list-v1"},
+        "file_count": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "files": {"type": "array", "minItems": 1}
+      }
+    },
+    "external_signature": {"const": null},
+    "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

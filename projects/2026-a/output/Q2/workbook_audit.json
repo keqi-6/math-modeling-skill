@@ -1,0 +1,449 @@
+{
+  "schema": "q2_submission_workbook_audit_v1",
+  "status": "pass",
+  "data_status": "pass",
+  "output": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\result2.xlsx",
+  "template": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\附件\\附件3\\result2.xlsx",
+  "input_npz": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.npz",
+  "metadata": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\run_n10240_startsafe.json",
+  "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+  "metadata_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f",
+  "template_sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4",
+  "exporter_sha256": "197c75d390a2ee8badc0c579a688d09c4779b8278c4bce9171b7daab8e8c469c",
+  "operation_id": "q2-submission-first-3h-20260911",
+  "authoring_route": "crop_validated_history_XML_rows",
+  "operation_marker": {
+    "status": "reused_without_new_marker",
+    "receipt": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-3h\\artifact_operation_started.json",
+    "sha256": "5b74ae0cf699004d1404ef54d24c4e3220a9e3818bbda2f741ae61bc2f7eb4a8"
+  },
+  "output_start_s": 1,
+  "output_end_s": 10800,
+  "scope_sha256": "b1c9b1344521bd91b40fdca49bf8cab700b245432b7263985f40331ea32c6d7e",
+  "data_rows_per_sheet": 10800,
+  "units": {
+    "time": "s",
+    "radius": "cm",
+    "temperature": "°C",
+    "moisture": "kg water/kg dry solid"
+  },
+  "rounding": "Original validated numeric XML values and 0.0000 styles preserved; independently compared with Decimal.from_float(binary64) rounded to 0.0001, ties away from zero.",
+  "output_scope": "User-confirmed Q2 submission: integer seconds 1..10800 inclusive; source metadata is provenance only",
+  "superseded_delivery": {
+    "reason": "User clarified Q2 submission covers only the first three hours.",
+    "files": [
+      {
+        "role": "workbook",
+        "current": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\result2.xlsx",
+        "archived": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\history\\result2_full_process_20260911.xlsx",
+        "sha256": "74065813689079c52b87b9a83cbb3f4a4f4eed64921828c2a15cad5a16b094e1"
+      },
+      {
+        "role": "audit",
+        "current": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\workbook_audit.json",
+        "archived": "<AI_ROOT>\\数模国赛2026\\CUMCM2026Problems\\A题\\output\\Q2\\history\\workbook_audit_full_process_20260911.json",
+        "sha256": "01ae2499d710c16fbbab5d21d667e479baa945247522bc021efed349bdabaef9"
+      }
+    ],
+    "retained_bytes_unchanged": true,
+    "historical_authoring_route": "conditional_streaming_OOXML",
+    "historical_generator_sha256": "59646af15d608ddddde240b83f678dfa477e8d5e27fd185b40fee8ddaa8dfc9d"
+  },
+  "capability": "Recovery from the observed full-XLSX export memory failure uses bounded history-row cropping. Available artifact-tool import/inspect/render is used only on exact final-XML projections.",
+  "fallback_failure_evidence": {
+    "path": "~\\AppData\\Local\\Temp\\cumcm-q2-workbook-3h\\q2_submission_export_report.json",
+    "sha256": "f7ec4e1632c8834c94ccf1d3122422fc56cda5affed7c59eef36f887f87da6d3",
+    "status": "fail",
+    "error": "Error: RSS limit exceeded at after_export_before_save; no cell flush is available.\n    at insist (file:///<AI_ROOT>/%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B2026/CUMCM2026Problems/A%E9%A2%98/src/Q2/export_submission.mjs:31:50)\n    at memory (file:///<AI_ROOT>/%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B2026/CUMCM2026Problems/A%E9%A2%98/src/Q2/export_submission.mjs:288:5)\n    at main (file:///<AI_ROOT>/%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B2026/CUMCM2026Problems/A%E9%A2%98/src/Q2/export_submission.mjs:364:5)",
+    "actual_failed_exporter_sha256": "66df61a390278f79ce6baa3c525d2dbbb3f9d8fc874ce3a149f45c2849addcc0",
+    "operation_id": "q2-submission-first-3h-20260911",
+    "elapsed_s": 21.9727659,
+    "rss_limit_mib": 2800,
+    "observed_rss_bytes": 3603632128,
+    "failed_stage": "after_export_before_save",
+    "all_memory_samples": [
+      {
+        "label": "temperature_C:1024/10800",
+        "rss": 266203136,
+        "heapTotal": 136183808,
+        "heapUsed": 96863760,
+        "external": 97372458,
+        "arrayBuffers": 1841594
+      },
+      {
+        "label": "temperature_C:5120/10800",
+        "rss": 402571264,
+        "heapTotal": 268800000,
+        "heapUsed": 186787064,
+        "external": 97868198,
+        "arrayBuffers": 2337294
+      },
+      {
+        "label": "temperature_C:9216/10800",
+        "rss": 476835840,
+        "heapTotal": 341082112,
+        "heapUsed": 245635664,
+        "external": 98557158,
+        "arrayBuffers": 3026254
+      },
+      {
+        "label": "temperature_C:10800/10800",
+        "rss": 451469312,
+        "heapTotal": 315932672,
+        "heapUsed": 196034088,
+        "external": 97441977,
+        "arrayBuffers": 1914862
+      },
+      {
+        "label": "moisture_kg_kg:1024/10800",
+        "rss": 466841600,
+        "heapTotal": 331718656,
+        "heapUsed": 232350712,
+        "external": 97614217,
+        "arrayBuffers": 2087102
+      },
+      {
+        "label": "moisture_kg_kg:5120/10800",
+        "rss": 534712320,
+        "heapTotal": 396697600,
+        "heapUsed": 319015168,
+        "external": 98303177,
+        "arrayBuffers": 2776062
+      },
+      {
+        "label": "moisture_kg_kg:9216/10800",
+        "rss": 559026176,
+        "heapTotal": 421122048,
+        "heapUsed": 308675376,
+        "external": 97692082,
+        "arrayBuffers": 2165054
+      },
+      {
+        "label": "moisture_kg_kg:10800/10800",
+        "rss": 574558208,
+        "heapTotal": 436637696,
+        "heapUsed": 361843192,
+        "external": 97958610,
+        "arrayBuffers": 2431582
+      },
+      {
+        "label": "native_render:temperature:first",
+        "rss": 763686912,
+        "heapTotal": 489619456,
+        "heapUsed": 400977368,
+        "external": 98097337,
+        "arrayBuffers": 2616370
+      },
+      {
+        "label": "native_render:temperature:last",
+        "rss": 820547584,
+        "heapTotal": 539627520,
+        "heapUsed": 414497352,
+        "external": 98149109,
+        "arrayBuffers": 2731503
+      },
+      {
+        "label": "native_render:moisture:first",
+        "rss": 875511808,
+        "heapTotal": 589090816,
+        "heapUsed": 476724160,
+        "external": 98082169,
+        "arrayBuffers": 2705568
+      },
+      {
+        "label": "native_render:moisture:last",
+        "rss": 937607168,
+        "heapTotal": 645562368,
+        "heapUsed": 551378288,
+        "external": 98153728,
+        "arrayBuffers": 2841985
+      },
+      {
+        "label": "before_export",
+        "rss": 981889024,
+        "heapTotal": 688640000,
+        "heapUsed": 548274024,
+        "external": 97958610,
+        "arrayBuffers": 2646867
+      },
+      {
+        "label": "after_export_before_save",
+        "rss": 3603632128,
+        "heapTotal": 2384363520,
+        "heapUsed": 2024114288,
+        "external": 475627856,
+        "arrayBuffers": 17555676
+      }
+    ],
+    "previews_generated_before_failure": 4,
+    "saved_new_workbook": false,
+    "scope": "Complete XLSX export exceeded the actual 2800 MiB process budget; full authoring and small native preview capability remained available."
+  },
+  "interchange_manifest_sha256": "363283ba258773025d99dcf3c88efae987959d124eb97a07da367dc91b99650b",
+  "independent_interchange": {
+    "status": "pass",
+    "values_compared": 453600,
+    "output_start_s": 1,
+    "output_end_s": 10800,
+    "fields": [
+      {
+        "field": "temperature_C",
+        "values_compared": 226800,
+        "maximum_difference": 0,
+        "binary_sha256": "1b641ab14ffd3210c28860097ff53855019c84b1d59eafcfdb387af4c3512392"
+      },
+      {
+        "field": "moisture_kg_kg",
+        "values_compared": 226800,
+        "maximum_difference": 0,
+        "binary_sha256": "9106f9814e48c3fccf073a1ec9252cad3460289a1c05abe075c0b94d1d59db81"
+      }
+    ],
+    "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+    "metadata_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f"
+  },
+  "history_crop": {
+    "status": "pass",
+    "authoring_route": "crop_validated_history_XML_rows",
+    "source_sha256": "74065813689079c52b87b9a83cbb3f4a4f4eed64921828c2a15cad5a16b094e1",
+    "output_end_s": 10800,
+    "sheets": [
+      {
+        "member": "xl/worksheets/sheet1.xml",
+        "source_rows_read": 206928,
+        "retained_rows": 10801,
+        "removed_rows": 196127,
+        "retained_row_xml_sha256": "2a4fdc86d1b7ea9f02905796c7e353cb6c703ba3caeaa35a7a66405ba799ee83",
+        "original_header_sha256": "bc90484700d065b3b28fab7cb535da074e9a1deec95e096dc26fcaacabb765f5",
+        "updated_header_sha256": "39863fcdd5d62e09285aa57faf43b458f377278b9aa5852851f01c7de4bd2b52",
+        "unchanged_footer_sha256": "bfb69ef326f1dd964f39006cf6001fc8ae649d39475b43d2a497cb5723b72fa5",
+        "dimension": "A1:V10801"
+      },
+      {
+        "member": "xl/worksheets/sheet2.xml",
+        "source_rows_read": 206928,
+        "retained_rows": 10801,
+        "removed_rows": 196127,
+        "retained_row_xml_sha256": "427420a8a9278bf200920513b0cb1292cd086eec433451ece4f2da752b7674ee",
+        "original_header_sha256": "b0e013bd98b4c50db67d61bd939334f911837fcf97bbd5e4efb3163ab43c026d",
+        "updated_header_sha256": "cc026c5bd23477df4f47f12a6d89268a4fd4bf3fc1ef0b59c35577204f7acb6a",
+        "unchanged_footer_sha256": "bfb69ef326f1dd964f39006cf6001fc8ae649d39475b43d2a497cb5723b72fa5",
+        "dimension": "A1:V10801"
+      }
+    ],
+    "unchanged_zip_members": {
+      "[Content_Types].xml": "8be0821392a81066be49da66fb7f27c2da28d00c88b7642c91286af810163cc7",
+      "_rels/.rels": "ad78dfe44ec71f967f96e95bdf6baf2545c39e1a5e4413e7b8e9413eb95fd922",
+      "xl/_rels/workbook.xml.rels": "15e353ac27ab7362603f4a0d0754a97885e8e2ce523615a3cd59b458ddcd60e9",
+      "xl/workbook.xml": "9cb4300085f87ebe3e29a456625314d16badbfc0a63f0e10f00def83bbb4ea95",
+      "xl/theme/theme1.xml": "2f76007802b3280e4f0de927b36972248c52c0b52d4f75c063a785f932af083e",
+      "docProps/core.xml": "5a08f0699c04170dde36c7e0222ce4b736cabc7ab110d53218d7615364aecc8b",
+      "docProps/app.xml": "aadd2851a84503da8d83d8dbcf027a7e0b59a4bfbfb4494d686594bb8fbee556",
+      "docProps/custom.xml": "860e3dc310342e6f3ee34a85a2567b4faf03c2d16456f3c48af1d08b1c692685",
+      "xl/styles.xml": "3236d8cc38f9e2b4fac55aa440bad5ca2878aca33da1f62b50c9131b2cfe6739",
+      "xl/sharedStrings.xml": "d95d466ba14551fed6f9dbb6a1a95ddc7f063abfe6822426464c955b599d34d5"
+    },
+    "unchanged_member_count": 10,
+    "changed_members": [
+      "xl/worksheets/sheet1.xml",
+      "xl/worksheets/sheet2.xml"
+    ],
+    "change_scope": "Only worksheet dimension and omission of rows 10802..206928; retained row bytes and other ZIP member contents unchanged",
+    "sha256": "c36c0a979d2692560c8e5b0fed275c5b6795f7eaaec38d8465c09b5cc7736c93",
+    "bytes": 2440283,
+    "elapsed_s": 1.7060259000136284
+  },
+  "independent_xml": {
+    "status": "pass",
+    "error_count": 0,
+    "errors": [],
+    "sheets": [
+      {
+        "sheet": "温度",
+        "rows": 10801,
+        "columns": 22,
+        "cells": 237622,
+        "result_values": 226800,
+        "number_formats_checked": 226800,
+        "formula_count": 0,
+        "dimension": "A1:V10801",
+        "pane": {
+          "xSplit": "1",
+          "ySplit": "1",
+          "topLeftCell": "B2",
+          "activePane": "bottomRight",
+          "state": "frozen"
+        }
+      },
+      {
+        "sheet": "水分浓度",
+        "rows": 10801,
+        "columns": 22,
+        "cells": 237622,
+        "result_values": 226800,
+        "number_formats_checked": 226800,
+        "formula_count": 0,
+        "dimension": "A1:V10801",
+        "pane": {
+          "xSplit": "1",
+          "ySplit": "1",
+          "topLeftCell": "B2",
+          "activePane": "bottomRight",
+          "state": "frozen"
+        }
+      }
+    ],
+    "result_values_checked": 453600,
+    "maximum_saved_vs_rounded_difference": 0,
+    "maximum_absolute_export_rounding": 4.9999818921619976e-05,
+    "xlsx_sha256": "c36c0a979d2692560c8e5b0fed275c5b6795f7eaaec38d8465c09b5cc7736c93",
+    "xlsx_bytes": 2440283,
+    "input_npz_sha256": "79f4b32f3a8858980b4649ed71ad2d3924b1c0312dc3de6260fea87866e9a59b",
+    "metadata_sha256": "1608daaf85666c495d9d62eaf19d07ff385c45bf66c58c598773e3769318871f"
+  },
+  "native_render_scope": "Read-only first/last projections extracted from the actual cropped XLSX XML; not a full-workbook engine import",
+  "native_previews": [
+    "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\temperature_first.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\moisture_first.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\temperature_last.png",
+    "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\moisture_last.png"
+  ],
+  "memory_samples": [
+    {
+      "label": "before_history_crop",
+      "rss": 51122176,
+      "heapTotal": 12050432,
+      "heapUsed": 6907168,
+      "external": 7689197,
+      "arrayBuffers": 5281449
+    },
+    {
+      "label": "native_projection:temperature:first",
+      "rss": 348344320,
+      "heapTotal": 120860672,
+      "heapUsed": 71096832,
+      "external": 97348550,
+      "arrayBuffers": 1859389
+    },
+    {
+      "label": "native_projection:moisture:first",
+      "rss": 366682112,
+      "heapTotal": 121122816,
+      "heapUsed": 54130864,
+      "external": 97323406,
+      "arrayBuffers": 1876270
+    },
+    {
+      "label": "native_projection:temperature:last",
+      "rss": 393777152,
+      "heapTotal": 122540032,
+      "heapUsed": 76875368,
+      "external": 97591931,
+      "arrayBuffers": 2212240
+    },
+    {
+      "label": "native_projection:moisture:last",
+      "rss": 397037568,
+      "heapTotal": 125317120,
+      "heapUsed": 53599752,
+      "external": 97388784,
+      "arrayBuffers": 1927809
+    }
+  ],
+  "elapsed_s": 8.081016400000001,
+  "visual_review": {
+    "status": "pass",
+    "scope": "Read-only first/last projections extracted from the actual cropped XLSX XML; not a full-workbook engine import",
+    "mappings": [
+      {
+        "label": "first",
+        "source_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "projection_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "range": "A1:V9"
+      },
+      {
+        "label": "last",
+        "source_rows": [
+          1,
+          10794,
+          10795,
+          10796,
+          10797,
+          10798,
+          10799,
+          10800,
+          10801
+        ],
+        "projection_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "range": "A1:V9"
+      }
+    ],
+    "note": "Actual post-generation image inspection passed at the stated scope.",
+    "generation_note": "Four native first/last projections rendered; actual human/agent image inspection remains required.",
+    "reviewed_at": "2026-09-10T18:30:52.626963+00:00",
+    "reviewers": [
+      "root (actual image inspection in collaboration)",
+      "q1_model_review (actual image inspection)"
+    ],
+    "artifacts": [
+      {
+        "path": "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\temperature_first.png",
+        "sha256": "95f207cd88f32f068095efffc94f590fe106bd23c1ab596d31b80f32fd646332",
+        "size": 41743
+      },
+      {
+        "path": "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\moisture_first.png",
+        "sha256": "59ebcc1448fa02666c47cda0bd10ac5a4b56c3bc0661a4f51f9fe6e9fb2fc3bf",
+        "size": 42025
+      },
+      {
+        "path": "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\temperature_last.png",
+        "sha256": "b15590726277983fdc931c7b09a65d3113e49b49a8a869c3c9437bf7dc7f86e0",
+        "size": 67445
+      },
+      {
+        "path": "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\moisture_last.png",
+        "sha256": "2fc055388d7816a194714696187524f134c55852644e727a2959df5360f0e6fc",
+        "size": 69929
+      }
+    ],
+    "finding": "Both worksheets: first seconds 1..8 and last seconds 10793..10800, header radii 0..2 cm, all 21 numeric columns readable with 0.0000 display; no clipping, #### or missing final second. Observed final-XML projections agree with independently checked sheet values.",
+    "boundary": "First/last native XML projections and full saved-file numerical audit; no claim of importing the entire workbook in Excel or reviewing every visible row."
+  },
+  "detailed_export_report": "~\\AppData\\Local\\Temp\\cumcm-q2-history-crop\\q2_submission_history_report.json",
+  "post_generation_review": {
+    "performed_by": "q1_model_review using actual root and own image reads",
+    "reviewed_at": "2026-09-10T18:30:52.626963+00:00",
+    "scope": "Only review metadata; existing data checks, source hashes and saved workbook remain unchanged."
+  }
+}

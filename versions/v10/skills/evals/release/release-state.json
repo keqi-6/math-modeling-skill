@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-08-24T00:58:15.745530Z",
+  "manifest": "evals/release/frozen-manifest.json",
+  "pre_freeze_gate_report_sha256": "a7968c03fa27ccad4f25a07f7d876e0931e72e7880d09ca16de53fe59ae25838",
+  "release_id": "V10.0.0",
+  "schema_version": "10.0",
+  "status": "stable"
+}

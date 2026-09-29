@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Math modeling V7 end receipt",
+  "type": "object",
+  "required": ["receipt_kind", "task", "outputs", "verification", "state_closures", "decisions", "affected_downstream", "unresolved", "completion_scope", "status", "artifact_disposition"],
+  "properties": {
+    "receipt_kind": {"const": "end"},
+    "completion_scope": {"enum": ["local", "state", "milestone", "full_project"]},
+    "status": {"enum": ["complete", "partial", "blocked"]},
+    "artifact_disposition": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["content", "disposition", "artifact_class", "path", "realized", "authority_status", "evidence"],
+        "properties": {
+          "artifact_class": {
+            "enum": ["analysis_candidate", "solution_brief", "reproduction_document", "machine_evidence", "formal_delivery", "navigation", "external_evidence", "not_applicable"]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
